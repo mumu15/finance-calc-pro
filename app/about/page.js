@@ -3,7 +3,7 @@ import Footer from '../../components/Footer'
 
 export const metadata = {
   title: 'About Us – FreeFinCalc.net',
-  description: 'About FreeFinCalc.net — free professional financial calculators for mortgage, loans, retirement and more.',
+  description: 'About FreeFinCalc.net — free professional financial calculators.',
 }
 
 export default function About() {
