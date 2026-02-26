@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-950: #040d1a;
+  --navy-900: #071426;
+  --navy-800: #0d2140;
+  --navy-700: #12305e;
+  --gold-400: #f0c842;
+  --gold-500: #d4a017;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy-950);
+  color: #e2e8f0;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-500);
+  border-radius: 3px;
+}
+
+/* Input styling */
+.calc-input {
+  @apply w-full bg-navy-800 border border-navy-600 text-white rounded-lg px-4 py-3 font-mono text-lg focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all duration-200;
+}
+
+.calc-input::-webkit-outer-spin-button,
+.calc-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Result card */
+.result-card {
+  @apply bg-navy-800 border border-navy-700 rounded-xl p-6;
+  background: linear-gradient(135deg, rgba(13, 33, 64, 0.9), rgba(7, 20, 38, 0.95));
+}
+
+/* Gold accent line */
+.gold-accent::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--gold-400);
+  margin-bottom: 12px;
+}
+
+/* Animated number */
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease forwards;
+}
+
+/* Nav gradient border */
+.nav-border {
+  border-bottom: 1px solid rgba(240, 200, 66, 0.15);
+  background: linear-gradient(180deg, rgba(4, 13, 26, 0.98) 0%, rgba(4, 13, 26, 0.92) 100%);
+  backdrop-filter: blur(12px);
+}
+
+/* Calculator card hover */
+.calc-card {
+  background: linear-gradient(135deg, #0d2140, #071426);
+  border: 1px solid rgba(240, 200, 66, 0.1);
+  transition: all 0.3s ease;
+}
+
+.calc-card:hover {
+  border-color: rgba(240, 200, 66, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 160, 23, 0.08);
+}
+
+/* Slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #12305e;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f0c842;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 8px rgba(240, 200, 66, 0.4);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 16px rgba(240, 200, 66, 0.6);
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: #0d2140;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #d4a017, #f0c842);
+  transition: width 0.5s ease;
+}
+
+/* AdSense placeholder */
+.ad-unit {
+  @apply rounded-xl overflow-hidden;
+  background: rgba(13, 33, 64, 0.5);
+  border: 1px dashed rgba(240, 200, 66, 0.15);
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pie chart donut */
+.donut-chart {
+  transform: rotate(-90deg);
+}
+
+.donut-segment {
+  transition: stroke-dashoffset 0.8s ease;
+}
