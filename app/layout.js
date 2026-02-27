@@ -41,10 +41,22 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FreeFinCalc.net",
+    "url": "https://www.freefincalc.net",
+    "description": "Free professional financial calculators for mortgages, compound interest, loans, savings, retirement planning, and tax estimation.",
+  }
+
   return (
     <html lang="en">
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8934829211507329" crossOrigin="anonymous"></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
       </head>
       <body>{children}</body>
     </html>
