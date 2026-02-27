@@ -1,158 +1,127 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import { AdLeaderboard, AdRectangle } from '../../components/AdUnit'
 
 export default function SavingsCalculator() {
-  const [goalAmount, setGoalAmount] = useState(50000)
-  const [currentSavings, setCurrentSavings] = useState(5000)
-  const [monthlyDeposit, setMonthlyDeposit] = useState(500)
-  const [interestRate, setInterestRate] = useState(4.5)
-  const [years, setYears] = useState(10)
+  const [form, setForm] = useState({ goal: 50000, initial: 1000, monthly: 500, rate: 4.5 })
+  const [result, setResult] = useState(null)
 
-  const results = useMemo(() => {
-    const r = interestRate / 100 / 12
-    const n = years * 12
+  const update = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
-    // Future value of existing savings
-    const fvCurrent = currentSavings * Math.pow(1 + r, n)
-    // Future value of monthly contributions
-    const fvDeposits = r > 0
-      ? monthlyDeposit * ((Math.pow(1 + r, n) - 1) / r)
-      : monthlyDeposit * n
-    const futureValue = fvCurrent + fvDeposits
-    const totalDeposited = currentSavings + monthlyDeposit * n
-    const interestEarned = futureValue - totalDeposited
+  const calculate = () => {
+    const r = form.rate / 100 / 12
+    const target = form.goal
+    const p = form.initial
+    const m = form.monthly
 
-    // How much monthly deposit needed to reach goal
-    const remainingGoal = Math.max(0, goalAmount - fvCurrent)
-    const monthlyNeeded = r > 0
-      ? remainingGoal * r / (Math.pow(1 + r, n) - 1)
-      : remainingGoal / n
+    let balance = p
+    let months = 0
+    let totalContributions = p
+    while (balance < target && months < 1200) {
+      balance = balance * (1 + r) + m
+      totalContributions += m
+      months++
+    }
+    const years = Math.floor(months / 12)
+    const remainingMonths = months % 12
+    const interestEarned = balance - totalContributions
+    setResult({ months, years, remainingMonths, finalBalance: balance.toFixed(2), totalContributions: totalContributions.toFixed(2), interestEarned: interestEarned.toFixed(2) })
+  }
 
-    const goalReached = futureValue >= goalAmount
-    const surplusDeficit = futureValue - goalAmount
-
-    return { futureValue, totalDeposited, interestEarned, monthlyNeeded, goalReached, surplusDeficit }
-  }, [goalAmount, currentSavings, monthlyDeposit, interestRate, years])
-
-  const fmt = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
-  const fmtDec = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n)
+  const fmt = (n) => Number(n).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
   return (
     <>
       <Header />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-slate-500 text-sm mb-3">
-            <a href="/" className="hover:text-gold-400">Home</a><span>/</span>
-            <span className="text-slate-300">Savings Calculator</span>
-          </div>
-          <h1 className="font-display text-4xl font-bold text-white mb-2 gold-accent">Savings Calculator</h1>
-          <p className="text-slate-400 max-w-2xl">Plan your savings goals and find out exactly how much you need to save each month.</p>
+      <main className="max-w-5xl mx-auto px-4 py-12">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Savings Goal Calculator</h1>
+          <p className="text-slate-400 text-lg">Find out how long it will take to reach your savings goal</p>
         </div>
 
-        <AdLeaderboard />
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-8">
-          <div className="lg:col-span-3 space-y-6">
-            <div className="result-card">
-              <h2 className="font-display text-lg font-semibold text-white mb-5">Savings Plan</h2>
-              <div className="space-y-5">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Savings Goal</label>
-                    <span className="text-gold-400 font-mono font-bold">{fmt(goalAmount)}</span>
-                  </div>
-                  <input type="range" min="1000" max="1000000" step="1000" value={goalAmount}
-                    onChange={e => setGoalAmount(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" value={goalAmount} onChange={e => setGoalAmount(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Current Savings</label>
-                    <span className="text-gold-400 font-mono font-bold">{fmt(currentSavings)}</span>
-                  </div>
-                  <input type="number" value={currentSavings} onChange={e => setCurrentSavings(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Monthly Deposit</label>
-                    <span className="text-gold-400 font-mono font-bold">{fmt(monthlyDeposit)}</span>
-                  </div>
-                  <input type="range" min="0" max="10000" step="50" value={monthlyDeposit}
-                    onChange={e => setMonthlyDeposit(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" value={monthlyDeposit} onChange={e => setMonthlyDeposit(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Annual Interest Rate</label>
-                    <span className="text-gold-400 font-mono font-bold">{interestRate}%</span>
-                  </div>
-                  <input type="range" min="0" max="20" step="0.1" value={interestRate}
-                    onChange={e => setInterestRate(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" step="0.1" value={interestRate} onChange={e => setInterestRate(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Time Period</label>
-                    <span className="text-gold-400 font-mono font-bold">{years} years</span>
-                  </div>
-                  <input type="range" min="1" max="40" step="1" value={years}
-                    onChange={e => setYears(+e.target.value)} className="w-full mb-2" />
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
+            {[
+              { label: 'Savings Goal ($)', key: 'goal' },
+              { label: 'Initial Deposit ($)', key: 'initial' },
+              { label: 'Monthly Contribution ($)', key: 'monthly' },
+              { label: 'Annual Interest Rate (%)', key: 'rate' },
+            ].map(field => (
+              <div key={field.key}>
+                <label className="text-white text-sm font-medium block mb-1">{field.label}</label>
+                <input type="number" value={form[field.key]} onChange={e => update(field.key, parseFloat(e.target.value))}
+                  className="w-full px-4 py-3 rounded-xl text-white outline-none"
+                  style={{background:'#0f172a', border:'1px solid #1e293b'}} />
               </div>
-            </div>
+            ))}
+            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate Time to Goal</button>
           </div>
 
-          <div className="lg:col-span-2 space-y-4">
-            {/* Goal status */}
-            <div className={`result-card border ${results.goalReached ? 'border-emerald-500/40' : 'border-red-500/40'}`}>
-              <div className="text-center py-2 mb-3">
-                <div className={`text-3xl mb-1`}>{results.goalReached ? '🎯' : '📊'}</div>
-                <div className={`font-bold text-lg ${results.goalReached ? 'text-emerald-400' : 'text-red-400'}`}>
-                  {results.goalReached ? 'Goal Reached!' : 'Adjust Your Plan'}
-                </div>
-                <div className="text-slate-400 text-xs mt-1">
-                  {results.goalReached
-                    ? `Surplus: ${fmt(results.surplusDeficit)}`
-                    : `Shortfall: ${fmt(Math.abs(results.surplusDeficit))}`}
-                </div>
+          <div>
+            {!result ? (
+              <div className="result-box text-center py-16">
+                <div className="text-5xl mb-4">🎯</div>
+                <p className="text-slate-500">Fill in your details and click Calculate</p>
               </div>
-            </div>
-
-            <div className="result-card" style={{ borderColor: 'rgba(212,160,23,0.3)', borderWidth: 1 }}>
-              <div className="text-center py-3">
-                <div className="text-slate-400 text-sm mb-1">Projected Savings</div>
-                <div className="font-mono text-5xl font-bold text-gold-400">{fmt(results.futureValue)}</div>
-              </div>
-            </div>
-
-            <div className="result-card">
-              <div className="space-y-3">
-                {[
-                  { label: 'Total Deposited', value: fmt(results.totalDeposited) },
-                  { label: 'Interest Earned', value: fmt(results.interestEarned), color: 'text-emerald-400' },
-                  { label: 'Monthly Needed for Goal', value: fmtDec(results.monthlyNeeded), color: 'text-gold-400' },
-                ].map(item => (
-                  <div key={item.label} className="flex justify-between">
-                    <span className="text-slate-400 text-sm">{item.label}</span>
-                    <span className={`font-mono font-bold text-sm ${item.color || 'text-white'}`}>{item.value}</span>
+            ) : (
+              <div className="space-y-4">
+                <div className="result-box text-center">
+                  <p className="text-slate-400 text-sm mb-2">Time to Reach Goal</p>
+                  <div className="text-5xl font-bold mb-2" style={{color:'#f0c842'}}>
+                    {result.years > 0 ? `${result.years}y ` : ''}{result.remainingMonths}m
                   </div>
-                ))}
+                  <p className="text-slate-500 text-sm">{result.months} total months</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: 'Final Balance', value: fmt(result.finalBalance) },
+                    { label: 'Total Saved', value: fmt(result.totalContributions) },
+                    { label: 'Interest Earned', value: fmt(result.interestEarned) },
+                    { label: 'Monthly Savings', value: fmt(form.monthly) },
+                  ].map((s, i) => (
+                    <div key={i} className="stat-card">
+                      <div className="text-xl font-bold text-white">{s.value}</div>
+                      <div className="text-slate-500 text-xs mt-1">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <AdRectangle />
+            )}
           </div>
         </div>
 
-        <AdLeaderboard />
+        <div className="space-y-6 mt-12">
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">Free Savings Goal Calculator</h2>
+            <p className="text-slate-400 text-sm leading-relaxed">Our free savings calculator helps you figure out how long it will take to reach any financial goal. Whether you are saving for a house down payment, emergency fund, vacation, car or retirement, this tool shows you exactly how many months you need based on your starting balance, monthly contributions and interest rate.</p>
+          </div>
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">Tips to Reach Your Savings Goal Faster</h2>
+            <div className="text-slate-400 text-sm leading-relaxed space-y-2">
+              <p><strong className="text-white">Increase monthly contributions.</strong> Even small increases make a big difference. Adding an extra $100 per month can shave months or years off your timeline.</p>
+              <p><strong className="text-white">Use a high yield savings account.</strong> Online banks often offer 4-5% interest compared to 0.01% at traditional banks. This can significantly accelerate your progress.</p>
+              <p><strong className="text-white">Automate your savings.</strong> Set up automatic transfers on payday so you save before you spend.</p>
+            </div>
+          </div>
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-4 text-sm">
+              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                <h3 className="text-white font-semibold mb-2">How much should I save each month?</h3>
+                <p className="text-slate-400">Financial experts recommend saving at least 20% of your income. The 50/30/20 rule suggests 50% for needs, 30% for wants and 20% for savings and debt repayment.</p>
+              </div>
+              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                <h3 className="text-white font-semibold mb-2">What interest rate should I use?</h3>
+                <p className="text-slate-400">Use the actual interest rate from your savings account. High yield savings accounts currently offer around 4-5% APY. Traditional savings accounts offer much lower rates around 0.01-0.5%.</p>
+              </div>
+              <div className="pb-4">
+                <h3 className="text-white font-semibold mb-2">Is this savings calculator free?</h3>
+                <p className="text-slate-400">Yes, completely free with no sign up required.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>
