@@ -1,204 +1,126 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import { AdLeaderboard, AdRectangle, AdInArticle } from '../../components/AdUnit'
 
 export default function CompoundInterest() {
-  const [principal, setPrincipal] = useState(10000)
-  const [monthlyContrib, setMonthlyContrib] = useState(500)
-  const [rate, setRate] = useState(8)
-  const [years, setYears] = useState(20)
-  const [compFreq, setCompFreq] = useState(12)
+  const [form, setForm] = useState({ principal: 10000, rate: 7, years: 10, compound: 12, monthly: 0 })
+  const [result, setResult] = useState(null)
 
-  const results = useMemo(() => {
-    const n = compFreq
-    const r = rate / 100
-    const t = years
+  const update = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
-    // Future value with regular contributions (compounding)
-    const fvPrincipal = principal * Math.pow(1 + r / n, n * t)
-    const fvContribs = monthlyContrib > 0
-      ? monthlyContrib * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
-      : 0
-    const totalValue = fvPrincipal + fvContribs
-    const totalContributed = principal + monthlyContrib * 12 * t
-    const totalInterest = totalValue - totalContributed
+  const calculate = () => {
+    const n = form.compound
+    const r = form.rate / 100
+    const t = form.years
+    const p = form.principal
+    const m = form.monthly
 
-    // Year by year
-    const yearData = []
-    let balance = principal
-    for (let y = 1; y <= t; y++) {
-      const prevBalance = balance
-      balance = balance * Math.pow(1 + r / n, n)
-      const yearContrib = monthlyContrib * 12
-      balance += yearContrib * ((Math.pow(1 + r / n, n) - 1) / (r / n))
-      yearData.push({ year: y, balance, contributed: principal + monthlyContrib * 12 * y, interest: balance - (principal + monthlyContrib * 12 * y) })
+    let amount = p * Math.pow(1 + r / n, n * t)
+    if (m > 0) {
+      amount += m * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
     }
+    const totalContributions = p + (m * 12 * t)
+    const totalInterest = amount - totalContributions
+    setResult({ amount: amount.toFixed(2), totalContributions: totalContributions.toFixed(2), totalInterest: totalInterest.toFixed(2) })
+  }
 
-    return { totalValue, totalContributed, totalInterest, yearData }
-  }, [principal, monthlyContrib, rate, years, compFreq])
-
-  const fmt = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
-  const fmtDec = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n)
-
-  const freqOptions = [
-    { value: 1, label: 'Annually' },
-    { value: 4, label: 'Quarterly' },
-    { value: 12, label: 'Monthly' },
-    { value: 365, label: 'Daily' },
-  ]
+  const fmt = (n) => Number(n).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
   return (
     <>
       <Header />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-slate-500 text-sm mb-3">
-            <a href="/" className="hover:text-gold-400">Home</a><span>/</span>
-            <span className="text-slate-300">Compound Interest Calculator</span>
-          </div>
-          <h1 className="font-display text-4xl font-bold text-white mb-2 gold-accent">Compound Interest Calculator</h1>
-          <p className="text-slate-400 max-w-2xl">See the power of compound interest and watch your investment grow over time.</p>
+      <main className="max-w-5xl mx-auto px-4 py-12">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Compound Interest Calculator</h1>
+          <p className="text-slate-400 text-lg">See how your money grows over time with compound interest</p>
         </div>
 
-        <AdLeaderboard />
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-8">
-          <div className="lg:col-span-3 space-y-6">
-            <div className="result-card">
-              <h2 className="font-display text-lg font-semibold text-white mb-5">Investment Details</h2>
-              <div className="space-y-5">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Initial Investment</label>
-                    <span className="text-gold-400 font-mono font-bold">{fmt(principal)}</span>
-                  </div>
-                  <input type="range" min="0" max="500000" step="500" value={principal}
-                    onChange={e => setPrincipal(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" value={principal} onChange={e => setPrincipal(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Monthly Contribution</label>
-                    <span className="text-gold-400 font-mono font-bold">{fmt(monthlyContrib)}</span>
-                  </div>
-                  <input type="range" min="0" max="10000" step="50" value={monthlyContrib}
-                    onChange={e => setMonthlyContrib(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" value={monthlyContrib} onChange={e => setMonthlyContrib(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Annual Return Rate</label>
-                    <span className="text-gold-400 font-mono font-bold">{rate}%</span>
-                  </div>
-                  <input type="range" min="1" max="30" step="0.5" value={rate}
-                    onChange={e => setRate(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" step="0.5" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Investment Period</label>
-                    <span className="text-gold-400 font-mono font-bold">{years} years</span>
-                  </div>
-                  <input type="range" min="1" max="50" step="1" value={years}
-                    onChange={e => setYears(+e.target.value)} className="w-full mb-2" />
-                </div>
-
-                <div>
-                  <label className="text-slate-300 text-sm block mb-2">Compounding Frequency</label>
-                  <div className="grid grid-cols-4 gap-2">
-                    {freqOptions.map(f => (
-                      <button key={f.value} onClick={() => setCompFreq(f.value)}
-                        className={`py-2 rounded-lg text-xs font-bold transition-all ${
-                          compFreq === f.value ? 'bg-gold-400 text-navy-950' : 'bg-navy-700 text-slate-300 hover:bg-navy-600'
-                        }`}>{f.label}</button>
-                    ))}
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
+            {[
+              { label: 'Initial Investment ($)', key: 'principal' },
+              { label: 'Annual Interest Rate (%)', key: 'rate' },
+              { label: 'Time Period (years)', key: 'years' },
+              { label: 'Monthly Contribution ($)', key: 'monthly' },
+            ].map(field => (
+              <div key={field.key}>
+                <label className="text-white text-sm font-medium block mb-1">{field.label}</label>
+                <input type="number" value={form[field.key]} onChange={e => update(field.key, parseFloat(e.target.value))}
+                  className="w-full px-4 py-3 rounded-xl text-white outline-none"
+                  style={{background:'#0f172a', border:'1px solid #1e293b'}} />
               </div>
+            ))}
+            <div>
+              <label className="text-white text-sm font-medium block mb-1">Compound Frequency</label>
+              <select value={form.compound} onChange={e => update('compound', parseInt(e.target.value))}
+                className="w-full px-4 py-3 rounded-xl text-white outline-none"
+                style={{background:'#0f172a', border:'1px solid #1e293b'}}>
+                <option value={1}>Annually</option>
+                <option value={4}>Quarterly</option>
+                <option value={12}>Monthly</option>
+                <option value={365}>Daily</option>
+              </select>
             </div>
-
-            <AdInArticle />
+            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate Growth</button>
           </div>
 
-          <div className="lg:col-span-2 space-y-4">
-            <div className="result-card" style={{ borderColor: 'rgba(212,160,23,0.3)', borderWidth: 1 }}>
-              <div className="text-center py-4">
-                <div className="text-slate-400 text-sm mb-1">Future Value</div>
-                <div className="font-mono text-5xl font-bold text-gold-400">{fmt(results.totalValue)}</div>
-                <div className="text-slate-500 text-xs mt-1">after {years} years</div>
+          <div>
+            {!result ? (
+              <div className="result-box text-center py-16">
+                <div className="text-5xl mb-4">📈</div>
+                <p className="text-slate-500">Fill in your details and click Calculate</p>
               </div>
-            </div>
-
-            <div className="result-card">
-              <div className="space-y-3">
-                {[
-                  { label: 'Total Contributed', value: fmt(results.totalContributed), color: 'text-blue-400' },
-                  { label: 'Total Interest Earned', value: fmt(results.totalInterest), color: 'text-emerald-400' },
-                  { label: 'Growth Multiple', value: `${(results.totalValue / Math.max(results.totalContributed, 1)).toFixed(1)}x`, color: 'text-gold-400' },
-                ].map(item => (
-                  <div key={item.label} className="flex justify-between">
-                    <span className="text-slate-400 text-sm">{item.label}</span>
-                    <span className={`font-mono font-bold text-sm ${item.color}`}>{item.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="result-card">
-              <h3 className="text-slate-400 text-xs uppercase tracking-wider mb-3">Interest vs Contributions</h3>
-              <div className="progress-bar mb-2">
-                <div className="progress-fill" style={{ width: `${Math.min(100, (results.totalInterest / results.totalValue * 100)).toFixed(0)}%`, background: 'linear-gradient(90deg, #10b981, #34d399)' }} />
-              </div>
-              <div className="flex justify-between text-xs text-slate-500">
-                <span>Contributed {(results.totalContributed / results.totalValue * 100).toFixed(0)}%</span>
-                <span>Interest {(results.totalInterest / results.totalValue * 100).toFixed(0)}%</span>
-              </div>
-            </div>
-
-            <AdRectangle />
-          </div>
-        </div>
-
-        {/* Year by Year Table */}
-        <div className="mt-10">
-          <div className="result-card overflow-x-auto">
-            <h3 className="font-display text-lg font-semibold text-white mb-4">Year-by-Year Growth</h3>
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-navy-700">
-                  {['Year', 'Total Contributed', 'Interest Earned', 'Balance'].map(h => (
-                    <th key={h} className="text-left text-slate-400 text-xs uppercase tracking-wide pb-3 pr-6">{h}</th>
+            ) : (
+              <div className="space-y-4">
+                <div className="result-box text-center">
+                  <p className="text-slate-400 text-sm mb-2">Final Amount</p>
+                  <div className="text-5xl font-bold mb-2" style={{color:'#f0c842'}}>{fmt(result.amount)}</div>
+                  <p className="text-slate-500 text-sm">after {form.years} years</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: 'Total Invested', value: fmt(result.totalContributions) },
+                    { label: 'Interest Earned', value: fmt(result.totalInterest) },
+                  ].map((s, i) => (
+                    <div key={i} className="stat-card">
+                      <div className="text-xl font-bold text-white">{s.value}</div>
+                      <div className="text-slate-500 text-xs mt-1">{s.label}</div>
+                    </div>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
-                {results.yearData.filter((_, i) => i % (years > 20 ? 5 : 1) === 4 || i === 0 || i === results.yearData.length - 1).map(row => (
-                  <tr key={row.year} className="border-b border-navy-800/50 hover:bg-navy-800/30">
-                    <td className="py-2.5 pr-6 font-mono text-slate-300">{row.year}</td>
-                    <td className="py-2.5 pr-6 font-mono text-blue-400">{fmt(row.contributed)}</td>
-                    <td className="py-2.5 pr-6 font-mono text-emerald-400">{fmt(row.interest)}</td>
-                    <td className="py-2.5 font-mono text-gold-400 font-bold">{fmt(row.balance)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
-        <section className="mt-16 max-w-3xl">
-          <h2 className="font-display text-2xl font-bold text-white mb-4 gold-accent">The Power of Compound Interest</h2>
-          <div className="text-slate-400 space-y-4 text-sm leading-relaxed">
-            <p>Albert Einstein reportedly called compound interest "the eighth wonder of the world." When your returns earn their own returns, growth accelerates dramatically over time — especially in the final years.</p>
-            <p>Starting early is the most powerful factor. Investing $500/month from age 25 vs 35 at 8% return results in nearly double the retirement balance at 65 — just 10 extra years of compounding makes an enormous difference.</p>
+        <div className="space-y-6 mt-12">
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">What is Compound Interest?</h2>
+            <p className="text-slate-400 text-sm leading-relaxed">Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest which is calculated only on the principal, compound interest grows exponentially over time. This is why Albert Einstein reportedly called compound interest the eighth wonder of the world. The longer your money compounds, the more dramatic the growth becomes.</p>
           </div>
-        </section>
-
-        <AdLeaderboard />
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">The Power of Starting Early</h2>
+            <p className="text-slate-400 text-sm leading-relaxed">Time is the most important factor in compound interest. Investing $10,000 at 7% annual return for 30 years grows to over $76,000. The same investment for 40 years grows to over $150,000. Starting just 10 years earlier nearly doubles your final amount. This is why financial advisors always recommend starting to invest as early as possible, even with small amounts.</p>
+          </div>
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-4 text-sm">
+              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                <h3 className="text-white font-semibold mb-2">How often should interest compound?</h3>
+                <p className="text-slate-400">The more frequently interest compounds, the more you earn. Daily compounding earns slightly more than monthly, which earns more than annual. Most savings accounts and investments compound monthly or daily.</p>
+              </div>
+              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                <h3 className="text-white font-semibold mb-2">What is a realistic interest rate to use?</h3>
+                <p className="text-slate-400">The US stock market has historically returned an average of 7-10% per year. High yield savings accounts currently offer 4-5%. For conservative estimates use 5-6%, for stock market investments use 7-8%.</p>
+              </div>
+              <div className="pb-4">
+                <h3 className="text-white font-semibold mb-2">Is this calculator free?</h3>
+                <p className="text-slate-400">Yes, completely free with no sign up required.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>
