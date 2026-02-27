@@ -2,6 +2,15 @@
 import { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import FaqSchema from '../../components/FaqSchema'
+
+const faqs = [
+  { q: 'How much should I save each month?', a: 'Financial experts recommend saving at least 20% of your income. The 50/30/20 rule suggests 50% for needs, 30% for wants and 20% for savings and debt repayment.' },
+  { q: 'What interest rate should I use?', a: 'Use the actual interest rate from your savings account. High yield savings accounts currently offer around 4-5% APY. Traditional savings accounts offer much lower rates around 0.01-0.5%.' },
+  { q: 'What is a high yield savings account?', a: 'A high yield savings account is a savings account that offers a much higher interest rate than a traditional bank savings account. They are typically offered by online banks and currently offer 4-5% APY compared to 0.01% at traditional banks.' },
+  { q: 'How can I reach my savings goal faster?', a: 'Increase your monthly contributions even by small amounts, use a high yield savings account for better interest rates, automate your savings on payday, reduce unnecessary expenses, and consider adding windfalls like tax refunds or bonuses directly to savings.' },
+  { q: 'Is this savings calculator free?', a: 'Yes, completely free with no sign up required.' },
+]
 
 export default function SavingsCalculator() {
   const [form, setForm] = useState({ goal: 50000, initial: 1000, monthly: 500, rate: 4.5 })
@@ -14,7 +23,6 @@ export default function SavingsCalculator() {
     const target = form.goal
     const p = form.initial
     const m = form.monthly
-
     let balance = p
     let months = 0
     let totalContributions = p
@@ -33,6 +41,7 @@ export default function SavingsCalculator() {
 
   return (
     <>
+      <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
@@ -97,28 +106,14 @@ export default function SavingsCalculator() {
             <p className="text-slate-400 text-sm leading-relaxed">Our free savings calculator helps you figure out how long it will take to reach any financial goal. Whether you are saving for a house down payment, emergency fund, vacation, car or retirement, this tool shows you exactly how many months you need based on your starting balance, monthly contributions and interest rate.</p>
           </div>
           <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Tips to Reach Your Savings Goal Faster</h2>
-            <div className="text-slate-400 text-sm leading-relaxed space-y-2">
-              <p><strong className="text-white">Increase monthly contributions.</strong> Even small increases make a big difference. Adding an extra $100 per month can shave months or years off your timeline.</p>
-              <p><strong className="text-white">Use a high yield savings account.</strong> Online banks often offer 4-5% interest compared to 0.01% at traditional banks. This can significantly accelerate your progress.</p>
-              <p><strong className="text-white">Automate your savings.</strong> Set up automatic transfers on payday so you save before you spend.</p>
-            </div>
-          </div>
-          <div className="result-box">
             <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4 text-sm">
-              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                <h3 className="text-white font-semibold mb-2">How much should I save each month?</h3>
-                <p className="text-slate-400">Financial experts recommend saving at least 20% of your income. The 50/30/20 rule suggests 50% for needs, 30% for wants and 20% for savings and debt repayment.</p>
-              </div>
-              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                <h3 className="text-white font-semibold mb-2">What interest rate should I use?</h3>
-                <p className="text-slate-400">Use the actual interest rate from your savings account. High yield savings accounts currently offer around 4-5% APY. Traditional savings accounts offer much lower rates around 0.01-0.5%.</p>
-              </div>
-              <div className="pb-4">
-                <h3 className="text-white font-semibold mb-2">Is this savings calculator free?</h3>
-                <p className="text-slate-400">Yes, completely free with no sign up required.</p>
-              </div>
+              {faqs.map((faq, i) => (
+                <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-slate-400">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
