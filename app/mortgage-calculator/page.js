@@ -2,6 +2,15 @@
 import { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import FaqSchema from '../../components/FaqSchema'
+
+const faqs = [
+  { q: 'What is a good down payment?', a: 'A down payment of 20% is ideal as it eliminates private mortgage insurance (PMI). However many loans allow down payments as low as 3-5%. A larger down payment means a lower monthly payment and less interest paid overall.' },
+  { q: 'Should I choose a 15 or 30 year mortgage?', a: 'A 15-year mortgage has higher monthly payments but you pay far less interest overall and build equity faster. A 30-year mortgage has lower monthly payments but costs much more in total interest. Choose based on what monthly payment you can comfortably afford.' },
+  { q: 'Does this include taxes and insurance?', a: 'No, this calculator shows principal and interest only. Your actual monthly payment will also include property taxes, homeowners insurance and possibly PMI. Add 15-20% to the calculated payment to estimate your total monthly housing cost.' },
+  { q: 'What is PMI?', a: 'PMI stands for Private Mortgage Insurance. It is required when your down payment is less than 20% of the home price. PMI typically costs 0.5-1% of the loan amount per year and is added to your monthly payment.' },
+  { q: 'Is this mortgage calculator free?', a: 'Yes, completely free with no sign up required.' },
+]
 
 export default function MortgageCalculator() {
   const [form, setForm] = useState({ homePrice: 300000, downPayment: 60000, interestRate: 6.5, loanTerm: 30 })
@@ -23,6 +32,7 @@ export default function MortgageCalculator() {
 
   return (
     <>
+      <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
@@ -33,10 +43,10 @@ export default function MortgageCalculator() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
             {[
-              { label: 'Home Price', key: 'homePrice', prefix: '$' },
-              { label: 'Down Payment', key: 'downPayment', prefix: '$' },
-              { label: 'Interest Rate (%)', key: 'interestRate', prefix: '%' },
-              { label: 'Loan Term (years)', key: 'loanTerm', prefix: 'yr' },
+              { label: 'Home Price', key: 'homePrice' },
+              { label: 'Down Payment', key: 'downPayment' },
+              { label: 'Interest Rate (%)', key: 'interestRate' },
+              { label: 'Loan Term (years)', key: 'loanTerm' },
             ].map(field => (
               <div key={field.key}>
                 <label className="text-white text-sm font-medium block mb-1">{field.label}</label>
@@ -85,28 +95,14 @@ export default function MortgageCalculator() {
             <p className="text-slate-400 text-sm leading-relaxed">Our free mortgage calculator helps you estimate your monthly mortgage payment based on the home price, down payment, interest rate and loan term. Understanding your monthly payment is the first step in planning your home purchase. Use this calculator to compare different scenarios and find a payment that fits your budget.</p>
           </div>
           <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">How is a Mortgage Payment Calculated?</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Your monthly mortgage payment is calculated using the loan amount (home price minus down payment), the annual interest rate divided into monthly rate, and the total number of payments. A 30-year mortgage has 360 payments while a 15-year mortgage has 180 payments. A higher down payment means a lower loan amount and lower monthly payment. A lower interest rate also significantly reduces your monthly payment and total interest paid over the life of the loan.</p>
-          </div>
-          <div className="result-box">
             <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4 text-sm">
-              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                <h3 className="text-white font-semibold mb-2">What is a good down payment?</h3>
-                <p className="text-slate-400">A down payment of 20% is ideal as it eliminates private mortgage insurance (PMI). However many loans allow down payments as low as 3-5%. A larger down payment means a lower monthly payment and less interest paid overall.</p>
-              </div>
-              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                <h3 className="text-white font-semibold mb-2">Should I choose a 15 or 30 year mortgage?</h3>
-                <p className="text-slate-400">A 15-year mortgage has higher monthly payments but you pay far less interest overall and build equity faster. A 30-year mortgage has lower monthly payments but costs much more in total interest. Choose based on what monthly payment you can comfortably afford.</p>
-              </div>
-              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                <h3 className="text-white font-semibold mb-2">Does this include taxes and insurance?</h3>
-                <p className="text-slate-400">No, this calculator shows principal and interest only. Your actual monthly payment will also include property taxes, homeowners insurance and possibly PMI. Add 15-20% to the calculated payment to estimate your total monthly housing cost.</p>
-              </div>
-              <div className="pb-4">
-                <h3 className="text-white font-semibold mb-2">Is this mortgage calculator free?</h3>
-                <p className="text-slate-400">Yes, completely free with no sign up required.</p>
-              </div>
+              {faqs.map((faq, i) => (
+                <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-slate-400">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
