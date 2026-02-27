@@ -1,5 +1,3 @@
-// redeploy trigger 123
-
 export default function sitemap() {
   const baseUrl = 'https://www.freefincalc.net'
   const pages = [
@@ -10,8 +8,10 @@ export default function sitemap() {
     '/savings-calculator',
     '/retirement-calculator',
     '/tax-calculator',
+    '/about',
+    '/contact',
+    '/privacy-policy',
   ]
-
   return pages.map(page => ({
     url: `${baseUrl}${page}`,
     lastModified: new Date(),
