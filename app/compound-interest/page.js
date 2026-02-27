@@ -2,6 +2,15 @@
 import { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import FaqSchema from '../../components/FaqSchema'
+
+const faqs = [
+  { q: 'What is compound interest?', a: 'Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest which is calculated only on the principal, compound interest grows exponentially over time.' },
+  { q: 'How often should interest compound?', a: 'The more frequently interest compounds, the more you earn. Daily compounding earns slightly more than monthly, which earns more than annual. Most savings accounts and investments compound monthly or daily.' },
+  { q: 'What is a realistic interest rate to use?', a: 'The US stock market has historically returned an average of 7-10% per year. High yield savings accounts currently offer 4-5%. For conservative estimates use 5-6%, for stock market investments use 7-8%.' },
+  { q: 'How does compound interest differ from simple interest?', a: 'Simple interest is calculated only on the principal amount. Compound interest is calculated on the principal plus all previously earned interest. Over long periods compound interest grows dramatically faster than simple interest.' },
+  { q: 'Is this compound interest calculator free?', a: 'Yes, completely free with no sign up required.' },
+]
 
 export default function CompoundInterest() {
   const [form, setForm] = useState({ principal: 10000, rate: 7, years: 10, compound: 12, monthly: 0 })
@@ -15,11 +24,8 @@ export default function CompoundInterest() {
     const t = form.years
     const p = form.principal
     const m = form.monthly
-
     let amount = p * Math.pow(1 + r / n, n * t)
-    if (m > 0) {
-      amount += m * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
-    }
+    if (m > 0) amount += m * ((Math.pow(1 + r / n, n * t) - 1) / (r / n))
     const totalContributions = p + (m * 12 * t)
     const totalInterest = amount - totalContributions
     setResult({ amount: amount.toFixed(2), totalContributions: totalContributions.toFixed(2), totalInterest: totalInterest.toFixed(2) })
@@ -29,6 +35,7 @@ export default function CompoundInterest() {
 
   return (
     <>
+      <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
@@ -97,27 +104,17 @@ export default function CompoundInterest() {
         <div className="space-y-6 mt-12">
           <div className="result-box">
             <h2 className="text-xl font-bold text-white mb-4">What is Compound Interest?</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest which is calculated only on the principal, compound interest grows exponentially over time. This is why Albert Einstein reportedly called compound interest the eighth wonder of the world. The longer your money compounds, the more dramatic the growth becomes.</p>
-          </div>
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">The Power of Starting Early</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Time is the most important factor in compound interest. Investing $10,000 at 7% annual return for 30 years grows to over $76,000. The same investment for 40 years grows to over $150,000. Starting just 10 years earlier nearly doubles your final amount. This is why financial advisors always recommend starting to invest as early as possible, even with small amounts.</p>
+            <p className="text-slate-400 text-sm leading-relaxed">Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. This is why Albert Einstein reportedly called compound interest the eighth wonder of the world. The longer your money compounds, the more dramatic the growth becomes.</p>
           </div>
           <div className="result-box">
             <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4 text-sm">
-              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                <h3 className="text-white font-semibold mb-2">How often should interest compound?</h3>
-                <p className="text-slate-400">The more frequently interest compounds, the more you earn. Daily compounding earns slightly more than monthly, which earns more than annual. Most savings accounts and investments compound monthly or daily.</p>
-              </div>
-              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                <h3 className="text-white font-semibold mb-2">What is a realistic interest rate to use?</h3>
-                <p className="text-slate-400">The US stock market has historically returned an average of 7-10% per year. High yield savings accounts currently offer 4-5%. For conservative estimates use 5-6%, for stock market investments use 7-8%.</p>
-              </div>
-              <div className="pb-4">
-                <h3 className="text-white font-semibold mb-2">Is this calculator free?</h3>
-                <p className="text-slate-400">Yes, completely free with no sign up required.</p>
-              </div>
+              {faqs.map((faq, i) => (
+                <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
+                  <p className="text-slate-400">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
