@@ -1,168 +1,109 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import { AdLeaderboard, AdRectangle, AdInArticle } from '../../components/AdUnit'
-
-const LOAN_TYPES = ['Personal Loan', 'Auto Loan', 'Student Loan', 'Business Loan']
 
 export default function LoanCalculator() {
-  const [loanAmount, setLoanAmount] = useState(25000)
-  const [interestRate, setInterestRate] = useState(8.5)
-  const [loanTerm, setLoanTerm] = useState(5)
-  const [loanType, setLoanType] = useState('Personal Loan')
+  const [form, setForm] = useState({ loanAmount: 10000, interestRate: 8.5, loanTerm: 3 })
+  const [result, setResult] = useState(null)
 
-  const results = useMemo(() => {
-    const monthlyRate = interestRate / 100 / 12
-    const numPayments = loanTerm * 12
-    if (monthlyRate === 0) {
-      return { monthlyPayment: loanAmount / numPayments, totalPayment: loanAmount, totalInterest: 0 }
-    }
-    const monthlyPayment = loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) /
-      (Math.pow(1 + monthlyRate, numPayments) - 1)
-    const totalPayment = monthlyPayment * numPayments
-    const totalInterest = totalPayment - loanAmount
+  const update = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
-    // Monthly breakdown for first 12 months
-    const schedule = []
-    let balance = loanAmount
-    for (let m = 1; m <= Math.min(numPayments, 24); m++) {
-      const interestPmt = balance * monthlyRate
-      const principalPmt = monthlyPayment - interestPmt
-      balance -= principalPmt
-      schedule.push({ month: m, interest: interestPmt, principal: principalPmt, balance: Math.max(0, balance) })
-    }
+  const calculate = () => {
+    const monthlyRate = form.interestRate / 100 / 12
+    const numPayments = form.loanTerm * 12
+    const payment = form.loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1)
+    const totalPayment = payment * numPayments
+    const totalInterest = totalPayment - form.loanAmount
+    setResult({ monthly: payment.toFixed(2), totalPayment: totalPayment.toFixed(2), totalInterest: totalInterest.toFixed(2) })
+  }
 
-    return { monthlyPayment, totalPayment, totalInterest, schedule }
-  }, [loanAmount, interestRate, loanTerm])
-
-  const fmt = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(n)
-  const fmtDec = (n) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }).format(n)
+  const fmt = (n) => Number(n).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
   return (
     <>
       <Header />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="mb-8">
-          <div className="flex items-center gap-2 text-slate-500 text-sm mb-3">
-            <a href="/" className="hover:text-gold-400">Home</a><span>/</span>
-            <span className="text-slate-300">Loan Calculator</span>
-          </div>
-          <h1 className="font-display text-4xl font-bold text-white mb-2 gold-accent">Loan Calculator</h1>
-          <p className="text-slate-400 max-w-2xl">Calculate monthly payments and total cost for any type of loan.</p>
+      <main className="max-w-5xl mx-auto px-4 py-12">
+        <div className="text-center mb-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Loan Calculator</h1>
+          <p className="text-slate-400 text-lg">Calculate your monthly loan payment and total interest</p>
         </div>
 
-        <AdLeaderboard />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
+            {[
+              { label: 'Loan Amount', key: 'loanAmount' },
+              { label: 'Annual Interest Rate (%)', key: 'interestRate' },
+              { label: 'Loan Term (years)', key: 'loanTerm' },
+            ].map(field => (
+              <div key={field.key}>
+                <label className="text-white text-sm font-medium block mb-1">{field.label}</label>
+                <input type="number" value={form[field.key]} onChange={e => update(field.key, parseFloat(e.target.value))}
+                  className="w-full px-4 py-3 rounded-xl text-white outline-none"
+                  style={{background:'#0f172a', border:'1px solid #1e293b'}} />
+              </div>
+            ))}
+            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate Payment</button>
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mt-8">
-          {/* Inputs */}
-          <div className="lg:col-span-3 space-y-6">
-            <div className="result-card">
-              <h2 className="font-display text-lg font-semibold text-white mb-5">Loan Details</h2>
-
-              {/* Loan type */}
-              <div className="mb-5">
-                <label className="text-slate-300 text-sm block mb-2">Loan Type</label>
-                <div className="grid grid-cols-2 gap-2">
-                  {LOAN_TYPES.map(t => (
-                    <button key={t} onClick={() => setLoanType(t)}
-                      className={`py-2 px-3 rounded-lg text-sm transition-all ${
-                        loanType === t ? 'bg-gold-400 text-navy-950 font-bold' : 'bg-navy-700 text-slate-300 hover:bg-navy-600'
-                      }`}>{t}</button>
+          <div>
+            {!result ? (
+              <div className="result-box text-center py-16">
+                <div className="text-5xl mb-4">💰</div>
+                <p className="text-slate-500">Fill in your details and click Calculate</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <div className="result-box text-center">
+                  <p className="text-slate-400 text-sm mb-2">Monthly Payment</p>
+                  <div className="text-5xl font-bold mb-2" style={{color:'#f0c842'}}>{fmt(result.monthly)}</div>
+                  <p className="text-slate-500 text-sm">per month for {form.loanTerm} years</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: 'Loan Amount', value: fmt(form.loanAmount) },
+                    { label: 'Total Payment', value: fmt(result.totalPayment) },
+                    { label: 'Total Interest', value: fmt(result.totalInterest) },
+                    { label: 'Total Payments', value: form.loanTerm * 12 },
+                  ].map((s, i) => (
+                    <div key={i} className="stat-card">
+                      <div className="text-xl font-bold text-white">{s.value}</div>
+                      <div className="text-slate-500 text-xs mt-1">{s.label}</div>
+                    </div>
                   ))}
                 </div>
               </div>
-
-              <div className="space-y-5">
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Loan Amount</label>
-                    <span className="text-gold-400 font-mono font-bold">{fmt(loanAmount)}</span>
-                  </div>
-                  <input type="range" min="1000" max="500000" step="500" value={loanAmount}
-                    onChange={e => setLoanAmount(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" value={loanAmount} onChange={e => setLoanAmount(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <label className="text-slate-300 text-sm">Annual Interest Rate (APR)</label>
-                    <span className="text-gold-400 font-mono font-bold">{interestRate}%</span>
-                  </div>
-                  <input type="range" min="1" max="36" step="0.1" value={interestRate}
-                    onChange={e => setInterestRate(+e.target.value)} className="w-full mb-2" />
-                  <input type="number" step="0.1" value={interestRate} onChange={e => setInterestRate(+e.target.value)} className="calc-input" />
-                </div>
-
-                <div>
-                  <label className="text-slate-300 text-sm block mb-2">Loan Term</label>
-                  <div className="grid grid-cols-4 gap-2">
-                    {[1, 2, 3, 5, 7, 10, 15, 20].map(t => (
-                      <button key={t} onClick={() => setLoanTerm(t)}
-                        className={`py-2.5 rounded-lg text-sm font-mono font-bold transition-all ${
-                          loanTerm === t ? 'bg-gold-400 text-navy-950' : 'bg-navy-700 text-slate-300 hover:bg-navy-600'
-                        }`}>{t}yr</button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <AdInArticle />
-          </div>
-
-          {/* Results */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="result-card" style={{ borderColor: 'rgba(212,160,23,0.3)', borderWidth: 1 }}>
-              <div className="text-center py-4">
-                <div className="text-slate-400 text-sm mb-1">Monthly Payment</div>
-                <div className="font-mono text-5xl font-bold text-gold-400">{fmtDec(results.monthlyPayment)}</div>
-                <div className="text-slate-500 text-xs mt-1">for {loanTerm * 12} months</div>
-              </div>
-            </div>
-
-            <div className="result-card">
-              <h3 className="text-slate-400 text-xs uppercase tracking-wider mb-4">Loan Summary</h3>
-              <div className="space-y-3">
-                {[
-                  { label: 'Principal Amount', value: fmt(loanAmount) },
-                  { label: 'Total Interest', value: fmt(results.totalInterest), red: true },
-                  { label: 'Total Repayment', value: fmt(results.totalPayment) },
-                  { label: 'Interest Rate', value: `${interestRate}% APR` },
-                ].map(item => (
-                  <div key={item.label} className="flex justify-between">
-                    <span className="text-slate-400 text-sm">{item.label}</span>
-                    <span className={`font-mono font-bold text-sm ${item.red ? 'text-red-400' : 'text-white'}`}>{item.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="result-card">
-              <h3 className="text-slate-400 text-xs uppercase tracking-wider mb-3">Cost Breakdown</h3>
-              <div className="progress-bar mb-2">
-                <div className="progress-fill" style={{ width: `${(loanAmount / results.totalPayment * 100).toFixed(0)}%` }} />
-              </div>
-              <div className="flex justify-between text-xs text-slate-500">
-                <span>Principal {(loanAmount / results.totalPayment * 100).toFixed(0)}%</span>
-                <span>Interest {(results.totalInterest / results.totalPayment * 100).toFixed(0)}%</span>
-              </div>
-            </div>
-
-            <AdRectangle />
+            )}
           </div>
         </div>
 
-        {/* SEO Content */}
-        <section className="mt-16 max-w-3xl">
-          <h2 className="font-display text-2xl font-bold text-white mb-4 gold-accent">Understanding Your Loan</h2>
-          <div className="text-slate-400 space-y-4 text-sm leading-relaxed">
-            <p>A lower interest rate dramatically reduces total cost over the life of a loan. Even 1% can save thousands of dollars. Always compare APR (Annual Percentage Rate) rather than monthly rate when comparing loan offers.</p>
-            <p>Shorter loan terms mean higher monthly payments but significantly less total interest paid. A 3-year loan will cost considerably less than a 5-year loan for the same amount.</p>
+        <div className="space-y-6 mt-12">
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">Free Personal Loan Calculator</h2>
+            <p className="text-slate-400 text-sm leading-relaxed">Our free loan calculator helps you estimate your monthly payment for any type of personal loan, car loan, student loan or business loan. Simply enter the loan amount, interest rate and loan term to instantly see your monthly payment and total interest costs. Use this tool to compare different loan offers and find the most affordable option.</p>
           </div>
-        </section>
-
-        <AdLeaderboard />
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">How to Get the Best Loan Rate</h2>
+            <p className="text-slate-400 text-sm leading-relaxed">Your interest rate depends on your credit score, income, debt-to-income ratio and the lender you choose. A higher credit score typically means a lower interest rate. Shopping around and comparing offers from multiple lenders can save you thousands of dollars in interest over the life of your loan. Even a 1% difference in interest rate can significantly affect your total repayment amount.</p>
+          </div>
+          <div className="result-box">
+            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
+            <div className="space-y-4 text-sm">
+              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                <h3 className="text-white font-semibold mb-2">What is APR vs interest rate?</h3>
+                <p className="text-slate-400">The interest rate is the cost of borrowing the principal. APR (Annual Percentage Rate) includes the interest rate plus any fees charged by the lender. Always compare APR when shopping for loans as it gives you the true cost of borrowing.</p>
+              </div>
+              <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
+                <h3 className="text-white font-semibold mb-2">Should I choose a shorter or longer loan term?</h3>
+                <p className="text-slate-400">A shorter loan term means higher monthly payments but less total interest paid. A longer term means lower monthly payments but more total interest. Choose the shortest term you can comfortably afford to minimize total interest costs.</p>
+              </div>
+              <div className="pb-4">
+                <h3 className="text-white font-semibold mb-2">Is this loan calculator free?</h3>
+                <p className="text-slate-400">Yes, completely free with no sign up required.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>
