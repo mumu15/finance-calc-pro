@@ -1,128 +1,177 @@
 'use client'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
-  { q: 'What is inflation?', a: 'Inflation is the rate at which the general level of prices for goods and services rises over time, reducing the purchasing power of money. When inflation is 3%, something that cost $100 last year costs $103 this year.' },
-  { q: 'What is the average inflation rate?', a: 'The US Federal Reserve targets an average inflation rate of 2% per year. Historical average US inflation has been around 3% per year. In 2022 inflation peaked at over 9% before declining.' },
-  { q: 'How does inflation affect savings?', a: 'Inflation erodes the purchasing power of savings. If your savings account earns 1% interest but inflation is 3%, you are effectively losing 2% of purchasing power per year. This is why investing is important for long term wealth.' },
-  { q: 'What causes inflation?', a: 'Inflation is caused by increased demand for goods and services, rising production costs, expansion of the money supply, and supply chain disruptions. Central banks use interest rates to control inflation.' },
-  { q: 'Is this inflation calculator free?', a: 'Yes, completely free with no sign up required.' },
+  { q: 'What is inflation?', a: 'Inflation is the rate at which the general level of prices rises over time, reducing purchasing power. When inflation is 3% annually, $100 today will only buy what $97 worth of goods buys next year.' },
+  { q: 'What is the average inflation rate?', a: 'The US Federal Reserve targets 2% annual inflation. The historical average US inflation rate is about 3.1% per year. Periods of high inflation like 2021-2023 saw rates of 7-9%.' },
+  { q: 'How does inflation affect savings?', a: 'If your savings earn less interest than the inflation rate your money is losing purchasing power. At 3% inflation $100,000 today will only be worth about $74,000 in purchasing power after 10 years.' },
+  { q: 'What is the best protection against inflation?', a: 'Investing in assets that historically outpace inflation such as stocks, real estate, TIPS (Treasury Inflation-Protected Securities) and I-bonds. Keeping cash in a high yield savings account helps too.' },
+  { q: 'How do I calculate inflation?', a: 'Future value = Present value × (1 + inflation rate)^years. For example $100,000 at 3% inflation over 10 years = $100,000 × (1.03)^10 = $134,392 needed to maintain the same purchasing power.' },
 ]
 
-
-function BreadcrumbSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Inflation Calculator","item":"https://www.freefincalc.net/inflation-calculator"}]
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
-function WebAppSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Inflation Calculator",
-    "description": "Calculate how inflation affects your money over time. Free inflation calculator.",
-    "url": "https://www.freefincalc.net/inflation-calculator",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
 export default function InflationCalculator() {
-  const [form, setForm] = useState({ amount: 1000, startYear: 2010, endYear: 2024, rate: 3 })
-  const [result, setResult] = useState(null)
+  const [amount, setAmount] = useState(100000)
+  const [inflationRate, setInflationRate] = useState(3)
+  const [years, setYears] = useState(20)
 
-  const update = (k,v) => setForm(f=>({...f,[k]:parseFloat(v)||0}))
+  const calc = useMemo(() => {
+    const futureNeeded = amount * Math.pow(1 + inflationRate / 100, years)
+    const purchasingPower = amount / Math.pow(1 + inflationRate / 100, years)
+    const lostValue = amount - purchasingPower
+    const lostPct = Math.round((lostValue / amount) * 100)
 
-  const calculate = () => {
-    const years = form.endYear - form.startYear
-    if (years <= 0) return
-    const futureValue = form.amount * Math.pow(1 + form.rate/100, years)
-    const purchasingPowerLoss = futureValue - form.amount
-    const purchasingPowerPct = ((purchasingPowerLoss/futureValue)*100).toFixed(1)
-    setResult({ futureValue: futureValue.toFixed(2), purchasingPowerLoss: purchasingPowerLoss.toFixed(2), purchasingPowerPct, years })
-  }
+    const yearlyData = []
+    for (let y = 1; y <= years; y++) {
+      yearlyData.push({
+        year: y,
+        purchasingPower: amount / Math.pow(1 + inflationRate / 100, y),
+        neededToMatch: amount * Math.pow(1 + inflationRate / 100, y),
+      })
+    }
 
-  const fmt = (n) => Number(n).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0})
+    return { futureNeeded, purchasingPower, lostValue, lostPct, yearlyData }
+  }, [amount, inflationRate, years])
+
+  const fmt = (n) => '$' + Math.round(n).toLocaleString()
 
   return (
     <>
       <FaqSchema faqs={faqs} />
-      
-      
-      
-      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Inflation Calculator — Purchasing Power Over Time</h1>
-          <p className="text-slate-400 text-lg">Calculate how inflation affects your money over time — free inflation and purchasing power calculator</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Inflation Calculator</h1>
+          <p className="text-slate-400 text-lg">See how inflation erodes your purchasing power — and how much you need to keep up</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)',border:'1px solid rgba(240,200,66,0.1)',borderRadius:'16px',padding:'24px'}}>
-            {[
-              {label:'Amount ($)',key:'amount'},
-              {label:'Start Year',key:'startYear'},
-              {label:'End Year',key:'endYear'},
-              {label:'Annual Inflation Rate (%)',key:'rate'},
-            ].map(f => (
-              <div key={f.key}>
-                <label className="text-white text-sm font-medium block mb-1">{f.label}</label>
-                <input type="number" value={form[f.key]} onChange={e=>update(f.key,e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
-              </div>
-            ))}
-            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate Inflation</button>
-          </div>
-          <div>
-            {!result ? (
-              <div className="result-box text-center py-16"><div className="text-5xl mb-4">📉</div><p className="text-slate-500">Fill in your details and click Calculate</p></div>
-            ) : (
-              <div className="space-y-4">
-                <div className="result-box text-center">
-                  <p className="text-slate-400 text-sm mb-2">Value Needed in {form.endYear}</p>
-                  <div className="text-5xl font-bold mb-2" style={{color:'#f0c842'}}>{fmt(result.futureValue)}</div>
-                  <p className="text-slate-500 text-sm">to match {fmt(form.amount)} from {form.startYear}</p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="result-box">
+            <h2 className="text-white font-bold text-lg mb-5">Inflation Details</h2>
+            <div className="space-y-4">
+              {[
+                { label: 'Amount Today', value: amount, set: setAmount, min: 1000, max: 1000000, step: 1000, prefix: '$' },
+                { label: 'Annual Inflation Rate', value: inflationRate, set: setInflationRate, min: 0.5, max: 15, step: 0.5, suffix: '%' },
+                { label: 'Time Period', value: years, set: setYears, min: 1, max: 50, step: 1, suffix: ' years' },
+              ].map((field, i) => (
+                <div key={i}>
+                  <div className="flex justify-between mb-1.5">
+                    <label className="text-slate-400 text-sm">{field.label}</label>
+                    <span className="text-white font-bold text-sm">{field.prefix || ''}{field.value.toLocaleString()}{field.suffix || ''}</span>
+                  </div>
+                  <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
+                    onChange={e => field.set(Number(e.target.value))}
+                    className="w-full accent-yellow-400" />
                 </div>
-                <div className="grid grid-cols-2 gap-3">
+              ))}
+
+              {/* Rate Presets */}
+              <div>
+                <label className="text-slate-400 text-sm block mb-2">Historical Presets</label>
+                <div className="flex flex-wrap gap-2">
                   {[
-                    {label:'Original Amount',value:fmt(form.amount)},
-                    {label:'Adjusted Amount',value:fmt(result.futureValue)},
-                    {label:'Purchasing Power Loss',value:fmt(result.purchasingPowerLoss)},
-                    {label:'Years',value:result.years},
-                  ].map((s,i) => (
-                    <div key={i} className="stat-card">
-                      <div className="text-xl font-bold text-white">{s.value}</div>
-                      <div className="text-slate-500 text-xs mt-1">{s.label}</div>
-                    </div>
+                    { label: 'Fed Target', rate: 2 },
+                    { label: 'Historical Avg', rate: 3.1 },
+                    { label: '2022 Peak', rate: 8 },
+                  ].map((p, i) => (
+                    <button key={i} onClick={() => setInflationRate(p.rate)}
+                      className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
+                      style={{background: inflationRate === p.rate ? 'rgba(240,200,66,0.2)' : 'rgba(255,255,255,0.05)', border: inflationRate === p.rate ? '1px solid rgba(240,200,66,0.4)' : '1px solid rgba(255,255,255,0.08)', color: inflationRate === p.rate ? '#f0c842' : '#64748b'}}>
+                      {p.label} ({p.rate}%)
+                    </button>
                   ))}
                 </div>
-                <div className="result-box">
-                  <p className="text-slate-400 text-sm">Money loses <span className="text-red-400 font-bold">{result.purchasingPowerPct}%</span> of its purchasing power over {result.years} years at {form.rate}% inflation.</p>
-                </div>
               </div>
-            )}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 gap-4">
+              <div className="result-box text-center py-5">
+                <div className="text-slate-400 text-sm mb-1">Purchasing Power of {fmt(amount)} in {years} Years</div>
+                <div className="text-4xl font-bold mb-1" style={{color:'#ef4444'}}>{fmt(calc.purchasingPower)}</div>
+                <div className="text-slate-500 text-sm">Lost {fmt(calc.lostValue)} in purchasing power ({calc.lostPct}%)</div>
+              </div>
+
+              <div className="result-box text-center py-5">
+                <div className="text-slate-400 text-sm mb-1">Amount Needed in {years} Years to Match Today</div>
+                <div className="text-4xl font-bold mb-1" style={{color:'#f0c842'}}>{fmt(calc.futureNeeded)}</div>
+                <div className="text-slate-500 text-sm">To maintain the same purchasing power as {fmt(amount)} today</div>
+              </div>
+            </div>
+
+            {/* Purchasing Power Bar */}
+            <div className="result-box">
+              <h3 className="text-white font-bold mb-3">Purchasing Power Lost</h3>
+              <div className="w-full h-4 rounded-full overflow-hidden flex">
+                <div className="h-full bg-emerald-400 transition-all duration-500" style={{width:`${100 - calc.lostPct}%`}}/>
+                <div className="h-full bg-red-400 transition-all duration-500" style={{width:`${calc.lostPct}%`}}/>
+              </div>
+              <div className="flex justify-between text-xs text-slate-500 mt-1">
+                <span>Remaining {100 - calc.lostPct}%</span>
+                <span>Lost to inflation {calc.lostPct}%</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="space-y-6 mt-12">
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Free Inflation Calculator</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Our free inflation calculator shows you how inflation affects the value of money over time. Enter an amount, a start year, an end year and an inflation rate to see how much that amount would be worth in today's dollars. Understanding inflation is essential for financial planning, salary negotiations and investment decisions.</p>
+
+        {/* Year by Year */}
+        <div className="mt-6 result-box">
+          <h2 className="text-white font-bold text-lg mb-4">Purchasing Power Over Time</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+                  {['Year','Purchasing Power','Needed to Match Today','Value Lost'].map(h => (
+                    <th key={h} className="text-left text-slate-400 py-2 pr-4">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {calc.yearlyData.filter((_, i) => i % (years > 20 ? 5 : years > 10 ? 2 : 1) === 0 || i === years - 1).map((row, i) => (
+                  <tr key={i} className="border-b" style={{borderColor:'rgba(255,255,255,0.03)'}}>
+                    <td className="text-slate-400 py-1.5 pr-4">{row.year}</td>
+                    <td className="text-red-400 py-1.5 pr-4">{fmt(row.purchasingPower)}</td>
+                    <td className="text-yellow-400 py-1.5 pr-4">{fmt(row.neededToMatch)}</td>
+                    <td className="text-slate-400 py-1.5">{fmt(amount - row.purchasingPower)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+        </div>
+
+        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+          <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
+          <a href="/blog/how-does-inflation-affect-savings" className="text-yellow-400 font-semibold hover:underline">How Does Inflation Affect Your Savings? (2026 Guide)</a>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {href:'/savings-calculator',icon:'🏦',name:'Savings Calculator',desc:'Calculate how your savings grow'},
+              {href:'/compound-interest',icon:'📈',name:'Compound Interest',desc:'See how compound interest works'},
+              {href:'/retirement-calculator',icon:'👴',name:'Retirement Calculator',desc:'Plan your retirement savings'},
+              {href:'/net-worth-calculator',icon:'💎',name:'Net Worth',desc:'Calculate your total net worth'},
+            ].map((tool,i) => (
+              <a key={i} href={tool.href} className="result-box group hover:-translate-y-1 transition-all duration-300">
+                <div className="text-3xl mb-3">{tool.icon}</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">{tool.name}</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">{tool.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4 text-sm">
-              {faqs.map((faq,i) => (
-                <div key={i} className={i<faqs.length-1?"border-b pb-4":"pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
+              {faqs.map((faq, i) => (
+                <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
                   <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
                   <p className="text-slate-400">{faq.a}</p>
                 </div>
@@ -130,40 +179,7 @@ export default function InflationCalculator() {
             </div>
           </div>
         </div>
-
-          {/* Related Calculators */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/savings-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">🏦</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Savings Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate how your savings grow</p>
-              </a>
-              <a href="/compound-interest" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">📈</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Compound Interest</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">See how compound interest grows money</p>
-              </a>
-              <a href="/retirement-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">👴</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Retirement Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Plan your retirement savings</p>
-              </a>
-              <a href="/net-worth-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">💎</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Net Worth Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate your total net worth</p>
-              </a>
-            </div>
-          </div>
       </main>
-
-          {/* Internal Link to Blog */}
-          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:'rgba(240,200,66,0.2)',background:'rgba(240,200,66,0.05)'}}>
-            <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
-            <a href="/blog/how-does-inflation-affect-savings" className="font-semibold hover:underline" style={{color:'#f0c842'}}>How Does Inflation Affect Your Savings? (2026 Guide)</a>
-          </div>
       <Footer />
     </>
   )
