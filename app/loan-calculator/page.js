@@ -64,8 +64,8 @@ export default function LoanCalculator() {
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Loan Calculator</h1>
-          <p className="text-slate-400 text-lg">Calculate your monthly loan payment and total interest</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Loan Payment Calculator Online</h1>
+          <p className="text-slate-400 text-lg">Calculate monthly loan payments and total interest for any loan — free loan calculator online</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

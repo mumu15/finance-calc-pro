@@ -65,8 +65,8 @@ export default function MortgageCalculator() {
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Mortgage Calculator</h1>
-          <p className="text-slate-400 text-lg">Calculate your monthly mortgage payment instantly</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Mortgage Calculator — Monthly Payment Estimator</h1>
+          <p className="text-slate-400 text-lg">Calculate your exact monthly mortgage payment instantly — free mortgage calculator, no sign up</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

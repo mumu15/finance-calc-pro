@@ -64,8 +64,8 @@ export default function InflationCalculator() {
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Inflation Calculator</h1>
-          <p className="text-slate-400 text-lg">See how inflation affects the value of money over time</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Inflation Calculator — Purchasing Power Over Time</h1>
+          <p className="text-slate-400 text-lg">Calculate how inflation affects your money over time — free inflation and purchasing power calculator</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)',border:'1px solid rgba(240,200,66,0.1)',borderRadius:'16px',padding:'24px'}}>

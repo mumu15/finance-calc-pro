@@ -83,8 +83,8 @@ export default function DebtPayoffCalculator() {
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Debt Payoff Calculator</h1>
-          <p className="text-slate-400 text-lg">Find out how long it will take to pay off your debt</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Debt Payoff Calculator — Snowball vs Avalanche</h1>
+          <p className="text-slate-400 text-lg">Calculate how long to pay off any debt using snowball or avalanche method — free debt payoff calculator</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

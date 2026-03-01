@@ -80,8 +80,8 @@ export default function RentVsBuyCalculator() {
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Rent vs Buy Calculator</h1>
-          <p className="text-slate-400 text-lg">Find out whether renting or buying a home makes more financial sense</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Rent vs Buy Calculator — Should You Rent or Buy in 2026?</h1>
+          <p className="text-slate-400 text-lg">Compare the true costs of renting vs buying a home in your market — free rent vs buy calculator 2026</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)',border:'1px solid rgba(240,200,66,0.1)',borderRadius:'16px',padding:'24px'}}>

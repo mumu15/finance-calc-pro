@@ -75,7 +75,7 @@ export default function SavingsCalculator() {
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Savings Goal Calculator</h1>
-          <p className="text-slate-400 text-lg">Find out how long it will take to reach your savings goal</p>
+          <p className="text-slate-400 text-lg">Calculate how much you will save over time with regular contributions — free savings growth calculator</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

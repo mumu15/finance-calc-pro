@@ -85,7 +85,7 @@ export default function BudgetCalculator() {
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Monthly Budget Calculator</h1>
-          <p className="text-slate-400 text-lg">Plan your monthly budget using the 50/30/20 rule</p>
+          <p className="text-slate-400 text-lg">Create your monthly budget using the 50/30/20 rule — free budget calculator for any income</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)',border:'1px solid rgba(240,200,66,0.1)',borderRadius:'16px',padding:'24px'}}>

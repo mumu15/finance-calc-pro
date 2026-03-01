@@ -72,11 +72,11 @@ export default function CompoundInterest() {
         <nav className="text-sm text-slate-500 mb-6">
           <a href="/" className="hover:text-yellow-400 transition-colors">Home</a>
           <span className="mx-2">›</span>
-          <span className="text-slate-300">Compound Interest Calculator</span>
+          <span className="text-slate-300">Free Compound Interest Calculator With Contributions</span>
         </nav>
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Compound Interest Calculator</h1>
-          <p className="text-slate-400 text-lg">See how your money grows over time with compound interest</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Compound Interest Calculator With Contributions</h1>
+          <p className="text-slate-400 text-lg">Calculate compound interest with monthly contributions — see how your money grows over time</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

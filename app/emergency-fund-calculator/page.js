@@ -70,8 +70,8 @@ export default function EmergencyFundCalculator() {
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Emergency Fund Calculator</h1>
-          <p className="text-slate-400 text-lg">Find out exactly how much you need in your emergency fund</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Emergency Fund Calculator — How Much Do You Need?</h1>
+          <p className="text-slate-400 text-lg">Calculate exactly how much emergency fund you need and how long to save it — free calculator</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
