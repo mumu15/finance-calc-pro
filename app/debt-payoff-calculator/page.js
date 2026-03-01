@@ -77,7 +77,7 @@ export default function DebtPayoffCalculator() {
     <>
       <FaqSchema faqs={faqs} />
       <BreadcrumbSchemaInline />
-      <WebAppSchemaInline />
+      
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Debt Payoff Calculator","url":"https://www.freefincalc.net/debt-payoff-calculator"}]} />
       <WebAppSchema name="Free Debt Payoff Calculator" description="Calculate how long to pay off debt using snowball or avalanche method. Free debt payoff calculator." url="https://www.freefincalc.net/debt-payoff-calculator" />
       <Header />

@@ -78,7 +78,7 @@ export default function BudgetCalculator() {
     <>
       <FaqSchema faqs={faqs} />
       <BreadcrumbSchemaInline />
-      <WebAppSchemaInline />
+      
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Budget Calculator","url":"https://www.freefincalc.net/budget-calculator"}]} />
       <WebAppSchema name="Free Budget Calculator" description="Create a monthly budget using the 50/30/20 rule. Free budget calculator for beginners." url="https://www.freefincalc.net/budget-calculator" />
       <Header />

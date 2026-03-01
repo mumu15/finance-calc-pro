@@ -74,7 +74,7 @@ export default function RentVsBuyCalculator() {
     <>
       <FaqSchema faqs={faqs} />
       <BreadcrumbSchemaInline />
-      <WebAppSchemaInline />
+      
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Rent vs Buy Calculator","url":"https://www.freefincalc.net/rent-vs-buy-calculator"}]} />
       <WebAppSchema name="Free Rent vs Buy Calculator" description="Compare the true costs of renting vs buying a home. Free rent vs buy calculator with full breakdown." url="https://www.freefincalc.net/rent-vs-buy-calculator" />
       <Header />

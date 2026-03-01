@@ -58,7 +58,7 @@ export default function LoanCalculator() {
     <>
       <FaqSchema faqs={faqs} />
       <BreadcrumbSchemaInline />
-      <WebAppSchemaInline />
+      
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Loan Calculator","url":"https://www.freefincalc.net/loan-calculator"}]} />
       <WebAppSchema name="Free Loan Calculator" description="Calculate monthly loan payments for personal loans, car loans and student loans. Free loan payment calculator." url="https://www.freefincalc.net/loan-calculator" />
       <Header />
