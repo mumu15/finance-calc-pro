@@ -142,6 +142,33 @@ export default function RentVsBuyCalculator() {
             </div>
           </div>
         </div>
+
+          {/* Related Calculators */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <a href="/mortgage-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">🏠</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Mortgage Calculator</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">Calculate your monthly mortgage payment</p>
+              </a>
+              <a href="/budget-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">📋</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Budget Calculator</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">Create a monthly budget plan</p>
+              </a>
+              <a href="/net-worth-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">💎</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Net Worth Calculator</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">Calculate your total net worth</p>
+              </a>
+              <a href="/loan-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">💳</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Loan Calculator</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">Calculate monthly payments for any loan</p>
+              </a>
+            </div>
+          </div>
       </main>
 
           {/* Internal Link to Blog */}

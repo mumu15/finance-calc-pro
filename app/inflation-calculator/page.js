@@ -101,6 +101,33 @@ export default function InflationCalculator() {
             </div>
           </div>
         </div>
+
+          {/* Related Calculators */}
+          <div className="mt-12">
+            <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <a href="/savings-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">🏦</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Savings Calculator</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">Calculate how your savings grow</p>
+              </a>
+              <a href="/compound-interest" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">📈</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Compound Interest</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">See how compound interest grows money</p>
+              </a>
+              <a href="/retirement-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">👴</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Retirement Calculator</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">Plan your retirement savings</p>
+              </a>
+              <a href="/net-worth-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
+                <div className="text-3xl mb-3">💎</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Net Worth Calculator</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">Calculate your total net worth</p>
+              </a>
+            </div>
+          </div>
       </main>
 
           {/* Internal Link to Blog */}
