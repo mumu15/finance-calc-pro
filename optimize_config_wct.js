@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
+const fs = require('fs');
+
+const config = `/** @type {import('next').NextConfig} */
 const nextConfig = {
   // Performance optimizations
   compress: true,
@@ -39,8 +41,8 @@ const nextConfig = {
     return [
       {
         source: '/:path*',
-        has: [{ type: 'host', value: 'freefincalc.net' }],
-        destination: 'https://www.freefincalc.net/:path*',
+        has: [{ type: 'host', value: 'wordcountertool.net' }],
+        destination: 'https://www.wordcountertool.net/:path*',
         permanent: true,
       },
     ]
@@ -48,3 +50,8 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+`;
+
+fs.writeFileSync('next.config.js', config, 'utf8');
+console.log('✅ next.config.js upgraded with performance optimizations!');
+console.log('Run: git add . && git commit -m "Optimize next.config.js for performance" && git push');
