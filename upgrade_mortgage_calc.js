@@ -1,4 +1,6 @@
-'use client'
+const fs = require('fs');
+
+const newMortgage = `'use client'
 import { useState, useMemo } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
@@ -158,7 +160,7 @@ export default function MortgageCalculator() {
                   { label: 'Payoff Date', value: new Date(Date.now() + loanTerm * 365.25 * 24 * 3600 * 1000).getFullYear(), color: 'text-emerald-400' },
                 ].map((item, i) => (
                   <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
+                    <div className={\`text-lg font-bold \${item.color}\`}>{item.value}</div>
                     <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
                   </div>
                 ))}
@@ -205,7 +207,7 @@ export default function MortgageCalculator() {
               {calc.schedule.length > 24 && (
                 <button onClick={() => setShowFull(!showFull)}
                   className="mt-4 text-yellow-400 text-sm hover:underline">
-                  {showFull ? 'Show Less ↑' : `Show All ${calc.schedule.length} Months ↓`}
+                  {showFull ? 'Show Less ↑' : \`Show All \${calc.schedule.length} Months ↓\`}
                 </button>
               )}
             </div>
@@ -256,3 +258,9 @@ export default function MortgageCalculator() {
     </>
   )
 }
+`;
+
+fs.writeFileSync('app/mortgage-calculator/page.js', newMortgage, 'utf8');
+console.log('✅ Mortgage calculator upgraded!');
+console.log('Features: PMI, property tax, HOA, amortization schedule, loan summary, payoff date');
+console.log('Run: git add . && git commit -m "Upgrade mortgage calculator with amortization schedule and full breakdown" && git push origin master:main');
