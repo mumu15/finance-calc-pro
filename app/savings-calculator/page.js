@@ -67,10 +67,10 @@ export default function SavingsCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
-      <BreadcrumbSchemaInline />
       
-      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Savings Calculator","url":"https://www.freefincalc.net/savings-calculator"}]} />
-      <WebAppSchema name="Free Savings Calculator" description="Calculate how your savings grow over time with regular contributions. Free savings growth calculator." url="https://www.freefincalc.net/savings-calculator" />
+      
+      
+      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

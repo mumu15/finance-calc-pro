@@ -57,10 +57,10 @@ export default function NetWorthCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
-      <BreadcrumbSchemaInline />
       
-      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Net Worth Calculator","url":"https://www.freefincalc.net/net-worth-calculator"}]} />
-      <WebAppSchema name="Free Net Worth Calculator" description="Calculate your total net worth by adding assets and subtracting liabilities. Free net worth calculator." url="https://www.freefincalc.net/net-worth-calculator" />
+      
+      
+      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

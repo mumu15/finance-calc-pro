@@ -58,10 +58,10 @@ export default function MortgageCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
-      <BreadcrumbSchemaInline />
       
-      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Mortgage Calculator","url":"https://www.freefincalc.net/mortgage-calculator"}]} />
-      <WebAppSchema name="Free Mortgage Calculator" description="Calculate your monthly mortgage payment including principal, interest, taxes and insurance. Free mortgage calculator." url="https://www.freefincalc.net/mortgage-calculator" />
+      
+      
+      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

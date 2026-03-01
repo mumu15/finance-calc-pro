@@ -57,10 +57,10 @@ export default function InflationCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
-      <BreadcrumbSchemaInline />
       
-      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Inflation Calculator","url":"https://www.freefincalc.net/inflation-calculator"}]} />
-      <WebAppSchema name="Free Inflation Calculator" description="Calculate how inflation affects the purchasing power of your money over time. Free inflation calculator." url="https://www.freefincalc.net/inflation-calculator" />
+      
+      
+      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

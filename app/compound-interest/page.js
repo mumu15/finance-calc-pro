@@ -63,13 +63,9 @@ export default function CompoundInterest() {
   return (
     <>
       <FaqSchema faqs={faqs} />
-      <BreadcrumbSchemaInline />
       
-      <WebAppSchema
-        name="Compound Interest Calculator"
-        description="Free compound interest calculator with monthly contributions. See how your investments grow over time with the power of compounding returns."
-        url="/compound-interest"
-      />
+      
+      
       
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">

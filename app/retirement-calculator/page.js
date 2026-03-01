@@ -62,10 +62,10 @@ export default function RetirementCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
-      <BreadcrumbSchemaInline />
       
-      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Retirement Calculator","url":"https://www.freefincalc.net/retirement-calculator"}]} />
-      <WebAppSchema name="Free Retirement Calculator" description="Calculate how much you need to save for retirement. Free retirement savings calculator with 4% rule." url="https://www.freefincalc.net/retirement-calculator" />
+      
+      
+      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
