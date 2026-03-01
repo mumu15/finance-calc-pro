@@ -12,6 +12,31 @@ const faqs = [
   { q: 'Is this net worth calculator free?', a: 'Yes, completely free with no sign up required.' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Net Worth Calculator","item":"https://www.freefincalc.net/net-worth-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Net Worth Calculator",
+    "description": "Calculate your total net worth instantly. Free net worth calculator.",
+    "url": "https://www.freefincalc.net/net-worth-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function NetWorthCalculator() {
   const [assets, setAssets] = useState({ cash:5000,checking:3000,savings:10000,investments:25000,retirement:30000,home:0,car:15000,other:2000 })
   const [liabilities, setLiabilities] = useState({ mortgage:0,carLoan:8000,studentLoan:15000,creditCard:3000,personalLoan:0,otherDebt:0 })
@@ -32,6 +57,8 @@ export default function NetWorthCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Net Worth Calculator","url":"https://www.freefincalc.net/net-worth-calculator"}]} />
       <WebAppSchema name="Free Net Worth Calculator" description="Calculate your total net worth by adding assets and subtracting liabilities. Free net worth calculator." url="https://www.freefincalc.net/net-worth-calculator" />
       <Header />

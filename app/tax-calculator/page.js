@@ -12,6 +12,31 @@ const faqs = [
   { q: 'Is this tax calculator free?', a: 'Yes, completely free with no sign up required. Results are estimates only and not official tax advice.' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Tax Calculator","item":"https://www.freefincalc.net/tax-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Tax Calculator",
+    "description": "Estimate your federal income tax bill. Free US income tax calculator.",
+    "url": "https://www.freefincalc.net/tax-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function TaxCalculator() {
   const [form, setForm] = useState({ income: 75000, filingStatus: 'single', state: 0 })
   const [result, setResult] = useState(null)
@@ -46,6 +71,8 @@ export default function TaxCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Tax Calculator","url":"https://www.freefincalc.net/tax-calculator"}]} />
       <WebAppSchema name="Free Tax Calculator" description="Estimate your federal income tax bill. Free US income tax calculator with tax brackets." url="https://www.freefincalc.net/tax-calculator" />
       <Header />

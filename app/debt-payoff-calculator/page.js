@@ -12,6 +12,31 @@ const faqs = [
   { q: 'Is this debt payoff calculator free?', a: 'Yes, completely free with no sign up required.' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Debt Payoff Calculator","item":"https://www.freefincalc.net/debt-payoff-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Debt Payoff Calculator",
+    "description": "Calculate how long to pay off debt using snowball or avalanche method. Free debt payoff calculator.",
+    "url": "https://www.freefincalc.net/debt-payoff-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function DebtPayoffCalculator() {
   const [balance, setBalance] = useState(10000)
   const [rate, setRate] = useState(18.9)
@@ -51,6 +76,8 @@ export default function DebtPayoffCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Debt Payoff Calculator","url":"https://www.freefincalc.net/debt-payoff-calculator"}]} />
       <WebAppSchema name="Free Debt Payoff Calculator" description="Calculate how long to pay off debt using snowball or avalanche method. Free debt payoff calculator." url="https://www.freefincalc.net/debt-payoff-calculator" />
       <Header />

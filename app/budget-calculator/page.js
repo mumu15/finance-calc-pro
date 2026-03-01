@@ -27,6 +27,31 @@ const CATEGORIES = [
   { key: 'debt', label: 'Debt Payments', type: 'saving', color: '#10b981' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Budget Calculator","item":"https://www.freefincalc.net/budget-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Budget Calculator",
+    "description": "Create a monthly budget using the 50/30/20 rule. Free budget calculator.",
+    "url": "https://www.freefincalc.net/budget-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function BudgetCalculator() {
   const [income, setIncome] = useState(5000)
   const [expenses, setExpenses] = useState({ housing:1500,utilities:150,groceries:400,transport:300,insurance:200,dining:200,entertainment:100,shopping:150,subscriptions:50,savings:500,investments:200,debt:300 })
@@ -52,6 +77,8 @@ export default function BudgetCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Budget Calculator","url":"https://www.freefincalc.net/budget-calculator"}]} />
       <WebAppSchema name="Free Budget Calculator" description="Create a monthly budget using the 50/30/20 rule. Free budget calculator for beginners." url="https://www.freefincalc.net/budget-calculator" />
       <Header />

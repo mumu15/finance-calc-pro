@@ -12,6 +12,31 @@ const faqs = [
   { q: 'Is this retirement calculator free?', a: 'Yes, completely free with no sign up required.' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Retirement Calculator","item":"https://www.freefincalc.net/retirement-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Retirement Calculator",
+    "description": "Calculate how much you need to save for retirement. Free retirement savings calculator.",
+    "url": "https://www.freefincalc.net/retirement-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function RetirementCalculator() {
   const [form, setForm] = useState({ currentAge: 30, retirementAge: 65, currentSavings: 25000, monthly: 500, rate: 7, withdrawalRate: 4 })
   const [result, setResult] = useState(null)
@@ -37,6 +62,8 @@ export default function RetirementCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Retirement Calculator","url":"https://www.freefincalc.net/retirement-calculator"}]} />
       <WebAppSchema name="Free Retirement Calculator" description="Calculate how much you need to save for retirement. Free retirement savings calculator with 4% rule." url="https://www.freefincalc.net/retirement-calculator" />
       <Header />

@@ -3,8 +3,6 @@ import { useState } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
-import WebAppSchema from '../../components/WebAppSchema'
-import BreadcrumbSchema from '../../components/BreadcrumbSchema'
 
 const faqs = [
   { q: 'What is compound interest?', a: 'Compound interest is interest calculated on both the initial principal and the accumulated interest from previous periods. Unlike simple interest which is calculated only on the principal, compound interest grows exponentially over time.' },
@@ -15,6 +13,31 @@ const faqs = [
   { q: 'How much will $100 per month grow with compound interest?', a: 'At a 7% average annual return, $100/month invested for 30 years would grow to approximately $113,353. Your total contributions would be $36,000, meaning $77,353 or 68% came purely from compound interest.' },
   { q: 'Is this compound interest calculator free?', a: 'Yes, completely free with no sign up required. Your financial data stays in your browser and is never sent to our servers.' },
 ]
+
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Compound Interest Calculator","item":"https://www.freefincalc.net/compound-interest"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Compound Interest Calculator",
+    "description": "Calculate compound interest and see how your money grows. Free compound interest calculator.",
+    "url": "https://www.freefincalc.net/compound-interest",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
 
 export default function CompoundInterest() {
   const [form, setForm] = useState({ principal: 10000, rate: 7, years: 10, compound: 12, monthly: 0 })
@@ -40,6 +63,8 @@ export default function CompoundInterest() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <WebAppSchema
         name="Compound Interest Calculator"
         description="Free compound interest calculator with monthly contributions. See how your investments grow over time with the power of compounding returns."

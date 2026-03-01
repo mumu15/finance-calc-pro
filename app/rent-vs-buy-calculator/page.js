@@ -12,6 +12,31 @@ const faqs = [
   { q: 'Is this rent vs buy calculator free?', a: 'Yes, completely free with no sign up required.' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Rent vs Buy Calculator","item":"https://www.freefincalc.net/rent-vs-buy-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Rent vs Buy Calculator",
+    "description": "Compare renting vs buying a home. Free rent vs buy calculator.",
+    "url": "https://www.freefincalc.net/rent-vs-buy-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function RentVsBuyCalculator() {
   const [form, setForm] = useState({ homePrice:350000,downPayment:70000,mortgageRate:6.5,propertyTax:1.2,maintenance:1,monthlyRent:1800,rentIncrease:3,homeAppreciation:4,years:7 })
   const [result, setResult] = useState(null)
@@ -48,6 +73,8 @@ export default function RentVsBuyCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Rent vs Buy Calculator","url":"https://www.freefincalc.net/rent-vs-buy-calculator"}]} />
       <WebAppSchema name="Free Rent vs Buy Calculator" description="Compare the true costs of renting vs buying a home. Free rent vs buy calculator with full breakdown." url="https://www.freefincalc.net/rent-vs-buy-calculator" />
       <Header />

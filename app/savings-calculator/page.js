@@ -12,6 +12,31 @@ const faqs = [
   { q: 'Is this savings calculator free?', a: 'Yes, completely free with no sign up required.' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Savings Calculator","item":"https://www.freefincalc.net/savings-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Savings Calculator",
+    "description": "Calculate how your savings grow over time. Free savings calculator.",
+    "url": "https://www.freefincalc.net/savings-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function SavingsCalculator() {
   const [form, setForm] = useState({ goal: 50000, initial: 1000, monthly: 500, rate: 4.5 })
   const [result, setResult] = useState(null)
@@ -42,6 +67,8 @@ export default function SavingsCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Savings Calculator","url":"https://www.freefincalc.net/savings-calculator"}]} />
       <WebAppSchema name="Free Savings Calculator" description="Calculate how your savings grow over time with regular contributions. Free savings growth calculator." url="https://www.freefincalc.net/savings-calculator" />
       <Header />

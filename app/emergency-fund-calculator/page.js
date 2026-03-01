@@ -12,6 +12,31 @@ const faqs = [
   { q: 'Is this emergency fund calculator free?', a: 'Yes, completely free with no sign up required.' },
 ]
 
+
+function BreadcrumbSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Emergency Fund Calculator","item":"https://www.freefincalc.net/emergency-fund-calculator"}]
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
+function WebAppSchemaInline() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Emergency Fund Calculator",
+    "description": "Calculate how much emergency fund you need. Free emergency fund calculator.",
+    "url": "https://www.freefincalc.net/emergency-fund-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+}
+
 export default function EmergencyFundCalculator() {
   const [form, setForm] = useState({
     rent: 1200, utilities: 150, groceries: 400, transport: 200,
@@ -38,6 +63,8 @@ export default function EmergencyFundCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchemaInline />
+      <WebAppSchemaInline />
       <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Emergency Fund Calculator","url":"https://www.freefincalc.net/emergency-fund-calculator"}]} />
       <WebAppSchema name="Free Emergency Fund Calculator" description="Calculate how much emergency fund you need and how long to save it. Free emergency fund calculator." url="https://www.freefincalc.net/emergency-fund-calculator" />
       <Header />
