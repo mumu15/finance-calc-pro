@@ -1,4 +1,6 @@
-import Link from 'next/link'
+const fs = require('fs');
+
+const footer = `import Link from 'next/link'
 
 export default function Footer() {
   return (
@@ -81,3 +83,8 @@ export default function Footer() {
     </footer>
   )
 }
+`;
+
+fs.writeFileSync('components/Footer.js', footer, 'utf8');
+console.log('✅ Premium footer created for freefincalc.net!');
+console.log('Run: git add . && git commit -m "Upgrade footer with premium multi-column layout" && git push origin master:main');
