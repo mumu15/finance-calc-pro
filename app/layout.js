@@ -15,6 +15,7 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://www.freefincalc.net',
     siteName: 'FreeFinCalc.net',
+    images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'FreeFinCalc.net - Free Personal Finance Calculators' }],
     title: 'FreeFinCalc.net – Free Financial Calculators',
     description: 'Free professional financial calculators. Mortgage calculator, loan calculator, compound interest, savings, retirement and tax calculators. Instant results, no sign up.',
   },
