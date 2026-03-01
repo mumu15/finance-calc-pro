@@ -1,136 +1,168 @@
 'use client'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
-  { q: 'What is the 4% withdrawal rule?', a: 'The 4% rule suggests you can safely withdraw 4% of your retirement savings each year without running out of money over a 30-year retirement. It is based on historical stock and bond market returns.' },
-  { q: 'How much should I contribute to retirement each month?', a: 'Financial advisors recommend saving 15% of your gross income for retirement including any employer match. At minimum, contribute enough to get your full employer 401k match as this is free money.' },
-  { q: 'What is a 401k?', a: 'A 401k is a tax-advantaged retirement savings account offered by employers. Contributions are made pre-tax which reduces your taxable income. Many employers match a percentage of your contributions which is essentially free money added to your retirement savings.' },
-  { q: 'When should I start saving for retirement?', a: 'The earlier the better. Starting at 25 instead of 35 can more than double your retirement savings due to compound interest. Even small amounts invested early grow significantly over decades.' },
-  { q: 'Is this retirement calculator free?', a: 'Yes, completely free with no sign up required.' },
+  { q: 'How much do I need to retire?', a: 'A common rule is to save 25x your annual expenses (the 4% rule). If you spend $50,000 per year you need $1.25 million to retire. This allows you to withdraw 4% annually without running out of money.' },
+  { q: 'What is the 4% rule?', a: 'The 4% rule states you can safely withdraw 4% of your retirement savings each year without running out of money over a 30 year retirement. It is based on historical stock market returns.' },
+  { q: 'How much should I save for retirement each month?', a: 'Most experts recommend saving 15% of your gross income for retirement including any employer match. The earlier you start the less you need to save each month due to compound interest.' },
+  { q: 'When should I start saving for retirement?', a: 'Start as early as possible. Money invested in your 20s has 40+ years to grow. Due to compound interest $1 invested at 25 is worth much more than $1 invested at 45.' },
+  { q: 'What is a good retirement savings by age?', a: 'By 30 aim for 1x salary saved. By 40 aim for 3x. By 50 aim for 6x. By 60 aim for 8x. By 67 aim for 10x your annual salary saved for a comfortable retirement.' },
 ]
 
-
-function BreadcrumbSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Retirement Calculator","item":"https://www.freefincalc.net/retirement-calculator"}]
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
-function WebAppSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Retirement Calculator",
-    "description": "Calculate how much you need to save for retirement. Free retirement savings calculator.",
-    "url": "https://www.freefincalc.net/retirement-calculator",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
 export default function RetirementCalculator() {
-  const [form, setForm] = useState({ currentAge: 30, retirementAge: 65, currentSavings: 25000, monthly: 500, rate: 7, withdrawalRate: 4 })
-  const [result, setResult] = useState(null)
+  const [currentAge, setCurrentAge] = useState(30)
+  const [retireAge, setRetireAge] = useState(65)
+  const [currentSavings, setCurrentSavings] = useState(25000)
+  const [monthlyContrib, setMonthlyContrib] = useState(500)
+  const [annualReturn, setAnnualReturn] = useState(7)
+  const [annualExpenses, setAnnualExpenses] = useState(50000)
 
-  const update = (k, v) => setForm(f => ({ ...f, [k]: v }))
-
-  const calculate = () => {
-    const years = form.retirementAge - form.currentAge
-    const r = form.rate / 100 / 12
+  const calc = useMemo(() => {
+    const years = retireAge - currentAge
+    const monthlyRate = annualReturn / 100 / 12
     const n = years * 12
-    const p = form.currentSavings
-    const m = form.monthly
-    const futureValue = p * Math.pow(1 + r, n) + m * ((Math.pow(1 + r, n) - 1) / r)
-    const annualIncome = futureValue * (form.withdrawalRate / 100)
-    const monthlyIncome = annualIncome / 12
-    const totalContributions = p + (m * n)
-    const interestEarned = futureValue - totalContributions
-    setResult({ futureValue: futureValue.toFixed(2), annualIncome: annualIncome.toFixed(2), monthlyIncome: monthlyIncome.toFixed(2), totalContributions: totalContributions.toFixed(2), interestEarned: interestEarned.toFixed(2), years })
-  }
+    const futureValue = currentSavings * Math.pow(1 + monthlyRate, n) +
+      monthlyContrib * ((Math.pow(1 + monthlyRate, n) - 1) / monthlyRate)
+    const goal = annualExpenses * 25
+    const pct = Math.min(100, (futureValue / goal) * 100)
+    const monthlyIncome = futureValue * 0.04 / 12
+    const shortfall = Math.max(0, goal - futureValue)
+    const surplus = Math.max(0, futureValue - goal)
 
-  const fmt = (n) => Number(n).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
+    // Year by year
+    const yearlyData = []
+    let balance = currentSavings
+    for (let y = 1; y <= years; y++) {
+      const rY = annualReturn / 100 / 12
+      balance = balance * Math.pow(1 + rY, 12) + monthlyContrib * ((Math.pow(1 + rY, 12) - 1) / rY)
+      yearlyData.push({ year: currentAge + y, balance })
+    }
+
+    return { futureValue, goal, pct, monthlyIncome, shortfall, surplus, years, yearlyData }
+  }, [currentAge, retireAge, currentSavings, monthlyContrib, annualReturn, annualExpenses])
+
+  const fmt = (n) => '$' + Math.round(n).toLocaleString()
 
   return (
     <>
       <FaqSchema faqs={faqs} />
-      
-      
-      
-      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Retirement Calculator — How Much Do You Need?</h1>
-          <p className="text-slate-400 text-lg">Calculate how much you need to retire at any age — free retirement savings calculator using the 4% rule</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Retirement Calculator</h1>
+          <p className="text-slate-400 text-lg">Find out if you are on track for retirement — see your progress toward your goal</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="result-box">
+            <h2 className="text-white font-bold text-lg mb-5">Your Details</h2>
+            <div className="space-y-4">
+              {[
+                { label: 'Current Age', value: currentAge, set: setCurrentAge, min: 18, max: 70, step: 1, suffix: ' yrs' },
+                { label: 'Retirement Age', value: retireAge, set: setRetireAge, min: currentAge + 1, max: 80, step: 1, suffix: ' yrs' },
+                { label: 'Current Savings', value: currentSavings, set: setCurrentSavings, min: 0, max: 500000, step: 1000, prefix: '$' },
+                { label: 'Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: '$' },
+                { label: 'Expected Annual Return', value: annualReturn, set: setAnnualReturn, min: 1, max: 15, step: 0.5, suffix: '%' },
+                { label: 'Annual Expenses in Retirement', value: annualExpenses, set: setAnnualExpenses, min: 20000, max: 200000, step: 1000, prefix: '$' },
+              ].map((field, i) => (
+                <div key={i}>
+                  <div className="flex justify-between mb-1.5">
+                    <label className="text-slate-400 text-sm">{field.label}</label>
+                    <span className="text-white font-bold text-sm">{field.prefix || ''}{field.value.toLocaleString()}{field.suffix || ''}</span>
+                  </div>
+                  <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
+                    onChange={e => field.set(Number(e.target.value))}
+                    className="w-full accent-yellow-400" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            {/* Progress Bar */}
+            <div className="result-box">
+              <h2 className="text-white font-bold mb-3">Retirement Progress</h2>
+              <div className="flex justify-between text-sm mb-2">
+                <span className="text-slate-400">Projected: <span className="text-yellow-400 font-bold">{fmt(calc.futureValue)}</span></span>
+                <span className="text-slate-400">Goal: <span className="text-white font-bold">{fmt(calc.goal)}</span></span>
+              </div>
+              <div className="w-full h-6 rounded-full overflow-hidden" style={{background:'rgba(255,255,255,0.05)'}}>
+                <div className="h-full rounded-full transition-all duration-500 flex items-center justify-end pr-2"
+                  style={{width:`${calc.pct}%`, background: calc.pct >= 100 ? '#34d399' : calc.pct >= 75 ? '#f0c842' : '#f97316', minWidth:'2rem'}}>
+                  <span className="text-xs font-bold text-dark-950" style={{color:'#030712'}}>{Math.round(calc.pct)}%</span>
+                </div>
+              </div>
+              {calc.surplus > 0 ? (
+                <p className="text-emerald-400 text-sm mt-2">✅ You are on track! Projected surplus: {fmt(calc.surplus)}</p>
+              ) : (
+                <p className="text-orange-400 text-sm mt-2">⚠️ Shortfall of {fmt(calc.shortfall)} — consider saving more</p>
+              )}
+            </div>
+
+            <div className="result-box">
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { label: 'Years to Retire', value: calc.years + ' yrs', color: 'text-white' },
+                  { label: 'Retirement Goal', value: fmt(calc.goal), color: 'text-yellow-400' },
+                  { label: 'Projected Savings', value: fmt(calc.futureValue), color: 'text-emerald-400' },
+                  { label: 'Monthly Income', value: fmt(calc.monthlyIncome), color: 'text-blue-400' },
+                ].map((item, i) => (
+                  <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
+                    <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-slate-500 text-xs mt-3">Monthly income based on 4% withdrawal rule</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Milestones */}
+        <div className="mt-6 result-box">
+          <h2 className="text-white font-bold text-lg mb-4">Savings Milestones</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[25, 50, 75, 100].map(pct => {
+              const milestoneYear = calc.yearlyData.find(y => (y.balance / calc.goal) * 100 >= pct)
+              return (
+                <div key={pct} className="p-3 rounded-xl text-center" style={{background:'rgba(255,255,255,0.03)',border:`1px solid ${calc.pct >= pct ? 'rgba(52,211,153,0.3)' : 'rgba(255,255,255,0.06)'}`}}>
+                  <div className={`text-2xl font-bold ${calc.pct >= pct ? 'text-emerald-400' : 'text-slate-600'}`}>{pct}%</div>
+                  <div className="text-slate-500 text-xs mt-1">{milestoneYear ? 'Age ' + milestoneYear.year : 'Not reached'}</div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+          <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
+          <a href="/blog/how-much-to-save-for-retirement" className="text-yellow-400 font-semibold hover:underline">How Much Do You Need to Save for Retirement? (2026 Guide)</a>
+        </div>
+
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Current Age', key: 'currentAge' },
-              { label: 'Retirement Age', key: 'retirementAge' },
-              { label: 'Current Savings ($)', key: 'currentSavings' },
-              { label: 'Monthly Contribution ($)', key: 'monthly' },
-              { label: 'Expected Annual Return (%)', key: 'rate' },
-              { label: 'Withdrawal Rate (%)', key: 'withdrawalRate' },
-            ].map(field => (
-              <div key={field.key}>
-                <label className="text-white text-sm font-medium block mb-1">{field.label}</label>
-                <input type="number" value={form[field.key]} onChange={e => update(field.key, parseFloat(e.target.value))}
-                  className="w-full px-4 py-3 rounded-xl text-white outline-none"
-                  style={{background:'#0f172a', border:'1px solid #1e293b'}} />
-              </div>
+              {href:'/compound-interest',icon:'📈',name:'Compound Interest',desc:'See how compound interest grows money'},
+              {href:'/savings-calculator',icon:'🏦',name:'Savings Calculator',desc:'Calculate how your savings grow'},
+              {href:'/budget-calculator',icon:'📋',name:'Budget Calculator',desc:'Create a monthly budget plan'},
+              {href:'/inflation-calculator',icon:'📉',name:'Inflation Calculator',desc:'See how inflation affects savings'},
+            ].map((tool,i) => (
+              <a key={i} href={tool.href} className="result-box group hover:-translate-y-1 transition-all duration-300">
+                <div className="text-3xl mb-3">{tool.icon}</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">{tool.name}</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">{tool.desc}</p>
+              </a>
             ))}
-            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate Retirement</button>
-          </div>
-
-          <div>
-            {!result ? (
-              <div className="result-box text-center py-16">
-                <div className="text-5xl mb-4">🏖️</div>
-                <p className="text-slate-500">Fill in your details and click Calculate</p>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                <div className="result-box text-center">
-                  <p className="text-slate-400 text-sm mb-2">Retirement Savings at {form.retirementAge}</p>
-                  <div className="text-5xl font-bold mb-2" style={{color:'#f0c842'}}>{fmt(result.futureValue)}</div>
-                  <p className="text-slate-500 text-sm">after {result.years} years of saving</p>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { label: 'Monthly Income', value: fmt(result.monthlyIncome) },
-                    { label: 'Annual Income', value: fmt(result.annualIncome) },
-                    { label: 'Total Contributed', value: fmt(result.totalContributions) },
-                    { label: 'Interest Earned', value: fmt(result.interestEarned) },
-                  ].map((s, i) => (
-                    <div key={i} className="stat-card">
-                      <div className="text-xl font-bold text-white">{s.value}</div>
-                      <div className="text-slate-500 text-xs mt-1">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
-        <div className="space-y-6 mt-12">
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Free Retirement Calculator</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Our free retirement calculator helps you estimate how much money you will have when you retire based on your current savings, monthly contributions and expected investment returns. It also shows how much monthly income your retirement savings can generate using the 4% withdrawal rule.</p>
-          </div>
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4 text-sm">
               {faqs.map((faq, i) => (
                 <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
@@ -141,40 +173,7 @@ export default function RetirementCalculator() {
             </div>
           </div>
         </div>
-
-          {/* Related Calculators */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/compound-interest" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">📈</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Compound Interest</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">See how compound interest grows money</p>
-              </a>
-              <a href="/savings-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">🏦</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Savings Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate how your savings grow</p>
-              </a>
-              <a href="/budget-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">📋</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Budget Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Create a monthly budget plan</p>
-              </a>
-              <a href="/inflation-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">📉</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Inflation Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">See how inflation affects savings</p>
-              </a>
-            </div>
-          </div>
       </main>
-
-          {/* Internal Link to Blog */}
-          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:'rgba(240,200,66,0.2)',background:'rgba(240,200,66,0.05)'}}>
-            <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
-            <a href="/blog/how-much-to-save-for-retirement" className="font-semibold hover:underline" style={{color:'#f0c842'}}>How Much Should I Save for Retirement? (2026 Guide)</a>
-          </div>
       <Footer />
     </>
   )
