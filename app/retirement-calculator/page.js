@@ -113,6 +113,12 @@ export default function RetirementCalculator() {
           </div>
         </div>
       </main>
+
+          {/* Internal Link to Blog */}
+          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:'rgba(240,200,66,0.2)',background:'rgba(240,200,66,0.05)'}}>
+            <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
+            <a href="/blog/how-much-to-save-for-retirement" className="font-semibold hover:underline" style={{color:'#f0c842'}}>How Much Should I Save for Retirement? (2026 Guide)</a>
+          </div>
       <Footer />
     </>
   )
