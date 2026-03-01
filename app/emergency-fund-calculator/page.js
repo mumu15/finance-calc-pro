@@ -38,6 +38,8 @@ export default function EmergencyFundCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Emergency Fund Calculator","url":"https://www.freefincalc.net/emergency-fund-calculator"}]} />
+      <WebAppSchema name="Free Emergency Fund Calculator" description="Calculate how much emergency fund you need and how long to save it. Free emergency fund calculator." url="https://www.freefincalc.net/emergency-fund-calculator" />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

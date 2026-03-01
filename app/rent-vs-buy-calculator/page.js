@@ -48,6 +48,8 @@ export default function RentVsBuyCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Rent vs Buy Calculator","url":"https://www.freefincalc.net/rent-vs-buy-calculator"}]} />
+      <WebAppSchema name="Free Rent vs Buy Calculator" description="Compare the true costs of renting vs buying a home. Free rent vs buy calculator with full breakdown." url="https://www.freefincalc.net/rent-vs-buy-calculator" />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

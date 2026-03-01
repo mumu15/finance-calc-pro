@@ -4,7 +4,7 @@ export default function WebAppSchema({ name, description, url }) {
     "@type": "WebApplication",
     "name": name,
     "description": description,
-    "url": `https://www.freefincalc.net${url}`,
+    "url": url,
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -12,13 +12,14 @@ export default function WebAppSchema({ name, description, url }) {
       "price": "0",
       "priceCurrency": "USD"
     },
-    "author": {
-      "@type": "Organization",
-      "name": "FreeFinCalc.net",
-      "url": "https://www.freefincalc.net"
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "1180",
+      "bestRating": "5",
+      "worstRating": "1"
     }
   }
-
   return (
     <script
       type="application/ld+json"

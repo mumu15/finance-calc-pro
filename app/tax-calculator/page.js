@@ -46,6 +46,8 @@ export default function TaxCalculator() {
   return (
     <>
       <FaqSchema faqs={faqs} />
+      <BreadcrumbSchema items={[{"name":"Home","url":"https://www.freefincalc.net"},{"name":"Tax Calculator","url":"https://www.freefincalc.net/tax-calculator"}]} />
+      <WebAppSchema name="Free Tax Calculator" description="Estimate your federal income tax bill. Free US income tax calculator with tax brackets." url="https://www.freefincalc.net/tax-calculator" />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

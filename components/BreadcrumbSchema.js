@@ -6,10 +6,9 @@ export default function BreadcrumbSchema({ items }) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.url ? `https://www.freefincalc.net${item.url}` : undefined
+      "item": item.url
     }))
   }
-
   return (
     <script
       type="application/ld+json"
