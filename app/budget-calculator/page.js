@@ -1,171 +1,195 @@
 'use client'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
-  { q: 'What is the 50/30/20 budgeting rule?', a: 'The 50/30/20 rule suggests spending 50% of take-home pay on needs, 30% on wants, and 20% on savings and debt repayment. It is a simple framework for managing your money.' },
-  { q: 'How do I start a monthly budget?', a: 'Start by tracking all your income and expenses for one month. Then categorize your spending into needs, wants and savings. Set limits for each category and review your budget at the end of each month.' },
-  { q: 'What should I cut first when budgeting?', a: 'Start with discretionary spending like dining out, subscriptions you rarely use, and impulse purchases. These are the easiest to cut without affecting your quality of life.' },
-  { q: 'How much should I spend on housing?', a: 'Financial experts recommend spending no more than 30% of your gross income on housing including rent or mortgage, utilities and insurance. Spending more than 30% is considered housing cost burdened.' },
-  { q: 'Is this budget calculator free?', a: 'Yes, completely free with no sign up required.' },
+  { q: 'What is the 50/30/20 budget rule?', a: 'The 50/30/20 rule suggests spending 50% of after-tax income on needs, 30% on wants and 20% on savings and debt repayment. It is a simple framework for managing your money.' },
+  { q: 'What counts as a need vs a want?', a: 'Needs are essential expenses like rent, groceries, utilities, transportation and minimum debt payments. Wants are non-essential like dining out, entertainment, subscriptions and shopping.' },
+  { q: 'How much should I save each month?', a: 'The 50/30/20 rule recommends saving 20% of your income. If you have high-interest debt focus on paying that off first as part of your 20% allocation.' },
+  { q: 'What if I cannot afford to save 20%?', a: 'Start with whatever you can — even 5-10% is better than nothing. Automate your savings so the money moves before you can spend it. Gradually increase your savings rate over time.' },
+  { q: 'How do I stick to a budget?', a: 'Track every expense, use the envelope system or budgeting apps, automate savings, review your budget monthly and give yourself a small discretionary allowance to avoid feeling deprived.' },
 ]
-
-const CATEGORIES = [
-  { key: 'housing', label: 'Housing (Rent/Mortgage)', type: 'need', color: '#f0c842' },
-  { key: 'utilities', label: 'Utilities', type: 'need', color: '#f0c842' },
-  { key: 'groceries', label: 'Groceries', type: 'need', color: '#f0c842' },
-  { key: 'transport', label: 'Transportation', type: 'need', color: '#f0c842' },
-  { key: 'insurance', label: 'Insurance', type: 'need', color: '#f0c842' },
-  { key: 'dining', label: 'Dining Out', type: 'want', color: '#a78bfa' },
-  { key: 'entertainment', label: 'Entertainment', type: 'want', color: '#a78bfa' },
-  { key: 'shopping', label: 'Shopping', type: 'want', color: '#a78bfa' },
-  { key: 'subscriptions', label: 'Subscriptions', type: 'want', color: '#a78bfa' },
-  { key: 'savings', label: 'Savings', type: 'saving', color: '#10b981' },
-  { key: 'investments', label: 'Investments', type: 'saving', color: '#10b981' },
-  { key: 'debt', label: 'Debt Payments', type: 'saving', color: '#10b981' },
-]
-
-
-function BreadcrumbSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Budget Calculator","item":"https://www.freefincalc.net/budget-calculator"}]
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
-function WebAppSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Budget Calculator",
-    "description": "Create a monthly budget using the 50/30/20 rule. Free budget calculator.",
-    "url": "https://www.freefincalc.net/budget-calculator",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
 
 export default function BudgetCalculator() {
   const [income, setIncome] = useState(5000)
-  const [expenses, setExpenses] = useState({ housing:1500,utilities:150,groceries:400,transport:300,insurance:200,dining:200,entertainment:100,shopping:150,subscriptions:50,savings:500,investments:200,debt:300 })
-  const [result, setResult] = useState(null)
+  const [incomeType, setIncomeType] = useState('monthly')
+  const [needs, setNeeds] = useState(50)
+  const [wants, setWants] = useState(30)
+  const savings = 100 - needs - wants
 
-  const update = (k, v) => setExpenses(e => ({ ...e, [k]: parseFloat(v) || 0 }))
+  const calc = useMemo(() => {
+    const monthly = incomeType === 'annual' ? income / 12 : income
+    return {
+      monthly,
+      needsAmt: monthly * needs / 100,
+      wantsAmt: monthly * wants / 100,
+      savingsAmt: monthly * savings / 100,
+    }
+  }, [income, incomeType, needs, wants, savings])
 
-  const calculate = () => {
-    const needs = CATEGORIES.filter(c => c.type === 'need').reduce((s, c) => s + (expenses[c.key] || 0), 0)
-    const wants = CATEGORIES.filter(c => c.type === 'want').reduce((s, c) => s + (expenses[c.key] || 0), 0)
-    const savingsTotal = CATEGORIES.filter(c => c.type === 'saving').reduce((s, c) => s + (expenses[c.key] || 0), 0)
-    const total = needs + wants + savingsTotal
-    const remaining = income - total
-    setResult({ needs, wants, savingsTotal, total, remaining,
-      needsPct: Math.round((needs/income)*100),
-      wantsPct: Math.round((wants/income)*100),
-      savingsPct: Math.round((savingsTotal/income)*100),
-    })
-  }
+  const fmt = (n) => '$' + Math.round(n).toLocaleString()
 
-  const fmt = (n) => Number(n).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
+  const categories = [
+    { label: 'Needs', pct: needs, amt: calc.needsAmt, color: '#60a5fa', desc: 'Rent, groceries, utilities, transport', examples: ['🏠 Rent/Mortgage', '🛒 Groceries', '💡 Utilities', '🚗 Transport', '💊 Healthcare'] },
+    { label: 'Wants', pct: wants, amt: calc.wantsAmt, color: '#f0c842', desc: 'Dining out, entertainment, shopping', examples: ['🍕 Dining Out', '🎬 Entertainment', '👗 Shopping', '✈️ Travel', '📱 Subscriptions'] },
+    { label: 'Savings', pct: savings, amt: calc.savingsAmt, color: '#34d399', desc: 'Emergency fund, investments, debt', examples: ['🏦 Emergency Fund', '📈 Investments', '💳 Debt Payoff', '🎓 Education', '🏡 House Fund'] },
+  ]
 
   return (
     <>
       <FaqSchema faqs={faqs} />
-      
-      
-      
-      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Monthly Budget Calculator</h1>
-          <p className="text-slate-400 text-lg">Create your monthly budget using the 50/30/20 rule — free budget calculator for any income</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Monthly Budget Calculator</h1>
+          <p className="text-slate-400 text-lg">Create your budget using the 50/30/20 rule — customize splits to match your lifestyle</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)',border:'1px solid rgba(240,200,66,0.1)',borderRadius:'16px',padding:'24px'}}>
-            <div>
-              <label className="text-white text-sm font-medium block mb-1">Monthly Take-Home Income ($)</label>
-              <input type="number" value={income} onChange={e => setIncome(parseFloat(e.target.value)||0)}
-                className="w-full px-4 py-3 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="result-box">
+            <h2 className="text-white font-bold text-lg mb-5">Your Income</h2>
+
+            <div className="flex gap-2 mb-4">
+              {['monthly','annual'].map(t => (
+                <button key={t} onClick={() => setIncomeType(t)}
+                  className="flex-1 py-2 rounded-xl text-sm font-medium transition-all capitalize"
+                  style={{background: incomeType === t ? 'rgba(240,200,66,0.2)' : 'rgba(255,255,255,0.05)', border: incomeType === t ? '1px solid rgba(240,200,66,0.5)' : '1px solid rgba(255,255,255,0.08)', color: incomeType === t ? '#f0c842' : '#64748b'}}>
+                  {t}
+                </button>
+              ))}
             </div>
-            <p className="text-yellow-400 text-xs font-medium uppercase tracking-wider pt-2">Needs</p>
-            {CATEGORIES.filter(c=>c.type==='need').map(c => (
-              <div key={c.key}>
-                <label className="text-slate-400 text-sm block mb-1">{c.label} ($)</label>
-                <input type="number" value={expenses[c.key]} onChange={e => update(c.key, e.target.value)}
-                  className="w-full px-4 py-2 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
+
+            <div className="flex justify-between mb-1.5">
+              <label className="text-slate-400 text-sm">{incomeType === 'annual' ? 'Annual' : 'Monthly'} Income</label>
+              <span className="text-white font-bold text-sm">{fmt(income)}</span>
+            </div>
+            <input type="range" min={1000} max={incomeType === 'annual' ? 500000 : 50000} step={incomeType === 'annual' ? 1000 : 100} value={income}
+              onChange={e => setIncome(Number(e.target.value))}
+              className="w-full accent-yellow-400 mb-6" />
+
+            <h3 className="text-white font-bold mb-4">Customize Splits</h3>
+            <div className="space-y-4">
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-blue-400 text-sm font-medium">Needs</label>
+                  <span className="text-white font-bold text-sm">{needs}%</span>
+                </div>
+                <input type="range" min={20} max={80} step={1} value={needs}
+                  onChange={e => { const v = Number(e.target.value); if(v + wants <= 95) setNeeds(v) }}
+                  className="w-full accent-blue-400" />
               </div>
-            ))}
-            <p className="text-purple-400 text-xs font-medium uppercase tracking-wider pt-2">Wants</p>
-            {CATEGORIES.filter(c=>c.type==='want').map(c => (
-              <div key={c.key}>
-                <label className="text-slate-400 text-sm block mb-1">{c.label} ($)</label>
-                <input type="number" value={expenses[c.key]} onChange={e => update(c.key, e.target.value)}
-                  className="w-full px-4 py-2 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-yellow-400 text-sm font-medium">Wants</label>
+                  <span className="text-white font-bold text-sm">{wants}%</span>
+                </div>
+                <input type="range" min={5} max={60} step={1} value={wants}
+                  onChange={e => { const v = Number(e.target.value); if(needs + v <= 95) setWants(v) }}
+                  className="w-full accent-yellow-400" />
               </div>
-            ))}
-            <p className="text-emerald-400 text-xs font-medium uppercase tracking-wider pt-2">Savings & Debt</p>
-            {CATEGORIES.filter(c=>c.type==='saving').map(c => (
-              <div key={c.key}>
-                <label className="text-slate-400 text-sm block mb-1">{c.label} ($)</label>
-                <input type="number" value={expenses[c.key]} onChange={e => update(c.key, e.target.value)}
-                  className="w-full px-4 py-2 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
+              <div className="p-3 rounded-xl" style={{background:'rgba(52,211,153,0.05)',border:'1px solid rgba(52,211,153,0.15)'}}>
+                <div className="flex justify-between">
+                  <span className="text-emerald-400 text-sm font-medium">Savings (auto)</span>
+                  <span className="text-white font-bold text-sm">{savings}%</span>
+                </div>
               </div>
-            ))}
-            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate Budget</button>
+            </div>
+
+            {/* Visual Bar */}
+            <div className="mt-4">
+              <div className="w-full h-4 rounded-full overflow-hidden flex">
+                <div className="h-full bg-blue-400 transition-all duration-300" style={{width:`${needs}%`}}/>
+                <div className="h-full bg-yellow-400 transition-all duration-300" style={{width:`${wants}%`}}/>
+                <div className="h-full bg-emerald-400 transition-all duration-300" style={{width:`${savings}%`}}/>
+              </div>
+              <div className="flex justify-between text-xs text-slate-500 mt-1">
+                <span>Needs {needs}%</span>
+                <span>Wants {wants}%</span>
+                <span>Savings {savings}%</span>
+              </div>
+            </div>
           </div>
-          <div>
-            {!result ? (
-              <div className="result-box text-center py-16"><div className="text-5xl mb-4">💸</div><p className="text-slate-500">Fill in your details and click Calculate</p></div>
-            ) : (
-              <div className="space-y-4">
-                <div className="result-box text-center">
-                  <p className="text-slate-400 text-sm mb-2">{result.remaining >= 0 ? 'Monthly Surplus' : 'Monthly Deficit'}</p>
-                  <div className={`text-5xl font-bold mb-2 ${result.remaining >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>{fmt(Math.abs(result.remaining))}</div>
-                  <p className="text-slate-500 text-sm">{result.remaining >= 0 ? 'left over each month' : 'over budget each month'}</p>
-                </div>
-                {[
-                  {label:'Needs', value:fmt(result.needs), pct:result.needsPct, target:50, color:'#f0c842'},
-                  {label:'Wants', value:fmt(result.wants), pct:result.wantsPct, target:30, color:'#a78bfa'},
-                  {label:'Savings', value:fmt(result.savingsTotal), pct:result.savingsPct, target:20, color:'#10b981'},
-                ].map((s,i) => (
-                  <div key={i} className="result-box">
-                    <div className="flex justify-between mb-2">
-                      <span className="text-white font-medium">{s.label}</span>
-                      <div className="text-right">
-                        <span style={{color:s.color}} className="font-bold">{s.value}</span>
-                        <span className="text-slate-500 text-xs ml-2">{s.pct}% (target: {s.target}%)</span>
-                      </div>
-                    </div>
-                    <div className="progress-bar">
-                      <div style={{width:`${Math.min(100,s.pct)}%`,height:'100%',borderRadius:'9999px',background:`linear-gradient(90deg,${s.color},${s.color}88)`}} />
-                    </div>
+
+          {/* Results */}
+          <div className="space-y-4">
+            <div className="result-box text-center py-4">
+              <div className="text-slate-400 text-sm mb-1">Monthly Income</div>
+              <div className="text-4xl font-bold" style={{color:'#f0c842'}}>{fmt(calc.monthly)}</div>
+            </div>
+
+            {categories.map((cat, i) => (
+              <div key={i} className="result-box" style={{borderColor:`${cat.color}30`}}>
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <h3 className="text-white font-bold">{cat.label} ({cat.pct}%)</h3>
+                    <p className="text-slate-500 text-xs mt-0.5">{cat.desc}</p>
                   </div>
-                ))}
-                <div className="stat-card">
-                  <div className="text-xl font-bold text-white">{fmt(result.total)}</div>
-                  <div className="text-slate-500 text-xs mt-1">Total Monthly Expenses</div>
+                  <div className="text-2xl font-bold" style={{color:cat.color}}>{fmt(cat.amt)}<span className="text-slate-500 text-sm font-normal">/mo</span></div>
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {cat.examples.map((ex, j) => (
+                    <span key={j} className="text-xs px-2 py-0.5 rounded-full text-slate-400" style={{background:'rgba(255,255,255,0.04)'}}>
+                      {ex}
+                    </span>
+                  ))}
                 </div>
               </div>
-            )}
+            ))}
           </div>
         </div>
-        <div className="space-y-6 mt-12">
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Free Monthly Budget Calculator</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Our free budget calculator helps you plan your monthly budget using the popular 50/30/20 rule. Enter your monthly income and expenses to instantly see how your spending compares to the recommended budget breakdown. Identify areas where you are overspending and find opportunities to save more money each month.</p>
+
+        {/* Annual Summary */}
+        <div className="mt-6 result-box">
+          <h2 className="text-white font-bold text-lg mb-4">Annual Summary</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { label: 'Annual Income', value: fmt(calc.monthly * 12), color: 'text-white' },
+              { label: 'Annual on Needs', value: fmt(calc.needsAmt * 12), color: 'text-blue-400' },
+              { label: 'Annual on Wants', value: fmt(calc.wantsAmt * 12), color: 'text-yellow-400' },
+              { label: 'Annual Savings', value: fmt(calc.savingsAmt * 12), color: 'text-emerald-400' },
+            ].map((item, i) => (
+              <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
+                <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
+              </div>
+            ))}
           </div>
+        </div>
+
+        {/* Related Guide */}
+        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+          <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
+          <a href="/blog/how-to-create-monthly-budget" className="text-yellow-400 font-semibold hover:underline">How to Create a Monthly Budget: Complete Beginner Guide (2026)</a>
+        </div>
+
+        {/* Related */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {href:'/emergency-fund-calculator',icon:'🛡️',name:'Emergency Fund',desc:'Calculate your emergency fund target'},
+              {href:'/debt-payoff-calculator',icon:'💰',name:'Debt Payoff',desc:'Plan your debt payoff strategy'},
+              {href:'/net-worth-calculator',icon:'💎',name:'Net Worth',desc:'Calculate your total net worth'},
+              {href:'/savings-calculator',icon:'🏦',name:'Savings Calculator',desc:'See how your savings grow'},
+            ].map((tool,i) => (
+              <a key={i} href={tool.href} className="result-box group hover:-translate-y-1 transition-all duration-300">
+                <div className="text-3xl mb-3">{tool.icon}</div>
+                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">{tool.name}</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">{tool.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
             <div className="space-y-4 text-sm">
-              {faqs.map((faq,i) => (
-                <div key={i} className={i<faqs.length-1?"border-b pb-4":"pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
+              {faqs.map((faq, i) => (
+                <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
                   <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
                   <p className="text-slate-400">{faq.a}</p>
                 </div>
@@ -173,40 +197,7 @@ export default function BudgetCalculator() {
             </div>
           </div>
         </div>
-
-          {/* Related Calculators */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/emergency-fund-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">🛡️</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Emergency Fund</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate your emergency fund target</p>
-              </a>
-              <a href="/debt-payoff-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">💰</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Debt Payoff Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Plan your debt payoff strategy</p>
-              </a>
-              <a href="/net-worth-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">💎</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Net Worth Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate your total net worth</p>
-              </a>
-              <a href="/savings-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">🏦</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Savings Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate how your savings grow</p>
-              </a>
-            </div>
-          </div>
       </main>
-
-          {/* Internal Link to Blog */}
-          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:'rgba(240,200,66,0.2)',background:'rgba(240,200,66,0.05)'}}>
-            <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
-            <a href="/blog/how-to-create-monthly-budget" className="font-semibold hover:underline" style={{color:'#f0c842'}}>How to Create a Monthly Budget That Actually Works</a>
-          </div>
       <Footer />
     </>
   )
