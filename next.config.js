@@ -1,17 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Performance optimizations
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-
-  // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 31536000,
   },
-
-  // Cache headers for static assets
   async headers() {
     return [
       {
@@ -29,12 +24,12 @@ const nextConfig = {
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
         ],
       },
     ]
   },
-
-  // Redirects
   async redirects() {
     return [
       {
@@ -46,5 +41,4 @@ const nextConfig = {
     ]
   },
 }
-
 module.exports = nextConfig
