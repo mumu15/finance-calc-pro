@@ -1,5 +1,6 @@
 'use client'
 import { useState, useMemo } from 'react'
+import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
@@ -175,6 +176,8 @@ export default function NetWorth() {
             </div>
           </div>
         </div>
+      <AdUnit slot="7405024590" />
+
       </main>
       <Footer />
     </>

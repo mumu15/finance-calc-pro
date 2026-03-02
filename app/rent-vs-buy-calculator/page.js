@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
@@ -200,7 +201,9 @@ export default function RentVsBuyCalculator() {
           </div>
       </main>
 
-          {/* Internal Link to Blog */}
+          <AdUnit slot="7405024590" />
+
+        {/* Internal Link to Blog */}
           <div className="mt-8 p-4 rounded-xl border" style={{borderColor:'rgba(240,200,66,0.2)',background:'rgba(240,200,66,0.05)'}}>
             <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
             <a href="/blog/rent-vs-buy-home" className="font-semibold hover:underline" style={{color:'#f0c842'}}>Renting vs Buying a Home: Which is Better in 2026?</a>

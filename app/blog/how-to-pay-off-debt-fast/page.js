@@ -1,4 +1,5 @@
 import Header from '../../../components/Header'
+import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
@@ -49,7 +50,9 @@ export default function Post() {
               </div>
               <p className="text-slate-400 text-sm leading-relaxed mt-4">Both methods work. The best one is the one you will actually stick with. If you need quick wins to stay motivated use the snowball. If you want to save the most money use the avalanche.</p>
             </section>
-            <section>
+            <AdUnit slot="3248634657" />
+
+      <section>
               <h2 className="text-2xl font-bold text-white mb-4">8 Strategies to Pay Off Debt Faster</h2>
               <div className="space-y-4">
                 {[

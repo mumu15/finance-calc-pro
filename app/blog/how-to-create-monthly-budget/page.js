@@ -1,4 +1,5 @@
 import Header from '../../../components/Header'
+import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
@@ -49,7 +50,9 @@ export default function Post() {
                 ))}
               </div>
             </section>
-            <section>
+            <AdUnit slot="3248634657" />
+
+      <section>
               <h2 className="text-2xl font-bold text-white mb-4">Step by Step: Create Your First Budget</h2>
               <div className="space-y-4">
                 {[

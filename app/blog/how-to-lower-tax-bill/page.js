@@ -1,4 +1,5 @@
 import Header from '../../../components/Header'
+import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
@@ -51,7 +52,9 @@ export default function Post() {
                 ))}
               </div>
             </section>
-            <section>
+            <AdUnit slot="3248634657" />
+
+      <section>
               <h2 className="text-2xl font-bold text-white mb-4">Calculate Your Tax Bill Free</h2>
               <p className="text-slate-400 leading-relaxed mb-4">Use our free tax calculator to estimate your federal income tax bill and see how different strategies affect your total tax.</p>
               <Link href="/tax-calculator" className="btn-primary inline-block px-6 py-3">Try the Free Tax Calculator</Link>

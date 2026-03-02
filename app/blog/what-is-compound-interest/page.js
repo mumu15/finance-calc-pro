@@ -1,4 +1,5 @@
 import Header from '../../../components/Header'
+import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
@@ -48,7 +49,9 @@ export default function Post() {
                 <p className="text-slate-500 text-xs mt-2">Based on $1,000 initial investment</p>
               </div>
             </section>
-            <section>
+            <AdUnit slot="3248634657" />
+
+      <section>
               <h2 className="text-2xl font-bold text-white mb-4">The Rule of 72</h2>
               <p className="text-slate-400 leading-relaxed mb-4">The Rule of 72 is a simple way to estimate how long it takes to double your money. Divide 72 by your annual interest rate.</p>
               <div className="result-box">

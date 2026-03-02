@@ -1,4 +1,5 @@
 import Header from '../../../components/Header'
+import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
@@ -46,7 +47,9 @@ export default function Post() {
                 </div>
               </div>
             </section>
-            <section>
+            <AdUnit slot="3248634657" />
+
+      <section>
               <h2 className="text-2xl font-bold text-white mb-4">How Interest Rate Affects Your Payment</h2>
               <p className="text-slate-400 leading-relaxed mb-4">Even a small difference in interest rate makes a big difference over the life of a loan. Here is how different rates affect a $20,000 loan over 5 years.</p>
               <div className="result-box">

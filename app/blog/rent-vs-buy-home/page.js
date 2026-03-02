@@ -1,4 +1,5 @@
 import Header from '../../../components/Header'
+import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
@@ -45,7 +46,9 @@ export default function Post() {
                 ))}
               </div>
             </section>
-            <section>
+            <AdUnit slot="3248634657" />
+
+      <section>
               <h2 className="text-2xl font-bold text-white mb-4">The 5% Rule for Rent vs Buy</h2>
               <p className="text-slate-400 leading-relaxed mb-4">The 5% rule is a quick way to compare renting vs buying in any market. Multiply the home price by 5% and divide by 12 to get the monthly unrecoverable cost of owning. If your rent is less than this renting may be the better financial choice.</p>
               <div className="result-box">

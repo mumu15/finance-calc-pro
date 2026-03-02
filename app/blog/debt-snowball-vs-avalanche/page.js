@@ -1,4 +1,5 @@
 import Header from '../../../components/Header'
+import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
@@ -53,7 +54,9 @@ export default function Post() {
                 </div>
               </div>
             </section>
-            <section>
+            <AdUnit slot="3248634657" />
+
+      <section>
               <h2 className="text-2xl font-bold text-white mb-4">How Each Method Works Step by Step</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
