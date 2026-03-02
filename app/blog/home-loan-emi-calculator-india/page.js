@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">On a ₹50 lakh home loan at 8.5% for 20 years your EMI is approximately <strong>₹43,391 per month</strong>. Use our free EMI calculator to get the exact figure for your loan amount, rate and tenure.</p>
+            <p className="text-white">On a ₹50 lakh home loan at 8.5% for 20 years your EMI is approximately <strong &gt; ₹43,391 per month</strong>. Use our free EMI calculator to get the exact figure for your loan amount, rate and tenure.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -100,7 +100,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>

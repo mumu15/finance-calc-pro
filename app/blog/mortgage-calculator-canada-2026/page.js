@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">On a C$500,000 mortgage at 5.0% over 25 years your monthly payment is approximately <strong>C$2,908</strong>. Canada requires mortgage default insurance (CMHC) for down payments under 20%, which adds 2.8-4.0% to the mortgage.</p>
+            <p className="text-white">On a C$500,000 mortgage at 5.0% over 25 years your monthly payment is approximately <strong &gt; C$2,908</strong>. Canada requires mortgage default insurance (CMHC) for down payments under 20%, which adds 2.8-4.0% to the mortgage.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -94,7 +94,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>

@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">On a £250,000 mortgage at 4.5% over 25 years your monthly payment is approximately <strong>£1,389</strong>. On a £350,000 mortgage at the same rate it is <strong>£1,944 per month</strong>.</p>
+            <p className="text-white">On a £250,000 mortgage at 4.5% over 25 years your monthly payment is approximately <strong &gt; £1,389</strong>. On a £350,000 mortgage at the same rate it is <strong &gt; £1,944 per month</strong>.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -75,9 +75,9 @@ export default function Post() {
                     <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Property Value</th><th className="text-left text-slate-400 py-2 pr-4">Standard Buyer</th><th className="text-left text-slate-400 py-2 pr-4">First-Time Buyer</th><th className="text-left text-slate-400 py-2 pr-4">Additional Property</th></tr></thead>
                     <tbody>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Up to £250,000</td><td className="text-slate-300 py-2 pr-4">0%</td><td className="text-slate-300 py-2 pr-4">0% (up to £425K)</td><td className="text-slate-300 py-2 pr-4">3%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£250,001-£925,000</td><td className="text-slate-300 py-2 pr-4">5%</td><td className="text-slate-300 py-2 pr-4">5% (above £425K)</td><td className="text-slate-300 py-2 pr-4">8%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£925,001-£1.5M</td><td className="text-slate-300 py-2 pr-4">10%</td><td className="text-slate-300 py-2 pr-4">10%</td><td className="text-slate-300 py-2 pr-4">13%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Above £1.5M</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4">15%</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£250,001-£925,000</td><td className="text-slate-300 py-2 pr-4"&gt;5%</td><td className="text-slate-300 py-2 pr-4"&gt;5% (above £425K)</td><td className="text-slate-300 py-2 pr-4">8%</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£925,001-£1.5M</td><td className="text-slate-300 py-2 pr-4"&gt;10%</td><td className="text-slate-300 py-2 pr-4"&gt;10%</td><td className="text-slate-300 py-2 pr-4">13%</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Above £1.5M</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4"&gt;15%</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -97,7 +97,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>

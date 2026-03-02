@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">Under the <strong>new tax regime 2026</strong>, income up to ₹3 lakh is tax-free. The basic exemption is ₹3L, and a standard deduction of ₹75,000 is available. On ₹10 lakh income, new regime tax is approximately <strong>₹54,600</strong> vs ₹1,17,000 in old regime.</p>
+            <p className="text-white">Under the <strong>new tax regime 2026</strong>, income up to ₹3 lakh is tax-free. The basic exemption is ₹3L, and a standard deduction of ₹75,000 is available. On ₹10 lakh income, new regime tax is approximately <strong &gt; ₹54,600</strong> vs ₹1,17,000 in old regime.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -58,9 +58,9 @@ export default function Post() {
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹5 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹0</td><td className="text-slate-300 py-2 pr-4">₹12,500</td><td className="text-slate-300 py-2 pr-4">New Regime</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹7 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹0 (87A rebate)</td><td className="text-slate-300 py-2 pr-4">₹25,000</td><td className="text-slate-300 py-2 pr-4">New Regime</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹10 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹54,600</td><td className="text-slate-300 py-2 pr-4">₹1,17,000*</td><td className="text-slate-300 py-2 pr-4">Depends on deductions</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹12 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹83,200</td><td className="text-slate-300 py-2 pr-4">₹1,40,400*</td><td className="text-slate-300 py-2 pr-4">Old if deductions >₹2L</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹15 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹1,45,600</td><td className="text-slate-300 py-2 pr-4">₹2,10,600*</td><td className="text-slate-300 py-2 pr-4">Old if deductions >₹3L</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹20 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹2,96,400</td><td className="text-slate-300 py-2 pr-4">₹3,37,200*</td><td className="text-slate-300 py-2 pr-4">Old if deductions >₹3.75L</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹12 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹83,200</td><td className="text-slate-300 py-2 pr-4">₹1,40,400*</td><td className="text-slate-300 py-2 pr-4">Old if deductions &gt;₹2L</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹15 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹1,45,600</td><td className="text-slate-300 py-2 pr-4">₹2,10,600*</td><td className="text-slate-300 py-2 pr-4">Old if deductions &gt;₹3L</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹20 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹2,96,400</td><td className="text-slate-300 py-2 pr-4">₹3,37,200*</td><td className="text-slate-300 py-2 pr-4">Old if deductions &gt;₹3.75L</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -95,7 +95,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>

@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">The ISA allowance for 2026-27 is <strong>£20,000 per year</strong>. A Stocks and Shares ISA growing at 7% per year — maxing out £20,000 annually — would be worth approximately <strong>£566,000 after 15 years</strong> completely tax-free.</p>
+            <p className="text-white">The ISA allowance for 2026-27 is <strong &gt; £20,000 per year</strong>. A Stocks and Shares ISA growing at 7% per year — maxing out £20,000 annually — would be worth approximately <strong &gt; £566,000 after 15 years</strong> completely tax-free.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -57,7 +57,7 @@ export default function Post() {
                     <tbody>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Cash ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">4-5% fixed</td><td className="text-slate-300 py-2 pr-4">Short-term goals, safety</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Stocks & Shares ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">6-9% long-term avg</td><td className="text-slate-300 py-2 pr-4">Wealth building 5+ years</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Lifetime ISA</td><td className="text-slate-300 py-2 pr-4">£4,000</td><td className="text-slate-300 py-2 pr-4">25% bonus + growth</td><td className="text-slate-300 py-2 pr-4">First home or retirement</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Lifetime ISA</td><td className="text-slate-300 py-2 pr-4">£4,000</td><td className="text-slate-300 py-2 pr-4"&gt;25% bonus + growth</td><td className="text-slate-300 py-2 pr-4">First home or retirement</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Junior ISA</td><td className="text-slate-300 py-2 pr-4">£9,000</td><td className="text-slate-300 py-2 pr-4">Cash or stocks</td><td className="text-slate-300 py-2 pr-4">Saving for children</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Innovative Finance ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">5-10% (higher risk)</td><td className="text-slate-300 py-2 pr-4">P2P lending exposure</td></tr>
                     </tbody>
@@ -93,7 +93,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>

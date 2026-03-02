@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">The 50/30/20 rule splits your after-tax income into: <strong>50% needs</strong> (rent, food, utilities), <strong>30% wants</strong> (dining out, entertainment) and <strong>20% savings and debt</strong>. It is the simplest budgeting framework that actually works.</p>
+            <p className="text-white">The 50/30/20 rule splits your after-tax income into: <strong&gt;50% needs</strong> (rent, food, utilities), <strong&gt;30% wants</strong> (dining out, entertainment) and <strong&gt;20% savings and debt</strong>. It is the simplest budgeting framework that actually works.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -53,7 +53,7 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Monthly Take-Home</th><th className="text-left text-slate-400 py-2 pr-4">50% Needs</th><th className="text-left text-slate-400 py-2 pr-4">30% Wants</th><th className="text-left text-slate-400 py-2 pr-4">20% Savings</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Monthly Take-Home</th><th className="text-left text-slate-400 py-2 pr-4"&gt;50% Needs</th><th className="text-left text-slate-400 py-2 pr-4"&gt;30% Wants</th><th className="text-left text-slate-400 py-2 pr-4"&gt;20% Savings</th></tr></thead>
                     <tbody>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$2,500</td><td className="text-slate-300 py-2 pr-4">$1,250</td><td className="text-slate-300 py-2 pr-4">$750</td><td className="text-slate-300 py-2 pr-4">$500</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$3,500</td><td className="text-slate-300 py-2 pr-4">$1,750</td><td className="text-slate-300 py-2 pr-4">$1,050</td><td className="text-slate-300 py-2 pr-4">$700</td></tr>
@@ -71,7 +71,7 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">50% Needs</th><th className="text-left text-slate-400 py-2 pr-4">30% Wants</th><th className="text-left text-slate-400 py-2 pr-4">20% Savings/Debt</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4"&gt;50% Needs</th><th className="text-left text-slate-400 py-2 pr-4"&gt;30% Wants</th><th className="text-left text-slate-400 py-2 pr-4"&gt;20% Savings/Debt</th></tr></thead>
                     <tbody>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Rent or mortgage</td><td className="text-slate-300 py-2 pr-4">Dining out</td><td className="text-slate-300 py-2 pr-4">Emergency fund</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Groceries</td><td className="text-slate-300 py-2 pr-4">Entertainment</td><td className="text-slate-300 py-2 pr-4">401k contributions</td></tr>

@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">On an S$600,000 home loan at 3.5% over 25 years your monthly payment is approximately <strong>S$3,001</strong>. CPF Ordinary Account savings can be used for down payment and monthly mortgage servicing — reducing your cash outflow significantly.</p>
+            <p className="text-white">On an S$600,000 home loan at 3.5% over 25 years your monthly payment is approximately <strong &gt; S$3,001</strong>. CPF Ordinary Account savings can be used for down payment and monthly mortgage servicing — reducing your cash outflow significantly.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -75,7 +75,7 @@ export default function Post() {
                     <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Feature</th><th className="text-left text-slate-400 py-2 pr-4">HDB Loan</th><th className="text-left text-slate-400 py-2 pr-4">Bank Loan</th></tr></thead>
                     <tbody>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Interest Rate</td><td className="text-slate-300 py-2 pr-4">2.6% fixed</td><td className="text-slate-300 py-2 pr-4">3.0-4.5% variable</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Down Payment</td><td className="text-slate-300 py-2 pr-4">10% (CPF ok)</td><td className="text-slate-300 py-2 pr-4">25% (5% must be cash)</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Down Payment</td><td className="text-slate-300 py-2 pr-4"&gt;10% (CPF ok)</td><td className="text-slate-300 py-2 pr-4"&gt;25% (5% must be cash)</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Eligible Properties</td><td className="text-slate-300 py-2 pr-4">HDB flats only</td><td className="text-slate-300 py-2 pr-4">HDB and private</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Early Repayment Penalty</td><td className="text-slate-300 py-2 pr-4">None</td><td className="text-slate-300 py-2 pr-4">May apply in lock-in</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Late Payment</td><td className="text-slate-300 py-2 pr-4">More flexible</td><td className="text-slate-300 py-2 pr-4">Stricter</td></tr>
@@ -95,7 +95,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>
