@@ -58,7 +58,7 @@ export default function Post() {
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">720–850 (Excellent)</td><td className="text-slate-300 py-2 pr-4">6%–12%</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">680–719 (Good)</td><td className="text-slate-300 py-2 pr-4">12%–18%</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">640–679 (Fair)</td><td className="text-slate-300 py-2 pr-4">18%–25%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">580–639 (Poor)</td><td className="text-slate-300 py-2 pr-4"&gt;25%–36%</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">580–639 (Poor)</td><td className="text-slate-300 py-2 pr-4">25%–36%</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Below 580</td><td className="text-slate-300 py-2 pr-4">Unlikely to qualify</td></tr>
                     </tbody>
                   </table>

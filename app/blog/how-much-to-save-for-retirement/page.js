@@ -29,7 +29,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 10 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">Save <strong&gt;15% of your gross income</strong> for retirement. Use the 4% rule: multiply your desired annual retirement income by 25 to find your target savings number.</p>
+            <p className="text-white">Save <strong>15% of your gross income</strong> for retirement. Use the 4% rule: multiply your desired annual retirement income by 25 to find your target savings number.</p>
           </div>
           <div className="space-y-8">
             <section>
