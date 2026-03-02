@@ -1,4 +1,6 @@
-import Link from 'next/link'
+const fs = require('fs');
+
+const newContent = `import Link from 'next/link'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
@@ -53,7 +55,7 @@ export default function Blog() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}
+            <Link key={post.slug} href={\`/blog/\${post.slug}\`}
               className="result-box transition-all duration-300 hover:-translate-y-1 group"
               style={{borderColor:'rgba(240,200,66,0.15)'}}>
               <div className="text-xs mb-2" style={{color:'#f0c842'}}>{post.date}</div>
@@ -68,3 +70,7 @@ export default function Blog() {
     </>
   )
 }
+`;
+
+fs.writeFileSync('app/blog/page.js', newContent, 'utf8');
+console.log('✅ FFC Blog index updated with 31 articles!');
