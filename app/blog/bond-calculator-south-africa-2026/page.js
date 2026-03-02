@@ -95,7 +95,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>

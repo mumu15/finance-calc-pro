@@ -44,7 +44,7 @@ export default function Post() {
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
           <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
             <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
-            <p className="text-white">Personal loan rates in Nigeria in 2026 range from <strong&gt;25% to 35% per annum</strong>. On a ₦5 million loan at 28% for 3 years your monthly repayment is approximately <strong>₦217,000</strong>. NHF mortgage rates are as low as <strong>6% per annum</strong>.</p>
+            <p className="text-white">Personal loan rates in Nigeria in 2026 range from <strong>25% to 35% per annum</strong>. On a ₦5 million loan at 28% for 3 years your monthly repayment is approximately <strong>₦217,000</strong>. NHF mortgage rates are as low as <strong>6% per annum</strong>.</p>
           </div>
           <div className="space-y-8">
             <section>
@@ -93,7 +93,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>

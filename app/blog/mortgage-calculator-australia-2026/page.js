@@ -78,7 +78,7 @@ export default function Post() {
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">First Home Owner Grant</td><td className="text-slate-300 py-2 pr-4">$10,000-$30,000 cash grant</td><td className="text-slate-300 py-2 pr-4">New homes, varies by state</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Stamp Duty Concessions</td><td className="text-slate-300 py-2 pr-4">Reduced or zero stamp duty</td><td className="text-slate-300 py-2 pr-4">Varies by state and price</td></tr>
                       <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">First Home Super Saver</td><td className="text-slate-300 py-2 pr-4">Save deposit in super, tax savings</td><td className="text-slate-300 py-2 pr-4">Up to $50,000 withdrawal</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Help to Buy (proposed)</td><td className="text-slate-300 py-2 pr-4"&gt;40% government equity share</td><td className="text-slate-300 py-2 pr-4">Subject to legislation</td></tr>
+                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Help to Buy (proposed)</td><td className="text-slate-300 py-2 pr-4">40% government equity share</td><td className="text-slate-300 py-2 pr-4">Subject to legislation</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -98,7 +98,7 @@ export default function Post() {
 
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-              <div className="space-y-4">{faqs.map((faq,i)=&gt;(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
+              <div className="space-y-4">{faqs.map((faq,i)=>(<div key={i} className="result-box"><h3 className="text-white font-bold mb-2">{faq.q}</h3><p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p></div>))}</div>
             </section>
 
             <section>
