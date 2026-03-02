@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'What is net worth?', a: 'Net worth is the total value of everything you own minus everything you owe. Assets minus liabilities equals net worth. A positive net worth means you own more than you owe.' },
@@ -29,6 +30,7 @@ const DEFAULT_LIABILITIES = [
 ]
 
 export default function NetWorth() {
+  const { fmt, currency } = useCurrency()
   const [assets, setAssets] = useState(DEFAULT_ASSETS)
   const [liabilities, setLiabilities] = useState(DEFAULT_LIABILITIES)
 
@@ -36,8 +38,6 @@ export default function NetWorth() {
   const totalLiabilities = liabilities.reduce((s, l) => s + l.value, 0)
   const netWorth = totalAssets - totalLiabilities
   const assetPct = totalAssets > 0 ? Math.round((totalAssets / (totalAssets + totalLiabilities)) * 100) : 0
-
-  const fmt = (n) => '$' + Math.abs(Math.round(n)).toLocaleString()
 
   const updateValue = (list, setList, id, value) => {
     setList(list.map(item => item.id === id ? { ...item, value: Number(value) || 0 } : item))

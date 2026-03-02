@@ -1,28 +1,44 @@
 'use client'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'How is a mortgage payment calculated?', a: 'A monthly mortgage payment is calculated using the loan amount, interest rate and loan term. The formula is M = P[r(1+r)^n]/[(1+r)^n-1] where P is principal, r is monthly rate and n is number of payments.' },
   { q: 'What is PMI and when do I need it?', a: 'Private Mortgage Insurance (PMI) is required when your down payment is less than 20% of the home price. PMI typically costs 0.5-1% of the loan amount per year and is added to your monthly payment.' },
   { q: 'What is the difference between a 15 and 30 year mortgage?', a: 'A 15-year mortgage has higher monthly payments but you pay far less total interest. A 30-year mortgage has lower monthly payments but costs significantly more in total interest over the life of the loan.' },
   { q: 'What costs are included in a mortgage payment?', a: 'A full mortgage payment includes principal, interest, property taxes, homeowners insurance and PMI if applicable. These are often referred to as PITI — Principal, Interest, Taxes and Insurance.' },
-  { q: 'How much house can I afford?', a: 'A common rule is to spend no more than 28% of your gross monthly income on housing costs. With a $6,000/month income that means a maximum of $1,680 per month on your mortgage payment including taxes and insurance.' },
+  { q: 'How much house can I afford?', a: 'A common rule is to spend no more than 28% of your gross monthly income on housing costs. Use our mortgage calculator with your local currency to find the right amount for your market.' },
 ]
 
 export default function MortgageCalculator() {
-  const [homePrice, setHomePrice] = useState(300000)
-  const [downPayment, setDownPayment] = useState(60000)
+  const { fmt, currency } = useCurrency()
+
+  const [homePrice, setHomePrice]     = useState(350000)
+  const [downPayment, setDownPayment] = useState(70000)
   const [interestRate, setInterestRate] = useState(6.5)
-  const [loanTerm, setLoanTerm] = useState(30)
+  const [loanTerm, setLoanTerm]       = useState(30)
   const [propertyTax, setPropertyTax] = useState(3600)
-  const [insurance, setInsurance] = useState(1200)
-  const [hoa, setHoa] = useState(0)
-  const [showAmort, setShowAmort] = useState(false)
-  const [showFull, setShowFull] = useState(false)
+  const [insurance, setInsurance]     = useState(1200)
+  const [hoa, setHoa]                 = useState(0)
+  const [showAmort, setShowAmort]     = useState(false)
+  const [showFull, setShowFull]       = useState(false)
+
+  // Reset to regional defaults when currency changes
+  useEffect(() => {
+    const d = currency.defaults
+    setHomePrice(d.home)
+    setDownPayment(Math.round(d.home * 0.2))
+    setPropertyTax(Math.round(d.home * 0.01))
+    setInsurance(Math.round(d.home * 0.004))
+    setHoa(0)
+  }, [currency.code])
+
+  const maxHome = Math.round(currency.defaults.home * 6)
+  const maxLoan = Math.round(currency.defaults.loan * 20)
 
   const calc = useMemo(() => {
     const loanAmount = homePrice - downPayment
@@ -37,29 +53,18 @@ export default function MortgageCalculator() {
     const total = pi + pmi + monthlyTax + monthlyIns + monthlyHoa
     const totalInterest = (pi * n) - loanAmount
     const totalCost = loanAmount + totalInterest
-
-    // Amortization
     let balance = loanAmount
     const schedule = []
     for (let i = 1; i <= n; i++) {
       const interestPayment = balance * monthlyRate
       const principalPayment = pi - interestPayment
       balance -= principalPayment
-      schedule.push({
-        month: i,
-        payment: pi,
-        principal: principalPayment,
-        interest: interestPayment,
-        balance: Math.max(0, balance),
-      })
+      schedule.push({ month: i, payment: pi, principal: principalPayment, interest: interestPayment, balance: Math.max(0, balance) })
     }
-
     return { loanAmount, pi, pmi, monthlyTax, monthlyIns, monthlyHoa, total, totalInterest, totalCost, schedule }
   }, [homePrice, downPayment, interestRate, loanTerm, propertyTax, insurance, hoa])
 
-  const fmt = (n) => '$' + Math.round(n).toLocaleString()
   const downPct = Math.round((downPayment / homePrice) * 100)
-
   const displayedSchedule = showFull ? calc.schedule : calc.schedule.slice(0, 24)
 
   return (
@@ -69,7 +74,7 @@ export default function MortgageCalculator() {
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Mortgage Calculator</h1>
-          <p className="text-slate-400 text-lg">Calculate your monthly mortgage payment including taxes, insurance and PMI</p>
+          <p className="text-slate-400 text-lg">Calculate your monthly mortgage payment in <span style={{color:'#f0c842'}}>{currency.flag} {currency.name}</span></p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -78,18 +83,18 @@ export default function MortgageCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Loan Details</h2>
             <div className="space-y-4">
               {[
-                { label: 'Home Price', value: homePrice, set: setHomePrice, min: 50000, max: 2000000, step: 1000, prefix: '$' },
-                { label: 'Down Payment', value: downPayment, set: setDownPayment, min: 0, max: homePrice, step: 1000, prefix: '$', note: downPct + '%' },
-                { label: 'Interest Rate', value: interestRate, set: setInterestRate, min: 1, max: 15, step: 0.1, suffix: '%' },
-                { label: 'Property Tax (annual)', value: propertyTax, set: setPropertyTax, min: 0, max: 30000, step: 100, prefix: '$' },
-                { label: 'Home Insurance (annual)', value: insurance, set: setInsurance, min: 0, max: 10000, step: 100, prefix: '$' },
-                { label: 'HOA Fees (monthly)', value: hoa, set: setHoa, min: 0, max: 2000, step: 10, prefix: '$' },
+                { label: 'Home Price', value: homePrice, set: setHomePrice, min: Math.round(maxHome*0.02), max: maxHome, step: Math.round(maxHome*0.005) },
+                { label: 'Down Payment', value: downPayment, set: setDownPayment, min: 0, max: homePrice, step: Math.round(maxHome*0.002), note: downPct + '%' },
+                { label: 'Interest Rate', value: interestRate, set: setInterestRate, min: 1, max: 20, step: 0.1, isRate: true },
+                { label: 'Property Tax (annual)', value: propertyTax, set: setPropertyTax, min: 0, max: Math.round(maxHome*0.03), step: Math.round(maxHome*0.001) },
+                { label: 'Home Insurance (annual)', value: insurance, set: setInsurance, min: 0, max: Math.round(maxHome*0.01), step: Math.round(maxHome*0.0005) },
+                { label: 'HOA Fees (monthly)', value: hoa, set: setHoa, min: 0, max: Math.round(currency.defaults.income * 0.05), step: Math.round(currency.defaults.income * 0.002) },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
                     <label className="text-slate-400 text-sm">{field.label}</label>
                     <span className="text-white font-bold text-sm">
-                      {field.prefix}{typeof field.value === 'number' && !field.suffix ? field.value.toLocaleString() : field.value}{field.suffix || ''}
+                      {field.isRate ? field.value + '%' : fmt(field.value)}
                       {field.note && <span className="text-emerald-400 ml-2 text-xs">({field.note})</span>}
                     </span>
                   </div>
@@ -98,8 +103,6 @@ export default function MortgageCalculator() {
                     className="w-full accent-yellow-400" />
                 </div>
               ))}
-
-              {/* Loan Term Toggle */}
               <div>
                 <label className="text-slate-400 text-sm block mb-2">Loan Term</label>
                 <div className="flex gap-2">
@@ -121,12 +124,11 @@ export default function MortgageCalculator() {
 
           {/* Results */}
           <div className="space-y-4">
-            {/* Monthly Payment Breakdown */}
             <div className="result-box">
               <h2 className="text-white font-bold text-lg mb-4">Monthly Payment</h2>
               <div className="text-center mb-4">
                 <div className="text-5xl font-bold" style={{color:'#f0c842'}}>{fmt(calc.total)}</div>
-                <div className="text-slate-400 text-sm mt-1">per month</div>
+                <div className="text-slate-400 text-sm mt-1">per month · {currency.flag} {currency.code}</div>
               </div>
               <div className="space-y-2">
                 {[
@@ -143,12 +145,9 @@ export default function MortgageCalculator() {
                   </div>
                 ))}
               </div>
-              {calc.pmi > 0 && (
-                <p className="text-orange-400 text-xs mt-3">⚠️ PMI required — down payment is less than 20%</p>
-              )}
+              {calc.pmi > 0 && <p className="text-orange-400 text-xs mt-3">⚠️ PMI required — down payment is less than 20%</p>}
             </div>
 
-            {/* Loan Summary */}
             <div className="result-box">
               <h2 className="text-white font-bold text-lg mb-4">Loan Summary</h2>
               <div className="grid grid-cols-2 gap-3">
@@ -168,7 +167,7 @@ export default function MortgageCalculator() {
           </div>
         </div>
 
-        {/* Amortization Schedule */}
+        {/* Amortization */}
         <div className="mt-6 result-box">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-white font-bold text-lg">Amortization Schedule</h2>
@@ -178,17 +177,14 @@ export default function MortgageCalculator() {
               {showAmort ? 'Hide ↑' : 'Show Schedule ↓'}
             </button>
           </div>
-
           {showAmort && (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}>
-                    <th className="text-left text-slate-400 py-2 pr-4">Month</th>
-                    <th className="text-left text-slate-400 py-2 pr-4">Payment</th>
-                    <th className="text-left text-slate-400 py-2 pr-4">Principal</th>
-                    <th className="text-left text-slate-400 py-2 pr-4">Interest</th>
-                    <th className="text-left text-slate-400 py-2">Balance</th>
+                    {['Month','Payment','Principal','Interest','Balance'].map(h => (
+                      <th key={h} className="text-left text-slate-400 py-2 pr-4">{h}</th>
+                    ))}
                   </tr>
                 </thead>
                 <tbody>
@@ -204,8 +200,7 @@ export default function MortgageCalculator() {
                 </tbody>
               </table>
               {calc.schedule.length > 24 && (
-                <button onClick={() => setShowFull(!showFull)}
-                  className="mt-4 text-yellow-400 text-sm hover:underline">
+                <button onClick={() => setShowFull(!showFull)} className="mt-4 text-yellow-400 text-sm hover:underline">
                   {showFull ? 'Show Less ↑' : `Show All ${calc.schedule.length} Months ↓`}
                 </button>
               )}
@@ -213,13 +208,11 @@ export default function MortgageCalculator() {
           )}
         </div>
 
-        {/* Related Guide */}
         <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/how-to-calculate-mortgage-payment" className="text-yellow-400 font-semibold hover:underline">How to Calculate Your Mortgage Payment: Complete Guide (2026)</a>
         </div>
 
-        {/* Related Calculators */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -227,7 +220,7 @@ export default function MortgageCalculator() {
               {href:'/loan-calculator',icon:'💳',name:'Loan Calculator',desc:'Calculate monthly payments for any loan'},
               {href:'/rent-vs-buy-calculator',icon:'🏡',name:'Rent vs Buy',desc:'Compare renting vs buying a home'},
               {href:'/net-worth-calculator',icon:'💎',name:'Net Worth Calculator',desc:'Calculate your total net worth'},
-              {href:'/budget-calculator',icon:'📋',name:'Budget Calculator',desc:'Create a monthly budget plan'},
+              {href:'/budget-calculator',icon:'📊',name:'Budget Calculator',desc:'Create a monthly budget plan'},
             ].map((tool,i) => (
               <a key={i} href={tool.href} className="result-box group hover:-translate-y-1 transition-all duration-300">
                 <div className="text-3xl mb-3">{tool.icon}</div>
@@ -240,7 +233,6 @@ export default function MortgageCalculator() {
 
         <AdUnit slot="7405024590" />
 
-        {/* FAQ */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="result-box">

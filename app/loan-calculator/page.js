@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'How is a loan payment calculated?', a: 'Monthly loan payment is calculated using the formula M = P[r(1+r)^n]/[(1+r)^n-1] where P is the loan amount, r is monthly interest rate and n is total number of payments.' },
@@ -14,6 +15,7 @@ const faqs = [
 ]
 
 export default function LoanCalculator() {
+  const { fmt, currency } = useCurrency()
   const [loanAmount, setLoanAmount] = useState(10000)
   const [interestRate, setInterestRate] = useState(8)
   const [loanTerm, setLoanTerm] = useState(3)
@@ -49,8 +51,6 @@ export default function LoanCalculator() {
 
     return { payment, totalInterest, totalCost, months, schedule, payoffDate }
   }, [loanAmount, interestRate, loanTerm, termType])
-
-  const fmt = (n) => '$' + Math.abs(Math.round(n)).toLocaleString()
   const displayed = showFull ? calc.schedule : calc.schedule.slice(0, 24)
 
   return (
@@ -68,7 +68,7 @@ export default function LoanCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Loan Details</h2>
             <div className="space-y-4">
               {[
-                { label: 'Loan Amount', value: loanAmount, set: setLoanAmount, min: 500, max: 100000, step: 500, prefix: '$' },
+                { label: 'Loan Amount', value: loanAmount, set: setLoanAmount, min: 500, max: 100000, step: 500, prefix: currency.symbol },
                 { label: 'Interest Rate (APR)', value: interestRate, set: setInterestRate, min: 1, max: 36, step: 0.25, suffix: '%' },
               ].map((field, i) => (
                 <div key={i}>

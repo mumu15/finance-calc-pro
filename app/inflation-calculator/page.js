@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'What is inflation?', a: 'Inflation is the rate at which the general level of prices rises over time, reducing purchasing power. When inflation is 3% annually, $100 today will only buy what $97 worth of goods buys next year.' },
@@ -14,6 +15,7 @@ const faqs = [
 ]
 
 export default function InflationCalculator() {
+  const { fmt, currency } = useCurrency()
   const [amount, setAmount] = useState(100000)
   const [inflationRate, setInflationRate] = useState(3)
   const [years, setYears] = useState(20)
@@ -36,8 +38,6 @@ export default function InflationCalculator() {
     return { futureNeeded, purchasingPower, lostValue, lostPct, yearlyData }
   }, [amount, inflationRate, years])
 
-  const fmt = (n) => '$' + Math.round(n).toLocaleString()
-
   return (
     <>
       <FaqSchema faqs={faqs} />
@@ -53,7 +53,7 @@ export default function InflationCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Inflation Details</h2>
             <div className="space-y-4">
               {[
-                { label: 'Amount Today', value: amount, set: setAmount, min: 1000, max: 1000000, step: 1000, prefix: '$' },
+                { label: 'Amount Today', value: amount, set: setAmount, min: 1000, max: 1000000, step: 1000, prefix: currency.symbol },
                 { label: 'Annual Inflation Rate', value: inflationRate, set: setInflationRate, min: 0.5, max: 15, step: 0.5, suffix: '%' },
                 { label: 'Time Period', value: years, set: setYears, min: 1, max: 50, step: 1, suffix: ' years' },
               ].map((field, i) => (

@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'Is it better to rent or buy a home?', a: 'It depends on your financial situation, how long you plan to stay, and the local housing market. Buying generally makes more sense if you plan to stay for 5+ years. Renting offers more flexibility and lower upfront costs.' },

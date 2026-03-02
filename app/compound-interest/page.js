@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'What is compound interest?', a: 'Compound interest is interest calculated on both the initial principal and the accumulated interest. This means your money grows exponentially over time rather than linearly.' },
@@ -14,6 +15,7 @@ const faqs = [
 ]
 
 export default function CompoundInterest() {
+  const { fmt, currency } = useCurrency()
   const [principal, setPrincipal] = useState(10000)
   const [monthlyContrib, setMonthlyContrib] = useState(500)
   const [rate, setRate] = useState(7)
@@ -51,8 +53,6 @@ export default function CompoundInterest() {
     return { futureValue, totalContributions, totalInterest, yearlyData, doubleYears }
   }, [principal, monthlyContrib, rate, years, frequency])
 
-  const fmt = (n) => '$' + Math.round(n).toLocaleString()
-
   return (
     <>
       <FaqSchema faqs={faqs} />
@@ -68,8 +68,8 @@ export default function CompoundInterest() {
             <h2 className="text-white font-bold text-lg mb-5">Investment Details</h2>
             <div className="space-y-4">
               {[
-                { label: 'Initial Investment', value: principal, set: setPrincipal, min: 0, max: 100000, step: 500, prefix: '$' },
-                { label: 'Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: '$' },
+                { label: 'Initial Investment', value: principal, set: setPrincipal, min: 0, max: 100000, step: 500, prefix: currency.symbol },
+                { label: 'Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
                 { label: 'Annual Interest Rate', value: rate, set: setRate, min: 1, max: 20, step: 0.5, suffix: '%' },
                 { label: 'Time Period', value: years, set: setYears, min: 1, max: 50, step: 1, suffix: ' years' },
               ].map((field, i) => (

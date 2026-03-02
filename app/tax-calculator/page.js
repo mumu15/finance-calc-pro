@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'What is the difference between effective and marginal tax rate?', a: 'Your marginal tax rate is the rate on your last dollar of income. Your effective tax rate is your total tax divided by your total income. The effective rate is always lower than the marginal rate because lower portions of income are taxed at lower rates.' },
@@ -39,6 +40,7 @@ function WebAppSchemaInline() {
 }
 
 export default function TaxCalculator() {
+  const { fmt, currency } = useCurrency()
   const [form, setForm] = useState({ income: 75000, filingStatus: 'single', state: 0 })
   const [result, setResult] = useState(null)
 
@@ -66,8 +68,6 @@ export default function TaxCalculator() {
     const monthlyTakeHome = takeHome / 12
     setResult({ federalTax: federalTax.toFixed(2), stateTax: stateTax.toFixed(2), ficaTax: ficaTax.toFixed(2), totalTax: totalTax.toFixed(2), effectiveRate, takeHome: takeHome.toFixed(2), monthlyTakeHome: monthlyTakeHome.toFixed(2) })
   }
-
-  const fmt = (n) => Number(n).toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
   return (
     <>

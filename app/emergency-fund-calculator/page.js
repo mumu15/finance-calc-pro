@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'How much should I have in an emergency fund?', a: 'Financial experts recommend saving 3 to 6 months of living expenses in your emergency fund. If you are self-employed, have variable income, or have dependents, aim for 6 to 12 months of expenses.' },

@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'How much do I need to retire?', a: 'A common rule is to save 25x your annual expenses (the 4% rule). If you spend $50,000 per year you need $1.25 million to retire. This allows you to withdraw 4% annually without running out of money.' },
@@ -14,6 +15,7 @@ const faqs = [
 ]
 
 export default function RetirementCalculator() {
+  const { fmt, currency } = useCurrency()
   const [currentAge, setCurrentAge] = useState(30)
   const [retireAge, setRetireAge] = useState(65)
   const [currentSavings, setCurrentSavings] = useState(25000)
@@ -45,8 +47,6 @@ export default function RetirementCalculator() {
     return { futureValue, goal, pct, monthlyIncome, shortfall, surplus, years, yearlyData }
   }, [currentAge, retireAge, currentSavings, monthlyContrib, annualReturn, annualExpenses])
 
-  const fmt = (n) => '$' + Math.round(n).toLocaleString()
-
   return (
     <>
       <FaqSchema faqs={faqs} />
@@ -64,10 +64,10 @@ export default function RetirementCalculator() {
               {[
                 { label: 'Current Age', value: currentAge, set: setCurrentAge, min: 18, max: 70, step: 1, suffix: ' yrs' },
                 { label: 'Retirement Age', value: retireAge, set: setRetireAge, min: currentAge + 1, max: 80, step: 1, suffix: ' yrs' },
-                { label: 'Current Savings', value: currentSavings, set: setCurrentSavings, min: 0, max: 500000, step: 1000, prefix: '$' },
-                { label: 'Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: '$' },
+                { label: 'Current Savings', value: currentSavings, set: setCurrentSavings, min: 0, max: 500000, step: 1000, prefix: currency.symbol },
+                { label: 'Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
                 { label: 'Expected Annual Return', value: annualReturn, set: setAnnualReturn, min: 1, max: 15, step: 0.5, suffix: '%' },
-                { label: 'Annual Expenses in Retirement', value: annualExpenses, set: setAnnualExpenses, min: 20000, max: 200000, step: 1000, prefix: '$' },
+                { label: 'Annual Expenses in Retirement', value: annualExpenses, set: setAnnualExpenses, min: 20000, max: 200000, step: 1000, prefix: currency.symbol },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">

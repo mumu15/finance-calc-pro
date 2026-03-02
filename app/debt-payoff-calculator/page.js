@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'What is the debt snowball method?', a: 'The debt snowball method involves paying off debts from smallest to largest balance regardless of interest rate. Each payoff gives you a motivational win and frees up money for the next debt.' },
@@ -57,6 +58,7 @@ const DEFAULT_DEBTS = [
 ]
 
 export default function DebtPayoff() {
+  const { fmt, currency } = useCurrency()
   const [debts, setDebts] = useState(DEFAULT_DEBTS)
   const [extraPayment, setExtraPayment] = useState(200)
   const [newDebt, setNewDebt] = useState({ name: '', balance: '', rate: '', minPayment: '' })
@@ -76,8 +78,6 @@ export default function DebtPayoff() {
   }
 
   const removeDebt = (id) => setDebts(debts.filter(d => d.id !== id))
-
-  const fmt = (n) => '$' + Math.round(n).toLocaleString()
   const fmtMonths = (m) => {
     const y = Math.floor(m / 12)
     const mo = m % 12

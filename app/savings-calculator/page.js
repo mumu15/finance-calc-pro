@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'How much should I have in savings?', a: 'Start with an emergency fund of 3-6 months of expenses. After that save 15-20% of income for long term goals. Keep 1-3 months expenses in a high yield savings account for short term needs.' },
@@ -14,6 +15,7 @@ const faqs = [
 ]
 
 export default function SavingsCalculator() {
+  const { fmt, currency } = useCurrency()
   const [initialDeposit, setInitialDeposit] = useState(5000)
   const [monthlyDeposit, setMonthlyDeposit] = useState(500)
   const [interestRate, setInterestRate] = useState(4.5)
@@ -46,8 +48,6 @@ export default function SavingsCalculator() {
     return { futureValue, totalDeposited, interestEarned, yearlyData }
   }, [initialDeposit, monthlyDeposit, interestRate, years])
 
-  const fmt = (n) => '$' + Math.round(n).toLocaleString()
-
   return (
     <>
       <FaqSchema faqs={faqs} />
@@ -63,8 +63,8 @@ export default function SavingsCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Savings Details</h2>
             <div className="space-y-4">
               {[
-                { label: 'Initial Deposit', value: initialDeposit, set: setInitialDeposit, min: 0, max: 100000, step: 500, prefix: '$' },
-                { label: 'Monthly Deposit', value: monthlyDeposit, set: setMonthlyDeposit, min: 0, max: 5000, step: 50, prefix: '$' },
+                { label: 'Initial Deposit', value: initialDeposit, set: setInitialDeposit, min: 0, max: 100000, step: 500, prefix: currency.symbol },
+                { label: 'Monthly Deposit', value: monthlyDeposit, set: setMonthlyDeposit, min: 0, max: 5000, step: 50, prefix: currency.symbol },
                 { label: 'Annual Interest Rate (APY)', value: interestRate, set: setInterestRate, min: 0.5, max: 10, step: 0.25, suffix: '%' },
                 { label: 'Time Period', value: years, set: setYears, min: 1, max: 40, step: 1, suffix: ' years' },
               ].map((field, i) => (

@@ -1,6 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import CurrencySelector from './CurrencySelector'
 
 const tools = [
   { name: 'Mortgage Calculator', href: '/mortgage-calculator', icon: '🏠' },
@@ -8,10 +9,10 @@ const tools = [
   { name: 'Compound Interest', href: '/compound-interest', icon: '📈' },
   { name: 'Savings Calculator', href: '/savings-calculator', icon: '🏦' },
   { name: 'Retirement Calculator', href: '/retirement-calculator', icon: '👴' },
-  { name: 'Tax Calculator', href: '/tax-calculator', icon: '📊' },
+  { name: 'Tax Calculator', href: '/tax-calculator', icon: '📋' },
   { name: 'Debt Payoff', href: '/debt-payoff-calculator', icon: '💰' },
-  { name: 'Emergency Fund', href: '/emergency-fund-calculator', icon: '🛡️' },
-  { name: 'Budget Calculator', href: '/budget-calculator', icon: '📋' },
+  { name: 'Emergency Fund', href: '/emergency-fund-calculator', icon: '🚨' },
+  { name: 'Budget Calculator', href: '/budget-calculator', icon: '📊' },
   { name: 'Net Worth', href: '/net-worth-calculator', icon: '💎' },
   { name: 'Rent vs Buy', href: '/rent-vs-buy-calculator', icon: '🏡' },
   { name: 'Inflation Calculator', href: '/inflation-calculator', icon: '📉' },
@@ -39,8 +40,8 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm text-dark-950"
-              style={{ background: 'linear-gradient(135deg, #f0c842, #f5a623)' }}>F</div>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm"
+              style={{ background: 'linear-gradient(135deg, #f0c842, #f5a623)', color: '#0a0f1e' }}>F</div>
             <span className="font-bold text-white text-sm">
               FreeFinCalc<span style={{color:'#f0c842'}}>.net</span>
             </span>
@@ -71,8 +72,7 @@ export default function Header() {
                     {tools.map(tool => (
                       <Link key={tool.href} href={tool.href}
                         onClick={() => setDropdownOpen(false)}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white transition-all text-sm group"
-                        style={{'--hover-bg':'rgba(240,200,66,0.1)'}}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-400 hover:text-white transition-all text-sm"
                         onMouseEnter={e => e.currentTarget.style.background='rgba(240,200,66,0.08)'}
                         onMouseLeave={e => e.currentTarget.style.background='transparent'}>
                         <span className="text-base">{tool.icon}</span>
@@ -89,19 +89,25 @@ export default function Header() {
               Blog
             </Link>
 
+            {/* 🌍 Currency Selector */}
+            <CurrencySelector />
+
             <Link href="/mortgage-calculator"
-              className="text-sm px-4 py-2 rounded-lg font-medium transition-all ml-2 text-dark-950"
+              className="text-sm px-4 py-2 rounded-lg font-medium transition-all ml-1"
               style={{ background: 'linear-gradient(135deg, #f0c842, #f5a623)', color: '#0a0f1e' }}>
               Try Free →
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-slate-400 hover:text-white p-1">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-            </svg>
-          </button>
+          {/* Mobile: Currency + Hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <CurrencySelector />
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="text-slate-400 hover:text-white p-1">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

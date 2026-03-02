@@ -4,6 +4,7 @@ import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
+import { useCurrency } from '../../components/CurrencyContext'
 
 const faqs = [
   { q: 'What is the 50/30/20 budget rule?', a: 'The 50/30/20 rule suggests spending 50% of after-tax income on needs, 30% on wants and 20% on savings and debt repayment. It is a simple framework for managing your money.' },
@@ -14,6 +15,7 @@ const faqs = [
 ]
 
 export default function BudgetCalculator() {
+  const { fmt, currency } = useCurrency()
   const [income, setIncome] = useState(5000)
   const [incomeType, setIncomeType] = useState('monthly')
   const [needs, setNeeds] = useState(50)
@@ -29,8 +31,6 @@ export default function BudgetCalculator() {
       savingsAmt: monthly * savings / 100,
     }
   }, [income, incomeType, needs, wants, savings])
-
-  const fmt = (n) => '$' + Math.round(n).toLocaleString()
 
   const categories = [
     { label: 'Needs', pct: needs, amt: calc.needsAmt, color: '#60a5fa', desc: 'Rent, groceries, utilities, transport', examples: ['🏠 Rent/Mortgage', '🛒 Groceries', '💡 Utilities', '🚗 Transport', '💊 Healthcare'] },
