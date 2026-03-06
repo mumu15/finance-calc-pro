@@ -41,10 +41,10 @@ export default function Calculator() {
   }, [homeValue, mortgageBalance, ltv, helocRate, drawAmount])
 
   const pdfRows = result ? [
-    { label: 'Current Home Equity', value: result.equity !== undefined ? (fmt(result.equity)) : '' },
-    { label: 'Max HELOC Credit Limit', value: result.maxBorrow !== undefined ? (fmt(result.maxBorrow)) : '' },
-    { label: 'Monthly Interest-Only Payment', value: result.monthlyInterestOnly !== undefined ? (fmt(result.monthlyInterestOnly)) : '' },
-    { label: 'Annual Interest Cost', value: result.annualInterest !== undefined ? (fmt(result.annualInterest)) : '' },
+    { label: "Current Home Equity', value: result.equity !== undefined ? (fmt(result.equity)) : "' },
+    { label: "Max HELOC Credit Limit', value: result.maxBorrow !== undefined ? (fmt(result.maxBorrow)) : "' },
+    { label: "Monthly Interest-Only Payment', value: result.monthlyInterestOnly !== undefined ? (fmt(result.monthlyInterestOnly)) : "' },
+    { label: "Annual Interest Cost', value: result.annualInterest !== undefined ? (fmt(result.annualInterest)) : "' },
   ] : []
 
   return (

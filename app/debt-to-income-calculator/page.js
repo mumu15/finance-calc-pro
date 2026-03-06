@@ -49,10 +49,10 @@ export default function Calculator() {
   }, [grossMonthlyIncome, mortgageRent, carPayments, creditCards, otherDebts])
 
   const pdfRows = result ? [
-    { label: 'Total Debt-to-Income Ratio', value: result.dti !== undefined ? (String(result.dti)) : '' },
-    { label: 'Front-End Ratio (housing only)', value: result.frontEnd !== undefined ? (String(result.frontEnd)) : '' },
-    { label: 'Total Monthly Debt', value: result.totalDebt !== undefined ? (fmt(result.totalDebt)) : '' },
-    { label: 'Loan Approval Status', value: result.status !== undefined ? (String(result.status)) : '' },
+    { label: "Total Debt-to-Income Ratio', value: result.dti !== undefined ? (String(result.dti)) : "' },
+    { label: "Front-End Ratio (housing only)', value: result.frontEnd !== undefined ? (String(result.frontEnd)) : "' },
+    { label: "Total Monthly Debt', value: result.totalDebt !== undefined ? (fmt(result.totalDebt)) : "' },
+    { label: "Loan Approval Status', value: result.status !== undefined ? (String(result.status)) : "' },
   ] : []
 
   return (

@@ -27,12 +27,12 @@ export default function Calculator() {
   }, [fixedCosts, pricePerUnit, varCostUnit, targetProfit])
 
   const pdfRows = result ? [
-    { label: 'Contribution Margin Per Unit', value: result.contribution !== undefined ? String(fmt(result.contribution)) : '' },
-    { label: 'Break-Even Units', value: result.breakEvenUnits !== undefined ? String(result.breakEvenUnits) : '' },
-    { label: 'Break-Even Revenue', value: result.breakEvenRevenue !== undefined ? String(fmt(result.breakEvenRevenue)) : '' },
-    { label: 'Units Needed for Target Profit', value: result.unitsForProfit !== undefined ? String(result.unitsForProfit) : '' },
-    { label: 'Revenue for Target Profit', value: result.revenueForProfit !== undefined ? String(fmt(result.revenueForProfit)) : '' },
-    { label: 'Margin of Safety', value: result.marginOfSafety !== undefined ? String(result.marginOfSafety) : '' },
+    { label: "Contribution Margin Per Unit', value: result.contribution !== undefined ? String(fmt(result.contribution)) : "' },
+    { label: "Break-Even Units', value: result.breakEvenUnits !== undefined ? String(result.breakEvenUnits) : "' },
+    { label: "Break-Even Revenue', value: result.breakEvenRevenue !== undefined ? String(fmt(result.breakEvenRevenue)) : "' },
+    { label: "Units Needed for Target Profit', value: result.unitsForProfit !== undefined ? String(result.unitsForProfit) : "' },
+    { label: "Revenue for Target Profit', value: result.revenueForProfit !== undefined ? String(fmt(result.revenueForProfit)) : "' },
+    { label: "Margin of Safety', value: result.marginOfSafety !== undefined ? String(result.marginOfSafety) : "' },
   ] : []
 
   return (

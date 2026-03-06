@@ -39,10 +39,10 @@ export default function Calculator() {
   }, [principal, rate, years])
 
   const pdfRows = result ? [
-    { label: 'Simple Interest Earned', value: result.simpleInterest !== undefined ? (fmt(result.simpleInterest)) : '' },
-    { label: 'Total Amount (Simple)', value: result.totalSimple !== undefined ? (fmt(result.totalSimple)) : '' },
-    { label: 'Compound Interest (for comparison)', value: result.compoundInterest !== undefined ? (String(result.compoundInterest)) : '' },
-    { label: 'Extra from Compounding', value: result.difference !== undefined ? (String(result.difference)) : '' },
+    { label: "Simple Interest Earned', value: result.simpleInterest !== undefined ? (fmt(result.simpleInterest)) : "' },
+    { label: "Total Amount (Simple)', value: result.totalSimple !== undefined ? (fmt(result.totalSimple)) : "' },
+    { label: "Compound Interest (for comparison)', value: result.compoundInterest !== undefined ? (String(result.compoundInterest)) : "' },
+    { label: "Extra from Compounding', value: result.difference !== undefined ? (String(result.difference)) : "' },
   ] : []
 
   return (

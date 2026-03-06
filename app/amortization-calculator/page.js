@@ -40,10 +40,10 @@ export default function Calculator() {
   }, [loanAmount, rate, termYears])
 
   const pdfRows = result ? [
-    { label: 'Monthly Payment', value: result.monthly !== undefined ? (fmt(result.monthly)) : '' },
-    { label: 'Total Interest Paid', value: result.totalInterest !== undefined ? (fmt(result.totalInterest)) : '' },
-    { label: 'Total Amount Paid', value: result.totalPaid !== undefined ? (fmt(result.totalPaid)) : '' },
-    { label: 'Year 1 Interest', value: result.year1Interest !== undefined ? (fmt(result.year1Interest)) : '' },
+    { label: "Monthly Payment', value: result.monthly !== undefined ? (fmt(result.monthly)) : "' },
+    { label: "Total Interest Paid', value: result.totalInterest !== undefined ? (fmt(result.totalInterest)) : "' },
+    { label: "Total Amount Paid', value: result.totalPaid !== undefined ? (fmt(result.totalPaid)) : "' },
+    { label: "Year 1 Interest', value: result.year1Interest !== undefined ? (fmt(result.year1Interest)) : "' },
   ] : []
 
   return (

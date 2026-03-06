@@ -42,11 +42,11 @@ export default function Calculator() {
   }, [shares, sharePrice, annualDividend, growthRate, years])
 
   const pdfRows = result ? [
-    { label: 'Annual Dividend Income', value: result.annualIncome !== undefined ? (fmt(result.annualIncome)) : '' },
-    { label: 'Monthly Dividend Income', value: result.monthlyIncome !== undefined ? (fmt(result.monthlyIncome)) : '' },
-    { label: 'Dividend Yield', value: result.dividendYield !== undefined ? (String(result.dividendYield)) : '' },
-    { label: 'Future Annual Income ({years} yrs)', value: result.futureAnnualIncome !== undefined ? (fmt(result.futureAnnualIncome)) : '' },
-    { label: 'Total Dividends Over Period', value: result.totalDividends !== undefined ? (fmt(result.totalDividends)) : '' },
+    { label: "Annual Dividend Income', value: result.annualIncome !== undefined ? (fmt(result.annualIncome)) : "' },
+    { label: "Monthly Dividend Income', value: result.monthlyIncome !== undefined ? (fmt(result.monthlyIncome)) : "' },
+    { label: "Dividend Yield', value: result.dividendYield !== undefined ? (String(result.dividendYield)) : "' },
+    { label: "Future Annual Income ({years} yrs)', value: result.futureAnnualIncome !== undefined ? (fmt(result.futureAnnualIncome)) : "' },
+    { label: "Total Dividends Over Period', value: result.totalDividends !== undefined ? (fmt(result.totalDividends)) : "' },
   ] : []
 
   return (

@@ -125,10 +125,10 @@ export default function TaxCalculator() {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { label: 'Federal Tax', value: fmt(result.federalTax) },
-                    { label: 'State Tax', value: fmt(result.stateTax) },
-                    { label: 'FICA Tax', value: fmt(result.ficaTax) },
-                    { label: 'Effective Rate', value: `${result.effectiveRate}%` },
+                    { label: "Federal Tax', value: fmt(result.federalTax) },
+                    { label: "State Tax', value: fmt(result.stateTax) },
+                    { label: "FICA Tax', value: fmt(result.ficaTax) },
+                    { label: "Effective Rate', value: `${result.effectiveRate}%` },
                   ].map((s, i) => (
                     <div key={i} className="stat-card">
                       <div className="text-xl font-bold text-white">{s.value}</div>

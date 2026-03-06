@@ -27,12 +27,12 @@ export default function Calculator() {
   }, [revenue, cogs, opExpenses, taxes])
 
   const pdfRows = result ? [
-    { label: 'Gross Profit', value: result.grossProfit !== undefined ? String(fmt(result.grossProfit)) : '' },
-    { label: 'Gross Margin %', value: result.grossMargin !== undefined ? String(result.grossMargin) : '' },
-    { label: 'Operating Profit', value: result.operatingProfit !== undefined ? String(fmt(result.operatingProfit)) : '' },
-    { label: 'Operating Margin %', value: result.opMargin !== undefined ? String(result.opMargin) : '' },
-    { label: 'Net Profit', value: result.netProfit !== undefined ? String(fmt(result.netProfit)) : '' },
-    { label: 'Net Profit Margin %', value: result.netMargin !== undefined ? String(result.netMargin) : '' },
+    { label: "Gross Profit', value: result.grossProfit !== undefined ? String(fmt(result.grossProfit)) : "' },
+    { label: "Gross Margin %', value: result.grossMargin !== undefined ? String(result.grossMargin) : "' },
+    { label: "Operating Profit', value: result.operatingProfit !== undefined ? String(fmt(result.operatingProfit)) : "' },
+    { label: "Operating Margin %', value: result.opMargin !== undefined ? String(result.opMargin) : "' },
+    { label: "Net Profit', value: result.netProfit !== undefined ? String(fmt(result.netProfit)) : "' },
+    { label: "Net Profit Margin %', value: result.netMargin !== undefined ? String(result.netMargin) : "' },
   ] : []
 
   return (

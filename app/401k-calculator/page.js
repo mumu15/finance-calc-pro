@@ -46,10 +46,10 @@ export default function Calculator() {
   }, [currentBalance, annualSalary, contribution, employerMatch, growthRate, yearsToRetire])
 
   const pdfRows = result ? [
-    { label: 'Projected Balance at Retirement', value: result.futureBalance !== undefined ? (fmt(result.futureBalance)) : '' },
-    { label: 'Total Amount Contributed', value: result.totalContributed !== undefined ? (fmt(result.totalContributed)) : '' },
-    { label: 'Investment Growth Earned', value: result.growthEarned !== undefined ? (fmt(result.growthEarned)) : '' },
-    { label: 'Est. Monthly Retirement Income (4%)', value: result.monthlyRetirement !== undefined ? (fmt(result.monthlyRetirement)) : '' },
+    { label: "Projected Balance at Retirement', value: result.futureBalance !== undefined ? (fmt(result.futureBalance)) : "' },
+    { label: "Total Amount Contributed', value: result.totalContributed !== undefined ? (fmt(result.totalContributed)) : "' },
+    { label: "Investment Growth Earned', value: result.growthEarned !== undefined ? (fmt(result.growthEarned)) : "' },
+    { label: "Est. Monthly Retirement Income (4%)', value: result.monthlyRetirement !== undefined ? (fmt(result.monthlyRetirement)) : "' },
   ] : []
 
   return (

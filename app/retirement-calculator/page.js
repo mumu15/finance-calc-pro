@@ -62,17 +62,17 @@ export default function RetirementCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Your Details</h2>
             <div className="space-y-4">
               {[
-                { label: 'Current Age', value: currentAge, set: setCurrentAge, min: 18, max: 70, step: 1, suffix: ' yrs' },
-                { label: 'Retirement Age', value: retireAge, set: setRetireAge, min: currentAge + 1, max: 80, step: 1, suffix: ' yrs' },
-                { label: 'Current Savings', value: currentSavings, set: setCurrentSavings, min: 0, max: 500000, step: 1000, prefix: currency.symbol },
-                { label: 'Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
-                { label: 'Expected Annual Return', value: annualReturn, set: setAnnualReturn, min: 1, max: 15, step: 0.5, suffix: '%' },
-                { label: 'Annual Expenses in Retirement', value: annualExpenses, set: setAnnualExpenses, min: 20000, max: 200000, step: 1000, prefix: currency.symbol },
+                { label: "Current Age', value: currentAge, set: setCurrentAge, min: 18, max: 70, step: 1, suffix: " yrs' },
+                { label: "Retirement Age', value: retireAge, set: setRetireAge, min: currentAge + 1, max: 80, step: 1, suffix: " yrs' },
+                { label: "Current Savings', value: currentSavings, set: setCurrentSavings, min: 0, max: 500000, step: 1000, prefix: currency.symbol },
+                { label: "Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
+                { label: "Expected Annual Return', value: annualReturn, set: setAnnualReturn, min: 1, max: 15, step: 0.5, suffix: "%' },
+                { label: "Annual Expenses in Retirement', value: annualExpenses, set: setAnnualExpenses, min: 20000, max: 200000, step: 1000, prefix: currency.symbol },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
                     <label className="text-slate-400 text-sm">{field.label}</label>
-                    <span className="text-white font-bold text-sm">{field.prefix || ''}{field.value.toLocaleString()}{field.suffix || ''}</span>
+                    <span className="text-white font-bold text-sm">{field.prefix || "'}{field.value.toLocaleString()}{field.suffix || ''}</span>
                   </div>
                   <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
                     onChange={e => field.set(Number(e.target.value))}
@@ -106,10 +106,10 @@ export default function RetirementCalculator() {
             <div className="result-box">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: 'Years to Retire', value: calc.years + ' yrs', color: 'text-white' },
-                  { label: 'Retirement Goal', value: fmt(calc.goal), color: 'text-yellow-400' },
-                  { label: 'Projected Savings', value: fmt(calc.futureValue), color: 'text-emerald-400' },
-                  { label: 'Monthly Income', value: fmt(calc.monthlyIncome), color: 'text-blue-400' },
+                  { label: "Years to Retire', value: calc.years + " yrs', color: 'text-white' },
+                  { label: "Retirement Goal', value: fmt(calc.goal), color: "text-yellow-400' },
+                  { label: "Projected Savings', value: fmt(calc.futureValue), color: "text-emerald-400' },
+                  { label: "Monthly Income', value: fmt(calc.monthlyIncome), color: "text-blue-400' },
                 ].map((item, i) => (
                   <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>

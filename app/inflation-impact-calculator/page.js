@@ -26,12 +26,12 @@ export default function Calculator() {
   }, [amount, inflRate, years, investReturn])
 
   const pdfRows = result ? [
-    { label: 'Today's Money Worth in Future', value: result.futureEquivalent !== undefined ? String(fmt(result.futureEquivalent)) : '' },
-    { label: 'Purchasing Power Lost', value: result.purchasingLost !== undefined ? String(fmt(result.purchasingLost)) : '' },
-    { label: '% of Value Eroded', value: result.lostPct !== undefined ? String(result.lostPct) : '' },
-    { label: 'Needed to Maintain Buying Power', value: result.neededToMaintain !== undefined ? String(fmt(result.neededToMaintain)) : '' },
-    { label: 'Invested Value (vs inflation)', value: result.investedValue !== undefined ? String(fmt(result.investedValue)) : '' },
-    { label: 'Real Rate of Return', value: result.realReturn !== undefined ? String(result.realReturn) : '' },
+    { label: "Today's Money Worth in Future", value: result.futureEquivalent !== undefined ? String(fmt(result.futureEquivalent)) : '' },
+    { label: "Purchasing Power Lost', value: result.purchasingLost !== undefined ? String(fmt(result.purchasingLost)) : "' },
+    { label: "% of Value Eroded', value: result.lostPct !== undefined ? String(result.lostPct) : "' },
+    { label: "Needed to Maintain Buying Power', value: result.neededToMaintain !== undefined ? String(fmt(result.neededToMaintain)) : "' },
+    { label: "Invested Value (vs inflation)', value: result.investedValue !== undefined ? String(fmt(result.investedValue)) : "' },
+    { label: "Real Rate of Return', value: result.realReturn !== undefined ? String(result.realReturn) : "' },
   ] : []
 
   return (

@@ -45,10 +45,10 @@ export default function Calculator() {
   }, [presentValue, futureValue, years, compoundFreq])
 
   const pdfRows = result ? [
-    { label: 'Required Annual Interest Rate', value: result.annualRate !== undefined ? (String(result.annualRate)) : '' },
-    { label: 'Monthly Rate', value: result.monthlyRate !== undefined ? (String(result.monthlyRate)) : '' },
-    { label: 'Simple Rate (for comparison)', value: result.simpleRate !== undefined ? (String(result.simpleRate)) : '' },
-    { label: 'Time to Double (at this rate)', value: result.doubleTime !== undefined ? (String(result.doubleTime)) : '' },
+    { label: "Required Annual Interest Rate', value: result.annualRate !== undefined ? (String(result.annualRate)) : "' },
+    { label: "Monthly Rate', value: result.monthlyRate !== undefined ? (String(result.monthlyRate)) : "' },
+    { label: "Simple Rate (for comparison)', value: result.simpleRate !== undefined ? (String(result.simpleRate)) : "' },
+    { label: "Time to Double (at this rate)', value: result.doubleTime !== undefined ? (String(result.doubleTime)) : "' },
   ] : []
 
   return (

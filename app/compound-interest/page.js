@@ -68,10 +68,10 @@ export default function CompoundInterest() {
             <h2 className="text-white font-bold text-lg mb-5">Investment Details</h2>
             <div className="space-y-4">
               {[
-                { label: 'Initial Investment', value: principal, set: setPrincipal, min: 0, max: 100000, step: 500, prefix: currency.symbol },
-                { label: 'Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
-                { label: 'Annual Interest Rate', value: rate, set: setRate, min: 1, max: 20, step: 0.5, suffix: '%' },
-                { label: 'Time Period', value: years, set: setYears, min: 1, max: 50, step: 1, suffix: ' years' },
+                { label: "Initial Investment', value: principal, set: setPrincipal, min: 0, max: 100000, step: 500, prefix: currency.symbol },
+                { label: "Monthly Contribution', value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
+                { label: "Annual Interest Rate', value: rate, set: setRate, min: 1, max: 20, step: 0.5, suffix: "%' },
+                { label: "Time Period', value: years, set: setYears, min: 1, max: 50, step: 1, suffix: " years' },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
@@ -109,10 +109,10 @@ export default function CompoundInterest() {
             <div className="result-box">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: 'Total Contributed', value: fmt(calc.totalContributions), color: 'text-white' },
-                  { label: 'Interest Earned', value: fmt(calc.totalInterest), color: 'text-emerald-400' },
-                  { label: 'Money Doubled In', value: calc.doubleYears + ' yrs', color: 'text-yellow-400' },
-                  { label: 'Return', value: Math.round((calc.totalInterest / calc.totalContributions) * 100) + '%', color: 'text-blue-400' },
+                  { label: "Total Contributed', value: fmt(calc.totalContributions), color: "text-white' },
+                  { label: "Interest Earned', value: fmt(calc.totalInterest), color: "text-emerald-400' },
+                  { label: "Money Doubled In', value: calc.doubleYears + " yrs', color: 'text-yellow-400' },
+                  { label: "Return', value: Math.round((calc.totalInterest / calc.totalContributions) * 100) + "%', color: 'text-blue-400' },
                 ].map((item, i) => (
                   <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>

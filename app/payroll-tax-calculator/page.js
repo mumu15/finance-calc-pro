@@ -31,12 +31,12 @@ export default function Calculator() {
   }, [grossWages, payFreq, sutaRate, sutaWageBase])
 
   const pdfRows = result ? [
-    { label: 'Gross Pay Per Paycheck', value: result.perPaycheck !== undefined ? String(fmt(result.perPaycheck)) : '' },
-    { label: 'Employee FICA (annual)', value: result.employeeFICA !== undefined ? String(fmt(result.employeeFICA)) : '' },
-    { label: 'Employer Payroll Tax (annual)', value: result.employerTotal !== undefined ? String(fmt(result.employerTotal)) : '' },
-    { label: 'FUTA — Federal Unemployment', value: result.futa !== undefined ? String(fmt(result.futa)) : '' },
-    { label: 'SUTA — State Unemployment', value: result.suta !== undefined ? String(fmt(result.suta)) : '' },
-    { label: 'Total Employer Cost of Employee', value: result.totalCost !== undefined ? String(fmt(result.totalCost)) : '' },
+    { label: "Gross Pay Per Paycheck', value: result.perPaycheck !== undefined ? String(fmt(result.perPaycheck)) : "' },
+    { label: "Employee FICA (annual)', value: result.employeeFICA !== undefined ? String(fmt(result.employeeFICA)) : "' },
+    { label: "Employer Payroll Tax (annual)', value: result.employerTotal !== undefined ? String(fmt(result.employerTotal)) : "' },
+    { label: "FUTA — Federal Unemployment', value: result.futa !== undefined ? String(fmt(result.futa)) : "' },
+    { label: "SUTA — State Unemployment', value: result.suta !== undefined ? String(fmt(result.suta)) : "' },
+    { label: "Total Employer Cost of Employee', value: result.totalCost !== undefined ? String(fmt(result.totalCost)) : "' },
   ] : []
 
   return (

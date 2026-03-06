@@ -42,11 +42,11 @@ export default function Calculator() {
   }, [currentSalary, raiseType, raisePct, raiseFlat, taxRate])
 
   const pdfRows = result ? [
-    { label: 'New Annual Salary', value: result.newSalary !== undefined ? (fmt(result.newSalary)) : '' },
-    { label: 'Raise Amount', value: result.raiseAmount !== undefined ? (fmt(result.raiseAmount)) : '' },
-    { label: 'Raise Percentage', value: result.newPct !== undefined ? (String(result.newPct)) : '' },
-    { label: 'Extra Monthly Take-Home (after tax)', value: result.takeHomeIncrease !== undefined ? (fmt(result.takeHomeIncrease)) : '' },
-    { label: 'Extra Annual Take-Home', value: result.annualTakeHomeGain !== undefined ? (fmt(result.annualTakeHomeGain)) : '' },
+    { label: "New Annual Salary', value: result.newSalary !== undefined ? (fmt(result.newSalary)) : "' },
+    { label: "Raise Amount', value: result.raiseAmount !== undefined ? (fmt(result.raiseAmount)) : "' },
+    { label: "Raise Percentage', value: result.newPct !== undefined ? (String(result.newPct)) : "' },
+    { label: "Extra Monthly Take-Home (after tax)', value: result.takeHomeIncrease !== undefined ? (fmt(result.takeHomeIncrease)) : "' },
+    { label: "Extra Annual Take-Home', value: result.annualTakeHomeGain !== undefined ? (fmt(result.annualTakeHomeGain)) : "' },
   ] : []
 
   return (

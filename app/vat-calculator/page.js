@@ -44,9 +44,9 @@ export default function Calculator() {
   }, [amount, vatRate, calcType])
 
   const pdfRows = result ? [
-    { label: 'Price Excluding VAT', value: result.exVat !== undefined ? (fmt(result.exVat)) : '' },
-    { label: 'VAT Amount', value: result.vatAmount !== undefined ? (fmt(result.vatAmount)) : '' },
-    { label: 'Price Including VAT', value: result.incVat !== undefined ? (fmt(result.incVat)) : '' },
+    { label: "Price Excluding VAT', value: result.exVat !== undefined ? (fmt(result.exVat)) : "' },
+    { label: "VAT Amount', value: result.vatAmount !== undefined ? (fmt(result.vatAmount)) : "' },
+    { label: "Price Including VAT', value: result.incVat !== undefined ? (fmt(result.incVat)) : "' },
   ] : []
 
   return (

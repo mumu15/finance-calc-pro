@@ -39,10 +39,10 @@ export default function Calculator() {
   }, [monthlyExpenses, monthsCoverage, currentSavings, monthlySave])
 
   const pdfRows = result ? [
-    { label: 'Emergency Fund Target', value: result.target !== undefined ? (fmt(result.target)) : '' },
-    { label: 'Still Need to Save', value: result.stillNeeded !== undefined ? (fmt(result.stillNeeded)) : '' },
-    { label: 'Time to Reach Goal', value: result.monthsToGoal !== undefined ? (String(result.monthsToGoal)) : '' },
-    { label: '% of Goal Reached', value: result.pctComplete !== undefined ? (String(result.pctComplete)) : '' },
+    { label: "Emergency Fund Target', value: result.target !== undefined ? (fmt(result.target)) : "' },
+    { label: "Still Need to Save', value: result.stillNeeded !== undefined ? (fmt(result.stillNeeded)) : "' },
+    { label: "Time to Reach Goal', value: result.monthsToGoal !== undefined ? (String(result.monthsToGoal)) : "' },
+    { label: "% of Goal Reached', value: result.pctComplete !== undefined ? (String(result.pctComplete)) : "' },
   ] : []
 
   return (

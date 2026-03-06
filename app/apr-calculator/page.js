@@ -48,10 +48,10 @@ export default function Calculator() {
   }, [loanAmount, interestRate, termMonths, fees])
 
   const pdfRows = result ? [
-    { label: 'Monthly Payment', value: result.payment !== undefined ? (fmt(result.payment)) : '' },
-    { label: 'Total Interest Paid', value: result.totalInterest !== undefined ? (fmt(result.totalInterest)) : '' },
-    { label: 'True APR (including fees)', value: result.apr !== undefined ? (String(result.apr)) : '' },
-    { label: 'Fee Impact on Cost', value: result.feesImpact !== undefined ? (fmt(result.feesImpact)) : '' },
+    { label: "Monthly Payment', value: result.payment !== undefined ? (fmt(result.payment)) : "' },
+    { label: "Total Interest Paid', value: result.totalInterest !== undefined ? (fmt(result.totalInterest)) : "' },
+    { label: "True APR (including fees)', value: result.apr !== undefined ? (String(result.apr)) : "' },
+    { label: "Fee Impact on Cost', value: result.feesImpact !== undefined ? (fmt(result.feesImpact)) : "' },
   ] : []
 
   return (

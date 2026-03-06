@@ -43,11 +43,11 @@ export default function Calculator() {
   }, [currentBalance, annualContrib, growthRate, years, taxRate])
 
   const pdfRows = result ? [
-    { label: 'Projected Roth IRA Balance', value: result.futureBalance !== undefined ? (fmt(result.futureBalance)) : '' },
-    { label: 'Total Contributions', value: result.totalContributed !== undefined ? (fmt(result.totalContributed)) : '' },
-    { label: 'Tax-Free Growth', value: result.growthEarned !== undefined ? (fmt(result.growthEarned)) : '' },
-    { label: 'Tax Savings vs Taxable Account', value: result.taxSavedVsTaxable !== undefined ? (fmt(result.taxSavedVsTaxable)) : '' },
-    { label: 'Est. Monthly Tax-Free Income', value: result.monthlyTaxFree !== undefined ? (fmt(result.monthlyTaxFree)) : '' },
+    { label: "Projected Roth IRA Balance', value: result.futureBalance !== undefined ? (fmt(result.futureBalance)) : "' },
+    { label: "Total Contributions', value: result.totalContributed !== undefined ? (fmt(result.totalContributed)) : "' },
+    { label: "Tax-Free Growth', value: result.growthEarned !== undefined ? (fmt(result.growthEarned)) : "' },
+    { label: "Tax Savings vs Taxable Account', value: result.taxSavedVsTaxable !== undefined ? (fmt(result.taxSavedVsTaxable)) : "' },
+    { label: "Est. Monthly Tax-Free Income', value: result.monthlyTaxFree !== undefined ? (fmt(result.monthlyTaxFree)) : "' },
   ] : []
 
   return (

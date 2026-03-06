@@ -44,11 +44,11 @@ export default function Calculator() {
   }, [shares, buyPrice, sellPrice, tradingFees, taxRate])
 
   const pdfRows = result ? [
-    { label: 'Total Amount Invested', value: result.invested !== undefined ? (fmt(result.invested)) : '' },
-    { label: 'Net Profit (after tax)', value: result.netProfit !== undefined ? (fmt(result.netProfit)) : '' },
-    { label: 'Return on Investment', value: result.roi !== undefined ? (String(result.roi)) : '' },
-    { label: 'Tax Due on Gains', value: result.taxDue !== undefined ? (fmt(result.taxDue)) : '' },
-    { label: 'Break-Even Price', value: result.breakEven !== undefined ? (String(result.breakEven)) : '' },
+    { label: "Total Amount Invested', value: result.invested !== undefined ? (fmt(result.invested)) : "' },
+    { label: "Net Profit (after tax)', value: result.netProfit !== undefined ? (fmt(result.netProfit)) : "' },
+    { label: "Return on Investment', value: result.roi !== undefined ? (String(result.roi)) : "' },
+    { label: "Tax Due on Gains', value: result.taxDue !== undefined ? (fmt(result.taxDue)) : "' },
+    { label: "Break-Even Price', value: result.breakEven !== undefined ? (String(result.breakEven)) : "' },
   ] : []
 
   return (

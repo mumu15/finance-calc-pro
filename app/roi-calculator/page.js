@@ -25,11 +25,11 @@ export default function Calculator() {
   }, [initialInvestment, finalValue, holdingYears, additionalCosts])
 
   const pdfRows = result ? [
-    { label: 'Net Return (profit/loss)', value: result.netReturn !== undefined ? String(fmt(result.netReturn)) : '' },
-    { label: 'ROI %', value: result.roi !== undefined ? String(result.roi) : '' },
-    { label: 'Annualised ROI', value: result.annualisedROI !== undefined ? String(result.annualisedROI) : '' },
-    { label: 'Total Return %', value: result.totalReturn !== undefined ? String(result.totalReturn) : '' },
-    { label: 'Time to Double at This Rate', value: result.ruleOf72Years !== undefined ? String(result.ruleOf72Years) : '' },
+    { label: "Net Return (profit/loss)', value: result.netReturn !== undefined ? String(fmt(result.netReturn)) : "' },
+    { label: "ROI %', value: result.roi !== undefined ? String(result.roi) : "' },
+    { label: "Annualised ROI', value: result.annualisedROI !== undefined ? String(result.annualisedROI) : "' },
+    { label: "Total Return %', value: result.totalReturn !== undefined ? String(result.totalReturn) : "' },
+    { label: "Time to Double at This Rate', value: result.ruleOf72Years !== undefined ? String(result.ruleOf72Years) : "' },
   ] : []
 
   return (

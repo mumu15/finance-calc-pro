@@ -27,12 +27,12 @@ export default function Calculator() {
   }, [homeValue, mortgageBalance, maxLTV, appreciation, projYears])
 
   const pdfRows = result ? [
-    { label: 'Current Home Equity', value: result.equity !== undefined ? String(fmt(result.equity)) : '' },
-    { label: 'Equity as % of Home Value', value: result.equityPct !== undefined ? String(result.equityPct) : '' },
-    { label: 'Current LTV Ratio', value: result.ltv !== undefined ? String(result.ltv) : '' },
-    { label: 'Max Amount You Can Borrow', value: result.maxBorrow !== undefined ? String(fmt(result.maxBorrow)) : '' },
-    { label: 'Projected Home Value', value: result.futureValue !== undefined ? String(fmt(result.futureValue)) : '' },
-    { label: 'Projected Equity', value: result.futureEquity !== undefined ? String(fmt(result.futureEquity)) : '' },
+    { label: "Current Home Equity', value: result.equity !== undefined ? String(fmt(result.equity)) : "' },
+    { label: "Equity as % of Home Value', value: result.equityPct !== undefined ? String(result.equityPct) : "' },
+    { label: "Current LTV Ratio', value: result.ltv !== undefined ? String(result.ltv) : "' },
+    { label: "Max Amount You Can Borrow', value: result.maxBorrow !== undefined ? String(fmt(result.maxBorrow)) : "' },
+    { label: "Projected Home Value', value: result.futureValue !== undefined ? String(fmt(result.futureValue)) : "' },
+    { label: "Projected Equity', value: result.futureEquity !== undefined ? String(fmt(result.futureEquity)) : "' },
   ] : []
 
   return (

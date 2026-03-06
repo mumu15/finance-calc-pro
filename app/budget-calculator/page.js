@@ -33,9 +33,9 @@ export default function BudgetCalculator() {
   }, [income, incomeType, needs, wants, savings])
 
   const categories = [
-    { label: 'Needs', pct: needs, amt: calc.needsAmt, color: '#60a5fa', desc: 'Rent, groceries, utilities, transport', examples: ['🏠 Rent/Mortgage', '🛒 Groceries', '💡 Utilities', '🚗 Transport', '💊 Healthcare'] },
-    { label: 'Wants', pct: wants, amt: calc.wantsAmt, color: '#f0c842', desc: 'Dining out, entertainment, shopping', examples: ['🍕 Dining Out', '🎬 Entertainment', '👗 Shopping', '✈️ Travel', '📱 Subscriptions'] },
-    { label: 'Savings', pct: savings, amt: calc.savingsAmt, color: '#34d399', desc: 'Emergency fund, investments, debt', examples: ['🏦 Emergency Fund', '📈 Investments', '💳 Debt Payoff', '🎓 Education', '🏡 House Fund'] },
+    { label: "Needs', pct: needs, amt: calc.needsAmt, color: "#60a5fa', desc: 'Rent, groceries, utilities, transport', examples: ['🏠 Rent/Mortgage', '🛒 Groceries', '💡 Utilities', '🚗 Transport', '💊 Healthcare'] },
+    { label: "Wants', pct: wants, amt: calc.wantsAmt, color: "#f0c842', desc: 'Dining out, entertainment, shopping', examples: ['🍕 Dining Out', '🎬 Entertainment', '👗 Shopping', '✈️ Travel', '📱 Subscriptions'] },
+    { label: "Savings', pct: savings, amt: calc.savingsAmt, color: "#34d399', desc: 'Emergency fund, investments, debt', examples: ['🏦 Emergency Fund', '📈 Investments', '💳 Debt Payoff', '🎓 Education', '🏡 House Fund'] },
   ]
 
   return (
@@ -146,10 +146,10 @@ export default function BudgetCalculator() {
           <h2 className="text-white font-bold text-lg mb-4">Annual Summary</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { label: 'Annual Income', value: fmt(calc.monthly * 12), color: 'text-white' },
-              { label: 'Annual on Needs', value: fmt(calc.needsAmt * 12), color: 'text-blue-400' },
-              { label: 'Annual on Wants', value: fmt(calc.wantsAmt * 12), color: 'text-yellow-400' },
-              { label: 'Annual Savings', value: fmt(calc.savingsAmt * 12), color: 'text-emerald-400' },
+              { label: "Annual Income', value: fmt(calc.monthly * 12), color: "text-white' },
+              { label: "Annual on Needs', value: fmt(calc.needsAmt * 12), color: "text-blue-400' },
+              { label: "Annual on Wants', value: fmt(calc.wantsAmt * 12), color: "text-yellow-400' },
+              { label: "Annual Savings', value: fmt(calc.savingsAmt * 12), color: "text-emerald-400' },
             ].map((item, i) => (
               <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                 <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>

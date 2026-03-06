@@ -49,10 +49,10 @@ export default function Calculator() {
   }, [debtBalance, debtRate, investReturn, extraMonthly, years])
 
   const pdfRows = result ? [
-    { label: 'Net Benefit: Pay Off Debt', value: result.payoffNetBenefit !== undefined ? (fmt(result.payoffNetBenefit)) : '' },
-    { label: 'Net Benefit: Invest Instead', value: result.investNetBenefit !== undefined ? (fmt(result.investNetBenefit)) : '' },
-    { label: 'Recommendation', value: result.recommendation !== undefined ? (String(result.recommendation)) : '' },
-    { label: 'Difference', value: result.difference !== undefined ? (fmt(result.difference)) : '' },
+    { label: "Net Benefit: Pay Off Debt', value: result.payoffNetBenefit !== undefined ? (fmt(result.payoffNetBenefit)) : "' },
+    { label: "Net Benefit: Invest Instead', value: result.investNetBenefit !== undefined ? (fmt(result.investNetBenefit)) : "' },
+    { label: "Recommendation', value: result.recommendation !== undefined ? (String(result.recommendation)) : "' },
+    { label: "Difference', value: result.difference !== undefined ? (fmt(result.difference)) : "' },
   ] : []
 
   return (

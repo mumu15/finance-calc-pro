@@ -29,12 +29,12 @@ export default function Calculator() {
   }, [desiredIncome, hoursPerWeek, weeksPerYear, businessExpenses, taxRate, nonBillablePct])
 
   const pdfRows = result ? [
-    { label: 'Minimum Hourly Rate', value: result.minHourlyRate !== undefined ? String(fmt(result.minHourlyRate)) : '' },
-    { label: 'Day Rate (8 hrs)', value: result.dayRate !== undefined ? String(fmt(result.dayRate)) : '' },
-    { label: 'Weekly Rate', value: result.weekRate !== undefined ? String(fmt(result.weekRate)) : '' },
-    { label: 'Project Rate (40 hrs)', value: result.projectRate40h !== undefined ? String(fmt(result.projectRate40h)) : '' },
-    { label: 'Annual Revenue Needed', value: result.annualRevNeeded !== undefined ? String(fmt(result.annualRevNeeded)) : '' },
-    { label: 'Total Billable Hours / Year', value: result.totalBillableHours !== undefined ? String(result.totalBillableHours) : '' },
+    { label: "Minimum Hourly Rate', value: result.minHourlyRate !== undefined ? String(fmt(result.minHourlyRate)) : "' },
+    { label: "Day Rate (8 hrs)', value: result.dayRate !== undefined ? String(fmt(result.dayRate)) : "' },
+    { label: "Weekly Rate', value: result.weekRate !== undefined ? String(fmt(result.weekRate)) : "' },
+    { label: "Project Rate (40 hrs)', value: result.projectRate40h !== undefined ? String(fmt(result.projectRate40h)) : "' },
+    { label: "Annual Revenue Needed', value: result.annualRevNeeded !== undefined ? String(fmt(result.annualRevNeeded)) : "' },
+    { label: "Total Billable Hours / Year', value: result.totalBillableHours !== undefined ? String(result.totalBillableHours) : "' },
   ] : []
 
   return (

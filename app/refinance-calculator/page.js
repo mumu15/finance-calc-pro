@@ -45,10 +45,10 @@ export default function Calculator() {
   }, [currentBalance, currentRate, newRate, termYears, closingCosts])
 
   const pdfRows = result ? [
-    { label: 'New Monthly Payment', value: result.newMonthly !== undefined ? (fmt(result.newMonthly)) : '' },
-    { label: 'Monthly Savings', value: result.monthlySavings !== undefined ? (fmt(result.monthlySavings)) : '' },
-    { label: 'Break-Even Period', value: result.breakEven !== undefined ? (String(result.breakEven)) : '' },
-    { label: 'Total Lifetime Savings', value: result.totalSavings !== undefined ? (fmt(result.totalSavings)) : '' },
+    { label: "New Monthly Payment', value: result.newMonthly !== undefined ? (fmt(result.newMonthly)) : "' },
+    { label: "Monthly Savings', value: result.monthlySavings !== undefined ? (fmt(result.monthlySavings)) : "' },
+    { label: "Break-Even Period', value: result.breakEven !== undefined ? (String(result.breakEven)) : "' },
+    { label: "Total Lifetime Savings', value: result.totalSavings !== undefined ? (fmt(result.totalSavings)) : "' },
   ] : []
 
   return (

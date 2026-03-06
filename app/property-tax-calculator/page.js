@@ -38,10 +38,10 @@ export default function Calculator() {
   }, [homeValue, assessedPct, taxRate])
 
   const pdfRows = result ? [
-    { label: 'Annual Property Tax', value: result.annualTax !== undefined ? (fmt(result.annualTax)) : '' },
-    { label: 'Monthly Escrow Amount', value: result.monthlyEscrow !== undefined ? (fmt(result.monthlyEscrow)) : '' },
-    { label: 'Assessed Value', value: result.assessedValue !== undefined ? (fmt(result.assessedValue)) : '' },
-    { label: 'Effective Tax Rate', value: result.effectiveRate !== undefined ? (String(result.effectiveRate)) : '' },
+    { label: "Annual Property Tax', value: result.annualTax !== undefined ? (fmt(result.annualTax)) : "' },
+    { label: "Monthly Escrow Amount', value: result.monthlyEscrow !== undefined ? (fmt(result.monthlyEscrow)) : "' },
+    { label: "Assessed Value', value: result.assessedValue !== undefined ? (fmt(result.assessedValue)) : "' },
+    { label: "Effective Tax Rate', value: result.effectiveRate !== undefined ? (String(result.effectiveRate)) : "' },
   ] : []
 
   return (
