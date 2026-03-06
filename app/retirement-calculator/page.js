@@ -1,182 +1,254 @@
 'use client'
 import { useState, useMemo } from 'react'
-import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import FaqSchema from '../../components/FaqSchema'
+import TrustSection from '../../components/TrustSection'
+import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 
-const faqs = [
-  { q: 'How much do I need to retire?', a: 'A common rule is to save 25x your annual expenses (the 4% rule). If you spend $50,000 per year you need $1.25 million to retire. This allows you to withdraw 4% annually without running out of money.' },
-  { q: 'What is the 4% rule?', a: 'The 4% rule states you can safely withdraw 4% of your retirement savings each year without running out of money over a 30 year retirement. It is based on historical stock market returns.' },
-  { q: 'How much should I save for retirement each month?', a: 'Most experts recommend saving 15% of your gross income for retirement including any employer match. The earlier you start the less you need to save each month due to compound interest.' },
-  { q: 'When should I start saving for retirement?', a: 'Start as early as possible. Money invested in your 20s has 40+ years to grow. Due to compound interest $1 invested at 25 is worth much more than $1 invested at 45.' },
-  { q: 'What is a good retirement savings by age?', a: 'By 30 aim for 1x salary saved. By 40 aim for 3x. By 50 aim for 6x. By 60 aim for 8x. By 67 aim for 10x your annual salary saved for a comfortable retirement.' },
-]
-
-export default function RetirementCalculator() {
-  const { fmt, currency } = useCurrency()
-  const [currentAge, setCurrentAge] = useState(30)
+export default function Calculator() {
+  const { fmt } = useCurrency()
+  const [currentAge, setCurrentAge] = useState(35)
   const [retireAge, setRetireAge] = useState(65)
-  const [currentSavings, setCurrentSavings] = useState(25000)
-  const [monthlyContrib, setMonthlyContrib] = useState(500)
+  const [currentSavings, setCurrentSavings] = useState(50000)
+  const [monthlyContrib, setMonthlyContrib] = useState(800)
   const [annualReturn, setAnnualReturn] = useState(7)
-  const [annualExpenses, setAnnualExpenses] = useState(50000)
+  const [desiredIncome, setDesiredIncome] = useState(60000)
+  const [inflationRate, setInflationRate] = useState(3)
 
-  const calc = useMemo(() => {
-    const years = retireAge - currentAge
-    const monthlyRate = annualReturn / 100 / 12
-    const n = years * 12
-    const futureValue = currentSavings * Math.pow(1 + monthlyRate, n) +
-      monthlyContrib * ((Math.pow(1 + monthlyRate, n) - 1) / monthlyRate)
-    const goal = annualExpenses * 25
-    const pct = Math.min(100, (futureValue / goal) * 100)
-    const monthlyIncome = futureValue * 0.04 / 12
-    const shortfall = Math.max(0, goal - futureValue)
-    const surplus = Math.max(0, futureValue - goal)
+  const result = useMemo(() => {
+    try {
+      const years      = retireAge - currentAge
+      if (years <= 0) return null
+      const r          = annualReturn / 100 / 12
+      const n          = years * 12
+      const fvSavings  = currentSavings * Math.pow(1 + annualReturn/100, years)
+      const fvContribs = monthlyContrib * (Math.pow(1+r, n) - 1) / r
+      const totalAtRetire = fvSavings + fvContribs
+      const neededAt4pct  = desiredIncome / 0.04
+      const onTrack       = totalAtRetire >= neededAt4pct
+      const monthlyIncome = totalAtRetire * 0.04 / 12
+      const gap           = neededAt4pct - totalAtRetire
+      const addlMonthly   = gap > 0 ? gap * r / (Math.pow(1+r,n) - 1) : 0
+      const status        = onTrack ? 'On Track' : 'Behind Goal'
+      return { totalAtRetire, neededAt4pct, monthlyIncome, gap: Math.max(0, gap), addlMonthly: Math.max(0, addlMonthly), status }
+    } catch(e) { return null }
+  }, [currentAge, retireAge, currentSavings, monthlyContrib, annualReturn, desiredIncome, inflationRate])
 
-    // Year by year
-    const yearlyData = []
-    let balance = currentSavings
-    for (let y = 1; y <= years; y++) {
-      const rY = annualReturn / 100 / 12
-      balance = balance * Math.pow(1 + rY, 12) + monthlyContrib * ((Math.pow(1 + rY, 12) - 1) / rY)
-      yearlyData.push({ year: currentAge + y, balance })
-    }
-
-    return { futureValue, goal, pct, monthlyIncome, shortfall, surplus, years, yearlyData }
-  }, [currentAge, retireAge, currentSavings, monthlyContrib, annualReturn, annualExpenses])
+  const pdfRows = result ? [
+    { label: "Projected Retirement Savings", value: result.totalAtRetire !== undefined ? String(fmt(result.totalAtRetire)) : "" },
+    { label: "Amount Needed (4% Rule)", value: result.neededAt4pct !== undefined ? String(fmt(result.neededAt4pct)) : "" },
+    { label: "Monthly Income at Retirement", value: result.monthlyIncome !== undefined ? String(fmt(result.monthlyIncome)) : "" },
+    { label: "Savings Gap", value: result.gap !== undefined ? String(fmt(result.gap)) : "" },
+    { label: "Extra Monthly Needed", value: result.addlMonthly !== undefined ? String(fmt(result.addlMonthly)) : "" },
+    { label: "Status", value: result.status !== undefined ? String(result.status) : "" },
+  ] : []
 
   return (
     <>
-      <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
+
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Retirement Calculator</h1>
-          <p className="text-slate-400 text-lg">Find out if you are on track for retirement — see your progress toward your goal</p>
+          <div className="text-5xl mb-4">🌅</div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Retirement Calculator</h1>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Calculate how much you need to retire and whether you are on track to reach your goal.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
           <div className="result-box">
-            <h2 className="text-white font-bold text-lg mb-5">Your Details</h2>
-            <div className="space-y-4">
-              {[
-                { label: "Current Age", value: currentAge, set: setCurrentAge, min: 18, max: 70, step: 1, suffix: " yrs" },
-                { label: "Retirement Age", value: retireAge, set: setRetireAge, min: currentAge + 1, max: 80, step: 1, suffix: " yrs" },
-                { label: "Current Savings", value: currentSavings, set: setCurrentSavings, min: 0, max: 500000, step: 1000, prefix: currency.symbol },
-                { label: "Monthly Contribution", value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
-                { label: "Expected Annual Return", value: annualReturn, set: setAnnualReturn, min: 1, max: 15, step: 0.5, suffix: "%" },
-                { label: "Annual Expenses in Retirement", value: annualExpenses, set: setAnnualExpenses, min: 20000, max: 200000, step: 1000, prefix: currency.symbol },
-              ].map((field, i) => (
-                <div key={i}>
-                  <div className="flex justify-between mb-1.5">
-                    <label className="text-slate-400 text-sm">{field.label}</label>
-                    <span className="text-white font-bold text-sm">{field.prefix || ""}{field.value.toLocaleString()}{field.suffix || ''}</span>
-                  </div>
-                  <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
-                    onChange={e => field.set(Number(e.target.value))}
-                    className="w-full accent-yellow-400" />
+            <h2 className="text-white font-bold text-lg mb-5">Enter Details</h2>
+            <div className="space-y-5">
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Current Age</label>
+                  <span className="text-white font-bold text-sm">{`${currentAge} yrs`}</span>
                 </div>
-              ))}
+                <input type="range" min={18} max={70} step={1}
+                  value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Target Retirement Age</label>
+                  <span className="text-white font-bold text-sm">{`${retireAge} yrs`}</span>
+                </div>
+                <input type="range" min={45} max={75} step={1}
+                  value={retireAge} onChange={e => setRetireAge(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Current Retirement Savings</label>
+                  <span className="text-white font-bold text-sm">{fmt(currentSavings)}</span>
+                </div>
+                <input type="range" min={0} max={2000000} step={5000}
+                  value={currentSavings} onChange={e => setCurrentSavings(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Monthly Contribution</label>
+                  <span className="text-white font-bold text-sm">{fmt(monthlyContrib)}</span>
+                </div>
+                <input type="range" min={0} max={10000} step={50}
+                  value={monthlyContrib} onChange={e => setMonthlyContrib(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Expected Annual Return</label>
+                  <span className="text-white font-bold text-sm">{`${annualReturn}%`}</span>
+                </div>
+                <input type="range" min={1} max={15} step={0.25}
+                  value={annualReturn} onChange={e => setAnnualReturn(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Desired Annual Retirement Income</label>
+                  <span className="text-white font-bold text-sm">{fmt(desiredIncome)}</span>
+                </div>
+                <input type="range" min={10000} max={300000} step={1000}
+                  value={desiredIncome} onChange={e => setDesiredIncome(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Inflation Rate</label>
+                  <span className="text-white font-bold text-sm">{`${inflationRate}%`}</span>
+                </div>
+                <input type="range" min={1} max={8} step={0.25}
+                  value={inflationRate} onChange={e => setInflationRate(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            {/* Progress Bar */}
             <div className="result-box">
-              <h2 className="text-white font-bold mb-3">Retirement Progress</h2>
-              <div className="flex justify-between text-sm mb-2">
-                <span className="text-slate-400">Projected: <span className="text-yellow-400 font-bold">{fmt(calc.futureValue)}</span></span>
-                <span className="text-slate-400">Goal: <span className="text-white font-bold">{fmt(calc.goal)}</span></span>
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-white font-bold text-lg">Results</h2>
+                {result && <PdfDownload title="Retirement Calculator" rows={pdfRows} />}
               </div>
-              <div className="w-full h-6 rounded-full overflow-hidden" style={{background:"rgba(255,255,255,0.05)"}}>
-                <div className="h-full rounded-full transition-all duration-500 flex items-center justify-end pr-2"
-                  style={{width:`${calc.pct}%`, background: calc.pct >= 100 ? '#34d399' : calc.pct >= 75 ? '#f0c842' : '#f97316', minWidth:'2rem'}}>
-                  <span className="text-xs font-bold text-dark-950" style={{color:"#030712"}}>{Math.round(calc.pct)}%</span>
+              {result ? (
+                <div className="space-y-3">
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Projected Retirement Savings</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.totalAtRetire)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Amount Needed (4% Rule)</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.neededAt4pct)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Monthly Income at Retirement</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.monthlyIncome)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Savings Gap</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.gap)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Extra Monthly Needed</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.addlMonthly)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Status</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {result.status}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              {calc.surplus > 0 ? (
-                <p className="text-emerald-400 text-sm mt-2">✅ You are on track! Projected surplus: {fmt(calc.surplus)}</p>
               ) : (
-                <p className="text-orange-400 text-sm mt-2">⚠️ Shortfall of {fmt(calc.shortfall)} — consider saving more</p>
+                <div className="text-center py-8 text-slate-500 text-sm">Enter values above to see results</div>
               )}
             </div>
-
-            <div className="result-box">
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { label: "Years to Retire", value: calc.years + " yrs", color: 'text-white' },
-                  { label: "Retirement Goal", value: fmt(calc.goal), color: "text-yellow-400" },
-                  { label: "Projected Savings", value: fmt(calc.futureValue), color: "text-emerald-400" },
-                  { label: "Monthly Income", value: fmt(calc.monthlyIncome), color: "text-blue-400" },
-                ].map((item, i) => (
-                  <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)",border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
-                    <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
-                  </div>
-                ))}
-              </div>
-              <p className="text-slate-500 text-xs mt-3">Monthly income based on 4% withdrawal rule</p>
+            <div className="p-3 rounded-xl text-xs text-slate-500 leading-relaxed"
+              style={{background:'rgba(255,255,255,0.02)',border:'1px solid rgba(255,255,255,0.05)'}}>
+              Results are estimates for educational purposes only. Not financial advice.
             </div>
           </div>
         </div>
 
-        {/* Milestones */}
-        <div className="mt-6 result-box">
-          <h2 className="text-white font-bold text-lg mb-4">Savings Milestones</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[25, 50, 75, 100].map(pct => {
-              const milestoneYear = calc.yearlyData.find(y => (y.balance / calc.goal) * 100 >= pct)
-              return (
-                <div key={pct} className="p-3 rounded-xl text-center" style={{background:"rgba(255,255,255,0.03)",border:`1px solid ${calc.pct >= pct ? 'rgba(52,211,153,0.3)' : 'rgba(255,255,255,0.06)'}`}}>
-                  <div className={`text-2xl font-bold ${calc.pct >= pct ? 'text-emerald-400' : 'text-slate-600'}`}>{pct}%</div>
-                  <div className="text-slate-500 text-xs mt-1">{milestoneYear ? "Age " + milestoneYear.year : 'Not reached'}</div>
-                </div>
-              )
-            })}
+        <div className="mb-12">
+          <h2 className="text-xl font-bold text-white mb-4">Related Calculators</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+
+            <a href="/401k-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">📊</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">401k Calculator</h3>
+            </a>
+
+            <a href="/roth-ira-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">💎</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Roth IRA</h3>
+            </a>
+
+            <a href="/fire-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">🔥</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">FIRE Calculator</h3>
+            </a>
+
+            <a href="/pension-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">🏛️</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Pension Calculator</h3>
+            </a>
           </div>
         </div>
 
-        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)",borderColor:'rgba(240,200,66,0.15)'}}>
-          <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
-          <a href="/blog/how-much-to-save-for-retirement" className="text-yellow-400 font-semibold hover:underline">How Much Do You Need to Save for Retirement? (2026 Guide)</a>
-        </div>
+        <div className="result-box mb-12">
+          <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
 
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              {href:'/compound-interest',icon:'📈',name:'Compound Interest',desc:'See how compound interest grows money'},
-              {href:'/savings-calculator',icon:'🏦',name:'Savings Calculator',desc:'Calculate how your savings grow'},
-              {href:'/budget-calculator',icon:'📋',name:'Budget Calculator',desc:'Create a monthly budget plan'},
-              {href:'/inflation-calculator',icon:'📉',name:'Inflation Calculator',desc:'See how inflation affects savings'},
-            ].map((tool,i) => (
-              <a key={i} href={tool.href} className="result-box group hover:-translate-y-1 transition-all duration-300">
-                <div className="text-3xl mb-3">{tool.icon}</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">{tool.name}</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">{tool.desc}</p>
-              </a>
-            ))}
-          </div>
-        </div>
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">How much do I need to retire?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">The most common benchmark is 25x your desired annual expenses (the 4% rule). To spend $60,000/year in retirement you need $1,500,000 saved. For a longer retirement (40+ years) many advisors suggest 28-33x expenses (3-3.5% withdrawal rate). Social Security and pension income reduce how much you personally need to save.</p>
+            </div>
 
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
-          <div className="result-box">
-            <div className="space-y-4 text-sm">
-              {faqs.map((faq, i) => (
-                <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                  <p className="text-slate-400">{faq.a}</p>
-                </div>
-              ))}
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">What is the 4% rule for retirement?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">The 4% rule states that withdrawing 4% of your portfolio in year one, then adjusting for inflation, has historically sustained a portfolio for 30 years in most market scenarios (based on the 1994 Trinity Study). For retirements longer than 30 years, a 3-3.5% rate is safer. The rule assumes a diversified stock/bond portfolio.</p>
+            </div>
+
+            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">How much should I save for retirement each month?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Most financial advisors recommend saving 15% of gross income for retirement (including any employer match). If starting late, aim for 20-25%. At minimum, always contribute enough to get the full employer 401k match — that is an instant 50-100% return. Use this calculator to find your specific number based on your timeline and goals.</p>
             </div>
           </div>
         </div>
-      <AdUnit slot="7405024590" />
 
       </main>
+      <TrustSection />
       <Footer />
     </>
   )
