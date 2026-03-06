@@ -95,7 +95,7 @@ export default function Home() {
                       {tool.badge && (
                         <span style={{ position:'absolute', top:'10px', right:'10px', padding:'2px 7px', borderRadius:'100px', fontSize:'10px', fontWeight:'700', background:cat.bg, border:'1px solid '+cat.border, color:cat.color }}>{tool.badge}</span>
                       )}
-                      <h3 className="tool-card-title" style={{ paddingRight:tool.badge?"52px':'0' }}>{tool.title}</h3>
+                      <h3 className="tool-card-title" style={{ paddingRight:tool.badge?'52px':'0' }}>{tool.title}</h3>
                       <span style={{ display:'inline-flex', alignItems:'center', gap:'4px', fontSize:'12px', fontWeight:'600', color:cat.color, opacity:0.85 }}>
                         Open <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
                       </span>
