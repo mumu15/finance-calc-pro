@@ -97,7 +97,7 @@ export default function Footer() {
           <div>
             <Link href="/" style={{ display:"inline-flex", alignItems:'center', gap:'10px', marginBottom:'14px', textDecoration:'none' }}>
               <div style={{ width:'32px', height:'32px', borderRadius:'9px', background:'linear-gradient(135deg,#f0c842,#d4a017)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'900', fontSize:'14px', color:'#0a0f1e' }}>F</div>
-              <span style={{ fontFamily:""DM Serif Display",serif", fontSize:"17px", color:'#f1f5f9', letterSpacing:'-0.3px' }}>
+              <span style={{ fontFamily:'"DM Serif Display",serif', fontSize:"17px", color:'#f1f5f9', letterSpacing:'-0.3px' }}>
                 FreeFinCalc<span style={{ color:'#f0c842' }}>.net</span>
               </span>
             </Link>

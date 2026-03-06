@@ -203,7 +203,7 @@ export default function PdfDownload({ title, rows, inputs = [] }) {
         background: 'rgba(240,200,66,0.1)',
         border: '1px solid rgba(240,200,66,0.35)',
         color: '#f0c842',
-        fontFamily: ""DM Sans", sans-serif",
+        fontFamily: '"DM Sans", sans-serif',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.background = 'rgba(240,200,66,0.18)'

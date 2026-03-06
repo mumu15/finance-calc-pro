@@ -33,7 +33,7 @@ export default function Home() {
               <span style={{ width:'7px', height:'7px', borderRadius:'50%', background:'#f0c842', boxShadow:'0 0 8px #f0c842', display:'inline-block' }} />
               {total} Free Calculators · 10 Categories · 40+ Currencies · No Sign Up
             </div>
-            <h1 style={{ fontFamily:""DM Serif Display",Georgia,serif", fontSize:"clamp(38px,6vw,72px)", fontWeight:'400', lineHeight:'1.08', letterSpacing:'-1.5px', color:'#f1f5f9', marginBottom:'24px' }}>
+            <h1 style={{ fontFamily:'"DM Serif Display",Georgia,serif', fontSize:"clamp(38px,6vw,72px)", fontWeight:'400', lineHeight:'1.08', letterSpacing:'-1.5px', color:'#f1f5f9', marginBottom:'24px' }}>
               Free Financial<br/>
               <span style={{ background:'linear-gradient(135deg,#f0c842 0%,#f5a623 50%,#f0c842 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Calculators</span>
             </h1>
@@ -57,7 +57,7 @@ export default function Home() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', borderRadius:'18px', overflow:'hidden', border:'1px solid rgba(240,200,66,0.12)', background:'rgba(240,200,66,0.025)' }}>
             {[{n:total,s:'',l:'Free Calculators'},{n:'40',s:'+',l:'Currencies'},{n:'100K',s:'+',l:'Monthly Users'},{n:'4.9',s:'★',l:'User Rating'}].map((st,i) => (
               <div key={i} style={{ padding:'24px 20px', textAlign:'center', borderRight:i<3?'1px solid rgba(240,200,66,0.1)':'none' }}>
-                <div style={{ fontFamily:""DM Serif Display",serif", fontSize:"clamp(26px,3vw,36px)", color:'#f0c842', lineHeight:'1', marginBottom:'6px' }}>{st.n}<span style={{ color:'rgba(240,200,66,0.6)', fontSize:'0.7em' }}>{st.s}</span></div>
+                <div style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(26px,3vw,36px)", color:'#f0c842', lineHeight:'1', marginBottom:'6px' }}>{st.n}<span style={{ color:'rgba(240,200,66,0.6)', fontSize:'0.7em' }}>{st.s}</span></div>
                 <div style={{ color:'#475569', fontSize:'12.5px', fontWeight:'500' }}>{st.l}</div>
               </div>
             ))}
@@ -67,7 +67,7 @@ export default function Home() {
         {/* CATEGORIES */}
         <section id="calculators" className="max-w-6xl mx-auto px-4" style={{ paddingBottom:"80px" }}>
           <div style={{ textAlign:'center', marginBottom:'56px' }}>
-            <h2 style={{ fontFamily:""DM Serif Display",serif", fontSize:"clamp(26px,4vw,40px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.5px', marginBottom:'12px' }}>
+            <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(26px,4vw,40px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.5px', marginBottom:'12px' }}>
               Everything You Need to Make Better Money Decisions
             </h2>
             <p style={{ color:'#475569', fontSize:'16px', maxWidth:'540px', margin:'0 auto', lineHeight:'1.6' }}>
@@ -83,7 +83,7 @@ export default function Home() {
                     <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d={cat.svgPath}/></svg>
                   </div>
                   <div>
-                    <h2 style={{ fontFamily:""DM Serif Display",serif", fontSize:"clamp(18px,2.5vw,24px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', margin:0, lineHeight:'1.2' }}>{cat.label}</h2>
+                    <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(18px,2.5vw,24px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', margin:0, lineHeight:'1.2' }}>{cat.label}</h2>
                     <p style={{ color:'#475569', fontSize:'13px', margin:'3px 0 0' }}>{cat.desc}</p>
                   </div>
                   <div style={{ flex:1, height:'1px', background:'linear-gradient(90deg,'+cat.border+',transparent)', minWidth:'40px' }} />
@@ -110,7 +110,7 @@ export default function Home() {
         {/* SEO BLOCK */}
         <section className="max-w-4xl mx-auto px-4" style={{ paddingBottom:"64px" }}>
           <div style={{ padding:'40px 44px', borderRadius:'20px', background:'rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)' }}>
-            <h2 style={{ fontFamily:""DM Serif Display",serif", fontSize:"clamp(20px,3vw,28px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', marginBottom:'16px', textAlign:'center' }}>
+            <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(20px,3vw,28px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', marginBottom:'16px', textAlign:'center' }}>
               Professional Financial Calculators — Free, Fast &amp; Global
             </h2>
             <p style={{ color:'#475569', fontSize:'14.5px', lineHeight:'1.8', textAlign:'center', maxWidth:'700px', margin:'0 auto 16px' }}>
@@ -133,7 +133,7 @@ export default function Home() {
 
         {/* FAQ */}
         <section className="max-w-3xl mx-auto px-4" style={{ paddingBottom:"72px" }}>
-          <h2 style={{ fontFamily:""DM Serif Display",serif", fontSize:"clamp(22px,3vw,32px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', textAlign:'center', marginBottom:'32px' }}>
+          <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(22px,3vw,32px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', textAlign:'center', marginBottom:'32px' }}>
             Frequently Asked Questions
           </h2>
           {faqs.map((faq,i) => (

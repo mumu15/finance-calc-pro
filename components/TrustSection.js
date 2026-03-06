@@ -18,7 +18,7 @@ export default function TrustSection() {
           <p style={{ fontSize:'11px', fontWeight:'600', letterSpacing:'2px', textTransform:'uppercase', color:'rgba(240,200,66,0.7)', marginBottom:'8px' }}>
             Trusted by 100,000+ users every month
           </p>
-          <h2 style={{ fontFamily:""DM Serif Display",Georgia,serif", fontSize:"clamp(22px,3vw,30px)", fontWeight:'400', color:'#fff', letterSpacing:'-0.3px' }}>
+          <h2 style={{ fontFamily:'"DM Serif Display",Georgia,serif', fontSize:"clamp(22px,3vw,30px)", fontWeight:'400', color:'#fff', letterSpacing:'-0.3px' }}>
             Why professionals choose FreeFinCalc
           </h2>
         </div>
@@ -42,7 +42,7 @@ export default function TrustSection() {
         <div style={{ display:'flex', flexWrap:'wrap', borderRadius:'16px', overflow:'hidden', border:'1px solid rgba(240,200,66,0.12)', marginBottom:'36px' }}>
           {[{n:'100',u:'calculators',l:'Across 10 categories'},{n:'40+',u:'currencies',l:'Auto-detected'},{n:'100K+',u:'users/month',l:'And growing'},{n:'4.9',u:'★ rating',l:'Verified users'}].map((s,i) => (
             <div key={i} style={{ flex:'1 1 140px', padding:'20px 24px', textAlign:'center', background:i%2===0?'rgba(240,200,66,0.03)':'rgba(255,255,255,0.01)', borderRight:i<3?'1px solid rgba(240,200,66,0.1)':'none' }}>
-              <div style={{ fontFamily:""DM Serif Display",serif", fontSize:"28px", color:'#f0c842', lineHeight:'1', marginBottom:'2px' }}>{s.n}</div>
+              <div style={{ fontFamily:'"DM Serif Display",serif', fontSize:"28px", color:'#f0c842', lineHeight:'1', marginBottom:'2px' }}>{s.n}</div>
               <div style={{ color:'#94a3b8', fontSize:'12px', fontWeight:'500' }}>{s.u}</div>
               <div style={{ color:'#475569', fontSize:'11px', marginTop:'3px' }}>{s.l}</div>
             </div>
