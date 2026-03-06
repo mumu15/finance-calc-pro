@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Mortgage Calculator UAE Dubai 2026: Home Loan Rates and Guide</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
- <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
  <p className="text-white">On an AED 1.5 million mortgage at 4.5% over 25 years your monthly payment is approximately <strong> AED 8,333</strong>. UAE home loans typically require a <strong>20-25% down payment</strong> for expats and 15-20% for UAE nationals.</p>
  </div>
  <div className="space-y-8">
@@ -106,9 +106,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
- <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:"#f0c842'}}>Rent vs Buy: Which Is Better?</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Mortgage Calculator</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Savings Calculator</a>
+ <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:"#f0c842"}}>Rent vs Buy: Which Is Better?</a>
  </div>
  </section>
  </div>

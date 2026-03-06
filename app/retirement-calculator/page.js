@@ -90,10 +90,10 @@ export default function RetirementCalculator() {
                 <span className="text-slate-400">Projected: <span className="text-yellow-400 font-bold">{fmt(calc.futureValue)}</span></span>
                 <span className="text-slate-400">Goal: <span className="text-white font-bold">{fmt(calc.goal)}</span></span>
               </div>
-              <div className="w-full h-6 rounded-full overflow-hidden" style={{background:"rgba(255,255,255,0.05)'}}>
+              <div className="w-full h-6 rounded-full overflow-hidden" style={{background:"rgba(255,255,255,0.05)"}}>
                 <div className="h-full rounded-full transition-all duration-500 flex items-center justify-end pr-2"
                   style={{width:`${calc.pct}%`, background: calc.pct >= 100 ? '#34d399' : calc.pct >= 75 ? '#f0c842' : '#f97316', minWidth:'2rem'}}>
-                  <span className="text-xs font-bold text-dark-950" style={{color:"#030712'}}>{Math.round(calc.pct)}%</span>
+                  <span className="text-xs font-bold text-dark-950" style={{color:"#030712"}}>{Math.round(calc.pct)}%</span>
                 </div>
               </div>
               {calc.surplus > 0 ? (
@@ -111,7 +111,7 @@ export default function RetirementCalculator() {
                   { label: "Projected Savings", value: fmt(calc.futureValue), color: "text-emerald-400" },
                   { label: "Monthly Income", value: fmt(calc.monthlyIncome), color: "text-blue-400" },
                 ].map((item, i) => (
-                  <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                  <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)",border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
                     <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
                   </div>
@@ -129,16 +129,16 @@ export default function RetirementCalculator() {
             {[25, 50, 75, 100].map(pct => {
               const milestoneYear = calc.yearlyData.find(y => (y.balance / calc.goal) * 100 >= pct)
               return (
-                <div key={pct} className="p-3 rounded-xl text-center" style={{background:"rgba(255,255,255,0.03)',border:`1px solid ${calc.pct >= pct ? 'rgba(52,211,153,0.3)' : 'rgba(255,255,255,0.06)'}`}}>
+                <div key={pct} className="p-3 rounded-xl text-center" style={{background:"rgba(255,255,255,0.03)",border:`1px solid ${calc.pct >= pct ? 'rgba(52,211,153,0.3)' : 'rgba(255,255,255,0.06)'}`}}>
                   <div className={`text-2xl font-bold ${calc.pct >= pct ? 'text-emerald-400' : 'text-slate-600'}`}>{pct}%</div>
-                  <div className="text-slate-500 text-xs mt-1">{milestoneYear ? "Age ' + milestoneYear.year : 'Not reached'}</div>
+                  <div className="text-slate-500 text-xs mt-1">{milestoneYear ? "Age " + milestoneYear.year : 'Not reached'}</div>
                 </div>
               )
             })}
           </div>
         </div>
 
-        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)",borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/how-much-to-save-for-retirement" className="text-yellow-400 font-semibold hover:underline">How Much Do You Need to Save for Retirement? (2026 Guide)</a>
         </div>

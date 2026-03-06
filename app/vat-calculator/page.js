@@ -120,19 +120,19 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Price Excluding VAT</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.exVat)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.exVat)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">VAT Amount</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.vatAmount)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.vatAmount)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Price Including VAT</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.incVat)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.incVat)}</span>
                   </div>
                 </div>
               ) : (
@@ -179,17 +179,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is VAT and who pays it?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">VAT (Value Added Tax) is a consumption tax applied at each stage of production. Businesses collect VAT on sales and reclaim VAT on purchases. Consumers ultimately pay VAT as it is included in the final price. Most countries use VAT or a similar goods and services tax (GST).</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What are common VAT rates in Europe?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Standard EU VAT rates: UK 20%, Germany 19%, France 20%, Italy 22%, Spain 21%, Netherlands 21%, Ireland 23%, Sweden 25%. Reduced rates apply to food, books and children's items. Zero rates apply to exports. The EU requires a minimum standard VAT rate of 15%.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Can I reclaim VAT as a business?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">VAT-registered businesses can reclaim VAT paid on business purchases (input tax) against VAT collected on sales (output tax). If input tax exceeds output tax, HMRC/tax authority refunds the difference. Small businesses below the registration threshold (£90,000 in UK) may not need to register.</p>
             </div>

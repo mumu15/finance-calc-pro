@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How Inflation Works and How to Protect Your Money (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">Inflation is the rate at which prices rise over time. At <strong>3% annual inflation</strong>, $100 today will only buy <strong>$74 worth of goods in 10 years</strong>. The best protection is investing in assets that outpace inflation: stocks, real estate and TIPS.</p>
           </div>
           <div className="space-y-8">
@@ -96,9 +96,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/inflation-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Inflation Calculator</a>
-            <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842'}}>Compound Interest Calculator</a>
-            <a href="/blog/how-does-inflation-affect-savings" className="hover:underline text-sm" style={{color:"#f0c842'}}>How Does Inflation Affect Savings</a>
+                <a href="/inflation-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Inflation Calculator</a>
+            <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842"}}>Compound Interest Calculator</a>
+            <a href="/blog/how-does-inflation-affect-savings" className="hover:underline text-sm" style={{color:"#f0c842"}}>How Does Inflation Affect Savings</a>
               </div>
             </section>
           </div>

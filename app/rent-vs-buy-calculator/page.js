@@ -99,7 +99,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Mortgage Rate</label>
-                  <span className="text-white font-bold text-sm">{mortgageRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{mortgageRate + "%"}</span>
                 </div>
                 <input type="range" min={2} max={12} step={0.125}
                   value={mortgageRate} onChange={e => setMortgageRate(Number(e.target.value))}
@@ -144,25 +144,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Mortgage Payment</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.mortgagePayment)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.mortgagePayment)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Cost of Buying</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalBuyCost)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.totalBuyCost)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Cost of Renting</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalRentCost)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.totalRentCost)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Est. Home Appreciation</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.homeAppreciation)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.homeAppreciation)}</span>
                   </div>
                 </div>
               ) : (
@@ -209,17 +209,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Is it better to rent or buy a home?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">It depends on timeline, finances and market. Buying is better if you plan to stay 5+ years, can afford a 10-20% down payment, and home prices are reasonable relative to rents. Renting is better for flexibility, expensive markets (NYC, SF) and when you lack a down payment or have high debt.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the price-to-rent ratio?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The price-to-rent ratio compares home prices to annual rents. Divide home price by annual rent. A ratio below 15 favors buying; 15-20 is neutral; above 20 favors renting. In San Francisco the ratio exceeds 40, strongly favoring renting. In many Midwest cities it is below 15, favoring buying.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How long do you need to stay to make buying worth it?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The break-even point for buying vs renting is typically 3-7 years depending on transaction costs, mortgage rate and market appreciation. The 5-year rule suggests staying at least 5 years to recoup transaction costs (real estate agent fees, closing costs, moving). Shorter stays usually favor renting.</p>
             </div>

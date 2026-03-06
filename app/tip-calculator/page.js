@@ -90,7 +90,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Split Between</label>
-                  <span className="text-white font-bold text-sm">{people + " people'}</span>
+                  <span className="text-white font-bold text-sm">{people + " people"}</span>
                 </div>
                 <input type="range" min={1} max={20} step={1}
                   value={people} onChange={e => setPeople(Number(e.target.value))}
@@ -112,25 +112,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Tip Amount</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.tipAmount)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.tipAmount)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Bill</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalBill)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.totalBill)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Per Person Total</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.perPerson)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.perPerson)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Tip Per Person</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.tipPerPerson)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.tipPerPerson)}</span>
                   </div>
                 </div>
               ) : (
@@ -177,17 +177,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How much should I tip at a restaurant?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Standard US tipping etiquette: restaurant server 15-20%, bar 15-20%, food delivery 15-20%, coffee barista 10-15%, rideshare 10-15%, hotel housekeeping $2-5/night. Fine dining typically warrants 20%+. Tip is always based on the pre-tax amount technically, though most people tip on the total.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I split a bill with different items?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">For exact splitting: each person pays for their items plus their share of tax and tip. For equal splitting: divide the total bill (including tax and tip) by number of diners. Apps like Splitwise, Venmo and Tab make exact splitting easy. For simplicity many groups just split equally.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Is it rude not to tip?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">In the US, tipping is culturally expected and servers often earn below minimum wage relying on tips to reach a living wage. In many other countries (Japan, Australia, much of Europe) tipping is not expected or even considered rude. When travelling, research local customs.</p>
             </div>

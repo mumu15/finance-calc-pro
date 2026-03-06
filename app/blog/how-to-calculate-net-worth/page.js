@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Calculate Your Net Worth (And Why It Matters)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white"><strong>Net Worth = Total Assets minus Total Liabilities.</strong> Add up everything you own then subtract everything you owe. Track it monthly to measure your financial progress.</p>
           </div>
           <div className="space-y-8">

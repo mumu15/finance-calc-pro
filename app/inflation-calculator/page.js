@@ -54,13 +54,13 @@ export default function InflationCalculator() {
             <div className="space-y-4">
               {[
                 { label: "Amount Today", value: amount, set: setAmount, min: 1000, max: 1000000, step: 1000, prefix: currency.symbol },
-                { label: "Annual Inflation Rate", value: inflationRate, set: setInflationRate, min: 0.5, max: 15, step: 0.5, suffix: "%' },
+                { label: "Annual Inflation Rate", value: inflationRate, set: setInflationRate, min: 0.5, max: 15, step: 0.5, suffix: "%" },
                 { label: "Time Period", value: years, set: setYears, min: 1, max: 50, step: 1, suffix: " years" },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
                     <label className="text-slate-400 text-sm">{field.label}</label>
-                    <span className="text-white font-bold text-sm">{field.prefix || "'}{field.value.toLocaleString()}{field.suffix || ''}</span>
+                    <span className="text-white font-bold text-sm">{field.prefix || ""}{field.value.toLocaleString()}{field.suffix || ''}</span>
                   </div>
                   <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
                     onChange={e => field.set(Number(e.target.value))}
@@ -92,13 +92,13 @@ export default function InflationCalculator() {
             <div className="grid grid-cols-1 gap-4">
               <div className="result-box text-center py-5">
                 <div className="text-slate-400 text-sm mb-1">Purchasing Power of {fmt(amount)} in {years} Years</div>
-                <div className="text-4xl font-bold mb-1" style={{color:"#ef4444'}}>{fmt(calc.purchasingPower)}</div>
+                <div className="text-4xl font-bold mb-1" style={{color:"#ef4444"}}>{fmt(calc.purchasingPower)}</div>
                 <div className="text-slate-500 text-sm">Lost {fmt(calc.lostValue)} in purchasing power ({calc.lostPct}%)</div>
               </div>
 
               <div className="result-box text-center py-5">
                 <div className="text-slate-400 text-sm mb-1">Amount Needed in {years} Years to Match Today</div>
-                <div className="text-4xl font-bold mb-1" style={{color:"#f0c842'}}>{fmt(calc.futureNeeded)}</div>
+                <div className="text-4xl font-bold mb-1" style={{color:"#f0c842"}}>{fmt(calc.futureNeeded)}</div>
                 <div className="text-slate-500 text-sm">To maintain the same purchasing power as {fmt(amount)} today</div>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function InflationCalculator() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+                <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}>
                   {['Year','Purchasing Power','Needed to Match Today','Value Lost'].map(h => (
                     <th key={h} className="text-left text-slate-400 py-2 pr-4">{h}</th>
                   ))}
@@ -132,7 +132,7 @@ export default function InflationCalculator() {
               </thead>
               <tbody>
                 {calc.yearlyData.filter((_, i) => i % (years > 20 ? 5 : years > 10 ? 2 : 1) === 0 || i === years - 1).map((row, i) => (
-                  <tr key={i} className="border-b" style={{borderColor:"rgba(255,255,255,0.03)'}}>
+                  <tr key={i} className="border-b" style={{borderColor:"rgba(255,255,255,0.03)"}}>
                     <td className="text-slate-400 py-1.5 pr-4">{row.year}</td>
                     <td className="text-red-400 py-1.5 pr-4">{fmt(row.purchasingPower)}</td>
                     <td className="text-yellow-400 py-1.5 pr-4">{fmt(row.neededToMatch)}</td>
@@ -144,7 +144,7 @@ export default function InflationCalculator() {
           </div>
         </div>
 
-        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)",borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/how-does-inflation-affect-savings" className="text-yellow-400 font-semibold hover:underline">How Does Inflation Affect Your Savings? (2026 Guide)</a>
         </div>

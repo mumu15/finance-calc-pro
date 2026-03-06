@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Lower Your Tax Bill Legally in 2026</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">The fastest way to lower your tax bill is to <strong>maximize 401k and IRA contributions</strong>, claim all eligible <strong>deductions and credits</strong> and use <strong>tax-advantaged accounts</strong> strategically.</p>
           </div>
           <div className="space-y-8">
@@ -46,7 +46,7 @@ export default function Post() {
                   {num:'8',title:'Give to charity strategically',desc:'Bunching multiple years of charitable donations into one year can help you exceed the standard deduction and itemize. Donating appreciated stock avoids capital gains tax and still gets the full deduction.'},
                 ].map((item,i)=>(
                   <div key={i} className="result-box flex gap-4">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" style={{background:"rgba(240,200,66,0.15)',color:'#f0c842'}}>{item.num}</div>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" style={{background:"rgba(240,200,66,0.15)",color:'#f0c842'}}>{item.num}</div>
                     <div><h3 className="text-white font-bold mb-2">{item.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p></div>
                   </div>
                 ))}

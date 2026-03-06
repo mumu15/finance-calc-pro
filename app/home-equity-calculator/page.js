@@ -122,7 +122,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Current Home Equity</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.equity)}
                     </span>
                   </div>
@@ -130,7 +130,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Equity as % of Home Value</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.equityPct}
                     </span>
                   </div>
@@ -138,7 +138,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Current LTV Ratio</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.ltv}
                     </span>
                   </div>
@@ -146,7 +146,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Max Amount You Can Borrow</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.maxBorrow)}
                     </span>
                   </div>
@@ -154,7 +154,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Projected Home Value</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.futureValue)}
                     </span>
                   </div>
@@ -162,7 +162,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Projected Equity</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.futureEquity)}
                     </span>
                   </div>
@@ -208,17 +208,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How is home equity calculated?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Home equity = Current Market Value − Remaining Mortgage Balance. If your home is worth $450,000 and you owe $280,000, your equity is $170,000. Equity increases as you pay down the mortgage and as the home appreciates in value. It decreases if the home value drops or you take out additional loans against it.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How can I access my home equity?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Three main ways: (1) Cash-out refinance — refinance for more than you owe and pocket the difference; (2) Home Equity Loan — fixed lump sum at a fixed rate, repaid separately from your mortgage; (3) HELOC — revolving credit line at a variable rate. Each has different costs, risks and best-use cases.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the minimum equity required to avoid PMI?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Conventional lenders require 20% equity (80% LTV) to eliminate Private Mortgage Insurance (PMI), which costs $50-$200/month. You can request PMI removal once you reach 20% equity based on original value. Lenders must automatically cancel it at 22% equity. Refinancing or getting a new appraisal can accelerate PMI removal.</p>
             </div>

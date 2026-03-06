@@ -87,7 +87,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Stated Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{interestRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{interestRate + "%"}</span>
                 </div>
                 <input type="range" min={0.5} max={30} step={0.25}
                   value={interestRate} onChange={e => setInterestRate(Number(e.target.value))}
@@ -132,25 +132,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Payment</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.payment)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.payment)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Interest Paid</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalInterest)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.totalInterest)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">True APR (including fees)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.apr}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.apr}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Fee Impact on Cost</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.feesImpact)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.feesImpact)}</span>
                   </div>
                 </div>
               ) : (
@@ -197,17 +197,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is APR and why does it matter?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">APR (Annual Percentage Rate) includes both the interest rate and fees expressed as a yearly rate. It shows the true cost of borrowing. A 7% interest rate loan with $1,500 in fees on $20,000 over 5 years has an APR of about 8.6% — significantly higher than the stated rate.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the difference between APR and interest rate?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The interest rate is only the cost of borrowing the money. APR includes the interest rate plus fees, points, mortgage insurance and other charges. By law, lenders must disclose APR. Always compare APR (not just interest rate) when shopping for loans.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is a good APR for a loan?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Good APR varies by loan type: mortgage 6-7% (2026), auto loan 5-8%, personal loan 8-14% for excellent credit. Credit cards average 20-25% APR. Any APR below your alternatives is good. For mortgages, a difference of even 0.25% in APR saves thousands over the loan life.</p>
             </div>

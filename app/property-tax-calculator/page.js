@@ -77,7 +77,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Assessment Ratio</label>
-                  <span className="text-white font-bold text-sm">{assessedPct + "%'}</span>
+                  <span className="text-white font-bold text-sm">{assessedPct + "%"}</span>
                 </div>
                 <input type="range" min={50} max={100} step={5}
                   value={assessedPct} onChange={e => setAssessedPct(Number(e.target.value))}
@@ -87,7 +87,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Property Tax Rate (mill rate)</label>
-                  <span className="text-white font-bold text-sm">{taxRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{taxRate + "%"}</span>
                 </div>
                 <input type="range" min={0.1} max={4} step={0.05}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
@@ -109,25 +109,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Annual Property Tax</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.annualTax)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.annualTax)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Escrow Amount</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthlyEscrow)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.monthlyEscrow)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Assessed Value</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.assessedValue)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.assessedValue)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Effective Tax Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.effectiveRate}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.effectiveRate}</span>
                   </div>
                 </div>
               ) : (
@@ -174,17 +174,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How is property tax calculated?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Property tax = Assessed Value × Tax Rate. The assessed value is often a percentage of market value (the assessment ratio). A $350,000 home assessed at 100% with a 1.2% rate pays $4,200/year or $350/month in property tax escrow.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the average property tax rate in the US?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The average effective property tax rate in the US is about 1.1% of home value. Rates vary widely by state: New Jersey averages 2.4%, Illinois 2.2%, Texas 1.7%, California 0.7%, and Hawaii 0.3%. Local rates within a state also vary by county and municipality.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Can I appeal my property tax assessment?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Yes. If you believe your home is over-assessed you can appeal. Start by comparing your assessed value to recent sales of similar nearby homes. File an appeal with your local assessor's office — deadlines are typically 30-90 days after assessment notices. About 30-40% of appeals result in reductions.</p>
             </div>

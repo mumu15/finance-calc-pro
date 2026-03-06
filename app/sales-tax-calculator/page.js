@@ -84,7 +84,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Sales Tax Rate</label>
-                  <span className="text-white font-bold text-sm">{taxRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{taxRate + "%"}</span>
                 </div>
                 <input type="range" min={0} max={15} step={0.25}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
@@ -119,25 +119,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Pre-Tax Price</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.preTax)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.preTax)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Tax Amount</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.taxAmount)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.taxAmount)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Price</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.total)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.total)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Effective Tax Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.effectiveRate}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.effectiveRate}</span>
                   </div>
                 </div>
               ) : (
@@ -184,17 +184,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the average sales tax rate in the US?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The US has no federal sales tax. Combined state and local sales tax averages about 7.12% nationwide. States range from 0% (Oregon, Montana, New Hampshire, Delaware, Alaska) to 9.5%+ (Louisiana, Tennessee). Some cities add additional local taxes on top of the state rate.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I calculate sales tax?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Sales tax = Price × Tax Rate. Total = Price + (Price × Tax Rate) = Price × (1 + Tax Rate). To find pre-tax price from a total: Pre-Tax = Total ÷ (1 + Tax Rate). For example, $108.50 total at 8.5% tax: pre-tax = $108.50 ÷ 1.085 = $100.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Are all purchases subject to sales tax?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">No. Most states exempt groceries, prescription medications and medical devices. Some states also exempt clothing below a certain price. Online purchases are now subject to sales tax in most states following the 2018 South Dakota v. Wayfair Supreme Court ruling.</p>
             </div>

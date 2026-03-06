@@ -105,7 +105,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Gross Profit</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.grossProfit)}
                     </span>
                   </div>
@@ -113,7 +113,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Gross Margin %</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.grossMargin}
                     </span>
                   </div>
@@ -121,7 +121,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Operating Profit</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.operatingProfit)}
                     </span>
                   </div>
@@ -129,7 +129,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Operating Margin %</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.opMargin}
                     </span>
                   </div>
@@ -137,7 +137,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Profit</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.netProfit)}
                     </span>
                   </div>
@@ -145,7 +145,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Profit Margin %</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.netMargin}
                     </span>
                   </div>
@@ -191,17 +191,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is a good profit margin?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Benchmarks vary by industry. Gross margin: software 70-80%, retail 25-50%, restaurants 60-70% (food only). Net margin: tech companies 20-30%, retail 2-5%, restaurants 3-6%, healthcare 5-10%. A net margin above 10% is generally considered strong across most industries.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the difference between gross, operating and net margin?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Gross margin = (Revenue − COGS) ÷ Revenue. It measures production efficiency. Operating margin deducts operating expenses (salaries, rent, marketing) — it shows core business profitability. Net margin is the bottom line after everything including taxes and interest. Track all three to diagnose where profits are being lost.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I improve my profit margin?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Increase gross margin: raise prices, reduce COGS through better supplier negotiations or product mix. Improve operating margin: cut overhead, automate processes, reduce headcount costs. Increase net margin: minimise debt interest, optimise tax strategy. Often a combination of small wins across all three lines is more sustainable than one large cut.</p>
             </div>

@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Negotiate Your Salary: Scripts and Tips That Work (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">Always negotiate — <strong>85% of employers expect it</strong> and the average negotiation adds <strong>$5,000–$15,000</strong> to first-year salary. Ask for 10–20% above the offer. Use data from Glassdoor and LinkedIn Salary to anchor your ask.</p>
           </div>
           <div className="space-y-8">
@@ -90,9 +90,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
-            <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Budget Calculator</a>
-            <a href="/blog/how-much-to-save-for-retirement" className="hover:underline text-sm" style={{color:"#f0c842'}}>How Much to Save for Retirement</a>
+                <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Savings Calculator</a>
+            <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Budget Calculator</a>
+            <a href="/blog/how-much-to-save-for-retirement" className="hover:underline text-sm" style={{color:"#f0c842"}}>How Much to Save for Retirement</a>
               </div>
             </section>
           </div>

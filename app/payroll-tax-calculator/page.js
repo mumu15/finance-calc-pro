@@ -116,7 +116,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Gross Pay Per Paycheck</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.perPaycheck)}
                     </span>
                   </div>
@@ -124,7 +124,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Employee FICA (annual)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.employeeFICA)}
                     </span>
                   </div>
@@ -132,7 +132,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Employer Payroll Tax (annual)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.employerTotal)}
                     </span>
                   </div>
@@ -140,7 +140,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">FUTA — Federal Unemployment</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.futa)}
                     </span>
                   </div>
@@ -148,7 +148,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">SUTA — State Unemployment</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.suta)}
                     </span>
                   </div>
@@ -156,7 +156,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Employer Cost of Employee</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.totalCost)}
                     </span>
                   </div>
@@ -202,17 +202,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What payroll taxes does an employer pay?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Employers pay the employer share of FICA (6.2% Social Security + 1.45% Medicare = 7.65%), FUTA (0.6% on first $7,000 after state credit), and SUTA (varies by state, typically 1-5% on the first $7,000-$50,000 of wages). The true cost of an employee is about 7-10% above their gross wages.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the difference between FICA and income tax withholding?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">FICA (Social Security + Medicare) is split equally between employer and employee — each pays 7.65%. Income tax withholding is the employee's estimated federal and state income tax held by the employer and remitted to the IRS. Employers do not pay income tax on behalf of employees — they only withhold and forward it.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">When must payroll taxes be deposited?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Deposit schedule depends on your lookback period tax liability. Monthly depositors must deposit by the 15th of the following month. Semi-weekly depositors deposit within 2-3 business days after payday. Very small employers (under $2,500/quarter) can pay with their quarterly Form 941. Penalties for late deposits are 2-15%.</p>
             </div>

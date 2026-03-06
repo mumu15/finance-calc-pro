@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Build Wealth: The 7 Principles That Actually Work (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">Wealth is built by consistently doing 3 things: <strong>earning more than you spend</strong>, <strong>investing the difference</strong> and <strong>giving it time</strong>. The vehicle matters less than the consistency. Index fund investing over 20+ years is the most reliable path.</p>
           </div>
           <div className="space-y-8">
@@ -97,9 +97,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842'}}>Compound Interest Calculator</a>
-            <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Retirement Calculator</a>
-            <a href="/blog/how-to-invest-for-beginners" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Start Investing</a>
+                <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842"}}>Compound Interest Calculator</a>
+            <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Retirement Calculator</a>
+            <a href="/blog/how-to-invest-for-beginners" className="hover:underline text-sm" style={{color:"#f0c842"}}>How to Start Investing</a>
               </div>
             </section>
           </div>

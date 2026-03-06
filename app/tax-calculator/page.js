@@ -84,10 +84,10 @@ export default function TaxCalculator() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-4" style={{background:"rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
+          <div className="space-y-4" style={{background:"rgba(240,200,66,0.03)", border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
             <div>
               <label className="text-white text-sm font-medium block mb-1">Annual Income ($)</label>
-              <input type="number" value={form.income} onChange={e => update("income', parseFloat(e.target.value))}
+              <input type="number" value={form.income} onChange={e => update("income", parseFloat(e.target.value))}
                 className="w-full px-4 py-3 rounded-xl text-white outline-none"
                 style={{background:'#0f172a', border:'1px solid #1e293b'}} />
             </div>
@@ -102,7 +102,7 @@ export default function TaxCalculator() {
             </div>
             <div>
               <label className="text-white text-sm font-medium block mb-1">State Income Tax Rate (%)</label>
-              <input type="number" value={form.state} onChange={e => update("state', parseFloat(e.target.value))}
+              <input type="number" value={form.state} onChange={e => update("state", parseFloat(e.target.value))}
                 placeholder="0 for no state tax"
                 className="w-full px-4 py-3 rounded-xl text-white outline-none"
                 style={{background:'#0f172a', border:'1px solid #1e293b'}} />
@@ -120,7 +120,7 @@ export default function TaxCalculator() {
               <div className="space-y-4">
                 <div className="result-box text-center">
                   <p className="text-slate-400 text-sm mb-2">Annual Take-Home Pay</p>
-                  <div className="text-5xl font-bold mb-2" style={{color:"#f0c842'}}>{fmt(result.takeHome)}</div>
+                  <div className="text-5xl font-bold mb-2" style={{color:"#f0c842"}}>{fmt(result.takeHome)}</div>
                   <p className="text-slate-500 text-sm">{fmt(result.monthlyTakeHome)} per month</p>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
@@ -190,9 +190,9 @@ export default function TaxCalculator() {
           <AdUnit slot="7405024590" />
 
         {/* Internal Link to Blog */}
-          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:"rgba(240,200,66,0.2)',background:'rgba(240,200,66,0.05)'}}>
+          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:"rgba(240,200,66,0.2)",background:'rgba(240,200,66,0.05)'}}>
             <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
-            <a href="/blog/how-to-lower-tax-bill" className="font-semibold hover:underline" style={{color:"#f0c842'}}>How to Lower Your Tax Bill Legally in 2026</a>
+            <a href="/blog/how-to-lower-tax-bill" className="font-semibold hover:underline" style={{color:"#f0c842"}}>How to Lower Your Tax Bill Legally in 2026</a>
           </div>
       <Footer />
     </>

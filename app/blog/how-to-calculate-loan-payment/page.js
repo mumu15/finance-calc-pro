@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Calculate Loan Payments: Complete Guide (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">Monthly payment on a $10,000 loan at 8% for 3 years is approximately <strong>$313 per month</strong>. Use our free loan calculator for any loan amount, rate and term.</p>
           </div>
           <div className="space-y-8">
@@ -37,10 +37,10 @@ export default function Post() {
               <div className="result-box">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-3">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-3">Rate</th><th className="text-left text-slate-400 py-2 pr-3">Term</th><th className="text-left py-2" style={{color:"#f0c842'}}>Monthly Payment</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-3">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-3">Rate</th><th className="text-left text-slate-400 py-2 pr-3">Term</th><th className="text-left py-2" style={{color:"#f0c842"}}>Monthly Payment</th></tr></thead>
                     <tbody>
                       {[['$5,000','8%','3 years','$157'],['$10,000','8%','3 years','$313'],['$10,000','10%','5 years','$212'],['$20,000','6%','5 years','$387'],['$30,000','7%','6 years','$513'],['$50,000','5%','10 years','$530']].map((r,i)=>(
-                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-3">{r[0]}</td><td className="text-slate-400 py-2 pr-3">{r[1]}</td><td className="text-slate-400 py-2 pr-3">{r[2]}</td><td className="font-bold py-2" style={{color:"#f0c842'}}>{r[3]}</td></tr>
+                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-3">{r[0]}</td><td className="text-slate-400 py-2 pr-3">{r[1]}</td><td className="text-slate-400 py-2 pr-3">{r[2]}</td><td className="font-bold py-2" style={{color:"#f0c842"}}>{r[3]}</td></tr>
                       ))}
                     </tbody>
                   </table>
@@ -55,7 +55,7 @@ export default function Post() {
               <div className="result-box">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Interest Rate</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Payment</th><th className="text-left py-2" style={{color:"#f0c842'}}>Total Interest Paid</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Interest Rate</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Payment</th><th className="text-left py-2" style={{color:"#f0c842"}}>Total Interest Paid</th></tr></thead>
                     <tbody>
                       {[['5%','$377','$2,645'],['8%','$406','$4,332'],['12%','$445','$6,689'],['18%','$508','$10,473'],['24%','$575','$14,524']].map((r,i)=>(
                         <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="text-slate-400 py-2 pr-4">{r[1]}</td><td className="font-bold py-2 text-red-400">{r[2]}</td></tr>

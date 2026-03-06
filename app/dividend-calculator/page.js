@@ -72,7 +72,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Number of Shares</label>
-                  <span className="text-white font-bold text-sm">{shares + " shares'}</span>
+                  <span className="text-white font-bold text-sm">{shares + " shares"}</span>
                 </div>
                 <input type="range" min={1} max={10000} step={10}
                   value={shares} onChange={e => setShares(Number(e.target.value))}
@@ -102,7 +102,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Dividend Growth Rate (annual)</label>
-                  <span className="text-white font-bold text-sm">{growthRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{growthRate + "%"}</span>
                 </div>
                 <input type="range" min={0} max={20} step={0.5}
                   value={growthRate} onChange={e => setGrowthRate(Number(e.target.value))}
@@ -112,7 +112,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Investment Horizon</label>
-                  <span className="text-white font-bold text-sm">{years + " yrs'}</span>
+                  <span className="text-white font-bold text-sm">{years + " yrs"}</span>
                 </div>
                 <input type="range" min={1} max={40} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
@@ -134,31 +134,31 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Annual Dividend Income</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.annualIncome)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.annualIncome)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Dividend Income</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthlyIncome)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.monthlyIncome)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Dividend Yield</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.dividendYield}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.dividendYield}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Future Annual Income ({years} yrs)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.futureAnnualIncome)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.futureAnnualIncome)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Dividends Over Period</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalDividends)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.totalDividends)}</span>
                   </div>
                 </div>
               ) : (
@@ -205,17 +205,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is a good dividend yield?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A good dividend yield is typically 2-5%. Yields above 6-7% can signal risk — the stock price may have fallen sharply or the dividend may be unsustainable. Blue-chip dividend stocks (Dividend Aristocrats with 25+ years of increases) typically yield 2-4% with reliable growth.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is dividend reinvestment (DRIP)?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">DRIP (Dividend Reinvestment Plan) automatically reinvests your dividends to buy more shares instead of paying cash. Over time this creates compounding — more shares generate more dividends which buy even more shares. DRIP can dramatically increase total returns over 20-30 years.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Are dividends taxed?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Qualified dividends (from US stocks held over 60 days) are taxed at 0%, 15% or 20% depending on your income — much lower than ordinary income tax rates. Ordinary dividends (REITs, some foreign stocks) are taxed as ordinary income. Dividends in Roth IRA or 401k accounts grow tax-free.</p>
             </div>

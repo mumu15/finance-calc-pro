@@ -123,25 +123,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Emergency Fund Target</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.target)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.target)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Still Need to Save</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.stillNeeded)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.stillNeeded)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Time to Reach Goal</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.monthsToGoal}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.monthsToGoal}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">% of Goal Reached</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.pctComplete}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.pctComplete}</span>
                   </div>
                 </div>
               ) : (
@@ -188,17 +188,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How large should my emergency fund be?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Financial experts recommend 3-6 months of essential living expenses. Use 3 months if you have a stable job, low debt, dual income and low fixed expenses. Use 6-12 months if you are self-employed, have variable income, are a single-income household, or work in a volatile industry.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Where should I keep my emergency fund?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Keep your emergency fund in a high-yield savings account (HYSA) or money market account. These are FDIC insured, earn 4-5% interest (as of 2026) and are accessible within 1-3 days. Do not invest emergency funds in stocks — they can lose value exactly when you need them.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">Should I build an emergency fund or pay off debt first?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Build a small starter emergency fund ($1,000-$2,000) first to avoid using credit cards for unexpected expenses, then focus aggressively on high-interest debt. Once high-interest debt is paid off, build your full emergency fund. Low-interest debt (under 5%) can be repaid more slowly while building your fund.</p>
             </div>

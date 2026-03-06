@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Income Tax Calculator India 2026-27: New vs Old Tax Regime</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
  <p className="text-white">Under the <strong>new tax regime 2026</strong>, income up to ₹3 lakh is tax-free. The basic exemption is ₹3L, and a standard deduction of ₹75,000 is available. On ₹10 lakh income, new regime tax is approximately <strong> ₹54,600</strong> vs ₹1,17,000 in old regime.</p>
  </div>
  <div className="space-y-8">
@@ -101,9 +101,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/tax-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Tax Calculator</a>
- <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Budget Calculator</a>
- <a href="/blog/home-loan-emi-calculator-india" className="hover:underline text-sm" style={{color:"#f0c842'}}>Home Loan EMI Calculator India</a>
+ <a href="/tax-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Tax Calculator</a>
+ <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Budget Calculator</a>
+ <a href="/blog/home-loan-emi-calculator-india" className="hover:underline text-sm" style={{color:"#f0c842"}}>Home Loan EMI Calculator India</a>
  </div>
  </section>
  </div>

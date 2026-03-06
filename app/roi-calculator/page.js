@@ -102,7 +102,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Return (profit/loss)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.netReturn)}
                     </span>
                   </div>
@@ -110,7 +110,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">ROI %</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.roi}
                     </span>
                   </div>
@@ -118,7 +118,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Annualised ROI</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.annualisedROI}
                     </span>
                   </div>
@@ -126,7 +126,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Return %</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.totalReturn}
                     </span>
                   </div>
@@ -134,7 +134,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Time to Double at This Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.ruleOf72Years}
                     </span>
                   </div>
@@ -180,17 +180,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How is ROI calculated?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">ROI = (Net Return ÷ Cost of Investment) × 100. Net Return = Final Value − Initial Investment − Additional Costs. A $10,000 investment that grows to $15,000 with $200 in fees: ROI = ($4,800 ÷ $10,000) × 100 = 48%. Annualised ROI accounts for how long the money was invested.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is a good ROI?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Context determines good ROI. Stock market: 7-10% annualised is excellent. Real estate: 8-12% annualised is good. Business investment: 15-30%+ is typical target. Marketing campaigns: 300-500% ROI is benchmark for paid ads. Always compare ROI to the opportunity cost — what you could have earned elsewhere with the same money.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the difference between ROI and IRR?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">ROI is a simple percentage return on an investment. IRR (Internal Rate of Return) is the annualised compound rate that makes the net present value of all cash flows equal zero. IRR is more sophisticated and handles multiple cash flows over time. For simple one-time investments they are similar; for complex multi-year projects use IRR.</p>
             </div>

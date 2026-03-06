@@ -97,7 +97,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Federal Tax Rate</label>
-                  <span className="text-white font-bold text-sm">{federalRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{federalRate + "%"}</span>
                 </div>
                 <input type="range" min={0} max={37} step={1}
                   value={federalRate} onChange={e => setFederalRate(Number(e.target.value))}
@@ -107,7 +107,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">State Tax Rate</label>
-                  <span className="text-white font-bold text-sm">{stateRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{stateRate + "%"}</span>
                 </div>
                 <input type="range" min={0} max={15} step={0.25}
                   value={stateRate} onChange={e => setStateRate(Number(e.target.value))}
@@ -139,25 +139,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Gross Pay Per Paycheck</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.perPaycheck)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.perPaycheck)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Take-Home Per Paycheck</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.netPaycheck)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.netPaycheck)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Annual Net Take-Home</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.netAnnual)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.netAnnual)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Effective Tax Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.effectiveRate}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.effectiveRate}</span>
                   </div>
                 </div>
               ) : (
@@ -204,17 +204,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How is my paycheck calculated?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Your gross paycheck = Annual Salary ÷ Pay Periods. From that, subtract: federal income tax (based on your W-4 and bracket), state income tax, FICA (Social Security 6.2% + Medicare 1.45%), and any pre-tax deductions (401k, health insurance, FSA). What remains is your net take-home pay.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is FICA tax on my paycheck?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">FICA (Federal Insurance Contributions Act) consists of Social Security tax (6.2% on income up to $168,600 in 2026) and Medicare tax (1.45% on all income, plus 0.9% on income over $200,000). Your employer matches these contributions. Total FICA is 7.65% of your paycheck.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I reduce taxes on my paycheck?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Maximize pre-tax deductions: 401k contributions, HSA contributions ($4,150 single, $8,300 family in 2026), FSA contributions, and health insurance premiums. These reduce your taxable income dollar-for-dollar. Claiming the right allowances on your W-4 also adjusts withholding to avoid over-paying.</p>
             </div>

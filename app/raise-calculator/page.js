@@ -95,7 +95,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Raise Percentage</label>
-                  <span className="text-white font-bold text-sm">{raisePct + "%'}</span>
+                  <span className="text-white font-bold text-sm">{raisePct + "%"}</span>
                 </div>
                 <input type="range" min={0.5} max={50} step={0.5}
                   value={raisePct} onChange={e => setRaisePct(Number(e.target.value))}
@@ -115,7 +115,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Estimated Tax Rate</label>
-                  <span className="text-white font-bold text-sm">{taxRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{taxRate + "%"}</span>
                 </div>
                 <input type="range" min={10} max={45} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
@@ -137,31 +137,31 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">New Annual Salary</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.newSalary)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.newSalary)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Raise Amount</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.raiseAmount)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.raiseAmount)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Raise Percentage</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.newPct}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.newPct}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Extra Monthly Take-Home (after tax)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.takeHomeIncrease)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.takeHomeIncrease)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Extra Annual Take-Home</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.annualTakeHomeGain)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.annualTakeHomeGain)}</span>
                   </div>
                 </div>
               ) : (
@@ -208,17 +208,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is a good salary raise percentage?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A typical cost-of-living raise is 2-4% annually. A merit raise is usually 4-8%. A promotion raise is typically 10-20%. In a high-inflation environment, raises under 5% may not maintain purchasing power. Negotiating a higher raise at a new job is often more effective than annual increments.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I negotiate a salary raise?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Research market salaries on Glassdoor, LinkedIn Salary, and Levels.fyi. Document your accomplishments with specific metrics ($X revenue generated, Y% cost reduction). Ask for a meeting, present your case and request a specific number. Target 10-20% above your minimum acceptable figure to leave negotiation room.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">When is the best time to ask for a raise?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Ask during annual reviews, after completing a major project, when you have taken on new responsibilities, when you have a competing offer, or when the company is performing well. Avoid asking during budget cuts, layoffs or immediately after a poor performance period.</p>
             </div>

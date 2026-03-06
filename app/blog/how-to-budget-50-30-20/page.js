@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">The 50/30/20 Budget Rule: How It Works and How to Use It (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">The 50/30/20 rule splits your after-tax income into: <strong>50% needs</strong> (rent, food, utilities), <strong>30% wants</strong> (dining out, entertainment) and <strong>20% savings and debt</strong>. It is the simplest budgeting framework that actually works.</p>
           </div>
           <div className="space-y-8">
@@ -105,9 +105,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Budget Calculator</a>
-            <a href="/blog/how-to-create-monthly-budget" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Create a Monthly Budget</a>
-            <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
+                <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Budget Calculator</a>
+            <a href="/blog/how-to-create-monthly-budget" className="hover:underline text-sm" style={{color:"#f0c842"}}>How to Create a Monthly Budget</a>
+            <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Savings Calculator</a>
               </div>
             </section>
           </div>

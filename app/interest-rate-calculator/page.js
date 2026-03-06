@@ -94,7 +94,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Time Period</label>
-                  <span className="text-white font-bold text-sm">{years + " yrs'}</span>
+                  <span className="text-white font-bold text-sm">{years + " yrs"}</span>
                 </div>
                 <input type="range" min={1} max={40} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
@@ -129,25 +129,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Required Annual Interest Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.annualRate}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.annualRate}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.monthlyRate}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.monthlyRate}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Simple Rate (for comparison)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.simpleRate}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.simpleRate}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Time to Double (at this rate)</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.doubleTime}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.doubleTime}</span>
                   </div>
                 </div>
               ) : (
@@ -194,17 +194,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I calculate the interest rate needed to reach a goal?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Use the compound interest formula rearranged for rate: r = (FV/PV)^(1/n) - 1, where FV is future value, PV is present value and n is years. For example, to grow $10,000 to $20,000 in 10 years requires a 7.18% annual rate.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the Rule of 72?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The Rule of 72 estimates how long it takes to double money: divide 72 by the annual interest rate. At 6%, money doubles in 12 years. At 8%, in 9 years. At 12%, in 6 years. It also works in reverse: to double money in 8 years, you need a 9% rate.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What interest rate does the stock market return?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The S&P 500 has historically returned about 10% annually before inflation, or approximately 7% after inflation. However returns vary enormously year to year. Individual stocks, real estate and other assets have different expected return rates and risk levels.</p>
             </div>

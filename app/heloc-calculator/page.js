@@ -103,7 +103,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">HELOC Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{helocRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{helocRate + "%"}</span>
                 </div>
                 <input type="range" min={4} max={15} step={0.25}
                   value={helocRate} onChange={e => setHelocRate(Number(e.target.value))}
@@ -135,25 +135,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Current Home Equity</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.equity)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.equity)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Max HELOC Credit Limit</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.maxBorrow)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.maxBorrow)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Interest-Only Payment</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthlyInterestOnly)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.monthlyInterestOnly)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Annual Interest Cost</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.annualInterest)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.annualInterest)}</span>
                   </div>
                 </div>
               ) : (
@@ -200,17 +200,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is a HELOC and how does it work?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A HELOC (Home Equity Line of Credit) lets you borrow against your home equity up to a set limit. During the draw period (typically 10 years) you can borrow and repay as needed, paying interest only. During the repayment period (10-20 years) you repay principal and interest.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the maximum HELOC amount?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Most lenders allow you to borrow up to 80-90% of your home's value minus your mortgage balance. On a $450,000 home with $280,000 mortgage at 85% LTV: ($450,000 × 0.85) - $280,000 = $102,500 maximum HELOC.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">HELOC vs home equity loan — what is the difference?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A HELOC is a revolving line of credit with a variable rate — you borrow as needed. A home equity loan is a lump sum with a fixed rate and fixed payments. HELOCs are better for ongoing expenses; home equity loans are better for one-time large expenses where you want payment certainty.</p>
             </div>

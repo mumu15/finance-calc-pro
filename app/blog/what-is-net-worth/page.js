@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">What Is Net Worth? How to Calculate and Grow Yours (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">Net worth is your <strong>total assets minus total liabilities</strong>. If you own $200,000 in assets and owe $120,000 your net worth is $80,000. The median net worth in the US is around <strong>$192,700</strong>. For ages 35–44 the median is $135,300.</p>
           </div>
           <div className="space-y-8">
@@ -98,9 +98,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/net-worth-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Net Worth Calculator</a>
-            <a href="/blog/how-to-calculate-net-worth" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Calculate Net Worth</a>
-            <a href="/blog/how-much-to-save-for-retirement" className="hover:underline text-sm" style={{color:"#f0c842'}}>How Much to Save for Retirement</a>
+                <a href="/net-worth-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Net Worth Calculator</a>
+            <a href="/blog/how-to-calculate-net-worth" className="hover:underline text-sm" style={{color:"#f0c842"}}>How to Calculate Net Worth</a>
+            <a href="/blog/how-much-to-save-for-retirement" className="hover:underline text-sm" style={{color:"#f0c842"}}>How Much to Save for Retirement</a>
               </div>
             </section>
           </div>

@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How Car Loans Work: Interest Rates, Terms and True Cost (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">The average new car loan rate in 2026 is around <strong>7–8% for excellent credit</strong> and <strong>14–20% for fair credit</strong>. A 5-year loan on a $35,000 car at 8% costs <strong>$7,635 in interest</strong>. Always get pre-approved by your bank before visiting the dealership.</p>
           </div>
           <div className="space-y-8">
@@ -103,9 +103,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
-            <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Budget Calculator</a>
-            <a href="/blog/how-to-calculate-loan-payment" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Calculate Loan Payment</a>
+                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Loan Calculator</a>
+            <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Budget Calculator</a>
+            <a href="/blog/how-to-calculate-loan-payment" className="hover:underline text-sm" style={{color:"#f0c842"}}>How to Calculate Loan Payment</a>
               </div>
             </section>
           </div>

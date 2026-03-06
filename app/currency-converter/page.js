@@ -124,25 +124,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Converted Amount</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.converted}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.converted}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Exchange Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.rate1}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.rate1}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Inverse Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.rateInverse}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.rateInverse}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">100 unit equivalent</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.amount100}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.amount100}</span>
                   </div>
                 </div>
               ) : (
@@ -189,17 +189,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How are exchange rates determined?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Exchange rates are determined by supply and demand in the foreign exchange (forex) market — the largest financial market in the world with $7.5 trillion/day in volume. Rates are influenced by interest rate differentials, inflation, economic performance, trade balances and market sentiment.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the difference between mid-market and retail exchange rates?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The mid-market rate (interbank rate) is the midpoint between buy and sell prices used for large bank-to-bank transactions. Retail rates (what you get at a bank, exchange bureau or PayPal) include a markup of 1-5%. For best rates use services like Wise, Revolut or your bank's international transfer service.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">When is the best time to exchange currency?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Exchange rates fluctuate constantly. Avoid airports and hotel exchange desks (worst rates). Use ATMs in the local currency for better rates. For large amounts, watch rates over 2-4 weeks and exchange when the rate is favorable. Forward contracts let businesses lock in rates for future transactions.</p>
             </div>

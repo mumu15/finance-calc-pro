@@ -105,7 +105,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Contribution Margin Per Unit</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.contribution)}
                     </span>
                   </div>
@@ -113,7 +113,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Break-Even Units</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.breakEvenUnits}
                     </span>
                   </div>
@@ -121,7 +121,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Break-Even Revenue</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.breakEvenRevenue)}
                     </span>
                   </div>
@@ -129,7 +129,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Units Needed for Target Profit</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.unitsForProfit}
                     </span>
                   </div>
@@ -137,7 +137,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Revenue for Target Profit</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {fmt(result.revenueForProfit)}
                     </span>
                   </div>
@@ -145,7 +145,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Margin of Safety</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842"}}>
                       {result.marginOfSafety}
                     </span>
                   </div>
@@ -191,17 +191,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is a break-even analysis?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Break-even analysis identifies the sales volume at which total revenue equals total costs — the point of zero profit or loss. Break-even units = Fixed Costs ÷ (Price − Variable Cost Per Unit). Understanding your break-even point is essential for pricing decisions, budgeting and assessing business viability.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is contribution margin?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Contribution margin = Selling Price − Variable Cost Per Unit. It represents how much each unit sold contributes toward covering fixed costs and generating profit. A $50 product with $30 variable cost has a $20 contribution margin. You need to sell enough units to cover all fixed costs before making any profit.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I lower my break-even point?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Three levers: (1) Raise prices — increases contribution margin per unit, but risks lower sales volume. (2) Reduce variable costs — better supplier terms, process efficiency. (3) Reduce fixed costs — renegotiate rent, reduce headcount, eliminate non-essential expenses. Usually a combination delivers the best result.</p>
             </div>

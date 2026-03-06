@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Create a Monthly Budget That Actually Works (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">Use the <strong>50/30/20 rule</strong>: 50% of after-tax income on needs, 30% on wants and 20% on savings and debt. Track every dollar and adjust monthly.</p>
           </div>
           <div className="space-y-8">
@@ -41,7 +41,7 @@ export default function Post() {
                   {pct:'20%',cat:'Savings and Debt',color:'text-emerald-400',examples:'Emergency fund, retirement accounts, extra debt payments, investments, savings goals'},
                 ].map((item,i)=>(
                   <div key={i} className="result-box flex gap-4 items-start">
-                    <div className="text-2xl font-bold w-16 text-center flex-shrink-0" style={{color:"#f0c842'}}>{item.pct}</div>
+                    <div className="text-2xl font-bold w-16 text-center flex-shrink-0" style={{color:"#f0c842"}}>{item.pct}</div>
                     <div>
                       <h3 className={item.color + ' font-bold text-lg mb-1'}>{item.cat}</h3>
                       <p className="text-slate-400 text-sm">{item.examples}</p>
@@ -64,7 +64,7 @@ export default function Post() {
                   {num:'6',title:'Track and review monthly',desc:'Track your spending throughout the month. Review at month end and adjust the next month. Budgeting gets easier over time as it becomes a habit.'},
                 ].map((item,i)=>(
                   <div key={i} className="result-box flex gap-4">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" style={{background:"rgba(240,200,66,0.15)',color:'#f0c842'}}>{item.num}</div>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" style={{background:"rgba(240,200,66,0.15)",color:'#f0c842'}}>{item.num}</div>
                     <div><h3 className="text-white font-bold mb-2">{item.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p></div>
                   </div>
                 ))}

@@ -94,7 +94,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Average Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{avgInterestRate + "%'}</span>
+                  <span className="text-white font-bold text-sm">{avgInterestRate + "%"}</span>
                 </div>
                 <input type="range" min={1} max={36} step={0.25}
                   value={avgInterestRate} onChange={e => setAvgInterestRate(Number(e.target.value))}
@@ -149,25 +149,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Months to Debt Freedom</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{result.months}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{result.months}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Interest Paid</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalInterest)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.totalInterest)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Interest Saved vs Minimum</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.interestSaved)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.interestSaved)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Amount Paid</span>
-                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalPaid)}</span>
+                    <span className="font-bold" style={{color:"#f0c842"}}>{fmt(result.totalPaid)}</span>
                   </div>
                 </div>
               ) : (
@@ -214,17 +214,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the debt avalanche method?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The debt avalanche method pays minimum payments on all debts, then puts all extra money toward the highest interest rate debt first. Once that is paid off, attack the next highest rate. This is mathematically optimal — you pay the least total interest. It is best for disciplined people who can stay motivated without quick wins.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What is the debt snowball method?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The debt snowball method (popularized by Dave Ramsey) pays minimum payments on all debts, then targets the smallest balance first regardless of interest rate. As each debt is eliminated, the payment rolls to the next. Psychologically powerful — quick wins maintain momentum. Costs slightly more in interest than avalanche.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How much extra should I pay on debt?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Every extra dollar beyond the minimum payment saves significant interest and reduces payoff time. On a $30,000 debt at 18% APR: minimum payments ($600/month) take 7+ years and cost $20,000+ in interest. Adding just $200/month cuts payoff to 4 years and saves $8,000. The extra payment ROI is enormous.</p>
             </div>

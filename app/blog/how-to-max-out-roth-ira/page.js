@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Max Out Your Roth IRA in 2026 (Step-by-Step Guide)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">The 2026 Roth IRA contribution limit is <strong>$7,000</strong> ($8,000 if 50+). To max it out automatically contribute <strong>$583.33 per month</strong>. Invest in a low-cost total market index fund. Roth IRA growth and withdrawals are <strong>completely tax-free</strong>.</p>
           </div>
           <div className="space-y-8">
@@ -108,9 +108,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842'}}>Compound Interest Calculator</a>
-            <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Retirement Calculator</a>
-            <a href="/blog/types-of-retirement-accounts" className="hover:underline text-sm" style={{color:"#f0c842'}}>401k vs Roth IRA vs Traditional IRA</a>
+                <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842"}}>Compound Interest Calculator</a>
+            <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Retirement Calculator</a>
+            <a href="/blog/types-of-retirement-accounts" className="hover:underline text-sm" style={{color:"#f0c842"}}>401k vs Roth IRA vs Traditional IRA</a>
               </div>
             </section>
           </div>

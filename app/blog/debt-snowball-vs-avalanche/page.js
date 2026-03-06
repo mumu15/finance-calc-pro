@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Debt Snowball vs Debt Avalanche: Which is Better? (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">The <strong>debt avalanche saves more money</strong> mathematically. The <strong>debt snowball provides more motivation</strong>. The best method is the one you will actually stick with.</p>
           </div>
           <div className="space-y-8">
@@ -37,7 +37,7 @@ export default function Post() {
               <div className="result-box">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Factor</th><th className="text-left text-slate-400 py-2 pr-4">Debt Snowball</th><th className="text-left py-2" style={{color:"#f0c842'}}>Debt Avalanche</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Factor</th><th className="text-left text-slate-400 py-2 pr-4">Debt Snowball</th><th className="text-left py-2" style={{color:"#f0c842"}}>Debt Avalanche</th></tr></thead>
                     <tbody>
                       {[
                         ['Pay off order','Smallest balance first','Highest interest rate first'],
@@ -47,7 +47,7 @@ export default function Post() {
                         ['Best for','People who need motivation','People with discipline'],
                         ['Mathematically optimal','No','Yes'],
                       ].map((r,i)=>(
-                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="text-slate-400 py-2 pr-4">{r[1]}</td><td className="py-2" style={{color:"#f0c842'}}>{r[2]}</td></tr>
+                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="text-slate-400 py-2 pr-4">{r[1]}</td><td className="py-2" style={{color:"#f0c842"}}>{r[2]}</td></tr>
                       ))}
                     </tbody>
                   </table>
@@ -64,7 +64,7 @@ export default function Post() {
                   {name:'Debt Avalanche',steps:['List all debts from highest to lowest interest rate','Pay minimums on all debts','Put all extra money on the highest interest debt','When paid off roll that payment to next highest rate','Repeat until debt free']},
                 ].map((item,i)=>(
                   <div key={i} className="result-box">
-                    <h3 className="font-bold mb-3" style={{color:"#f0c842'}}>{item.name}</h3>
+                    <h3 className="font-bold mb-3" style={{color:"#f0c842"}}>{item.name}</h3>
                     <ol className="space-y-2">
                       {item.steps.map((step,j)=>(<li key={j} className="text-slate-400 text-sm flex gap-2"><span className="text-white font-bold">{j+1}.</span>{step}</li>))}
                     </ol>

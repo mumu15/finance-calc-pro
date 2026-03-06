@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">ISA Savings Calculator UK: How Much Can You Save in an ISA? (2026)</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
  <p className="text-white">The ISA allowance for 2026-27 is <strong> £20,000 per year</strong>. A Stocks and Shares ISA growing at 7% per year — maxing out £20,000 annually — would be worth approximately <strong> £566,000 after 15 years</strong> completely tax-free.</p>
  </div>
  <div className="space-y-8">
@@ -99,9 +99,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
- <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842'}}>Compound Interest Calculator</a>
- <a href="/blog/mortgage-calculator-uk-2026" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator UK</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Savings Calculator</a>
+ <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842"}}>Compound Interest Calculator</a>
+ <a href="/blog/mortgage-calculator-uk-2026" className="hover:underline text-sm" style={{color:"#f0c842"}}>Mortgage Calculator UK</a>
  </div>
  </section>
  </div>

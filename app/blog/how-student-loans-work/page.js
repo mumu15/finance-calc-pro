@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How Student Loans Work: Everything You Need to Know (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)"}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842"}}>Quick Answer</h2>
             <p className="text-white">Federal student loans have fixed interest rates of <strong>6.53%–9.08% for 2025-26</strong>. Always exhaust federal loans before private. Income-driven repayment plans cap payments at <strong>5–10% of discretionary income</strong>.</p>
           </div>
           <div className="space-y-8">
@@ -93,9 +93,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
-            <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Debt Payoff Calculator</a>
-            <a href="/blog/how-to-pay-off-debt-fast" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Pay Off Debt Fast</a>
+                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Loan Calculator</a>
+            <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:"#f0c842"}}>Debt Payoff Calculator</a>
+            <a href="/blog/how-to-pay-off-debt-fast" className="hover:underline text-sm" style={{color:"#f0c842"}}>How to Pay Off Debt Fast</a>
               </div>
             </section>
           </div>
