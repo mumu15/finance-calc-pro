@@ -1,0 +1,44 @@
+// Global structured data for FreeFinCalc.net
+// Included in app/layout.js <head>
+
+export function OrganizationSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FreeFinCalc",
+    "url": "https://freefincalc.net",
+    "logo": "https://freefincalc.net/icon.png",
+    "description": "Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies.",
+    "sameAs": []
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export function WebSiteSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FreeFinCalc",
+    "url": "https://freefincalc.net",
+    "description": "100+ free financial calculators. No sign-up required.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://freefincalc.net/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
