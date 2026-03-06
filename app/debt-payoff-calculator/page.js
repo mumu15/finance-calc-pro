@@ -55,10 +55,10 @@ export default function Calculator() {
   }, [debtBalance, avgInterestRate, minimumPayment, extraPayment, method])
 
   const pdfRows = result ? [
-    { label: "Months to Debt Freedom', value: result.months !== undefined ? (String(result.months)) : "' },
-    { label: "Total Interest Paid', value: result.totalInterest !== undefined ? (fmt(result.totalInterest)) : "' },
-    { label: "Interest Saved vs Minimum', value: result.interestSaved !== undefined ? (fmt(result.interestSaved)) : "' },
-    { label: "Total Amount Paid', value: result.totalPaid !== undefined ? (fmt(result.totalPaid)) : "' },
+    { label: "Months to Debt Freedom", value: result.months !== undefined ? (String(result.months)) : "" },
+    { label: "Total Interest Paid", value: result.totalInterest !== undefined ? (fmt(result.totalInterest)) : "" },
+    { label: "Interest Saved vs Minimum", value: result.interestSaved !== undefined ? (fmt(result.interestSaved)) : "" },
+    { label: "Total Amount Paid", value: result.totalPaid !== undefined ? (fmt(result.totalPaid)) : "" },
   ] : []
 
   return (

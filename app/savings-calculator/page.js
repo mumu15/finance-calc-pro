@@ -63,10 +63,10 @@ export default function SavingsCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Savings Details</h2>
             <div className="space-y-4">
               {[
-                { label: "Initial Deposit', value: initialDeposit, set: setInitialDeposit, min: 0, max: 100000, step: 500, prefix: currency.symbol },
-                { label: "Monthly Deposit', value: monthlyDeposit, set: setMonthlyDeposit, min: 0, max: 5000, step: 50, prefix: currency.symbol },
-                { label: "Annual Interest Rate (APY)', value: interestRate, set: setInterestRate, min: 0.5, max: 10, step: 0.25, suffix: "%' },
-                { label: "Time Period', value: years, set: setYears, min: 1, max: 40, step: 1, suffix: " years' },
+                { label: "Initial Deposit", value: initialDeposit, set: setInitialDeposit, min: 0, max: 100000, step: 500, prefix: currency.symbol },
+                { label: "Monthly Deposit", value: monthlyDeposit, set: setMonthlyDeposit, min: 0, max: 5000, step: 50, prefix: currency.symbol },
+                { label: "Annual Interest Rate (APY)", value: interestRate, set: setInterestRate, min: 0.5, max: 10, step: 0.25, suffix: "%' },
+                { label: "Time Period", value: years, set: setYears, min: 1, max: 40, step: 1, suffix: " years' },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
@@ -84,9 +84,9 @@ export default function SavingsCalculator() {
                 <label className="text-slate-400 text-sm block mb-2">Rate Presets</label>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "Regular Bank', rate: 0.5 },
-                    { label: "High Yield', rate: 4.5 },
-                    { label: "S&P 500 avg', rate: 7 },
+                    { label: "Regular Bank", rate: 0.5 },
+                    { label: "High Yield", rate: 4.5 },
+                    { label: "S&P 500 avg", rate: 7 },
                   ].map((p, i) => (
                     <button key={i} onClick={() => setInterestRate(p.rate)}
                       className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
@@ -108,10 +108,10 @@ export default function SavingsCalculator() {
             <div className="result-box">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Total Deposited', value: fmt(calc.totalDeposited), color: "text-white' },
-                  { label: "Interest Earned', value: fmt(calc.interestEarned), color: "text-emerald-400' },
-                  { label: "Return on Investment', value: Math.round((calc.interestEarned / calc.totalDeposited) * 100) + "%', color: 'text-yellow-400' },
-                  { label: "Monthly at Retirement', value: fmt(calc.futureValue * 0.04 / 12), color: "text-blue-400' },
+                  { label: "Total Deposited", value: fmt(calc.totalDeposited), color: "text-white' },
+                  { label: "Interest Earned", value: fmt(calc.interestEarned), color: "text-emerald-400' },
+                  { label: "Return on Investment", value: Math.round((calc.interestEarned / calc.totalDeposited) * 100) + "%', color: 'text-yellow-400' },
+                  { label: "Monthly at Retirement", value: fmt(calc.futureValue * 0.04 / 12), color: "text-blue-400' },
                 ].map((item, i) => (
                   <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>

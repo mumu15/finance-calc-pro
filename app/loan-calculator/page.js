@@ -68,8 +68,8 @@ export default function LoanCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Loan Details</h2>
             <div className="space-y-4">
               {[
-                { label: "Loan Amount', value: loanAmount, set: setLoanAmount, min: 500, max: 100000, step: 500, prefix: currency.symbol },
-                { label: "Interest Rate (APR)', value: interestRate, set: setInterestRate, min: 1, max: 36, step: 0.25, suffix: '%' },
+                { label: "Loan Amount", value: loanAmount, set: setLoanAmount, min: 500, max: 100000, step: 500, prefix: currency.symbol },
+                { label: "Interest Rate (APR)", value: interestRate, set: setInterestRate, min: 1, max: 36, step: 0.25, suffix: '%' },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
@@ -107,9 +107,9 @@ export default function LoanCalculator() {
                 <label className="text-slate-400 text-sm block mb-2">Quick Presets</label>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "Car Loan', amount: 25000, rate: 6.5, term: 5 },
-                    { label: "Personal', amount: 10000, rate: 12, term: 3 },
-                    { label: "Student', amount: 30000, rate: 5, term: 10 },
+                    { label: "Car Loan", amount: 25000, rate: 6.5, term: 5 },
+                    { label: "Personal", amount: 10000, rate: 12, term: 3 },
+                    { label: "Student", amount: 30000, rate: 5, term: 10 },
                   ].map((p, i) => (
                     <button key={i} onClick={() => { setLoanAmount(p.amount); setInterestRate(p.rate); setLoanTerm(p.term); setTermType("years') }}
                       className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
@@ -133,10 +133,10 @@ export default function LoanCalculator() {
               <h2 className="text-white font-bold mb-3">Loan Summary</h2>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Loan Amount', value: fmt(loanAmount), color: "text-white' },
-                  { label: "Total Interest', value: fmt(calc.totalInterest), color: "text-red-400' },
-                  { label: "Total Cost', value: fmt(calc.totalCost), color: "text-yellow-400' },
-                  { label: "Payoff Date', value: calc.payoffDate.toLocaleDateString("en-US',{month:'short',year:'numeric'}), color: 'text-emerald-400' },
+                  { label: "Loan Amount", value: fmt(loanAmount), color: "text-white' },
+                  { label: "Total Interest", value: fmt(calc.totalInterest), color: "text-red-400' },
+                  { label: "Total Cost", value: fmt(calc.totalCost), color: "text-yellow-400' },
+                  { label: "Payoff Date", value: calc.payoffDate.toLocaleDateString("en-US',{month:'short',year:'numeric'}), color: 'text-emerald-400' },
                 ].map((item, i) => (
                   <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>

@@ -45,10 +45,10 @@ export default function Calculator() {
   }, [price, taxRate, calcType])
 
   const pdfRows = result ? [
-    { label: "Pre-Tax Price', value: result.preTax !== undefined ? (fmt(result.preTax)) : "' },
-    { label: "Tax Amount', value: result.taxAmount !== undefined ? (fmt(result.taxAmount)) : "' },
-    { label: "Total Price', value: result.total !== undefined ? (fmt(result.total)) : "' },
-    { label: "Effective Tax Rate', value: result.effectiveRate !== undefined ? (String(result.effectiveRate)) : "' },
+    { label: "Pre-Tax Price", value: result.preTax !== undefined ? (fmt(result.preTax)) : "" },
+    { label: "Tax Amount", value: result.taxAmount !== undefined ? (fmt(result.taxAmount)) : "" },
+    { label: "Total Price", value: result.total !== undefined ? (fmt(result.total)) : "" },
+    { label: "Effective Tax Rate", value: result.effectiveRate !== undefined ? (String(result.effectiveRate)) : "" },
   ] : []
 
   return (

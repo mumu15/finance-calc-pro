@@ -83,12 +83,12 @@ export default function MortgageCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Loan Details</h2>
             <div className="space-y-4">
               {[
-                { label: "Home Price', value: homePrice, set: setHomePrice, min: Math.round(maxHome*0.02), max: maxHome, step: Math.round(maxHome*0.005) },
-                { label: "Down Payment', value: downPayment, set: setDownPayment, min: 0, max: homePrice, step: Math.round(maxHome*0.002), note: downPct + '%' },
-                { label: "Interest Rate', value: interestRate, set: setInterestRate, min: 1, max: 20, step: 0.1, isRate: true },
-                { label: "Property Tax (annual)', value: propertyTax, set: setPropertyTax, min: 0, max: Math.round(maxHome*0.03), step: Math.round(maxHome*0.001) },
-                { label: "Home Insurance (annual)', value: insurance, set: setInsurance, min: 0, max: Math.round(maxHome*0.01), step: Math.round(maxHome*0.0005) },
-                { label: "HOA Fees (monthly)', value: hoa, set: setHoa, min: 0, max: Math.round(currency.defaults.income * 0.05), step: Math.round(currency.defaults.income * 0.002) },
+                { label: "Home Price", value: homePrice, set: setHomePrice, min: Math.round(maxHome*0.02), max: maxHome, step: Math.round(maxHome*0.005) },
+                { label: "Down Payment", value: downPayment, set: setDownPayment, min: 0, max: homePrice, step: Math.round(maxHome*0.002), note: downPct + '%' },
+                { label: "Interest Rate", value: interestRate, set: setInterestRate, min: 1, max: 20, step: 0.1, isRate: true },
+                { label: "Property Tax (annual)", value: propertyTax, set: setPropertyTax, min: 0, max: Math.round(maxHome*0.03), step: Math.round(maxHome*0.001) },
+                { label: "Home Insurance (annual)", value: insurance, set: setInsurance, min: 0, max: Math.round(maxHome*0.01), step: Math.round(maxHome*0.0005) },
+                { label: "HOA Fees (monthly)", value: hoa, set: setHoa, min: 0, max: Math.round(currency.defaults.income * 0.05), step: Math.round(currency.defaults.income * 0.002) },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
@@ -132,11 +132,11 @@ export default function MortgageCalculator() {
               </div>
               <div className="space-y-2">
                 {[
-                  { label: "Principal & Interest', value: calc.pi, color: "#f0c842' },
-                  { label: "Property Tax', value: calc.monthlyTax, color: "#60a5fa' },
-                  { label: "Home Insurance', value: calc.monthlyIns, color: "#34d399' },
-                  ...(calc.pmi > 0 ? [{ label: "PMI', value: calc.pmi, color: "#f97316' }] : []),
-                  ...(calc.monthlyHoa > 0 ? [{ label: "HOA Fees', value: calc.monthlyHoa, color: "#a78bfa' }] : []),
+                  { label: "Principal & Interest", value: calc.pi, color: "#f0c842' },
+                  { label: "Property Tax", value: calc.monthlyTax, color: "#60a5fa' },
+                  { label: "Home Insurance", value: calc.monthlyIns, color: "#34d399' },
+                  ...(calc.pmi > 0 ? [{ label: "PMI", value: calc.pmi, color: "#f97316' }] : []),
+                  ...(calc.monthlyHoa > 0 ? [{ label: "HOA Fees", value: calc.monthlyHoa, color: "#a78bfa' }] : []),
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{background:item.color}}/>
@@ -152,10 +152,10 @@ export default function MortgageCalculator() {
               <h2 className="text-white font-bold text-lg mb-4">Loan Summary</h2>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Loan Amount', value: fmt(calc.loanAmount), color: "text-white' },
-                  { label: "Total Interest', value: fmt(calc.totalInterest), color: "text-red-400' },
-                  { label: "Total Cost', value: fmt(calc.totalCost), color: "text-yellow-400' },
-                  { label: "Payoff Date', value: new Date(Date.now() + loanTerm * 365.25 * 24 * 3600 * 1000).getFullYear(), color: "text-emerald-400' },
+                  { label: "Loan Amount", value: fmt(calc.loanAmount), color: "text-white' },
+                  { label: "Total Interest", value: fmt(calc.totalInterest), color: "text-red-400' },
+                  { label: "Total Cost", value: fmt(calc.totalCost), color: "text-yellow-400' },
+                  { label: "Payoff Date", value: new Date(Date.now() + loanTerm * 365.25 * 24 * 3600 * 1000).getFullYear(), color: "text-emerald-400' },
                 ].map((item, i) => (
                   <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>

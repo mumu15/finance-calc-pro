@@ -47,10 +47,10 @@ export default function Calculator() {
   }, [amount, fromCurrency, toCurrency])
 
   const pdfRows = result ? [
-    { label: "Converted Amount', value: result.converted !== undefined ? (String(result.converted)) : "' },
-    { label: "Exchange Rate', value: result.rate1 !== undefined ? (String(result.rate1)) : "' },
-    { label: "Inverse Rate', value: result.rateInverse !== undefined ? (String(result.rateInverse)) : "' },
-    { label: "100 unit equivalent', value: result.amount100 !== undefined ? (String(result.amount100)) : "' },
+    { label: "Converted Amount", value: result.converted !== undefined ? (String(result.converted)) : "" },
+    { label: "Exchange Rate", value: result.rate1 !== undefined ? (String(result.rate1)) : "" },
+    { label: "Inverse Rate", value: result.rateInverse !== undefined ? (String(result.rateInverse)) : "" },
+    { label: "100 unit equivalent", value: result.amount100 !== undefined ? (String(result.amount100)) : "" },
   ] : []
 
   return (

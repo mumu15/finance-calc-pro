@@ -38,10 +38,10 @@ export default function Calculator() {
   }, [billAmount, tipPct, people])
 
   const pdfRows = result ? [
-    { label: "Tip Amount', value: result.tipAmount !== undefined ? (fmt(result.tipAmount)) : "' },
-    { label: "Total Bill', value: result.totalBill !== undefined ? (fmt(result.totalBill)) : "' },
-    { label: "Per Person Total', value: result.perPerson !== undefined ? (fmt(result.perPerson)) : "' },
-    { label: "Tip Per Person', value: result.tipPerPerson !== undefined ? (fmt(result.tipPerPerson)) : "' },
+    { label: "Tip Amount", value: result.tipAmount !== undefined ? (fmt(result.tipAmount)) : "" },
+    { label: "Total Bill", value: result.totalBill !== undefined ? (fmt(result.totalBill)) : "" },
+    { label: "Per Person Total", value: result.perPerson !== undefined ? (fmt(result.perPerson)) : "" },
+    { label: "Tip Per Person", value: result.tipPerPerson !== undefined ? (fmt(result.tipPerPerson)) : "" },
   ] : []
 
   return (

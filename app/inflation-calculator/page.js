@@ -53,9 +53,9 @@ export default function InflationCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Inflation Details</h2>
             <div className="space-y-4">
               {[
-                { label: "Amount Today', value: amount, set: setAmount, min: 1000, max: 1000000, step: 1000, prefix: currency.symbol },
-                { label: "Annual Inflation Rate', value: inflationRate, set: setInflationRate, min: 0.5, max: 15, step: 0.5, suffix: '%' },
-                { label: "Time Period', value: years, set: setYears, min: 1, max: 50, step: 1, suffix: " years' },
+                { label: "Amount Today", value: amount, set: setAmount, min: 1000, max: 1000000, step: 1000, prefix: currency.symbol },
+                { label: "Annual Inflation Rate", value: inflationRate, set: setInflationRate, min: 0.5, max: 15, step: 0.5, suffix: '%' },
+                { label: "Time Period", value: years, set: setYears, min: 1, max: 50, step: 1, suffix: " years' },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
@@ -73,9 +73,9 @@ export default function InflationCalculator() {
                 <label className="text-slate-400 text-sm block mb-2">Historical Presets</label>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { label: "Fed Target', rate: 2 },
-                    { label: "Historical Avg', rate: 3.1 },
-                    { label: "2022 Peak', rate: 8 },
+                    { label: "Fed Target", rate: 2 },
+                    { label: "Historical Avg", rate: 3.1 },
+                    { label: "2022 Peak", rate: 8 },
                   ].map((p, i) => (
                     <button key={i} onClick={() => setInflationRate(p.rate)}
                       className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"

@@ -44,10 +44,10 @@ export default function Calculator() {
   }, [cash, investments, retirement, homeValue, otherAssets, mortgageDebt, carDebt, creditCardDebt, otherDebt])
 
   const pdfRows = result ? [
-    { label: "Net Worth', value: result.netWorth !== undefined ? (fmt(result.netWorth)) : "' },
-    { label: "Total Assets', value: result.totalAssets !== undefined ? (fmt(result.totalAssets)) : "' },
-    { label: "Total Liabilities', value: result.totalLiabilities !== undefined ? (fmt(result.totalLiabilities)) : "' },
-    { label: "Debt-to-Asset Ratio', value: result.debtToAsset !== undefined ? (String(result.debtToAsset)) : "' },
+    { label: "Net Worth", value: result.netWorth !== undefined ? (fmt(result.netWorth)) : "" },
+    { label: "Total Assets", value: result.totalAssets !== undefined ? (fmt(result.totalAssets)) : "" },
+    { label: "Total Liabilities", value: result.totalLiabilities !== undefined ? (fmt(result.totalLiabilities)) : "" },
+    { label: "Debt-to-Asset Ratio", value: result.debtToAsset !== undefined ? (String(result.debtToAsset)) : "" },
   ] : []
 
   return (

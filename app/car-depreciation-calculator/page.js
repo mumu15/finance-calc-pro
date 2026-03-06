@@ -34,11 +34,11 @@ export default function Calculator() {
   }, [purchasePrice, year1Rate, annualRate, years, mileageYr])
 
   const pdfRows = result ? [
-    { label: "Estimated Value After {years} Years', value: result.finalValue !== undefined ? String(fmt(result.finalValue)) : "' },
-    { label: "Total Depreciation Loss', value: result.totalDepreciation !== undefined ? String(fmt(result.totalDepreciation)) : "' },
-    { label: "Value Retained', value: result.retainedPct !== undefined ? String(result.retainedPct) : "' },
-    { label: "Depreciation Cost Per Mile', value: result.costPerMile !== undefined ? String(result.costPerMile) : "' },
-    { label: "Average Annual Value Lost', value: result.annualAvgLoss !== undefined ? String(fmt(result.annualAvgLoss)) : "' },
+    { label: "Estimated Value After {years} Years", value: result.finalValue !== undefined ? String(fmt(result.finalValue)) : "" },
+    { label: "Total Depreciation Loss", value: result.totalDepreciation !== undefined ? String(fmt(result.totalDepreciation)) : "" },
+    { label: "Value Retained", value: result.retainedPct !== undefined ? String(result.retainedPct) : "" },
+    { label: "Depreciation Cost Per Mile", value: result.costPerMile !== undefined ? String(result.costPerMile) : "" },
+    { label: "Average Annual Value Lost", value: result.annualAvgLoss !== undefined ? String(fmt(result.annualAvgLoss)) : "" },
   ] : []
 
   return (

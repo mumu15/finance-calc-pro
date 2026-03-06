@@ -39,11 +39,11 @@ export default function Calculator() {
   }, [faceValue, couponRate, marketPrice, yearsToMaturity, payFreq])
 
   const pdfRows = result ? [
-    { label: "Annual Coupon Payment', value: result.annualCoupon !== undefined ? String(fmt(result.annualCoupon)) : "' },
-    { label: "Current Yield', value: result.currentYield !== undefined ? String(result.currentYield) : "' },
-    { label: "Yield to Maturity (YTM)', value: result.ytmAnnual !== undefined ? String(result.ytmAnnual) : "' },
-    { label: "Bond Trading At', value: result.premDisc !== undefined ? String(result.premDisc) : "' },
-    { label: "Total Return to Maturity', value: result.totalReturn !== undefined ? String(fmt(result.totalReturn)) : "' },
+    { label: "Annual Coupon Payment", value: result.annualCoupon !== undefined ? String(fmt(result.annualCoupon)) : "" },
+    { label: "Current Yield", value: result.currentYield !== undefined ? String(result.currentYield) : "" },
+    { label: "Yield to Maturity (YTM)", value: result.ytmAnnual !== undefined ? String(result.ytmAnnual) : "" },
+    { label: "Bond Trading At", value: result.premDisc !== undefined ? String(result.premDisc) : "" },
+    { label: "Total Return to Maturity", value: result.totalReturn !== undefined ? String(fmt(result.totalReturn)) : "" },
   ] : []
 
   return (

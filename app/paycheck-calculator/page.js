@@ -45,10 +45,10 @@ export default function Calculator() {
   }, [grossSalary, payFrequency, federalRate, stateRate, preTaxDeductions])
 
   const pdfRows = result ? [
-    { label: "Gross Pay Per Paycheck', value: result.perPaycheck !== undefined ? (fmt(result.perPaycheck)) : "' },
-    { label: "Net Take-Home Per Paycheck', value: result.netPaycheck !== undefined ? (fmt(result.netPaycheck)) : "' },
-    { label: "Annual Net Take-Home', value: result.netAnnual !== undefined ? (fmt(result.netAnnual)) : "' },
-    { label: "Effective Tax Rate', value: result.effectiveRate !== undefined ? (String(result.effectiveRate)) : "' },
+    { label: "Gross Pay Per Paycheck", value: result.perPaycheck !== undefined ? (fmt(result.perPaycheck)) : "" },
+    { label: "Net Take-Home Per Paycheck", value: result.netPaycheck !== undefined ? (fmt(result.netPaycheck)) : "" },
+    { label: "Annual Net Take-Home", value: result.netAnnual !== undefined ? (fmt(result.netAnnual)) : "" },
+    { label: "Effective Tax Rate", value: result.effectiveRate !== undefined ? (String(result.effectiveRate)) : "" },
   ] : []
 
   return (

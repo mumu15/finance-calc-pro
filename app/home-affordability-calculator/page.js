@@ -46,10 +46,10 @@ export default function Calculator() {
   }, [annualIncome, monthlyDebts, downPayment, rate, termYears])
 
   const pdfRows = result ? [
-    { label: "Maximum Home Price', value: result.maxHomePrice !== undefined ? (fmt(result.maxHomePrice)) : "' },
-    { label: "Conservative Budget (80%)', value: result.conservativePrice !== undefined ? (fmt(result.conservativePrice)) : "' },
-    { label: "Max Mortgage Loan', value: result.maxLoan !== undefined ? (fmt(result.maxLoan)) : "' },
-    { label: "Max Monthly Payment', value: result.maxMortgagePayment !== undefined ? (fmt(result.maxMortgagePayment)) : "' },
+    { label: "Maximum Home Price", value: result.maxHomePrice !== undefined ? (fmt(result.maxHomePrice)) : "" },
+    { label: "Conservative Budget (80%)", value: result.conservativePrice !== undefined ? (fmt(result.conservativePrice)) : "" },
+    { label: "Max Mortgage Loan", value: result.maxLoan !== undefined ? (fmt(result.maxLoan)) : "" },
+    { label: "Max Monthly Payment", value: result.maxMortgagePayment !== undefined ? (fmt(result.maxMortgagePayment)) : "" },
   ] : []
 
   return (

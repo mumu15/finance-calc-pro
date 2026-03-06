@@ -47,10 +47,10 @@ export default function Calculator() {
   }, [homePrice, downPct, mortgageRate, monthlyRent, years])
 
   const pdfRows = result ? [
-    { label: "Monthly Mortgage Payment', value: result.mortgagePayment !== undefined ? (fmt(result.mortgagePayment)) : "' },
-    { label: "Total Cost of Buying', value: result.totalBuyCost !== undefined ? (fmt(result.totalBuyCost)) : "' },
-    { label: "Total Cost of Renting', value: result.totalRentCost !== undefined ? (fmt(result.totalRentCost)) : "' },
-    { label: "Est. Home Appreciation', value: result.homeAppreciation !== undefined ? (fmt(result.homeAppreciation)) : "' },
+    { label: "Monthly Mortgage Payment", value: result.mortgagePayment !== undefined ? (fmt(result.mortgagePayment)) : "" },
+    { label: "Total Cost of Buying", value: result.totalBuyCost !== undefined ? (fmt(result.totalBuyCost)) : "" },
+    { label: "Total Cost of Renting", value: result.totalRentCost !== undefined ? (fmt(result.totalRentCost)) : "" },
+    { label: "Est. Home Appreciation", value: result.homeAppreciation !== undefined ? (fmt(result.homeAppreciation)) : "" },
   ] : []
 
   return (

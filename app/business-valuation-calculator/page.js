@@ -35,11 +35,11 @@ export default function Calculator() {
   }, [annualRevenue, ebitda, netProfit, totalAssets, totalLiabilities, industry])
 
   const pdfRows = result ? [
-    { label: "Revenue Multiple Valuation', value: result.revenueVal !== undefined ? String(fmt(result.revenueVal)) : "' },
-    { label: "EBITDA Multiple Valuation', value: result.ebitdaVal !== undefined ? String(fmt(result.ebitdaVal)) : "' },
-    { label: "Earnings (P/E) Valuation', value: result.earningsVal !== undefined ? String(fmt(result.earningsVal)) : "' },
-    { label: "Asset-Based Valuation', value: result.assetVal !== undefined ? String(fmt(result.assetVal)) : "' },
-    { label: "Average Estimated Value', value: result.avgVal !== undefined ? String(fmt(result.avgVal)) : "' },
+    { label: "Revenue Multiple Valuation", value: result.revenueVal !== undefined ? String(fmt(result.revenueVal)) : "" },
+    { label: "EBITDA Multiple Valuation", value: result.ebitdaVal !== undefined ? String(fmt(result.ebitdaVal)) : "" },
+    { label: "Earnings (P/E) Valuation", value: result.earningsVal !== undefined ? String(fmt(result.earningsVal)) : "" },
+    { label: "Asset-Based Valuation", value: result.assetVal !== undefined ? String(fmt(result.assetVal)) : "" },
+    { label: "Average Estimated Value", value: result.avgVal !== undefined ? String(fmt(result.avgVal)) : "" },
   ] : []
 
   return (
