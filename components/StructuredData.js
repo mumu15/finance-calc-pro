@@ -1,5 +1,6 @@
-// Global structured data for FreeFinCalc.net
-// Included in app/layout.js <head>
+// components/StructuredData.js
+// JSON-LD structured data for FreeFinCalc.net
+// Included automatically in app/layout.js
 
 export function OrganizationSchema() {
   const schema = {

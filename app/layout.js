@@ -1,20 +1,69 @@
 import './globals.css'
 import { CurrencyProvider } from '../components/CurrencyContext'
+import { OrganizationSchema, WebSiteSchema } from '../components/StructuredData'
 
 export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),
-  title: { default: 'FreeFinCalc.net — Free Financial Calculators', template: '%s | FreeFinCalc.net' },
-  description: 'Free professional financial calculators in 40+ currencies. Loans, debt, investing, salary, tax and more. Instant results. PDF download. No sign up.',
-  keywords: ['free financial calculator','mortgage calculator','loan calculator','compound interest','debt payoff','salary calculator','tax calculator'],
-  authors: [{ name: 'FreeFinCalc.net' }],
-  robots: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
-  openGraph: { type: 'website', locale: 'en_US', url: 'https://www.freefincalc.net', siteName: 'FreeFinCalc.net' },
+  metadataBase: new URL('https://freefincalc.net'),
+  title: {
+    default: 'FreeFinCalc — 100+ Free Financial Calculators',
+    template: '%s | FreeFinCalc',
+  },
+  description: 'Free financial calculators for mortgage, tax, retirement, investing, budgeting and more. 100+ calculators, 40+ currencies, no sign-up required.',
+  keywords: [
+    'financial calculator',
+    'mortgage calculator',
+    'tax calculator',
+    'retirement calculator',
+    'investment calculator',
+    'loan calculator',
+    'budget calculator',
+    'free finance tools',
+  ],
+  authors: [{ name: 'FreeFinCalc' }],
+  creator: 'FreeFinCalc',
+  publisher: 'FreeFinCalc',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://freefincalc.net',
+    siteName: 'FreeFinCalc',
+    title: 'FreeFinCalc — 100+ Free Financial Calculators',
+    description: 'Free financial calculators for mortgage, tax, retirement, investing and budgeting. No sign-up required.',
+    images: [
+      {
+        url: 'https://freefincalc.net/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'FreeFinCalc — Free Financial Calculators',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FreeFinCalc — 100+ Free Financial Calculators',
+    description: 'Free financial calculators. 40+ currencies. No sign-up.',
+    images: ['https://freefincalc.net/og-image.png'],
+  },
+  alternates: {
+    canonical: 'https://freefincalc.net',
+  },
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <OrganizationSchema />
+        <WebSiteSchema />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
