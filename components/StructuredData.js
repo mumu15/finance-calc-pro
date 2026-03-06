@@ -1,6 +1,5 @@
 // components/StructuredData.js
-// JSON-LD structured data for FreeFinCalc.net
-// Included automatically in app/layout.js
+// Server component — no 'use client' so Google crawler sees JSON-LD
 
 export function OrganizationSchema() {
   const schema = {
@@ -9,8 +8,7 @@ export function OrganizationSchema() {
     "name": "FreeFinCalc",
     "url": "https://freefincalc.net",
     "logo": "https://freefincalc.net/icon.png",
-    "description": "Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies.",
-    "sameAs": []
+    "description": "Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies."
   }
   return (
     <script
