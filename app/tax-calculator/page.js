@@ -1,199 +1,254 @@
 'use client'
-import { useState } from 'react'
-import AdUnit from '../components/AdUnit'
+import { useState, useMemo } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import FaqSchema from '../../components/FaqSchema'
+import TrustSection from '../../components/TrustSection'
+import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 
-const faqs = [
-  { q: 'What is the difference between effective and marginal tax rate?', a: 'Your marginal tax rate is the rate on your last dollar of income. Your effective tax rate is your total tax divided by your total income. The effective rate is always lower than the marginal rate because lower portions of income are taxed at lower rates.' },
-  { q: 'What is FICA tax?', a: 'FICA stands for Federal Insurance Contributions Act. It includes Social Security tax (6.2% on income up to $160,200) and Medicare tax (1.45% on all income). Your employer pays a matching amount.' },
-  { q: 'What is the standard deduction for 2024?', a: 'The standard deduction for 2024 is $13,850 for single filers and $27,700 for married filing jointly. This amount is subtracted from your gross income before calculating your federal income tax.' },
-  { q: 'How can I reduce my tax bill?', a: 'Contribute to tax-advantaged accounts like 401k and IRA, take all eligible deductions, consider itemizing if your deductions exceed the standard deduction, use a Health Savings Account (HSA), and consult a tax professional for personalized advice.' },
-  { q: 'Is this tax calculator free?', a: 'Yes, completely free with no sign up required. Results are estimates only and not official tax advice.' },
-]
+export default function Calculator() {
+  const { fmt } = useCurrency()
+  const [income, setIncome] = useState(85000)
+  const [filingStatus, setFilingStatus] = useState('single')
+  const [deductType, setDeductType] = useState('standard')
+  const [itemized, setItemized] = useState(0)
+  const [credits, setCredits] = useState(0)
 
+  const result = useMemo(() => {
+    try {
+      const stdDeduct = filingStatus === 'married' ? 29200 : filingStatus === 'hoh' ? 21900 : 14600
+      const deduction = deductType === 'standard' ? stdDeduct : Math.max(stdDeduct, itemized)
+      const taxable   = Math.max(0, income - deduction)
+      const brackets  = filingStatus === 'married'
+        ? [[0,0.10,23200],[23200,0.12,94300],[94300,0.22,201050],[201050,0.24,383900],[383900,0.32,487450],[487450,0.35,731200],[731200,0.37,Infinity]]
+        : filingStatus === 'hoh'
+        ? [[0,0.10,16550],[16550,0.12,63100],[63100,0.22,100500],[100500,0.24,191950],[191950,0.32,243700],[243700,0.35,609350],[609350,0.37,Infinity]]
+        : [[0,0.10,11600],[11600,0.12,47150],[47150,0.22,100525],[100525,0.24,191950],[191950,0.32,243725],[243725,0.35,609350],[609350,0.37,Infinity]]
+      let tax = 0
+      for (const [lo, rate, hi] of brackets) {
+        if (taxable <= lo) break
+        tax += (Math.min(taxable, hi) - lo) * rate
+      }
+      tax = Math.max(0, tax - credits)
+      const fica = Math.min(income, 168600) * 0.062 + income * 0.0145
+      const totalTax = tax + fica
+      const effectiveRate = income > 0 ? (tax / income * 100).toFixed(2) + '%' : '0%'
+      const marginalRate  = taxable > 609350 ? '37%' : taxable > 243725 ? '35%' : taxable > 191950 ? '32%' : taxable > 100525 ? '24%' : taxable > 47150 ? '22%' : taxable > 11600 ? '12%' : '10%'
+      return { taxable, deduction, tax, fica, totalTax, effectiveRate, marginalRate }
+    } catch(e) { return null }
+  }, [income, filingStatus, deductType, itemized, credits])
 
-function BreadcrumbSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Tax Calculator","item":"https://www.freefincalc.net/tax-calculator"}]
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
-function WebAppSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Tax Calculator",
-    "description": "Estimate your federal income tax bill. Free US income tax calculator.",
-    "url": "https://www.freefincalc.net/tax-calculator",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
-export default function TaxCalculator() {
-  const { fmt, currency } = useCurrency()
-  const [form, setForm] = useState({ income: 75000, filingStatus: 'single', state: 0 })
-  const [result, setResult] = useState(null)
-
-  const update = (k, v) => setForm(f => ({ ...f, [k]: v }))
-
-  const calculate = () => {
-    const income = form.income
-    const brackets = form.filingStatus === 'single'
-      ? [[11600, 0.10], [47150, 0.12], [100525, 0.22], [191950, 0.24], [243725, 0.32], [609350, 0.35], [Infinity, 0.37]]
-      : [[23200, 0.10], [94300, 0.12], [201050, 0.22], [383900, 0.24], [487450, 0.32], [731200, 0.35], [Infinity, 0.37]]
-    const standardDeduction = form.filingStatus === 'single' ? 13850 : 27700
-    const taxableIncome = Math.max(0, income - standardDeduction)
-    let federalTax = 0
-    let prev = 0
-    for (const [limit, rate] of brackets) {
-      if (taxableIncome <= prev) break
-      federalTax += (Math.min(taxableIncome, limit) - prev) * rate
-      prev = limit
-    }
-    const stateTax = income * (form.state / 100)
-    const ficaTax = Math.min(income, 160200) * 0.062 + income * 0.0145
-    const totalTax = federalTax + stateTax + ficaTax
-    const effectiveRate = (totalTax / income * 100).toFixed(1)
-    const takeHome = income - totalTax
-    const monthlyTakeHome = takeHome / 12
-    setResult({ federalTax: federalTax.toFixed(2), stateTax: stateTax.toFixed(2), ficaTax: ficaTax.toFixed(2), totalTax: totalTax.toFixed(2), effectiveRate, takeHome: takeHome.toFixed(2), monthlyTakeHome: monthlyTakeHome.toFixed(2) })
-  }
+  const pdfRows = result ? [
+    { label: "Standard / Itemized Deduction", value: result.deduction !== undefined ? String(fmt(result.deduction)) : "" },
+    { label: "Taxable Income", value: result.taxable !== undefined ? String(fmt(result.taxable)) : "" },
+    { label: "Federal Income Tax", value: result.tax !== undefined ? String(fmt(result.tax)) : "" },
+    { label: "FICA Tax (SS + Medicare)", value: result.fica !== undefined ? String(fmt(result.fica)) : "" },
+    { label: "Total Federal Tax", value: result.totalTax !== undefined ? String(fmt(result.totalTax)) : "" },
+    { label: "Effective Tax Rate", value: result.effectiveRate !== undefined ? String(result.effectiveRate) : "" },
+    { label: "Marginal Tax Rate", value: result.marginalRate !== undefined ? String(result.marginalRate) : "" },
+  ] : []
 
   return (
     <>
-      <FaqSchema faqs={faqs} />
-      
-      
-      
-      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
+          <div className="text-5xl mb-4">🧮</div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Income Tax Calculator</h1>
-          <p className="text-slate-400 text-lg">Estimate your 2026 federal income tax bill instantly — free tax calculator with current tax brackets</p>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Calculate your federal income tax for 2026 based on filing status and deductions.</p>
         </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+          <div className="result-box">
+            <h2 className="text-white font-bold text-lg mb-5">Enter Details</h2>
+            <div className="space-y-5">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-4" style={{background:"rgba(240,200,66,0.03)", border:'1px solid rgba(240,200,66,0.1)', borderRadius:'16px', padding:'24px'}}>
-            <div>
-              <label className="text-white text-sm font-medium block mb-1">Annual Income ($)</label>
-              <input type="number" value={form.income} onChange={e => update("income", parseFloat(e.target.value))}
-                className="w-full px-4 py-3 rounded-xl text-white outline-none"
-                style={{background:'#0f172a', border:'1px solid #1e293b'}} />
-            </div>
-            <div>
-              <label className="text-white text-sm font-medium block mb-1">Filing Status</label>
-              <select value={form.filingStatus} onChange={e => update('filingStatus', e.target.value)}
-                className="w-full px-4 py-3 rounded-xl text-white outline-none"
-                style={{background:'#0f172a', border:'1px solid #1e293b'}}>
-                <option value="single">Single</option>
-                <option value="married">Married Filing Jointly</option>
-              </select>
-            </div>
-            <div>
-              <label className="text-white text-sm font-medium block mb-1">State Income Tax Rate (%)</label>
-              <input type="number" value={form.state} onChange={e => update("state", parseFloat(e.target.value))}
-                placeholder="0 for no state tax"
-                className="w-full px-4 py-3 rounded-xl text-white outline-none"
-                style={{background:'#0f172a', border:'1px solid #1e293b'}} />
-            </div>
-            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate Tax</button>
-          </div>
-
-          <div>
-            {!result ? (
-              <div className="result-box text-center py-16">
-                <div className="text-5xl mb-4">🧾</div>
-                <p className="text-slate-500">Fill in your details and click Calculate</p>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                <div className="result-box text-center">
-                  <p className="text-slate-400 text-sm mb-2">Annual Take-Home Pay</p>
-                  <div className="text-5xl font-bold mb-2" style={{color:"#f0c842"}}>{fmt(result.takeHome)}</div>
-                  <p className="text-slate-500 text-sm">{fmt(result.monthlyTakeHome)} per month</p>
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Annual Gross Income</label>
+                  <span className="text-white font-bold text-sm">{fmt(income)}</span>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { label: "Federal Tax", value: fmt(result.federalTax) },
-                    { label: "State Tax", value: fmt(result.stateTax) },
-                    { label: "FICA Tax", value: fmt(result.ficaTax) },
-                    { label: "Effective Rate", value: `${result.effectiveRate}%` },
-                  ].map((s, i) => (
-                    <div key={i} className="stat-card">
-                      <div className="text-xl font-bold text-white">{s.value}</div>
-                      <div className="text-slate-500 text-xs mt-1">{s.label}</div>
-                    </div>
+                <input type="range" min={0} max={1000000} step={1000}
+                  value={income} onChange={e => setIncome(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <label className="text-slate-400 text-sm block mb-2">Filing Status</label>
+                <div className="flex flex-wrap gap-2">
+                  {([{"v":"single","l":"Single"},{"v":"married","l":"Married Joint"},{"v":"hoh","l":"Head of Household"}]).map(o => (
+                    <button key={o.v} onClick={() => setFilingStatus(o.v)}
+                      className="px-3 py-1.5 rounded-xl text-sm font-bold transition-all"
+                      style={{
+                        background: filingStatus === o.v ? 'rgba(240,200,66,0.2)' : 'rgba(255,255,255,0.05)',
+                        border: filingStatus === o.v ? '1px solid rgba(240,200,66,0.5)' : '1px solid rgba(255,255,255,0.08)',
+                        color: filingStatus === o.v ? '#f0c842' : '#64748b'
+                      }}>
+                      {o.l}
+                    </button>
                   ))}
                 </div>
               </div>
-            )}
-          </div>
-        </div>
 
-        <div className="space-y-6 mt-12">
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Free Income Tax Calculator 2024</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Our free income tax calculator estimates your federal income tax based on the 2024 US tax brackets, your filing status and the standard deduction. It also includes FICA taxes and optional state income tax. Use this tool to estimate your take-home pay and plan your finances. Results are estimates only — consult a qualified tax professional for official advice.</p>
-          </div>
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4 text-sm">
-              {faqs.map((faq, i) => (
-                <div key={i} className={i < faqs.length - 1 ? "border-b pb-4" : "pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                  <p className="text-slate-400">{faq.a}</p>
+              <div>
+                <label className="text-slate-400 text-sm block mb-2">Deduction Type</label>
+                <div className="flex flex-wrap gap-2">
+                  {([{"v":"standard","l":"Standard Deduction"},{"v":"itemized","l":"Itemized Deductions"}]).map(o => (
+                    <button key={o.v} onClick={() => setDeductType(o.v)}
+                      className="px-3 py-1.5 rounded-xl text-sm font-bold transition-all"
+                      style={{
+                        background: deductType === o.v ? 'rgba(240,200,66,0.2)' : 'rgba(255,255,255,0.05)',
+                        border: deductType === o.v ? '1px solid rgba(240,200,66,0.5)' : '1px solid rgba(255,255,255,0.08)',
+                        color: deductType === o.v ? '#f0c842' : '#64748b'
+                      }}>
+                      {o.l}
+                    </button>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Itemized Deductions Amount</label>
+                  <span className="text-white font-bold text-sm">{fmt(itemized)}</span>
+                </div>
+                <input type="range" min={0} max={200000} step={500}
+                  value={itemized} onChange={e => setItemized(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Tax Credits</label>
+                  <span className="text-white font-bold text-sm">{fmt(credits)}</span>
+                </div>
+                <input type="range" min={0} max={20000} step={100}
+                  value={credits} onChange={e => setCredits(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="result-box">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-white font-bold text-lg">Results</h2>
+                {result && <PdfDownload title="Income Tax Calculator" rows={pdfRows} />}
+              </div>
+              {result ? (
+                <div className="space-y-3">
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Standard / Itemized Deduction</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.deduction)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Taxable Income</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.taxable)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Federal Income Tax</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.tax)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">FICA Tax (SS + Medicare)</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.fica)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Total Federal Tax</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {fmt(result.totalTax)}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Effective Tax Rate</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {result.effectiveRate}
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Marginal Tax Rate</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>
+                      {result.marginalRate}
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-8 text-slate-500 text-sm">Enter values above to see results</div>
+              )}
+            </div>
+            <div className="p-3 rounded-xl text-xs text-slate-500 leading-relaxed"
+              style={{background:'rgba(255,255,255,0.02)',border:'1px solid rgba(255,255,255,0.05)'}}>
+              Results are estimates for educational purposes only. Not financial advice.
             </div>
           </div>
         </div>
+        <div className="mb-12">
+          <h2 className="text-xl font-bold text-white mb-4">Related Calculators</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
 
-          {/* Related Calculators */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/budget-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" >
-                <div className="text-3xl mb-3">📋</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Budget Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Create a monthly budget plan</p>
-              </a>
-              <a href="/net-worth-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" >
-                <div className="text-3xl mb-3">💎</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Net Worth Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate your total net worth</p>
-              </a>
-              <a href="/retirement-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" >
-                <div className="text-3xl mb-3">👴</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Retirement Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Plan your retirement savings</p>
-              </a>
-              <a href="/savings-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" >
-                <div className="text-3xl mb-3">🏦</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Savings Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate how your savings grow</p>
-              </a>
+            <a href="/tax-refund-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">💸</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Tax Refund</h3>
+            </a>
+
+            <a href="/capital-gains-tax-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">📈</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Capital Gains Tax</h3>
+            </a>
+
+            <a href="/self-employment-tax-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">🧾</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">SE Tax</h3>
+            </a>
+
+            <a href="/paycheck-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">💵</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Paycheck</h3>
+            </a>
+          </div>
+        </div>
+        <div className="result-box mb-12">
+          <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">What is the standard deduction for 2026?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">The 2026 standard deduction is $14,600 for single filers, $29,200 for married filing jointly, and $21,900 for head of household. These amounts are indexed for inflation annually. You should itemize only if your itemized deductions (mortgage interest, state taxes up to $10,000, charitable gifts, medical expenses) exceed the standard deduction.</p>
+            </div>
+
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">What is the difference between effective and marginal tax rate?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">The marginal tax rate is the rate on your last dollar of income. The effective rate is your total tax divided by total income. Someone earning $85,000 single has a 22% marginal rate but roughly 15% effective rate because lower income portions are taxed at 10% and 12%. The marginal rate matters most for decisions about earning additional income.</p>
+            </div>
+
+            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">How can I reduce my federal income tax?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Key strategies: maximize pre-tax retirement contributions (401k up to $23,000, IRA up to $7,000 in 2024), contribute to an HSA ($4,150 single, $8,300 family), harvest tax losses in investment accounts, defer income to lower-earning years, bunch charitable donations to exceed standard deduction in alternating years, and use qualified opportunity zone investments.</p>
             </div>
           </div>
+        </div>
       </main>
-
-          <AdUnit slot="7405024590" />
-
-        {/* Internal Link to Blog */}
-          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:"rgba(240,200,66,0.2)",background:'rgba(240,200,66,0.05)'}}>
-            <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
-            <a href="/blog/how-to-lower-tax-bill" className="font-semibold hover:underline" style={{color:"#f0c842"}}>How to Lower Your Tax Bill Legally in 2026</a>
-          </div>
+      <TrustSection />
       <Footer />
     </>
   )
