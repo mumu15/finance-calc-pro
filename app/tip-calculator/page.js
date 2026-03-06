@@ -6,8 +6,6 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 
-export const metadata = undefined
-
 const faqs = [
   {
     "q": "How much should I tip at a restaurant?",

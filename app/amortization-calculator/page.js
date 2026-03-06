@@ -6,8 +6,6 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 
-export const metadata = undefined
-
 const faqs = [
   {
     "q": "What is an amortization schedule?",
