@@ -39,7 +39,7 @@ export default function CurrencySelector() {
       >
         <span className="text-base leading-none">{currency.flag}</span>
         <span className="font-bold">{currency.code}</span>
-        <svg className={`w-3 h-3 transition-transform ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className={`w-3 h-3 transition-transform ${open ? 'rotate-180' : '"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
@@ -49,7 +49,7 @@ export default function CurrencySelector() {
           style={{ background: 'rgba(10,15,30,0.99)', borderColor: 'rgba(240,200,66,0.2)', backdropFilter: 'blur(20px)' }}>
 
           {/* Search */}
-          <div className="p-2 border-b" style={{ borderColor: 'rgba(240,200,66,0.1)' }}>
+          <div className="p-2 border-b" style={{ borderColor: "rgba(240,200,66,0.1)' }}>
             <input
               type="text"
               placeholder="Search currency..."
@@ -94,7 +94,7 @@ export default function CurrencySelector() {
             )}
           </div>
 
-          <div className="px-3 py-2 border-t text-xs text-slate-600" style={{ borderColor: 'rgba(240,200,66,0.1)' }}>
+          <div className="px-3 py-2 border-t text-xs text-slate-600" style={{ borderColor: "rgba(240,200,66,0.1)' }}>
             🌍 {CURRENCIES.length} currencies • Auto-detected from your location
           </div>
         </div>
@@ -111,9 +111,9 @@ function CurrencyRow({ c, active, onClick }) {
       onMouseEnter={e => { if (!active) e.currentTarget.style.background = 'rgba(255,255,255,0.05)' }}
       onMouseLeave={e => { if (!active) e.currentTarget.style.background = 'transparent' }}>
       <span className="text-base w-6 text-center">{c.flag}</span>
-      <span className="font-bold text-xs w-8" style={{ color: active ? '#f0c842' : '#64748b' }}>{c.code}</span>
+      <span className="font-bold text-xs w-8" style={{ color: active ? "#f0c842' : '#64748b' }}>{c.code}</span>
       <span className={active ? 'text-white' : 'text-slate-400'}>{c.name}</span>
-      {active && <span className="ml-auto text-xs" style={{ color: '#f0c842' }}>✓</span>}
+      {active && <span className="ml-auto text-xs" style={{ color: "#f0c842' }}>✓</span>}
     </button>
   )
 }

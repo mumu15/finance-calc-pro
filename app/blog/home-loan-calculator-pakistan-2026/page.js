@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Home Loan EMI Calculator Pakistan 2026: Banks, Rates and Guide</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On a PKR 50 lakh home loan at 22% for 15 years your monthly installment is approximately <strong>PKR 1,05,900</strong>. Meezan Bank's Diminishing Musharakah offers Islamic financing from <strong>21-23%</strong> effective rate.</p>
  </div>
  <div className="space-y-8">
@@ -53,13 +53,13 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">10 Years</th><th className="text-left text-slate-400 py-2 pr-4">15 Years</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">10 Years</th><th className="text-left text-slate-400 py-2 pr-4">15 Years</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">PKR 25 Lakhs</td><td className="text-slate-300 py-2 pr-4">₨ 57,200</td><td className="text-slate-300 py-2 pr-4">₨ 49,800</td><td className="text-slate-300 py-2 pr-4">₨ 46,500</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">PKR 50 Lakhs</td><td className="text-slate-300 py-2 pr-4">₨ 1,14,400</td><td className="text-slate-300 py-2 pr-4">₨ 99,600</td><td className="text-slate-300 py-2 pr-4">₨ 93,000</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">PKR 1 Crore</td><td className="text-slate-300 py-2 pr-4">₨ 2,28,800</td><td className="text-slate-300 py-2 pr-4">₨ 1,99,200</td><td className="text-slate-300 py-2 pr-4">₨ 1,86,000</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">PKR 2 Crore</td><td className="text-slate-300 py-2 pr-4">₨ 4,57,600</td><td className="text-slate-300 py-2 pr-4">₨ 3,98,400</td><td className="text-slate-300 py-2 pr-4">₨ 3,72,000</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">PKR 3 Crore</td><td className="text-slate-300 py-2 pr-4">₨ 6,86,400</td><td className="text-slate-300 py-2 pr-4">₨ 5,97,600</td><td className="text-slate-300 py-2 pr-4">₨ 5,58,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">PKR 25 Lakhs</td><td className="text-slate-300 py-2 pr-4">₨ 57,200</td><td className="text-slate-300 py-2 pr-4">₨ 49,800</td><td className="text-slate-300 py-2 pr-4">₨ 46,500</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">PKR 50 Lakhs</td><td className="text-slate-300 py-2 pr-4">₨ 1,14,400</td><td className="text-slate-300 py-2 pr-4">₨ 99,600</td><td className="text-slate-300 py-2 pr-4">₨ 93,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">PKR 1 Crore</td><td className="text-slate-300 py-2 pr-4">₨ 2,28,800</td><td className="text-slate-300 py-2 pr-4">₨ 1,99,200</td><td className="text-slate-300 py-2 pr-4">₨ 1,86,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">PKR 2 Crore</td><td className="text-slate-300 py-2 pr-4">₨ 4,57,600</td><td className="text-slate-300 py-2 pr-4">₨ 3,98,400</td><td className="text-slate-300 py-2 pr-4">₨ 3,72,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">PKR 3 Crore</td><td className="text-slate-300 py-2 pr-4">₨ 6,86,400</td><td className="text-slate-300 py-2 pr-4">₨ 5,97,600</td><td className="text-slate-300 py-2 pr-4">₨ 5,58,000</td></tr>
  </tbody>
  </table>
  </div>
@@ -71,14 +71,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Bank</th><th className="text-left text-slate-400 py-2 pr-4">Type</th><th className="text-left text-slate-400 py-2 pr-4">Starting Rate</th><th className="text-left text-slate-400 py-2 pr-4">Max Tenure</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Bank</th><th className="text-left text-slate-400 py-2 pr-4">Type</th><th className="text-left text-slate-400 py-2 pr-4">Starting Rate</th><th className="text-left text-slate-400 py-2 pr-4">Max Tenure</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Meezan Bank</td><td className="text-slate-300 py-2 pr-4">Islamic (DM)</td><td className="text-slate-300 py-2 pr-4">21%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">HBL</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">21%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">UBL</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">21.5%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">MCB Bank</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">22%</td><td className="text-slate-300 py-2 pr-4">15 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Bank Alfalah</td><td className="text-slate-300 py-2 pr-4">Both</td><td className="text-slate-300 py-2 pr-4">21-22%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Askari Bank</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">22%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Meezan Bank</td><td className="text-slate-300 py-2 pr-4">Islamic (DM)</td><td className="text-slate-300 py-2 pr-4">21%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">HBL</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">21%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">UBL</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">21.5%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">MCB Bank</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">22%</td><td className="text-slate-300 py-2 pr-4">15 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Bank Alfalah</td><td className="text-slate-300 py-2 pr-4">Both</td><td className="text-slate-300 py-2 pr-4">21-22%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Askari Bank</td><td className="text-slate-300 py-2 pr-4">Conventional</td><td className="text-slate-300 py-2 pr-4">22%</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
  </tbody>
  </table>
  </div>
@@ -104,9 +104,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator</a>
- <a href="/loan-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Loan Calculator</a>
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Savings Calculator</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
+ <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
  </div>
  </section>
  </div>

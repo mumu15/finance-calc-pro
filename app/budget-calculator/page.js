@@ -33,9 +33,9 @@ export default function BudgetCalculator() {
   }, [income, incomeType, needs, wants, savings])
 
   const categories = [
-    { label: "Needs", pct: needs, amt: calc.needsAmt, color: "#60a5fa', desc: 'Rent, groceries, utilities, transport', examples: ['🏠 Rent/Mortgage', '🛒 Groceries', '💡 Utilities', '🚗 Transport', '💊 Healthcare'] },
-    { label: "Wants", pct: wants, amt: calc.wantsAmt, color: "#f0c842', desc: 'Dining out, entertainment, shopping', examples: ['🍕 Dining Out', '🎬 Entertainment', '👗 Shopping', '✈️ Travel', '📱 Subscriptions'] },
-    { label: "Savings", pct: savings, amt: calc.savingsAmt, color: "#34d399', desc: 'Emergency fund, investments, debt', examples: ['🏦 Emergency Fund', '📈 Investments', '💳 Debt Payoff', '🎓 Education', '🏡 House Fund'] },
+    { label: "Needs", pct: needs, amt: calc.needsAmt, color: "#60a5fa", desc: 'Rent, groceries, utilities, transport', examples: ['🏠 Rent/Mortgage', '🛒 Groceries', '💡 Utilities', '🚗 Transport', '💊 Healthcare'] },
+    { label: "Wants", pct: wants, amt: calc.wantsAmt, color: "#f0c842", desc: 'Dining out, entertainment, shopping', examples: ['🍕 Dining Out', '🎬 Entertainment', '👗 Shopping', '✈️ Travel', '📱 Subscriptions'] },
+    { label: "Savings", pct: savings, amt: calc.savingsAmt, color: "#34d399", desc: 'Emergency fund, investments, debt', examples: ['🏦 Emergency Fund', '📈 Investments', '💳 Debt Payoff', '🎓 Education', '🏡 House Fund'] },
   ]
 
   return (
@@ -63,10 +63,10 @@ export default function BudgetCalculator() {
             </div>
 
             <div className="flex justify-between mb-1.5">
-              <label className="text-slate-400 text-sm">{incomeType === 'annual' ? 'Annual' : 'Monthly'} Income</label>
+              <label className="text-slate-400 text-sm">{incomeType === "annual' ? 'Annual' : 'Monthly'} Income</label>
               <span className="text-white font-bold text-sm">{fmt(income)}</span>
             </div>
-            <input type="range" min={1000} max={incomeType === 'annual' ? 500000 : 50000} step={incomeType === 'annual' ? 1000 : 100} value={income}
+            <input type="range" min={1000} max={incomeType === "annual' ? 500000 : 50000} step={incomeType === 'annual' ? 1000 : 100} value={income}
               onChange={e => setIncome(Number(e.target.value))}
               className="w-full accent-yellow-400 mb-6" />
 
@@ -90,7 +90,7 @@ export default function BudgetCalculator() {
                   onChange={e => { const v = Number(e.target.value); if(needs + v <= 95) setWants(v) }}
                   className="w-full accent-yellow-400" />
               </div>
-              <div className="p-3 rounded-xl" style={{background:'rgba(52,211,153,0.05)',border:'1px solid rgba(52,211,153,0.15)'}}>
+              <div className="p-3 rounded-xl" style={{background:"rgba(52,211,153,0.05)',border:'1px solid rgba(52,211,153,0.15)'}}>
                 <div className="flex justify-between">
                   <span className="text-emerald-400 text-sm font-medium">Savings (auto)</span>
                   <span className="text-white font-bold text-sm">{savings}%</span>
@@ -117,7 +117,7 @@ export default function BudgetCalculator() {
           <div className="space-y-4">
             <div className="result-box text-center py-4">
               <div className="text-slate-400 text-sm mb-1">Monthly Income</div>
-              <div className="text-4xl font-bold" style={{color:'#f0c842'}}>{fmt(calc.monthly)}</div>
+              <div className="text-4xl font-bold" style={{color:"#f0c842'}}>{fmt(calc.monthly)}</div>
             </div>
 
             {categories.map((cat, i) => (
@@ -131,7 +131,7 @@ export default function BudgetCalculator() {
                 </div>
                 <div className="flex flex-wrap gap-1">
                   {cat.examples.map((ex, j) => (
-                    <span key={j} className="text-xs px-2 py-0.5 rounded-full text-slate-400" style={{background:'rgba(255,255,255,0.04)'}}>
+                    <span key={j} className="text-xs px-2 py-0.5 rounded-full text-slate-400" style={{background:"rgba(255,255,255,0.04)'}}>
                       {ex}
                     </span>
                   ))}
@@ -146,12 +146,12 @@ export default function BudgetCalculator() {
           <h2 className="text-white font-bold text-lg mb-4">Annual Summary</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { label: "Annual Income", value: fmt(calc.monthly * 12), color: "text-white' },
-              { label: "Annual on Needs", value: fmt(calc.needsAmt * 12), color: "text-blue-400' },
-              { label: "Annual on Wants", value: fmt(calc.wantsAmt * 12), color: "text-yellow-400' },
-              { label: "Annual Savings", value: fmt(calc.savingsAmt * 12), color: "text-emerald-400' },
+              { label: "Annual Income", value: fmt(calc.monthly * 12), color: "text-white" },
+              { label: "Annual on Needs", value: fmt(calc.needsAmt * 12), color: "text-blue-400" },
+              { label: "Annual on Wants", value: fmt(calc.wantsAmt * 12), color: "text-yellow-400" },
+              { label: "Annual Savings", value: fmt(calc.savingsAmt * 12), color: "text-emerald-400" },
             ].map((item, i) => (
-              <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+              <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                 <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
                 <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
               </div>
@@ -160,7 +160,7 @@ export default function BudgetCalculator() {
         </div>
 
         {/* Related Guide */}
-        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/how-to-create-monthly-budget" className="text-yellow-400 font-semibold hover:underline">How to Create a Monthly Budget: Complete Beginner Guide (2026)</a>
         </div>

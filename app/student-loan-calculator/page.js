@@ -79,7 +79,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{rate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{rate + "%'}</span>
                 </div>
                 <input type="range" min={1} max={15} step={0.125}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
@@ -114,25 +114,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Payment</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.monthly)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthly)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Interest</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalInterest)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalInterest)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Paid</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalPaid)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalPaid)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Interest as % of Loan</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.interestPct}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.interestPct}</span>
                   </div>
                 </div>
               ) : (
@@ -179,17 +179,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the average student loan debt?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The average US student loan borrower owes approximately $37,000. Federal student loans for undergraduates are capped at $31,000 for dependent students and $57,500 for independent students. Graduate students can borrow significantly more.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Should I pay off student loans or invest?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">If your student loan rate is below 6%, investing in an index fund earning 7-10% historically makes more financial sense. If your rate is above 6-7%, paying off debt first is usually better. High-interest private loans should always be prioritized.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is income-driven repayment?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Income-driven repayment (IDR) plans cap federal student loan payments at 5-20% of your discretionary income. Plans include SAVE, PAYE, IBR and ICR. After 10-25 years of qualifying payments, any remaining balance may be forgiven. IDR is best for low income relative to debt.</p>
             </div>

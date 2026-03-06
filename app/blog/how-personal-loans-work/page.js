@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How Personal Loans Work: Everything You Need to Know (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">A personal loan is an <strong>unsecured loan</strong> of $1,000–$100,000 repaid in fixed monthly payments over 1–7 years. Interest rates range from <strong>6–36%</strong> depending on your credit score. Best rates go to borrowers with 740+ credit scores.</p>
           </div>
           <div className="space-y-8">
@@ -53,13 +53,13 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Credit Score</th><th className="text-left text-slate-400 py-2 pr-4">Typical APR Range</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Credit Score</th><th className="text-left text-slate-400 py-2 pr-4">Typical APR Range</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">720–850 (Excellent)</td><td className="text-slate-300 py-2 pr-4">6%–12%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">680–719 (Good)</td><td className="text-slate-300 py-2 pr-4">12%–18%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">640–679 (Fair)</td><td className="text-slate-300 py-2 pr-4">18%–25%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">580–639 (Poor)</td><td className="text-slate-300 py-2 pr-4">25%–36%</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Below 580</td><td className="text-slate-300 py-2 pr-4">Unlikely to qualify</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">720–850 (Excellent)</td><td className="text-slate-300 py-2 pr-4">6%–12%</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">680–719 (Good)</td><td className="text-slate-300 py-2 pr-4">12%–18%</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">640–679 (Fair)</td><td className="text-slate-300 py-2 pr-4">18%–25%</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">580–639 (Poor)</td><td className="text-slate-300 py-2 pr-4">25%–36%</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Below 580</td><td className="text-slate-300 py-2 pr-4">Unlikely to qualify</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -71,13 +71,13 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Loan Type</th><th className="text-left text-slate-400 py-2 pr-4">Rate</th><th className="text-left text-slate-400 py-2 pr-4">Secured?</th><th className="text-left text-slate-400 py-2 pr-4">Best For</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Loan Type</th><th className="text-left text-slate-400 py-2 pr-4">Rate</th><th className="text-left text-slate-400 py-2 pr-4">Secured?</th><th className="text-left text-slate-400 py-2 pr-4">Best For</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Personal Loan</td><td className="text-slate-300 py-2 pr-4">6–36%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Debt consolidation</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Home Equity Loan</td><td className="text-slate-300 py-2 pr-4">6–10%</td><td className="text-slate-300 py-2 pr-4">Yes</td><td className="text-slate-300 py-2 pr-4">Home improvements</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Credit Card</td><td className="text-slate-300 py-2 pr-4">18–30%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Small short-term purchases</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">401k Loan</td><td className="text-slate-300 py-2 pr-4">5–7%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Emergency (last resort)</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Payday Loan</td><td className="text-slate-300 py-2 pr-4">300–400%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Avoid at all costs</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Personal Loan</td><td className="text-slate-300 py-2 pr-4">6–36%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Debt consolidation</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Home Equity Loan</td><td className="text-slate-300 py-2 pr-4">6–10%</td><td className="text-slate-300 py-2 pr-4">Yes</td><td className="text-slate-300 py-2 pr-4">Home improvements</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Credit Card</td><td className="text-slate-300 py-2 pr-4">18–30%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Small short-term purchases</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">401k Loan</td><td className="text-slate-300 py-2 pr-4">5–7%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Emergency (last resort)</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Payday Loan</td><td className="text-slate-300 py-2 pr-4">300–400%</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Avoid at all costs</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -103,9 +103,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Loan Calculator</a>
-            <a href="/blog/how-to-calculate-loan-payment" className="hover:underline text-sm" style={{color:'#f0c842'}}>How to Calculate Loan Payment</a>
-            <a href="/blog/debt-snowball-vs-avalanche" className="hover:underline text-sm" style={{color:'#f0c842'}}>Debt Snowball vs Avalanche</a>
+                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
+            <a href="/blog/how-to-calculate-loan-payment" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Calculate Loan Payment</a>
+            <a href="/blog/debt-snowball-vs-avalanche" className="hover:underline text-sm" style={{color:"#f0c842'}}>Debt Snowball vs Avalanche</a>
               </div>
             </section>
           </div>

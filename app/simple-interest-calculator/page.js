@@ -78,7 +78,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Annual Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{rate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{rate + "%'}</span>
                 </div>
                 <input type="range" min={0.5} max={30} step={0.25}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
@@ -88,7 +88,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Time Period</label>
-                  <span className="text-white font-bold text-sm">{years + ' yrs'}</span>
+                  <span className="text-white font-bold text-sm">{years + " yrs'}</span>
                 </div>
                 <input type="range" min={1} max={30} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
@@ -110,25 +110,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Simple Interest Earned</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.simpleInterest)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.simpleInterest)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Amount (Simple)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalSimple)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalSimple)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Compound Interest (for comparison)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.compoundInterest}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.compoundInterest}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Extra from Compounding</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.difference}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.difference}</span>
                   </div>
                 </div>
               ) : (
@@ -175,17 +175,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the simple interest formula?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Simple Interest = Principal × Rate × Time (in years). For example: $10,000 × 8% × 5 years = $4,000 in interest. Total amount = $14,000. Simple interest is used in short-term loans, car loans and some savings accounts.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Simple interest vs compound interest — what is the difference?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Simple interest is calculated only on the principal. Compound interest is calculated on the principal plus accumulated interest. $10,000 at 8% for 10 years: simple interest = $8,000 total interest; compound interest = $11,589. The gap grows enormously over time.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">When is simple interest used?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Simple interest is used for most auto loans, some personal loans, US Treasury bills and short-term loans. Mortgages, savings accounts, credit cards and most long-term investments use compound interest. Knowing which applies affects how you calculate true cost or return.</p>
             </div>

@@ -140,25 +140,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Debt-to-Income Ratio</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.dti}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.dti}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Front-End Ratio (housing only)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.frontEnd}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.frontEnd}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Monthly Debt</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalDebt)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalDebt)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Loan Approval Status</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.status}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.status}</span>
                   </div>
                 </div>
               ) : (
@@ -205,17 +205,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is a good debt-to-income ratio?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Below 36% is considered good. Most conventional mortgage lenders require a DTI of 43% or less. The best mortgage rates go to borrowers with DTI below 28%. FHA loans allow DTI up to 50% with compensating factors like excellent credit or large down payment.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How do I lower my debt-to-income ratio?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">To lower DTI: (1) pay down existing debts, especially high minimum payment balances, (2) increase income through a raise, second job or freelance work, (3) avoid taking on new debt before applying for a loan. Even paying off a small $200/month debt can meaningfully shift your DTI.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is front-end vs back-end DTI?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Front-end DTI includes only housing costs (mortgage/rent, taxes, insurance) divided by income. Back-end DTI includes all monthly debt payments. Conventional lenders prefer front-end DTI below 28% and back-end below 36%. FHA uses 31%/43% guidelines.</p>
             </div>

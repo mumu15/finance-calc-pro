@@ -34,7 +34,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b" style={{ borderColor: 'rgba(240,200,66,0.15)', background: 'rgba(3,7,18,0.97)', backdropFilter: 'blur(20px)' }}>
+    <header className="sticky top-0 z-50 border-b" style={{ borderColor: "rgba(240,200,66,0.15)', background: 'rgba(3,7,18,0.97)', backdropFilter: 'blur(20px)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
@@ -56,11 +56,11 @@ export default function Header() {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="flex items-center gap-1.5 text-slate-300 hover:text-white text-sm px-4 py-2 rounded-lg hover:bg-white/5 transition-all"
               >
-                <svg className="w-4 h-4" style={{color:'#f0c842'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" style={{color:"#f0c842"}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 All Calculators
-                <svg className={`w-3.5 h-3.5 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-3.5 h-3.5 transition-transform ${dropdownOpen ? 'rotate-180' : '"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -112,7 +112,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden py-3 border-t" style={{ borderColor: 'rgba(240,200,66,0.1)' }}>
+          <div className="md:hidden py-3 border-t" style={{ borderColor: "rgba(240,200,66,0.1)' }}>
             <div className="grid grid-cols-2 gap-1 mb-3">
               {tools.map(tool => (
                 <Link key={tool.href} href={tool.href}
@@ -123,7 +123,7 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-            <div className="border-t pt-3 flex gap-2" style={{ borderColor: 'rgba(240,200,66,0.1)' }}>
+            <div className="border-t pt-3 flex gap-2" style={{ borderColor: "rgba(240,200,66,0.1)' }}>
               <Link href="/blog" onClick={() => setMobileOpen(false)}
                 className="flex-1 text-center text-slate-300 hover:text-white text-sm px-3 py-2 rounded-lg hover:bg-white/5 transition-all">
                 Blog

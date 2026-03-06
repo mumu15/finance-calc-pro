@@ -88,7 +88,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Debt Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{debtRate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{debtRate + "%'}</span>
                 </div>
                 <input type="range" min={1} max={30} step={0.25}
                   value={debtRate} onChange={e => setDebtRate(Number(e.target.value))}
@@ -98,7 +98,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Expected Investment Return</label>
-                  <span className="text-white font-bold text-sm">{investReturn + '%'}</span>
+                  <span className="text-white font-bold text-sm">{investReturn + "%'}</span>
                 </div>
                 <input type="range" min={1} max={20} step={0.25}
                   value={investReturn} onChange={e => setInvestReturn(Number(e.target.value))}
@@ -118,7 +118,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Time Horizon</label>
-                  <span className="text-white font-bold text-sm">{years + ' yrs'}</span>
+                  <span className="text-white font-bold text-sm">{years + " yrs'}</span>
                 </div>
                 <input type="range" min={1} max={30} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
@@ -140,25 +140,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Benefit: Pay Off Debt</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.payoffNetBenefit)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.payoffNetBenefit)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Benefit: Invest Instead</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.investNetBenefit)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.investNetBenefit)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Recommendation</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.recommendation}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.recommendation}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Difference</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.difference)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.difference)}</span>
                   </div>
                 </div>
               ) : (
@@ -205,17 +205,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Should I pay off debt or invest?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The mathematical answer: if your debt rate exceeds expected investment returns, pay off debt. If investment returns exceed debt rate, invest. In practice, the break-even is around 6-7%. Credit card debt at 20%? Pay it off. Mortgage at 6.5% and stock market returning 9%? The math slightly favors investing, but emotional factors matter too.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Does paying off debt count as an investment?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Paying off a 10% interest rate loan is equivalent to a guaranteed 10% return — better than most investments after tax and risk adjustment. High-interest debt payoff is often the highest "return on investment" available, especially when accounting for the guaranteed, risk-free nature of the return.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What debts should I always pay off before investing?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Always pay off: credit cards (15-25% APR), payday loans (300%+ APR), personal loans above 8-10%, and private student loans above 7%. The minimum threshold varies: some say pay all debt over 5-6% before investing; others say capture employer 401k match first (it's a 50-100% instant return) regardless.</p>
             </div>

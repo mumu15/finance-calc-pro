@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">What is Compound Interest and How Does It Work? (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">Compound interest is interest earned on both your <strong>original principal and your accumulated interest</strong>. It causes your money to grow exponentially over time — making it the most powerful force in personal finance.</p>
           </div>
           <div className="space-y-8">
@@ -38,10 +38,10 @@ export default function Post() {
               <div className="result-box">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Years</th><th className="text-left text-slate-400 py-2 pr-4">Simple Interest (7%)</th><th className="text-left py-2" style={{color:'#f0c842'}}>Compound Interest (7%)</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Years</th><th className="text-left text-slate-400 py-2 pr-4">Simple Interest (7%)</th><th className="text-left py-2" style={{color:"#f0c842'}}>Compound Interest (7%)</th></tr></thead>
                     <tbody>
                       {[['5 years','$1,350','$1,403'],['10 years','$1,700','$1,967'],['20 years','$2,400','$3,870'],['30 years','$3,100','$7,612'],['40 years','$3,800','$14,974']].map((r,i)=>(
-                        <tr key={i} className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="text-slate-400 py-2 pr-4">{r[1]}</td><td className="font-bold py-2" style={{color:'#f0c842'}}>{r[2]}</td></tr>
+                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="text-slate-400 py-2 pr-4">{r[1]}</td><td className="font-bold py-2" style={{color:"#f0c842'}}>{r[2]}</td></tr>
                       ))}
                     </tbody>
                   </table>
@@ -57,7 +57,7 @@ export default function Post() {
               <div className="result-box">
                 <div className="space-y-2">
                   {[['4%','18 years to double'],['6%','12 years to double'],['7%','10.3 years to double'],['8%','9 years to double'],['10%','7.2 years to double'],['12%','6 years to double']].map((r,i)=>(
-                    <div key={i} className="flex justify-between py-2 border-b text-sm" style={{borderColor:'rgba(240,200,66,0.05)'}}>
+                    <div key={i} className="flex justify-between py-2 border-b text-sm" style={{borderColor:"rgba(240,200,66,0.05)'}}>
                       <span className="text-white font-bold">Interest Rate: {r[0]}</span>
                       <span style={{color:'#f0c842'}}>{r[1]}</span>
                     </div>
@@ -74,7 +74,7 @@ export default function Post() {
                   {age:'Start at 35',contributed:'$108,000',value:'$454,350',extra:'30 years of growth'},
                 ].map((item,i)=>(
                   <div key={i} className="result-box">
-                    <h3 className="font-bold mb-3 text-center" style={{color:'#f0c842'}}>{item.age}</h3>
+                    <h3 className="font-bold mb-3 text-center" style={{color:"#f0c842'}}>{item.age}</h3>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between"><span className="text-slate-400">Contributed</span><span className="text-white">{item.contributed}</span></div>
                       <div className="flex justify-between"><span className="text-slate-400">Final Value</span><span className="font-bold text-emerald-400">{item.value}</span></div>

@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Build an Emergency Fund From Scratch (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">Save <strong>3-6 months of essential living expenses</strong> in a high-yield savings account. Start with a $1,000 starter fund then build to the full amount over time.</p>
           </div>
           <div className="space-y-8">
@@ -42,9 +42,9 @@ export default function Post() {
                     {situation:'Self-employed or freelancer',amount:'6-12 months of expenses',risk:'Higher risk'},
                     {situation:'Commission-based income',amount:'6-12 months of expenses',risk:'Variable income'},
                   ].map((item,i)=>(
-                    <div key={i} className="flex justify-between items-center py-2 border-b text-sm" style={{borderColor:'rgba(240,200,66,0.05)'}}>
+                    <div key={i} className="flex justify-between items-center py-2 border-b text-sm" style={{borderColor:"rgba(240,200,66,0.05)'}}>
                       <div><p className="text-white">{item.situation}</p><p className="text-slate-500 text-xs">{item.risk}</p></div>
-                      <span className="font-bold ml-4" style={{color:'#f0c842'}}>{item.amount}</span>
+                      <span className="font-bold ml-4" style={{color:"#f0c842'}}>{item.amount}</span>
                     </div>
                   ))}
                 </div>
@@ -64,7 +64,7 @@ export default function Post() {
                   {num:'6',title:'Only use it for real emergencies',desc:'Once built only touch your emergency fund for genuine unexpected emergencies. Replenish it as quickly as possible after using it.'},
                 ].map((item,i)=>(
                   <div key={i} className="result-box flex gap-4">
-                    <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" style={{background:'rgba(240,200,66,0.15)',color:'#f0c842'}}>{item.num}</div>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0" style={{background:"rgba(240,200,66,0.15)',color:'#f0c842'}}>{item.num}</div>
                     <div><h3 className="text-white font-bold mb-2">{item.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p></div>
                   </div>
                 ))}

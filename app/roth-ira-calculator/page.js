@@ -93,7 +93,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Expected Annual Return</label>
-                  <span className="text-white font-bold text-sm">{growthRate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{growthRate + "%'}</span>
                 </div>
                 <input type="range" min={1} max={15} step={0.5}
                   value={growthRate} onChange={e => setGrowthRate(Number(e.target.value))}
@@ -103,7 +103,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Years Until Retirement</label>
-                  <span className="text-white font-bold text-sm">{years + ' yrs'}</span>
+                  <span className="text-white font-bold text-sm">{years + " yrs'}</span>
                 </div>
                 <input type="range" min={1} max={50} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
@@ -113,7 +113,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Current Tax Rate (for comparison)</label>
-                  <span className="text-white font-bold text-sm">{taxRate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{taxRate + "%'}</span>
                 </div>
                 <input type="range" min={10} max={40} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
@@ -135,31 +135,31 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Projected Roth IRA Balance</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.futureBalance)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.futureBalance)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Contributions</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalContributed)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalContributed)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Tax-Free Growth</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.growthEarned)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.growthEarned)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Tax Savings vs Taxable Account</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.taxSavedVsTaxable)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.taxSavedVsTaxable)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Est. Monthly Tax-Free Income</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.monthlyTaxFree)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthlyTaxFree)}</span>
                   </div>
                 </div>
               ) : (
@@ -206,17 +206,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is a Roth IRA and who is it best for?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A Roth IRA is a retirement account funded with after-tax dollars. Investments grow tax-free and qualified withdrawals in retirement are completely tax-free. It is best for young people in low tax brackets who expect to be in a higher bracket at retirement, and for those who want tax diversification.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the 2026 Roth IRA contribution limit?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The 2026 Roth IRA contribution limit is $7,000 ($8,000 if age 50+). Income limits apply: single filers with MAGI above $150,000 face reduced limits; above $165,000 you cannot contribute directly. High earners can use the backdoor Roth IRA strategy.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Roth IRA vs Traditional IRA — which is better?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Roth IRA = pay tax now, withdraw tax-free. Traditional IRA = deduct now, pay tax at withdrawal. Roth is better if your tax rate will be higher in retirement. Traditional is better if your tax rate will be lower. Young earners typically benefit more from Roth; high earners near retirement often prefer Traditional.</p>
             </div>

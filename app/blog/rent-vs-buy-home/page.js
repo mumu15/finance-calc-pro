@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Renting vs Buying a Home: Which is Better in 2026?</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 10 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">Buying makes more sense if you plan to <strong>stay 5+ years</strong> and can afford the down payment and ongoing costs. Renting is better if you need <strong>flexibility</strong> or are in a very expensive market.</p>
           </div>
           <div className="space-y-8">
@@ -40,8 +40,8 @@ export default function Post() {
                   {type:'Costs of Buying',items:['Mortgage payment (P and I)','Property taxes (1-2% per year)','Homeowners insurance','HOA fees if applicable','Maintenance and repairs (1-2% per year)','PMI if under 20% down','Closing costs (2-5% upfront)']},
                 ].map((item,i)=>(
                   <div key={i} className="result-box">
-                    <h3 className="font-bold mb-3" style={{color:'#f0c842'}}>{item.type}</h3>
-                    <ul className="space-y-1">{item.items.map((it,j)=>(<li key={j} className="text-slate-400 text-sm flex gap-2"><span style={{color:'#f0c842'}}>-</span>{it}</li>))}</ul>
+                    <h3 className="font-bold mb-3" style={{color:"#f0c842'}}>{item.type}</h3>
+                    <ul className="space-y-1">{item.items.map((it,j)=>(<li key={j} className="text-slate-400 text-sm flex gap-2"><span style={{color:"#f0c842'}}>-</span>{it}</li>))}</ul>
                   </div>
                 ))}
               </div>
@@ -54,10 +54,10 @@ export default function Post() {
               <div className="result-box">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Home Price</th><th className="text-left py-2" style={{color:'#f0c842'}}>Monthly 5% Threshold</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Home Price</th><th className="text-left py-2" style={{color:"#f0c842'}}>Monthly 5% Threshold</th></tr></thead>
                     <tbody>
                       {[['$200,000','$833/month'],['$300,000','$1,250/month'],['$400,000','$1,667/month'],['$500,000','$2,083/month'],['$600,000','$2,500/month']].map((r,i)=>(
-                        <tr key={i} className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="font-bold py-2" style={{color:'#f0c842'}}>{r[1]}</td></tr>
+                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="font-bold py-2" style={{color:"#f0c842'}}>{r[1]}</td></tr>
                       ))}
                     </tbody>
                   </table>

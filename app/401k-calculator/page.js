@@ -95,7 +95,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Your Contribution %</label>
-                  <span className="text-white font-bold text-sm">{contribution + '%'}</span>
+                  <span className="text-white font-bold text-sm">{contribution + "%'}</span>
                 </div>
                 <input type="range" min={1} max={30} step={1}
                   value={contribution} onChange={e => setContribution(Number(e.target.value))}
@@ -105,7 +105,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Employer Match %</label>
-                  <span className="text-white font-bold text-sm">{employerMatch + '%'}</span>
+                  <span className="text-white font-bold text-sm">{employerMatch + "%'}</span>
                 </div>
                 <input type="range" min={0} max={10} step={0.5}
                   value={employerMatch} onChange={e => setEmployerMatch(Number(e.target.value))}
@@ -115,7 +115,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Expected Annual Return</label>
-                  <span className="text-white font-bold text-sm">{growthRate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{growthRate + "%'}</span>
                 </div>
                 <input type="range" min={1} max={15} step={0.5}
                   value={growthRate} onChange={e => setGrowthRate(Number(e.target.value))}
@@ -125,7 +125,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Years Until Retirement</label>
-                  <span className="text-white font-bold text-sm">{yearsToRetire + ' yrs'}</span>
+                  <span className="text-white font-bold text-sm">{yearsToRetire + " yrs'}</span>
                 </div>
                 <input type="range" min={1} max={45} step={1}
                   value={yearsToRetire} onChange={e => setYearsToRetire(Number(e.target.value))}
@@ -147,25 +147,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Projected Balance at Retirement</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.futureBalance)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.futureBalance)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Amount Contributed</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalContributed)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalContributed)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Investment Growth Earned</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.growthEarned)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.growthEarned)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Est. Monthly Retirement Income (4%)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.monthlyRetirement)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthlyRetirement)}</span>
                   </div>
                 </div>
               ) : (
@@ -212,17 +212,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How much should I contribute to my 401k?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">At minimum, contribute enough to get your full employer match — that is a 50-100% instant return. Beyond that, aim for 15% of income including employer contributions. The 2026 401k contribution limit is $23,500 ($31,000 if age 50+). Starting early has an enormous impact due to compound growth.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the employer 401k match?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A common employer match is 50% of contributions up to 6% of salary — meaning if you contribute 6%, your employer adds 3%. Some employers match 100% up to 3-4%. Always contribute at least enough to capture the full employer match; not doing so is leaving free money on the table.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the 4% rule for retirement?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The 4% rule states you can safely withdraw 4% of your retirement portfolio in year one, then adjust for inflation each year, with a high probability your money lasts 30+ years. A $1,000,000 portfolio supports $40,000/year or $3,333/month. It is a guideline, not a guarantee.</p>
             </div>

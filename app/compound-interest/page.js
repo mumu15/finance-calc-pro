@@ -70,13 +70,13 @@ export default function CompoundInterest() {
               {[
                 { label: "Initial Investment", value: principal, set: setPrincipal, min: 0, max: 100000, step: 500, prefix: currency.symbol },
                 { label: "Monthly Contribution", value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
-                { label: "Annual Interest Rate", value: rate, set: setRate, min: 1, max: 20, step: 0.5, suffix: "%' },
-                { label: "Time Period", value: years, set: setYears, min: 1, max: 50, step: 1, suffix: " years' },
+                { label: "Annual Interest Rate", value: rate, set: setRate, min: 1, max: 20, step: 0.5, suffix: "%" },
+                { label: "Time Period", value: years, set: setYears, min: 1, max: 50, step: 1, suffix: " years" },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
                     <label className="text-slate-400 text-sm">{field.label}</label>
-                    <span className="text-white font-bold text-sm">{field.prefix || ''}{field.value.toLocaleString()}{field.suffix || ''}</span>
+                    <span className="text-white font-bold text-sm">{field.prefix || "'}{field.value.toLocaleString()}{field.suffix || ''}</span>
                   </div>
                   <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
                     onChange={e => field.set(Number(e.target.value))}
@@ -102,19 +102,19 @@ export default function CompoundInterest() {
           <div className="space-y-4">
             <div className="result-box text-center py-6">
               <div className="text-slate-400 text-sm mb-2">Future Value</div>
-              <div className="text-5xl font-bold mb-1" style={{color:'#f0c842'}}>{fmt(calc.futureValue)}</div>
+              <div className="text-5xl font-bold mb-1" style={{color:"#f0c842'}}>{fmt(calc.futureValue)}</div>
               <div className="text-slate-500 text-sm">after {years} years</div>
             </div>
 
             <div className="result-box">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Total Contributed", value: fmt(calc.totalContributions), color: "text-white' },
-                  { label: "Interest Earned", value: fmt(calc.totalInterest), color: "text-emerald-400' },
-                  { label: "Money Doubled In", value: calc.doubleYears + " yrs', color: 'text-yellow-400' },
-                  { label: "Return", value: Math.round((calc.totalInterest / calc.totalContributions) * 100) + "%', color: 'text-blue-400' },
+                  { label: "Total Contributed", value: fmt(calc.totalContributions), color: "text-white" },
+                  { label: "Interest Earned", value: fmt(calc.totalInterest), color: "text-emerald-400" },
+                  { label: "Money Doubled In", value: calc.doubleYears + " yrs", color: 'text-yellow-400' },
+                  { label: "Return", value: Math.round((calc.totalInterest / calc.totalContributions) * 100) + "%", color: 'text-blue-400' },
                 ].map((item, i) => (
-                  <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                  <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
                     <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
                   </div>
@@ -150,7 +150,7 @@ export default function CompoundInterest() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+                  <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)'}}>
                     {['Year','Balance','Contributions','Interest Earned'].map(h => (
                       <th key={h} className="text-left text-slate-400 py-2 pr-4">{h}</th>
                     ))}
@@ -158,7 +158,7 @@ export default function CompoundInterest() {
                 </thead>
                 <tbody>
                   {calc.yearlyData.map((row, i) => (
-                    <tr key={i} className="border-b" style={{borderColor:'rgba(255,255,255,0.03)'}}>
+                    <tr key={i} className="border-b" style={{borderColor:"rgba(255,255,255,0.03)'}}>
                       <td className="text-slate-400 py-1.5 pr-4">{row.year}</td>
                       <td className="text-yellow-400 font-bold py-1.5 pr-4">{fmt(row.balance)}</td>
                       <td className="text-white py-1.5 pr-4">{fmt(row.contributions)}</td>
@@ -172,7 +172,7 @@ export default function CompoundInterest() {
         </div>
 
         {/* Related Guide */}
-        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/what-is-compound-interest" className="text-yellow-400 font-semibold hover:underline">What is Compound Interest and How Does It Work? (2026 Guide)</a>
         </div>

@@ -74,7 +74,7 @@ export default function MortgageCalculator() {
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Mortgage Calculator</h1>
-          <p className="text-slate-400 text-lg">Calculate your monthly mortgage payment in <span style={{color:'#f0c842'}}>{currency.flag} {currency.name}</span></p>
+          <p className="text-slate-400 text-lg">Calculate your monthly mortgage payment in <span style={{color:"#f0c842'}}>{currency.flag} {currency.name}</span></p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -84,7 +84,7 @@ export default function MortgageCalculator() {
             <div className="space-y-4">
               {[
                 { label: "Home Price", value: homePrice, set: setHomePrice, min: Math.round(maxHome*0.02), max: maxHome, step: Math.round(maxHome*0.005) },
-                { label: "Down Payment", value: downPayment, set: setDownPayment, min: 0, max: homePrice, step: Math.round(maxHome*0.002), note: downPct + '%' },
+                { label: "Down Payment", value: downPayment, set: setDownPayment, min: 0, max: homePrice, step: Math.round(maxHome*0.002), note: downPct + "%' },
                 { label: "Interest Rate", value: interestRate, set: setInterestRate, min: 1, max: 20, step: 0.1, isRate: true },
                 { label: "Property Tax (annual)", value: propertyTax, set: setPropertyTax, min: 0, max: Math.round(maxHome*0.03), step: Math.round(maxHome*0.001) },
                 { label: "Home Insurance (annual)", value: insurance, set: setInsurance, min: 0, max: Math.round(maxHome*0.01), step: Math.round(maxHome*0.0005) },
@@ -127,16 +127,16 @@ export default function MortgageCalculator() {
             <div className="result-box">
               <h2 className="text-white font-bold text-lg mb-4">Monthly Payment</h2>
               <div className="text-center mb-4">
-                <div className="text-5xl font-bold" style={{color:'#f0c842'}}>{fmt(calc.total)}</div>
+                <div className="text-5xl font-bold" style={{color:"#f0c842'}}>{fmt(calc.total)}</div>
                 <div className="text-slate-400 text-sm mt-1">per month · {currency.flag} {currency.code}</div>
               </div>
               <div className="space-y-2">
                 {[
-                  { label: "Principal & Interest", value: calc.pi, color: "#f0c842' },
-                  { label: "Property Tax", value: calc.monthlyTax, color: "#60a5fa' },
-                  { label: "Home Insurance", value: calc.monthlyIns, color: "#34d399' },
-                  ...(calc.pmi > 0 ? [{ label: "PMI", value: calc.pmi, color: "#f97316' }] : []),
-                  ...(calc.monthlyHoa > 0 ? [{ label: "HOA Fees", value: calc.monthlyHoa, color: "#a78bfa' }] : []),
+                  { label: "Principal & Interest", value: calc.pi, color: "#f0c842" },
+                  { label: "Property Tax", value: calc.monthlyTax, color: "#60a5fa" },
+                  { label: "Home Insurance", value: calc.monthlyIns, color: "#34d399" },
+                  ...(calc.pmi > 0 ? [{ label: "PMI", value: calc.pmi, color: "#f97316" }] : []),
+                  ...(calc.monthlyHoa > 0 ? [{ label: "HOA Fees", value: calc.monthlyHoa, color: "#a78bfa" }] : []),
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{background:item.color}}/>
@@ -152,12 +152,12 @@ export default function MortgageCalculator() {
               <h2 className="text-white font-bold text-lg mb-4">Loan Summary</h2>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Loan Amount", value: fmt(calc.loanAmount), color: "text-white' },
-                  { label: "Total Interest", value: fmt(calc.totalInterest), color: "text-red-400' },
-                  { label: "Total Cost", value: fmt(calc.totalCost), color: "text-yellow-400' },
-                  { label: "Payoff Date", value: new Date(Date.now() + loanTerm * 365.25 * 24 * 3600 * 1000).getFullYear(), color: "text-emerald-400' },
+                  { label: "Loan Amount", value: fmt(calc.loanAmount), color: "text-white" },
+                  { label: "Total Interest", value: fmt(calc.totalInterest), color: "text-red-400" },
+                  { label: "Total Cost", value: fmt(calc.totalCost), color: "text-yellow-400" },
+                  { label: "Payoff Date", value: new Date(Date.now() + loanTerm * 365.25 * 24 * 3600 * 1000).getFullYear(), color: "text-emerald-400" },
                 ].map((item, i) => (
-                  <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                  <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
                     <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
                   </div>
@@ -181,7 +181,7 @@ export default function MortgageCalculator() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+                  <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)'}}>
                     {['Month','Payment','Principal','Interest','Balance'].map(h => (
                       <th key={h} className="text-left text-slate-400 py-2 pr-4">{h}</th>
                     ))}
@@ -189,7 +189,7 @@ export default function MortgageCalculator() {
                 </thead>
                 <tbody>
                   {displayedSchedule.map((row, i) => (
-                    <tr key={i} className="border-b" style={{borderColor:'rgba(255,255,255,0.03)'}}>
+                    <tr key={i} className="border-b" style={{borderColor:"rgba(255,255,255,0.03)'}}>
                       <td className="text-slate-400 py-1.5 pr-4">{row.month}</td>
                       <td className="text-white py-1.5 pr-4">{fmt(row.payment)}</td>
                       <td className="text-emerald-400 py-1.5 pr-4">{fmt(row.principal)}</td>
@@ -208,7 +208,7 @@ export default function MortgageCalculator() {
           )}
         </div>
 
-        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/how-to-calculate-mortgage-payment" className="text-yellow-400 font-semibold hover:underline">How to Calculate Your Mortgage Payment: Complete Guide (2026)</a>
         </div>

@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How Student Loans Work: Everything You Need to Know (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">Federal student loans have fixed interest rates of <strong>6.53%–9.08% for 2025-26</strong>. Always exhaust federal loans before private. Income-driven repayment plans cap payments at <strong>5–10% of discretionary income</strong>.</p>
           </div>
           <div className="space-y-8">
@@ -53,15 +53,15 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Feature</th><th className="text-left text-slate-400 py-2 pr-4">Federal Loans</th><th className="text-left text-slate-400 py-2 pr-4">Private Loans</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Feature</th><th className="text-left text-slate-400 py-2 pr-4">Federal Loans</th><th className="text-left text-slate-400 py-2 pr-4">Private Loans</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Interest Rates 2026</td><td className="text-slate-300 py-2 pr-4">6.53%–9.08% fixed</td><td className="text-slate-300 py-2 pr-4">4%–15% variable or fixed</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Income-Driven Repayment</td><td className="text-slate-300 py-2 pr-4">Yes</td><td className="text-slate-300 py-2 pr-4">No</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Loan Forgiveness</td><td className="text-slate-300 py-2 pr-4">PSLF and IDR available</td><td className="text-slate-300 py-2 pr-4">Not available</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Deferment/Forbearance</td><td className="text-slate-300 py-2 pr-4">Generous options</td><td className="text-slate-300 py-2 pr-4">Limited</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Cosigner Required</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Often yes</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Credit Check</td><td className="text-slate-300 py-2 pr-4">No (except PLUS)</td><td className="text-slate-300 py-2 pr-4">Yes</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Borrow First?</td><td className="text-slate-300 py-2 pr-4">Always</td><td className="text-slate-300 py-2 pr-4">Only after federal exhausted</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Interest Rates 2026</td><td className="text-slate-300 py-2 pr-4">6.53%–9.08% fixed</td><td className="text-slate-300 py-2 pr-4">4%–15% variable or fixed</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Income-Driven Repayment</td><td className="text-slate-300 py-2 pr-4">Yes</td><td className="text-slate-300 py-2 pr-4">No</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Loan Forgiveness</td><td className="text-slate-300 py-2 pr-4">PSLF and IDR available</td><td className="text-slate-300 py-2 pr-4">Not available</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Deferment/Forbearance</td><td className="text-slate-300 py-2 pr-4">Generous options</td><td className="text-slate-300 py-2 pr-4">Limited</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Cosigner Required</td><td className="text-slate-300 py-2 pr-4">No</td><td className="text-slate-300 py-2 pr-4">Often yes</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Credit Check</td><td className="text-slate-300 py-2 pr-4">No (except PLUS)</td><td className="text-slate-300 py-2 pr-4">Yes</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Borrow First?</td><td className="text-slate-300 py-2 pr-4">Always</td><td className="text-slate-300 py-2 pr-4">Only after federal exhausted</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -70,11 +70,11 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">5 Strategies to Pay Off Student Loans Faster</h2>
               <ul className="space-y-2 mb-4">
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Make extra payments and specify they go to principal not future payments</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Refinance private loans if your credit score has improved since graduation</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Apply the debt avalanche — pay extra on the highest-rate loan first</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Apply any tax refunds, bonuses or windfalls directly to loan principal</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Income-drive repayment frees up cash flow that you can redirect to other financial goals</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Make extra payments and specify they go to principal not future payments</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Refinance private loans if your credit score has improved since graduation</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Apply the debt avalanche — pay extra on the highest-rate loan first</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Apply any tax refunds, bonuses or windfalls directly to loan principal</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Income-drive repayment frees up cash flow that you can redirect to other financial goals</span></li>
               </ul>
             </section>
             <section>
@@ -93,9 +93,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Loan Calculator</a>
-            <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Debt Payoff Calculator</a>
-            <a href="/blog/how-to-pay-off-debt-fast" className="hover:underline text-sm" style={{color:'#f0c842'}}>How to Pay Off Debt Fast</a>
+                <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
+            <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Debt Payoff Calculator</a>
+            <a href="/blog/how-to-pay-off-debt-fast" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Pay Off Debt Fast</a>
               </div>
             </section>
           </div>

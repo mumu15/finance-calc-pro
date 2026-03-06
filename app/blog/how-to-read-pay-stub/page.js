@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Read a Pay Stub: Every Line Explained (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white"><strong>Gross pay</strong> is your total earnings before deductions. <strong>Net pay</strong> is what you take home. The difference is taxes (federal, state, FICA) and benefits deductions (health insurance, 401k). Most employees take home <strong>65–75%</strong> of gross pay.</p>
           </div>
           <div className="space-y-8">
@@ -53,19 +53,19 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Line Item</th><th className="text-left text-slate-400 py-2 pr-4">What It Means</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Line Item</th><th className="text-left text-slate-400 py-2 pr-4">What It Means</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Gross Pay</td><td className="text-slate-300 py-2 pr-4">Total earnings before any deductions</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Federal Income Tax</td><td className="text-slate-300 py-2 pr-4">Withheld based on W-4 and tax bracket</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">State Income Tax</td><td className="text-slate-300 py-2 pr-4">Varies by state — none in TX, FL, WA, NV, WY, SD, AK, NH, TN</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Social Security (FICA)</td><td className="text-slate-300 py-2 pr-4">6.2% of wages up to $176,100 (2026)</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Medicare (FICA)</td><td className="text-slate-300 py-2 pr-4">1.45% of all wages (2.35% above $200,000)</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">401k Contribution</td><td className="text-slate-300 py-2 pr-4">Pre-tax retirement savings — reduces taxable income</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Health Insurance</td><td className="text-slate-300 py-2 pr-4">Usually pre-tax premium for employer plan</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Dental/Vision</td><td className="text-slate-300 py-2 pr-4">Pre-tax premiums for supplemental coverage</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">HSA Contribution</td><td className="text-slate-300 py-2 pr-4">Pre-tax health savings account contributions</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Net Pay</td><td className="text-slate-300 py-2 pr-4">Your take-home pay after all deductions</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">YTD Gross</td><td className="text-slate-300 py-2 pr-4">Total earnings since January 1 this year</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Gross Pay</td><td className="text-slate-300 py-2 pr-4">Total earnings before any deductions</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Federal Income Tax</td><td className="text-slate-300 py-2 pr-4">Withheld based on W-4 and tax bracket</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">State Income Tax</td><td className="text-slate-300 py-2 pr-4">Varies by state — none in TX, FL, WA, NV, WY, SD, AK, NH, TN</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Social Security (FICA)</td><td className="text-slate-300 py-2 pr-4">6.2% of wages up to $176,100 (2026)</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Medicare (FICA)</td><td className="text-slate-300 py-2 pr-4">1.45% of all wages (2.35% above $200,000)</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">401k Contribution</td><td className="text-slate-300 py-2 pr-4">Pre-tax retirement savings — reduces taxable income</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Health Insurance</td><td className="text-slate-300 py-2 pr-4">Usually pre-tax premium for employer plan</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Dental/Vision</td><td className="text-slate-300 py-2 pr-4">Pre-tax premiums for supplemental coverage</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">HSA Contribution</td><td className="text-slate-300 py-2 pr-4">Pre-tax health savings account contributions</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Net Pay</td><td className="text-slate-300 py-2 pr-4">Your take-home pay after all deductions</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">YTD Gross</td><td className="text-slate-300 py-2 pr-4">Total earnings since January 1 this year</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -77,13 +77,13 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Annual Salary</th><th className="text-left text-slate-400 py-2 pr-4">Approx. Take-Home %</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Net Estimate</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Annual Salary</th><th className="text-left text-slate-400 py-2 pr-4">Approx. Take-Home %</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Net Estimate</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$40,000</td><td className="text-slate-300 py-2 pr-4">78–82%</td><td className="text-slate-300 py-2 pr-4">$2,600–$2,750</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$60,000</td><td className="text-slate-300 py-2 pr-4">74–78%</td><td className="text-slate-300 py-2 pr-4">$3,700–$3,900</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$80,000</td><td className="text-slate-300 py-2 pr-4">70–74%</td><td className="text-slate-300 py-2 pr-4">$4,650–$4,950</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$100,000</td><td className="text-slate-300 py-2 pr-4">68–72%</td><td className="text-slate-300 py-2 pr-4">$5,650–$6,000</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$150,000</td><td className="text-slate-300 py-2 pr-4">62–67%</td><td className="text-slate-300 py-2 pr-4">$7,750–$8,375</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$40,000</td><td className="text-slate-300 py-2 pr-4">78–82%</td><td className="text-slate-300 py-2 pr-4">$2,600–$2,750</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$60,000</td><td className="text-slate-300 py-2 pr-4">74–78%</td><td className="text-slate-300 py-2 pr-4">$3,700–$3,900</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$80,000</td><td className="text-slate-300 py-2 pr-4">70–74%</td><td className="text-slate-300 py-2 pr-4">$4,650–$4,950</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$100,000</td><td className="text-slate-300 py-2 pr-4">68–72%</td><td className="text-slate-300 py-2 pr-4">$5,650–$6,000</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$150,000</td><td className="text-slate-300 py-2 pr-4">62–67%</td><td className="text-slate-300 py-2 pr-4">$7,750–$8,375</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -109,9 +109,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/budget-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Budget Calculator</a>
-            <a href="/tax-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Tax Calculator</a>
-            <a href="/blog/how-to-create-monthly-budget" className="hover:underline text-sm" style={{color:'#f0c842'}}>How to Create a Monthly Budget</a>
+                <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Budget Calculator</a>
+            <a href="/tax-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Tax Calculator</a>
+            <a href="/blog/how-to-create-monthly-budget" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Create a Monthly Budget</a>
               </div>
             </section>
           </div>

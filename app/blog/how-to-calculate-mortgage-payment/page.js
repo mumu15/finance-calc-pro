@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Calculate Your Monthly Mortgage Payment (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">On a $300,000 loan at 6.5% for 30 years the monthly principal and interest payment is approximately <strong>$1,896 per month</strong>. Add property taxes and insurance for your full payment.</p>
           </div>
           <div className="space-y-8">
@@ -37,10 +37,10 @@ export default function Post() {
               <div className="result-box">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-3">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-3">Rate</th><th className="text-left text-slate-400 py-2 pr-3">Term</th><th className="text-left py-2" style={{color:'#f0c842'}}>Monthly P and I</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-3">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-3">Rate</th><th className="text-left text-slate-400 py-2 pr-3">Term</th><th className="text-left py-2" style={{color:"#f0c842'}}>Monthly P and I</th></tr></thead>
                     <tbody>
                       {[['$150,000','6.0%','30 years','$899'],['$200,000','6.0%','30 years','$1,199'],['$300,000','6.5%','30 years','$1,896'],['$400,000','6.5%','30 years','$2,528'],['$500,000','7.0%','30 years','$3,327'],['$300,000','6.5%','15 years','$2,614']].map((r,i)=>(
-                        <tr key={i} className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-3">{r[0]}</td><td className="text-slate-400 py-2 pr-3">{r[1]}</td><td className="text-slate-400 py-2 pr-3">{r[2]}</td><td className="font-bold py-2" style={{color:'#f0c842'}}>{r[3]}</td></tr>
+                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-3">{r[0]}</td><td className="text-slate-400 py-2 pr-3">{r[1]}</td><td className="text-slate-400 py-2 pr-3">{r[2]}</td><td className="font-bold py-2" style={{color:"#f0c842'}}>{r[3]}</td></tr>
                       ))}
                     </tbody>
                   </table>
@@ -71,11 +71,11 @@ export default function Post() {
                   {term:'15 Year',pay:'$2,614 per month',interest:'$170,520 total interest',pro:'Save over $212,000 in interest',con:'Higher monthly payment'},
                 ].map((item,i)=>(
                   <div key={i} className="result-box">
-                    <h3 className="font-bold text-center mb-3" style={{color:'#f0c842'}}>{item.term}</h3>
+                    <h3 className="font-bold text-center mb-3" style={{color:"#f0c842'}}>{item.term}</h3>
                     <div className="space-y-2 text-sm">
                       <div><span className="text-slate-400">Payment: </span><span className="text-white font-bold">{item.pay}</span></div>
                       <div><span className="text-slate-400">Interest: </span><span className="text-red-400">{item.interest}</span></div>
-                      <div className="pt-2 border-t" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+                      <div className="pt-2 border-t" style={{borderColor:"rgba(240,200,66,0.1)'}}>
                         <p className="text-emerald-400 text-xs">Plus: {item.pro}</p>
                         <p className="text-red-400 text-xs">Minus: {item.con}</p>
                       </div>

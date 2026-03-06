@@ -84,7 +84,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Current Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{currentRate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{currentRate + "%'}</span>
                 </div>
                 <input type="range" min={1} max={15} step={0.125}
                   value={currentRate} onChange={e => setCurrentRate(Number(e.target.value))}
@@ -94,7 +94,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">New Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{newRate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{newRate + "%'}</span>
                 </div>
                 <input type="range" min={1} max={15} step={0.125}
                   value={newRate} onChange={e => setNewRate(Number(e.target.value))}
@@ -139,25 +139,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">New Monthly Payment</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.newMonthly)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.newMonthly)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Savings</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.monthlySavings)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthlySavings)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Break-Even Period</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.breakEven}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.breakEven}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Lifetime Savings</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalSavings)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalSavings)}</span>
                   </div>
                 </div>
               ) : (
@@ -204,17 +204,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">When should I refinance my mortgage?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Refinancing is worth it when: (1) you can lower your rate by at least 0.5-1%, (2) you plan to stay in the home long enough to recoup closing costs (break-even), and (3) your credit score has improved since origination. The break-even point is typically 2-4 years.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What are typical refinance closing costs?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Refinance closing costs typically run 2-5% of the loan amount — about $6,000-$15,000 on a $300,000 loan. Costs include origination fees, appraisal, title insurance, escrow and attorney fees. Some lenders offer no-closing-cost refinances at a slightly higher rate.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Does refinancing hurt your credit?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Refinancing causes a temporary credit score dip of 5-15 points due to the hard credit inquiry and new account opening. The effect is minor and usually recovers within 6-12 months of on-time payments. Multiple mortgage inquiries within 45 days are typically treated as one.</p>
             </div>

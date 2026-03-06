@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Home Loan EMI Calculator India: How to Calculate Your EMI (2026)</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On a ₹50 lakh home loan at 8.5% for 20 years your EMI is approximately <strong> ₹43,391 per month</strong>. Use our free EMI calculator to get the exact figure for your loan amount, rate and tenure.</p>
  </div>
  <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">10 Years</th><th className="text-left text-slate-400 py-2 pr-4">15 Years</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">10 Years</th><th className="text-left text-slate-400 py-2 pr-4">15 Years</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹20 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹24,797</td><td className="text-slate-300 py-2 pr-4">₹19,693</td><td className="text-slate-300 py-2 pr-4">₹17,356</td><td className="text-slate-300 py-2 pr-4">₹15,365</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹30 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹37,194</td><td className="text-slate-300 py-2 pr-4">₹29,539</td><td className="text-slate-300 py-2 pr-4">₹26,035</td><td className="text-slate-300 py-2 pr-4">₹23,047</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹50 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹61,990</td><td className="text-slate-300 py-2 pr-4">₹49,231</td><td className="text-slate-300 py-2 pr-4">₹43,391</td><td className="text-slate-300 py-2 pr-4">₹38,446</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹75 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹92,985</td><td className="text-slate-300 py-2 pr-4">₹73,847</td><td className="text-slate-300 py-2 pr-4">₹65,087</td><td className="text-slate-300 py-2 pr-4">₹57,669</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹1 Crore</td><td className="text-slate-300 py-2 pr-4">₹1,23,980</td><td className="text-slate-300 py-2 pr-4">₹98,463</td><td className="text-slate-300 py-2 pr-4">₹86,782</td><td className="text-slate-300 py-2 pr-4">₹76,892</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₹1.5 Crore</td><td className="text-slate-300 py-2 pr-4">₹1,85,970</td><td className="text-slate-300 py-2 pr-4">₹1,47,694</td><td className="text-slate-300 py-2 pr-4">₹1,30,174</td><td className="text-slate-300 py-2 pr-4">₹1,15,338</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₹20 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹24,797</td><td className="text-slate-300 py-2 pr-4">₹19,693</td><td className="text-slate-300 py-2 pr-4">₹17,356</td><td className="text-slate-300 py-2 pr-4">₹15,365</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₹30 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹37,194</td><td className="text-slate-300 py-2 pr-4">₹29,539</td><td className="text-slate-300 py-2 pr-4">₹26,035</td><td className="text-slate-300 py-2 pr-4">₹23,047</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₹50 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹61,990</td><td className="text-slate-300 py-2 pr-4">₹49,231</td><td className="text-slate-300 py-2 pr-4">₹43,391</td><td className="text-slate-300 py-2 pr-4">₹38,446</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₹75 Lakhs</td><td className="text-slate-300 py-2 pr-4">₹92,985</td><td className="text-slate-300 py-2 pr-4">₹73,847</td><td className="text-slate-300 py-2 pr-4">₹65,087</td><td className="text-slate-300 py-2 pr-4">₹57,669</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₹1 Crore</td><td className="text-slate-300 py-2 pr-4">₹1,23,980</td><td className="text-slate-300 py-2 pr-4">₹98,463</td><td className="text-slate-300 py-2 pr-4">₹86,782</td><td className="text-slate-300 py-2 pr-4">₹76,892</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₹1.5 Crore</td><td className="text-slate-300 py-2 pr-4">₹1,85,970</td><td className="text-slate-300 py-2 pr-4">₹1,47,694</td><td className="text-slate-300 py-2 pr-4">₹1,30,174</td><td className="text-slate-300 py-2 pr-4">₹1,15,338</td></tr>
  </tbody>
  </table>
  </div>
@@ -72,15 +72,15 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Lender</th><th className="text-left text-slate-400 py-2 pr-4">Starting Rate</th><th className="text-left text-slate-400 py-2 pr-4">Processing Fee</th><th className="text-left text-slate-400 py-2 pr-4">Max Tenure</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Lender</th><th className="text-left text-slate-400 py-2 pr-4">Starting Rate</th><th className="text-left text-slate-400 py-2 pr-4">Processing Fee</th><th className="text-left text-slate-400 py-2 pr-4">Max Tenure</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">SBI Home Loan</td><td className="text-slate-300 py-2 pr-4">8.50%</td><td className="text-slate-300 py-2 pr-4">0.35% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">HDFC Home Loan</td><td className="text-slate-300 py-2 pr-4">8.45%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">ICICI Home Loan</td><td className="text-slate-300 py-2 pr-4">8.75%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Axis Bank</td><td className="text-slate-300 py-2 pr-4">8.75%</td><td className="text-slate-300 py-2 pr-4">1% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Kotak Mahindra</td><td className="text-slate-300 py-2 pr-4">8.65%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">LIC Housing Finance</td><td className="text-slate-300 py-2 pr-4">8.50%</td><td className="text-slate-300 py-2 pr-4">0.25% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">PNB Housing</td><td className="text-slate-300 py-2 pr-4">8.50%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">SBI Home Loan</td><td className="text-slate-300 py-2 pr-4">8.50%</td><td className="text-slate-300 py-2 pr-4">0.35% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">HDFC Home Loan</td><td className="text-slate-300 py-2 pr-4">8.45%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">ICICI Home Loan</td><td className="text-slate-300 py-2 pr-4">8.75%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Axis Bank</td><td className="text-slate-300 py-2 pr-4">8.75%</td><td className="text-slate-300 py-2 pr-4">1% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Kotak Mahindra</td><td className="text-slate-300 py-2 pr-4">8.65%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">LIC Housing Finance</td><td className="text-slate-300 py-2 pr-4">8.50%</td><td className="text-slate-300 py-2 pr-4">0.25% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">PNB Housing</td><td className="text-slate-300 py-2 pr-4">8.50%</td><td className="text-slate-300 py-2 pr-4">0.50% + GST</td><td className="text-slate-300 py-2 pr-4">30 years</td></tr>
  </tbody>
  </table>
  </div>
@@ -106,9 +106,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>EMI Calculator</a>
- <a href="/loan-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Loan Calculator</a>
- <a href="/blog/what-is-compound-interest" className="hover:underline text-sm" style={{color:'#f0c842'}}>What is Compound Interest</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>EMI Calculator</a>
+ <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
+ <a href="/blog/what-is-compound-interest" className="hover:underline text-sm" style={{color:"#f0c842'}}>What is Compound Interest</a>
  </div>
  </section>
  </div>

@@ -139,7 +139,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Revenue Multiple Valuation</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.revenueVal)}
                     </span>
                   </div>
@@ -147,7 +147,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">EBITDA Multiple Valuation</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.ebitdaVal)}
                     </span>
                   </div>
@@ -155,7 +155,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Earnings (P/E) Valuation</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.earningsVal)}
                     </span>
                   </div>
@@ -163,7 +163,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Asset-Based Valuation</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.assetVal)}
                     </span>
                   </div>
@@ -171,7 +171,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Average Estimated Value</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.avgVal)}
                     </span>
                   </div>
@@ -217,17 +217,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How is a small business valued?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Small businesses are typically valued using: (1) EBITDA multiple (most common) — 3-8x earnings before interest, tax, depreciation, amortisation; (2) Revenue multiple — more common for high-growth or SaaS businesses; (3) Asset-based — useful for asset-heavy businesses; (4) Discounted Cash Flow (DCF) — complex but most theoretically rigorous.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What multiple is typical for selling a business?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Typical EBITDA multiples: service businesses 3-5x, SaaS 8-15x, retail 3-5x, manufacturing 4-7x, e-commerce 4-8x. Multiples rise with: strong recurring revenue, low customer concentration, proven management team, clean financials, growth trajectory and proprietary IP or brand. Multiples have compressed since 2022 as rates rose.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What makes a business worth more?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Value drivers: recurring/predictable revenue (subscriptions beat project work), diversified customer base (no single client over 15%), documented processes that work without the owner, strong margins, IP or brand moat, growth trajectory, clean books audited for 3 years, and a strong management team. Address these before any planned sale.</p>
             </div>

@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Mortgage Calculator UK 2026: Monthly Payments, Stamp Duty and Rates</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On a £250,000 mortgage at 4.5% over 25 years your monthly payment is approximately <strong> £1,389</strong>. On a £350,000 mortgage at the same rate it is <strong> £1,944 per month</strong>.</p>
  </div>
  <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Mortgage Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th><th className="text-left text-slate-400 py-2 pr-4">35 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Mortgage Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th><th className="text-left text-slate-400 py-2 pr-4">35 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£150,000</td><td className="text-slate-300 py-2 pr-4">£949</td><td className="text-slate-300 py-2 pr-4">£833</td><td className="text-slate-300 py-2 pr-4">£760</td><td className="text-slate-300 py-2 pr-4">£714</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£200,000</td><td className="text-slate-300 py-2 pr-4">£1,265</td><td className="text-slate-300 py-2 pr-4">£1,111</td><td className="text-slate-300 py-2 pr-4">£1,013</td><td className="text-slate-300 py-2 pr-4">£952</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£250,000</td><td className="text-slate-300 py-2 pr-4">£1,582</td><td className="text-slate-300 py-2 pr-4">£1,389</td><td className="text-slate-300 py-2 pr-4">£1,267</td><td className="text-slate-300 py-2 pr-4">£1,190</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£300,000</td><td className="text-slate-300 py-2 pr-4">£1,898</td><td className="text-slate-300 py-2 pr-4">£1,667</td><td className="text-slate-300 py-2 pr-4">£1,520</td><td className="text-slate-300 py-2 pr-4">£1,428</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£400,000</td><td className="text-slate-300 py-2 pr-4">£2,530</td><td className="text-slate-300 py-2 pr-4">£2,222</td><td className="text-slate-300 py-2 pr-4">£2,027</td><td className="text-slate-300 py-2 pr-4">£1,904</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£500,000</td><td className="text-slate-300 py-2 pr-4">£3,163</td><td className="text-slate-300 py-2 pr-4">£2,778</td><td className="text-slate-300 py-2 pr-4">£2,533</td><td className="text-slate-300 py-2 pr-4">£2,380</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£150,000</td><td className="text-slate-300 py-2 pr-4">£949</td><td className="text-slate-300 py-2 pr-4">£833</td><td className="text-slate-300 py-2 pr-4">£760</td><td className="text-slate-300 py-2 pr-4">£714</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£200,000</td><td className="text-slate-300 py-2 pr-4">£1,265</td><td className="text-slate-300 py-2 pr-4">£1,111</td><td className="text-slate-300 py-2 pr-4">£1,013</td><td className="text-slate-300 py-2 pr-4">£952</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£250,000</td><td className="text-slate-300 py-2 pr-4">£1,582</td><td className="text-slate-300 py-2 pr-4">£1,389</td><td className="text-slate-300 py-2 pr-4">£1,267</td><td className="text-slate-300 py-2 pr-4">£1,190</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£300,000</td><td className="text-slate-300 py-2 pr-4">£1,898</td><td className="text-slate-300 py-2 pr-4">£1,667</td><td className="text-slate-300 py-2 pr-4">£1,520</td><td className="text-slate-300 py-2 pr-4">£1,428</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£400,000</td><td className="text-slate-300 py-2 pr-4">£2,530</td><td className="text-slate-300 py-2 pr-4">£2,222</td><td className="text-slate-300 py-2 pr-4">£2,027</td><td className="text-slate-300 py-2 pr-4">£1,904</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£500,000</td><td className="text-slate-300 py-2 pr-4">£3,163</td><td className="text-slate-300 py-2 pr-4">£2,778</td><td className="text-slate-300 py-2 pr-4">£2,533</td><td className="text-slate-300 py-2 pr-4">£2,380</td></tr>
  </tbody>
  </table>
  </div>
@@ -72,12 +72,12 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Property Value</th><th className="text-left text-slate-400 py-2 pr-4">Standard Buyer</th><th className="text-left text-slate-400 py-2 pr-4">First-Time Buyer</th><th className="text-left text-slate-400 py-2 pr-4">Additional Property</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Property Value</th><th className="text-left text-slate-400 py-2 pr-4">Standard Buyer</th><th className="text-left text-slate-400 py-2 pr-4">First-Time Buyer</th><th className="text-left text-slate-400 py-2 pr-4">Additional Property</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Up to £250,000</td><td className="text-slate-300 py-2 pr-4">0%</td><td className="text-slate-300 py-2 pr-4">0% (up to £425K)</td><td className="text-slate-300 py-2 pr-4">3%</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£250,001-£925,000</td><td className="text-slate-300 py-2 pr-4">5%</td><td className="text-slate-300 py-2 pr-4">5% (above £425K)</td><td className="text-slate-300 py-2 pr-4">8%</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">£925,001-£1.5M</td><td className="text-slate-300 py-2 pr-4">10%</td><td className="text-slate-300 py-2 pr-4">10%</td><td className="text-slate-300 py-2 pr-4">13%</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Above £1.5M</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4">15%</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Up to £250,000</td><td className="text-slate-300 py-2 pr-4">0%</td><td className="text-slate-300 py-2 pr-4">0% (up to £425K)</td><td className="text-slate-300 py-2 pr-4">3%</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£250,001-£925,000</td><td className="text-slate-300 py-2 pr-4">5%</td><td className="text-slate-300 py-2 pr-4">5% (above £425K)</td><td className="text-slate-300 py-2 pr-4">8%</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">£925,001-£1.5M</td><td className="text-slate-300 py-2 pr-4">10%</td><td className="text-slate-300 py-2 pr-4">10%</td><td className="text-slate-300 py-2 pr-4">13%</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Above £1.5M</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4">12%</td><td className="text-slate-300 py-2 pr-4">15%</td></tr>
  </tbody>
  </table>
  </div>
@@ -103,9 +103,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator</a>
- <a href="/rent-vs-buy-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Rent vs Buy Calculator</a>
- <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:'#f0c842'}}>Rent vs Buy: Which Is Better?</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
+ <a href="/rent-vs-buy-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Rent vs Buy Calculator</a>
+ <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:"#f0c842'}}>Rent vs Buy: Which Is Better?</a>
  </div>
  </section>
  </div>

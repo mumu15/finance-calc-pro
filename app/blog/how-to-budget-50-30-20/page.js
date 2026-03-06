@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">The 50/30/20 Budget Rule: How It Works and How to Use It (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">The 50/30/20 rule splits your after-tax income into: <strong>50% needs</strong> (rent, food, utilities), <strong>30% wants</strong> (dining out, entertainment) and <strong>20% savings and debt</strong>. It is the simplest budgeting framework that actually works.</p>
           </div>
           <div className="space-y-8">
@@ -53,13 +53,13 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Monthly Take-Home</th><th className="text-left text-slate-400 py-2 pr-4">50% Needs</th><th className="text-left text-slate-400 py-2 pr-4">30% Wants</th><th className="text-left text-slate-400 py-2 pr-4">20% Savings</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Monthly Take-Home</th><th className="text-left text-slate-400 py-2 pr-4">50% Needs</th><th className="text-left text-slate-400 py-2 pr-4">30% Wants</th><th className="text-left text-slate-400 py-2 pr-4">20% Savings</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$2,500</td><td className="text-slate-300 py-2 pr-4">$1,250</td><td className="text-slate-300 py-2 pr-4">$750</td><td className="text-slate-300 py-2 pr-4">$500</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$3,500</td><td className="text-slate-300 py-2 pr-4">$1,750</td><td className="text-slate-300 py-2 pr-4">$1,050</td><td className="text-slate-300 py-2 pr-4">$700</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$5,000</td><td className="text-slate-300 py-2 pr-4">$2,500</td><td className="text-slate-300 py-2 pr-4">$1,500</td><td className="text-slate-300 py-2 pr-4">$1,000</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$7,000</td><td className="text-slate-300 py-2 pr-4">$3,500</td><td className="text-slate-300 py-2 pr-4">$2,100</td><td className="text-slate-300 py-2 pr-4">$1,400</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">$10,000</td><td className="text-slate-300 py-2 pr-4">$5,000</td><td className="text-slate-300 py-2 pr-4">$3,000</td><td className="text-slate-300 py-2 pr-4">$2,000</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$2,500</td><td className="text-slate-300 py-2 pr-4">$1,250</td><td className="text-slate-300 py-2 pr-4">$750</td><td className="text-slate-300 py-2 pr-4">$500</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$3,500</td><td className="text-slate-300 py-2 pr-4">$1,750</td><td className="text-slate-300 py-2 pr-4">$1,050</td><td className="text-slate-300 py-2 pr-4">$700</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$5,000</td><td className="text-slate-300 py-2 pr-4">$2,500</td><td className="text-slate-300 py-2 pr-4">$1,500</td><td className="text-slate-300 py-2 pr-4">$1,000</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$7,000</td><td className="text-slate-300 py-2 pr-4">$3,500</td><td className="text-slate-300 py-2 pr-4">$2,100</td><td className="text-slate-300 py-2 pr-4">$1,400</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">$10,000</td><td className="text-slate-300 py-2 pr-4">$5,000</td><td className="text-slate-300 py-2 pr-4">$3,000</td><td className="text-slate-300 py-2 pr-4">$2,000</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -71,15 +71,15 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">50% Needs</th><th className="text-left text-slate-400 py-2 pr-4">30% Wants</th><th className="text-left text-slate-400 py-2 pr-4">20% Savings/Debt</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">50% Needs</th><th className="text-left text-slate-400 py-2 pr-4">30% Wants</th><th className="text-left text-slate-400 py-2 pr-4">20% Savings/Debt</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Rent or mortgage</td><td className="text-slate-300 py-2 pr-4">Dining out</td><td className="text-slate-300 py-2 pr-4">Emergency fund</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Groceries</td><td className="text-slate-300 py-2 pr-4">Entertainment</td><td className="text-slate-300 py-2 pr-4">401k contributions</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Utilities</td><td className="text-slate-300 py-2 pr-4">Streaming services</td><td className="text-slate-300 py-2 pr-4">Roth IRA</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Car payment</td><td className="text-slate-300 py-2 pr-4">Gym membership</td><td className="text-slate-300 py-2 pr-4">Extra debt payments</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Gas for work</td><td className="text-slate-300 py-2 pr-4">Shopping</td><td className="text-slate-300 py-2 pr-4">Investments</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Minimum debt payments</td><td className="text-slate-300 py-2 pr-4">Vacations</td><td className="text-slate-300 py-2 pr-4">Sinking funds</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Insurance</td><td className="text-slate-300 py-2 pr-4">Hobbies</td><td className="text-slate-300 py-2 pr-4">Savings goals</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Rent or mortgage</td><td className="text-slate-300 py-2 pr-4">Dining out</td><td className="text-slate-300 py-2 pr-4">Emergency fund</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Groceries</td><td className="text-slate-300 py-2 pr-4">Entertainment</td><td className="text-slate-300 py-2 pr-4">401k contributions</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Utilities</td><td className="text-slate-300 py-2 pr-4">Streaming services</td><td className="text-slate-300 py-2 pr-4">Roth IRA</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Car payment</td><td className="text-slate-300 py-2 pr-4">Gym membership</td><td className="text-slate-300 py-2 pr-4">Extra debt payments</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Gas for work</td><td className="text-slate-300 py-2 pr-4">Shopping</td><td className="text-slate-300 py-2 pr-4">Investments</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Minimum debt payments</td><td className="text-slate-300 py-2 pr-4">Vacations</td><td className="text-slate-300 py-2 pr-4">Sinking funds</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Insurance</td><td className="text-slate-300 py-2 pr-4">Hobbies</td><td className="text-slate-300 py-2 pr-4">Savings goals</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -105,9 +105,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/budget-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Budget Calculator</a>
-            <a href="/blog/how-to-create-monthly-budget" className="hover:underline text-sm" style={{color:'#f0c842'}}>How to Create a Monthly Budget</a>
-            <a href="/savings-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Savings Calculator</a>
+                <a href="/budget-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Budget Calculator</a>
+            <a href="/blog/how-to-create-monthly-budget" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Create a Monthly Budget</a>
+            <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
               </div>
             </section>
           </div>

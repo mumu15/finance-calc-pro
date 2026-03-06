@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Mortgage Calculator Canada 2026: Monthly Payments, CMHC and RRSP</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On a C$500,000 mortgage at 5.0% over 25 years your monthly payment is approximately <strong> C$2,908</strong>. Canada requires mortgage default insurance (CMHC) for down payments under 20%, which adds 2.8-4.0% to the mortgage.</p>
  </div>
  <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Mortgage Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Mortgage Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">C$300,000</td><td className="text-slate-300 py-2 pr-4">C$1,979</td><td className="text-slate-300 py-2 pr-4">C$1,745</td><td className="text-slate-300 py-2 pr-4">C$1,610</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">C$400,000</td><td className="text-slate-300 py-2 pr-4">C$2,639</td><td className="text-slate-300 py-2 pr-4">C$2,327</td><td className="text-slate-300 py-2 pr-4">C$2,147</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">C$500,000</td><td className="text-slate-300 py-2 pr-4">C$3,299</td><td className="text-slate-300 py-2 pr-4">C$2,908</td><td className="text-slate-300 py-2 pr-4">C$2,684</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">C$600,000</td><td className="text-slate-300 py-2 pr-4">C$3,959</td><td className="text-slate-300 py-2 pr-4">C$3,490</td><td className="text-slate-300 py-2 pr-4">C$3,221</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">C$750,000</td><td className="text-slate-300 py-2 pr-4">C$4,948</td><td className="text-slate-300 py-2 pr-4">C$4,363</td><td className="text-slate-300 py-2 pr-4">C$4,026</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">C$1,000,000</td><td className="text-slate-300 py-2 pr-4">C$6,598</td><td className="text-slate-300 py-2 pr-4">C$5,817</td><td className="text-slate-300 py-2 pr-4">C$5,368</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">C$300,000</td><td className="text-slate-300 py-2 pr-4">C$1,979</td><td className="text-slate-300 py-2 pr-4">C$1,745</td><td className="text-slate-300 py-2 pr-4">C$1,610</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">C$400,000</td><td className="text-slate-300 py-2 pr-4">C$2,639</td><td className="text-slate-300 py-2 pr-4">C$2,327</td><td className="text-slate-300 py-2 pr-4">C$2,147</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">C$500,000</td><td className="text-slate-300 py-2 pr-4">C$3,299</td><td className="text-slate-300 py-2 pr-4">C$2,908</td><td className="text-slate-300 py-2 pr-4">C$2,684</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">C$600,000</td><td className="text-slate-300 py-2 pr-4">C$3,959</td><td className="text-slate-300 py-2 pr-4">C$3,490</td><td className="text-slate-300 py-2 pr-4">C$3,221</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">C$750,000</td><td className="text-slate-300 py-2 pr-4">C$4,948</td><td className="text-slate-300 py-2 pr-4">C$4,363</td><td className="text-slate-300 py-2 pr-4">C$4,026</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">C$1,000,000</td><td className="text-slate-300 py-2 pr-4">C$6,598</td><td className="text-slate-300 py-2 pr-4">C$5,817</td><td className="text-slate-300 py-2 pr-4">C$5,368</td></tr>
  </tbody>
  </table>
  </div>
@@ -72,13 +72,13 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Program</th><th className="text-left text-slate-400 py-2 pr-4">Benefit</th><th className="text-left text-slate-400 py-2 pr-4">Limit</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Program</th><th className="text-left text-slate-400 py-2 pr-4">Benefit</th><th className="text-left text-slate-400 py-2 pr-4">Limit</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">First Home Savings Account (FHSA)</td><td className="text-slate-300 py-2 pr-4">Tax-deductible + tax-free withdrawal</td><td className="text-slate-300 py-2 pr-4">C$40,000 lifetime</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">RRSP Home Buyers Plan</td><td className="text-slate-300 py-2 pr-4">Tax-free RRSP withdrawal</td><td className="text-slate-300 py-2 pr-4">C$35,000 per person</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">First-Time Home Buyer Tax Credit</td><td className="text-slate-300 py-2 pr-4">Tax credit of $1,500</td><td className="text-slate-300 py-2 pr-4">All first-time buyers</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">GST/HST New Housing Rebate</td><td className="text-slate-300 py-2 pr-4">Partial GST rebate on new homes</td><td className="text-slate-300 py-2 pr-4">Homes under C$450,000</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Home Buyers Plan (Repayment)</td><td className="text-slate-300 py-2 pr-4">Repay over 15 years</td><td className="text-slate-300 py-2 pr-4">No interest charged</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">First Home Savings Account (FHSA)</td><td className="text-slate-300 py-2 pr-4">Tax-deductible + tax-free withdrawal</td><td className="text-slate-300 py-2 pr-4">C$40,000 lifetime</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">RRSP Home Buyers Plan</td><td className="text-slate-300 py-2 pr-4">Tax-free RRSP withdrawal</td><td className="text-slate-300 py-2 pr-4">C$35,000 per person</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">First-Time Home Buyer Tax Credit</td><td className="text-slate-300 py-2 pr-4">Tax credit of $1,500</td><td className="text-slate-300 py-2 pr-4">All first-time buyers</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">GST/HST New Housing Rebate</td><td className="text-slate-300 py-2 pr-4">Partial GST rebate on new homes</td><td className="text-slate-300 py-2 pr-4">Homes under C$450,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Home Buyers Plan (Repayment)</td><td className="text-slate-300 py-2 pr-4">Repay over 15 years</td><td className="text-slate-300 py-2 pr-4">No interest charged</td></tr>
  </tbody>
  </table>
  </div>
@@ -100,9 +100,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator</a>
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Savings Calculator</a>
- <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Retirement Calculator</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
+ <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Retirement Calculator</a>
  </div>
  </section>
  </div>

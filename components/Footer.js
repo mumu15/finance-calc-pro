@@ -87,7 +87,7 @@ const COLS = [
 
 export default function Footer() {
   return (
-    <footer role="contentinfo" style={{ borderTop:'1px solid rgba(240,200,66,0.1)', background:'rgba(0,0,0,0.3)', paddingTop:'56px', paddingBottom:'32px' }}>
+    <footer role="contentinfo" style={{ borderTop:"1px solid rgba(240,200,66,0.1)', background:'rgba(0,0,0,0.3)', paddingTop:'56px', paddingBottom:'32px' }}>
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Grid */}
@@ -95,9 +95,9 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <Link href="/" style={{ display:'inline-flex', alignItems:'center', gap:'10px', marginBottom:'14px', textDecoration:'none' }}>
+            <Link href="/" style={{ display:"inline-flex', alignItems:'center', gap:'10px', marginBottom:'14px', textDecoration:'none' }}>
               <div style={{ width:'32px', height:'32px', borderRadius:'9px', background:'linear-gradient(135deg,#f0c842,#d4a017)', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:'900', fontSize:'14px', color:'#0a0f1e' }}>F</div>
-              <span style={{ fontFamily:"'DM Serif Display',serif", fontSize:'17px', color:'#f1f5f9', letterSpacing:'-0.3px' }}>
+              <span style={{ fontFamily:""DM Serif Display",serif", fontSize:"17px', color:'#f1f5f9', letterSpacing:'-0.3px' }}>
                 FreeFinCalc<span style={{ color:'#f0c842' }}>.net</span>
               </span>
             </Link>
@@ -109,10 +109,10 @@ export default function Footer() {
               📄 PDF download on every calc<br/>
               ⚠ Not financial advice
             </div>
-            <nav aria-label="Company" style={{ marginTop:'18px' }}>
+            <nav aria-label="Company" style={{ marginTop:"18px' }}>
               <ul style={{ listStyle:'none', padding:0, margin:0, display:'flex', flexDirection:'column', gap:'7px' }}>
                 {[['About Us','/about'],['Contact','/contact'],['Blog','/blog'],['Privacy Policy','/privacy-policy']].map(([n,h]) => (
-                  <li key={h}><Link href={h} className="ffc-link" style={{ fontSize:'12.5px' }}>{n}</Link></li>
+                  <li key={h}><Link href={h} className="ffc-link" style={{ fontSize:"12.5px' }}>{n}</Link></li>
                 ))}
               </ul>
             </nav>
@@ -126,7 +126,7 @@ export default function Footer() {
               </h3>
               <ul style={{ listStyle:'none', padding:0, margin:0, display:'flex', flexDirection:'column', gap:'7px' }}>
                 {col.links.map(([n,h]) => (
-                  <li key={h}><Link href={h} className="ffc-link" style={{ fontSize:'12.5px' }}>{n}</Link></li>
+                  <li key={h}><Link href={h} className="ffc-link" style={{ fontSize:"12.5px' }}>{n}</Link></li>
                 ))}
               </ul>
             </nav>

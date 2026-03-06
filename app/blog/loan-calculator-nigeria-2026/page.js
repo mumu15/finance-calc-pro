@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Loan Calculator Nigeria 2026: Banks, Rates and How to Borrow Smart</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">Personal loan rates in Nigeria in 2026 range from <strong>25% to 35% per annum</strong>. On a ₦5 million loan at 28% for 3 years your monthly repayment is approximately <strong>₦217,000</strong>. NHF mortgage rates are as low as <strong>6% per annum</strong>.</p>
  </div>
  <div className="space-y-8">
@@ -53,13 +53,13 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">1 Year</th><th className="text-left text-slate-400 py-2 pr-4">2 Years</th><th className="text-left text-slate-400 py-2 pr-4">3 Years</th><th className="text-left text-slate-400 py-2 pr-4">5 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">1 Year</th><th className="text-left text-slate-400 py-2 pr-4">2 Years</th><th className="text-left text-slate-400 py-2 pr-4">3 Years</th><th className="text-left text-slate-400 py-2 pr-4">5 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₦500,000</td><td className="text-slate-300 py-2 pr-4">₦48,900</td><td className="text-slate-300 py-2 pr-4">₦28,400</td><td className="text-slate-300 py-2 pr-4">₦21,400</td><td className="text-slate-300 py-2 pr-4">₦15,700</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₦1,000,000</td><td className="text-slate-300 py-2 pr-4">₦97,800</td><td className="text-slate-300 py-2 pr-4">₦56,800</td><td className="text-slate-300 py-2 pr-4">₦42,800</td><td className="text-slate-300 py-2 pr-4">₦31,400</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₦2,000,000</td><td className="text-slate-300 py-2 pr-4">₦195,600</td><td className="text-slate-300 py-2 pr-4">₦113,600</td><td className="text-slate-300 py-2 pr-4">₦85,600</td><td className="text-slate-300 py-2 pr-4">₦62,800</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₦5,000,000</td><td className="text-slate-300 py-2 pr-4">₦489,000</td><td className="text-slate-300 py-2 pr-4">₦284,000</td><td className="text-slate-300 py-2 pr-4">₦214,000</td><td className="text-slate-300 py-2 pr-4">₦157,000</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">₦10,000,000</td><td className="text-slate-300 py-2 pr-4">₦978,000</td><td className="text-slate-300 py-2 pr-4">₦568,000</td><td className="text-slate-300 py-2 pr-4">₦428,000</td><td className="text-slate-300 py-2 pr-4">₦314,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₦500,000</td><td className="text-slate-300 py-2 pr-4">₦48,900</td><td className="text-slate-300 py-2 pr-4">₦28,400</td><td className="text-slate-300 py-2 pr-4">₦21,400</td><td className="text-slate-300 py-2 pr-4">₦15,700</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₦1,000,000</td><td className="text-slate-300 py-2 pr-4">₦97,800</td><td className="text-slate-300 py-2 pr-4">₦56,800</td><td className="text-slate-300 py-2 pr-4">₦42,800</td><td className="text-slate-300 py-2 pr-4">₦31,400</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₦2,000,000</td><td className="text-slate-300 py-2 pr-4">₦195,600</td><td className="text-slate-300 py-2 pr-4">₦113,600</td><td className="text-slate-300 py-2 pr-4">₦85,600</td><td className="text-slate-300 py-2 pr-4">₦62,800</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₦5,000,000</td><td className="text-slate-300 py-2 pr-4">₦489,000</td><td className="text-slate-300 py-2 pr-4">₦284,000</td><td className="text-slate-300 py-2 pr-4">₦214,000</td><td className="text-slate-300 py-2 pr-4">₦157,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">₦10,000,000</td><td className="text-slate-300 py-2 pr-4">₦978,000</td><td className="text-slate-300 py-2 pr-4">₦568,000</td><td className="text-slate-300 py-2 pr-4">₦428,000</td><td className="text-slate-300 py-2 pr-4">₦314,000</td></tr>
  </tbody>
  </table>
  </div>
@@ -71,13 +71,13 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Feature</th><th className="text-left text-slate-400 py-2 pr-4">NHF Mortgage</th><th className="text-left text-slate-400 py-2 pr-4">Commercial Mortgage</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Feature</th><th className="text-left text-slate-400 py-2 pr-4">NHF Mortgage</th><th className="text-left text-slate-400 py-2 pr-4">Commercial Mortgage</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Interest Rate</td><td className="text-slate-300 py-2 pr-4">6% per annum</td><td className="text-slate-300 py-2 pr-4">18-25% per annum</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Maximum Loan</td><td className="text-slate-300 py-2 pr-4">₦15 million</td><td className="text-slate-300 py-2 pr-4">Up to ₦200 million</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Maximum Tenure</td><td className="text-slate-300 py-2 pr-4">30 years</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Eligibility</td><td className="text-slate-300 py-2 pr-4">NHF contributors only</td><td className="text-slate-300 py-2 pr-4">Based on income</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Monthly on ₦5M (20yr)</td><td className="text-slate-300 py-2 pr-4">₦35,827</td><td className="text-slate-300 py-2 pr-4">₦93,000-₦108,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Interest Rate</td><td className="text-slate-300 py-2 pr-4">6% per annum</td><td className="text-slate-300 py-2 pr-4">18-25% per annum</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Maximum Loan</td><td className="text-slate-300 py-2 pr-4">₦15 million</td><td className="text-slate-300 py-2 pr-4">Up to ₦200 million</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Maximum Tenure</td><td className="text-slate-300 py-2 pr-4">30 years</td><td className="text-slate-300 py-2 pr-4">20 years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Eligibility</td><td className="text-slate-300 py-2 pr-4">NHF contributors only</td><td className="text-slate-300 py-2 pr-4">Based on income</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Monthly on ₦5M (20yr)</td><td className="text-slate-300 py-2 pr-4">₦35,827</td><td className="text-slate-300 py-2 pr-4">₦93,000-₦108,000</td></tr>
  </tbody>
  </table>
  </div>
@@ -99,9 +99,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/loan-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Loan Calculator</a>
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Savings Calculator</a>
- <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Debt Payoff Calculator</a>
+ <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
+ <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Debt Payoff Calculator</a>
  </div>
  </section>
  </div>

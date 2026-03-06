@@ -65,13 +65,13 @@ export default function SavingsCalculator() {
               {[
                 { label: "Initial Deposit", value: initialDeposit, set: setInitialDeposit, min: 0, max: 100000, step: 500, prefix: currency.symbol },
                 { label: "Monthly Deposit", value: monthlyDeposit, set: setMonthlyDeposit, min: 0, max: 5000, step: 50, prefix: currency.symbol },
-                { label: "Annual Interest Rate (APY)", value: interestRate, set: setInterestRate, min: 0.5, max: 10, step: 0.25, suffix: "%' },
-                { label: "Time Period", value: years, set: setYears, min: 1, max: 40, step: 1, suffix: " years' },
+                { label: "Annual Interest Rate (APY)", value: interestRate, set: setInterestRate, min: 0.5, max: 10, step: 0.25, suffix: "%" },
+                { label: "Time Period", value: years, set: setYears, min: 1, max: 40, step: 1, suffix: " years" },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
                     <label className="text-slate-400 text-sm">{field.label}</label>
-                    <span className="text-white font-bold text-sm">{field.prefix || ''}{field.value.toLocaleString()}{field.suffix || ''}</span>
+                    <span className="text-white font-bold text-sm">{field.prefix || "'}{field.value.toLocaleString()}{field.suffix || ''}</span>
                   </div>
                   <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
                     onChange={e => field.set(Number(e.target.value))}
@@ -90,7 +90,7 @@ export default function SavingsCalculator() {
                   ].map((p, i) => (
                     <button key={i} onClick={() => setInterestRate(p.rate)}
                       className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
-                      style={{background: interestRate === p.rate ? "rgba(240,200,66,0.2)' : 'rgba(255,255,255,0.05)', border: interestRate === p.rate ? '1px solid rgba(240,200,66,0.4)' : '1px solid rgba(255,255,255,0.08)', color: interestRate === p.rate ? '#f0c842' : '#64748b'}}>
+                      style={{background: interestRate === p.rate ? "rgba(240,200,66,0.2)" : 'rgba(255,255,255,0.05)', border: interestRate === p.rate ? '1px solid rgba(240,200,66,0.4)' : '1px solid rgba(255,255,255,0.08)', color: interestRate === p.rate ? '#f0c842' : '#64748b'}}>
                       {p.label} ({p.rate}%)
                     </button>
                   ))}
@@ -102,18 +102,18 @@ export default function SavingsCalculator() {
           <div className="space-y-4">
             <div className="result-box text-center py-6">
               <div className="text-slate-400 text-sm mb-2">Total Savings After {years} Years</div>
-              <div className="text-5xl font-bold mb-1" style={{color:'#f0c842'}}>{fmt(calc.futureValue)}</div>
+              <div className="text-5xl font-bold mb-1" style={{color:"#f0c842'}}>{fmt(calc.futureValue)}</div>
             </div>
 
             <div className="result-box">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Total Deposited", value: fmt(calc.totalDeposited), color: "text-white' },
-                  { label: "Interest Earned", value: fmt(calc.interestEarned), color: "text-emerald-400' },
-                  { label: "Return on Investment", value: Math.round((calc.interestEarned / calc.totalDeposited) * 100) + "%', color: 'text-yellow-400' },
-                  { label: "Monthly at Retirement", value: fmt(calc.futureValue * 0.04 / 12), color: "text-blue-400' },
+                  { label: "Total Deposited", value: fmt(calc.totalDeposited), color: "text-white" },
+                  { label: "Interest Earned", value: fmt(calc.interestEarned), color: "text-emerald-400" },
+                  { label: "Return on Investment", value: Math.round((calc.interestEarned / calc.totalDeposited) * 100) + "%", color: 'text-yellow-400' },
+                  { label: "Monthly at Retirement", value: fmt(calc.futureValue * 0.04 / 12), color: "text-blue-400" },
                 ].map((item, i) => (
-                  <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                  <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
                     <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
                   </div>
@@ -148,7 +148,7 @@ export default function SavingsCalculator() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+                  <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)'}}>
                     {['Year','Balance','Total Deposited','Interest Earned','Annual Growth'].map(h => (
                       <th key={h} className="text-left text-slate-400 py-2 pr-4">{h}</th>
                     ))}
@@ -156,7 +156,7 @@ export default function SavingsCalculator() {
                 </thead>
                 <tbody>
                   {calc.yearlyData.map((row, i) => (
-                    <tr key={i} className="border-b" style={{borderColor:'rgba(255,255,255,0.03)'}}>
+                    <tr key={i} className="border-b" style={{borderColor:"rgba(255,255,255,0.03)'}}>
                       <td className="text-slate-400 py-1.5 pr-4">{row.year}</td>
                       <td className="text-yellow-400 font-bold py-1.5 pr-4">{fmt(row.balance)}</td>
                       <td className="text-white py-1.5 pr-4">{fmt(row.deposited)}</td>
@@ -170,7 +170,7 @@ export default function SavingsCalculator() {
           )}
         </div>
 
-        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/how-to-save-money-fast" className="text-yellow-400 font-semibold hover:underline">How to Save Money Fast: 15 Proven Strategies (2026)</a>
         </div>

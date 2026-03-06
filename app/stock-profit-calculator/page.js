@@ -74,7 +74,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Number of Shares</label>
-                  <span className="text-white font-bold text-sm">{shares + ' shares'}</span>
+                  <span className="text-white font-bold text-sm">{shares + " shares'}</span>
                 </div>
                 <input type="range" min={1} max={10000} step={1}
                   value={shares} onChange={e => setShares(Number(e.target.value))}
@@ -114,7 +114,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Capital Gains Tax Rate</label>
-                  <span className="text-white font-bold text-sm">{taxRate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{taxRate + "%'}</span>
                 </div>
                 <input type="range" min={0} max={40} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
@@ -136,31 +136,31 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Amount Invested</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.invested)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.invested)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Profit (after tax)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.netProfit)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.netProfit)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Return on Investment</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.roi}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.roi}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Tax Due on Gains</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.taxDue)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.taxDue)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Break-Even Price</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.breakEven}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.breakEven}</span>
                   </div>
                 </div>
               ) : (
@@ -207,17 +207,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How is stock profit calculated?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Stock profit = (Sell Price - Buy Price) × Shares - Fees. For example: (75 - 50) × 100 shares - $10 fees = $2,490 gross profit. Subtract capital gains tax for net profit. Use this to evaluate trades and understand true returns.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What are capital gains tax rates on stocks?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Long-term capital gains (held over 1 year) are taxed at 0%, 15% or 20% based on income. Short-term gains (under 1 year) are taxed as ordinary income (10-37%). For most investors, holding stocks over 1 year significantly reduces the tax burden.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the wash sale rule?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The wash sale rule prevents claiming a tax loss if you buy the same or substantially identical security within 30 days before or after the sale. If triggered, the loss is disallowed and added to the cost basis of the new shares. This only applies to taxable accounts, not Roth IRAs or 401ks.</p>
             </div>

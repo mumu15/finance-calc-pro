@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Mortgage Calculator Australia 2026: Repayments, Rates and Stamp Duty</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On an AU$600,000 mortgage at 6.2% over 30 years your monthly repayment is approximately <strong> A$3,664</strong>. The RBA cash rate in 2026 heavily influences variable rate mortgages. Fixed rates offer certainty for 1-5 years.</p>
  </div>
  <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">A$400,000</td><td className="text-slate-300 py-2 pr-4">A$2,955</td><td className="text-slate-300 py-2 pr-4">A$2,620</td><td className="text-slate-300 py-2 pr-4">A$2,443</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">A$500,000</td><td className="text-slate-300 py-2 pr-4">A$3,694</td><td className="text-slate-300 py-2 pr-4">A$3,275</td><td className="text-slate-300 py-2 pr-4">A$3,053</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">A$600,000</td><td className="text-slate-300 py-2 pr-4">A$4,432</td><td className="text-slate-300 py-2 pr-4">A$3,930</td><td className="text-slate-300 py-2 pr-4">A$3,664</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">A$750,000</td><td className="text-slate-300 py-2 pr-4">A$5,541</td><td className="text-slate-300 py-2 pr-4">A$4,912</td><td className="text-slate-300 py-2 pr-4">A$4,580</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">A$900,000</td><td className="text-slate-300 py-2 pr-4">A$6,649</td><td className="text-slate-300 py-2 pr-4">A$5,895</td><td className="text-slate-300 py-2 pr-4">A$5,495</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">A$1,000,000</td><td className="text-slate-300 py-2 pr-4">A$7,388</td><td className="text-slate-300 py-2 pr-4">A$6,550</td><td className="text-slate-300 py-2 pr-4">A$6,106</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">A$400,000</td><td className="text-slate-300 py-2 pr-4">A$2,955</td><td className="text-slate-300 py-2 pr-4">A$2,620</td><td className="text-slate-300 py-2 pr-4">A$2,443</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">A$500,000</td><td className="text-slate-300 py-2 pr-4">A$3,694</td><td className="text-slate-300 py-2 pr-4">A$3,275</td><td className="text-slate-300 py-2 pr-4">A$3,053</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">A$600,000</td><td className="text-slate-300 py-2 pr-4">A$4,432</td><td className="text-slate-300 py-2 pr-4">A$3,930</td><td className="text-slate-300 py-2 pr-4">A$3,664</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">A$750,000</td><td className="text-slate-300 py-2 pr-4">A$5,541</td><td className="text-slate-300 py-2 pr-4">A$4,912</td><td className="text-slate-300 py-2 pr-4">A$4,580</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">A$900,000</td><td className="text-slate-300 py-2 pr-4">A$6,649</td><td className="text-slate-300 py-2 pr-4">A$5,895</td><td className="text-slate-300 py-2 pr-4">A$5,495</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">A$1,000,000</td><td className="text-slate-300 py-2 pr-4">A$7,388</td><td className="text-slate-300 py-2 pr-4">A$6,550</td><td className="text-slate-300 py-2 pr-4">A$6,106</td></tr>
  </tbody>
  </table>
  </div>
@@ -72,13 +72,13 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Scheme</th><th className="text-left text-slate-400 py-2 pr-4">Benefit</th><th className="text-left text-slate-400 py-2 pr-4">Eligibility</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Scheme</th><th className="text-left text-slate-400 py-2 pr-4">Benefit</th><th className="text-left text-slate-400 py-2 pr-4">Eligibility</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">First Home Guarantee</td><td className="text-slate-300 py-2 pr-4">Buy with 5% deposit, no LMI</td><td className="text-slate-300 py-2 pr-4">Income under $125K single/$200K couple</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">First Home Owner Grant</td><td className="text-slate-300 py-2 pr-4">$10,000-$30,000 cash grant</td><td className="text-slate-300 py-2 pr-4">New homes, varies by state</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Stamp Duty Concessions</td><td className="text-slate-300 py-2 pr-4">Reduced or zero stamp duty</td><td className="text-slate-300 py-2 pr-4">Varies by state and price</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">First Home Super Saver</td><td className="text-slate-300 py-2 pr-4">Save deposit in super, tax savings</td><td className="text-slate-300 py-2 pr-4">Up to $50,000 withdrawal</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Help to Buy (proposed)</td><td className="text-slate-300 py-2 pr-4">40% government equity share</td><td className="text-slate-300 py-2 pr-4">Subject to legislation</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">First Home Guarantee</td><td className="text-slate-300 py-2 pr-4">Buy with 5% deposit, no LMI</td><td className="text-slate-300 py-2 pr-4">Income under $125K single/$200K couple</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">First Home Owner Grant</td><td className="text-slate-300 py-2 pr-4">$10,000-$30,000 cash grant</td><td className="text-slate-300 py-2 pr-4">New homes, varies by state</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Stamp Duty Concessions</td><td className="text-slate-300 py-2 pr-4">Reduced or zero stamp duty</td><td className="text-slate-300 py-2 pr-4">Varies by state and price</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">First Home Super Saver</td><td className="text-slate-300 py-2 pr-4">Save deposit in super, tax savings</td><td className="text-slate-300 py-2 pr-4">Up to $50,000 withdrawal</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Help to Buy (proposed)</td><td className="text-slate-300 py-2 pr-4">40% government equity share</td><td className="text-slate-300 py-2 pr-4">Subject to legislation</td></tr>
  </tbody>
  </table>
  </div>
@@ -104,9 +104,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator</a>
- <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Retirement Calculator</a>
- <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:'#f0c842'}}>Rent vs Buy: Which Is Better?</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
+ <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Retirement Calculator</a>
+ <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:"#f0c842'}}>Rent vs Buy: Which Is Better?</a>
  </div>
  </section>
  </div>

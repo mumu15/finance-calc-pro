@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Mortgage Calculator Singapore 2026: HDB, CPF and Private Property Guide</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On an S$600,000 home loan at 3.5% over 25 years your monthly payment is approximately <strong> S$3,001</strong>. CPF Ordinary Account savings can be used for down payment and monthly mortgage servicing — reducing your cash outflow significantly.</p>
  </div>
  <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Loan Amount</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">S$300,000</td><td className="text-slate-300 py-2 pr-4">S$1,740</td><td className="text-slate-300 py-2 pr-4">S$1,501</td><td className="text-slate-300 py-2 pr-4">S$1,347</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">S$500,000</td><td className="text-slate-300 py-2 pr-4">S$2,900</td><td className="text-slate-300 py-2 pr-4">S$2,501</td><td className="text-slate-300 py-2 pr-4">S$2,245</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">S$600,000</td><td className="text-slate-300 py-2 pr-4">S$3,480</td><td className="text-slate-300 py-2 pr-4">S$3,001</td><td className="text-slate-300 py-2 pr-4">S$2,695</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">S$800,000</td><td className="text-slate-300 py-2 pr-4">S$4,640</td><td className="text-slate-300 py-2 pr-4">S$4,002</td><td className="text-slate-300 py-2 pr-4">S$3,593</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">S$1,000,000</td><td className="text-slate-300 py-2 pr-4">S$5,800</td><td className="text-slate-300 py-2 pr-4">S$5,002</td><td className="text-slate-300 py-2 pr-4">S$4,490</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">S$1,500,000</td><td className="text-slate-300 py-2 pr-4">S$8,700</td><td className="text-slate-300 py-2 pr-4">S$7,503</td><td className="text-slate-300 py-2 pr-4">S$6,736</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">S$300,000</td><td className="text-slate-300 py-2 pr-4">S$1,740</td><td className="text-slate-300 py-2 pr-4">S$1,501</td><td className="text-slate-300 py-2 pr-4">S$1,347</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">S$500,000</td><td className="text-slate-300 py-2 pr-4">S$2,900</td><td className="text-slate-300 py-2 pr-4">S$2,501</td><td className="text-slate-300 py-2 pr-4">S$2,245</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">S$600,000</td><td className="text-slate-300 py-2 pr-4">S$3,480</td><td className="text-slate-300 py-2 pr-4">S$3,001</td><td className="text-slate-300 py-2 pr-4">S$2,695</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">S$800,000</td><td className="text-slate-300 py-2 pr-4">S$4,640</td><td className="text-slate-300 py-2 pr-4">S$4,002</td><td className="text-slate-300 py-2 pr-4">S$3,593</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">S$1,000,000</td><td className="text-slate-300 py-2 pr-4">S$5,800</td><td className="text-slate-300 py-2 pr-4">S$5,002</td><td className="text-slate-300 py-2 pr-4">S$4,490</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">S$1,500,000</td><td className="text-slate-300 py-2 pr-4">S$8,700</td><td className="text-slate-300 py-2 pr-4">S$7,503</td><td className="text-slate-300 py-2 pr-4">S$6,736</td></tr>
  </tbody>
  </table>
  </div>
@@ -72,14 +72,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Feature</th><th className="text-left text-slate-400 py-2 pr-4">HDB Loan</th><th className="text-left text-slate-400 py-2 pr-4">Bank Loan</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Feature</th><th className="text-left text-slate-400 py-2 pr-4">HDB Loan</th><th className="text-left text-slate-400 py-2 pr-4">Bank Loan</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Interest Rate</td><td className="text-slate-300 py-2 pr-4">2.6% fixed</td><td className="text-slate-300 py-2 pr-4">3.0-4.5% variable</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Down Payment</td><td className="text-slate-300 py-2 pr-4">10% (CPF ok)</td><td className="text-slate-300 py-2 pr-4">25% (5% must be cash)</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Eligible Properties</td><td className="text-slate-300 py-2 pr-4">HDB flats only</td><td className="text-slate-300 py-2 pr-4">HDB and private</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Early Repayment Penalty</td><td className="text-slate-300 py-2 pr-4">None</td><td className="text-slate-300 py-2 pr-4">May apply in lock-in</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Late Payment</td><td className="text-slate-300 py-2 pr-4">More flexible</td><td className="text-slate-300 py-2 pr-4">Stricter</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Best For</td><td className="text-slate-300 py-2 pr-4">Security and flexibility</td><td className="text-slate-300 py-2 pr-4">Lower rates (currently)</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Interest Rate</td><td className="text-slate-300 py-2 pr-4">2.6% fixed</td><td className="text-slate-300 py-2 pr-4">3.0-4.5% variable</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Down Payment</td><td className="text-slate-300 py-2 pr-4">10% (CPF ok)</td><td className="text-slate-300 py-2 pr-4">25% (5% must be cash)</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Eligible Properties</td><td className="text-slate-300 py-2 pr-4">HDB flats only</td><td className="text-slate-300 py-2 pr-4">HDB and private</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Early Repayment Penalty</td><td className="text-slate-300 py-2 pr-4">None</td><td className="text-slate-300 py-2 pr-4">May apply in lock-in</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Late Payment</td><td className="text-slate-300 py-2 pr-4">More flexible</td><td className="text-slate-300 py-2 pr-4">Stricter</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Best For</td><td className="text-slate-300 py-2 pr-4">Security and flexibility</td><td className="text-slate-300 py-2 pr-4">Lower rates (currently)</td></tr>
  </tbody>
  </table>
  </div>
@@ -101,9 +101,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator</a>
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Savings Calculator</a>
- <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:'#f0c842'}}>Rent vs Buy: Which Is Better?</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
+ <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:"#f0c842'}}>Rent vs Buy: Which Is Better?</a>
  </div>
  </section>
  </div>

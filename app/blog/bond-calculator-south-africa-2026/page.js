@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Bond Calculator South Africa 2026: Home Loan Repayments and Rates</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On a R1.5 million bond at 11.75% (prime rate) over 20 years your monthly repayment is approximately <strong>R16,234</strong>. South African home loans are typically priced at the prime lending rate which is the SARB repo rate plus 3.5%.</p>
  </div>
  <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Bond Amount</th><th className="text-left text-slate-400 py-2 pr-4">15 Years</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Bond Amount</th><th className="text-left text-slate-400 py-2 pr-4">15 Years</th><th className="text-left text-slate-400 py-2 pr-4">20 Years</th><th className="text-left text-slate-400 py-2 pr-4">25 Years</th><th className="text-left text-slate-400 py-2 pr-4">30 Years</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">R500,000</td><td className="text-slate-300 py-2 pr-4">R5,879</td><td className="text-slate-300 py-2 pr-4">R5,411</td><td className="text-slate-300 py-2 pr-4">R5,204</td><td className="text-slate-300 py-2 pr-4">R5,105</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">R750,000</td><td className="text-slate-300 py-2 pr-4">R8,818</td><td className="text-slate-300 py-2 pr-4">R8,117</td><td className="text-slate-300 py-2 pr-4">R7,806</td><td className="text-slate-300 py-2 pr-4">R7,658</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">R1,000,000</td><td className="text-slate-300 py-2 pr-4">R11,758</td><td className="text-slate-300 py-2 pr-4">R10,822</td><td className="text-slate-300 py-2 pr-4">R10,408</td><td className="text-slate-300 py-2 pr-4">R10,210</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">R1,500,000</td><td className="text-slate-300 py-2 pr-4">R17,636</td><td className="text-slate-300 py-2 pr-4">R16,234</td><td className="text-slate-300 py-2 pr-4">R15,612</td><td className="text-slate-300 py-2 pr-4">R15,315</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">R2,000,000</td><td className="text-slate-300 py-2 pr-4">R23,515</td><td className="text-slate-300 py-2 pr-4">R21,645</td><td className="text-slate-300 py-2 pr-4">R20,816</td><td className="text-slate-300 py-2 pr-4">R20,420</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">R3,000,000</td><td className="text-slate-300 py-2 pr-4">R35,273</td><td className="text-slate-300 py-2 pr-4">R32,467</td><td className="text-slate-300 py-2 pr-4">R31,224</td><td className="text-slate-300 py-2 pr-4">R30,631</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">R500,000</td><td className="text-slate-300 py-2 pr-4">R5,879</td><td className="text-slate-300 py-2 pr-4">R5,411</td><td className="text-slate-300 py-2 pr-4">R5,204</td><td className="text-slate-300 py-2 pr-4">R5,105</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">R750,000</td><td className="text-slate-300 py-2 pr-4">R8,818</td><td className="text-slate-300 py-2 pr-4">R8,117</td><td className="text-slate-300 py-2 pr-4">R7,806</td><td className="text-slate-300 py-2 pr-4">R7,658</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">R1,000,000</td><td className="text-slate-300 py-2 pr-4">R11,758</td><td className="text-slate-300 py-2 pr-4">R10,822</td><td className="text-slate-300 py-2 pr-4">R10,408</td><td className="text-slate-300 py-2 pr-4">R10,210</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">R1,500,000</td><td className="text-slate-300 py-2 pr-4">R17,636</td><td className="text-slate-300 py-2 pr-4">R16,234</td><td className="text-slate-300 py-2 pr-4">R15,612</td><td className="text-slate-300 py-2 pr-4">R15,315</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">R2,000,000</td><td className="text-slate-300 py-2 pr-4">R23,515</td><td className="text-slate-300 py-2 pr-4">R21,645</td><td className="text-slate-300 py-2 pr-4">R20,816</td><td className="text-slate-300 py-2 pr-4">R20,420</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">R3,000,000</td><td className="text-slate-300 py-2 pr-4">R35,273</td><td className="text-slate-300 py-2 pr-4">R32,467</td><td className="text-slate-300 py-2 pr-4">R31,224</td><td className="text-slate-300 py-2 pr-4">R30,631</td></tr>
  </tbody>
  </table>
  </div>
@@ -72,14 +72,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Cost</th><th className="text-left text-slate-400 py-2 pr-4">Amount (on R2M property)</th><th className="text-left text-slate-400 py-2 pr-4">Notes</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Cost</th><th className="text-left text-slate-400 py-2 pr-4">Amount (on R2M property)</th><th className="text-left text-slate-400 py-2 pr-4">Notes</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Deposit</td><td className="text-slate-300 py-2 pr-4">R200,000-R400,000</td><td className="text-slate-300 py-2 pr-4">10-20% of purchase price</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Transfer Duty</td><td className="text-slate-300 py-2 pr-4">R33,000</td><td className="text-slate-300 py-2 pr-4">Government tax above R1.05M</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Conveyancing Fee</td><td className="text-slate-300 py-2 pr-4">R25,000-R40,000</td><td className="text-slate-300 py-2 pr-4">Attorney transfer cost</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Bond Registration</td><td className="text-slate-300 py-2 pr-4">R20,000-R30,000</td><td className="text-slate-300 py-2 pr-4">Attorney bond cost</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Bank Initiation Fee</td><td className="text-slate-300 py-2 pr-4">R6,037 max</td><td className="text-slate-300 py-2 pr-4">Once-off</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Total Upfront Estimate</td><td className="text-slate-300 py-2 pr-4">R280,000-R510,000</td><td className="text-slate-300 py-2 pr-4">Including deposit</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Deposit</td><td className="text-slate-300 py-2 pr-4">R200,000-R400,000</td><td className="text-slate-300 py-2 pr-4">10-20% of purchase price</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Transfer Duty</td><td className="text-slate-300 py-2 pr-4">R33,000</td><td className="text-slate-300 py-2 pr-4">Government tax above R1.05M</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Conveyancing Fee</td><td className="text-slate-300 py-2 pr-4">R25,000-R40,000</td><td className="text-slate-300 py-2 pr-4">Attorney transfer cost</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Bond Registration</td><td className="text-slate-300 py-2 pr-4">R20,000-R30,000</td><td className="text-slate-300 py-2 pr-4">Attorney bond cost</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Bank Initiation Fee</td><td className="text-slate-300 py-2 pr-4">R6,037 max</td><td className="text-slate-300 py-2 pr-4">Once-off</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Total Upfront Estimate</td><td className="text-slate-300 py-2 pr-4">R280,000-R510,000</td><td className="text-slate-300 py-2 pr-4">Including deposit</td></tr>
  </tbody>
  </table>
  </div>
@@ -101,9 +101,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator</a>
- <a href="/loan-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Loan Calculator</a>
- <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:'#f0c842'}}>Rent vs Buy: Which Is Better?</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
+ <a href="/loan-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Loan Calculator</a>
+ <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:"#f0c842'}}>Rent vs Buy: Which Is Better?</a>
  </div>
  </section>
  </div>

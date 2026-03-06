@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Mortgage Calculator UAE Dubai 2026: Home Loan Rates and Guide</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">On an AED 1.5 million mortgage at 4.5% over 25 years your monthly payment is approximately <strong> AED 8,333</strong>. UAE home loans typically require a <strong>20-25% down payment</strong> for expats and 15-20% for UAE nationals.</p>
  </div>
  <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Property Value</th><th className="text-left text-slate-400 py-2 pr-4">Expat Loan (75%)</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Payment 20Y</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Payment 25Y</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Property Value</th><th className="text-left text-slate-400 py-2 pr-4">Expat Loan (75%)</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Payment 20Y</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Payment 25Y</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">AED 750,000</td><td className="text-slate-300 py-2 pr-4">AED 562,500</td><td className="text-slate-300 py-2 pr-4">AED 3,560</td><td className="text-slate-300 py-2 pr-4">AED 3,125</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">AED 1,000,000</td><td className="text-slate-300 py-2 pr-4">AED 750,000</td><td className="text-slate-300 py-2 pr-4">AED 4,747</td><td className="text-slate-300 py-2 pr-4">AED 4,167</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">AED 1,500,000</td><td className="text-slate-300 py-2 pr-4">AED 1,125,000</td><td className="text-slate-300 py-2 pr-4">AED 7,120</td><td className="text-slate-300 py-2 pr-4">AED 6,250</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">AED 2,000,000</td><td className="text-slate-300 py-2 pr-4">AED 1,500,000</td><td className="text-slate-300 py-2 pr-4">AED 9,493</td><td className="text-slate-300 py-2 pr-4">AED 8,333</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">AED 3,000,000</td><td className="text-slate-300 py-2 pr-4">AED 2,250,000</td><td className="text-slate-300 py-2 pr-4">AED 14,240</td><td className="text-slate-300 py-2 pr-4">AED 12,500</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">AED 5,000,000</td><td className="text-slate-300 py-2 pr-4">AED 3,750,000</td><td className="text-slate-300 py-2 pr-4">AED 23,733</td><td className="text-slate-300 py-2 pr-4">AED 20,833</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">AED 750,000</td><td className="text-slate-300 py-2 pr-4">AED 562,500</td><td className="text-slate-300 py-2 pr-4">AED 3,560</td><td className="text-slate-300 py-2 pr-4">AED 3,125</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">AED 1,000,000</td><td className="text-slate-300 py-2 pr-4">AED 750,000</td><td className="text-slate-300 py-2 pr-4">AED 4,747</td><td className="text-slate-300 py-2 pr-4">AED 4,167</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">AED 1,500,000</td><td className="text-slate-300 py-2 pr-4">AED 1,125,000</td><td className="text-slate-300 py-2 pr-4">AED 7,120</td><td className="text-slate-300 py-2 pr-4">AED 6,250</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">AED 2,000,000</td><td className="text-slate-300 py-2 pr-4">AED 1,500,000</td><td className="text-slate-300 py-2 pr-4">AED 9,493</td><td className="text-slate-300 py-2 pr-4">AED 8,333</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">AED 3,000,000</td><td className="text-slate-300 py-2 pr-4">AED 2,250,000</td><td className="text-slate-300 py-2 pr-4">AED 14,240</td><td className="text-slate-300 py-2 pr-4">AED 12,500</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">AED 5,000,000</td><td className="text-slate-300 py-2 pr-4">AED 3,750,000</td><td className="text-slate-300 py-2 pr-4">AED 23,733</td><td className="text-slate-300 py-2 pr-4">AED 20,833</td></tr>
  </tbody>
  </table>
  </div>
@@ -72,15 +72,15 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Cost</th><th className="text-left text-slate-400 py-2 pr-4">Amount</th><th className="text-left text-slate-400 py-2 pr-4">Notes</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Cost</th><th className="text-left text-slate-400 py-2 pr-4">Amount</th><th className="text-left text-slate-400 py-2 pr-4">Notes</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Down Payment (Expat)</td><td className="text-slate-300 py-2 pr-4">20-25%</td><td className="text-slate-300 py-2 pr-4">Freehold properties</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">DLD Transfer Fee</td><td className="text-slate-300 py-2 pr-4">4%</td><td className="text-slate-300 py-2 pr-4">Of purchase price</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Mortgage Registration</td><td className="text-slate-300 py-2 pr-4">0.25%</td><td className="text-slate-300 py-2 pr-4">Of loan amount</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Agency Commission</td><td className="text-slate-300 py-2 pr-4">2%</td><td className="text-slate-300 py-2 pr-4">If using an agent</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Valuation Fee</td><td className="text-slate-300 py-2 pr-4">AED 2,500-3,500</td><td className="text-slate-300 py-2 pr-4">Required by lender</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Mortgage Arrangement Fee</td><td className="text-slate-300 py-2 pr-4">1%</td><td className="text-slate-300 py-2 pr-4">Some lenders charge this</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Total Upfront (est)</td><td className="text-slate-300 py-2 pr-4">27-32%</td><td className="text-slate-300 py-2 pr-4">Of purchase price</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Down Payment (Expat)</td><td className="text-slate-300 py-2 pr-4">20-25%</td><td className="text-slate-300 py-2 pr-4">Freehold properties</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">DLD Transfer Fee</td><td className="text-slate-300 py-2 pr-4">4%</td><td className="text-slate-300 py-2 pr-4">Of purchase price</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Mortgage Registration</td><td className="text-slate-300 py-2 pr-4">0.25%</td><td className="text-slate-300 py-2 pr-4">Of loan amount</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Agency Commission</td><td className="text-slate-300 py-2 pr-4">2%</td><td className="text-slate-300 py-2 pr-4">If using an agent</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Valuation Fee</td><td className="text-slate-300 py-2 pr-4">AED 2,500-3,500</td><td className="text-slate-300 py-2 pr-4">Required by lender</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Mortgage Arrangement Fee</td><td className="text-slate-300 py-2 pr-4">1%</td><td className="text-slate-300 py-2 pr-4">Some lenders charge this</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Total Upfront (est)</td><td className="text-slate-300 py-2 pr-4">27-32%</td><td className="text-slate-300 py-2 pr-4">Of purchase price</td></tr>
  </tbody>
  </table>
  </div>
@@ -106,9 +106,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator</a>
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Savings Calculator</a>
- <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:'#f0c842'}}>Rent vs Buy: Which Is Better?</a>
+ <a href="/mortgage-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
+ <a href="/blog/rent-vs-buy-home" className="hover:underline text-sm" style={{color:"#f0c842'}}>Rent vs Buy: Which Is Better?</a>
  </div>
  </section>
  </div>

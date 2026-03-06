@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Get Out of Debt Fast: The Step-by-Step Plan (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 9 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">The fastest way to get out of debt is the <strong>debt avalanche method</strong> — pay minimums on all debts then throw every extra dollar at the highest-interest debt first. This saves the most money. The <strong>debt snowball</strong> (smallest balance first) is better for motivation.</p>
           </div>
           <div className="space-y-8">
@@ -53,13 +53,13 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4"></th><th className="text-left text-slate-400 py-2 pr-4">Debt Snowball</th><th className="text-left text-slate-400 py-2 pr-4">Debt Avalanche</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4"></th><th className="text-left text-slate-400 py-2 pr-4">Debt Snowball</th><th className="text-left text-slate-400 py-2 pr-4">Debt Avalanche</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Order</td><td className="text-slate-300 py-2 pr-4">Smallest balance first</td><td className="text-slate-300 py-2 pr-4">Highest interest first</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Math</td><td className="text-slate-300 py-2 pr-4">Costs more in interest</td><td className="text-slate-300 py-2 pr-4">Saves the most money</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Psychology</td><td className="text-slate-300 py-2 pr-4">Quick wins boost motivation</td><td className="text-slate-300 py-2 pr-4">Slower to feel progress</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Best for</td><td className="text-slate-300 py-2 pr-4">People who need motivation</td><td className="text-slate-300 py-2 pr-4">People who are disciplined</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Time to debt free</td><td className="text-slate-300 py-2 pr-4">Slightly longer</td><td className="text-slate-300 py-2 pr-4">Fastest possible</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Order</td><td className="text-slate-300 py-2 pr-4">Smallest balance first</td><td className="text-slate-300 py-2 pr-4">Highest interest first</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Math</td><td className="text-slate-300 py-2 pr-4">Costs more in interest</td><td className="text-slate-300 py-2 pr-4">Saves the most money</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Psychology</td><td className="text-slate-300 py-2 pr-4">Quick wins boost motivation</td><td className="text-slate-300 py-2 pr-4">Slower to feel progress</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Best for</td><td className="text-slate-300 py-2 pr-4">People who need motivation</td><td className="text-slate-300 py-2 pr-4">People who are disciplined</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Time to debt free</td><td className="text-slate-300 py-2 pr-4">Slightly longer</td><td className="text-slate-300 py-2 pr-4">Fastest possible</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -68,12 +68,12 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">The 6-Step Debt Payoff Plan</h2>
               <ul className="space-y-2 mb-4">
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>List all debts with balance, interest rate and minimum payment</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Build a $1,000 emergency fund so unexpected costs do not derail you</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Cut expenses to free up as much extra money as possible</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Choose snowball or avalanche and rank your debts accordingly</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Put every extra dollar toward the target debt while paying minimums on others</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>When a debt is paid off roll that payment to the next debt on your list</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>List all debts with balance, interest rate and minimum payment</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Build a $1,000 emergency fund so unexpected costs do not derail you</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Cut expenses to free up as much extra money as possible</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Choose snowball or avalanche and rank your debts accordingly</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Put every extra dollar toward the target debt while paying minimums on others</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>When a debt is paid off roll that payment to the next debt on your list</span></li>
               </ul>
             </section>
             <section>
@@ -96,9 +96,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Debt Payoff Calculator</a>
-            <a href="/blog/debt-snowball-vs-avalanche" className="hover:underline text-sm" style={{color:'#f0c842'}}>Debt Snowball vs Avalanche</a>
-            <a href="/blog/how-to-pay-off-debt-fast" className="hover:underline text-sm" style={{color:'#f0c842'}}>How to Pay Off Debt Fast</a>
+                <a href="/debt-payoff-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Debt Payoff Calculator</a>
+            <a href="/blog/debt-snowball-vs-avalanche" className="hover:underline text-sm" style={{color:"#f0c842'}}>Debt Snowball vs Avalanche</a>
+            <a href="/blog/how-to-pay-off-debt-fast" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Pay Off Debt Fast</a>
               </div>
             </section>
           </div>

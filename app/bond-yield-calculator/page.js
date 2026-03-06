@@ -133,7 +133,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Annual Coupon Payment</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.annualCoupon)}
                     </span>
                   </div>
@@ -141,7 +141,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Current Yield</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.currentYield}
                     </span>
                   </div>
@@ -149,7 +149,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Yield to Maturity (YTM)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.ytmAnnual}
                     </span>
                   </div>
@@ -157,7 +157,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Bond Trading At</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.premDisc}
                     </span>
                   </div>
@@ -165,7 +165,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Return to Maturity</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.totalReturn)}
                     </span>
                   </div>
@@ -211,17 +211,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is yield to maturity (YTM)?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">YTM is the total annualised return you earn if you buy a bond at its current price and hold it until maturity, assuming all coupon payments are reinvested at the same rate. It is the most comprehensive measure of a bond's return and accounts for both the coupon income and any capital gain or loss.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Why do bond prices fall when interest rates rise?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Bond prices and interest rates move inversely. When new bonds offer higher coupons, existing lower-coupon bonds become less attractive and must fall in price until their yield matches the market. A 1% rise in rates causes a roughly 1% drop per year of duration — a 10-year bond falls about 8-10%.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the difference between current yield and YTM?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Current yield = annual coupon ÷ market price. It ignores the capital gain or loss at maturity. YTM includes that gain/loss spread over the remaining years. If you buy a $1,000 par bond for $950 with a 5% coupon, current yield is 5.26% but YTM is higher because you also gain $50 at maturity.</p>
             </div>

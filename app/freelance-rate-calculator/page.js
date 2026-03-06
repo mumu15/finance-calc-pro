@@ -127,7 +127,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Minimum Hourly Rate</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.minHourlyRate)}
                     </span>
                   </div>
@@ -135,7 +135,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Day Rate (8 hrs)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.dayRate)}
                     </span>
                   </div>
@@ -143,7 +143,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Weekly Rate</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.weekRate)}
                     </span>
                   </div>
@@ -151,7 +151,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Project Rate (40 hrs)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.projectRate40h)}
                     </span>
                   </div>
@@ -159,7 +159,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Annual Revenue Needed</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.annualRevNeeded)}
                     </span>
                   </div>
@@ -167,7 +167,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Billable Hours / Year</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.totalBillableHours}
                     </span>
                   </div>
@@ -213,17 +213,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How do I set my freelance rate?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Start with your minimum viable rate (this calculator). Then research what the market pays for your skill level on Upwork, LinkedIn, and industry salary surveys. Differentiate by specialisation, results and reputation. Most freelancers undercharge initially — market rates for senior-level work are often 2-4x what beginners charge.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Why do freelancers need to charge more than employees?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Freelancers bear costs employees do not: self-employment tax (15.3%), health insurance, retirement contributions, unpaid vacation, business expenses, and non-billable time (marketing, admin, chasing payments). A full-time employee earning $60,000 costs their employer ~$80,000. A freelancer charging the equivalent needs to earn even more due to uncertainty and gaps.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Should I charge hourly or project rates?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Project rates are generally better for experienced freelancers — you are paid for the value delivered, not hours spent. As you get faster and better, project rates increase your effective hourly rate. Hourly is better for ongoing or open-ended work where scope is unclear. Never use hourly rates that expose you to scope creep without change-order agreements.</p>
             </div>

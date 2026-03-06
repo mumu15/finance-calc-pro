@@ -62,17 +62,17 @@ export default function RetirementCalculator() {
             <h2 className="text-white font-bold text-lg mb-5">Your Details</h2>
             <div className="space-y-4">
               {[
-                { label: "Current Age", value: currentAge, set: setCurrentAge, min: 18, max: 70, step: 1, suffix: " yrs' },
-                { label: "Retirement Age", value: retireAge, set: setRetireAge, min: currentAge + 1, max: 80, step: 1, suffix: " yrs' },
+                { label: "Current Age", value: currentAge, set: setCurrentAge, min: 18, max: 70, step: 1, suffix: " yrs" },
+                { label: "Retirement Age", value: retireAge, set: setRetireAge, min: currentAge + 1, max: 80, step: 1, suffix: " yrs" },
                 { label: "Current Savings", value: currentSavings, set: setCurrentSavings, min: 0, max: 500000, step: 1000, prefix: currency.symbol },
                 { label: "Monthly Contribution", value: monthlyContrib, set: setMonthlyContrib, min: 0, max: 5000, step: 50, prefix: currency.symbol },
-                { label: "Expected Annual Return", value: annualReturn, set: setAnnualReturn, min: 1, max: 15, step: 0.5, suffix: "%' },
+                { label: "Expected Annual Return", value: annualReturn, set: setAnnualReturn, min: 1, max: 15, step: 0.5, suffix: "%" },
                 { label: "Annual Expenses in Retirement", value: annualExpenses, set: setAnnualExpenses, min: 20000, max: 200000, step: 1000, prefix: currency.symbol },
               ].map((field, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-1.5">
                     <label className="text-slate-400 text-sm">{field.label}</label>
-                    <span className="text-white font-bold text-sm">{field.prefix || "'}{field.value.toLocaleString()}{field.suffix || ''}</span>
+                    <span className="text-white font-bold text-sm">{field.prefix || ""}{field.value.toLocaleString()}{field.suffix || ''}</span>
                   </div>
                   <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
                     onChange={e => field.set(Number(e.target.value))}
@@ -90,10 +90,10 @@ export default function RetirementCalculator() {
                 <span className="text-slate-400">Projected: <span className="text-yellow-400 font-bold">{fmt(calc.futureValue)}</span></span>
                 <span className="text-slate-400">Goal: <span className="text-white font-bold">{fmt(calc.goal)}</span></span>
               </div>
-              <div className="w-full h-6 rounded-full overflow-hidden" style={{background:'rgba(255,255,255,0.05)'}}>
+              <div className="w-full h-6 rounded-full overflow-hidden" style={{background:"rgba(255,255,255,0.05)'}}>
                 <div className="h-full rounded-full transition-all duration-500 flex items-center justify-end pr-2"
                   style={{width:`${calc.pct}%`, background: calc.pct >= 100 ? '#34d399' : calc.pct >= 75 ? '#f0c842' : '#f97316', minWidth:'2rem'}}>
-                  <span className="text-xs font-bold text-dark-950" style={{color:'#030712'}}>{Math.round(calc.pct)}%</span>
+                  <span className="text-xs font-bold text-dark-950" style={{color:"#030712'}}>{Math.round(calc.pct)}%</span>
                 </div>
               </div>
               {calc.surplus > 0 ? (
@@ -106,12 +106,12 @@ export default function RetirementCalculator() {
             <div className="result-box">
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { label: "Years to Retire", value: calc.years + " yrs', color: 'text-white' },
-                  { label: "Retirement Goal", value: fmt(calc.goal), color: "text-yellow-400' },
-                  { label: "Projected Savings", value: fmt(calc.futureValue), color: "text-emerald-400' },
-                  { label: "Monthly Income", value: fmt(calc.monthlyIncome), color: "text-blue-400' },
+                  { label: "Years to Retire", value: calc.years + " yrs", color: 'text-white' },
+                  { label: "Retirement Goal", value: fmt(calc.goal), color: "text-yellow-400" },
+                  { label: "Projected Savings", value: fmt(calc.futureValue), color: "text-emerald-400" },
+                  { label: "Monthly Income", value: fmt(calc.monthlyIncome), color: "text-blue-400" },
                 ].map((item, i) => (
-                  <div key={i} className="p-3 rounded-xl" style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                  <div key={i} className="p-3 rounded-xl" style={{background:"rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <div className={`text-lg font-bold ${item.color}`}>{item.value}</div>
                     <div className="text-slate-500 text-xs mt-0.5">{item.label}</div>
                   </div>
@@ -129,16 +129,16 @@ export default function RetirementCalculator() {
             {[25, 50, 75, 100].map(pct => {
               const milestoneYear = calc.yearlyData.find(y => (y.balance / calc.goal) * 100 >= pct)
               return (
-                <div key={pct} className="p-3 rounded-xl text-center" style={{background:'rgba(255,255,255,0.03)',border:`1px solid ${calc.pct >= pct ? 'rgba(52,211,153,0.3)' : 'rgba(255,255,255,0.06)'}`}}>
+                <div key={pct} className="p-3 rounded-xl text-center" style={{background:"rgba(255,255,255,0.03)',border:`1px solid ${calc.pct >= pct ? 'rgba(52,211,153,0.3)' : 'rgba(255,255,255,0.06)'}`}}>
                   <div className={`text-2xl font-bold ${calc.pct >= pct ? 'text-emerald-400' : 'text-slate-600'}`}>{pct}%</div>
-                  <div className="text-slate-500 text-xs mt-1">{milestoneYear ? 'Age ' + milestoneYear.year : 'Not reached'}</div>
+                  <div className="text-slate-500 text-xs mt-1">{milestoneYear ? "Age ' + milestoneYear.year : 'Not reached'}</div>
                 </div>
               )
             })}
           </div>
         </div>
 
-        <div className="mt-8 p-4 rounded-xl border" style={{background:'rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
+        <div className="mt-8 p-4 rounded-xl border" style={{background:"rgba(240,200,66,0.03)',borderColor:'rgba(240,200,66,0.15)'}}>
           <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
           <a href="/blog/how-much-to-save-for-retirement" className="text-yellow-400 font-semibold hover:underline">How Much Do You Need to Save for Retirement? (2026 Guide)</a>
         </div>

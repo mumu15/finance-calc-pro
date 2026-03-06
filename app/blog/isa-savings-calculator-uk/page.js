@@ -38,12 +38,12 @@ export default function Post() {
  <FaqSchema faqs={faqs} />
  <Header />
  <main className="max-w-4xl mx-auto px-4 py-12">
- <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+ <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
  <article>
  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">ISA Savings Calculator UK: How Much Can You Save in an ISA? (2026)</h1>
  <p className="text-slate-400 text-sm mb-8">March 2026 · 8 min read</p>
- <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
- <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+ <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+ <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
  <p className="text-white">The ISA allowance for 2026-27 is <strong> £20,000 per year</strong>. A Stocks and Shares ISA growing at 7% per year — maxing out £20,000 annually — would be worth approximately <strong> £566,000 after 15 years</strong> completely tax-free.</p>
  </div>
  <div className="space-y-8">
@@ -53,13 +53,13 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">ISA Type</th><th className="text-left text-slate-400 py-2 pr-4">Annual Limit</th><th className="text-left text-slate-400 py-2 pr-4">Returns</th><th className="text-left text-slate-400 py-2 pr-4">Best For</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">ISA Type</th><th className="text-left text-slate-400 py-2 pr-4">Annual Limit</th><th className="text-left text-slate-400 py-2 pr-4">Returns</th><th className="text-left text-slate-400 py-2 pr-4">Best For</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Cash ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">4-5% fixed</td><td className="text-slate-300 py-2 pr-4">Short-term goals, safety</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Stocks & Shares ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">6-9% long-term avg</td><td className="text-slate-300 py-2 pr-4">Wealth building 5+ years</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Lifetime ISA</td><td className="text-slate-300 py-2 pr-4">£4,000</td><td className="text-slate-300 py-2 pr-4">25% bonus + growth</td><td className="text-slate-300 py-2 pr-4">First home or retirement</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Junior ISA</td><td className="text-slate-300 py-2 pr-4">£9,000</td><td className="text-slate-300 py-2 pr-4">Cash or stocks</td><td className="text-slate-300 py-2 pr-4">Saving for children</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Innovative Finance ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">5-10% (higher risk)</td><td className="text-slate-300 py-2 pr-4">P2P lending exposure</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Cash ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">4-5% fixed</td><td className="text-slate-300 py-2 pr-4">Short-term goals, safety</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Stocks & Shares ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">6-9% long-term avg</td><td className="text-slate-300 py-2 pr-4">Wealth building 5+ years</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Lifetime ISA</td><td className="text-slate-300 py-2 pr-4">£4,000</td><td className="text-slate-300 py-2 pr-4">25% bonus + growth</td><td className="text-slate-300 py-2 pr-4">First home or retirement</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Junior ISA</td><td className="text-slate-300 py-2 pr-4">£9,000</td><td className="text-slate-300 py-2 pr-4">Cash or stocks</td><td className="text-slate-300 py-2 pr-4">Saving for children</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Innovative Finance ISA</td><td className="text-slate-300 py-2 pr-4">£20,000</td><td className="text-slate-300 py-2 pr-4">5-10% (higher risk)</td><td className="text-slate-300 py-2 pr-4">P2P lending exposure</td></tr>
  </tbody>
  </table>
  </div>
@@ -71,13 +71,13 @@ export default function Post() {
  <div className="result-box mb-4">
  <div className="overflow-x-auto">
  <table className="w-full text-sm">
- <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Years</th><th className="text-left text-slate-400 py-2 pr-4">4% (Cash ISA)</th><th className="text-left text-slate-400 py-2 pr-4">7% (Stocks ISA)</th><th className="text-left text-slate-400 py-2 pr-4">9% (Optimistic)</th></tr></thead>
+ <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Years</th><th className="text-left text-slate-400 py-2 pr-4">4% (Cash ISA)</th><th className="text-left text-slate-400 py-2 pr-4">7% (Stocks ISA)</th><th className="text-left text-slate-400 py-2 pr-4">9% (Optimistic)</th></tr></thead>
  <tbody>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">5 years</td><td className="text-slate-300 py-2 pr-4">£108,328</td><td className="text-slate-300 py-2 pr-4">£115,766</td><td className="text-slate-300 py-2 pr-4">£119,694</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">10 years</td><td className="text-slate-300 py-2 pr-4">£240,122</td><td className="text-slate-300 py-2 pr-4">£275,905</td><td className="text-slate-300 py-2 pr-4">£304,425</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">15 years</td><td className="text-slate-300 py-2 pr-4">£400,574</td><td className="text-slate-300 py-2 pr-4">£505,383</td><td className="text-slate-300 py-2 pr-4">£594,186</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">20 years</td><td className="text-slate-300 py-2 pr-4">£595,962</td><td className="text-slate-300 py-2 pr-4">£819,910</td><td className="text-slate-300 py-2 pr-4">£1,027,455</td></tr>
- <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">30 years</td><td className="text-slate-300 py-2 pr-4">£1,122,047</td><td className="text-slate-300 py-2 pr-4">£1,887,596</td><td className="text-slate-300 py-2 pr-4">£2,723,000</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">5 years</td><td className="text-slate-300 py-2 pr-4">£108,328</td><td className="text-slate-300 py-2 pr-4">£115,766</td><td className="text-slate-300 py-2 pr-4">£119,694</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">10 years</td><td className="text-slate-300 py-2 pr-4">£240,122</td><td className="text-slate-300 py-2 pr-4">£275,905</td><td className="text-slate-300 py-2 pr-4">£304,425</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">15 years</td><td className="text-slate-300 py-2 pr-4">£400,574</td><td className="text-slate-300 py-2 pr-4">£505,383</td><td className="text-slate-300 py-2 pr-4">£594,186</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">20 years</td><td className="text-slate-300 py-2 pr-4">£595,962</td><td className="text-slate-300 py-2 pr-4">£819,910</td><td className="text-slate-300 py-2 pr-4">£1,027,455</td></tr>
+ <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">30 years</td><td className="text-slate-300 py-2 pr-4">£1,122,047</td><td className="text-slate-300 py-2 pr-4">£1,887,596</td><td className="text-slate-300 py-2 pr-4">£2,723,000</td></tr>
  </tbody>
  </table>
  </div>
@@ -99,9 +99,9 @@ export default function Post() {
  <section>
  <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
  <div className="flex flex-wrap gap-3">
- <a href="/savings-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Savings Calculator</a>
- <a href="/compound-interest" className="hover:underline text-sm" style={{color:'#f0c842'}}>Compound Interest Calculator</a>
- <a href="/blog/mortgage-calculator-uk-2026" className="hover:underline text-sm" style={{color:'#f0c842'}}>Mortgage Calculator UK</a>
+ <a href="/savings-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Savings Calculator</a>
+ <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842'}}>Compound Interest Calculator</a>
+ <a href="/blog/mortgage-calculator-uk-2026" className="hover:underline text-sm" style={{color:"#f0c842'}}>Mortgage Calculator UK</a>
  </div>
  </section>
  </div>

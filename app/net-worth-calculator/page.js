@@ -175,25 +175,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Net Worth</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.netWorth)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.netWorth)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Assets</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalAssets)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalAssets)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Liabilities</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalLiabilities)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalLiabilities)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Debt-to-Asset Ratio</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{result.debtToAsset}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{result.debtToAsset}</span>
                   </div>
                 </div>
               ) : (
@@ -240,17 +240,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the average net worth by age?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Median US net worth by age (2024 Fed data): Under 35: $39,000. 35-44: $135,000. 45-54: $247,000. 55-64: $365,000. 65-74: $410,000. 75+: $335,000. The mean (average) is much higher due to wealthy outliers. Focus on improving your own trajectory rather than comparing to averages.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How do I build net worth quickly?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The fastest net worth builders: (1) increase income aggressively — raises, promotion, side income, (2) keep fixed expenses low — housing and car are the biggest levers, (3) invest early and consistently — compound growth takes time, (4) eliminate high-interest debt — it is anti-wealth, (5) avoid lifestyle inflation as income rises.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Should I include home equity in net worth?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Yes, home equity (home value minus mortgage) is a legitimate asset that counts toward net worth. However, since you cannot easily spend home equity without selling or borrowing against it, many financial planners track both total net worth and "liquid net worth" (excluding home equity and retirement accounts with penalties).</p>
             </div>

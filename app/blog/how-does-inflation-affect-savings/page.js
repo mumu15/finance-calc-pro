@@ -23,12 +23,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How Does Inflation Affect Your Savings? (2026 Guide)</h1>
           <p className="text-slate-400 text-sm mb-8">Updated February 2026 · 8 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">Inflation erodes your purchasing power every year. At 3% inflation money in a low-interest account <strong>loses value in real terms</strong>. You must invest to stay ahead of inflation over the long term.</p>
           </div>
           <div className="space-y-8">
@@ -38,10 +38,10 @@ export default function Post() {
               <div className="result-box">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Years</th><th className="text-left text-slate-400 py-2 pr-4">Nominal Value</th><th className="text-left py-2" style={{color:'#f0c842'}}>Real Purchasing Power</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Years</th><th className="text-left text-slate-400 py-2 pr-4">Nominal Value</th><th className="text-left py-2" style={{color:"#f0c842'}}>Real Purchasing Power</th></tr></thead>
                     <tbody>
                       {[['Today','$100,000','$100,000'],['10 years','$100,000','$74,409'],['20 years','$100,000','$55,368'],['30 years','$100,000','$41,199'],['40 years','$100,000','$30,656']].map((r,i)=>(
-                        <tr key={i} className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="text-slate-400 py-2 pr-4">{r[1]}</td><td className="font-bold py-2 text-red-400">{r[2]}</td></tr>
+                        <tr key={i} className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">{r[0]}</td><td className="text-slate-400 py-2 pr-4">{r[1]}</td><td className="font-bold py-2 text-red-400">{r[2]}</td></tr>
                       ))}
                     </tbody>
                   </table>

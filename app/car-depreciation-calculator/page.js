@@ -121,7 +121,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Estimated Value After {years} Years</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.finalValue)}
                     </span>
                   </div>
@@ -129,7 +129,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Depreciation Loss</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.totalDepreciation)}
                     </span>
                   </div>
@@ -137,7 +137,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Value Retained</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.retainedPct}
                     </span>
                   </div>
@@ -145,7 +145,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Depreciation Cost Per Mile</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.costPerMile}
                     </span>
                   </div>
@@ -153,7 +153,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Average Annual Value Lost</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.annualAvgLoss)}
                     </span>
                   </div>
@@ -199,17 +199,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How fast do cars depreciate?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">New cars lose 15-25% in the first year and roughly 10-15% per year after. After 5 years the typical car retains about 40% of its original value. Luxury cars, sports cars and some EVs depreciate faster. Trucks and SUVs from Toyota and Honda tend to hold value best.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Which cars depreciate the least?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Lowest depreciation (best resale value): Toyota Tacoma, Honda Civic/Accord, Toyota 4Runner, Subaru Outback, and Jeep Wrangler. Highest depreciation: Maserati, Jaguar, Lincoln, Cadillac, and most luxury sedans. Fuel efficiency, reliability reputation and brand desirability drive resale value.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How does depreciation affect car buying decisions?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Depreciation is often the biggest cost of car ownership — far exceeding fuel and insurance on newer vehicles. Buying a 2-3 year old used car lets someone else absorb the steep first-year drop. CPO (certified pre-owned) vehicles offer warranty protection alongside reduced depreciation cost.</p>
             </div>

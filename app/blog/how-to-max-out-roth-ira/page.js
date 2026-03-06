@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">How to Max Out Your Roth IRA in 2026 (Step-by-Step Guide)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">The 2026 Roth IRA contribution limit is <strong>$7,000</strong> ($8,000 if 50+). To max it out automatically contribute <strong>$583.33 per month</strong>. Invest in a low-cost total market index fund. Roth IRA growth and withdrawals are <strong>completely tax-free</strong>.</p>
           </div>
           <div className="space-y-8">
@@ -53,12 +53,12 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Contribution Goal</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Amount</th><th className="text-left text-slate-400 py-2 pr-4">Weekly Amount</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Contribution Goal</th><th className="text-left text-slate-400 py-2 pr-4">Monthly Amount</th><th className="text-left text-slate-400 py-2 pr-4">Weekly Amount</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Max $7,000/year</td><td className="text-slate-300 py-2 pr-4">$583.33/month</td><td className="text-slate-300 py-2 pr-4">$134.62/week</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Half max $3,500/year</td><td className="text-slate-300 py-2 pr-4">$291.67/month</td><td className="text-slate-300 py-2 pr-4">$67.31/week</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Quarter max $1,750/year</td><td className="text-slate-300 py-2 pr-4">$145.83/month</td><td className="text-slate-300 py-2 pr-4">$33.65/week</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Starter $1,200/year</td><td className="text-slate-300 py-2 pr-4">$100/month</td><td className="text-slate-300 py-2 pr-4">$23.08/week</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Max $7,000/year</td><td className="text-slate-300 py-2 pr-4">$583.33/month</td><td className="text-slate-300 py-2 pr-4">$134.62/week</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Half max $3,500/year</td><td className="text-slate-300 py-2 pr-4">$291.67/month</td><td className="text-slate-300 py-2 pr-4">$67.31/week</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Quarter max $1,750/year</td><td className="text-slate-300 py-2 pr-4">$145.83/month</td><td className="text-slate-300 py-2 pr-4">$33.65/week</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Starter $1,200/year</td><td className="text-slate-300 py-2 pr-4">$100/month</td><td className="text-slate-300 py-2 pr-4">$23.08/week</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -70,12 +70,12 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Starting Age</th><th className="text-left text-slate-400 py-2 pr-4">Annual Contribution</th><th className="text-left text-slate-400 py-2 pr-4">At 8% Return at 65</th><th className="text-left text-slate-400 py-2 pr-4">Tax Savings</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Starting Age</th><th className="text-left text-slate-400 py-2 pr-4">Annual Contribution</th><th className="text-left text-slate-400 py-2 pr-4">At 8% Return at 65</th><th className="text-left text-slate-400 py-2 pr-4">Tax Savings</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">25 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$1,948,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">30 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$1,302,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">35 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$860,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">40 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$559,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">25 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$1,948,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">30 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$1,302,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">35 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$860,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">40 years old</td><td className="text-slate-300 py-2 pr-4">$7,000/year</td><td className="text-slate-300 py-2 pr-4">$559,000</td><td className="text-slate-300 py-2 pr-4">All tax-free</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -84,12 +84,12 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">How to Open and Max Out a Roth IRA</h2>
               <ul className="space-y-2 mb-4">
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Choose a broker — Fidelity, Schwab and Vanguard all offer excellent Roth IRAs with no account fees</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Open the account online — takes about 15 minutes</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Set up automatic monthly contributions of $583.33</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Choose investments — FZROX (Fidelity) or VTI (Vanguard) total market index funds</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Set investments to auto-invest so contributions are deployed immediately</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Review once per year and increase contributions if limits rise</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Choose a broker — Fidelity, Schwab and Vanguard all offer excellent Roth IRAs with no account fees</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Open the account online — takes about 15 minutes</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Set up automatic monthly contributions of $583.33</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Choose investments — FZROX (Fidelity) or VTI (Vanguard) total market index funds</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Set investments to auto-invest so contributions are deployed immediately</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Review once per year and increase contributions if limits rise</span></li>
               </ul>
             </section>
             <section>
@@ -108,9 +108,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/compound-interest" className="hover:underline text-sm" style={{color:'#f0c842'}}>Compound Interest Calculator</a>
-            <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Retirement Calculator</a>
-            <a href="/blog/types-of-retirement-accounts" className="hover:underline text-sm" style={{color:'#f0c842'}}>401k vs Roth IRA vs Traditional IRA</a>
+                <a href="/compound-interest" className="hover:underline text-sm" style={{color:"#f0c842'}}>Compound Interest Calculator</a>
+            <a href="/retirement-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Retirement Calculator</a>
+            <a href="/blog/types-of-retirement-accounts" className="hover:underline text-sm" style={{color:"#f0c842'}}>401k vs Roth IRA vs Traditional IRA</a>
               </div>
             </section>
           </div>

@@ -38,12 +38,12 @@ export default function Post() {
       <FaqSchema faqs={faqs} />
       <Header />
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:'#f0c842'}}>← Back to Blog</Link></div>
+        <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842'}}>← Back to Blog</Link></div>
         <article>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">What Is Net Worth? How to Calculate and Grow Yours (2026)</h1>
           <p className="text-slate-400 text-sm mb-8">March 2026 · 7 min read</p>
-          <div className="result-box mb-8" style={{borderColor:'rgba(240,200,66,0.3)'}}>
-            <h2 className="font-bold mb-2" style={{color:'#f0c842'}}>Quick Answer</h2>
+          <div className="result-box mb-8" style={{borderColor:"rgba(240,200,66,0.3)'}}>
+            <h2 className="font-bold mb-2" style={{color:"#f0c842'}}>Quick Answer</h2>
             <p className="text-white">Net worth is your <strong>total assets minus total liabilities</strong>. If you own $200,000 in assets and owe $120,000 your net worth is $80,000. The median net worth in the US is around <strong>$192,700</strong>. For ages 35–44 the median is $135,300.</p>
           </div>
           <div className="space-y-8">
@@ -53,14 +53,14 @@ export default function Post() {
               <div className="result-box mb-4">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead><tr className="border-b" style={{borderColor:'rgba(240,200,66,0.1)'}}><th className="text-left text-slate-400 py-2 pr-4">Age Group</th><th className="text-left text-slate-400 py-2 pr-4">Median Net Worth</th><th className="text-left text-slate-400 py-2 pr-4">Average Net Worth</th></tr></thead>
+                    <thead><tr className="border-b" style={{borderColor:"rgba(240,200,66,0.1)"}}><th className="text-left text-slate-400 py-2 pr-4">Age Group</th><th className="text-left text-slate-400 py-2 pr-4">Median Net Worth</th><th className="text-left text-slate-400 py-2 pr-4">Average Net Worth</th></tr></thead>
                     <tbody>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">Under 35</td><td className="text-slate-300 py-2 pr-4">$39,000</td><td className="text-slate-300 py-2 pr-4">$183,000</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">35–44</td><td className="text-slate-300 py-2 pr-4">$135,300</td><td className="text-slate-300 py-2 pr-4">$549,000</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">45–54</td><td className="text-slate-300 py-2 pr-4">$247,200</td><td className="text-slate-300 py-2 pr-4">$975,800</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">55–64</td><td className="text-slate-300 py-2 pr-4">$364,500</td><td className="text-slate-300 py-2 pr-4">$1,566,900</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">65–74</td><td className="text-slate-300 py-2 pr-4">$409,900</td><td className="text-slate-300 py-2 pr-4">$1,794,600</td></tr>
-                      <tr className="border-b" style={{borderColor:'rgba(240,200,66,0.05)'}}><td className="text-white py-2 pr-4">75+</td><td className="text-slate-300 py-2 pr-4">$335,600</td><td className="text-slate-300 py-2 pr-4">$1,624,100</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">Under 35</td><td className="text-slate-300 py-2 pr-4">$39,000</td><td className="text-slate-300 py-2 pr-4">$183,000</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">35–44</td><td className="text-slate-300 py-2 pr-4">$135,300</td><td className="text-slate-300 py-2 pr-4">$549,000</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">45–54</td><td className="text-slate-300 py-2 pr-4">$247,200</td><td className="text-slate-300 py-2 pr-4">$975,800</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">55–64</td><td className="text-slate-300 py-2 pr-4">$364,500</td><td className="text-slate-300 py-2 pr-4">$1,566,900</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">65–74</td><td className="text-slate-300 py-2 pr-4">$409,900</td><td className="text-slate-300 py-2 pr-4">$1,794,600</td></tr>
+                      <tr className="border-b" style={{borderColor:"rgba(240,200,66,0.05)"}}><td className="text-white py-2 pr-4">75+</td><td className="text-slate-300 py-2 pr-4">$335,600</td><td className="text-slate-300 py-2 pr-4">$1,624,100</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -69,13 +69,13 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">How to Increase Your Net Worth</h2>
               <ul className="space-y-2 mb-4">
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Increase income — the most powerful lever for building net worth</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Reduce liabilities — pay down debt starting with highest interest rates</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Invest consistently — every dollar invested in index funds grows over time</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Avoid lifestyle inflation — when income rises keep expenses flat</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Build home equity — mortgage payments build assets unlike rent</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Maximise retirement accounts — tax-advantaged growth accelerates net worth</span></li>
-                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:'#f0c842'}} className="mt-1">→</span><span>Track monthly — awareness of your net worth creates better financial habits</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Increase income — the most powerful lever for building net worth</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Reduce liabilities — pay down debt starting with highest interest rates</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Invest consistently — every dollar invested in index funds grows over time</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Avoid lifestyle inflation — when income rises keep expenses flat</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Build home equity — mortgage payments build assets unlike rent</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Maximise retirement accounts — tax-advantaged growth accelerates net worth</span></li>
+                <li className="text-slate-400 text-sm flex items-start gap-2"><span style={{color:"#f0c842"}} className="mt-1">→</span><span>Track monthly — awareness of your net worth creates better financial habits</span></li>
               </ul>
             </section>
             <section>
@@ -98,9 +98,9 @@ export default function Post() {
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">Related Calculators</h2>
               <div className="flex flex-wrap gap-3">
-                <a href="/net-worth-calculator" className="hover:underline text-sm" style={{color:'#f0c842'}}>Net Worth Calculator</a>
-            <a href="/blog/how-to-calculate-net-worth" className="hover:underline text-sm" style={{color:'#f0c842'}}>How to Calculate Net Worth</a>
-            <a href="/blog/how-much-to-save-for-retirement" className="hover:underline text-sm" style={{color:'#f0c842'}}>How Much to Save for Retirement</a>
+                <a href="/net-worth-calculator" className="hover:underline text-sm" style={{color:"#f0c842'}}>Net Worth Calculator</a>
+            <a href="/blog/how-to-calculate-net-worth" className="hover:underline text-sm" style={{color:"#f0c842'}}>How to Calculate Net Worth</a>
+            <a href="/blog/how-much-to-save-for-retirement" className="hover:underline text-sm" style={{color:"#f0c842'}}>How Much to Save for Retirement</a>
               </div>
             </section>
           </div>

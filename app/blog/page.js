@@ -62,17 +62,17 @@ export default function Blog() {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Personal Finance Blog</h1>
           <p className="text-slate-400 text-lg">Free guides on budgeting, investing, debt and retirement — updated 2026</p>
-          <p className="text-sm mt-2" style={{color:'#f0c842'}}>{posts.length} free guides</p>
+          <p className="text-sm mt-2" style={{color:"#f0c842'}}>{posts.length} free guides</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {posts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}
               className="result-box transition-all duration-300 hover:-translate-y-1 group"
               style={{borderColor:'rgba(240,200,66,0.15)'}}>
-              <div className="text-xs mb-2" style={{color:'#f0c842'}}>{post.date}</div>
+              <div className="text-xs mb-2" style={{color:"#f0c842'}}>{post.date}</div>
               <h2 className="text-white font-bold text-lg mb-2 group-hover:text-yellow-400 transition-colors">{post.title}</h2>
               <p className="text-slate-400 text-sm leading-relaxed">{post.description}</p>
-              <div className="mt-4 text-sm font-medium" style={{color:'#f0c842'}}>Read article →</div>
+              <div className="mt-4 text-sm font-medium" style={{color:"#f0c842'}}>Read article →</div>
             </Link>
           ))}
         </div>

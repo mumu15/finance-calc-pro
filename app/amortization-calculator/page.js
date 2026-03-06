@@ -79,7 +79,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Annual Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{rate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{rate + "%'}</span>
                 </div>
                 <input type="range" min={0.5} max={20} step={0.25}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
@@ -114,25 +114,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Monthly Payment</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.monthly)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.monthly)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Interest Paid</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalInterest)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalInterest)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Total Amount Paid</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalPaid)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.totalPaid)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Year 1 Interest</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.year1Interest)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.year1Interest)}</span>
                   </div>
                 </div>
               ) : (
@@ -179,17 +179,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is an amortization schedule?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">An amortization schedule is a table showing each loan payment broken down into principal and interest. Early payments are mostly interest; later payments are mostly principal. Seeing this schedule helps you understand how your debt decreases over time.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How does extra payment affect amortization?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Making extra payments toward principal reduces the loan balance faster, saving significant interest. On a $250,000 30-year mortgage at 6.5%, paying $100 extra per month saves over $30,000 in interest and cuts the loan by 4 years.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is a fully amortizing loan?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A fully amortizing loan is one where equal regular payments pay off the entire balance (principal + interest) by the end of the term. Most mortgages, car loans and personal loans are fully amortizing. The opposite is a bullet or balloon loan.</p>
             </div>

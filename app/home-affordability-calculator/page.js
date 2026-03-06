@@ -105,7 +105,7 @@ export default function Calculator() {
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Mortgage Interest Rate</label>
-                  <span className="text-white font-bold text-sm">{rate + '%'}</span>
+                  <span className="text-white font-bold text-sm">{rate + "%'}</span>
                 </div>
                 <input type="range" min={2} max={12} step={0.125}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
@@ -140,25 +140,25 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Maximum Home Price</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.maxHomePrice)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.maxHomePrice)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Conservative Budget (80%)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.conservativePrice)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.conservativePrice)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Max Mortgage Loan</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.maxLoan)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.maxLoan)}</span>
                   </div>
 
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Max Monthly Payment</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.maxMortgagePayment)}</span>
+                    <span className="font-bold" style={{color:"#f0c842'}}>{fmt(result.maxMortgagePayment)}</span>
                   </div>
                 </div>
               ) : (
@@ -205,17 +205,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How much house can I afford on my salary?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">A common rule is the 28/36 rule: spend no more than 28% of gross monthly income on housing and 36% on total debt. On a $90,000 salary that is $2,100/month for housing. With a 6.75% rate on a 30-year loan this supports a mortgage of about $325,000.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the 28/36 rule for buying a home?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The 28/36 rule states your mortgage payment should not exceed 28% of gross monthly income (front-end DTI) and all debt payments should not exceed 36% (back-end DTI). This is a conservative guideline; FHA loans allow higher ratios, up to 31% front-end and 43% back-end.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What costs beyond the mortgage should I budget for?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Beyond your mortgage budget for: property taxes (0.5-2.5% of home value annually), homeowners insurance (~$1,200-$2,500/year), HOA fees if applicable, PMI if down payment is under 20% ($50-$200/month), maintenance (1-2% of home value/year) and utilities.</p>
             </div>

@@ -26,7 +26,7 @@ export default function Calculator() {
   }, [amount, inflRate, years, investReturn])
 
   const pdfRows = result ? [
-    { label: "Today"s Money Worth in Future", value: result.futureEquivalent !== undefined ? String(fmt(result.futureEquivalent)) : '' },
+    { label: "Today's Money Worth in Future", value: result.futureEquivalent !== undefined ? String(fmt(result.futureEquivalent)) : "' },
     { label: "Purchasing Power Lost", value: result.purchasingLost !== undefined ? String(fmt(result.purchasingLost)) : "" },
     { label: "% of Value Eroded", value: result.lostPct !== undefined ? String(result.lostPct) : "" },
     { label: "Needed to Maintain Buying Power", value: result.neededToMaintain !== undefined ? String(fmt(result.neededToMaintain)) : "" },
@@ -104,7 +104,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Today's Money Worth in Future</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.futureEquivalent)}
                     </span>
                   </div>
@@ -112,7 +112,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Purchasing Power Lost</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.purchasingLost)}
                     </span>
                   </div>
@@ -120,7 +120,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">% of Value Eroded</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.lostPct}
                     </span>
                   </div>
@@ -128,7 +128,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Needed to Maintain Buying Power</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.neededToMaintain)}
                     </span>
                   </div>
@@ -136,7 +136,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Invested Value (vs inflation)</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {fmt(result.investedValue)}
                     </span>
                   </div>
@@ -144,7 +144,7 @@ export default function Calculator() {
                   <div className="flex justify-between items-center p-3 rounded-xl"
                     style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
                     <span className="text-slate-400 text-sm">Real Rate of Return</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
+                    <span className="font-bold" style={{color:"#f0c842'}}>
                       {result.realReturn}
                     </span>
                   </div>
@@ -190,17 +190,17 @@ export default function Calculator() {
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is inflation and how does it affect savings?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Inflation is the general rise in prices over time, reducing what each dollar can buy. At 3% inflation, $10,000 today has the purchasing power of only $5,537 in 20 years. Cash savings in a low-interest account lose real value every year. This is why investing — earning returns above inflation — is essential for long-term wealth.</p>
             </div>
 
-            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What is the historical average inflation rate?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">US inflation has averaged about 3.3% annually since 1913. The 2021-2023 inflation surge peaked at 9.1% (June 2022) before cooling. The Fed targets 2% annual inflation. High inflation periods (1970s, 2021-23) dramatically erode fixed incomes and bond returns but can benefit owners of hard assets like real estate.</p>
             </div>
 
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How do I protect my money from inflation?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Best inflation hedges: equities (stocks historically return 7% real), real estate (rents and values rise with inflation), TIPS (Treasury Inflation-Protected Securities), I-bonds (rate adjusts with CPI), commodities, and REITs. The worst places to hold money during high inflation: cash, fixed-rate bonds, and traditional savings accounts.</p>
             </div>
