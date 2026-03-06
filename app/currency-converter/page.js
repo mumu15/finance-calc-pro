@@ -24,8 +24,8 @@ const faqs = [
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [amount, setAmount] = useState(1000)
-  const [fromCurrency, setFromCurrency] = useState(USD)
-  const [toCurrency, setToCurrency] = useState(EUR)
+  const [fromCurrency, setFromCurrency] = useState('USD')
+  const [toCurrency, setToCurrency] = useState('EUR')
 
   const result = useMemo(() => {
     try {

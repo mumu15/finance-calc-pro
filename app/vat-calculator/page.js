@@ -25,7 +25,7 @@ export default function Calculator() {
   const { fmt } = useCurrency()
   const [amount, setAmount] = useState(100)
   const [vatRate, setVatRate] = useState(20)
-  const [calcType, setCalcType] = useState(add)
+  const [calcType, setCalcType] = useState('add')
 
   const result = useMemo(() => {
     try {

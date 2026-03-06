@@ -27,7 +27,7 @@ export default function Calculator() {
   const [avgInterestRate, setAvgInterestRate] = useState(18)
   const [minimumPayment, setMinimumPayment] = useState(600)
   const [extraPayment, setExtraPayment] = useState(300)
-  const [method, setMethod] = useState(avalanche)
+  const [method, setMethod] = useState('avalanche')
 
   const result = useMemo(() => {
     try {

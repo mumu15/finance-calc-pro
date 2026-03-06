@@ -24,7 +24,7 @@ const faqs = [
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [currentSalary, setCurrentSalary] = useState(65000)
-  const [raiseType, setRaiseType] = useState(pct)
+  const [raiseType, setRaiseType] = useState('pct')
   const [raisePct, setRaisePct] = useState(10)
   const [raiseFlat, setRaiseFlat] = useState(6500)
   const [taxRate, setTaxRate] = useState(28)
