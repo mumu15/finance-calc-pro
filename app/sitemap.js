@@ -1,12 +1,64 @@
 export default function sitemap() {
   const base = 'https://freefincalc.net'
 
-  const routes = [
-    // ── Core pages ──────────────────────────────────────────────
-    '',
-    'blog',
+  // ── Static pages ─────────────────────────────────────────────
+  const staticPages = [
+    { route: '',               priority: 1.0,  freq: 'daily'   },
+    { route: 'blog',           priority: 0.8,  freq: 'daily'   },
+    { route: 'about',          priority: 0.5,  freq: 'monthly' },
+    { route: 'contact',        priority: 0.5,  freq: 'monthly' },
+    { route: 'privacy-policy', priority: 0.3,  freq: 'monthly' },
+  ]
 
-    // ── Stage 2 (25) ────────────────────────────────────────────
+  // ── Blog posts (41) ──────────────────────────────────────────
+  const blogSlugs = [
+    'bond-calculator-south-africa-2026',
+    'debt-snowball-vs-avalanche',
+    'home-loan-calculator-pakistan-2026',
+    'home-loan-emi-calculator-india',
+    'how-car-loans-work',
+    'how-does-inflation-affect-savings',
+    'how-inflation-works',
+    'how-much-house-can-i-afford',
+    'how-much-to-save-for-retirement',
+    'how-personal-loans-work',
+    'how-student-loans-work',
+    'how-to-budget-50-30-20',
+    'how-to-build-emergency-fund',
+    'how-to-build-wealth',
+    'how-to-calculate-loan-payment',
+    'how-to-calculate-mortgage-payment',
+    'how-to-calculate-net-worth',
+    'how-to-create-monthly-budget',
+    'how-to-get-out-of-debt',
+    'how-to-invest-for-beginners',
+    'how-to-lower-tax-bill',
+    'how-to-max-out-roth-ira',
+    'how-to-negotiate-salary',
+    'how-to-pay-off-debt-fast',
+    'how-to-read-pay-stub',
+    'how-to-refinance-mortgage',
+    'how-to-save-money-fast',
+    'income-tax-calculator-india-2026',
+    'isa-savings-calculator-uk',
+    'loan-calculator-nigeria-2026',
+    'mortgage-calculator-australia-2026',
+    'mortgage-calculator-canada-2026',
+    'mortgage-calculator-singapore-2026',
+    'mortgage-calculator-uae-dubai-2026',
+    'mortgage-calculator-uk-2026',
+    'rent-vs-buy-home',
+    'types-of-retirement-accounts',
+    'what-is-a-good-credit-score',
+    'what-is-an-emergency-fund',
+    'what-is-compound-interest',
+    'what-is-net-worth',
+    'what-is-passive-income',
+  ]
+
+  // ── Calculators (103) ────────────────────────────────────────
+  const calculators = [
+    // Stage 2 (25)
     'mortgage-calculator',
     'amortization-calculator',
     'student-loan-calculator',
@@ -32,8 +84,7 @@ export default function sitemap() {
     'currency-converter',
     'payoff-vs-invest-calculator',
     'net-worth-calculator',
-
-    // ── Stage 3 (10) ────────────────────────────────────────────
+    // Stage 3 (10)
     'payroll-tax-calculator',
     'bond-yield-calculator',
     'car-depreciation-calculator',
@@ -44,8 +95,7 @@ export default function sitemap() {
     'roi-calculator',
     'freelance-rate-calculator',
     'business-valuation-calculator',
-
-    // ── Stage 4 (10) ────────────────────────────────────────────
+    // Stage 4 (10)
     'hourly-to-salary-calculator',
     'salary-after-tax-calculator',
     'overtime-calculator',
@@ -56,8 +106,7 @@ export default function sitemap() {
     'fuel-cost-calculator',
     'down-payment-calculator',
     'mortgage-points-calculator',
-
-    // ── Stage 5 (10) ────────────────────────────────────────────
+    // Stage 5 (10)
     'retirement-calculator',
     'social-security-calculator',
     'rmd-calculator',
@@ -68,8 +117,7 @@ export default function sitemap() {
     'credit-card-payoff-calculator',
     'savings-interest-calculator',
     'net-investment-fee-calculator',
-
-    // ── Stage 6 (10) ────────────────────────────────────────────
+    // Stage 6 (10)
     'budget-planner-calculator',
     'rent-affordability-calculator',
     'net-pay-calculator',
@@ -80,8 +128,7 @@ export default function sitemap() {
     'rental-property-calculator',
     'cap-rate-calculator',
     'house-flipping-calculator',
-
-    // ── Stage 7 (10) ────────────────────────────────────────────
+    // Stage 7 (10)
     'business-loan-calculator',
     'sba-loan-calculator',
     'accounts-receivable-calculator',
@@ -92,15 +139,13 @@ export default function sitemap() {
     'startup-cost-calculator',
     'ecommerce-profit-calculator',
     'saas-metrics-calculator',
-
-    // ── Stage 8 (5) ─────────────────────────────────────────────
+    // Stage 8 (5)
     'wedding-budget-calculator',
     'vacation-budget-calculator',
     'baby-cost-calculator',
     'pet-cost-calculator',
     'home-buying-cost-calculator',
-
-    // ── Stage 9a (12) — previously missing ──────────────────────
+    // Stage 9a (12)
     'debt-payoff-calculator',
     'tax-calculator',
     'capital-gains-tax-calculator',
@@ -113,8 +158,7 @@ export default function sitemap() {
     'home-improvement-loan-calculator',
     'solar-payback-calculator',
     'invoice-calculator',
-
-    // ── Stage 9b (11) — previously missing ──────────────────────
+    // Stage 9b (11)
     'markup-calculator',
     'discount-calculator',
     'loan-comparison-calculator',
@@ -128,10 +172,26 @@ export default function sitemap() {
     'insurance-calculator',
   ]
 
-  return routes.map(route => ({
-    url: route ? `${base}/${route}` : base,
+  const staticEntries = staticPages.map(p => ({
+    url: p.route ? `${base}/${p.route}` : base,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' : route === 'blog' ? 'weekly' : 'weekly',
-    priority: route === '' ? 1.0 : route === 'blog' ? 0.7 : 0.8,
+    changeFrequency: p.freq,
+    priority: p.priority,
   }))
+
+  const blogEntries = blogSlugs.map(slug => ({
+    url: `${base}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }))
+
+  const calcEntries = calculators.map(route => ({
+    url: `${base}/${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }))
+
+  return [...staticEntries, ...blogEntries, ...calcEntries]
 }
