@@ -1,214 +1,235 @@
 'use client'
-import { useState } from 'react'
-import AdUnit from '../components/AdUnit'
+import { useState, useMemo } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import FaqSchema from '../../components/FaqSchema'
+import TrustSection from '../../components/TrustSection'
+import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 
+export const metadata = undefined
+
 const faqs = [
-  { q: 'Is it better to rent or buy a home?', a: 'It depends on your financial situation, how long you plan to stay, and the local housing market. Buying generally makes more sense if you plan to stay for 5+ years. Renting offers more flexibility and lower upfront costs.' },
-  { q: 'What is the 5% rule for renting vs buying?', a: 'The 5% rule says multiply the home price by 5% and divide by 12. If your monthly rent is less than this number, renting is financially better. If rent is higher, buying may make more sense.' },
-  { q: 'What costs do homeowners have that renters do not?', a: 'Homeowners pay property taxes, homeowners insurance, maintenance and repairs (typically 1% of home value per year), HOA fees, and mortgage interest. These costs can add significantly to the true cost of owning.' },
-  { q: 'How long should you stay in a home before buying makes sense?', a: 'Most financial experts suggest you should plan to stay at least 5 years before buying a home. This gives you enough time for appreciation and equity building to offset the high upfront transaction costs.' },
-  { q: 'Is this rent vs buy calculator free?', a: 'Yes, completely free with no sign up required.' },
+  {
+    "q": "Is it better to rent or buy a home?",
+    "a": "It depends on timeline, finances and market. Buying is better if you plan to stay 5+ years, can afford a 10-20% down payment, and home prices are reasonable relative to rents. Renting is better for flexibility, expensive markets (NYC, SF) and when you lack a down payment or have high debt."
+  },
+  {
+    "q": "What is the price-to-rent ratio?",
+    "a": "The price-to-rent ratio compares home prices to annual rents. Divide home price by annual rent. A ratio below 15 favors buying; 15-20 is neutral; above 20 favors renting. In San Francisco the ratio exceeds 40, strongly favoring renting. In many Midwest cities it is below 15, favoring buying."
+  },
+  {
+    "q": "How long do you need to stay to make buying worth it?",
+    "a": "The break-even point for buying vs renting is typically 3-7 years depending on transaction costs, mortgage rate and market appreciation. The 5-year rule suggests staying at least 5 years to recoup transaction costs (real estate agent fees, closing costs, moving). Shorter stays usually favor renting."
+  }
 ]
 
+export default function Calculator() {
+  const { fmt } = useCurrency()
+  const [homePrice, setHomePrice] = useState(400000)
+  const [downPct, setDownPct] = useState(20)
+  const [mortgageRate, setMortgageRate] = useState(6.75)
+  const [monthlyRent, setMonthlyRent] = useState(2200)
+  const [years, setYears] = useState(7)
 
-function BreadcrumbSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Rent vs Buy Calculator","item":"https://www.freefincalc.net/rent-vs-buy-calculator"}]
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
+  const result = useMemo(() => {
+    try {
+      const dp = homePrice * downPct / 100
+      const loan = homePrice - dp
+      const r = mortgageRate / 100 / 12
+      const n = 30 * 12
+      const mortgagePayment = loan * (r * Math.pow(1+r,n)) / (Math.pow(1+r,n)-1)
+      const totalBuyCost = (mortgagePayment + homePrice * 0.015/12) * years * 12 + dp
+      const totalRentCost = monthlyRent * years * 12
+      const homeAppreciation = homePrice * (Math.pow(1.04, years) - 1)
+      const buyNetCost = totalBuyCost - homeAppreciation
+      const diff = totalRentCost - buyNetCost
+      const better = diff > 0 ? 'Buying saves ' : 'Renting saves '
+      return { mortgagePayment, totalBuyCost, totalRentCost, homeAppreciation, saving: Math.abs(diff), better }
+    } catch(e) { return null }
+  }, [homePrice, downPct, mortgageRate, monthlyRent, years])
 
-function WebAppSchemaInline() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Rent vs Buy Calculator",
-    "description": "Compare renting vs buying a home. Free rent vs buy calculator.",
-    "url": "https://www.freefincalc.net/rent-vs-buy-calculator",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "1180", "bestRating": "5", "worstRating": "1" }
-  }
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-}
-
-export default function RentVsBuyCalculator() {
-  const [form, setForm] = useState({ homePrice:350000,downPayment:70000,mortgageRate:6.5,propertyTax:1.2,maintenance:1,monthlyRent:1800,rentIncrease:3,homeAppreciation:4,years:7 })
-  const [result, setResult] = useState(null)
-
-  const update = (k,v) => setForm(f=>({...f,[k]:parseFloat(v)||0}))
-
-  const calculate = () => {
-    const loanAmount = form.homePrice - form.downPayment
-    const monthlyRate = form.mortgageRate/100/12
-    const n = 30*12
-    const monthlyMortgage = loanAmount*(monthlyRate*Math.pow(1+monthlyRate,n))/(Math.pow(1+monthlyRate,n)-1)
-    const monthlyTax = (form.homePrice*form.propertyTax/100)/12
-    const monthlyMaintenance = (form.homePrice*form.maintenance/100)/12
-    const totalMonthlyBuying = monthlyMortgage + monthlyTax + monthlyMaintenance
-    const totalBuyingCost = (totalMonthlyBuying*form.years*12) + form.downPayment
-    const futureHomeValue = form.homePrice*Math.pow(1+form.homeAppreciation/100,form.years)
-    const buyingNetCost = totalBuyingCost - (futureHomeValue - form.homePrice)
-
-    let totalRentCost = 0
-    let currentRent = form.monthlyRent
-    for(let y=0;y<form.years;y++){
-      totalRentCost += currentRent*12
-      currentRent *= (1+form.rentIncrease/100)
-    }
-
-    const difference = totalRentCost - buyingNetCost
-    const betterOption = difference > 0 ? 'buying' : 'renting'
-
-    setResult({ totalMonthlyBuying:totalMonthlyBuying.toFixed(0), buyingNetCost:buyingNetCost.toFixed(0), totalRentCost:totalRentCost.toFixed(0), difference:Math.abs(difference).toFixed(0), betterOption, futureHomeValue:futureHomeValue.toFixed(0) })
-  }
-
-  const fmt = (n) => Number(n).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0})
+  const pdfRows = result ? [
+    { label: 'Monthly Mortgage Payment', value: result.mortgagePayment !== undefined ? (fmt(result.mortgagePayment)) : '' },
+    { label: 'Total Cost of Buying', value: result.totalBuyCost !== undefined ? (fmt(result.totalBuyCost)) : '' },
+    { label: 'Total Cost of Renting', value: result.totalRentCost !== undefined ? (fmt(result.totalRentCost)) : '' },
+    { label: 'Est. Home Appreciation', value: result.homeAppreciation !== undefined ? (fmt(result.homeAppreciation)) : '' },
+  ] : []
 
   return (
     <>
-      <FaqSchema faqs={faqs} />
-      
-      
-      
-      
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
+
+        {/* Hero */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Rent vs Buy Calculator — Should You Rent or Buy in 2026?</h1>
-          <p className="text-slate-400 text-lg">Compare the true costs of renting vs buying a home in your market — free rent vs buy calculator 2026</p>
+          <div className="text-5xl mb-4">🏘️</div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Rent vs Buy Calculator</h1>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Compare the true financial cost of renting versus buying a home over time.</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-4" style={{background:'rgba(240,200,66,0.03)',border:'1px solid rgba(240,200,66,0.1)',borderRadius:'16px',padding:'24px'}}>
-            <p className="text-yellow-400 text-xs font-bold uppercase tracking-wider">Buying Costs</p>
-            {[
-              {label:'Home Price ($)',key:'homePrice'},
-              {label:'Down Payment ($)',key:'downPayment'},
-              {label:'Mortgage Rate (%)',key:'mortgageRate'},
-              {label:'Property Tax Rate (%/year)',key:'propertyTax'},
-              {label:'Maintenance Cost (%/year)',key:'maintenance'},
-            ].map(f => (
-              <div key={f.key}>
-                <label className="text-white text-sm font-medium block mb-1">{f.label}</label>
-                <input type="number" value={form[f.key]} onChange={e=>update(f.key,e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
-              </div>
-            ))}
-            <p className="text-purple-400 text-xs font-bold uppercase tracking-wider pt-2">Renting Costs</p>
-            {[
-              {label:'Monthly Rent ($)',key:'monthlyRent'},
-              {label:'Annual Rent Increase (%)',key:'rentIncrease'},
-            ].map(f => (
-              <div key={f.key}>
-                <label className="text-white text-sm font-medium block mb-1">{f.label}</label>
-                <input type="number" value={form[f.key]} onChange={e=>update(f.key,e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
-              </div>
-            ))}
-            <p className="text-emerald-400 text-xs font-bold uppercase tracking-wider pt-2">Assumptions</p>
-            {[
-              {label:'Home Appreciation Rate (%/year)',key:'homeAppreciation'},
-              {label:'Time Horizon (years)',key:'years'},
-            ].map(f => (
-              <div key={f.key}>
-                <label className="text-white text-sm font-medium block mb-1">{f.label}</label>
-                <input type="number" value={form[f.key]} onChange={e=>update(f.key,e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl text-white outline-none" style={{background:'#0f172a',border:'1px solid #1e293b'}} />
-              </div>
-            ))}
-            <button onClick={calculate} className="btn-primary w-full py-4 text-lg mt-4">Calculate</button>
-          </div>
-          <div>
-            {!result ? (
-              <div className="result-box text-center py-16"><div className="text-5xl mb-4">🏠</div><p className="text-slate-500">Fill in your details and click Calculate</p></div>
-            ) : (
-              <div className="space-y-4">
-                <div className="result-box text-center" style={{borderColor:result.betterOption==='buying'?'rgba(16,185,129,0.3)':'rgba(167,139,250,0.3)'}}>
-                  <p className="text-slate-400 text-sm mb-2">Better Option Over {form.years} Years</p>
-                  <div className="text-4xl font-bold mb-2" style={{color:result.betterOption==='buying'?'#f0c842':'#a78bfa'}}>
-                    {result.betterOption === 'buying' ? '🏠 Buying' : '🔑 Renting'}
-                  </div>
-                  <p className="text-slate-500 text-sm">saves approximately {fmt(result.difference)}</p>
+
+        {/* Calculator */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+
+          {/* Inputs */}
+          <div className="result-box">
+            <h2 className="text-white font-bold text-lg mb-5">Enter Details</h2>
+            <div className="space-y-5">
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Home Purchase Price</label>
+                  <span className="text-white font-bold text-sm">{fmt(homePrice)}</span>
                 </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    {label:'Monthly Cost (Buying)',value:fmt(result.totalMonthlyBuying)},
-                    {label:'Monthly Cost (Renting)',value:fmt(form.monthlyRent)},
-                    {label:'Total Cost of Buying',value:fmt(result.buyingNetCost)},
-                    {label:'Total Cost of Renting',value:fmt(result.totalRentCost)},
-                    {label:'Future Home Value',value:fmt(result.futureHomeValue)},
-                    {label:'Down Payment',value:fmt(form.downPayment)},
-                  ].map((s,i) => (
-                    <div key={i} className="stat-card">
-                      <div className="text-lg font-bold text-white">{s.value}</div>
-                      <div className="text-slate-500 text-xs mt-1">{s.label}</div>
-                    </div>
+                <input type="range" min={50000} max={2000000} step={5000}
+                  value={homePrice} onChange={e => setHomePrice(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <label className="text-slate-400 text-sm block mb-2">Down Payment %</label>
+                <div className="flex flex-wrap gap-2">
+                  {[{"v":5,"l":"5%"},{"v":10,"l":"10%"},{"v":20,"l":"20%"},{"v":25,"l":"25%"}].map(o => (
+                    <button key={o.v} onClick={() => setDownPct(o.v)}
+                      className="px-3 py-1.5 rounded-xl text-sm font-bold transition-all"
+                      style={{background:downPct===o.v?'rgba(240,200,66,0.2)':'rgba(255,255,255,0.05)',border:downPct===o.v?'1px solid rgba(240,200,66,0.5)':'1px solid rgba(255,255,255,0.08)',color:downPct===o.v?'#f0c842':'#64748b'}}>
+                      {o.l}
+                    </button>
                   ))}
                 </div>
               </div>
-            )}
-          </div>
-        </div>
-        <div className="space-y-6 mt-12">
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Free Rent vs Buy Calculator</h2>
-            <p className="text-slate-400 text-sm leading-relaxed">Our free rent vs buy calculator helps you compare the total financial cost of renting versus buying a home over any time period. It factors in mortgage payments, property taxes, maintenance, home appreciation and rent increases to give you a true comparison. Use this tool to make a more informed decision about one of the most important financial choices you will ever make.</p>
-          </div>
-          <div className="result-box">
-            <h2 className="text-xl font-bold text-white mb-4">Frequently Asked Questions</h2>
-            <div className="space-y-4 text-sm">
-              {faqs.map((faq,i) => (
-                <div key={i} className={i<faqs.length-1?"border-b pb-4":"pb-4"} style={{borderColor:"rgba(240,200,66,0.1)"}}>
-                  <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
-                  <p className="text-slate-400">{faq.a}</p>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Mortgage Rate</label>
+                  <span className="text-white font-bold text-sm">{mortgageRate + '%'}</span>
                 </div>
-              ))}
+                <input type="range" min={2} max={12} step={0.125}
+                  value={mortgageRate} onChange={e => setMortgageRate(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <div className="flex justify-between mb-1.5">
+                  <label className="text-slate-400 text-sm">Monthly Rent (alternative)</label>
+                  <span className="text-white font-bold text-sm">{fmt(monthlyRent)}</span>
+                </div>
+                <input type="range" min={500} max={10000} step={50}
+                  value={monthlyRent} onChange={e => setMonthlyRent(Number(e.target.value))}
+                  className="w-full accent-yellow-400" />
+              </div>
+
+              <div>
+                <label className="text-slate-400 text-sm block mb-2">Comparison Period</label>
+                <div className="flex flex-wrap gap-2">
+                  {[{"v":3,"l":"3 yrs"},{"v":5,"l":"5 yrs"},{"v":7,"l":"7 yrs"},{"v":10,"l":"10 yrs"}].map(o => (
+                    <button key={o.v} onClick={() => setYears(o.v)}
+                      className="px-3 py-1.5 rounded-xl text-sm font-bold transition-all"
+                      style={{background:years===o.v?'rgba(240,200,66,0.2)':'rgba(255,255,255,0.05)',border:years===o.v?'1px solid rgba(240,200,66,0.5)':'1px solid rgba(255,255,255,0.08)',color:years===o.v?'#f0c842':'#64748b'}}>
+                      {o.l}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Results */}
+          <div className="space-y-4">
+            <div className="result-box">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-white font-bold text-lg">Results</h2>
+                {result && <PdfDownload title="Rent vs Buy Calculator" rows={pdfRows} />}
+              </div>
+              {result ? (
+                <div className="space-y-3">
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Monthly Mortgage Payment</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.mortgagePayment)}</span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Total Cost of Buying</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalBuyCost)}</span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Total Cost of Renting</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.totalRentCost)}</span>
+                  </div>
+
+                  <div className="flex justify-between items-center p-3 rounded-xl"
+                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                    <span className="text-slate-400 text-sm">Est. Home Appreciation</span>
+                    <span className="font-bold" style={{color:'#f0c842'}}>{fmt(result.homeAppreciation)}</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-8 text-slate-500 text-sm">Enter values above to see results</div>
+              )}
+            </div>
+            <div className="p-3 rounded-xl text-xs text-slate-500 leading-relaxed"
+              style={{background:'rgba(255,255,255,0.02)',border:'1px solid rgba(255,255,255,0.05)'}}>
+              ⚠️ Results are estimates for educational purposes only. Not financial advice.
+              Consult a qualified professional before making financial decisions.
             </div>
           </div>
         </div>
 
-          {/* Related Calculators */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-white mb-6">You Might Also Like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a href="/mortgage-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">🏠</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Mortgage Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate your monthly mortgage payment</p>
-              </a>
-              <a href="/budget-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">📋</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Budget Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Create a monthly budget plan</p>
-              </a>
-              <a href="/net-worth-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">💎</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Net Worth Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate your total net worth</p>
-              </a>
-              <a href="/loan-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300" style={{'--hover':'1'}}>
-                <div className="text-3xl mb-3">💳</div>
-                <h3 className="text-white font-bold text-sm mb-1 group-hover:text-yellow-400 transition-colors">Loan Calculator</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">Calculate monthly payments for any loan</p>
-              </a>
+        {/* Related */}
+        <div className="mb-12">
+          <h2 className="text-xl font-bold text-white mb-4">Related Calculators</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+
+            <a href="/mortgage-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">🏠</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Mortgage Calculator</h3>
+            </a>
+
+            <a href="/rent-affordability-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">🏡</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Rent Affordability</h3>
+            </a>
+
+            <a href="/home-affordability-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">🏘️</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Home Affordability</h3>
+            </a>
+
+            <a href="/down-payment-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+              <div className="text-2xl mb-2">🏙️</div>
+              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Down Payment</h3>
+            </a>
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <div className="result-box mb-12">
+          <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">Is it better to rent or buy a home?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">It depends on timeline, finances and market. Buying is better if you plan to stay 5+ years, can afford a 10-20% down payment, and home prices are reasonable relative to rents. Renting is better for flexibility, expensive markets (NYC, SF) and when you lack a down payment or have high debt.</p>
+            </div>
+
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">What is the price-to-rent ratio?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">The price-to-rent ratio compares home prices to annual rents. Divide home price by annual rent. A ratio below 15 favors buying; 15-20 is neutral; above 20 favors renting. In San Francisco the ratio exceeds 40, strongly favoring renting. In many Midwest cities it is below 15, favoring buying.</p>
+            </div>
+
+            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">How long do you need to stay to make buying worth it?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">The break-even point for buying vs renting is typically 3-7 years depending on transaction costs, mortgage rate and market appreciation. The 5-year rule suggests staying at least 5 years to recoup transaction costs (real estate agent fees, closing costs, moving). Shorter stays usually favor renting.</p>
             </div>
           </div>
+        </div>
+
       </main>
-
-          <AdUnit slot="7405024590" />
-
-        {/* Internal Link to Blog */}
-          <div className="mt-8 p-4 rounded-xl border" style={{borderColor:'rgba(240,200,66,0.2)',background:'rgba(240,200,66,0.05)'}}>
-            <p className="text-slate-400 text-sm mb-2">📖 Related Guide</p>
-            <a href="/blog/rent-vs-buy-home" className="font-semibold hover:underline" style={{color:'#f0c842'}}>Renting vs Buying a Home: Which is Better in 2026?</a>
-          </div>
+      <TrustSection />
       <Footer />
     </>
   )
