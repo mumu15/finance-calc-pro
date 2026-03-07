@@ -65,23 +65,23 @@ export default function MortgageCalculator() {
     return { loanAmount, pi, pmi, monthlyTax, monthlyIns, monthlyHoa, total, totalInterest, totalCost, schedule }
   }, [homePrice, downPayment, interestRate, loanTerm, propertyTax, insurance, hoa])
 
-
-  const pdfRows = [
-    { label: "Home Price",          value: String(fmt(homePrice))          },
-    { label: "Down Payment",        value: String(fmt(downPayment)) + " (" + downPct + "%)" },
-    { label: "Loan Amount",         value: String(fmt(calc.loanAmount))     },
-    { label: "Interest Rate",       value: String(interestRate) + "%"       },
-    { label: "Loan Term",           value: String(loanTerm) + " years"      },
-    { label: "Monthly Payment",     value: String(fmt(calc.total))          },
-    { label: "Principal & Interest",value: String(fmt(calc.pi))             },
-    { label: "Property Tax",        value: String(fmt(calc.monthlyTax)) + "/mo" },
-    { label: "Home Insurance",      value: String(fmt(calc.monthlyIns)) + "/mo" },
-    { label: "Total Interest",      value: String(fmt(calc.totalInterest))  },
-    { label: "Total Cost",          value: String(fmt(calc.totalCost))      },
-  ]
-
   const downPct = Math.round((downPayment / homePrice) * 100)
   const displayedSchedule = showFull ? calc.schedule : calc.schedule.slice(0, 24)
+
+  const _downPct = Math.round((downPayment / homePrice) * 100)
+  const pdfRows = [
+    { label: "Home Price",           value: String(fmt(homePrice))                          },
+    { label: "Down Payment",         value: String(fmt(downPayment)) + " (" + _downPct + "%)" },
+    { label: "Loan Amount",          value: String(fmt(calc.loanAmount))                    },
+    { label: "Interest Rate",        value: String(interestRate) + "%"                      },
+    { label: "Loan Term",            value: String(loanTerm) + " years"                     },
+    { label: "Monthly Payment",      value: String(fmt(calc.total))                         },
+    { label: "Principal & Interest", value: String(fmt(calc.pi)) + "/mo"                   },
+    { label: "Property Tax",         value: String(fmt(calc.monthlyTax)) + "/mo"            },
+    { label: "Home Insurance",       value: String(fmt(calc.monthlyIns)) + "/mo"            },
+    { label: "Total Interest",       value: String(fmt(calc.totalInterest))                 },
+    { label: "Total Cost",           value: String(fmt(calc.totalCost))                     },
+  ]
 
   return (
     <>
