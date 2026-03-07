@@ -1,153 +1,473 @@
-import Link from 'next/link'
-import Script from 'next/script'
+'use client'
+import { useState, useMemo } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import TrustSection from '../components/TrustSection'
 
-export const metadata = {
-  title: 'FreeFinCalc.net — 100 Free Financial Calculators in 40+ Currencies',
-  description: '100 free professional financial calculators: loans, debt, investing, salary, tax and more. 40+ currencies. Instant results. PDF download. No sign up.',
-  keywords: ['free financial calculator','mortgage calculator','loan calculator','compound interest calculator','debt payoff calculator','salary calculator','tax calculator'],
-  openGraph: { title:'FreeFinCalc.net — 100 Free Financial Calculators', description:'100 free calculators in 40+ currencies.', url:'https://www.freefincalc.net', type:'website' },
-  alternates: { canonical:'https://www.freefincalc.net' },
-}
+// ── All 124 calculators organized into categories ─────────────────────────────
+const CATEGORIES = [
+  {
+    id: 'mortgage',
+    icon: '🏠',
+    label: 'Mortgage & Home',
+    color: '#3b82f6',
+    tools: [
+      { name: 'Mortgage Calculator',            href: '/mortgage-calculator',            desc: 'Monthly payments and amortization' },
+      { name: 'Amortization Calculator',        href: '/amortization-calculator',        desc: 'Full payment schedule breakdown' },
+      { name: 'Refinance Calculator',           href: '/refinance-calculator',           desc: 'Is refinancing worth it?' },
+      { name: 'Home Affordability Calculator',  href: '/home-affordability-calculator',  desc: 'How much house can you afford?' },
+      { name: 'HELOC Calculator',               href: '/heloc-calculator',               desc: 'Home equity line of credit' },
+      { name: 'Property Tax Calculator',        href: '/property-tax-calculator',        desc: 'Estimate annual property taxes' },
+      { name: 'Rent vs Buy Calculator',         href: '/rent-vs-buy-calculator',         desc: 'Compare renting and buying' },
+      { name: 'Down Payment Calculator',        href: '/down-payment-calculator',        desc: 'How long to save for a home' },
+      { name: 'Mortgage Points Calculator',     href: '/mortgage-points-calculator',     desc: 'Are discount points worth buying?' },
+      { name: 'Biweekly Mortgage Calculator',   href: '/biweekly-mortgage-calculator',   desc: 'Pay off mortgage years early' },
+      { name: 'Extra Payment Calculator',       href: '/extra-payment-calculator',       desc: 'Interest saved with extra payments' },
+      { name: 'Home Equity Calculator',         href: '/home-equity-calculator',         desc: 'Calculate your available equity' },
+      { name: 'Home Buying Cost Calculator',    href: '/home-buying-cost-calculator',    desc: 'All costs of buying a home' },
+      { name: 'Home Improvement Loan',          href: '/home-improvement-loan-calculator',desc: 'Finance your renovation' },
+      { name: 'Solar Payback Calculator',       href: '/solar-payback-calculator',       desc: 'Solar panel ROI and savings' },
+    ],
+  },
+  {
+    id: 'debt',
+    icon: '💳',
+    label: 'Debt & Credit',
+    color: '#ef4444',
+    tools: [
+      { name: 'Credit Card Payoff Calculator', href: '/credit-card-payoff-calculator',           desc: 'Pay off cards faster' },
+      { name: 'Minimum Payment Calculator',    href: '/credit-card-minimum-payment-calculator',   desc: 'True cost of minimums' },
+      { name: 'Credit Utilization Calculator', href: '/credit-utilization-calculator',            desc: 'Score impact of balances' },
+      { name: 'Debt Payoff Calculator',        href: '/debt-payoff-calculator',                   desc: 'Custom payoff plan' },
+      { name: 'Debt Payoff Time Calculator',   href: '/debt-payoff-time-calculator',              desc: 'When will you be debt-free?' },
+      { name: 'Debt Avalanche Calculator',     href: '/debt-avalanche-calculator',                desc: 'Highest interest first' },
+      { name: 'Debt Snowball Calculator',      href: '/debt-snowball-calculator',                 desc: 'Smallest balance first' },
+      { name: 'Debt Consolidation Calculator', href: '/debt-consolidation-calculator',            desc: 'Merge debts into one loan' },
+      { name: 'Balance Transfer Calculator',   href: '/balance-transfer-calculator',              desc: '0% transfer savings' },
+      { name: 'Total Debt Calculator',         href: '/total-debt-calculator',                    desc: 'Add up all your debts' },
+      { name: 'Debt-to-Income Calculator',     href: '/debt-to-income-calculator',                desc: 'DTI ratio for mortgage' },
+      { name: 'Pay Off Debt vs Invest',        href: '/payoff-vs-invest-calculator',              desc: 'Which is smarter?' },
+    ],
+  },
+  {
+    id: 'loans',
+    icon: '🏦',
+    label: 'Loans',
+    color: '#8b5cf6',
+    tools: [
+      { name: 'Personal Loan Calculator',    href: '/personal-loan-calculator',    desc: 'Monthly payments and total cost' },
+      { name: 'Student Loan Calculator',     href: '/student-loan-calculator',     desc: 'Repayment plans compared' },
+      { name: 'Loan Comparison Calculator',  href: '/loan-comparison-calculator',  desc: 'Compare two loan offers' },
+      { name: 'Loan Interest Calculator',    href: '/loan-interest-calculator',    desc: 'Total interest on any loan' },
+      { name: 'Loan Payment Calculator',     href: '/loan-payment-calculator',     desc: 'Payment for any loan' },
+      { name: 'Business Loan Calculator',    href: '/business-loan-calculator',    desc: 'Small business financing' },
+      { name: 'SBA Loan Calculator',         href: '/sba-loan-calculator',         desc: 'SBA 7(a) and 504 loans' },
+      { name: 'Equipment Loan Calculator',   href: '/equipment-loan-calculator',   desc: 'Finance business equipment' },
+      { name: 'APR Calculator',              href: '/apr-calculator',              desc: 'True annual percentage rate' },
+      { name: 'Simple Interest Calculator',  href: '/simple-interest-calculator',  desc: 'Basic interest calculation' },
+      { name: 'Interest Rate Calculator',    href: '/interest-rate-calculator',    desc: 'Reverse-calculate your rate' },
+    ],
+  },
+  {
+    id: 'auto',
+    icon: '🚗',
+    label: 'Auto & Vehicles',
+    color: '#f59e0b',
+    tools: [
+      { name: 'Car Loan Calculator',          href: '/car-loan-calculator',          desc: 'Auto loan payments' },
+      { name: 'Car Affordability Calculator', href: '/car-affordability-calculator', desc: '20/4/10 rule for cars' },
+      { name: 'Car Depreciation Calculator',  href: '/car-depreciation-calculator',  desc: 'Future vehicle value' },
+      { name: 'Lease vs Buy Calculator',      href: '/lease-vs-buy-calculator',      desc: 'Which is better for you?' },
+      { name: 'Fuel Cost Calculator',         href: '/fuel-cost-calculator',         desc: 'Annual driving costs' },
+      { name: 'Boat Loan Calculator',         href: '/boat-loan-calculator',         desc: 'Marine financing' },
+      { name: 'RV Loan Calculator',           href: '/rv-loan-calculator',           desc: 'Motorhome financing' },
+      { name: 'Truck Loan Calculator',        href: '/truck-loan-calculator',        desc: 'Pickup and commercial trucks' },
+    ],
+  },
+  {
+    id: 'retirement',
+    icon: '🌅',
+    label: 'Retirement',
+    color: '#06b6d4',
+    tools: [
+      { name: 'Retirement Calculator',         href: '/retirement-calculator',         desc: 'Are you on track?' },
+      { name: '401k Calculator',               href: '/401k-calculator',               desc: 'Employer match growth' },
+      { name: 'Roth IRA Calculator',           href: '/roth-ira-calculator',           desc: 'Tax-free growth projection' },
+      { name: 'Social Security Calculator',    href: '/social-security-calculator',    desc: 'Benefit at any age' },
+      { name: 'RMD Calculator',                href: '/rmd-calculator',                desc: 'Required minimum distributions' },
+      { name: 'Pension Calculator',            href: '/pension-calculator',            desc: 'Defined benefit payout' },
+      { name: 'Annuity Calculator',            href: '/annuity-calculator',            desc: 'Fixed annuity payments' },
+      { name: 'FIRE Calculator',               href: '/fire-calculator',               desc: 'Financial independence number' },
+      { name: 'FIRE Retirement Calculator',    href: '/fire-retirement-calculator',    desc: 'Exact early retirement age' },
+      { name: 'Retirement Savings Calculator', href: '/retirement-savings-calculator', desc: 'Savings gap analysis' },
+    ],
+  },
+  {
+    id: 'investing',
+    icon: '📈',
+    label: 'Investing',
+    color: '#10b981',
+    tools: [
+      { name: 'Investment Return Calculator',     href: '/investment-return-calculator',     desc: 'Portfolio growth projections' },
+      { name: 'Portfolio Growth Calculator',      href: '/portfolio-growth-calculator',      desc: 'With contributions over time' },
+      { name: 'Portfolio Rebalancing Calculator', href: '/portfolio-rebalancing-calculator', desc: 'Buy and sell amounts needed' },
+      { name: 'Dollar Cost Averaging Calculator', href: '/dollar-cost-averaging-calculator', desc: 'DCA vs lump sum' },
+      { name: 'Passive Income Calculator',        href: '/passive-income-calculator',        desc: 'Portfolio needed for income' },
+      { name: 'Dividend Calculator',              href: '/dividend-calculator',              desc: 'Dividend income planning' },
+      { name: 'Stock Profit Calculator',          href: '/stock-profit-calculator',          desc: 'Trade profit and loss' },
+      { name: 'Bond Yield Calculator',            href: '/bond-yield-calculator',            desc: 'Yield to maturity' },
+      { name: 'Net Investment Fee Calculator',    href: '/net-investment-fee-calculator',    desc: 'True cost of fund fees' },
+    ],
+  },
+  {
+    id: 'savings',
+    icon: '💰',
+    label: 'Savings',
+    color: '#f0c842',
+    tools: [
+      { name: 'Savings Interest Calculator', href: '/savings-interest-calculator', desc: 'Account growth over time' },
+      { name: 'Savings Goal Calculator',     href: '/savings-goal-calculator',     desc: 'Monthly amount to reach goal' },
+      { name: 'Savings Growth Calculator',   href: '/savings-growth-calculator',   desc: 'Compound growth projection' },
+      { name: 'CD Calculator',               href: '/cd-calculator',               desc: 'Certificate of deposit returns' },
+      { name: 'Emergency Fund Calculator',   href: '/emergency-fund-calculator',   desc: 'How much buffer you need' },
+      { name: 'College Savings Calculator',  href: '/college-savings-calculator',  desc: '529 plan contributions needed' },
+    ],
+  },
+  {
+    id: 'tax',
+    icon: '🧾',
+    label: 'Tax',
+    color: '#ec4899',
+    tools: [
+      { name: 'Income Tax Calculator',           href: '/tax-calculator',                   desc: '2026 federal brackets' },
+      { name: 'Capital Gains Tax Calculator',    href: '/capital-gains-tax-calculator',     desc: 'Short and long-term rates' },
+      { name: 'Self-Employment Tax Calculator',  href: '/self-employment-tax-calculator',   desc: 'Freelancer SE tax' },
+      { name: 'Payroll Tax Calculator',          href: '/payroll-tax-calculator',           desc: 'Employer and employee taxes' },
+      { name: 'Tax Refund Calculator',           href: '/tax-refund-calculator',            desc: 'Estimate your refund' },
+      { name: 'Child Tax Credit Calculator',     href: '/child-tax-credit-calculator',      desc: 'Credit per child 2026' },
+      { name: 'Estate Tax Calculator',           href: '/estate-tax-calculator',            desc: 'Inheritance tax planning' },
+      { name: 'Gift Tax Calculator',             href: '/gift-tax-calculator',              desc: 'Annual exclusion limits' },
+      { name: 'Sales Tax Calculator',            href: '/sales-tax-calculator',             desc: 'Any state or rate' },
+      { name: 'VAT Calculator',                  href: '/vat-calculator',                   desc: 'UK, EU and global VAT' },
+    ],
+  },
+  {
+    id: 'salary',
+    icon: '💵',
+    label: 'Income & Salary',
+    color: '#84cc16',
+    tools: [
+      { name: 'Salary After Tax Calculator',  href: '/salary-after-tax-calculator',  desc: 'Exact take-home pay' },
+      { name: 'Paycheck Calculator',          href: '/paycheck-calculator',          desc: 'Per-paycheck breakdown' },
+      { name: 'Hourly to Salary Calculator',  href: '/hourly-to-salary-calculator',  desc: 'Annual income from hourly rate' },
+      { name: 'Salary to Hourly Calculator',  href: '/salary-to-hourly-calculator',  desc: 'Hourly rate from salary' },
+      { name: 'Overtime Calculator',          href: '/overtime-calculator',          desc: 'Time and a half pay' },
+      { name: 'Overtime Pay Calculator',      href: '/overtime-pay-calculator',      desc: 'Total earnings with overtime' },
+      { name: 'Raise Calculator',             href: '/raise-calculator',             desc: 'Dollar value of a raise' },
+      { name: 'Net Pay Calculator',           href: '/net-pay-calculator',           desc: 'Take-home after deductions' },
+      { name: 'Commission Calculator',        href: '/commission-calculator',        desc: 'Sales commission earnings' },
+      { name: 'Freelance Rate Calculator',    href: '/freelance-rate-calculator',    desc: 'Minimum hourly rate to charge' },
+      { name: 'Contractor Pay Calculator',    href: '/contractor-pay-calculator',    desc: 'Take-home after SE tax' },
+    ],
+  },
+  {
+    id: 'business',
+    icon: '🏢',
+    label: 'Business',
+    color: '#6366f1',
+    tools: [
+      { name: 'Profit Margin Calculator',         href: '/profit-margin-calculator',         desc: 'Gross and net margins' },
+      { name: 'Break-Even Calculator',            href: '/break-even-calculator',            desc: 'Units and revenue to break even' },
+      { name: 'ROI Calculator',                   href: '/roi-calculator',                   desc: 'Return on any investment' },
+      { name: 'Business Valuation Calculator',    href: '/business-valuation-calculator',    desc: 'What is your business worth?' },
+      { name: 'Cash Flow Calculator',             href: '/cash-flow-calculator',             desc: 'Operating and free cash flow' },
+      { name: 'Working Capital Calculator',       href: '/working-capital-calculator',       desc: 'Liquidity and current ratio' },
+      { name: 'Accounts Receivable Calculator',   href: '/accounts-receivable-calculator',   desc: 'DSO and AR turnover' },
+      { name: 'DSCR Calculator',                  href: '/debt-service-coverage-calculator', desc: 'Loan coverage ratio' },
+      { name: 'Employee Cost Calculator',         href: '/employee-cost-calculator',         desc: 'True cost of hiring' },
+      { name: 'Startup Cost Calculator',          href: '/startup-cost-calculator',          desc: 'New business budget' },
+      { name: 'Ecommerce Profit Calculator',      href: '/ecommerce-profit-calculator',      desc: 'Online store margins' },
+      { name: 'SaaS Metrics Calculator',          href: '/saas-metrics-calculator',          desc: 'MRR, ARR, LTV, CAC' },
+      { name: 'Markup Calculator',                href: '/markup-calculator',                desc: 'Price from cost and margin' },
+      { name: 'Invoice Calculator',               href: '/invoice-calculator',               desc: 'Invoice totals with tax' },
+    ],
+  },
+  {
+    id: 'realestate',
+    icon: '🏘️',
+    label: 'Real Estate',
+    color: '#14b8a6',
+    tools: [
+      { name: 'Rental Property Calculator', href: '/rental-property-calculator', desc: 'Cash flow and cap rate' },
+      { name: 'Cap Rate Calculator',        href: '/cap-rate-calculator',        desc: 'Investment property value' },
+      { name: 'House Flipping Calculator',  href: '/house-flipping-calculator',  desc: '70% rule and profit' },
+      { name: 'Rent Affordability Calculator',href: '/rent-affordability-calculator',desc: 'Max rent on your salary' },
+    ],
+  },
+  {
+    id: 'budget',
+    icon: '📋',
+    label: 'Budget & Life',
+    color: '#f97316',
+    tools: [
+      { name: 'Budget Planner Calculator', href: '/budget-planner-calculator', desc: '50/30/20 rule budgeting' },
+      { name: 'Net Worth Calculator',      href: '/net-worth-calculator',      desc: 'Assets minus liabilities' },
+      { name: 'Cost of Living Calculator', href: '/cost-of-living-calculator', desc: 'Compare cities' },
+      { name: 'Moving Cost Calculator',    href: '/moving-cost-calculator',    desc: 'Total relocation budget' },
+      { name: 'Wedding Budget Calculator', href: '/wedding-budget-calculator', desc: 'Plan your wedding costs' },
+      { name: 'Vacation Budget Calculator',href: '/vacation-budget-calculator',desc: 'Total trip cost' },
+      { name: 'Baby Cost Calculator',      href: '/baby-cost-calculator',      desc: 'First year expenses' },
+      { name: 'Pet Cost Calculator',       href: '/pet-cost-calculator',       desc: 'Annual pet ownership cost' },
+      { name: 'Insurance Calculator',      href: '/insurance-calculator',      desc: 'Coverage you need' },
+      { name: 'Life Insurance Calculator', href: '/life-insurance-calculator', desc: 'DIME method coverage' },
+    ],
+  },
+  {
+    id: 'math',
+    icon: '🔢',
+    label: 'Math & Conversions',
+    color: '#a78bfa',
+    tools: [
+      { name: 'Currency Converter',         href: '/currency-converter',         desc: '40+ currencies live' },
+      { name: 'Inflation Calculator',        href: '/inflation-impact-calculator', desc: 'Purchasing power over time' },
+      { name: 'Discount Calculator',         href: '/discount-calculator',         desc: 'Sale price and savings' },
+      { name: 'Tip Calculator',              href: '/tip-calculator',              desc: 'Split bills and tips' },
+    ],
+  },
+]
 
-const categories = [{"id":"loan","label":"Loan Calculators","svgPath":"M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10","color":"#f0c842","bg":"rgba(240,200,66,0.08)","border":"rgba(240,200,66,0.18)","desc":"Payments, interest and true costs for any loan.","tools":[{"title":"Mortgage Calculator","href":"/mortgage-calculator","badge":"Popular"},{"title":"Loan Payment Calculator","href":"/loan-payment-calculator"},{"title":"Personal Loan Calculator","href":"/personal-loan-calculator"},{"title":"Car Loan Calculator","href":"/car-loan-calculator"},{"title":"Business Loan Calculator","href":"/business-loan-calculator"},{"title":"Student Loan Calculator","href":"/student-loan-calculator"},{"title":"Truck Loan Calculator","href":"/truck-loan-calculator"},{"title":"Boat Loan Calculator","href":"/boat-loan-calculator"},{"title":"RV Loan Calculator","href":"/rv-loan-calculator"},{"title":"Equipment Loan Calculator","href":"/equipment-loan-calculator"}]},{"id":"debt","label":"Debt Calculators","svgPath":"M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z","color":"#f97316","bg":"rgba(249,115,22,0.08)","border":"rgba(249,115,22,0.18)","desc":"Payoff strategies, utilization and consolidation tools.","tools":[{"title":"Credit Card Payoff","href":"/credit-card-payoff-calculator","badge":"Popular"},{"title":"Debt Snowball Calculator","href":"/debt-snowball-calculator"},{"title":"Debt Avalanche Calculator","href":"/debt-avalanche-calculator"},{"title":"Debt Consolidation","href":"/debt-consolidation-calculator"},{"title":"Loan Interest Calculator","href":"/loan-interest-calculator"},{"title":"Debt Payoff Time","href":"/debt-payoff-time-calculator"},{"title":"Credit Utilization","href":"/credit-utilization-calculator"},{"title":"Balance Transfer","href":"/balance-transfer-calculator"},{"title":"Min Payment Calculator","href":"/credit-card-minimum-payment-calculator"},{"title":"Total Debt Calculator","href":"/total-debt-calculator"}]},{"id":"invest","label":"Investment Calculators","svgPath":"M13 7h8m0 0v8m0-8l-8 8-4-4-6 6","color":"#34d399","bg":"rgba(52,211,153,0.08)","border":"rgba(52,211,153,0.18)","desc":"Compound interest, FIRE and portfolio growth tools.","tools":[{"title":"Compound Interest","href":"/compound-interest","badge":"Popular"},{"title":"Investment Return","href":"/investment-return-calculator"},{"title":"Stock Profit Calculator","href":"/stock-profit-calculator"},{"title":"Dividend Calculator","href":"/dividend-calculator"},{"title":"Savings Growth Calculator","href":"/savings-growth-calculator"},{"title":"Retirement Savings","href":"/retirement-savings-calculator"},{"title":"FIRE Calculator","href":"/fire-retirement-calculator"},{"title":"Portfolio Growth","href":"/portfolio-growth-calculator"},{"title":"Dollar Cost Averaging","href":"/dollar-cost-averaging-calculator"},{"title":"Passive Income Calculator","href":"/passive-income-calculator"}]},{"id":"salary","label":"Salary Calculators","svgPath":"M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z","color":"#60a5fa","bg":"rgba(96,165,250,0.08)","border":"rgba(96,165,250,0.18)","desc":"Convert pay rates, take-home and compensation tools.","tools":[{"title":"Hourly to Salary","href":"/hourly-to-salary-calculator","badge":"Popular"},{"title":"Salary to Hourly","href":"/salary-to-hourly-calculator"},{"title":"Salary After Tax","href":"/salary-after-tax-calculator"},{"title":"Overtime Pay Calculator","href":"/overtime-pay-calculator"},{"title":"Freelance Rate Calculator","href":"/freelance-rate-calculator"},{"title":"Contractor Pay Calculator","href":"/contractor-pay-calculator"},{"title":"Commission Calculator","href":"/commission-calculator"},{"title":"Pay Raise Calculator","href":"/pay-raise-calculator"},{"title":"Take Home Pay Calculator","href":"/take-home-pay-calculator"},{"title":"Net Salary Calculator","href":"/net-salary-calculator"}]},{"id":"living","label":"Cost of Living","svgPath":"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6","color":"#a78bfa","bg":"rgba(167,139,250,0.08)","border":"rgba(167,139,250,0.18)","desc":"Rent, mortgage, utilities and monthly living tools.","tools":[{"title":"Cost of Living Calculator","href":"/cost-of-living-calculator","badge":"Popular"},{"title":"Rent Affordability","href":"/rent-affordability-calculator"},{"title":"Mortgage Affordability","href":"/mortgage-affordability-calculator"},{"title":"Moving Cost Calculator","href":"/moving-cost-calculator"},{"title":"Utility Cost Calculator","href":"/utility-cost-calculator"},{"title":"Grocery Budget Calculator","href":"/grocery-budget-calculator"},{"title":"Household Budget Calculator","href":"/household-budget-calculator"},{"title":"Apartment Affordability","href":"/apartment-affordability-calculator"},{"title":"Property Tax Calculator","href":"/property-tax-calculator"},{"title":"Rent vs Buy Calculator","href":"/rent-vs-buy-calculator"}]},{"id":"vehicle","label":"Vehicle Calculators","svgPath":"M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0zM13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h8l2-2zM13 6l4 4 2 2v4h-2","color":"#fb7185","bg":"rgba(251,113,133,0.08)","border":"rgba(251,113,133,0.18)","desc":"Car payments, fuel costs and EV charging tools.","tools":[{"title":"Car Payment Calculator","href":"/car-payment-calculator","badge":"Popular"},{"title":"Auto Loan Calculator","href":"/auto-loan-calculator"},{"title":"Fuel Cost Calculator","href":"/fuel-cost-calculator"},{"title":"Gas Mileage Calculator","href":"/gas-mileage-calculator"},{"title":"Vehicle Depreciation","href":"/vehicle-depreciation-calculator"},{"title":"Lease vs Buy Calculator","href":"/lease-vs-buy-calculator"},{"title":"Car Affordability Calculator","href":"/car-affordability-calculator"},{"title":"Road Trip Cost Calculator","href":"/road-trip-cost-calculator"},{"title":"Truck Fuel Cost Calculator","href":"/truck-fuel-cost-calculator"},{"title":"EV Charging Cost Calculator","href":"/ev-charging-cost-calculator"}]},{"id":"business","label":"Business Calculators","svgPath":"M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z","color":"#fbbf24","bg":"rgba(251,191,36,0.08)","border":"rgba(251,191,36,0.18)","desc":"ROI, break-even, profit margins and valuation tools.","tools":[{"title":"Profit Margin Calculator","href":"/profit-margin-calculator","badge":"Popular"},{"title":"Break-Even Calculator","href":"/break-even-calculator"},{"title":"ROI Calculator","href":"/roi-calculator"},{"title":"Startup Cost Calculator","href":"/startup-cost-calculator"},{"title":"Business Loan Calculator","href":"/business-loan-calculator"},{"title":"Revenue Growth Calculator","href":"/revenue-growth-calculator"},{"title":"Pricing Calculator","href":"/pricing-calculator"},{"title":"Inventory Turnover","href":"/inventory-turnover-calculator"},{"title":"Sales Commission Calc","href":"/sales-commission-calculator"},{"title":"Business Valuation","href":"/business-valuation-calculator"}]},{"id":"tax","label":"Tax Calculators","svgPath":"M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z","color":"#4ade80","bg":"rgba(74,222,128,0.08)","border":"rgba(74,222,128,0.18)","desc":"Income, self-employment, VAT and capital gains tools.","tools":[{"title":"Income Tax Calculator","href":"/income-tax-calculator","badge":"Popular"},{"title":"Self-Employment Tax","href":"/self-employment-tax-calculator"},{"title":"Capital Gains Tax","href":"/capital-gains-tax-calculator"},{"title":"Sales Tax Calculator","href":"/sales-tax-calculator"},{"title":"VAT Calculator","href":"/vat-calculator"},{"title":"Payroll Tax Calculator","href":"/payroll-tax-calculator"},{"title":"Tax Refund Calculator","href":"/tax-refund-calculator"},{"title":"Corporate Tax Calculator","href":"/corporate-tax-calculator"},{"title":"State Tax Calculator","href":"/state-tax-calculator"},{"title":"Property Tax Calculator","href":"/property-tax-calculator"}]},{"id":"budget","label":"Budget & Money","svgPath":"M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z","color":"#38bdf8","bg":"rgba(56,189,248,0.08)","border":"rgba(56,189,248,0.18)","desc":"Budgets, emergency funds, net worth and FIRE tools.","tools":[{"title":"Monthly Budget Calculator","href":"/budget-calculator","badge":"Popular"},{"title":"Expense Tracker","href":"/expense-tracker-calculator"},{"title":"Emergency Fund Calculator","href":"/emergency-fund-calculator"},{"title":"Debt-to-Income Calculator","href":"/debt-to-income-calculator"},{"title":"Net Worth Calculator","href":"/net-worth-calculator"},{"title":"Financial Independence","href":"/financial-independence-calculator"},{"title":"Savings Goal Calculator","href":"/savings-calculator"},{"title":"Retirement Age Calculator","href":"/retirement-age-calculator"},{"title":"Wealth Growth Calculator","href":"/wealth-growth-calculator"},{"title":"Inflation Calculator","href":"/inflation-calculator"}]},{"id":"bonus","label":"High-Value Tools","svgPath":"M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z","color":"#e879f9","bg":"rgba(232,121,249,0.08)","border":"rgba(232,121,249,0.18)","desc":"High-CPC: amortization, APR, refinance and comparison.","tools":[{"title":"Mortgage Amortization","href":"/mortgage-amortization-calculator","badge":"High CPC"},{"title":"Loan Comparison Calculator","href":"/loan-comparison-calculator","badge":"High CPC"},{"title":"Interest Rate Calculator","href":"/interest-rate-calculator"},{"title":"APR Calculator","href":"/apr-calculator"},{"title":"Credit Score Simulator","href":"/credit-score-simulator"},{"title":"Down Payment Calculator","href":"/down-payment-calculator"},{"title":"Refinance Calculator","href":"/refinance-calculator"},{"title":"Investment Risk Calculator","href":"/investment-risk-calculator"},{"title":"Loan Eligibility Calculator","href":"/loan-eligibility-calculator"},{"title":"Early Loan Payoff Calculator","href":"/early-loan-payoff-calculator"}]}]
-const faqs = [{"q":"Are all calculators on FreeFinCalc.net free?","a":"Yes — every calculator is 100% free with no sign up, no subscription and no hidden fees. All calculators remain free forever."},{"q":"What currencies does FreeFinCalc.net support?","a":"FreeFinCalc.net supports 40+ global currencies. Your local currency is auto-detected and you can switch at any time using the currency selector."},{"q":"Can I download my calculation results as a PDF?","a":"Yes — every calculator includes a PDF download button. Results are formatted as a professional document with a full disclaimer."},{"q":"How accurate are the financial calculators?","a":"Our calculators use standard financial formulas such as the amortization formula for loans and compound interest for investments. Results may differ from lender figures due to fees and specific terms."},{"q":"Is the financial information on FreeFinCalc.net advice?","a":"No — calculators are for educational purposes only and do not constitute financial, tax or legal advice. Always consult a qualified financial professional before making decisions."}]
-const jsonLd = {"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.freefincalc.net/#website","url":"https://www.freefincalc.net","name":"FreeFinCalc.net","description":"100 free financial calculators in 40+ currencies"},{"@type":"Organization","@id":"https://www.freefincalc.net/#organization","name":"FreeFinCalc.net","url":"https://www.freefincalc.net"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are all calculators on FreeFinCalc.net free?","acceptedAnswer":{"@type":"Answer","text":"Yes — every calculator is 100% free with no sign up, no subscription and no hidden fees. All calculators remain free forever."}},{"@type":"Question","name":"What currencies does FreeFinCalc.net support?","acceptedAnswer":{"@type":"Answer","text":"FreeFinCalc.net supports 40+ global currencies. Your local currency is auto-detected and you can switch at any time using the currency selector."}},{"@type":"Question","name":"Can I download my calculation results as a PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes — every calculator includes a PDF download button. Results are formatted as a professional document with a full disclaimer."}},{"@type":"Question","name":"How accurate are the financial calculators?","acceptedAnswer":{"@type":"Answer","text":"Our calculators use standard financial formulas such as the amortization formula for loans and compound interest for investments. Results may differ from lender figures due to fees and specific terms."}},{"@type":"Question","name":"Is the financial information on FreeFinCalc.net advice?","acceptedAnswer":{"@type":"Answer","text":"No — calculators are for educational purposes only and do not constitute financial, tax or legal advice. Always consult a qualified financial professional before making decisions."}}]}]}
+const ALL_TOOLS = CATEGORIES.flatMap(cat =>
+  cat.tools.map(t => ({ ...t, category: cat.label, catIcon: cat.icon }))
+)
 
-export default function Home() {
-  const total = categories.reduce((a,c) => a + c.tools.length, 0)
+export default function HomePage() {
+  const [search, setSearch]     = useState('')
+  const [activeTab, setActiveTab] = useState('all')
+
+  const filtered = useMemo(() => {
+    const q = search.toLowerCase()
+    if (!q) return activeTab === 'all' ? ALL_TOOLS : CATEGORIES.find(c => c.id === activeTab)?.tools || []
+    return ALL_TOOLS.filter(t =>
+      t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)
+    )
+  }, [search, activeTab])
+
+  const displayCats = search
+    ? null
+    : activeTab === 'all'
+      ? CATEGORIES
+      : CATEGORIES.filter(c => c.id === activeTab)
+
   return (
     <>
-      <Script id="hp-ld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
-      <main id="main-content">
+      <main>
 
-        {/* HERO */}
-        <section style={{ position:'relative', overflow:'hidden', paddingTop:'80px', paddingBottom:'64px', textAlign:'center' }}>
-          <div aria-hidden="true" style={{ position:"absolute", inset:0, zIndex:0, backgroundImage:'linear-gradient(rgba(240,200,66,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(240,200,66,0.04) 1px,transparent 1px)', backgroundSize:'48px 48px', maskImage:'radial-gradient(ellipse 80% 60% at 50% 0%,black 40%,transparent 100%)' }} />
-          <div aria-hidden="true" style={{ position:"absolute", top:'-120px', left:'50%', transform:'translateX(-50%)', width:'700px', height:'400px', background:'radial-gradient(ellipse,rgba(240,200,66,0.12) 0%,transparent 70%)', zIndex:0, pointerEvents:'none' }} />
-          <div className="max-w-5xl mx-auto px-4" style={{ position:"relative", zIndex:1 }}>
-            <div style={{ display:'inline-flex', alignItems:'center', gap:'8px', padding:'6px 16px', borderRadius:'100px', marginBottom:'28px', background:'rgba(240,200,66,0.1)', border:'1px solid rgba(240,200,66,0.22)', fontSize:'12.5px', fontWeight:'600', color:'rgba(240,200,66,0.9)' }}>
-              <span style={{ width:'7px', height:'7px', borderRadius:'50%', background:'#f0c842', boxShadow:'0 0 8px #f0c842', display:'inline-block' }} />
-              {total} Free Calculators · 10 Categories · 40+ Currencies · No Sign Up
+        {/* ── Hero ──────────────────────────────────────────────────────────── */}
+        <section className="relative py-20 px-4 text-center overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none"
+            style={{background:'radial-gradient(ellipse 80% 60% at 50% 0%,rgba(240,200,66,0.08) 0%,transparent 70%)'}} />
+          <div className="relative max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-6"
+              style={{background:'rgba(240,200,66,0.1)',border:'1px solid rgba(240,200,66,0.25)',color:'#f0c842'}}>
+              ✦ 124 Free Financial Calculators — No Sign-Up Required
             </div>
-            <h1 style={{ fontFamily:'"DM Serif Display",Georgia,serif', fontSize:"clamp(38px,6vw,72px)", fontWeight:'400', lineHeight:'1.08', letterSpacing:'-1.5px', color:'#f1f5f9', marginBottom:'24px' }}>
-              Free Financial<br/>
-              <span style={{ background:'linear-gradient(135deg,#f0c842 0%,#f5a623 50%,#f0c842 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Calculators</span>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              Free Financial<br />
+              <span style={{color:'#f0c842'}}>Calculators</span>
             </h1>
-            <p style={{ color:'#64748b', fontSize:'clamp(15px,2vw,19px)', lineHeight:'1.65', maxWidth:'580px', margin:'0 auto 36px' }}>
-              Professional tools for loans, debt, investing, salary, tax and business — in your local currency, with PDF download, completely free.
+            <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-10">
+              Mortgage, tax, retirement, investing, debt — every calculator you need.
+              Instant results, 40+ currencies, completely free.
             </p>
-            <div style={{ display:'flex', flexWrap:'wrap', justifyContent:'center', gap:'10px', marginBottom:'44px' }}>
-              {[['⚡','Instant Results'],['🔒','No Sign Up'],['💯','100% Free'],['🌍','40+ Currencies'],['📄','PDF Download'],['📱','Mobile Friendly']].map(([ic,tx]) => (
-                <span key={tx} style={{ display:'inline-flex', alignItems:'center', gap:'6px', padding:'7px 14px', borderRadius:'100px', background:'rgba(255,255,255,0.04)', border:'1px solid rgba(255,255,255,0.08)', color:'#94a3b8', fontSize:'13px', fontWeight:'500' }}>{ic} {tx}</span>
+
+            {/* Search */}
+            <div className="relative max-w-xl mx-auto mb-6">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-lg">🔍</span>
+              <input
+                type="text"
+                placeholder="Search 124 calculators..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                className="w-full pl-12 pr-6 py-4 rounded-2xl text-white text-base outline-none"
+                style={{
+                  background:'rgba(255,255,255,0.06)',
+                  border:'1px solid rgba(255,255,255,0.12)',
+                  fontSize:'16px'
+                }}
+              />
+              {search && (
+                <button onClick={() => setSearch('')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white">✕</button>
+              )}
+            </div>
+
+            {/* Stats */}
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
+              {[['124','Calculators'],['41','Blog Guides'],['40+','Currencies'],['0','Sign-ups needed']].map(([n,l]) => (
+                <div key={l} className="flex items-center gap-2">
+                  <span className="font-bold text-white text-base">{n}</span>
+                  <span>{l}</span>
+                </div>
               ))}
             </div>
-            <a href="#calculators" className="cta-btn">
-              Browse All {total} Calculators
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </a>
           </div>
         </section>
 
-        {/* STATS */}
-        <section className="max-w-5xl mx-auto px-4" style={{ marginBottom:"72px" }}>
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', borderRadius:'18px', overflow:'hidden', border:'1px solid rgba(240,200,66,0.12)', background:'rgba(240,200,66,0.025)' }}>
-            {[{n:total,s:'',l:'Free Calculators'},{n:'40',s:'+',l:'Currencies'},{n:'100K',s:'+',l:'Monthly Users'},{n:'4.9',s:'★',l:'User Rating'}].map((st,i) => (
-              <div key={i} style={{ padding:'24px 20px', textAlign:'center', borderRight:i<3?'1px solid rgba(240,200,66,0.1)':'none' }}>
-                <div style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(26px,3vw,36px)", color:'#f0c842', lineHeight:'1', marginBottom:'6px' }}>{st.n}<span style={{ color:'rgba(240,200,66,0.6)', fontSize:'0.7em' }}>{st.s}</span></div>
-                <div style={{ color:'#475569', fontSize:'12.5px', fontWeight:'500' }}>{st.l}</div>
+        {/* ── Search Results ────────────────────────────────────────────────── */}
+        {search && (
+          <section className="max-w-6xl mx-auto px-4 pb-10">
+            <p className="text-slate-400 text-sm mb-4">{filtered.length} results for "{search}"</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {filtered.map(t => (
+                <a key={t.href} href={t.href}
+                  className="group p-4 rounded-2xl hover:-translate-y-1 transition-all duration-200"
+                  style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)'}}>
+                  <div className="text-xs text-slate-500 mb-1">{t.catIcon} {t.category}</div>
+                  <div className="text-white font-semibold text-sm group-hover:text-yellow-400 transition-colors mb-1">{t.name}</div>
+                  <div className="text-slate-500 text-xs">{t.desc}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── Category Tabs ─────────────────────────────────────────────────── */}
+        {!search && (
+          <>
+            <section className="max-w-7xl mx-auto px-4 mb-10">
+              <div className="flex flex-wrap gap-2 justify-center">
+                <button
+                  onClick={() => setActiveTab('all')}
+                  className="px-4 py-2 rounded-xl text-sm font-bold transition-all"
+                  style={{
+                    background: activeTab === 'all' ? 'rgba(240,200,66,0.2)' : 'rgba(255,255,255,0.05)',
+                    border: activeTab === 'all' ? '1px solid rgba(240,200,66,0.4)' : '1px solid rgba(255,255,255,0.08)',
+                    color: activeTab === 'all' ? '#f0c842' : '#64748b',
+                  }}>
+                  All (124)
+                </button>
+                {CATEGORIES.map(cat => (
+                  <button key={cat.id}
+                    onClick={() => setActiveTab(cat.id)}
+                    className="px-4 py-2 rounded-xl text-sm font-bold transition-all"
+                    style={{
+                      background: activeTab === cat.id ? 'rgba(240,200,66,0.2)' : 'rgba(255,255,255,0.05)',
+                      border: activeTab === cat.id ? '1px solid rgba(240,200,66,0.4)' : '1px solid rgba(255,255,255,0.08)',
+                      color: activeTab === cat.id ? '#f0c842' : '#64748b',
+                    }}>
+                    {cat.icon} {cat.label}
+                  </button>
+                ))}
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
 
-        {/* CATEGORIES */}
-        <section id="calculators" className="max-w-6xl mx-auto px-4" style={{ paddingBottom:"80px" }}>
-          <div style={{ textAlign:'center', marginBottom:'56px' }}>
-            <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(26px,4vw,40px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.5px', marginBottom:'12px' }}>
-              Everything You Need to Make Better Money Decisions
-            </h2>
-            <p style={{ color:'#475569', fontSize:'16px', maxWidth:'540px', margin:'0 auto', lineHeight:'1.6' }}>
-              10 categories. {total} calculators. All free. All in your currency.
-            </p>
-          </div>
-
-          <div style={{ display:'flex', flexDirection:'column', gap:'56px' }}>
-            {categories.map(cat => (
-              <article key={cat.id}>
-                <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'20px', flexWrap:'wrap' }}>
-                  <div style={{ width:'42px', height:'42px', borderRadius:'12px', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, background:cat.bg, border:'1px solid '+cat.border, color:cat.color }}>
-                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d={cat.svgPath}/></svg>
+            {/* ── Calculator Grid ─────────────────────────────────────────────── */}
+            <section className="max-w-7xl mx-auto px-4 pb-16 space-y-14">
+              {displayCats.map(cat => (
+                <div key={cat.id} id={cat.id}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="text-3xl">{cat.icon}</div>
+                    <div>
+                      <h2 className="text-2xl font-bold text-white">{cat.label}</h2>
+                      <p className="text-slate-500 text-sm">{cat.tools.length} calculators</p>
+                    </div>
+                    <div className="ml-auto h-px flex-1 max-w-xs"
+                      style={{background:'linear-gradient(to right, rgba(255,255,255,0.08), transparent)'}} />
                   </div>
-                  <div>
-                    <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(18px,2.5vw,24px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', margin:0, lineHeight:'1.2' }}>{cat.label}</h2>
-                    <p style={{ color:'#475569', fontSize:'13px', margin:'3px 0 0' }}>{cat.desc}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                    {cat.tools.map(tool => (
+                      <a key={tool.href} href={tool.href}
+                        className="group p-4 rounded-2xl hover:-translate-y-1 transition-all duration-200 flex flex-col"
+                        style={{
+                          background:'rgba(255,255,255,0.04)',
+                          border:'1px solid rgba(255,255,255,0.08)',
+                        }}>
+                        <div className="text-white font-semibold text-sm group-hover:text-yellow-400 transition-colors mb-2 leading-snug">
+                          {tool.name}
+                        </div>
+                        <div className="text-slate-500 text-xs leading-relaxed mt-auto">
+                          {tool.desc}
+                        </div>
+                      </a>
+                    ))}
                   </div>
-                  <div style={{ flex:1, height:'1px', background:'linear-gradient(90deg,'+cat.border+',transparent)', minWidth:'40px' }} />
-                  <span style={{ padding:'4px 12px', borderRadius:'100px', fontSize:'11.5px', fontWeight:'600', background:cat.bg, border:'1px solid '+cat.border, color:cat.color, flexShrink:0 }}>{cat.tools.length} tools</span>
                 </div>
-                <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(180px,1fr))', gap:'10px' }}>
-                  {cat.tools.map(tool => (
-                    <Link key={tool.href} href={tool.href} className="tool-card">
-                      {tool.badge && (
-                        <span style={{ position:'absolute', top:'10px', right:'10px', padding:'2px 7px', borderRadius:'100px', fontSize:'10px', fontWeight:'700', background:cat.bg, border:'1px solid '+cat.border, color:cat.color }}>{tool.badge}</span>
-                      )}
-                      <h3 className="tool-card-title" style={{ paddingRight:tool.badge?'52px':'0' }}>{tool.title}</h3>
-                      <span style={{ display:'inline-flex', alignItems:'center', gap:'4px', fontSize:'12px', fontWeight:'600', color:cat.color, opacity:0.85 }}>
-                        Open <svg width="10" height="10" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                      </span>
-                    </Link>
-                  ))}
+              ))}
+            </section>
+          </>
+        )}
+
+        {/* ── Popular Calculators ───────────────────────────────────────────── */}
+        {!search && activeTab === 'all' && (
+          <section className="max-w-7xl mx-auto px-4 pb-16">
+            <h2 className="text-2xl font-bold text-white mb-2">Most Popular Calculators</h2>
+            <p className="text-slate-500 text-sm mb-6">Our most-used tools by visitors</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {[
+                { name: 'Mortgage',         href: '/mortgage-calculator',          icon: '🏠' },
+                { name: 'Car Loan',          href: '/car-loan-calculator',          icon: '🚗' },
+                { name: 'Tax Calculator',    href: '/tax-calculator',               icon: '🧾' },
+                { name: 'Retirement',        href: '/retirement-calculator',        icon: '🌅' },
+                { name: 'Budget Planner',    href: '/budget-planner-calculator',    icon: '📋' },
+                { name: 'FIRE Calculator',   href: '/fire-calculator',              icon: '🔥' },
+                { name: 'Salary After Tax',  href: '/salary-after-tax-calculator',  icon: '💵' },
+                { name: 'Credit Card Payoff',href: '/credit-card-payoff-calculator',icon: '💳' },
+                { name: '401k Calculator',   href: '/401k-calculator',              icon: '💼' },
+                { name: 'Net Worth',         href: '/net-worth-calculator',         icon: '💰' },
+                { name: 'Student Loan',      href: '/student-loan-calculator',      icon: '🎓' },
+                { name: 'Debt Payoff',       href: '/debt-payoff-calculator',       icon: '🎯' },
+              ].map(t => (
+                <a key={t.href} href={t.href}
+                  className="group p-4 rounded-2xl text-center hover:-translate-y-1 transition-all duration-200"
+                  style={{background:'rgba(240,200,66,0.05)',border:'1px solid rgba(240,200,66,0.12)'}}>
+                  <div className="text-2xl mb-2">{t.icon}</div>
+                  <div className="text-white text-xs font-semibold group-hover:text-yellow-400 transition-colors">{t.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── Blog CTA ──────────────────────────────────────────────────────── */}
+        {!search && activeTab === 'all' && (
+          <section className="max-w-7xl mx-auto px-4 pb-16">
+            <div className="rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6"
+              style={{background:'rgba(240,200,66,0.06)',border:'1px solid rgba(240,200,66,0.15)'}}>
+              <div>
+                <h2 className="text-2xl font-bold text-white mb-2">📖 Financial Guides & Tutorials</h2>
+                <p className="text-slate-400">41 in-depth articles on mortgages, investing, budgeting and more.</p>
+              </div>
+              <a href="/blog"
+                className="shrink-0 px-8 py-4 rounded-2xl font-bold text-slate-900 text-sm transition-all hover:scale-105"
+                style={{background:'#f0c842'}}>
+                Browse All Guides →
+              </a>
+            </div>
+          </section>
+        )}
+
+        {/* ── Trust section ─────────────────────────────────────────────────── */}
+        {!search && activeTab === 'all' && (
+          <section className="max-w-4xl mx-auto px-4 pb-20 text-center">
+            <h2 className="text-xl font-bold text-white mb-2">Why FreeFinCalc?</h2>
+            <p className="text-slate-500 text-sm mb-8">Built for people who want real answers, not paywalls</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { icon: '⚡', title: 'Instant Results', desc: 'All calculations happen in your browser. No waiting, no loading.' },
+                { icon: '🔒', title: '100% Private', desc: 'We never store your data. Nothing you enter is sent to a server.' },
+                { icon: '🌍', title: '40+ Currencies', desc: 'Switch currency globally across all calculators in one click.' },
+              ].map(f => (
+                <div key={f.title} className="p-6 rounded-2xl"
+                  style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)'}}>
+                  <div className="text-3xl mb-3">{f.icon}</div>
+                  <h3 className="text-white font-bold mb-2">{f.title}</h3>
+                  <p className="text-slate-500 text-sm">{f.desc}</p>
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
 
-        {/* SEO BLOCK */}
-        <section className="max-w-4xl mx-auto px-4" style={{ paddingBottom:"64px" }}>
-          <div style={{ padding:'40px 44px', borderRadius:'20px', background:'rgba(240,200,66,0.03)', border:'1px solid rgba(240,200,66,0.1)' }}>
-            <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(20px,3vw,28px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', marginBottom:'16px', textAlign:'center' }}>
-              Professional Financial Calculators — Free, Fast &amp; Global
-            </h2>
-            <p style={{ color:'#475569', fontSize:'14.5px', lineHeight:'1.8', textAlign:'center', maxWidth:'700px', margin:'0 auto 16px' }}>
-              FreeFinCalc.net provides {total} free calculators across 10 categories in 40+ currencies. Whether you are calculating a{' '}
-              <Link href="/mortgage-calculator" style={{ color:"#94a3b8", textDecoration:'underline' }}>mortgage payment</Link>,{' '}
-              <Link href="/car-loan-calculator" style={{ color:"#94a3b8", textDecoration:'underline' }}>car loan</Link>,{' '}
-              planning <Link href="/retirement-savings-calculator" style={{ color:"#94a3b8", textDecoration:'underline' }}>retirement</Link> or tracking{' '}
-              <Link href="/debt-snowball-calculator" style={{ color:"#94a3b8", textDecoration:'underline' }}>debt payoff</Link> — every calculator adapts to your local currency with PDF download.
-            </p>
-            <p style={{ color:'#334155', fontSize:'13px', lineHeight:'1.7', textAlign:'center', maxWidth:'660px', margin:'0 auto' }}>
-              Popular:{' '}
-              <Link href="/compound-interest" style={{ color:"#64748b", textDecoration:'underline' }}>compound interest</Link>,{' '}
-              <Link href="/salary-after-tax-calculator" style={{ color:"#64748b", textDecoration:'underline' }}>salary after tax</Link>,{' '}
-              <Link href="/profit-margin-calculator" style={{ color:"#64748b", textDecoration:'underline' }}>profit margin</Link>,{' '}
-              <Link href="/credit-card-payoff-calculator" style={{ color:"#64748b", textDecoration:'underline' }}>credit card payoff</Link>,{' '}
-              <Link href="/fire-retirement-calculator" style={{ color:"#64748b", textDecoration:'underline' }}>FIRE calculator</Link>.
-            </p>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="max-w-3xl mx-auto px-4" style={{ paddingBottom:"72px" }}>
-          <h2 style={{ fontFamily:'"DM Serif Display",serif', fontSize:"clamp(22px,3vw,32px)", fontWeight:'400', color:'#f1f5f9', letterSpacing:'-0.3px', textAlign:'center', marginBottom:'32px' }}>
-            Frequently Asked Questions
-          </h2>
-          {faqs.map((faq,i) => (
-            <details key={i} className="faq-item">
-              <summary>
-                {faq.q}
-                <svg width="16" height="16" fill="none" stroke="#f0c842" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink:0 }}><path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </summary>
-              <p className="faq-answer">{faq.a}</p>
-            </details>
-          ))}
-        </section>
-
-        <TrustSection />
       </main>
       <Footer />
     </>
