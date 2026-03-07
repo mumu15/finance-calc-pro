@@ -11,74 +11,62 @@ export default function Calculator() {
   const [hourlyRate, setHourlyRate] = useState(25)
   const [hoursPerWeek, setHoursPerWeek] = useState(40)
   const [weeksPerYear, setWeeksPerYear] = useState(52)
+  const [unpaidLeave, setUnpaidLeave] = useState(0)
 
   const result = useMemo(() => {
     try {
-      const annualSalary  = hourlyRate * hoursPerWeek * weeksPerYear
-      const monthlySalary = annualSalary / 12
-      const weeklySalary  = hourlyRate * hoursPerWeek
-      const dailySalary   = hourlyRate * (hoursPerWeek / 5)
-      const annualHours   = hoursPerWeek * weeksPerYear
-      return { annualSalary, monthlySalary, weeklySalary, dailySalary, annualHours: annualHours + ' hrs' }
+      const paidWeeks    = weeksPerYear - unpaidLeave
+      const annualSalary = hourlyRate * hoursPerWeek * paidWeeks
+      const monthly      = annualSalary / 12
+      const biweekly     = annualSalary / 26
+      const weekly       = annualSalary / 52
+      const daily        = hourlyRate * hoursPerWeek / 5
+      const totalHours   = hoursPerWeek * paidWeeks
+      return { annualSalary, monthly, biweekly, weekly, daily, totalHours }
     } catch(e) { return null }
-  }, [hourlyRate, hoursPerWeek, weeksPerYear])
+  }, [hourlyRate, hoursPerWeek, weeksPerYear, unpaidLeave])
 
   const pdfRows = result ? [
     { label: "Annual Salary", value: result.annualSalary !== undefined ? String(fmt(result.annualSalary)) : "" },
-    { label: "Monthly Salary", value: result.monthlySalary !== undefined ? String(fmt(result.monthlySalary)) : "" },
-    { label: "Weekly Pay", value: result.weeklySalary !== undefined ? String(fmt(result.weeklySalary)) : "" },
-    { label: "Daily Pay", value: result.dailySalary !== undefined ? String(fmt(result.dailySalary)) : "" },
-    { label: "Annual Hours", value: result.annualHours !== undefined ? String(result.annualHours) : "" },
+    { label: "Monthly Pay", value: result.monthly !== undefined ? String(fmt(result.monthly)) : "" },
+    { label: "Biweekly Pay", value: result.biweekly !== undefined ? String(fmt(result.biweekly)) : "" },
+    { label: "Weekly Pay", value: result.weekly !== undefined ? String(fmt(result.weekly)) : "" },
+    { label: "Daily Pay", value: result.daily !== undefined ? String(fmt(result.daily)) : "" },
   ] : []
+
+  const fields = [
+    { label: 'Hourly Rate', val: fmt(hourlyRate), min: 1, max: 500, step: 0.25, set: setHourlyRate, v: hourlyRate },
+    { label: 'Hours Per Week', val: hoursPerWeek + ' hrs', min: 1, max: 80, step: 1, set: setHoursPerWeek, v: hoursPerWeek },
+    { label: 'Weeks Worked Per Year', val: weeksPerYear + ' wks', min: 1, max: 52, step: 1, set: setWeeksPerYear, v: weeksPerYear },
+    { label: 'Unpaid Leave Weeks', val: unpaidLeave + ' wks', min: 0, max: 12, step: 1, set: setUnpaidLeave, v: unpaidLeave },
+  ]
 
   return (
     <>
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
-
         <div className="text-center mb-10">
-          <div className="text-5xl mb-4">⏰</div>
+          <div className="text-5xl mb-4">💵</div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Hourly to Salary Calculator</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Convert any hourly wage to annual, monthly, weekly and daily salary — and back again.</p>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Convert your hourly wage to annual salary, monthly, biweekly and weekly pay.</p>
         </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
           <div className="result-box">
             <h2 className="text-white font-bold text-lg mb-5">Enter Details</h2>
             <div className="space-y-5">
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Hourly Rate</label>
-                  <span className="text-white font-bold text-sm">{fmt(hourlyRate)}</span>
+              {fields.map(f => (
+                <div key={f.label}>
+                  <div className="flex justify-between mb-1.5">
+                    <label className="text-slate-400 text-sm">{f.label}</label>
+                    <span className="text-white font-bold text-sm">{f.val}</span>
+                  </div>
+                  <input type="range" min={f.min} max={f.max} step={f.step}
+                    value={f.v} onChange={e => f.set(Number(e.target.value))}
+                    className="w-full accent-yellow-400" />
                 </div>
-                <input type="range" min={7.25} max={500} step={0.25}
-                  value={hourlyRate} onChange={e => setHourlyRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Hours Per Week</label>
-                  <span className="text-white font-bold text-sm">{`${hoursPerWeek} hrs`}</span>
-                </div>
-                <input type="range" min={1} max={80} step={0.5}
-                  value={hoursPerWeek} onChange={e => setHoursPerWeek(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Weeks Worked Per Year</label>
-                  <span className="text-white font-bold text-sm">{`${weeksPerYear} wks`}</span>
-                </div>
-                <input type="range" min={1} max={52} step={1}
-                  value={weeksPerYear} onChange={e => setWeeksPerYear(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
+              ))}
             </div>
           </div>
-
           <div className="space-y-4">
             <div className="result-box">
               <div className="flex justify-between items-center mb-4">
@@ -87,105 +75,60 @@ export default function Calculator() {
               </div>
               {result ? (
                 <div className="space-y-3">
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Annual Salary</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
-                      {fmt(result.annualSalary)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Monthly Salary</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
-                      {fmt(result.monthlySalary)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Weekly Pay</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
-                      {fmt(result.weeklySalary)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Daily Pay</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
-                      {fmt(result.dailySalary)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Annual Hours</span>
-                    <span className="font-bold" style={{color:'#f0c842'}}>
-                      {result.annualHours}
-                    </span>
-                  </div>
+                  {[
+                    { label: 'Annual Salary', val: fmt(result.annualSalary) },
+                    { label: 'Monthly Pay', val: fmt(result.monthly) },
+                    { label: 'Biweekly Pay', val: fmt(result.biweekly) },
+                    { label: 'Weekly Pay', val: fmt(result.weekly) },
+                    { label: 'Daily Pay', val: fmt(result.daily) },
+                    { label: 'Total Hours Per Year', val: result.totalHours + ' hrs' },
+                  ].map(r => (
+                    <div key={r.label} className="flex justify-between items-center p-3 rounded-xl"
+                      style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                      <span className="text-slate-400 text-sm">{r.label}</span>
+                      <span className="font-bold" style={{color:'#f0c842'}}>{r.val}</span>
+                    </div>
+                  ))}
                 </div>
               ) : (
                 <div className="text-center py-8 text-slate-500 text-sm">Enter values above to see results</div>
               )}
             </div>
-            <div className="p-3 rounded-xl text-xs text-slate-500 leading-relaxed"
-              style={{background:'rgba(255,255,255,0.02)',border:'1px solid rgba(255,255,255,0.05)'}}>
-              Results are estimates for educational purposes only. Not financial advice.
-            </div>
           </div>
         </div>
-
         <div className="mb-12">
           <h2 className="text-xl font-bold text-white mb-4">Related Calculators</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-
-            <a href="/salary-after-tax-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">💰</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">After-Tax Salary</h3>
-            </a>
-
-            <a href="/paycheck-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">💵</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Paycheck Calculator</h3>
-            </a>
-
-            <a href="/raise-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">📈</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Raise Calculator</h3>
-            </a>
-
-            <a href="/overtime-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">⏱️</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Overtime Calculator</h3>
-            </a>
+            {[
+              { href: '/salary-to-hourly-calculator', icon: '🔄', name: 'Salary to Hourly' },
+              { href: '/salary-after-tax-calculator', icon: '💰', name: 'Salary After Tax' },
+              { href: '/overtime-pay-calculator', icon: '⏰', name: 'Overtime Pay' },
+              { href: '/paycheck-calculator', icon: '💵', name: 'Paycheck' },
+            ].map(r => (
+              <a key={r.href} href={r.href} className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+                <div className="text-2xl mb-2">{r.icon}</div>
+                <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">{r.name}</h3>
+              </a>
+            ))}
           </div>
         </div>
-
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
-
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
-              <h3 className="text-white font-semibold mb-2">How do I convert hourly wage to annual salary?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">Multiply your hourly rate by hours per week, then by weeks worked per year. At 40 hrs/week for 52 weeks: Annual = Hourly x 2,080. A $25/hr wage equals $52,000/year. For part-time at 20 hrs/week: $25 x 1,040 = $26,000/year.</p>
+              <h3 className="text-white font-semibold mb-2">How do you convert hourly to annual salary?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Multiply hourly rate by hours per week by weeks per year. The standard formula uses 2,080 hours (40 hrs x 52 weeks). A $25/hour rate equals $52,000 annually. For part-time or variable hours, use your actual expected hours for an accurate estimate.</p>
             </div>
-
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
-              <h3 className="text-white font-semibold mb-2">What is the US federal minimum wage in 2026?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">The federal minimum wage remains $7.25/hour as of 2026. However many states and cities have higher minimums. California, New York, Washington and others are at $15-$17+/hour. Some cities like Seattle and San Francisco exceed $17/hour. Tipped workers have a separate federal minimum of $2.13/hour.</p>
+              <h3 className="text-white font-semibold mb-2">What is $20 an hour annually?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">$20/hour x 40 hours x 52 weeks = $41,600 per year gross. After federal and state taxes (roughly 20-25% effective rate), take-home pay is approximately $31,000-$33,000 annually or $2,580-$2,750/month. Use our salary after tax calculator for a precise after-tax estimate.</p>
             </div>
-
-            <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
-              <h3 className="text-white font-semibold mb-2">Should I compare job offers using hourly or salary?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">Always convert to the same unit for fair comparison. Calculate total compensation: base pay plus benefits value (health insurance worth $5,000-$15,000/year), retirement match, paid time off (PTO days x daily rate), bonuses, and remote work savings on commuting. Total comp can differ hugely from the headline number.</p>
+            <div className="pb-4">
+              <h3 className="text-white font-semibold mb-2">How does hourly pay compare to salaried positions?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Hourly workers get paid for actual hours worked including overtime at 1.5x. Salaried workers often receive benefits packages worth 20-30% of base salary but may be expected to work unpaid overtime. When comparing offers, calculate the effective hourly rate of the salaried role including all hours worked, and add the value of benefits to the hourly role.</p>
             </div>
           </div>
         </div>
-
       </main>
       <TrustSection />
       <Footer />

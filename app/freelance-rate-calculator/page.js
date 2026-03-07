@@ -8,113 +8,67 @@ import { useCurrency } from '../../components/CurrencyContext'
 
 export default function Calculator() {
   const { fmt } = useCurrency()
-  const [desiredIncome, setDesiredIncome] = useState(80000)
-  const [hoursPerWeek, setHoursPerWeek] = useState(30)
-  const [weeksPerYear, setWeeksPerYear] = useState(48)
-  const [businessExpenses, setBusinessExpenses] = useState(5000)
-  const [taxRate, setTaxRate] = useState(30)
-  const [nonBillablePct, setNonBillablePct] = useState(25)
+  const [targetIncome, setTargetIncome] = useState(80000)
+  const [billableHours, setBillableHours] = useState(1200)
+  const [expenses, setExpenses] = useState(5000)
+  const [taxRate, setTaxRate] = useState(28)
+  const [vacationWeeks, setVacationWeeks] = useState(3)
 
   const result = useMemo(() => {
     try {
-      const totalBillableHours = hoursPerWeek * weeksPerYear * (1 - nonBillablePct/100)
-      const grossNeeded        = (desiredIncome + businessExpenses) / (1 - taxRate/100)
-      const minHourlyRate      = grossNeeded / totalBillableHours
-      const dayRate            = minHourlyRate * 8
-      const weekRate           = minHourlyRate * hoursPerWeek
-      const projectRate40h     = minHourlyRate * 40
-      const annualRevNeeded    = grossNeeded
-      return { minHourlyRate, dayRate, weekRate, projectRate40h, annualRevNeeded, totalBillableHours: Math.round(totalBillableHours) }
+      const workWeeks = 52 - vacationWeeks
+      const totalHours = billableHours
+      const grossNeeded = (targetIncome + expenses) / (1 - taxRate / 100)
+      const hourlyRate = grossNeeded / totalHours
+      const dailyRate = hourlyRate * 8
+      const monthlyTarget = grossNeeded / 12
+      const utilization = (billableHours / (workWeeks * 40) * 100).toFixed(1) + '%'
+      return { hourlyRate, dailyRate, monthlyTarget, grossNeeded, utilization }
     } catch(e) { return null }
-  }, [desiredIncome, hoursPerWeek, weeksPerYear, businessExpenses, taxRate, nonBillablePct])
+  }, [targetIncome, billableHours, expenses, taxRate, vacationWeeks])
 
   const pdfRows = result ? [
-    { label: "Minimum Hourly Rate", value: result.minHourlyRate !== undefined ? String(fmt(result.minHourlyRate)) : "" },
-    { label: "Day Rate (8 hrs)", value: result.dayRate !== undefined ? String(fmt(result.dayRate)) : "" },
-    { label: "Weekly Rate", value: result.weekRate !== undefined ? String(fmt(result.weekRate)) : "" },
-    { label: "Project Rate (40 hrs)", value: result.projectRate40h !== undefined ? String(fmt(result.projectRate40h)) : "" },
-    { label: "Annual Revenue Needed", value: result.annualRevNeeded !== undefined ? String(fmt(result.annualRevNeeded)) : "" },
-    { label: "Total Billable Hours / Year", value: result.totalBillableHours !== undefined ? String(result.totalBillableHours) : "" },
+    { label: "Minimum Hourly Rate", value: result.hourlyRate !== undefined ? String(fmt(result.hourlyRate)) : "" },
+    { label: "Daily Rate", value: result.dailyRate !== undefined ? String(fmt(result.dailyRate)) : "" },
+    { label: "Monthly Revenue Target", value: result.monthlyTarget !== undefined ? String(fmt(result.monthlyTarget)) : "" },
+    { label: "Annual Gross Revenue Needed", value: result.grossNeeded !== undefined ? String(fmt(result.grossNeeded)) : "" },
+    { label: "Billable Utilization Rate", value: result.utilization !== undefined ? String(result.utilization) : "" },
   ] : []
+
+  const fields = [
+    { label: 'Target Annual Take-Home', val: fmt(targetIncome), min: 10000, max: 500000, step: 1000, set: setTargetIncome, v: targetIncome },
+    { label: 'Billable Hours Per Year', val: billableHours + ' hrs', min: 100, max: 2500, step: 50, set: setBillableHours, v: billableHours },
+    { label: 'Annual Business Expenses', val: fmt(expenses), min: 0, max: 100000, step: 500, set: setExpenses, v: expenses },
+    { label: 'Effective Tax Rate', val: taxRate + '%', min: 5, max: 50, step: 1, set: setTaxRate, v: taxRate },
+    { label: 'Vacation Weeks Per Year', val: vacationWeeks + ' wks', min: 0, max: 12, step: 1, set: setVacationWeeks, v: vacationWeeks },
+  ]
 
   return (
     <>
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
-
         <div className="text-center mb-10">
           <div className="text-5xl mb-4">🎯</div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Freelance Rate Calculator</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Calculate the minimum hourly or project rate you need to charge to meet your income goals.</p>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">Calculate the minimum hourly rate you need to charge as a freelancer to meet your income goals.</p>
         </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
           <div className="result-box">
             <h2 className="text-white font-bold text-lg mb-5">Enter Details</h2>
             <div className="space-y-5">
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Desired Annual Income</label>
-                  <span className="text-white font-bold text-sm">{fmt(desiredIncome)}</span>
+              {fields.map(f => (
+                <div key={f.label}>
+                  <div className="flex justify-between mb-1.5">
+                    <label className="text-slate-400 text-sm">{f.label}</label>
+                    <span className="text-white font-bold text-sm">{f.val}</span>
+                  </div>
+                  <input type="range" min={f.min} max={f.max} step={f.step}
+                    value={f.v} onChange={e => f.set(Number(e.target.value))}
+                    className="w-full accent-yellow-400" />
                 </div>
-                <input type="range" min={10000} max={500000} step={1000}
-                  value={desiredIncome} onChange={e => setDesiredIncome(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Billable Hours Per Week</label>
-                  <span className="text-white font-bold text-sm">{`${hoursPerWeek} hrs`}</span>
-                </div>
-                <input type="range" min={5} max={60} step={1}
-                  value={hoursPerWeek} onChange={e => setHoursPerWeek(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Weeks Worked Per Year</label>
-                  <span className="text-white font-bold text-sm">{`${weeksPerYear} wks`}</span>
-                </div>
-                <input type="range" min={20} max={52} step={1}
-                  value={weeksPerYear} onChange={e => setWeeksPerYear(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Annual Business Expenses</label>
-                  <span className="text-white font-bold text-sm">{fmt(businessExpenses)}</span>
-                </div>
-                <input type="range" min={0} max={100000} step={500}
-                  value={businessExpenses} onChange={e => setBusinessExpenses(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Effective Tax Rate (SE + income)</label>
-                  <span className="text-white font-bold text-sm">{`${taxRate}%`}</span>
-                </div>
-                <input type="range" min={15} max={50} step={1}
-                  value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
-
-              <div>
-                <div className="flex justify-between mb-1.5">
-                  <label className="text-slate-400 text-sm">Non-Billable Time %</label>
-                  <span className="text-white font-bold text-sm">{`${nonBillablePct}%`}</span>
-                </div>
-                <input type="range" min={0} max={60} step={5}
-                  value={nonBillablePct} onChange={e => setNonBillablePct(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
-              </div>
+              ))}
             </div>
           </div>
-
           <div className="space-y-4">
             <div className="result-box">
               <div className="flex justify-between items-center mb-4">
@@ -123,113 +77,59 @@ export default function Calculator() {
               </div>
               {result ? (
                 <div className="space-y-3">
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Minimum Hourly Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842"}}>
-                      {fmt(result.minHourlyRate)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Day Rate (8 hrs)</span>
-                    <span className="font-bold" style={{color:"#f0c842"}}>
-                      {fmt(result.dayRate)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Weekly Rate</span>
-                    <span className="font-bold" style={{color:"#f0c842"}}>
-                      {fmt(result.weekRate)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Project Rate (40 hrs)</span>
-                    <span className="font-bold" style={{color:"#f0c842"}}>
-                      {fmt(result.projectRate40h)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Annual Revenue Needed</span>
-                    <span className="font-bold" style={{color:"#f0c842"}}>
-                      {fmt(result.annualRevNeeded)}
-                    </span>
-                  </div>
-
-                  <div className="flex justify-between items-center p-3 rounded-xl"
-                    style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
-                    <span className="text-slate-400 text-sm">Total Billable Hours / Year</span>
-                    <span className="font-bold" style={{color:"#f0c842"}}>
-                      {result.totalBillableHours}
-                    </span>
-                  </div>
+                  {[
+                    { label: 'Minimum Hourly Rate', val: fmt(result.hourlyRate) },
+                    { label: 'Daily Rate (8 hrs)', val: fmt(result.dailyRate) },
+                    { label: 'Monthly Revenue Target', val: fmt(result.monthlyTarget) },
+                    { label: 'Annual Gross Revenue Needed', val: fmt(result.grossNeeded) },
+                    { label: 'Billable Utilization Rate', val: result.utilization },
+                  ].map(r => (
+                    <div key={r.label} className="flex justify-between items-center p-3 rounded-xl"
+                      style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)'}}>
+                      <span className="text-slate-400 text-sm">{r.label}</span>
+                      <span className="font-bold" style={{color:'#f0c842'}}>{r.val}</span>
+                    </div>
+                  ))}
                 </div>
               ) : (
                 <div className="text-center py-8 text-slate-500 text-sm">Enter values above to see results</div>
               )}
             </div>
-            <div className="p-3 rounded-xl text-xs text-slate-500 leading-relaxed"
-              style={{background:'rgba(255,255,255,0.02)',border:'1px solid rgba(255,255,255,0.05)'}}>
-              Results are estimates for educational purposes only. Not financial or tax advice.
-            </div>
           </div>
         </div>
-
         <div className="mb-12">
           <h2 className="text-xl font-bold text-white mb-4">Related Calculators</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-
-            <a href="/self-employment-tax-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">🧾</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">SE Tax</h3>
-            </a>
-
-            <a href="/invoice-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">📄</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Invoice</h3>
-            </a>
-
-            <a href="/hourly-to-salary-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">⏰</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Hourly to Salary</h3>
-            </a>
-
-            <a href="/profit-margin-calculator" className="result-box group hover:-translate-y-1 transition-all duration-300 block">
-              <div className="text-2xl mb-2">📈</div>
-              <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">Profit Margin</h3>
-            </a>
+            {[
+              { href: '/self-employment-tax-calculator', icon: '🧾', name: 'SE Tax' },
+              { href: '/invoice-calculator', icon: '📄', name: 'Invoice' },
+              { href: '/hourly-to-salary-calculator', icon: '💵', name: 'Hourly to Salary' },
+              { href: '/contractor-pay-calculator', icon: '🔧', name: 'Contractor Pay' },
+            ].map(r => (
+              <a key={r.href} href={r.href} className="result-box group hover:-translate-y-1 transition-all duration-300 block">
+                <div className="text-2xl mb-2">{r.icon}</div>
+                <h3 className="text-white font-bold text-xs group-hover:text-yellow-400 transition-colors">{r.name}</h3>
+              </a>
+            ))}
           </div>
         </div>
-
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
-
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-              <h3 className="text-white font-semibold mb-2">How do I set my freelance rate?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">Start with your minimum viable rate (this calculator). Then research what the market pays for your skill level on Upwork, LinkedIn, and industry salary surveys. Differentiate by specialisation, results and reputation. Most freelancers undercharge initially — market rates for senior-level work are often 2-4x what beginners charge.</p>
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">How do I set my freelance hourly rate?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Start with your target income, add business expenses and taxes, then divide by realistic billable hours. Research market rates on Upwork, Glassdoor, and industry surveys to validate. New freelancers often underprice themselves — your rate should reflect skill level, not insecurity.</p>
             </div>
-
-            <div className="border-b pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-              <h3 className="text-white font-semibold mb-2">Why do freelancers need to charge more than employees?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">Freelancers bear costs employees do not: self-employment tax (15.3%), health insurance, retirement contributions, unpaid vacation, business expenses, and non-billable time (marketing, admin, chasing payments). A full-time employee earning $60,000 costs their employer ~$80,000. A freelancer charging the equivalent needs to earn even more due to uncertainty and gaps.</p>
+            <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
+              <h3 className="text-white font-semibold mb-2">How many billable hours can I realistically work per year?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Most experienced freelancers bill 1,000-1,500 hours annually. Of 2,080 available working hours, subtract vacation, sick days, holidays, and non-billable time (marketing, admin, networking). New freelancers may only bill 600-800 hours in year one while building a client base. Plan conservatively and adjust as your pipeline grows.</p>
             </div>
-
-            <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
-              <h3 className="text-white font-semibold mb-2">Should I charge hourly or project rates?</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">Project rates are generally better for experienced freelancers — you are paid for the value delivered, not hours spent. As you get faster and better, project rates increase your effective hourly rate. Hourly is better for ongoing or open-ended work where scope is unclear. Never use hourly rates that expose you to scope creep without change-order agreements.</p>
+            <div className="pb-4">
+              <h3 className="text-white font-semibold mb-2">Should I charge hourly or by project?</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">Project-based pricing is generally better for experienced freelancers. It rewards efficiency — if you work faster, you earn more per hour. Clients prefer knowing total cost upfront. Start with hourly until you can accurately estimate project time, then transition to fixed-price projects. Always include scope change clauses to protect against scope creep.</p>
             </div>
           </div>
         </div>
-
       </main>
       <TrustSection />
       <Footer />
