@@ -41,7 +41,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
-      <head>
+      <head><link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
         {/* Preconnect to Google AdSense domains for faster ad loading */}
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" />
