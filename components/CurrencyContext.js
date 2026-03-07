@@ -1,28 +1,28 @@
 'use client'
 import { createContext, useContext, useState, useEffect } from 'react'
 
-const CURRENCIES = [
-  { code: 'USD', symbol: '$',  flag: '🇺🇸', name: 'US Dollar',         locale: 'en-US', defaults: { home: 400000, loan: 25000, income: 75000 } },
-  { code: 'EUR', symbol: '€',  flag: '🇪🇺', name: 'Euro',               locale: 'de-DE', defaults: { home: 350000, loan: 20000, income: 65000 } },
-  { code: 'GBP', symbol: '£',  flag: '🇬🇧', name: 'British Pound',      locale: 'en-GB', defaults: { home: 300000, loan: 20000, income: 55000 } },
-  { code: 'CAD', symbol: 'C$', flag: '🇨🇦', name: 'Canadian Dollar',    locale: 'en-CA', defaults: { home: 650000, loan: 30000, income: 80000 } },
-  { code: 'AUD', symbol: 'A$', flag: '🇦🇺', name: 'Australian Dollar',  locale: 'en-AU', defaults: { home: 750000, loan: 35000, income: 85000 } },
-  { code: 'INR', symbol: '₹',  flag: '🇮🇳', name: 'Indian Rupee',       locale: 'en-IN', defaults: { home: 8000000, loan: 500000, income: 1200000 } },
-  { code: 'AED', symbol: 'AED',flag: '🇦🇪', name: 'UAE Dirham',         locale: 'ar-AE', defaults: { home: 1500000, loan: 100000, income: 180000 } },
-  { code: 'SAR', symbol: 'SAR',flag: '🇸🇦', name: 'Saudi Riyal',        locale: 'ar-SA', defaults: { home: 1200000, loan: 80000, income: 150000 } },
-  { code: 'PKR', symbol: 'Rs', flag: '🇵🇰', name: 'Pakistani Rupee',    locale: 'en-PK', defaults: { home: 15000000, loan: 1000000, income: 1500000 } },
-  { code: 'NGN', symbol: 'N',  flag: '🇳🇬', name: 'Nigerian Naira',     locale: 'en-NG', defaults: { home: 50000000, loan: 5000000, income: 8000000 } },
-  { code: 'BRL', symbol: 'R$', flag: '🇧🇷', name: 'Brazilian Real',     locale: 'pt-BR', defaults: { home: 500000, loan: 50000, income: 80000 } },
-  { code: 'MXN', symbol: 'MX$',flag: '🇲🇽', name: 'Mexican Peso',       locale: 'es-MX', defaults: { home: 3000000, loan: 200000, income: 350000 } },
-  { code: 'ZAR', symbol: 'R',  flag: '🇿🇦', name: 'South African Rand', locale: 'en-ZA', defaults: { home: 2000000, loan: 150000, income: 350000 } },
-  { code: 'SGD', symbol: 'S$', flag: '🇸🇬', name: 'Singapore Dollar',   locale: 'en-SG', defaults: { home: 1200000, loan: 80000, income: 120000 } },
-  { code: 'MYR', symbol: 'RM', flag: '🇲🇾', name: 'Malaysian Ringgit',  locale: 'ms-MY', defaults: { home: 600000, loan: 50000, income: 72000 } },
-  { code: 'JPY', symbol: 'JPY',flag: '🇯🇵', name: 'Japanese Yen',       locale: 'ja-JP', defaults: { home: 50000000, loan: 3000000, income: 5000000 } },
-  { code: 'CNY', symbol: 'CNY',flag: '🇨🇳', name: 'Chinese Yuan',       locale: 'zh-CN', defaults: { home: 3000000, loan: 200000, income: 200000 } },
-  { code: 'CHF', symbol: 'Fr', flag: '🇨🇭', name: 'Swiss Franc',        locale: 'de-CH', defaults: { home: 900000, loan: 50000, income: 120000 } },
-  { code: 'SEK', symbol: 'kr', flag: '🇸🇪', name: 'Swedish Krona',      locale: 'sv-SE', defaults: { home: 4000000, loan: 200000, income: 550000 } },
-  { code: 'NZD', symbol: 'NZ$',flag: '🇳🇿', name: 'New Zealand Dollar', locale: 'en-NZ', defaults: { home: 750000, loan: 40000, income: 75000 } },
-]
+const CURRENCY_DATA = {
+  USD: { code: 'USD', symbol: '$',    locale: 'en-US', flag: '🇺🇸', name: 'US Dollar',         defaults: { home: 400000,    loan: 25000,   income: 75000   } },
+  EUR: { code: 'EUR', symbol: '€',    locale: 'de-DE', flag: '🇪🇺', name: 'Euro',               defaults: { home: 350000,    loan: 20000,   income: 65000   } },
+  GBP: { code: 'GBP', symbol: '£',    locale: 'en-GB', flag: '🇬🇧', name: 'British Pound',      defaults: { home: 300000,    loan: 20000,   income: 55000   } },
+  CAD: { code: 'CAD', symbol: 'CA$',  locale: 'en-CA', flag: '🇨🇦', name: 'Canadian Dollar',    defaults: { home: 650000,    loan: 30000,   income: 80000   } },
+  AUD: { code: 'AUD', symbol: 'A$',   locale: 'en-AU', flag: '🇦🇺', name: 'Australian Dollar',  defaults: { home: 750000,    loan: 35000,   income: 85000   } },
+  INR: { code: 'INR', symbol: '₹',    locale: 'en-IN', flag: '🇮🇳', name: 'Indian Rupee',       defaults: { home: 8000000,   loan: 500000,  income: 1200000 } },
+  AED: { code: 'AED', symbol: 'د.إ',  locale: 'ar-AE', flag: '🇦🇪', name: 'UAE Dirham',         defaults: { home: 1500000,   loan: 100000,  income: 180000  } },
+  SAR: { code: 'SAR', symbol: '﷼',    locale: 'ar-SA', flag: '🇸🇦', name: 'Saudi Riyal',        defaults: { home: 1200000,   loan: 80000,   income: 150000  } },
+  PKR: { code: 'PKR', symbol: '₨',    locale: 'ur-PK', flag: '🇵🇰', name: 'Pakistani Rupee',    defaults: { home: 15000000,  loan: 1000000, income: 1500000 } },
+  NGN: { code: 'NGN', symbol: '₦',    locale: 'en-NG', flag: '🇳🇬', name: 'Nigerian Naira',     defaults: { home: 50000000,  loan: 5000000, income: 8000000 } },
+  BRL: { code: 'BRL', symbol: 'R$',   locale: 'pt-BR', flag: '🇧🇷', name: 'Brazilian Real',     defaults: { home: 500000,    loan: 50000,   income: 80000   } },
+  MXN: { code: 'MXN', symbol: 'MX$',  locale: 'es-MX', flag: '🇲🇽', name: 'Mexican Peso',       defaults: { home: 3000000,   loan: 200000,  income: 350000  } },
+  ZAR: { code: 'ZAR', symbol: 'R',    locale: 'en-ZA', flag: '🇿🇦', name: 'South African Rand', defaults: { home: 2000000,   loan: 150000,  income: 350000  } },
+  SGD: { code: 'SGD', symbol: 'S$',   locale: 'en-SG', flag: '🇸🇬', name: 'Singapore Dollar',   defaults: { home: 1200000,   loan: 80000,   income: 120000  } },
+  MYR: { code: 'MYR', symbol: 'RM',   locale: 'ms-MY', flag: '🇲🇾', name: 'Malaysian Ringgit',  defaults: { home: 600000,    loan: 50000,   income: 72000   } },
+  JPY: { code: 'JPY', symbol: '¥',    locale: 'ja-JP', flag: '🇯🇵', name: 'Japanese Yen',       defaults: { home: 50000000,  loan: 3000000, income: 5000000 } },
+  CNY: { code: 'CNY', symbol: 'CN¥',  locale: 'zh-CN', flag: '🇨🇳', name: 'Chinese Yuan',       defaults: { home: 3000000,   loan: 200000,  income: 200000  } },
+  CHF: { code: 'CHF', symbol: 'Fr',   locale: 'de-CH', flag: '🇨🇭', name: 'Swiss Franc',        defaults: { home: 900000,    loan: 50000,   income: 120000  } },
+  SEK: { code: 'SEK', symbol: 'kr',   locale: 'sv-SE', flag: '🇸🇪', name: 'Swedish Krona',      defaults: { home: 4000000,   loan: 200000,  income: 550000  } },
+  NZD: { code: 'NZD', symbol: 'NZ$',  locale: 'en-NZ', flag: '🇳🇿', name: 'New Zealand Dollar', defaults: { home: 750000,    loan: 40000,   income: 75000   } },
+}
 
 const COUNTRY_TO_CURRENCY = {
   US:'USD', CA:'CAD', AU:'AUD', NZ:'NZD',
@@ -33,46 +33,87 @@ const COUNTRY_TO_CURRENCY = {
   JP:'JPY', CN:'CNY', CH:'CHF', SE:'SEK', NO:'SEK', DK:'SEK',
 }
 
-const DEFAULT = CURRENCIES[0]
-const CurrencyContext = createContext({ currency: DEFAULT, setCurrency: () => {}, currencies: CURRENCIES })
+export const CURRENCIES = Object.values(CURRENCY_DATA)
+
+function makeFmt(code) {
+  const cur = CURRENCY_DATA[code] || CURRENCY_DATA['USD']
+  return function fmt(amount) {
+    if (amount === undefined || amount === null || isNaN(amount)) return cur.symbol + '0'
+    try {
+      return new Intl.NumberFormat(cur.locale, {
+        style: 'currency',
+        currency: cur.code,
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      }).format(Number(amount))
+    } catch {
+      return cur.symbol + Math.round(Number(amount)).toLocaleString()
+    }
+  }
+}
+
+function makeValue(code) {
+  const cur = CURRENCY_DATA[code] || CURRENCY_DATA['USD']
+  return {
+    currency: code,
+    symbol: cur.symbol,
+    fmt: makeFmt(code),
+    currencyData: cur,
+    currencies: CURRENCIES,
+    setCurrency: () => {},
+  }
+}
+
+// Safe SSR default — never undefined, fmt is always a function
+const DEFAULT_VALUE = makeValue('USD')
+
+const CurrencyContext = createContext(DEFAULT_VALUE)
 
 export function CurrencyProvider({ children }) {
-  const [currency, setCurrencyState] = useState(DEFAULT)
+  const [code, setCode] = useState('USD')
 
   useEffect(() => {
+    // 1. Check localStorage first (user preference)
     try {
       const saved = localStorage.getItem('ffc_currency')
-      if (saved) {
-        const found = CURRENCIES.find(c => c.code === saved)
-        if (found) { setCurrencyState(found); return }
+      if (saved && CURRENCY_DATA[saved]) {
+        setCode(saved)
+        return
       }
     } catch(e) {}
 
+    // 2. Detect via IP geolocation
     fetch('https://ipapi.co/json/')
       .then(r => r.json())
       .then(data => {
-        const code = COUNTRY_TO_CURRENCY[data.country_code]
-        if (code) {
-          const found = CURRENCIES.find(c => c.code === code)
-          if (found) setCurrencyState(found)
-        }
+        const detected = COUNTRY_TO_CURRENCY[data.country_code]
+        if (detected && CURRENCY_DATA[detected]) setCode(detected)
       })
       .catch(() => {
-        const lang = navigator.language || 'en-US'
-        if (lang.startsWith('en-GB')) setCurrencyState(CURRENCIES.find(c => c.code === 'GBP'))
-        else if (lang.startsWith('en-AU')) setCurrencyState(CURRENCIES.find(c => c.code === 'AUD'))
-        else if (lang.startsWith('en-IN')) setCurrencyState(CURRENCIES.find(c => c.code === 'INR'))
-        else if (/^(de|fr|it|es|nl|pt)/.test(lang)) setCurrencyState(CURRENCIES.find(c => c.code === 'EUR'))
+        // 3. Fallback: browser language
+        try {
+          const lang = navigator.language || 'en-US'
+          if (lang.startsWith('en-GB')) setCode('GBP')
+          else if (lang.startsWith('en-AU')) setCode('AUD')
+          else if (lang.startsWith('en-IN')) setCode('INR')
+          else if (/^(de|fr|it|es|nl|pt)/.test(lang)) setCode('EUR')
+        } catch(e) {}
       })
   }, [])
 
-  const setCurrency = (curr) => {
-    setCurrencyState(curr)
-    try { localStorage.setItem('ffc_currency', curr.code) } catch(e) {}
+  const setCurrency = (newCode) => {
+    if (!CURRENCY_DATA[newCode]) return
+    setCode(newCode)
+    try { localStorage.setItem('ffc_currency', newCode) } catch(e) {}
+  }
+
+  const value = {
+    ...makeValue(code),
+    setCurrency,
   }
 
   return (
-    <CurrencyContext.Provider value={{ currency, setCurrency, currencies: CURRENCIES }}>
+    <CurrencyContext.Provider value={value}>
       {children}
     </CurrencyContext.Provider>
   )
