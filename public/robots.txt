@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.freefincalc.net/sitemap.xml
+Sitemap: https://freefincalc.net/sitemap.xml
