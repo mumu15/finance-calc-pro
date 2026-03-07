@@ -35,8 +35,7 @@ const COUNTRY_TO_CURRENCY = {
 
 export const CURRENCIES = Object.values(CURRENCY_DATA)
 
-function makeFmt(code) {
-  const cur = CURRENCY_DATA[code] || CURRENCY_DATA['USD']
+function makeFmt(cur) {
   return function fmt(amount) {
     if (amount === undefined || amount === null || isNaN(amount)) return cur.symbol + '0'
     try {
@@ -52,68 +51,65 @@ function makeFmt(code) {
   }
 }
 
-function makeValue(code) {
-  const cur = CURRENCY_DATA[code] || CURRENCY_DATA['USD']
+// Build the context value object
+// currency = FULL OBJECT (so currency.defaults.home works in mortgage calc etc)
+// symbol, fmt also exposed at top level for convenience
+function makeValue(curCode, setCurrencyFn) {
+  const cur = CURRENCY_DATA[curCode] || CURRENCY_DATA['USD']
   return {
-    currency: code,
-    symbol: cur.symbol,
-    fmt: makeFmt(code),
-    currencyData: cur,
-    currencies: CURRENCIES,
-    setCurrency: () => {},
+    currency: cur,                        // full object: { code, symbol, locale, flag, name, defaults }
+    symbol: cur.symbol,                   // shortcut: "$"
+    fmt: makeFmt(cur),                    // always a function, never undefined
+    currencies: CURRENCIES,               // array for currency picker
+    setCurrency: setCurrencyFn || (() => {}),
   }
 }
 
-// Safe SSR default — never undefined, fmt is always a function
-const DEFAULT_VALUE = makeValue('USD')
+// SSR-safe default — every field populated, fmt is a real function
+const USD = CURRENCY_DATA['USD']
+const DEFAULT_VALUE = makeValue('USD', () => {})
 
 const CurrencyContext = createContext(DEFAULT_VALUE)
 
 export function CurrencyProvider({ children }) {
-  const [code, setCode] = useState('USD')
+  const [curCode, setCurCode] = useState('USD')
 
   useEffect(() => {
-    // 1. Check localStorage first (user preference)
+    // 1. Restore saved user preference
     try {
       const saved = localStorage.getItem('ffc_currency')
-      if (saved && CURRENCY_DATA[saved]) {
-        setCode(saved)
-        return
-      }
+      if (saved && CURRENCY_DATA[saved]) { setCurCode(saved); return }
     } catch(e) {}
 
-    // 2. Detect via IP geolocation
+    // 2. IP geolocation detection
     fetch('https://ipapi.co/json/')
       .then(r => r.json())
       .then(data => {
         const detected = COUNTRY_TO_CURRENCY[data.country_code]
-        if (detected && CURRENCY_DATA[detected]) setCode(detected)
+        if (detected && CURRENCY_DATA[detected]) setCurCode(detected)
       })
       .catch(() => {
         // 3. Fallback: browser language
         try {
           const lang = navigator.language || 'en-US'
-          if (lang.startsWith('en-GB')) setCode('GBP')
-          else if (lang.startsWith('en-AU')) setCode('AUD')
-          else if (lang.startsWith('en-IN')) setCode('INR')
-          else if (/^(de|fr|it|es|nl|pt)/.test(lang)) setCode('EUR')
+          if (lang.startsWith('en-GB'))       setCurCode('GBP')
+          else if (lang.startsWith('en-AU'))  setCurCode('AUD')
+          else if (lang.startsWith('en-IN'))  setCurCode('INR')
+          else if (/^(de|fr|it|es|nl|pt)/.test(lang)) setCurCode('EUR')
         } catch(e) {}
       })
   }, [])
 
-  const setCurrency = (newCode) => {
+  const setCurrency = (input) => {
+    // Accept both string ("USD") and object ({ code: "USD", ... })
+    const newCode = typeof input === 'object' ? input.code : input
     if (!CURRENCY_DATA[newCode]) return
-    setCode(newCode)
+    setCurCode(newCode)
     try { localStorage.setItem('ffc_currency', newCode) } catch(e) {}
   }
 
-  const value = {
-    ...makeValue(code),
-    setCurrency,
-  }
-
   return (
-    <CurrencyContext.Provider value={value}>
+    <CurrencyContext.Provider value={makeValue(curCode, setCurrency)}>
       {children}
     </CurrencyContext.Provider>
   )
