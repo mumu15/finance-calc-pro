@@ -1,5 +1,4 @@
 'use client'
-export { metadata } from './metadata'
 import { useState, useMemo, useEffect } from 'react'
 import AdUnit from '../components/AdUnit'
 import Header from '../../components/Header'
