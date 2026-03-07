@@ -1,35 +1,32 @@
 'use client'
 import { createContext, useContext, useState } from 'react'
 
-const CURRENCY_DATA = {
-  USD: { code: 'USD', symbol: '$',   locale: 'en-US' },
-  EUR: { code: 'EUR', symbol: '€',   locale: 'de-DE' },
-  GBP: { code: 'GBP', symbol: '£',   locale: 'en-GB' },
-  INR: { code: 'INR', symbol: '₹',   locale: 'en-IN' },
-  PKR: { code: 'PKR', symbol: '₨',   locale: 'ur-PK' },
-  AED: { code: 'AED', symbol: 'د.إ', locale: 'ar-AE' },
-  SAR: { code: 'SAR', symbol: '﷼',   locale: 'ar-SA' },
-  CAD: { code: 'CAD', symbol: 'CA$', locale: 'en-CA' },
-  AUD: { code: 'AUD', symbol: 'A$',  locale: 'en-AU' },
-  SGD: { code: 'SGD', symbol: 'S$',  locale: 'en-SG' },
-  MYR: { code: 'MYR', symbol: 'RM',  locale: 'ms-MY' },
-  NGN: { code: 'NGN', symbol: '₦',   locale: 'en-NG' },
-  ZAR: { code: 'ZAR', symbol: 'R',   locale: 'en-ZA' },
-  JPY: { code: 'JPY', symbol: '¥',   locale: 'ja-JP' },
-  CNY: { code: 'CNY', symbol: 'CN¥', locale: 'zh-CN' },
-  BRL: { code: 'BRL', symbol: 'R$',  locale: 'pt-BR' },
-  CHF: { code: 'CHF', symbol: 'Fr',  locale: 'de-CH' },
-  NZD: { code: 'NZD', symbol: 'NZ$', locale: 'en-NZ' },
-  MXN: { code: 'MXN', symbol: 'MX$', locale: 'es-MX' },
-  SEK: { code: 'SEK', symbol: 'kr',  locale: 'sv-SE' },
+const CURRENCIES = {
+  USD: { code: 'USD', symbol: '$',    flag: '🇺🇸', name: 'US Dollar',           locale: 'en-US', defaults: { home: 350000,  loan: 25000,  income: 6000  } },
+  EUR: { code: 'EUR', symbol: '€',    flag: '🇪🇺', name: 'Euro',                 locale: 'de-DE', defaults: { home: 320000,  loan: 20000,  income: 5000  } },
+  GBP: { code: 'GBP', symbol: '£',    flag: '🇬🇧', name: 'British Pound',        locale: 'en-GB', defaults: { home: 280000,  loan: 18000,  income: 4500  } },
+  INR: { code: 'INR', symbol: '₹',    flag: '🇮🇳', name: 'Indian Rupee',         locale: 'en-IN', defaults: { home: 8000000, loan: 500000, income: 80000 } },
+  PKR: { code: 'PKR', symbol: '₨',    flag: '🇵🇰', name: 'Pakistani Rupee',      locale: 'ur-PK', defaults: { home: 5000000, loan: 300000, income: 60000 } },
+  AED: { code: 'AED', symbol: 'د.إ',  flag: '🇦🇪', name: 'UAE Dirham',           locale: 'ar-AE', defaults: { home: 1200000, loan: 80000,  income: 20000 } },
+  SAR: { code: 'SAR', symbol: '﷼',    flag: '🇸🇦', name: 'Saudi Riyal',          locale: 'ar-SA', defaults: { home: 1000000, loan: 70000,  income: 18000 } },
+  CAD: { code: 'CAD', symbol: 'CA$',  flag: '🇨🇦', name: 'Canadian Dollar',      locale: 'en-CA', defaults: { home: 500000,  loan: 30000,  income: 7000  } },
+  AUD: { code: 'AUD', symbol: 'A$',   flag: '🇦🇺', name: 'Australian Dollar',    locale: 'en-AU', defaults: { home: 600000,  loan: 35000,  income: 8000  } },
+  SGD: { code: 'SGD', symbol: 'S$',   flag: '🇸🇬', name: 'Singapore Dollar',     locale: 'en-SG', defaults: { home: 500000,  loan: 30000,  income: 8000  } },
+  MYR: { code: 'MYR', symbol: 'RM',   flag: '🇲🇾', name: 'Malaysian Ringgit',    locale: 'ms-MY', defaults: { home: 400000,  loan: 25000,  income: 6000  } },
+  NGN: { code: 'NGN', symbol: '₦',    flag: '🇳🇬', name: 'Nigerian Naira',       locale: 'en-NG', defaults: { home: 30000000,loan: 2000000,income: 400000} },
+  ZAR: { code: 'ZAR', symbol: 'R',    flag: '🇿🇦', name: 'South African Rand',   locale: 'en-ZA', defaults: { home: 1500000, loan: 100000, income: 25000 } },
+  JPY: { code: 'JPY', symbol: '¥',    flag: '🇯🇵', name: 'Japanese Yen',         locale: 'ja-JP', defaults: { home: 40000000,loan: 3000000,income: 500000} },
+  CNY: { code: 'CNY', symbol: 'CN¥',  flag: '🇨🇳', name: 'Chinese Yuan',         locale: 'zh-CN', defaults: { home: 2000000, loan: 150000, income: 30000 } },
+  BRL: { code: 'BRL', symbol: 'R$',   flag: '🇧🇷', name: 'Brazilian Real',       locale: 'pt-BR', defaults: { home: 400000,  loan: 30000,  income: 6000  } },
+  CHF: { code: 'CHF', symbol: 'Fr',   flag: '🇨🇭', name: 'Swiss Franc',          locale: 'de-CH', defaults: { home: 700000,  loan: 40000,  income: 10000 } },
+  NZD: { code: 'NZD', symbol: 'NZ$',  flag: '🇳🇿', name: 'New Zealand Dollar',   locale: 'en-NZ', defaults: { home: 650000,  loan: 40000,  income: 8000  } },
+  MXN: { code: 'MXN', symbol: 'MX$',  flag: '🇲🇽', name: 'Mexican Peso',         locale: 'es-MX', defaults: { home: 2000000, loan: 150000, income: 25000 } },
+  SEK: { code: 'SEK', symbol: 'kr',   flag: '🇸🇪', name: 'Swedish Krona',        locale: 'sv-SE', defaults: { home: 3000000, loan: 200000, income: 45000 } },
 }
 
-function makeFmt(code) {
-  const cur = CURRENCY_DATA[code] || CURRENCY_DATA['USD']
+function makeFmt(cur) {
   return function fmt(amount) {
-    if (amount === undefined || amount === null || isNaN(amount)) {
-      return cur.symbol + '0'
-    }
+    if (amount === undefined || amount === null || isNaN(amount)) return cur.symbol + '0'
     try {
       return new Intl.NumberFormat(cur.locale, {
         style: 'currency',
@@ -43,25 +40,27 @@ function makeFmt(code) {
   }
 }
 
-// Safe defaults used during static prerender (no Provider)
+// Safe default value used during static prerender (no Provider)
+const DEFAULT_CUR = CURRENCIES['USD']
 const DEFAULT_VALUE = {
-  currency: 'USD',
+  currency:    DEFAULT_CUR,
   setCurrency: () => {},
-  symbol: '$',
-  fmt: makeFmt('USD'),
+  symbol:      DEFAULT_CUR.symbol,
+  fmt:         makeFmt(DEFAULT_CUR),
 }
 
 const CurrencyContext = createContext(DEFAULT_VALUE)
 
 export function CurrencyProvider({ children }) {
-  const [currency, setCurrency] = useState('USD')
-  const cur = CURRENCY_DATA[currency] || CURRENCY_DATA['USD']
+  const [code, setCode] = useState('USD')
+
+  const cur = CURRENCIES[code] || CURRENCIES['USD']
 
   const value = {
-    currency,
-    setCurrency,
-    symbol: cur.symbol,
-    fmt: makeFmt(currency),
+    currency:    cur,           // full object: { code, symbol, flag, name, locale, defaults }
+    setCurrency: setCode,       // accepts currency code string e.g. 'EUR'
+    symbol:      cur.symbol,
+    fmt:         makeFmt(cur),
   }
 
   return (
@@ -72,7 +71,8 @@ export function CurrencyProvider({ children }) {
 }
 
 export function useCurrency() {
-  // Returns DEFAULT_VALUE during static prerender (no Provider)
-  // Returns live context value in browser
   return useContext(CurrencyContext)
 }
+
+// Export full list for Header currency picker
+export { CURRENCIES }

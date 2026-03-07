@@ -167,7 +167,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen]   = useState(false)
   const [expanded, setExpanded]   = useState(null)
   const [curOpen, setCurOpen]     = useState(false)
-  const activeCur = CURRENCIES.find(c => c.code === currency) || CURRENCIES[0]
+  const activeCur = CURRENCIES.find(c => c.code === currency.code) || CURRENCIES[0]
 
   // Lock body scroll when menu open
   useEffect(() => {
@@ -242,10 +242,10 @@ export default function Header() {
                         key={cur.code}
                         onClick={() => { setCurrency(cur.code); setCurOpen(false) }}
                         className="w-full flex items-center gap-3 px-4 py-2.5 text-xs text-left hover:bg-white/5 transition-colors"
-                        style={{color: currency === cur.code ? '#f0c842' : '#94a3b8'}}>
+                        style={{color: currency.code === cur.code ? '#f0c842' : '#94a3b8'}}>
                         <span className="font-bold w-6 shrink-0 text-center">{cur.symbol}</span>
                         <span>{cur.code} — {cur.label}</span>
-                        {currency === cur.code && <span className="ml-auto text-yellow-400">✓</span>}
+                        {currency.code === cur.code && <span className="ml-auto text-yellow-400">✓</span>}
                       </button>
                     ))}
                   </div>
