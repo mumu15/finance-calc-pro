@@ -1,4 +1,11 @@
-const BASE = 'https://freefincalc.net'
+/**
+ * node fix_sitemap_route.js
+ * Creates app/sitemap.js — a proper Next.js sitemap that auto-generates
+ * Google can always access this at https://freefincalc.net/sitemap.xml
+ */
+const fs = require('fs')
+
+const sitemapCode = `const BASE = 'https://freefincalc.net'
 
 const calculators = [
   'mortgage-calculator','car-loan-calculator','personal-loan-calculator',
@@ -82,28 +89,28 @@ export default function sitemap() {
 
   const pages = [
     { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE}/privacy-policy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: \`\${BASE}/about\`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: \`\${BASE}/blog\`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: \`\${BASE}/privacy-policy\`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: \`\${BASE}/terms\`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   const calcPages = calculators.map(slug => ({
-    url: `${BASE}/${slug}`,
+    url: \`\${BASE}/\${slug}\`,
     lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.9,
   }))
 
   const blogPages = blogs.map(slug => ({
-    url: `${BASE}/blog/${slug}`,
+    url: \`\${BASE}/blog/\${slug}\`,
     lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.7,
   }))
 
   const cityPages = citySlugs.map(slug => ({
-    url: `${BASE}/mortgage-calculator/${slug}`,
+    url: \`\${BASE}/mortgage-calculator/\${slug}\`,
     lastModified: now,
     changeFrequency: 'monthly',
     priority: 0.8,
@@ -111,3 +118,19 @@ export default function sitemap() {
 
   return [...pages, ...calcPages, ...blogPages, ...cityPages]
 }
+`
+
+// Remove old static sitemap from public/
+try {
+  fs.unlinkSync('public/sitemap.xml')
+  console.log('✅ Removed old public/sitemap.xml')
+} catch(e) {
+  console.log('ℹ️  No old sitemap.xml to remove')
+}
+
+// Write new Next.js sitemap route
+fs.writeFileSync('app/sitemap.js', sitemapCode, 'utf8')
+console.log('✅ app/sitemap.js created')
+console.log('')
+console.log('This generates https://freefincalc.net/sitemap.xml automatically.')
+console.log('Total URLs: ~200 calculators + 41 blogs + 50 cities = ~295 URLs')
