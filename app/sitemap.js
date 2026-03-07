@@ -8,6 +8,7 @@ export default function sitemap() {
     { route: 'about',          priority: 0.5,  freq: 'monthly' },
     { route: 'contact',        priority: 0.5,  freq: 'monthly' },
     { route: 'privacy-policy', priority: 0.3,  freq: 'monthly' },
+    { route: 'terms',          priority: 0.3,  freq: 'monthly' },
   ]
 
   // ── Blog posts (41) ──────────────────────────────────────────

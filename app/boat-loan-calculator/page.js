@@ -1,4 +1,5 @@
 'use client'
+export { metadata } from './metadata'
 import { useState, useMemo } from 'react'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'

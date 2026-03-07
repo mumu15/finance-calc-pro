@@ -1,0 +1,20 @@
+// Auto-generated metadata for SEO
+export const metadata = {
+  title: 'Passive Income Calculator',
+  description: 'Calculate how much you need invested to generate target passive income. Plan dividends, rental and investment income.',
+  alternates: {
+    canonical: 'https://freefincalc.net/passive-income-calculator',
+  },
+  openGraph: {
+    title: 'Passive Income Calculator',
+    description: 'Calculate how much you need invested to generate target passive income. Plan dividends, rental and investment income.',
+    url: 'https://freefincalc.net/passive-income-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Passive Income Calculator',
+    description: 'Calculate how much you need invested to generate target passive income. Plan dividends, rental and investment income.',
+  },
+}

@@ -1,0 +1,20 @@
+// Auto-generated metadata for SEO
+export const metadata = {
+  title: 'Employee Cost Calculator',
+  description: 'Calculate the true total cost of an employee including taxes, benefits and overhead. Know the real cost before hiring.',
+  alternates: {
+    canonical: 'https://freefincalc.net/employee-cost-calculator',
+  },
+  openGraph: {
+    title: 'Employee Cost Calculator',
+    description: 'Calculate the true total cost of an employee including taxes, benefits and overhead. Know the real cost before hiring.',
+    url: 'https://freefincalc.net/employee-cost-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Employee Cost Calculator',
+    description: 'Calculate the true total cost of an employee including taxes, benefits and overhead. Know the real cost before hiring.',
+  },
+}

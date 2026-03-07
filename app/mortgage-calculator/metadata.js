@@ -1,13 +1,20 @@
+// Auto-generated metadata for SEO
 export const metadata = {
-  title: 'Mortgage Calculator – Monthly Payment & Amortization Schedule',
-  description: 'Free mortgage calculator. Calculate your monthly mortgage payment, total interest, and get a full year-by-year amortization schedule. Includes property tax and insurance.',
-  keywords: ['mortgage calculator', 'monthly mortgage payment', 'home loan calculator', 'amortization calculator', 'mortgage payment calculator'],
+  title: 'Mortgage Calculator',
+  description: 'Calculate monthly mortgage payments, total interest and amortization schedule. Free mortgage calculator for any loan amount and rate.',
   alternates: {
-    canonical: 'https://fincalcpro.com/mortgage-calculator',
+    canonical: 'https://freefincalc.net/mortgage-calculator',
   },
   openGraph: {
-    title: 'Mortgage Calculator – Monthly Payment & Amortization',
-    description: 'Calculate your exact monthly mortgage payment with property tax, insurance, and full amortization schedule.',
-    url: 'https://fincalcpro.com/mortgage-calculator',
-  }
+    title: 'Mortgage Calculator',
+    description: 'Calculate monthly mortgage payments, total interest and amortization schedule. Free mortgage calculator for any loan amount and rate.',
+    url: 'https://freefincalc.net/mortgage-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mortgage Calculator',
+    description: 'Calculate monthly mortgage payments, total interest and amortization schedule. Free mortgage calculator for any loan amount and rate.',
+  },
 }
