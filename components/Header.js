@@ -163,7 +163,7 @@ const NAV = [
 ]
 
 export default function Header() {
-  const { currency, setCurrency } = useCurrency()
+  const { currency, setCurrency, symbol } = useCurrency()
   const [menuOpen, setMenuOpen]   = useState(false)
   const [expanded, setExpanded]   = useState(null)
   const [curOpen, setCurOpen]     = useState(false)
@@ -216,7 +216,7 @@ export default function Header() {
                   border: '1px solid rgba(240,200,66,0.3)',
                   color: '#f0c842',
                 }}>
-                <span>{activeCur.symbol}</span>
+                <span>{symbol}</span>
                 <span>{activeCur.code}</span>
                 <span style={{fontSize:'7px', opacity:0.6}}>{curOpen ? '▲' : '▼'}</span>
               </button>
