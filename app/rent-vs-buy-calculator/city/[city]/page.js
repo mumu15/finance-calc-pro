@@ -1,4 +1,4 @@
-import rvbCities from '../../../data/rvbCities.js'
+import rvbCities from '../../../../data/rvbCities.js'
 import RvBCityClient from './RvBCityClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return rvbCities.map(x => ({ city: x.slug })) }

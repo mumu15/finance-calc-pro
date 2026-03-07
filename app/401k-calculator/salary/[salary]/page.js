@@ -1,4 +1,4 @@
-import salaries401k from '../../../data/salaries401k.js'
+import salaries401k from '../../../../data/salaries401k.js'
 import FourOhOneKClient from './FourOhOneKClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return salaries401k.map(x => ({ salary: x.slug })) }

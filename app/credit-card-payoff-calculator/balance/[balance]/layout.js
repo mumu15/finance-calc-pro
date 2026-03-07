@@ -1,4 +1,4 @@
-import items from '../../../data/ccBalances'
+import items from '../../../../data/ccBalances'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.balance)
   if (!it) return { title: 'Credit Card Payoff Calculator' }

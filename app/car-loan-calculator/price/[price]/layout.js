@@ -1,4 +1,4 @@
-import items from '../../../data/carPrices'
+import items from '../../../../data/carPrices'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.price)
   if (!it) return { title: 'Car Loan Calculator' }

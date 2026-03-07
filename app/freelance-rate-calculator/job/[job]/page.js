@@ -1,4 +1,4 @@
-import freelanceJobs from '../../../data/freelanceJobs.js'
+import freelanceJobs from '../../../../data/freelanceJobs.js'
 import FreelanceRateClient from './FreelanceRateClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return freelanceJobs.map(x => ({ job: x.slug })) }

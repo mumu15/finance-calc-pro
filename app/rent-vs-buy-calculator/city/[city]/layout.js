@@ -1,4 +1,4 @@
-import items from '../../../data/rvbCities'
+import items from '../../../../data/rvbCities'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.city)
   if (!it) return { title: 'Rent vs Buy Calculator' }

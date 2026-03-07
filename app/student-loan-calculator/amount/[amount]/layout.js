@@ -1,4 +1,4 @@
-import items from '../../../data/studentAmounts'
+import items from '../../../../data/studentAmounts'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.amount)
   if (!it) return { title: 'Student Loan Calculator' }

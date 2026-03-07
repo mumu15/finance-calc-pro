@@ -1,4 +1,4 @@
-import items from '../../../data/businesses'
+import items from '../../../../data/businesses'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.business)
   if (!it) return { title: 'Break-Even Calculator' }

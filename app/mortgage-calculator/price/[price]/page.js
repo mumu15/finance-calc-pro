@@ -1,4 +1,4 @@
-import homePrices from '../../../data/homePrices.js'
+import homePrices from '../../../../data/homePrices.js'
 import MortgagePriceClient from './MortgagePriceClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return homePrices.map(x => ({ price: x.slug })) }

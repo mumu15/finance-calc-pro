@@ -1,4 +1,4 @@
-import items from '../../../data/homePrices'
+import items from '../../../../data/homePrices'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.price)
   if (!it) return { title: 'Mortgage Calculator' }

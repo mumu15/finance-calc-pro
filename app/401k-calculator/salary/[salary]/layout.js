@@ -1,4 +1,4 @@
-import items from '../../../data/salaries401k'
+import items from '../../../../data/salaries401k'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.salary)
   if (!it) return { title: '401k Calculator' }

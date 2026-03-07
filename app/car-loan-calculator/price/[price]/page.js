@@ -1,4 +1,4 @@
-import carPrices from '../../../data/carPrices.js'
+import carPrices from '../../../../data/carPrices.js'
 import CarLoanPriceClient from './CarLoanPriceClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return carPrices.map(x => ({ price: x.slug })) }

@@ -1,4 +1,4 @@
-import items from '../../../data/freelanceJobs'
+import items from '../../../../data/freelanceJobs'
 export async function generateMetadata({ params }) {
   const it = items.find(x => x.slug === params.job)
   if (!it) return { title: 'Freelance Rate Calculator' }

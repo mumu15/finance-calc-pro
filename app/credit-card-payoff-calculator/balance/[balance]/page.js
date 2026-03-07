@@ -1,4 +1,4 @@
-import ccBalances from '../../../data/ccBalances.js'
+import ccBalances from '../../../../data/ccBalances.js'
 import CCPayoffClient from './CCPayoffClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return ccBalances.map(x => ({ balance: x.slug })) }

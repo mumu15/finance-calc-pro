@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
-import Header from '../../../components/Header'
-import Footer from '../../../components/Footer'
+import Header from '../../../../components/Header'
+import Footer from '../../../../components/Footer'
 function fmt(n){return '$'+Math.round(n||0).toLocaleString('en-US')}
 function pmt(p,r,n){const mo=r/100/12;return mo>0?p*mo/(1-Math.pow(1+mo,-n)):p/n}
 function minMonths(bal,apr,payment){let b=bal,mo=apr/100/12,m=0;while(b>0&&m<600){b=b*(1+mo)-payment;m++;}return m}

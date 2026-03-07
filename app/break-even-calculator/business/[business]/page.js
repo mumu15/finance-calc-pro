@@ -1,4 +1,4 @@
-import businesses from '../../../data/businesses.js'
+import businesses from '../../../../data/businesses.js'
 import BreakEvenClient from './BreakEvenClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return businesses.map(x => ({ business: x.slug })) }
