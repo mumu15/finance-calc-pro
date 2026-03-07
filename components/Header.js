@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react'
 import { useCurrency, CURRENCIES } from './CurrencyContext'
 
-import { CURRENCIES } from './CurrencyContext'
-
 const NAV = [
   {
     label: 'Mortgage & Home', icon: '🏠',
