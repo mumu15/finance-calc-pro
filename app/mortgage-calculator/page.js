@@ -1,6 +1,7 @@
 'use client'
 import { useState, useMemo, useEffect } from 'react'
 import AdUnit from '../components/AdUnit'
+import PdfDownload from '../../components/PdfDownload'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
@@ -64,6 +65,21 @@ export default function MortgageCalculator() {
     return { loanAmount, pi, pmi, monthlyTax, monthlyIns, monthlyHoa, total, totalInterest, totalCost, schedule }
   }, [homePrice, downPayment, interestRate, loanTerm, propertyTax, insurance, hoa])
 
+
+  const pdfRows = [
+    { label: "Home Price",          value: String(fmt(homePrice))          },
+    { label: "Down Payment",        value: String(fmt(downPayment)) + " (" + downPct + "%)" },
+    { label: "Loan Amount",         value: String(fmt(calc.loanAmount))     },
+    { label: "Interest Rate",       value: String(interestRate) + "%"       },
+    { label: "Loan Term",           value: String(loanTerm) + " years"      },
+    { label: "Monthly Payment",     value: String(fmt(calc.total))          },
+    { label: "Principal & Interest",value: String(fmt(calc.pi))             },
+    { label: "Property Tax",        value: String(fmt(calc.monthlyTax)) + "/mo" },
+    { label: "Home Insurance",      value: String(fmt(calc.monthlyIns)) + "/mo" },
+    { label: "Total Interest",      value: String(fmt(calc.totalInterest))  },
+    { label: "Total Cost",          value: String(fmt(calc.totalCost))      },
+  ]
+
   const downPct = Math.round((downPayment / homePrice) * 100)
   const displayedSchedule = showFull ? calc.schedule : calc.schedule.slice(0, 24)
 
@@ -125,7 +141,10 @@ export default function MortgageCalculator() {
           {/* Results */}
           <div className="space-y-4">
             <div className="result-box">
-              <h2 className="text-white font-bold text-lg mb-4">Monthly Payment</h2>
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-white font-bold text-lg">Monthly Payment</h2>
+                <PdfDownload title="Mortgage Calculator" rows={pdfRows} />
+              </div>
               <div className="text-center mb-4">
                 <div className="text-5xl font-bold" style={{color:"#f0c842"}}>{fmt(calc.total)}</div>
                 <div className="text-slate-400 text-sm mt-1">per month · {currency.flag} {currency.code}</div>
