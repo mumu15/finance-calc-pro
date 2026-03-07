@@ -1,29 +1,8 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useCurrency } from './CurrencyContext'
+import { useCurrency, CURRENCIES } from './CurrencyContext'
 
-const CURRENCIES = [
-  { code: 'USD', symbol: '$',   label: 'US Dollar'          },
-  { code: 'EUR', symbol: '€',   label: 'Euro'               },
-  { code: 'GBP', symbol: '£',   label: 'British Pound'      },
-  { code: 'INR', symbol: '₹',   label: 'Indian Rupee'       },
-  { code: 'PKR', symbol: '₨',   label: 'Pakistani Rupee'    },
-  { code: 'AED', symbol: 'د.إ', label: 'UAE Dirham'         },
-  { code: 'SAR', symbol: '﷼',   label: 'Saudi Riyal'        },
-  { code: 'CAD', symbol: 'CA$', label: 'Canadian Dollar'    },
-  { code: 'AUD', symbol: 'A$',  label: 'Australian Dollar'  },
-  { code: 'SGD', symbol: 'S$',  label: 'Singapore Dollar'   },
-  { code: 'MYR', symbol: 'RM',  label: 'Malaysian Ringgit'  },
-  { code: 'NGN', symbol: '₦',   label: 'Nigerian Naira'     },
-  { code: 'ZAR', symbol: 'R',   label: 'South African Rand' },
-  { code: 'JPY', symbol: '¥',   label: 'Japanese Yen'       },
-  { code: 'CNY', symbol: 'CN¥', label: 'Chinese Yuan'       },
-  { code: 'BRL', symbol: 'R$',  label: 'Brazilian Real'     },
-  { code: 'CHF', symbol: 'Fr',  label: 'Swiss Franc'        },
-  { code: 'NZD', symbol: 'NZ$', label: 'New Zealand Dollar' },
-  { code: 'MXN', symbol: 'MX$', label: 'Mexican Peso'       },
-  { code: 'SEK', symbol: 'kr',  label: 'Swedish Krona'      },
-]
+import { CURRENCIES } from './CurrencyContext'
 
 const NAV = [
   {
@@ -244,7 +223,7 @@ export default function Header() {
                         className="w-full flex items-center gap-3 px-4 py-2.5 text-xs text-left hover:bg-white/5 transition-colors"
                         style={{color: currency.code === cur.code ? '#f0c842' : '#94a3b8'}}>
                         <span className="font-bold w-6 shrink-0 text-center">{cur.symbol}</span>
-                        <span>{cur.code} — {cur.label}</span>
+                        <span>{cur.code} — {cur.name}</span>
                         {currency.code === cur.code && <span className="ml-auto text-yellow-400">✓</span>}
                       </button>
                     ))}
