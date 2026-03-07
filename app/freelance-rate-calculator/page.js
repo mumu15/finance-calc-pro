@@ -5,6 +5,7 @@ import Footer from '../../components/Footer'
 import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
+import AdUnit from '../../components/AdUnit'
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -131,6 +132,7 @@ export default function Calculator() {
           </div>
         </div>
       </main>
+              <AdUnit slot="7405024590" />
       <TrustSection />
       <Footer />
     </>

@@ -40,6 +40,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8934829211507329"
+          crossOrigin="anonymous"
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"FreeFinCalc","url":"https://freefincalc.net","logo":"https://freefincalc.net/icon.png","description":"Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies."}` }}
         />
