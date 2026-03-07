@@ -65,7 +65,7 @@ const blogs = [
   'vat-explained','how-to-build-wealth',
 ]
 
-const citySlugs = [
+const cities = [
   'new-york','los-angeles','chicago','houston','phoenix','philadelphia',
   'san-antonio','san-diego','dallas','san-jose','austin','jacksonville',
   'fort-worth','columbus','charlotte','indianapolis','san-francisco',
@@ -77,37 +77,35 @@ const citySlugs = [
   'cincinnati','detroit',
 ]
 
-export default function sitemap() {
+export async function GET() {
   const now = new Date().toISOString()
 
-  const pages = [
-    { url: BASE, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
-    { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${BASE}/privacy-policy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${BASE}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+  const urls = [
+    BASE,
+    BASE + '/about',
+    BASE + '/blog',
+    BASE + '/privacy-policy',
+    BASE + '/terms',
+    BASE + '/contact',
+    ...calculators.map(s => BASE + '/' + s),
+    ...blogs.map(s => BASE + '/blog/' + s),
+    ...cities.map(s => BASE + '/mortgage-calculator/' + s),
   ]
 
-  const calcPages = calculators.map(slug => ({
-    url: `${BASE}/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.9,
-  }))
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(url => `  <url>
+    <loc>${url}</loc>
+    <lastmod>${now}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${url === BASE ? '1.0' : url.includes('/blog/') ? '0.7' : '0.9'}</priority>
+  </url>`).join('\n')}
+</urlset>`
 
-  const blogPages = blogs.map(slug => ({
-    url: `${BASE}/blog/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }))
-
-  const cityPages = citySlugs.map(slug => ({
-    url: `${BASE}/mortgage-calculator/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
-
-  return [...pages, ...calcPages, ...blogPages, ...cityPages]
+  return new Response(xml, {
+    headers: {
+      'Content-Type': 'application/xml',
+      'Cache-Control': 'public, max-age=3600',
+    },
+  })
 }
