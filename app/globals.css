@@ -180,3 +180,29 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .cta-btn { display:inline-flex; align-items:center; gap:8px; padding:14px 32px; border-radius:12px; background:linear-gradient(135deg,#f0c842,#d4a017); color:#0a0f1e; font-weight:700; font-size:15px; text-decoration:none; box-shadow:0 4px 24px rgba(240,200,66,0.25); transition:opacity .2s,transform .2s; }
 .cta-btn:hover { opacity:.92; transform:translateY(-1px); }
+
+/* ── Performance: reduce layout shift ────────────────────── */
+* { box-sizing: border-box; }
+
+/* Prevent image layout shift */
+img { height: auto; max-width: 100%; }
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Prevent invisible text during font load */
+html { font-display: swap; }
+
+/* Reduce motion for accessibility + performance */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Content-visibility: auto for off-screen sections (huge perf win) */
+.ffc-section-lazy {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
