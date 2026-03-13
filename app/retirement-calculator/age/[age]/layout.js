@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
   const fv = it.saved * Math.pow(1 + mo, n) + it.monthly * (Math.pow(1 + mo, n) - 1) / mo
   return {
     title: `Retirement Calculator — ${it.name} (Retire at ${it.retireAt}) 2026`,
-    description: `Retirement plan for ${it.desc}. Starting $${it.saved.toLocaleString()}, saving $${it.monthly}/month at ${it.rate}%, retire at ${it.retireAt} with ~$${Math.round(fv).toLocaleString()}.`,` },
+    description: `Retirement plan for ${it.desc}. Starting $${it.saved.toLocaleString()}, saving $${it.monthly}/month at ${it.rate}%, retire at ${it.retireAt} with ~$${Math.round(fv).toLocaleString()}.`,
   }
 }
 export default function Layout({ children }) { return children }

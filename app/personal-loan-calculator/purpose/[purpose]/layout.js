@@ -6,7 +6,7 @@ export async function generateMetadata({ params }) {
   const pmt = Math.round(p.avg * mo / (1 - Math.pow(1 + mo, -p.term)))
   return {
     title: `Personal Loan for ${p.name} 2026 — Calculator & Rates`,
-    description: `Calculate your personal loan for ${p.name.toLowerCase()}. Avg amount $${p.avg.toLocaleString()}, rate ~${p.rate}%, est. $${pmt}/month on ${p.term}-month term.`,` },
+    description: `Calculate your personal loan for ${p.name.toLowerCase()}. Avg amount $${p.avg.toLocaleString()}, rate ~${p.rate}%, est. $${pmt}/month on ${p.term}-month term.`,
   }
 }
 export default function Layout({ children }) { return children }
