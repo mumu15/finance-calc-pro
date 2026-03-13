@@ -3,7 +3,7 @@ import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
-import SchemaMarkup from '../../components/SchemaMarkup';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {

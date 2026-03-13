@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import SchemaMarkup from '../components/SchemaMarkup';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 
 const posts = [

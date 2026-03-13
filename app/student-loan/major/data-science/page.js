@@ -1,7 +1,7 @@
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import Client from './Client';
-import SchemaMarkup from '../../../components/SchemaMarkup';
+import SchemaMarkup from '../../../../components/SchemaMarkup';
 
 
 export async function generateStaticParams() {
