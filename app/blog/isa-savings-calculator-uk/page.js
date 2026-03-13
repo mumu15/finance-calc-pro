@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/isa-savings-calculator-uk' },
  title: 'ISA Savings Calculator UK: How Much Can You Save in an ISA? (2026)',
  description: 'Learn how to maximise your ISA allowance in 2026. Compare Cash ISA, Stocks and Shares ISA, Lifetime ISA and Innovative Finance ISA with savings projections.',
 }

@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-much-to-save-for-retirement' },
   title: 'How Much Should I Save for Retirement? (2026 Guide)',
   description: 'Find out exactly how much you need to save for retirement. Includes the 4% rule, benchmarks by age and 401k contribution tips.',
 }

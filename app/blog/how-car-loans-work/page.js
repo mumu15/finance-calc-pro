@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-car-loans-work' },
   title: 'How Car Loans Work: Interest Rates, Terms and True Cost (2026)',
   description: 'Everything you need to know about car loans in 2026. Average rates by credit score, how to get the best deal and how to calculate total cost.',
 }

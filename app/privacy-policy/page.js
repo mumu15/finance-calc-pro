@@ -4,6 +4,7 @@ import SchemaMarkup from '../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/privacy-policy' },
   title: 'Privacy Policy – FreeFinCalc.net',
   description: 'Privacy Policy for FreeFinCalc.net — free online financial calculators.',
 }

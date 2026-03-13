@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/home-loan-emi-calculator-india' },
  title: 'Home Loan EMI Calculator India: How to Calculate Your EMI (2026)',
  description: 'Calculate your home loan EMI in India instantly. Includes SBI, HDFC and ICICI interest rates, stamp duty, Section 80C tax benefits and eligibility guide for 2026.',
 }

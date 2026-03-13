@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-pay-off-debt-fast' },
   title: 'How to Pay Off Debt Fast: Snowball vs Avalanche (2026)',
   description: 'Discover the fastest strategies to pay off debt in 2026. Compare the debt snowball and debt avalanche methods and find out which saves more money.',
 }

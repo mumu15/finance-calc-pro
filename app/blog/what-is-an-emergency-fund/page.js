@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/what-is-an-emergency-fund' },
   title: 'What Is an Emergency Fund and How Much Should You Have? (2026)',
   description: 'Learn what an emergency fund is, how much you need and the best places to keep it in 2026. Includes step-by-step guide to build yours fast.',
 }

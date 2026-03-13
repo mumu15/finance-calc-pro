@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/what-is-net-worth' },
   title: 'What Is Net Worth? How to Calculate and Grow Yours (2026)',
   description: 'Learn what net worth means, how to calculate it and what the average net worth is by age in 2026. Includes a free net worth calculator.',
 }

@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-inflation-works' },
   title: 'How Inflation Works and How to Protect Your Money (2026)',
   description: 'Learn what inflation is, how it erodes purchasing power and the best ways to protect your savings and investments from inflation in 2026.',
 }

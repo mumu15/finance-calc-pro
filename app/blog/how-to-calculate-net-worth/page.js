@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-calculate-net-worth' },
   title: 'How to Calculate Your Net Worth (And Why It Matters)',
   description: 'Learn how to calculate your net worth step by step. Find out what counts as an asset and liability and how to track your financial progress.',
 }

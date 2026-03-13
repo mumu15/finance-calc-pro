@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-create-monthly-budget' },
   title: 'How to Create a Monthly Budget That Actually Works (2026)',
   description: 'Learn how to create a realistic monthly budget using the 50/30/20 rule. Step by step guide for beginners with free budget calculator.',
 }

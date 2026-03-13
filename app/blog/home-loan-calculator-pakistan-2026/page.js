@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/home-loan-calculator-pakistan-2026' },
  title: 'Home Loan EMI Calculator Pakistan 2026: Banks, Rates and Guide',
  description: 'Calculate your home loan EMI in Pakistani Rupees. Compare HBL, UBL, Meezan Bank and MCB rates. Includes Islamic vs conventional loan guide for 2026.',
 }

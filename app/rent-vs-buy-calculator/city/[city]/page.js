@@ -2,6 +2,11 @@ import rvbCities from '../../../../data/rvbCities.js'
 import RvBCityClient from './RvBCityClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return rvbCities.map(x => ({ city: x.slug })) }
+
+export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/rent-vs-buy-calculator/city/[city]' },
+};
+
 export default function Page({ params }) {
   const item = rvbCities.find(x => x.slug === params.city)
   if (!item) return notFound()

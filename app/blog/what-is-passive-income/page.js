@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/what-is-passive-income' },
   title: 'What Is Passive Income? 12 Real Ways to Earn It in 2026',
   description: 'Learn what passive income is and 12 legitimate ways to earn it in 2026. From dividends to rental income, this guide covers real options for every budget.',
 }

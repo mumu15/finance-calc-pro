@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-much-house-can-i-afford' },
   title: 'How Much House Can I Afford? (2026 Calculator Guide)',
   description: 'Find out exactly how much house you can afford in 2026. Includes the 28/36 rule, down payment requirements and real payment examples.',
 }

@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-student-loans-work' },
   title: 'How Student Loans Work: Everything You Need to Know (2026)',
   description: 'A complete guide to student loans in 2026. Federal vs private loans, interest rates, repayment plans and strategies to pay them off faster.',
 }

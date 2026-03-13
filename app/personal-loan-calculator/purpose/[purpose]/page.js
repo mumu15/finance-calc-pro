@@ -4,6 +4,11 @@ import { notFound } from 'next/navigation'
 export async function generateStaticParams() {
   return purposes.map(p => ({ purpose: p.slug }))
 }
+
+export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/personal-loan-calculator/purpose/[purpose]' },
+};
+
 export default function Page({ params }) {
   const purpose = purposes.find(p => p.slug === params.purpose)
   if (!purpose) return notFound()

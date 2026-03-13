@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/types-of-retirement-accounts' },
   title: '401k vs Roth IRA vs Traditional IRA: Which Is Best for You? (2026)',
   description: 'Compare 401k, Roth IRA and Traditional IRA accounts side by side. Contribution limits, tax benefits and which account to use first in 2026.',
 }

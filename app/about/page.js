@@ -4,6 +4,7 @@ import SchemaMarkup from '../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/about' },
   title: 'About Us – FreeFinCalc.net',
   description: 'About FreeFinCalc.net — free professional financial calculators.',
 }

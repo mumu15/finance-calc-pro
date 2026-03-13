@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-get-out-of-debt' },
   title: 'How to Get Out of Debt Fast: The Step-by-Step Plan (2026)',
   description: 'A proven step-by-step plan to get out of debt fast in 2026. Includes debt snowball vs avalanche comparison, payoff calculators and motivation tips.',
 }

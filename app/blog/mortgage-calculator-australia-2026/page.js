@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/mortgage-calculator-australia-2026' },
  title: 'Mortgage Calculator Australia 2026: Repayments, Rates and Stamp Duty',
  description: 'Calculate your Australian mortgage monthly repayment in AUD. Includes current RBA cash rate impact, stamp duty by state, LMI guide and first home buyer schemes 2026.',
 }

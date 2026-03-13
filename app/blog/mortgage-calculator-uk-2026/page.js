@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/mortgage-calculator-uk-2026' },
  title: 'Mortgage Calculator UK 2026: Monthly Payments, Stamp Duty and Rates',
  description: 'Calculate your UK mortgage monthly payment in pounds. Includes current UK mortgage rates, stamp duty calculator and first-time buyer guide for 2026.',
 }

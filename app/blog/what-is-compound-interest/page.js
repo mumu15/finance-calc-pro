@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/what-is-compound-interest' },
   title: 'What is Compound Interest and How Does It Work? (2026)',
   description: 'Learn what compound interest is, how it works, and why it is the most powerful force in personal finance. Includes real examples and calculations.',
 }

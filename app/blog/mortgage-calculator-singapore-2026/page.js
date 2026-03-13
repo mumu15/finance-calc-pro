@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/mortgage-calculator-singapore-2026' },
  title: 'Mortgage Calculator Singapore 2026: HDB, CPF and Private Property Guide',
  description: 'Calculate your Singapore home loan monthly payment in SGD. Includes CPF usage, HDB loan vs bank loan comparison, ABSD rates and affordability guide 2026.',
 }

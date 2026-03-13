@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/mortgage-calculator-uae-dubai-2026' },
  title: 'Mortgage Calculator UAE Dubai 2026: Home Loan Rates and Guide',
  description: 'Calculate your UAE home loan monthly payment in AED. Includes current Dubai mortgage rates, expat eligibility, DLD fees and first-time buyer guide 2026.',
 }

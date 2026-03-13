@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-build-wealth' },
   title: 'How to Build Wealth: The 7 Principles That Actually Work (2026)',
   description: 'Learn the 7 proven principles of building wealth in 2026. From increasing income to investing wisely, this guide covers the complete wealth-building roadmap.',
 }

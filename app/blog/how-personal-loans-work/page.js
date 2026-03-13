@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-personal-loans-work' },
   title: 'How Personal Loans Work: Everything You Need to Know (2026)',
   description: 'Learn how personal loans work in 2026. Includes interest rates, approval requirements, how to compare lenders and when a personal loan makes sense.',
 }

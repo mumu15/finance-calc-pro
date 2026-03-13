@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-build-emergency-fund' },
   title: 'How to Build an Emergency Fund From Scratch (2026)',
   description: 'Learn how to build a fully funded emergency fund step by step. Find out how much you need and the best place to keep it.',
 }

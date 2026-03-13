@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-save-money-fast' },
   title: 'How to Save Money Fast: 20 Proven Strategies That Actually Work (2026)',
   description: 'Learn 20 proven strategies to save money fast in 2026. From cutting expenses to automating savings, this guide covers everything you need.',
 }

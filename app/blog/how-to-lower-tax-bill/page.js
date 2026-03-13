@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-lower-tax-bill' },
   title: 'How to Lower Your Tax Bill Legally in 2026',
   description: 'Discover legal strategies to reduce your federal income tax bill in 2026. Includes deductions, credits and retirement account strategies.',
 }

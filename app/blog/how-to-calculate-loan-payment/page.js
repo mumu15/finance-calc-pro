@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-calculate-loan-payment' },
   title: 'How to Calculate Loan Payments: Complete Guide (2026)',
   description: 'Learn how to calculate monthly loan payments for personal loans, car loans and student loans. Includes the formula and free calculator.',
 }

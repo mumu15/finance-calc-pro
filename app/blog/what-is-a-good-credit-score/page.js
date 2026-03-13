@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/what-is-a-good-credit-score' },
   title: 'What is a Good Credit Score? (Complete 2026 Guide)',
   description: 'Learn what credit score ranges mean, what is considered good, and exactly how to improve your credit score fast in 2026.',
 }

@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-negotiate-salary' },
   title: 'How to Negotiate Your Salary: Scripts and Tips That Work (2026)',
   description: 'Learn how to negotiate your salary confidently in 2026. Includes word-for-word scripts, timing tips and how to handle counteroffers.',
 }

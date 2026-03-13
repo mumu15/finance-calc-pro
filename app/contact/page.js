@@ -4,6 +4,7 @@ import SchemaMarkup from '../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/contact' },
   title: 'Contact Us – FreeFinCalc.net',
   description: 'Contact FreeFinCalc.net — get in touch for feedback or suggestions.',
 }

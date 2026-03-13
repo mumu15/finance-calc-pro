@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/income-tax-calculator-india-2026' },
  title: 'Income Tax Calculator India 2026-27: New vs Old Tax Regime',
  description: 'Calculate your income tax liability in India for FY 2026-27. Compare new vs old tax regime, tax slabs, deductions and take-home salary calculator.',
 }

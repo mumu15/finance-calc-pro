@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-invest-for-beginners' },
   title: 'How to Start Investing for Beginners: The Complete 2026 Guide',
   description: 'Everything a beginner needs to know about investing in 2026. From index funds to retirement accounts, learn how to grow your money step by step.',
 }

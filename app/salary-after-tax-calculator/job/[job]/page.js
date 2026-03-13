@@ -4,6 +4,11 @@ import { notFound } from 'next/navigation'
 export async function generateStaticParams() {
   return jobs.map(j => ({ job: j.slug }))
 }
+
+export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/salary-after-tax-calculator/job/[job]' },
+};
+
 export default function Page({ params }) {
   const job = jobs.find(j => j.slug === params.job)
   if (!job) return notFound()

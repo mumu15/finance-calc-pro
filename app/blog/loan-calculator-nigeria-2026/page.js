@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/loan-calculator-nigeria-2026' },
  title: 'Loan Calculator Nigeria 2026: Banks, Rates and How to Borrow Smart',
  description: 'Calculate your loan repayment in Nigerian Naira. Compare GTBank, Access Bank, Zenith and FirstBank rates. Includes NHF mortgage guide and savings tips for 2026.',
 }

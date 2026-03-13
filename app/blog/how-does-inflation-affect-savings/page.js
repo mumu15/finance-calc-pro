@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-does-inflation-affect-savings' },
   title: 'How Does Inflation Affect Your Savings? (2026 Guide)',
   description: 'Learn how inflation silently erodes your savings and what you can do to protect your money from rising prices in 2026.',
 }

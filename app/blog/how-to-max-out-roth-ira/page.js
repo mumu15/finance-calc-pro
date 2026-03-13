@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-max-out-roth-ira' },
   title: 'How to Max Out Your Roth IRA in 2026 (Step-by-Step Guide)',
   description: 'Learn how to max out your Roth IRA contribution in 2026. Contribution limits, income limits, investment choices and automation strategies.',
 }

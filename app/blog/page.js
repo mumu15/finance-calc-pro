@@ -52,6 +52,7 @@ const posts = [
 ]
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog' },
   title: 'Blog — Personal Finance Guides | FreeFinCalc.net',
   description: 'Free personal finance guides on budgeting, investing, mortgages, debt payoff and retirement. Expert advice updated for 2026.',
 }

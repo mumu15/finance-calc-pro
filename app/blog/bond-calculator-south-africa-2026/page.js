@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/bond-calculator-south-africa-2026' },
  title: 'Bond Calculator South Africa 2026: Home Loan Repayments and Rates',
  description: 'Calculate your South African home loan (bond) monthly repayment in Rands. Includes current prime rate, transfer costs, deposit requirements and first-time buyer guide 2026.',
 }

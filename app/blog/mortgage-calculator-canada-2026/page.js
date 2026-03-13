@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/mortgage-calculator-canada-2026' },
  title: 'Mortgage Calculator Canada 2026: Monthly Payments, CMHC and RRSP',
  description: 'Calculate your Canadian mortgage payment in CAD. Includes CMHC insurance, First Home Savings Account, RRSP Home Buyers Plan and current rates for 2026.',
 }

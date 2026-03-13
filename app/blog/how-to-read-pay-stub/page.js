@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-read-pay-stub' },
   title: 'How to Read a Pay Stub: Every Line Explained (2026)',
   description: 'Confused by your pay stub? This guide explains every deduction and term on a US pay stub in plain English. Gross pay, net pay, FICA, and more.',
 }

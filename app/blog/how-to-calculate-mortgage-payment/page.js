@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-calculate-mortgage-payment' },
   title: 'How to Calculate Your Monthly Mortgage Payment (2026)',
   description: 'Learn exactly how to calculate your monthly mortgage payment including principal, interest, taxes and insurance. Includes formula and real examples.',
 }

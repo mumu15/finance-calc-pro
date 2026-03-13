@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-refinance-mortgage' },
   title: 'How to Refinance Your Mortgage: When It Makes Sense (2026)',
   description: 'Learn when and how to refinance your mortgage in 2026. Includes break-even calculators, costs to expect and step-by-step application guide.',
 }

@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/rent-vs-buy-home' },
   title: 'Renting vs Buying a Home: Which is Better in 2026?',
   description: 'Should you rent or buy a home in 2026? We compare the true costs of renting vs buying including all hidden costs most people forget.',
 }

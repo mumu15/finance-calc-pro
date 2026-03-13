@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/debt-snowball-vs-avalanche' },
   title: 'Debt Snowball vs Debt Avalanche: Which is Better? (2026)',
   description: 'A detailed comparison of the two most popular debt payoff methods. Find out which pays off debt faster and saves more money in interest.',
 }

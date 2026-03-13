@@ -7,6 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-budget-50-30-20' },
   title: 'The 50/30/20 Budget Rule: How It Works and How to Use It (2026)',
   description: 'Learn exactly how the 50/30/20 budgeting rule works in 2026. Includes real-world examples, adjustments for different incomes and a free budget template.',
 }
