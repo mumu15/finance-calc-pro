@@ -5,6 +5,8 @@ export async function generateStaticParams() { return salaries401k.map(x => ({ s
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/401k-calculator/salary/${params.salary}` },

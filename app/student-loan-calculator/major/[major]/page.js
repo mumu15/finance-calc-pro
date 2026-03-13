@@ -7,6 +7,8 @@ export async function generateStaticParams() {
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/student-loan-calculator/major/${params.major}` },

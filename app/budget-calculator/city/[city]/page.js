@@ -5,6 +5,8 @@ export async function generateStaticParams() { return cities.map(c => ({ city: c
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/budget-calculator/city/${params.city}` },

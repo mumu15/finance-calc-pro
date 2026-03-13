@@ -5,6 +5,8 @@ export async function generateStaticParams() { return businesses.map(x => ({ bus
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/break-even-calculator/business/${params.business}` },

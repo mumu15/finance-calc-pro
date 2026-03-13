@@ -5,6 +5,8 @@ export async function generateStaticParams() { return ccBalances.map(x => ({ bal
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/credit-card-payoff-calculator/balance/${params.balance}` },
