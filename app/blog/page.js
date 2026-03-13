@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import SchemaMarkup from '../components/SchemaMarkup';
+
 
 const posts = [
   // ── Country-Specific Guides ──
@@ -58,6 +60,7 @@ export default function Blog() {
   return (
     <>
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"}]} includeReview={true} />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Personal Finance Blog</h1>

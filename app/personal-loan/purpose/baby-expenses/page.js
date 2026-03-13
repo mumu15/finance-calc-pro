@@ -1,6 +1,8 @@
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import Client from './Client';
+import SchemaMarkup from '../../../components/SchemaMarkup';
+
 
 export async function generateStaticParams() {
   return [{"purpose":"debt-consolidation"},{"purpose":"home-improvement"},{"purpose":"medical-expenses"},{"purpose":"car-repair"},{"purpose":"wedding"},{"purpose":"vacation"},{"purpose":"moving-expenses"},{"purpose":"business-startup"},{"purpose":"education"},{"purpose":"emergency-fund"},{"purpose":"furniture"},{"purpose":"appliances"},{"purpose":"electronics"},{"purpose":"dental"},{"purpose":"vet-bills"},{"purpose":"taxes"},{"purpose":"rent-deposit"},{"purpose":"baby-expenses"},{"purpose":"adoption"},{"purpose":"fertility-treatment"},{"purpose":"solar-panels"},{"purpose":"roof-repair"},{"purpose":"hvac"},{"purpose":"plumbing"},{"purpose":"kitchen-remodel"},{"purpose":"bathroom-remodel"},{"purpose":"basement-finishing"},{"purpose":"garage"},{"purpose":"pool"},{"purpose":"landscaping"},{"purpose":"fence"},{"purpose":"flooring"},{"purpose":"windows"},{"purpose":"doors"},{"purpose":"siding"},{"purpose":"driveway"},{"purpose":"rv"},{"purpose":"boat"},{"purpose":"motorcycle"},{"purpose":"atv"},{"purpose":"musical-instrument"},{"purpose":"art"},{"purpose":"photography"},{"purpose":"gym-equipment"},{"purpose":"clothing"},{"purpose":"jewelry"},{"purpose":"engagement-ring"},{"purpose":"divorce"},{"purpose":"legal-fees"},{"purpose":"burial-funeral"}];
@@ -18,6 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Personal Loan Calculator","url":"https://freefincalc.net/personal-loan"},{"name":"Baby Expenses","url":"https://freefincalc.net/personal-loan/purpose/baby-expenses"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

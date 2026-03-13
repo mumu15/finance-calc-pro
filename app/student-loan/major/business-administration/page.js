@@ -1,6 +1,8 @@
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import Client from './Client';
+import SchemaMarkup from '../../../components/SchemaMarkup';
+
 
 export async function generateStaticParams() {
   return [{"major":"computer-science"},{"major":"nursing"},{"major":"business-administration"},{"major":"psychology"},{"major":"mechanical-engineering"},{"major":"biology"},{"major":"accounting"},{"major":"education"},{"major":"communications"},{"major":"criminal-justice"},{"major":"marketing"},{"major":"finance"},{"major":"electrical-engineering"},{"major":"civil-engineering"},{"major":"pre-med"},{"major":"political-science"},{"major":"sociology"},{"major":"history"},{"major":"english"},{"major":"art"},{"major":"music"},{"major":"film"},{"major":"architecture"},{"major":"pharmacy"},{"major":"law"},{"major":"social-work"},{"major":"public-health"},{"major":"economics"},{"major":"mathematics"},{"major":"statistics"},{"major":"data-science"},{"major":"information-technology"},{"major":"cybersecurity"},{"major":"graphic-design"},{"major":"interior-design"},{"major":"fashion-design"},{"major":"hospitality"},{"major":"culinary-arts"},{"major":"environmental-science"},{"major":"chemistry"},{"major":"physics"},{"major":"philosophy"},{"major":"theology"},{"major":"anthropology"},{"major":"linguistics"},{"major":"journalism"},{"major":"public-relations"},{"major":"human-resources"},{"major":"supply-chain"},{"major":"real-estate"}];
@@ -18,6 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Student Loan Calculator","url":"https://freefincalc.net/student-loan"},{"name":"Business Administration","url":"https://freefincalc.net/student-loan/major/business-administration"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

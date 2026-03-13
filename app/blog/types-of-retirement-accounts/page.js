@@ -3,6 +3,8 @@ import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
+import SchemaMarkup from '../../components/SchemaMarkup';
+
 
 export const metadata = {
   title: '401k vs Roth IRA vs Traditional IRA: Which Is Best for You? (2026)',
@@ -37,6 +39,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"Types Of Retirement Accounts","url":"https://freefincalc.net/blog/types-of-retirement-accounts"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

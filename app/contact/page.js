@@ -1,5 +1,7 @@
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import SchemaMarkup from '../components/SchemaMarkup';
+
 
 export const metadata = {
   title: 'Contact Us – FreeFinCalc.net',
@@ -10,6 +12,7 @@ export default function Contact() {
   return (
     <>
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Contact","url":"https://freefincalc.net/contact"}]} includeReview={true} />
       <main className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
         <div className="space-y-6 text-slate-400 leading-relaxed">

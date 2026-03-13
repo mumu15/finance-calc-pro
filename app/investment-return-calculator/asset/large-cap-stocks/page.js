@@ -1,6 +1,8 @@
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import Client from './Client';
+import SchemaMarkup from '../../../components/SchemaMarkup';
+
 
 export async function generateStaticParams() {
   return [{"asset":"sp500"},{"asset":"nasdaq"},{"asset":"dow-jones"},{"asset":"real-estate"},{"asset":"gold"},{"asset":"silver"},{"asset":"bitcoin"},{"asset":"ethereum"},{"asset":"bonds"},{"asset":"treasury-bonds"},{"asset":"municipal-bonds"},{"asset":"corporate-bonds"},{"asset":"index-funds"},{"asset":"etfs"},{"asset":"mutual-funds"},{"asset":"dividend-stocks"},{"asset":"growth-stocks"},{"asset":"value-stocks"},{"asset":"small-cap-stocks"},{"asset":"large-cap-stocks"},{"asset":"international-stocks"},{"asset":"emerging-markets"},{"asset":"reits"},{"asset":"commodities"},{"asset":"oil"},{"asset":"natural-gas"},{"asset":"agricultural-commodities"},{"asset":"forex"},{"asset":"options"},{"asset":"futures"},{"asset":"peer-to-peer-lending"},{"asset":"crowdfunding"},{"asset":"angel-investing"},{"asset":"venture-capital"},{"asset":"private-equity"},{"asset":"hedge-funds"},{"asset":"annuities"},{"asset":"life-insurance-investment"},{"asset":"529-plan"},{"asset":"hsa"},{"asset":"roth-ira"},{"asset":"traditional-ira"},{"asset":"401k"},{"asset":"solo-401k"},{"asset":"sep-ira"},{"asset":"simple-ira"},{"asset":"defined-benefit-plan"},{"asset":"esop"},{"asset":"stock-options"},{"asset":"rsus"}];
@@ -18,6 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Investment Return Calculator","url":"https://freefincalc.net/investment-return-calculator"},{"name":"Large Cap Stocks","url":"https://freefincalc.net/investment-return-calculator/asset/large-cap-stocks"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

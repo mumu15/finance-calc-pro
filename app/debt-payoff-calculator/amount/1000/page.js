@@ -1,6 +1,8 @@
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
 import Client from './Client';
+import SchemaMarkup from '../../../components/SchemaMarkup';
+
 
 export async function generateStaticParams() {
   return [{"amount":"1000"},{"amount":"2000"},{"amount":"3000"},{"amount":"4000"},{"amount":"5000"},{"amount":"6000"},{"amount":"7000"},{"amount":"8000"},{"amount":"9000"},{"amount":"10000"},{"amount":"12000"},{"amount":"15000"},{"amount":"18000"},{"amount":"20000"},{"amount":"25000"},{"amount":"30000"},{"amount":"35000"},{"amount":"40000"},{"amount":"45000"},{"amount":"50000"},{"amount":"60000"},{"amount":"70000"},{"amount":"80000"},{"amount":"90000"},{"amount":"100000"},{"amount":"120000"},{"amount":"150000"},{"amount":"175000"},{"amount":"200000"},{"amount":"250000"},{"amount":"300000"},{"amount":"350000"},{"amount":"400000"},{"amount":"500000"},{"amount":"600000"},{"amount":"700000"},{"amount":"800000"},{"amount":"900000"},{"amount":"1000000"},{"amount":"1200000"},{"amount":"1500000"},{"amount":"1750000"},{"amount":"2000000"},{"amount":"2500000"},{"amount":"3000000"},{"amount":"4000000"},{"amount":"5000000"},{"amount":"6000000"},{"amount":"7000000"},{"amount":"8000000"}];
@@ -18,6 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Debt Payoff Calculator","url":"https://freefincalc.net/debt-payoff-calculator"},{"name":"1000","url":"https://freefincalc.net/debt-payoff-calculator/amount/1000"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

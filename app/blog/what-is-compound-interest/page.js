@@ -3,6 +3,8 @@ import AdUnit from '../../components/AdUnit'
 import Footer from '../../../components/Footer'
 import Link from 'next/link'
 import FaqSchema from '../../../components/FaqSchema'
+import SchemaMarkup from '../../components/SchemaMarkup';
+
 
 export const metadata = {
   title: 'What is Compound Interest and How Does It Work? (2026)',
@@ -22,6 +24,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"What Is Compound Interest","url":"https://freefincalc.net/blog/what-is-compound-interest"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>
