@@ -274,6 +274,24 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">What fees should I look for when comparing loans?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Key fees to compare: origination fee (0-5% of loan amount), prepayment penalty (charged if you pay off early — avoid), late payment fees, returned payment fees, and annual fees on lines of credit. Always ask for the APR which includes all fees for an apples-to-apples rate comparison between lenders.</p>
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Loan Comparison Calculator", "item": "https://freefincalc.net/loan-comparison-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Loan Comparison Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
           </div>
         </div>

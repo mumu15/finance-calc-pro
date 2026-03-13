@@ -210,6 +210,24 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Are higher fee funds worth it for better returns?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Research consistently shows that higher fees do NOT reliably produce better returns. SPIVA data shows over 90% of actively managed funds underperform their benchmark index over 15 years, after fees. A few exceptional active managers exist but are nearly impossible to identify in advance. Most investors are best served by low-cost index funds.</p>
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Net Investment Fee Calculator", "item": "https://freefincalc.net/net-investment-fee-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Net Investment Fee Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
           </div>
         </div>

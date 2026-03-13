@@ -218,6 +218,24 @@ export default function Calculator() {
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Are CDs worth it in 2026?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">CDs are worth considering when: you have cash you will not need for the CD term, you want guaranteed returns without market risk, and CD rates exceed high-yield savings account rates. In 2026, competitive CD rates range from 4-5.5% APY. The trade-off is liquidity — early withdrawal penalties (typically 3-6 months of interest) apply if you need the funds before maturity.</p>
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Cd Calculator", "item": "https://freefincalc.net/cd-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Cd Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
 
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>

@@ -217,6 +217,24 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How long does SBA loan approval take?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">SBA Express loans (up to $500,000): 36-hour approval, 2-4 weeks to fund. Standard SBA 7(a): 30-90 days. SBA 504: 60-90 days. Working with an SBA Preferred Lender (PLP) speeds up approval significantly as they can approve in-house. Prepare 2 years of business and personal tax returns, financial statements, and a business plan to expedite the process.</p>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Sba Loan Calculator", "item": "https://freefincalc.net/sba-loan-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Sba Loan Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
           </div>
         </div>

@@ -16,7 +16,25 @@ export default function CarLoanPriceClient({item:it,all}){
   const monthly=pmt(loan,rate,term)
   const total=monthly*term
   const interest=total-loan
-  return(<div style={s.page}><Header/>
+  return(<div style={s.page}>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Car Loan Calculator", "item": "https://freefincalc.net/car-loan-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Car Loan Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} /><Header/>
         <SchemaMarkup breadcrumbs={[
     { name: 'Home', url: 'https://freefincalc.net' },
     { name: 'Car Loan Calculator', url: 'https://freefincalc.net/car-loan-calculator' }

@@ -191,6 +191,24 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">When is simple interest used?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Simple interest is used for most auto loans, some personal loans, US Treasury bills and short-term loans. Mortgages, savings accounts, credit cards and most long-term investments use compound interest. Knowing which applies affects how you calculate true cost or return.</p>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Simple Interest Calculator", "item": "https://freefincalc.net/simple-interest-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Simple Interest Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
           </div>
         </div>

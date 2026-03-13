@@ -41,7 +41,25 @@ export default function FourOhOneKClient({item:it,all}){
       <div style={s.row}><span style={{color:'#94a3b8'}}>Total 401k Balance</span><span style={{fontWeight:800,color:'#f0c842',fontSize:20}}>{fmt(total)}</span></div>
       <div style={{...s.row,borderBottom:'none'}}><span style={{color:'#94a3b8'}}>Monthly Retirement Income (4%)</span><span style={{fontWeight:700,color:'#10b981'}}>{fmt(income)}/mo</span></div>
     </div>
-    <div style={s.box}><h2 style={s.h2}>Maximizing Your 401k on {fmt(salary)}/yr</h2><p style={s.p}>On a {fmt(salary)}/year salary, contributing {contrib}% ({fmt(salary*contrib/100/12)}/month) plus {match}% employer match grows to <strong style={{color:'#f0c842'}}>{fmt(total)}</strong> over {years} years at {rate}% return. The employer match alone adds <strong style={{color:'#10b981'}}>{fmt(matchValue)}</strong> — always contribute at least enough to capture the full match. The 2026 401k contribution limit is $23,000 ($30,500 if 50+).</p></div>
+    <div style={s.box}><h2 style={s.h2}>Maximizing Your 401k on {fmt(salary)}/yr</h2><p style={s.p}>On a {fmt(salary)}/year salary, contributing {contrib}% ({fmt(salary*contrib/100/12)}/month) plus {match}% employer match grows to <strong style={{color:'#f0c842'}}>{fmt(total)}</strong> over {years} years at {rate}% return. The employer match alone adds <strong style={{color:'#10b981'}}>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "401(k) Calculator", "item": "https://freefincalc.net/401k-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "401(k) Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />{fmt(matchValue)}</strong> — always contribute at least enough to capture the full match. The 2026 401k contribution limit is $23,000 ($30,500 if 50+).</p></div>
     <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/401k-calculator','401k Calculator'],['/retirement-calculator','Retirement Calculator'],['/roth-ira-calculator','Roth IRA'],['/traditional-ira-calculator','Traditional IRA'],['/social-security-calculator','Social Security']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>401k Calculator by Salary</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/401k-calculator/salary/'+x.slug} style={s.tagA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />

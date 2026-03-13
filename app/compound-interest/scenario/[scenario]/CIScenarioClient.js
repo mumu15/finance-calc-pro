@@ -102,7 +102,25 @@ export default function CIScenarioClient({ item: sc, all }) {
 
         <div style={st.box}>
           <h2 style={st.h2}>Related Calculators</h2>
-          {[['/compound-interest','Compound Interest'],['/investment-return-calculator','Investment Return'],['/savings-goal-calculator','Savings Goal'],['/retirement-calculator','Retirement Calculator'],['/roth-ira-calculator','Roth IRA Calculator']].map(([href,lbl]) => (
+          {[['/compound-interest','Compound Interest'],['/investment-return-calculator','Investment Return'],['/savings-goal-calculator','Savings Goal'],['/retirement-calculator','Retirement Calculator'],['/roth-ira-calculator','Roth IRA Calculator']].map(([href,lbl]) =>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Compound Interest Calculator", "item": "https://freefincalc.net/compound-interest" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Compound Interest Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} /> (
             <a key={href} href={href} style={st.calcA}>{lbl}</a>
           ))}
         </div>

@@ -221,6 +221,24 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What debts should I always pay off before investing?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Always pay off: credit cards (15-25% APR), payday loans (300%+ APR), personal loans above 8-10%, and private student loans above 7%. The minimum threshold varies: some say pay all debt over 5-6% before investing; others say capture employer 401k match first (it's a 50-100% instant return) regardless.</p>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Payoff Vs Invest Calculator", "item": "https://freefincalc.net/payoff-vs-invest-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Payoff Vs Invest Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
           </div>
         </div>

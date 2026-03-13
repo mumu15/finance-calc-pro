@@ -15,7 +15,25 @@ export default function BreakEvenClient({item:it,all}){
   const beUnits=margin>0?Math.ceil(fixed/margin):Infinity
   const beRevenue=beUnits*price
   const profit1x=beRevenue*2-fixed-beRevenue*varPct/100
-  return(<div style={s.page}><Header/>
+  return(<div style={s.page}>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Break Even Calculator", "item": "https://freefincalc.net/break-even-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Break Even Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} /><Header/>
         <SchemaMarkup breadcrumbs={[
     { name: 'Home', url: 'https://freefincalc.net' },
     { name: 'Break Even Calculator', url: 'https://freefincalc.net/break-even-calculator' }

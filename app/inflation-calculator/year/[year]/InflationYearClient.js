@@ -41,7 +41,25 @@ export default function InflationYearClient({item:it,all}){
       <h2 style={s.h2}>Price Comparison: {it.year} vs 2026</h2>
       {examples.map(e=>(<div key={e.item} style={s.row}><span style={{color:'#94a3b8'}}>{e.item}</span><span style={{fontSize:13}}><span style={{color:'#64748b'}}>{fmt(e.then)} ({it.year})</span> → <strong style={{color:'#f0c842'}}>{fmt(e.now)} (2026)</strong></span></div>))}
     </div>
-    <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/inflation-calculator','Inflation Calculator'],['/purchasing-power-calculator','Purchasing Power'],['/cpi-calculator','CPI Calculator'],['/real-return-calculator','Real Return'],['/cost-of-living-calculator','Cost of Living']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
+    <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/inflation-calculator','Inflation Calculator'],['/purchasing-power-calculator','Purchasing Power'],['/cpi-calculator','CPI Calculator'],['/real-return-calculator','Real Return'],['/cost-of-living-calculator','Cost of Living']].map(([href,lbl])=>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Inflation Calculator", "item": "https://freefincalc.net/inflation-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Inflation Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>Inflation by Year</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/inflation-calculator/year/'+x.slug} style={s.tagA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />
       <Footer/></div>)

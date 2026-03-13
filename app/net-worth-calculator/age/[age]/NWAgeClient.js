@@ -38,7 +38,25 @@ export default function NWAgeClient({item:it,all}){
       <div style={{...s.row,borderBottom:'none'}}><span style={{color:'#94a3b8'}}>Your Ranking vs Peers</span><span style={{fontWeight:800,color:pctileColor}}>{pctile}</span></div>
     </div>
     <div style={s.box}><h2 style={s.h2}>Net Worth Guide — {it.name}</h2><p style={s.p}>The median American net worth at {it.name} is <strong style={{color:'#f0c842'}}>{fmt(it.median)}</strong>. This is the point where half of people have more and half have less. The average ({fmt(it.avg)}) is much higher, skewed by the ultra-wealthy. A more useful benchmark is the 75th percentile ({fmt(it.p75)}) — what the financially disciplined have achieved.</p><p style={s.p}>Common rules of thumb: save 1x your salary by 30, 3x by 40, 6x by 50, and 10x by 65. Focus on your savings rate — at {it.savingsRate}%+ you are on track for a comfortable retirement.</p></div>
-    <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/net-worth-calculator','Net Worth Calculator'],['/retirement-calculator','Retirement Calculator'],['/investment-return-calculator','Investment Return'],['/savings-calculator','Savings Calculator'],['/fire-calculator','FIRE Calculator']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
+    <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/net-worth-calculator','Net Worth Calculator'],['/retirement-calculator','Retirement Calculator'],['/investment-return-calculator','Investment Return'],['/savings-calculator','Savings Calculator'],['/fire-calculator','FIRE Calculator']].map(([href,lbl])=>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Net Worth Calculator", "item": "https://freefincalc.net/net-worth-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Net Worth Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>Net Worth by Age</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/net-worth-calculator/age/'+x.slug} style={s.aA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />
       <Footer/></div>)

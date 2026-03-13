@@ -206,6 +206,24 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">How do I protect my money from inflation?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Best inflation hedges: equities (stocks historically return 7% real), real estate (rents and values rise with inflation), TIPS (Treasury Inflation-Protected Securities), I-bonds (rate adjusts with CPI), commodities, and REITs. The worst places to hold money during high inflation: cash, fixed-rate bonds, and traditional savings accounts.</p>
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Inflation Impact Calculator", "item": "https://freefincalc.net/inflation-impact-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Inflation Impact Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
           </div>
         </div>

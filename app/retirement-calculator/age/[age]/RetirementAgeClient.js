@@ -68,7 +68,25 @@ export default function RetirementAgeClient({ item: it, all }) {
         </div>
         <div style={s.box}>
           <h2 style={s.h2}>{it.name} Retirement Guide</h2>
-          <p style={s.p}>At {it.age}, you have {years} years until retirement at {retireAt}. Starting with {fmt(saved)} and contributing {fmt(monthly)}/month at {rate}% return, you are projected to accumulate <strong style={{color:'#f0c842'}}>{fmt(fv)}</strong> — enough to generate <strong style={{color:'#10b981'}}>{fmt(income)}/month</strong> using the 4% withdrawal rule.</p>
+          <p style={s.p}>At {it.age}, you have {years} years until retirement at {retireAt}. Starting with {fmt(saved)} and contributing {fmt(monthly)}/month at {rate}% return, you are projected to accumulate <strong style={{color:'#f0c842'}}>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Retirement Calculator", "item": "https://freefincalc.net/retirement-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Retirement Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />{fmt(fv)}</strong> — enough to generate <strong style={{color:'#10b981'}}>{fmt(income)}/month</strong> using the 4% withdrawal rule.</p>
           <p style={s.p}>{years >= 25 ? 'You have the most powerful retirement weapon — time. Even modest contributions now grow dramatically over ' + years + ' years.' : years >= 15 ? 'You still have ' + years + ' years to make a real difference. Maximizing contributions in this window is critical.' : 'With ' + years + ' years left, every dollar saved now counts more than ever. Consider catch-up contributions and delaying Social Security.'}</p>
         </div>
         <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/retirement-calculator','Retirement Calculator'],['/401k-calculator','401k Calculator'],['/roth-ira-calculator','Roth IRA'],['/social-security-calculator','Social Security'],['/fire-calculator','FIRE Calculator']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>

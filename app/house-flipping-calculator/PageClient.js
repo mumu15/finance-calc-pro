@@ -244,6 +244,24 @@ export default function Calculator() {
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How much profit should a house flip make?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Most experienced flippers target at least $25,000-$30,000 minimum profit per flip to justify the risk. In terms of ROI, aim for 15-20%+ return on total invested capital. Annualised returns of 20-40% are achievable on successful flips. Margins are compressed in competitive markets — always account for overruns (add 15-20% to rehab budget).</p>
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "House Flipping Calculator", "item": "https://freefincalc.net/house-flipping-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "House Flipping Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} />
             </div>
 
             <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>

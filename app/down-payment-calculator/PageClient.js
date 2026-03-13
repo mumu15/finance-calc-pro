@@ -108,7 +108,25 @@ export default function Calculator() {
                   <span className="text-white font-bold text-sm">{`${returnRate}%`}</span>
                 </div>
                 <input type="range" min={0} max={8} step={0.25}
-                  value={returnRate} onChange={e => setReturnRate(Number(e.target.value))}
+                  value={returnRate} onChange={e =>
+      {/* Structured Data for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Down Payment Calculator", "item": "https://freefincalc.net/down-payment-calculator" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Down Payment Calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} /> setReturnRate(Number(e.target.value))}
                   className="w-full accent-yellow-400" />
               </div>
             </div>

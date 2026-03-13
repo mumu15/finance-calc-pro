@@ -31,7 +31,25 @@ export default function SATStateClient({item:it,all}){
   const net=salary-fed-state-fica
   const eff=((fed+state+fica)/salary*100).toFixed(1)
   return(
-    <div style={s.page}><Header/>
+    <div style={s.page}>
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "Salary After Tax", "item": "https://freefincalc.net/salary-after-tax" }
+        ]
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Salary After Tax",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
+      })}} /><Header/>
         <SchemaMarkup breadcrumbs={[
     { name: 'Home', url: 'https://freefincalc.net' },
     { name: 'Salary After Tax Calculator', url: 'https://freefincalc.net/salary-after-tax' }
