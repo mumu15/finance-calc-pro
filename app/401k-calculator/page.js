@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: '401(k) Calculator — Free Online 401(k) Calculator | FreeFinCalc',
+  description: 'Free 401(k) Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/401k-calculator' },
+  openGraph: {
+    title: '401(k) Calculator — Free Online 401(k) Calculator | FreeFinCalc',
+    description: 'Free 401(k) Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+    url: 'https://freefincalc.net/401k-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [currentBalance, setCurrentBalance] = useState(25000)

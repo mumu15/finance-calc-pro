@@ -14,6 +14,20 @@ const faqs = [
   { q: 'How do I stick to a budget?', a: 'Track every expense, use the envelope system or budgeting apps, automate savings, review your budget monthly and give yourself a small discretionary allowance to avoid feeling deprived.' },
 ]
 
+
+export const metadata = {
+  title: 'Budget Calculator — Free Online Budget Calculator | FreeFinCalc',
+  description: 'Free Budget Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/budget-calculator' },
+  openGraph: {
+    title: 'Budget Calculator — Free Online Budget Calculator | FreeFinCalc',
+    description: 'Free Budget Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+    url: 'https://freefincalc.net/budget-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function BudgetCalculator() {
   const { fmt, currency } = useCurrency()
   const [income, setIncome] = useState(5000)

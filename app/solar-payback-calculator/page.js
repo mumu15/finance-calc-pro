@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Solar Payback Calculator — Free Online Solar Payback Calculator | FreeFinCalc',
+  description: 'Free Solar Payback Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/solar-payback-calculator' },
+  openGraph: {
+    title: 'Solar Payback Calculator — Free Online Solar Payback Calculator | FreeFinCalc',
+    description: 'Free Solar Payback Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/solar-payback-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [systemCost, setSystemCost] = useState(25000)

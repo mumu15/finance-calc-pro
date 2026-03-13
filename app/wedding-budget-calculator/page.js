@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Wedding Budget Calculator — Free Online Wedding Budget Calculator | FreeFinCalc',
+  description: 'Free Wedding Budget Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/wedding-budget-calculator' },
+  openGraph: {
+    title: 'Wedding Budget Calculator — Free Online Wedding Budget Calculator | FreeFinCalc',
+    description: 'Free Wedding Budget Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+    url: 'https://freefincalc.net/wedding-budget-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [totalBudget, setTotalBudget] = useState(30000)

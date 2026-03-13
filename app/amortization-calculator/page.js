@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Amortization Calculator — Free Online Amortization Calculator | FreeFinCalc',
+  description: 'Free Amortization Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/amortization-calculator' },
+  openGraph: {
+    title: 'Amortization Calculator — Free Online Amortization Calculator | FreeFinCalc',
+    description: 'Free Amortization Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/amortization-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [loanAmount, setLoanAmount] = useState(250000)

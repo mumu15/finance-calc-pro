@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Overtime Pay Calculator — Free Online Overtime Pay Calculator | FreeFinCalc',
+  description: 'Free Overtime Pay Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/overtime-pay-calculator' },
+  openGraph: {
+    title: 'Overtime Pay Calculator — Free Online Overtime Pay Calculator | FreeFinCalc',
+    description: 'Free Overtime Pay Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/overtime-pay-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [hourlyRate, setHourlyRate] = useState(22)

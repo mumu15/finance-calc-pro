@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Payroll Tax Calculator — Free Online Payroll Tax Calculator | FreeFinCalc',
+  description: 'Free Payroll Tax Calculator — estimate your tax liability, deductions, and take-home pay. Fast, accurate, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/payroll-tax-calculator' },
+  openGraph: {
+    title: 'Payroll Tax Calculator — Free Online Payroll Tax Calculator | FreeFinCalc',
+    description: 'Free Payroll Tax Calculator — estimate your tax liability, deductions, and take-home pay. Fast, accurate, no sign-up required.',
+    url: 'https://freefincalc.net/payroll-tax-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [grossWages, setGrossWages] = useState(65000)

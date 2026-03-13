@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Discount Calculator — Free Online Discount Calculator | FreeFinCalc',
+  description: 'Free Discount Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/discount-calculator' },
+  openGraph: {
+    title: 'Discount Calculator — Free Online Discount Calculator | FreeFinCalc',
+    description: 'Free Discount Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/discount-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [originalPrice, setOriginalPrice] = useState(120)

@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Rent Affordability Calculator — Free Online Rent Affordability Calculator | FreeFinCalc',
+  description: 'Free Rent Affordability Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/rent-affordability-calculator' },
+  openGraph: {
+    title: 'Rent Affordability Calculator — Free Online Rent Affordability Calculator | FreeFinCalc',
+    description: 'Free Rent Affordability Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+    url: 'https://freefincalc.net/rent-affordability-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [grossIncome, setGrossIncome] = useState(65000)

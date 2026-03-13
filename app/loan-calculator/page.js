@@ -14,6 +14,20 @@ const faqs = [
   { q: 'How does loan term affect monthly payment?', a: 'A longer loan term means lower monthly payments but more total interest paid. A shorter term means higher payments but less total interest. Choose the shortest term you can comfortably afford.' },
 ]
 
+
+export const metadata = {
+  title: 'Loan Calculator — Free Online Loan Calculator | FreeFinCalc',
+  description: 'Free Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/loan-calculator' },
+  openGraph: {
+    title: 'Loan Calculator — Free Online Loan Calculator | FreeFinCalc',
+    description: 'Free Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+    url: 'https://freefincalc.net/loan-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function LoanCalculator() {
   const { fmt, currency } = useCurrency()
   const [loanAmount, setLoanAmount] = useState(10000)

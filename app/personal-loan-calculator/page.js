@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Personal Loan Calculator — Free Online Personal Loan Calculator | FreeFinCalc',
+  description: 'Free Personal Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/personal-loan-calculator' },
+  openGraph: {
+    title: 'Personal Loan Calculator — Free Online Personal Loan Calculator | FreeFinCalc',
+    description: 'Free Personal Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+    url: 'https://freefincalc.net/personal-loan-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [loanAmount, setLoanAmount] = useState(15000)

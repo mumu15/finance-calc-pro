@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Credit Card Minimum Payment Calculator — Free Online Credit Card Minimum Payment Calculator | FreeFinCalc',
+  description: 'Free Credit Card Minimum Payment Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/credit-card-minimum-payment-calculator' },
+  openGraph: {
+    title: 'Credit Card Minimum Payment Calculator — Free Online Credit Card Minimum Payment Calculator | FreeFinCalc',
+    description: 'Free Credit Card Minimum Payment Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+    url: 'https://freefincalc.net/credit-card-minimum-payment-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [balance, setBalance] = useState(5000)

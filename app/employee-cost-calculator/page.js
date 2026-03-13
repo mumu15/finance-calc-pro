@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Employee Cost Calculator — Free Online Employee Cost Calculator | FreeFinCalc',
+  description: 'Free Employee Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/employee-cost-calculator' },
+  openGraph: {
+    title: 'Employee Cost Calculator — Free Online Employee Cost Calculator | FreeFinCalc',
+    description: 'Free Employee Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/employee-cost-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [baseSalary, setBaseSalary] = useState(65000)

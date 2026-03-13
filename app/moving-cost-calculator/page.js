@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Moving Cost Calculator — Free Online Moving Cost Calculator | FreeFinCalc',
+  description: 'Free Moving Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/moving-cost-calculator' },
+  openGraph: {
+    title: 'Moving Cost Calculator — Free Online Moving Cost Calculator | FreeFinCalc',
+    description: 'Free Moving Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/moving-cost-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [moveType, setMoveType] = useState('local')

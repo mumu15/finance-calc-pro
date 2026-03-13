@@ -239,6 +239,20 @@ const ALL_TOOLS = CATEGORIES.flatMap(cat =>
   cat.tools.map(t => ({ ...t, category: cat.label, catIcon: cat.icon }))
 )
 
+
+export const metadata = {
+  title: 'Calculator — Free Online Calculator | FreeFinCalc',
+  description: 'Free Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/' },
+  openGraph: {
+    title: 'Calculator — Free Online Calculator | FreeFinCalc',
+    description: 'Free Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function HomePage() {
   const [search, setSearch]     = useState('')
   const [activeTab, setActiveTab] = useState('all')

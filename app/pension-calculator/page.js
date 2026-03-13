@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Pension Calculator — Free Online Pension Calculator | FreeFinCalc',
+  description: 'Free Pension Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/pension-calculator' },
+  openGraph: {
+    title: 'Pension Calculator — Free Online Pension Calculator | FreeFinCalc',
+    description: 'Free Pension Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+    url: 'https://freefincalc.net/pension-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [yearsService, setYearsService] = useState(25)

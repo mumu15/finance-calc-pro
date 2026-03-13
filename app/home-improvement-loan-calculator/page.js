@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Home Improvement Loan Calculator — Free Online Home Improvement Loan Calculator | FreeFinCalc',
+  description: 'Free Home Improvement Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/home-improvement-loan-calculator' },
+  openGraph: {
+    title: 'Home Improvement Loan Calculator — Free Online Home Improvement Loan Calculator | FreeFinCalc',
+    description: 'Free Home Improvement Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+    url: 'https://freefincalc.net/home-improvement-loan-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [projectCost, setProjectCost] = useState(30000)

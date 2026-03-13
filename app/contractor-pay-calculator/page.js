@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Contractor Pay Calculator — Free Online Contractor Pay Calculator | FreeFinCalc',
+  description: 'Free Contractor Pay Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/contractor-pay-calculator' },
+  openGraph: {
+    title: 'Contractor Pay Calculator — Free Online Contractor Pay Calculator | FreeFinCalc',
+    description: 'Free Contractor Pay Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/contractor-pay-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [hourlyRate, setHourlyRate] = useState(75)

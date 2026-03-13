@@ -14,6 +14,20 @@ const faqs = [
   { q: 'What is APY vs APR for savings?', a: 'APY (Annual Percentage Yield) accounts for compound interest and shows what you actually earn in a year. APR is the simple annual rate without compounding. Always compare APY when choosing savings accounts.' },
 ]
 
+
+export const metadata = {
+  title: 'Savings Calculator — Free Online Savings Calculator | FreeFinCalc',
+  description: 'Free Savings Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/savings-calculator' },
+  openGraph: {
+    title: 'Savings Calculator — Free Online Savings Calculator | FreeFinCalc',
+    description: 'Free Savings Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+    url: 'https://freefincalc.net/savings-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function SavingsCalculator() {
   const { fmt, currency } = useCurrency()
   const [initialDeposit, setInitialDeposit] = useState(5000)

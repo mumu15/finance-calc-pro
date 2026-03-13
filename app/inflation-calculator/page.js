@@ -14,6 +14,20 @@ const faqs = [
   { q: 'How do I calculate inflation?', a: 'Future value = Present value × (1 + inflation rate)^years. For example $100,000 at 3% inflation over 10 years = $100,000 × (1.03)^10 = $134,392 needed to maintain the same purchasing power.' },
 ]
 
+
+export const metadata = {
+  title: 'Inflation Calculator — Free Online Inflation Calculator | FreeFinCalc',
+  description: 'Free Inflation Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/inflation-calculator' },
+  openGraph: {
+    title: 'Inflation Calculator — Free Online Inflation Calculator | FreeFinCalc',
+    description: 'Free Inflation Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/inflation-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function InflationCalculator() {
   const { fmt, currency } = useCurrency()
   const [amount, setAmount] = useState(100000)

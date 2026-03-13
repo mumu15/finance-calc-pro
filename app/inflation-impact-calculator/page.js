@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Inflation Impact Calculator — Free Online Inflation Impact Calculator | FreeFinCalc',
+  description: 'Free Inflation Impact Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/inflation-impact-calculator' },
+  openGraph: {
+    title: 'Inflation Impact Calculator — Free Online Inflation Impact Calculator | FreeFinCalc',
+    description: 'Free Inflation Impact Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/inflation-impact-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [amount, setAmount] = useState(10000)

@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Freelance Rate Calculator — Free Online Freelance Rate Calculator | FreeFinCalc',
+  description: 'Free Freelance Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/freelance-rate-calculator' },
+  openGraph: {
+    title: 'Freelance Rate Calculator — Free Online Freelance Rate Calculator | FreeFinCalc',
+    description: 'Free Freelance Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/freelance-rate-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [targetIncome, setTargetIncome] = useState(80000)

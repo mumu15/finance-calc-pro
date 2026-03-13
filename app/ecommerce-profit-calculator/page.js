@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Ecommerce Profit Calculator — Free Online Ecommerce Profit Calculator | FreeFinCalc',
+  description: 'Free Ecommerce Profit Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/ecommerce-profit-calculator' },
+  openGraph: {
+    title: 'Ecommerce Profit Calculator — Free Online Ecommerce Profit Calculator | FreeFinCalc',
+    description: 'Free Ecommerce Profit Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/ecommerce-profit-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [salePrice, setSalePrice] = useState(49)

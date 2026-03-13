@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'FIRE Calculator — Free Online FIRE Calculator | FreeFinCalc',
+  description: 'Free FIRE Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/fire-calculator' },
+  openGraph: {
+    title: 'FIRE Calculator — Free Online FIRE Calculator | FreeFinCalc',
+    description: 'Free FIRE Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/fire-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [annualExpenses, setAnnualExpenses] = useState(50000)

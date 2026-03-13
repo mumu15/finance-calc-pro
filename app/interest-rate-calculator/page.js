@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Interest Rate Calculator — Free Online Interest Rate Calculator | FreeFinCalc',
+  description: 'Free Interest Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/interest-rate-calculator' },
+  openGraph: {
+    title: 'Interest Rate Calculator — Free Online Interest Rate Calculator | FreeFinCalc',
+    description: 'Free Interest Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/interest-rate-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [presentValue, setPresentValue] = useState(10000)

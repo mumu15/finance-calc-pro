@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Balance Transfer Calculator — Free Online Balance Transfer Calculator | FreeFinCalc',
+  description: 'Free Balance Transfer Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/balance-transfer-calculator' },
+  openGraph: {
+    title: 'Balance Transfer Calculator — Free Online Balance Transfer Calculator | FreeFinCalc',
+    description: 'Free Balance Transfer Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/balance-transfer-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [balance, setBalance] = useState(8000)

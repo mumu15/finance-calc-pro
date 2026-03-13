@@ -14,6 +14,20 @@ const faqs = [
   { q: 'How much should I invest per month to become a millionaire?', a: 'At 7% annual return you need to invest about $500/month for 30 years to reach $1 million. Starting earlier dramatically reduces the monthly amount needed due to compound interest.' },
 ]
 
+
+export const metadata = {
+  title: 'Compound Interest — Free Online Compound Interest | FreeFinCalc',
+  description: 'Free Compound Interest — project investment growth, returns, and compound interest over time. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/compound-interest' },
+  openGraph: {
+    title: 'Compound Interest — Free Online Compound Interest | FreeFinCalc',
+    description: 'Free Compound Interest — project investment growth, returns, and compound interest over time. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/compound-interest',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function CompoundInterest() {
   const { fmt, currency } = useCurrency()
   const [principal, setPrincipal] = useState(10000)

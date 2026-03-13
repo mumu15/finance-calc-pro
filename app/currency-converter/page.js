@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Currency Converter — Free Online Currency Converter | FreeFinCalc',
+  description: 'Free Currency Converter — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/currency-converter' },
+  openGraph: {
+    title: 'Currency Converter — Free Online Currency Converter | FreeFinCalc',
+    description: 'Free Currency Converter — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/currency-converter',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [amount, setAmount] = useState(1000)

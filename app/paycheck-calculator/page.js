@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Paycheck Calculator — Free Online Paycheck Calculator | FreeFinCalc',
+  description: 'Free Paycheck Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/paycheck-calculator' },
+  openGraph: {
+    title: 'Paycheck Calculator — Free Online Paycheck Calculator | FreeFinCalc',
+    description: 'Free Paycheck Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/paycheck-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [grossSalary, setGrossSalary] = useState(65000)

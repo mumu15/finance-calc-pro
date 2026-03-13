@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Accounts Receivable Calculator — Free Online Accounts Receivable Calculator | FreeFinCalc',
+  description: 'Free Accounts Receivable Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/accounts-receivable-calculator' },
+  openGraph: {
+    title: 'Accounts Receivable Calculator — Free Online Accounts Receivable Calculator | FreeFinCalc',
+    description: 'Free Accounts Receivable Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/accounts-receivable-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [annualRevenue, setAnnualRevenue] = useState(1200000)

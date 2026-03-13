@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Commission Calculator — Free Online Commission Calculator | FreeFinCalc',
+  description: 'Free Commission Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/commission-calculator' },
+  openGraph: {
+    title: 'Commission Calculator — Free Online Commission Calculator | FreeFinCalc',
+    description: 'Free Commission Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/commission-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [salesAmount, setSalesAmount] = useState(100000)

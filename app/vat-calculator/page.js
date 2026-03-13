@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'VAT Calculator — Free Online VAT Calculator | FreeFinCalc',
+  description: 'Free VAT Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/vat-calculator' },
+  openGraph: {
+    title: 'VAT Calculator — Free Online VAT Calculator | FreeFinCalc',
+    description: 'Free VAT Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/vat-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [amount, setAmount] = useState(100)

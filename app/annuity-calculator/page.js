@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Annuity Calculator — Free Online Annuity Calculator | FreeFinCalc',
+  description: 'Free Annuity Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/annuity-calculator' },
+  openGraph: {
+    title: 'Annuity Calculator — Free Online Annuity Calculator | FreeFinCalc',
+    description: 'Free Annuity Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/annuity-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [calcType, setCalcType] = useState('payment')

@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Savings Interest Calculator — Free Online Savings Interest Calculator | FreeFinCalc',
+  description: 'Free Savings Interest Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/savings-interest-calculator' },
+  openGraph: {
+    title: 'Savings Interest Calculator — Free Online Savings Interest Calculator | FreeFinCalc',
+    description: 'Free Savings Interest Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+    url: 'https://freefincalc.net/savings-interest-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [principal, setPrincipal] = useState(10000)

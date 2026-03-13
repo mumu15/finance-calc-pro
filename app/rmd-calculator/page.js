@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'RMD Calculator — Free Online RMD Calculator | FreeFinCalc',
+  description: 'Free RMD Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/rmd-calculator' },
+  openGraph: {
+    title: 'RMD Calculator — Free Online RMD Calculator | FreeFinCalc',
+    description: 'Free RMD Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/rmd-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [accountBalance, setAccountBalance] = useState(500000)

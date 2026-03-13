@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Car Depreciation Calculator — Free Online Car Depreciation Calculator | FreeFinCalc',
+  description: 'Free Car Depreciation Calculator — calculate auto costs, monthly payments, and total expenses. Compare options instantly, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/car-depreciation-calculator' },
+  openGraph: {
+    title: 'Car Depreciation Calculator — Free Online Car Depreciation Calculator | FreeFinCalc',
+    description: 'Free Car Depreciation Calculator — calculate auto costs, monthly payments, and total expenses. Compare options instantly, no sign-up.',
+    url: 'https://freefincalc.net/car-depreciation-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [purchasePrice, setPurchasePrice] = useState(35000)

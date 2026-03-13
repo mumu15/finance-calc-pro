@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Dollar Cost Averaging Calculator — Free Online Dollar Cost Averaging Calculator | FreeFinCalc',
+  description: 'Free Dollar Cost Averaging Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/dollar-cost-averaging-calculator' },
+  openGraph: {
+    title: 'Dollar Cost Averaging Calculator — Free Online Dollar Cost Averaging Calculator | FreeFinCalc',
+    description: 'Free Dollar Cost Averaging Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/dollar-cost-averaging-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [monthlyInvest, setMonthlyInvest] = useState(500)

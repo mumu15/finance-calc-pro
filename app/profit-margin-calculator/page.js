@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Profit Margin Calculator — Free Online Profit Margin Calculator | FreeFinCalc',
+  description: 'Free Profit Margin Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/profit-margin-calculator' },
+  openGraph: {
+    title: 'Profit Margin Calculator — Free Online Profit Margin Calculator | FreeFinCalc',
+    description: 'Free Profit Margin Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/profit-margin-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [revenue, setRevenue] = useState(500000)

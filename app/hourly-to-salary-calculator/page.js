@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Hourly to Salary Calculator — Free Online Hourly to Salary Calculator | FreeFinCalc',
+  description: 'Free Hourly to Salary Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/hourly-to-salary-calculator' },
+  openGraph: {
+    title: 'Hourly to Salary Calculator — Free Online Hourly to Salary Calculator | FreeFinCalc',
+    description: 'Free Hourly to Salary Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/hourly-to-salary-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [hourlyRate, setHourlyRate] = useState(25)

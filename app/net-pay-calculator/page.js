@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Net Pay Calculator — Free Online Net Pay Calculator | FreeFinCalc',
+  description: 'Free Net Pay Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/net-pay-calculator' },
+  openGraph: {
+    title: 'Net Pay Calculator — Free Online Net Pay Calculator | FreeFinCalc',
+    description: 'Free Net Pay Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/net-pay-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [grossPay, setGrossPay] = useState(3000)

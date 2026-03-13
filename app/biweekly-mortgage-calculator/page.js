@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Biweekly Mortgage Calculator — Free Online Biweekly Mortgage Calculator | FreeFinCalc',
+  description: 'Free Biweekly Mortgage Calculator — estimate monthly payments, amortization, and total cost. Compare rates and scenarios instantly.',
+  alternates: { canonical: 'https://freefincalc.net/biweekly-mortgage-calculator' },
+  openGraph: {
+    title: 'Biweekly Mortgage Calculator — Free Online Biweekly Mortgage Calculator | FreeFinCalc',
+    description: 'Free Biweekly Mortgage Calculator — estimate monthly payments, amortization, and total cost. Compare rates and scenarios instantly.',
+    url: 'https://freefincalc.net/biweekly-mortgage-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [loanAmount, setLoanAmount] = useState(350000)

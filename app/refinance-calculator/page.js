@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Refinance Calculator — Free Online Refinance Calculator | FreeFinCalc',
+  description: 'Free Refinance Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/refinance-calculator' },
+  openGraph: {
+    title: 'Refinance Calculator — Free Online Refinance Calculator | FreeFinCalc',
+    description: 'Free Refinance Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/refinance-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [currentBalance, setCurrentBalance] = useState(300000)

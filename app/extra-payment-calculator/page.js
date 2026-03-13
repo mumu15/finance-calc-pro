@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Extra Payment Calculator — Free Online Extra Payment Calculator | FreeFinCalc',
+  description: 'Free Extra Payment Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/extra-payment-calculator' },
+  openGraph: {
+    title: 'Extra Payment Calculator — Free Online Extra Payment Calculator | FreeFinCalc',
+    description: 'Free Extra Payment Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/extra-payment-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [balance, setBalance] = useState(320000)

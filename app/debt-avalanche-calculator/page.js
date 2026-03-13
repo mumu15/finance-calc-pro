@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Debt Avalanche Calculator — Free Online Debt Avalanche Calculator | FreeFinCalc',
+  description: 'Free Debt Avalanche Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/debt-avalanche-calculator' },
+  openGraph: {
+    title: 'Debt Avalanche Calculator — Free Online Debt Avalanche Calculator | FreeFinCalc',
+    description: 'Free Debt Avalanche Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+    url: 'https://freefincalc.net/debt-avalanche-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [debt1Bal, setDebt1Bal] = useState(5000)

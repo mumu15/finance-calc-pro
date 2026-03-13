@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Net Worth Calculator — Free Online Net Worth Calculator | FreeFinCalc',
+  description: 'Free Net Worth Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/net-worth-calculator' },
+  openGraph: {
+    title: 'Net Worth Calculator — Free Online Net Worth Calculator | FreeFinCalc',
+    description: 'Free Net Worth Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/net-worth-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [cash, setCash] = useState(15000)

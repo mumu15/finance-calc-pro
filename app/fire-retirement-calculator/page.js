@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'FIRE Retirement Calculator — Free Online FIRE Retirement Calculator | FreeFinCalc',
+  description: 'Free FIRE Retirement Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/fire-retirement-calculator' },
+  openGraph: {
+    title: 'FIRE Retirement Calculator — Free Online FIRE Retirement Calculator | FreeFinCalc',
+    description: 'Free FIRE Retirement Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+    url: 'https://freefincalc.net/fire-retirement-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [currentAge, setCurrentAge] = useState(30)

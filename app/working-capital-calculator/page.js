@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Working Capital Calculator — Free Online Working Capital Calculator | FreeFinCalc',
+  description: 'Free Working Capital Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/working-capital-calculator' },
+  openGraph: {
+    title: 'Working Capital Calculator — Free Online Working Capital Calculator | FreeFinCalc',
+    description: 'Free Working Capital Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/working-capital-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [cash, setCash] = useState(100000)

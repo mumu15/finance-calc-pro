@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Payoff vs Invest Calculator — Free Online Payoff vs Invest Calculator | FreeFinCalc',
+  description: 'Free Payoff vs Invest Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/payoff-vs-invest-calculator' },
+  openGraph: {
+    title: 'Payoff vs Invest Calculator — Free Online Payoff vs Invest Calculator | FreeFinCalc',
+    description: 'Free Payoff vs Invest Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+    url: 'https://freefincalc.net/payoff-vs-invest-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [debtBalance, setDebtBalance] = useState(25000)

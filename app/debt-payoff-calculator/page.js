@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Debt Payoff Calculator — Free Online Debt Payoff Calculator | FreeFinCalc',
+  description: 'Free Debt Payoff Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/debt-payoff-calculator' },
+  openGraph: {
+    title: 'Debt Payoff Calculator — Free Online Debt Payoff Calculator | FreeFinCalc',
+    description: 'Free Debt Payoff Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+    url: 'https://freefincalc.net/debt-payoff-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [balance, setBalance] = useState(25000)

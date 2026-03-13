@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'College Savings Calculator — Free Online College Savings Calculator | FreeFinCalc',
+  description: 'Free College Savings Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/college-savings-calculator' },
+  openGraph: {
+    title: 'College Savings Calculator — Free Online College Savings Calculator | FreeFinCalc',
+    description: 'Free College Savings Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+    url: 'https://freefincalc.net/college-savings-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [childAge, setChildAge] = useState(5)

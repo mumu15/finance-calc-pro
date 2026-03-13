@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Markup Calculator — Free Online Markup Calculator | FreeFinCalc',
+  description: 'Free Markup Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/markup-calculator' },
+  openGraph: {
+    title: 'Markup Calculator — Free Online Markup Calculator | FreeFinCalc',
+    description: 'Free Markup Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/markup-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [cost, setCost] = useState(50)

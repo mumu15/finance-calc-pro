@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Cash Flow Calculator — Free Online Cash Flow Calculator | FreeFinCalc',
+  description: 'Free Cash Flow Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/cash-flow-calculator' },
+  openGraph: {
+    title: 'Cash Flow Calculator — Free Online Cash Flow Calculator | FreeFinCalc',
+    description: 'Free Cash Flow Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/cash-flow-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [revenue, setRevenue] = useState(80000)

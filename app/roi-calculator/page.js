@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'ROI Calculator — Free Online ROI Calculator | FreeFinCalc',
+  description: 'Free ROI Calculator — project investment growth, returns, and compound interest over time. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/roi-calculator' },
+  openGraph: {
+    title: 'ROI Calculator — Free Online ROI Calculator | FreeFinCalc',
+    description: 'Free ROI Calculator — project investment growth, returns, and compound interest over time. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/roi-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [initialInvestment, setInitialInvestment] = useState(10000)

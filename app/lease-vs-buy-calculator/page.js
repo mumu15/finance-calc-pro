@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Lease vs Buy Calculator — Free Online Lease vs Buy Calculator | FreeFinCalc',
+  description: 'Free Lease vs Buy Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/lease-vs-buy-calculator' },
+  openGraph: {
+    title: 'Lease vs Buy Calculator — Free Online Lease vs Buy Calculator | FreeFinCalc',
+    description: 'Free Lease vs Buy Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/lease-vs-buy-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [carPrice, setCarPrice] = useState(35000)

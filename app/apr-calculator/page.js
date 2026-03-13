@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'APR Calculator — Free Online APR Calculator | FreeFinCalc',
+  description: 'Free APR Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/apr-calculator' },
+  openGraph: {
+    title: 'APR Calculator — Free Online APR Calculator | FreeFinCalc',
+    description: 'Free APR Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/apr-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [loanAmount, setLoanAmount] = useState(20000)

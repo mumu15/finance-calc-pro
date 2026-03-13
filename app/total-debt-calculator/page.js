@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Total Debt Calculator — Free Online Total Debt Calculator | FreeFinCalc',
+  description: 'Free Total Debt Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/total-debt-calculator' },
+  openGraph: {
+    title: 'Total Debt Calculator — Free Online Total Debt Calculator | FreeFinCalc',
+    description: 'Free Total Debt Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+    url: 'https://freefincalc.net/total-debt-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [mortgageBalance, setMortgageBalance] = useState(280000)

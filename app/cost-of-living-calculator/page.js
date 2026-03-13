@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Cost of Living Calculator — Free Online Cost of Living Calculator | FreeFinCalc',
+  description: 'Free Cost of Living Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/cost-of-living-calculator' },
+  openGraph: {
+    title: 'Cost of Living Calculator — Free Online Cost of Living Calculator | FreeFinCalc',
+    description: 'Free Cost of Living Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/cost-of-living-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [currentSalary, setCurrentSalary] = useState(80000)

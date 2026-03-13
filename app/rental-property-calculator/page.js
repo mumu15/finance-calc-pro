@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Rental Property Calculator — Free Online Rental Property Calculator | FreeFinCalc',
+  description: 'Free Rental Property Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/rental-property-calculator' },
+  openGraph: {
+    title: 'Rental Property Calculator — Free Online Rental Property Calculator | FreeFinCalc',
+    description: 'Free Rental Property Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+    url: 'https://freefincalc.net/rental-property-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [purchasePrice, setPurchasePrice] = useState(350000)

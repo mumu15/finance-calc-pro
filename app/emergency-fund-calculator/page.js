@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Emergency Fund Calculator — Free Online Emergency Fund Calculator | FreeFinCalc',
+  description: 'Free Emergency Fund Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/emergency-fund-calculator' },
+  openGraph: {
+    title: 'Emergency Fund Calculator — Free Online Emergency Fund Calculator | FreeFinCalc',
+    description: 'Free Emergency Fund Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/emergency-fund-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [monthlyExpenses, setMonthlyExpenses] = useState(3500)

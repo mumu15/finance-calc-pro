@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Savings Growth Calculator — Free Online Savings Growth Calculator | FreeFinCalc',
+  description: 'Free Savings Growth Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/savings-growth-calculator' },
+  openGraph: {
+    title: 'Savings Growth Calculator — Free Online Savings Growth Calculator | FreeFinCalc',
+    description: 'Free Savings Growth Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+    url: 'https://freefincalc.net/savings-growth-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [initialDeposit, setInitialDeposit] = useState(10000)

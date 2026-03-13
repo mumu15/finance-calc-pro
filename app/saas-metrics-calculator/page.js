@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'SaaS Metrics Calculator — Free Online SaaS Metrics Calculator | FreeFinCalc',
+  description: 'Free SaaS Metrics Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/saas-metrics-calculator' },
+  openGraph: {
+    title: 'SaaS Metrics Calculator — Free Online SaaS Metrics Calculator | FreeFinCalc',
+    description: 'Free SaaS Metrics Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/saas-metrics-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [mrr, setMrr] = useState(50000)

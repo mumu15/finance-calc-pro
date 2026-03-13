@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Home Affordability Calculator — Free Online Home Affordability Calculator | FreeFinCalc',
+  description: 'Free Home Affordability Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/home-affordability-calculator' },
+  openGraph: {
+    title: 'Home Affordability Calculator — Free Online Home Affordability Calculator | FreeFinCalc',
+    description: 'Free Home Affordability Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+    url: 'https://freefincalc.net/home-affordability-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [annualIncome, setAnnualIncome] = useState(90000)

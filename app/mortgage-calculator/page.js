@@ -15,6 +15,20 @@ const faqs = [
   { q: 'How much house can I afford?', a: 'A common rule is to spend no more than 28% of your gross monthly income on housing costs. Use our mortgage calculator with your local currency to find the right amount for your market.' },
 ]
 
+
+export const metadata = {
+  title: 'Mortgage Calculator — Free Online Mortgage Calculator | FreeFinCalc',
+  description: 'Free Mortgage Calculator — estimate monthly payments, amortization, and total cost. Compare rates and scenarios instantly.',
+  alternates: { canonical: 'https://freefincalc.net/mortgage-calculator' },
+  openGraph: {
+    title: 'Mortgage Calculator — Free Online Mortgage Calculator | FreeFinCalc',
+    description: 'Free Mortgage Calculator — estimate monthly payments, amortization, and total cost. Compare rates and scenarios instantly.',
+    url: 'https://freefincalc.net/mortgage-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function MortgageCalculator() {
   const { fmt, currency } = useCurrency()
 

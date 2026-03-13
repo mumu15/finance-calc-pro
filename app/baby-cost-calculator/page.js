@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Baby Cost Calculator — Free Online Baby Cost Calculator | FreeFinCalc',
+  description: 'Free Baby Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/baby-cost-calculator' },
+  openGraph: {
+    title: 'Baby Cost Calculator — Free Online Baby Cost Calculator | FreeFinCalc',
+    description: 'Free Baby Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/baby-cost-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [deliveryType, setDeliveryType] = useState('vaginal')

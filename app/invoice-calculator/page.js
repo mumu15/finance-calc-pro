@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Invoice Calculator — Free Online Invoice Calculator | FreeFinCalc',
+  description: 'Free Invoice Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/invoice-calculator' },
+  openGraph: {
+    title: 'Invoice Calculator — Free Online Invoice Calculator | FreeFinCalc',
+    description: 'Free Invoice Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/invoice-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [subtotal, setSubtotal] = useState(2500)

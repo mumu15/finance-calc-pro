@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Roth IRA Calculator — Free Online Roth IRA Calculator | FreeFinCalc',
+  description: 'Free Roth IRA Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/roth-ira-calculator' },
+  openGraph: {
+    title: 'Roth IRA Calculator — Free Online Roth IRA Calculator | FreeFinCalc',
+    description: 'Free Roth IRA Calculator — plan your retirement savings, estimate future balances, and find out if you\'re on track. No sign-up required.',
+    url: 'https://freefincalc.net/roth-ira-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [currentBalance, setCurrentBalance] = useState(5000)

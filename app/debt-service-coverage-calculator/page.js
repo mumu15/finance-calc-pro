@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Debt Service Coverage Calculator — Free Online Debt Service Coverage Calculator | FreeFinCalc',
+  description: 'Free Debt Service Coverage Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/debt-service-coverage-calculator' },
+  openGraph: {
+    title: 'Debt Service Coverage Calculator — Free Online Debt Service Coverage Calculator | FreeFinCalc',
+    description: 'Free Debt Service Coverage Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+    url: 'https://freefincalc.net/debt-service-coverage-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [annualNOI, setAnnualNOI] = useState(180000)

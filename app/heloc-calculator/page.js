@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'HELOC Calculator — Free Online HELOC Calculator | FreeFinCalc',
+  description: 'Free HELOC Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/heloc-calculator' },
+  openGraph: {
+    title: 'HELOC Calculator — Free Online HELOC Calculator | FreeFinCalc',
+    description: 'Free HELOC Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/heloc-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [homeValue, setHomeValue] = useState(450000)

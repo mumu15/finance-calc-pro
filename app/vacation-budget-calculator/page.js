@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Vacation Budget Calculator — Free Online Vacation Budget Calculator | FreeFinCalc',
+  description: 'Free Vacation Budget Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/vacation-budget-calculator' },
+  openGraph: {
+    title: 'Vacation Budget Calculator — Free Online Vacation Budget Calculator | FreeFinCalc',
+    description: 'Free Vacation Budget Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+    url: 'https://freefincalc.net/vacation-budget-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [travelers, setTravelers] = useState(2)

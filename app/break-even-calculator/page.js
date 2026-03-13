@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Break Even Calculator — Free Online Break Even Calculator | FreeFinCalc',
+  description: 'Free Break Even Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/break-even-calculator' },
+  openGraph: {
+    title: 'Break Even Calculator — Free Online Break Even Calculator | FreeFinCalc',
+    description: 'Free Break Even Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/break-even-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [fixedCosts, setFixedCosts] = useState(20000)

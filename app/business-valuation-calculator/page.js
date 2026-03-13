@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Business Valuation Calculator — Free Online Business Valuation Calculator | FreeFinCalc',
+  description: 'Free Business Valuation Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/business-valuation-calculator' },
+  openGraph: {
+    title: 'Business Valuation Calculator — Free Online Business Valuation Calculator | FreeFinCalc',
+    description: 'Free Business Valuation Calculator — analyze business finances, profit margins, and break-even points. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/business-valuation-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [annualRevenue, setAnnualRevenue] = useState(500000)

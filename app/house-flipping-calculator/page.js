@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'House Flipping Calculator — Free Online House Flipping Calculator | FreeFinCalc',
+  description: 'Free House Flipping Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/house-flipping-calculator' },
+  openGraph: {
+    title: 'House Flipping Calculator — Free Online House Flipping Calculator | FreeFinCalc',
+    description: 'Free House Flipping Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+    url: 'https://freefincalc.net/house-flipping-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [purchasePrice, setPurchasePrice] = useState(200000)

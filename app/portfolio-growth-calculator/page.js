@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Portfolio Growth Calculator — Free Online Portfolio Growth Calculator | FreeFinCalc',
+  description: 'Free Portfolio Growth Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/portfolio-growth-calculator' },
+  openGraph: {
+    title: 'Portfolio Growth Calculator — Free Online Portfolio Growth Calculator | FreeFinCalc',
+    description: 'Free Portfolio Growth Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/portfolio-growth-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [initialAmount, setInitialAmount] = useState(50000)

@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Savings Goal Calculator — Free Online Savings Goal Calculator | FreeFinCalc',
+  description: 'Free Savings Goal Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/savings-goal-calculator' },
+  openGraph: {
+    title: 'Savings Goal Calculator — Free Online Savings Goal Calculator | FreeFinCalc',
+    description: 'Free Savings Goal Calculator — see how your savings grow over time with interest and regular deposits. Free, instant, no sign-up.',
+    url: 'https://freefincalc.net/savings-goal-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [goalAmount, setGoalAmount] = useState(20000)

@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Credit Utilization Calculator — Free Online Credit Utilization Calculator | FreeFinCalc',
+  description: 'Free Credit Utilization Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/credit-utilization-calculator' },
+  openGraph: {
+    title: 'Credit Utilization Calculator — Free Online Credit Utilization Calculator | FreeFinCalc',
+    description: 'Free Credit Utilization Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/credit-utilization-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [balance1, setBalance1] = useState(2000)

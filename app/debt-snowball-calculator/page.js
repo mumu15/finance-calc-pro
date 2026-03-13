@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Debt Snowball Calculator — Free Online Debt Snowball Calculator | FreeFinCalc',
+  description: 'Free Debt Snowball Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/debt-snowball-calculator' },
+  openGraph: {
+    title: 'Debt Snowball Calculator — Free Online Debt Snowball Calculator | FreeFinCalc',
+    description: 'Free Debt Snowball Calculator — find the fastest way to pay off your debt, see interest saved, and create a payoff plan. No sign-up.',
+    url: 'https://freefincalc.net/debt-snowball-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [debt1Bal, setDebt1Bal] = useState(1500)

@@ -22,6 +22,20 @@ const faqs = [
   }
 ]
 
+
+export const metadata = {
+  title: 'Sales Tax Calculator — Free Online Sales Tax Calculator | FreeFinCalc',
+  description: 'Free Sales Tax Calculator — estimate your tax liability, deductions, and take-home pay. Fast, accurate, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/sales-tax-calculator' },
+  openGraph: {
+    title: 'Sales Tax Calculator — Free Online Sales Tax Calculator | FreeFinCalc',
+    description: 'Free Sales Tax Calculator — estimate your tax liability, deductions, and take-home pay. Fast, accurate, no sign-up required.',
+    url: 'https://freefincalc.net/sales-tax-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [price, setPrice] = useState(100)

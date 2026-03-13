@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Loan Comparison Calculator — Free Online Loan Comparison Calculator | FreeFinCalc',
+  description: 'Free Loan Comparison Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/loan-comparison-calculator' },
+  openGraph: {
+    title: 'Loan Comparison Calculator — Free Online Loan Comparison Calculator | FreeFinCalc',
+    description: 'Free Loan Comparison Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+    url: 'https://freefincalc.net/loan-comparison-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [amount1, setAmount1] = useState(25000)

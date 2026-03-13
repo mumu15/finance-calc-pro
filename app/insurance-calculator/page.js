@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Insurance Calculator — Free Online Insurance Calculator | FreeFinCalc',
+  description: 'Free Insurance Calculator — estimate coverage needs and costs. Compare options, instant results, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/insurance-calculator' },
+  openGraph: {
+    title: 'Insurance Calculator — Free Online Insurance Calculator | FreeFinCalc',
+    description: 'Free Insurance Calculator — estimate coverage needs and costs. Compare options, instant results, no sign-up required.',
+    url: 'https://freefincalc.net/insurance-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [annualIncome, setAnnualIncome] = useState(75000)

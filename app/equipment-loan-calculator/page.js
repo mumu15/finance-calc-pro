@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Equipment Loan Calculator — Free Online Equipment Loan Calculator | FreeFinCalc',
+  description: 'Free Equipment Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/equipment-loan-calculator' },
+  openGraph: {
+    title: 'Equipment Loan Calculator — Free Online Equipment Loan Calculator | FreeFinCalc',
+    description: 'Free Equipment Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+    url: 'https://freefincalc.net/equipment-loan-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [equipCost, setEquipCost] = useState(50000)

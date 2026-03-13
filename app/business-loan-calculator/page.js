@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Business Loan Calculator — Free Online Business Loan Calculator | FreeFinCalc',
+  description: 'Free Business Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/business-loan-calculator' },
+  openGraph: {
+    title: 'Business Loan Calculator — Free Online Business Loan Calculator | FreeFinCalc',
+    description: 'Free Business Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
+    url: 'https://freefincalc.net/business-loan-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [loanAmount, setLoanAmount] = useState(100000)

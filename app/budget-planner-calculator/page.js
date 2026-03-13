@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Budget Planner Calculator — Free Online Budget Planner Calculator | FreeFinCalc',
+  description: 'Free Budget Planner Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/budget-planner-calculator' },
+  openGraph: {
+    title: 'Budget Planner Calculator — Free Online Budget Planner Calculator | FreeFinCalc',
+    description: 'Free Budget Planner Calculator — create a personalized budget plan, track expenses, and find savings opportunities. No sign-up required.',
+    url: 'https://freefincalc.net/budget-planner-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [monthlyIncome, setMonthlyIncome] = useState(5000)

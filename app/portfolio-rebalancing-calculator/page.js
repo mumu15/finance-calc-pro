@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Portfolio Rebalancing Calculator — Free Online Portfolio Rebalancing Calculator | FreeFinCalc',
+  description: 'Free Portfolio Rebalancing Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/portfolio-rebalancing-calculator' },
+  openGraph: {
+    title: 'Portfolio Rebalancing Calculator — Free Online Portfolio Rebalancing Calculator | FreeFinCalc',
+    description: 'Free Portfolio Rebalancing Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/portfolio-rebalancing-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [stocks, setStocks] = useState(70000)

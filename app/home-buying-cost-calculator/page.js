@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Home Buying Cost Calculator — Free Online Home Buying Cost Calculator | FreeFinCalc',
+  description: 'Free Home Buying Cost Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+  alternates: { canonical: 'https://freefincalc.net/home-buying-cost-calculator' },
+  openGraph: {
+    title: 'Home Buying Cost Calculator — Free Online Home Buying Cost Calculator | FreeFinCalc',
+    description: 'Free Home Buying Cost Calculator — estimate housing costs, affordability, and make smarter real estate decisions. No sign-up required.',
+    url: 'https://freefincalc.net/home-buying-cost-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [homePrice, setHomePrice] = useState(400000)

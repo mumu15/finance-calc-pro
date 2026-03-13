@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Startup Cost Calculator — Free Online Startup Cost Calculator | FreeFinCalc',
+  description: 'Free Startup Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  alternates: { canonical: 'https://freefincalc.net/startup-cost-calculator' },
+  openGraph: {
+    title: 'Startup Cost Calculator — Free Online Startup Cost Calculator | FreeFinCalc',
+    description: 'Free Startup Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    url: 'https://freefincalc.net/startup-cost-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [setupCosts, setSetupCosts] = useState(15000)

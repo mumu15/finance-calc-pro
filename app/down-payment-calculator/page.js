@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Down Payment Calculator — Free Online Down Payment Calculator | FreeFinCalc',
+  description: 'Free Down Payment Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/down-payment-calculator' },
+  openGraph: {
+    title: 'Down Payment Calculator — Free Online Down Payment Calculator | FreeFinCalc',
+    description: 'Free Down Payment Calculator — calculate your take-home pay, hourly rate, and tax withholdings. Instant results, no sign-up.',
+    url: 'https://freefincalc.net/down-payment-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [homePrice, setHomePrice] = useState(400000)

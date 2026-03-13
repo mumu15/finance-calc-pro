@@ -7,6 +7,20 @@ import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
 
+
+export const metadata = {
+  title: 'Car Affordability Calculator — Free Online Car Affordability Calculator | FreeFinCalc',
+  description: 'Free Car Affordability Calculator — calculate auto costs, monthly payments, and total expenses. Compare options instantly, no sign-up.',
+  alternates: { canonical: 'https://freefincalc.net/car-affordability-calculator' },
+  openGraph: {
+    title: 'Car Affordability Calculator — Free Online Car Affordability Calculator | FreeFinCalc',
+    description: 'Free Car Affordability Calculator — calculate auto costs, monthly payments, and total expenses. Compare options instantly, no sign-up.',
+    url: 'https://freefincalc.net/car-affordability-calculator',
+    siteName: 'FreeFinCalc',
+    type: 'website',
+  },
+};
+
 export default function Calculator() {
   const { fmt } = useCurrency()
   const [monthlyIncome, setMonthlyIncome] = useState(6000)
