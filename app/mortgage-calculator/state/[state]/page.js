@@ -7,9 +7,13 @@ export async function generateStaticParams() {
 }
 
 
-export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/mortgage-calculator/state/[state]' },
-};
+
+
+export async function generateMetadata({ params }) {
+  return {
+    alternates: { canonical: `https://freefincalc.net/mortgage-calculator/state/${params.state}` },
+  };
+}
 
 export default function StatePage({ params }) {
   const state = states.find(s => s.slug === params.state)

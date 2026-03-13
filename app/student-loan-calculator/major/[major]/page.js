@@ -5,9 +5,13 @@ export async function generateStaticParams() {
   return majors.map(m => ({ major: m.slug }))
 }
 
-export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/student-loan-calculator/major/[major]' },
-};
+
+
+export async function generateMetadata({ params }) {
+  return {
+    alternates: { canonical: `https://freefincalc.net/student-loan-calculator/major/${params.major}` },
+  };
+}
 
 export default function Page({ params }) {
   const major = majors.find(m => m.slug === params.major)

@@ -5,9 +5,13 @@ export async function generateStaticParams() {
   return brands.map(b => ({ brand: b.slug }))
 }
 
-export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/car-loan-calculator/brand/[brand]' },
-};
+
+
+export async function generateMetadata({ params }) {
+  return {
+    alternates: { canonical: `https://freefincalc.net/car-loan-calculator/brand/${params.brand}` },
+  };
+}
 
 export default function Page({ params }) {
   const brand = brands.find(b => b.slug === params.brand)

@@ -3,9 +3,13 @@ import FreelanceRateClient from './FreelanceRateClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return freelanceJobs.map(x => ({ job: x.slug })) }
 
-export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/freelance-rate-calculator/job/[job]' },
-};
+
+
+export async function generateMetadata({ params }) {
+  return {
+    alternates: { canonical: `https://freefincalc.net/freelance-rate-calculator/job/${params.job}` },
+  };
+}
 
 export default function Page({ params }) {
   const item = freelanceJobs.find(x => x.slug === params.job)

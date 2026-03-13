@@ -3,9 +3,13 @@ import CCPayoffClient from './CCPayoffClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return ccBalances.map(x => ({ balance: x.slug })) }
 
-export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/credit-card-payoff-calculator/balance/[balance]' },
-};
+
+
+export async function generateMetadata({ params }) {
+  return {
+    alternates: { canonical: `https://freefincalc.net/credit-card-payoff-calculator/balance/${params.balance}` },
+  };
+}
 
 export default function Page({ params }) {
   const item = ccBalances.find(x => x.slug === params.balance)

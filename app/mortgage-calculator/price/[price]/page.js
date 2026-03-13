@@ -3,9 +3,13 @@ import MortgagePriceClient from './MortgagePriceClient.js'
 import { notFound } from 'next/navigation'
 export async function generateStaticParams() { return homePrices.map(x => ({ price: x.slug })) }
 
-export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/mortgage-calculator/price/[price]' },
-};
+
+
+export async function generateMetadata({ params }) {
+  return {
+    alternates: { canonical: `https://freefincalc.net/mortgage-calculator/price/${params.price}` },
+  };
+}
 
 export default function Page({ params }) {
   const item = homePrices.find(x => x.slug === params.price)
