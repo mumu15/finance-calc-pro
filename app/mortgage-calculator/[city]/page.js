@@ -22,6 +22,15 @@ function calcMonthly(price, downPct, rate, years) {
   return loan * mo * Math.pow(1 + mo, n) / (Math.pow(1 + mo, n) - 1)
 }
 
+
+
+export async function generateMetadata({ params }) {
+  return {
+    alternates: { canonical: `https://freefincalc.net/mortgage-calculator/${params.city}` },
+  };
+}
+
+
 export default function CityMortgagePage() {
   const { city: citySlug } = useParams()
   const city = cities.find(c => c.slug === citySlug)

@@ -7,11 +7,15 @@ export async function generateStaticParams() { return items.map(x => ({ age: x.s
 
 
 
+
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/retirement-calculator/age/${params.age}` },
   };
 }
+
 
 export default function Page({ params }) {
   const item = items.find(x => x.slug === params.age)
