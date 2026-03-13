@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmtD(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 function calcTax(gross, fedRate, stateRate, fica) {
@@ -37,6 +39,8 @@ export default function SalaryJobClient({ job, allJobs }) {
   return (
     <div style={s.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}>
           <a href="/" style={s.bcA}>Home</a><span>›</span>
@@ -49,7 +53,7 @@ export default function SalaryJobClient({ job, allJobs }) {
         <div style={s.card}>
           <label style={s.lbl}>Annual Salary</label>
           <div style={s.val}>{fmtD(salary)}/year</div>
-          <input type="range" min={20000} max={job.salary * 3} step={1000} value={salary} onChange={e => setSalary(+e.target.value)} style={s.sldr} />
+          <input type="number" value={salary} onChange={e => setSalary(+e.target.value)} style={s.sldr} />
         </div>
 
         <div style={s.card}>
@@ -89,6 +93,7 @@ export default function SalaryJobClient({ job, allJobs }) {
           ))}
         </div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

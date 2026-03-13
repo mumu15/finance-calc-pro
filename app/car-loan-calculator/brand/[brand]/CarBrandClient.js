@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 function calc(price, down, rate, term) {
@@ -42,6 +44,8 @@ export default function CarBrandClient({ brand, allBrands }) {
   return (
     <div style={s.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}>
           <a href="/" style={s.bcA}>Home</a><span>›</span>
@@ -55,22 +59,22 @@ export default function CarBrandClient({ brand, allBrands }) {
           <div style={s.card}>
             <label style={s.lbl}>Vehicle Price</label>
             <div style={s.val}>{fmt(price)}</div>
-            <input type="range" min={5000} max={brand.avg * 3} step={500} value={price} onChange={e => setPrice(+e.target.value)} style={s.sldr} />
+            <input type="number" value={price} onChange={e => setPrice(+e.target.value)} style={s.sldr} />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Down Payment ({down}%)</label>
             <div style={s.val}>{fmt(price * down / 100)}</div>
-            <input type="range" min={0} max={50} step={1} value={down} onChange={e => setDown(+e.target.value)} style={s.sldr} />
+            <input type="number" value={down} onChange={e => setDown(+e.target.value)} style={s.sldr} />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Interest Rate</label>
             <div style={s.val}>{rate}%</div>
-            <input type="range" min={1} max={20} step={0.1} value={rate} onChange={e => setRate(+e.target.value)} style={s.sldr} />
+            <input type="number" value={rate} onChange={e => setRate(+e.target.value)} style={s.sldr} />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Loan Term (months)</label>
             <div style={s.val}>{term} mo</div>
-            <input type="range" min={24} max={84} step={12} value={term} onChange={e => setTerm(+e.target.value)} style={s.sldr} />
+            <input type="number" value={term} onChange={e => setTerm(+e.target.value)} style={s.sldr} />
           </div>
         </div>
 
@@ -103,6 +107,7 @@ export default function CarBrandClient({ brand, allBrands }) {
           ))}
         </div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

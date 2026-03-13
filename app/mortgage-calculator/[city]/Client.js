@@ -4,6 +4,8 @@ import { useParams } from 'next/navigation'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import cities from '../../../data/cities'
+import AdUnit from '../../components/AdUnit';
+import SchemaMarkup from '../../components/SchemaMarkup';
 
 // Unsplash source URLs — free to use commercially
 function cityImageUrl(unsplashId) {
@@ -104,6 +106,8 @@ export default function CityMortgagePage() {
   return (
     <div style={styles.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
 
       {/* Hero image */}
       <div style={styles.hero}>
@@ -154,7 +158,7 @@ export default function CityMortgagePage() {
               <span>Home Price</span>
               <span style={styles.inputVal}>${fmt(homePrice)}</span>
             </div>
-            <input type="range" min={50000} max={3000000} step={5000}
+            <input type="number"
               value={homePrice} onChange={e => setHomePrice(+e.target.value)}
               style={styles.slider} />
           </div>
@@ -164,7 +168,7 @@ export default function CityMortgagePage() {
               <span>Down Payment</span>
               <span style={styles.inputVal}>{downPct}% (${fmt(homePrice * downPct / 100)})</span>
             </div>
-            <input type="range" min={3} max={50} step={1}
+            <input type="number"
               value={downPct} onChange={e => setDownPct(+e.target.value)}
               style={styles.slider} />
           </div>
@@ -174,7 +178,7 @@ export default function CityMortgagePage() {
               <span>Interest Rate</span>
               <span style={styles.inputVal}>{rate}%</span>
             </div>
-            <input type="range" min={3} max={12} step={0.1}
+            <input type="number"
               value={rate} onChange={e => setRate(+e.target.value)}
               style={styles.slider} />
           </div>
@@ -184,7 +188,7 @@ export default function CityMortgagePage() {
               <span>Loan Term</span>
               <span style={styles.inputVal}>{years} years</span>
             </div>
-            <input type="range" min={10} max={30} step={5}
+            <input type="number"
               value={years} onChange={e => setYears(+e.target.value)}
               style={styles.slider} />
           </div>
@@ -335,6 +339,7 @@ export default function CityMortgagePage() {
         </div>
 
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 
@@ -37,6 +39,8 @@ export default function SavingsGoalClient({ item: g, all }) {
   return (
     <div style={st.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={st.wrap}>
         <nav style={st.bc}>
           <a href="/" style={st.bcA}>Home</a><span>›</span>
@@ -50,17 +54,17 @@ export default function SavingsGoalClient({ item: g, all }) {
           <div style={st.card}>
             <label style={st.lbl}>Savings Target</label>
             <div style={st.val}>{fmt(target)}</div>
-            <input type="range" min={500} max={g.target * 5} step={500} value={target} onChange={e => setTarget(+e.target.value)} style={st.sldr} />
+            <input type="number" value={target} onChange={e => setTarget(+e.target.value)} style={st.sldr} />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Timeframe (months)</label>
             <div style={st.val}>{months} mo ({(months/12).toFixed(1)} yrs)</div>
-            <input type="range" min={3} max={360} step={3} value={months} onChange={e => setMonths(+e.target.value)} style={st.sldr} />
+            <input type="number" value={months} onChange={e => setMonths(+e.target.value)} style={st.sldr} />
           </div>
           <div style={{...st.card, gridColumn:'span 2'}}>
             <label style={st.lbl}>Annual Interest Rate (savings account / investment)</label>
             <div style={st.val}>{rate}%</div>
-            <input type="range" min={0} max={12} step={0.1} value={rate} onChange={e => setRate(+e.target.value)} style={st.sldr} />
+            <input type="number" value={rate} onChange={e => setRate(+e.target.value)} style={st.sldr} />
           </div>
         </div>
 
@@ -91,6 +95,7 @@ export default function SavingsGoalClient({ item: g, all }) {
           ))}
         </div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 function calcFV(principal, rate, years, monthly) {
@@ -42,6 +44,8 @@ export default function CIScenarioClient({ item: sc, all }) {
   return (
     <div style={st.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={st.wrap}>
         <nav style={st.bc}>
           <a href="/" style={st.bcA}>Home</a><span>›</span>
@@ -55,22 +59,22 @@ export default function CIScenarioClient({ item: sc, all }) {
           <div style={st.card}>
             <label style={st.lbl}>Starting Amount</label>
             <div style={st.val}>{fmt(principal)}</div>
-            <input type="range" min={0} max={Math.max(principal * 5, 200000)} step={500} value={principal} onChange={e => setPrincipal(+e.target.value)} style={st.sldr} />
+            <input type="number" value={principal} onChange={e => setPrincipal(+e.target.value)} style={st.sldr} />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Monthly Contribution</label>
             <div style={st.val}>{fmt(monthly)}/mo</div>
-            <input type="range" min={0} max={Math.max(monthly * 5, 5000)} step={50} value={monthly} onChange={e => setMonthly(+e.target.value)} style={st.sldr} />
+            <input type="number" value={monthly} onChange={e => setMonthly(+e.target.value)} style={st.sldr} />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Annual Return Rate</label>
             <div style={st.val}>{rate}%</div>
-            <input type="range" min={0.5} max={20} step={0.1} value={rate} onChange={e => setRate(+e.target.value)} style={st.sldr} />
+            <input type="number" value={rate} onChange={e => setRate(+e.target.value)} style={st.sldr} />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Time Period</label>
             <div style={st.val}>{years} years</div>
-            <input type="range" min={1} max={50} step={1} value={years} onChange={e => setYears(+e.target.value)} style={st.sldr} />
+            <input type="number" value={years} onChange={e => setYears(+e.target.value)} style={st.sldr} />
           </div>
         </div>
 
@@ -106,6 +110,7 @@ export default function CIScenarioClient({ item: sc, all }) {
           ))}
         </div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

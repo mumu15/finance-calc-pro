@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) {
   if (!n && n !== 0) return '$0'
@@ -66,6 +68,8 @@ export default function StateMortgageClient({ state, allStates }) {
   return (
     <div style={s.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={s.wrap}>
 
         <nav style={s.bc}>
@@ -82,25 +86,25 @@ export default function StateMortgageClient({ state, allStates }) {
           <div style={s.card}>
             <label style={s.label}>Home Price</label>
             <div style={s.val}>{fmt(price)}</div>
-            <input type="range" min={50000} max={state.medianPrice * 3} step={5000}
+            <input type="number"
               value={price} onChange={e => setPrice(+e.target.value)} style={s.slider} />
           </div>
           <div style={s.card}>
             <label style={s.label}>Down Payment ({downPct}%)</label>
             <div style={s.val}>{fmt(price * downPct / 100)}</div>
-            <input type="range" min={3} max={50} step={1}
+            <input type="number"
               value={downPct} onChange={e => setDownPct(+e.target.value)} style={s.slider} />
           </div>
           <div style={s.card}>
             <label style={s.label}>Interest Rate</label>
             <div style={s.val}>{rate}%</div>
-            <input type="range" min={3} max={12} step={0.05}
+            <input type="number"
               value={rate} onChange={e => setRate(+e.target.value)} style={s.slider} />
           </div>
           <div style={s.card}>
             <label style={s.label}>Loan Term</label>
             <div style={s.val}>{term} years</div>
-            <input type="range" min={10} max={30} step={5}
+            <input type="number"
               value={term} onChange={e => setTerm(+e.target.value)} style={s.slider} />
           </div>
         </div>
@@ -208,6 +212,7 @@ export default function StateMortgageClient({ state, allStates }) {
         </div>
 
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

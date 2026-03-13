@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 function calcFV(saved, monthly, rate, years) {
@@ -42,15 +44,17 @@ export default function RetirementAgeClient({ item: it, all }) {
   return (
     <div style={s.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/retirement-calculator" style={s.bcA}>Retirement Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.name}</span></nav>
         <h1 style={s.h1}>Retirement Calculator — {it.name}</h1>
         <p style={s.sub}>Retirement plan for someone {it.desc}.</p>
         <div style={s.grid}>
-          <div style={s.card}><label style={s.lbl}>Current Savings</label><div style={s.val}>{fmt(saved)}</div><input type="range" min={0} max={Math.max(saved*5,500000)} step={1000} value={saved} onChange={e=>setSaved(+e.target.value)} style={s.sldr}/></div>
-          <div style={s.card}><label style={s.lbl}>Monthly Contribution</label><div style={s.val}>{fmt(monthly)}/mo</div><input type="range" min={100} max={5000} step={50} value={monthly} onChange={e=>setMonthly(+e.target.value)} style={s.sldr}/></div>
-          <div style={s.card}><label style={s.lbl}>Annual Return Rate</label><div style={s.val}>{rate}%</div><input type="range" min={2} max={12} step={0.1} value={rate} onChange={e=>setRate(+e.target.value)} style={s.sldr}/></div>
-          <div style={s.card}><label style={s.lbl}>Retire at Age</label><div style={s.val}>{retireAt}</div><input type="range" min={it.age+1} max={80} step={1} value={retireAt} onChange={e=>setRetireAt(+e.target.value)} style={s.sldr}/></div>
+          <div style={s.card}><label style={s.lbl}>Current Savings</label><div style={s.val}>{fmt(saved)}</div><input type="number" value={saved} onChange={e=>setSaved(+e.target.value)} style={s.sldr}/></div>
+          <div style={s.card}><label style={s.lbl}>Monthly Contribution</label><div style={s.val}>{fmt(monthly)}/mo</div><input type="number" value={monthly} onChange={e=>setMonthly(+e.target.value)} style={s.sldr}/></div>
+          <div style={s.card}><label style={s.lbl}>Annual Return Rate</label><div style={s.val}>{rate}%</div><input type="number" value={rate} onChange={e=>setRate(+e.target.value)} style={s.sldr}/></div>
+          <div style={s.card}><label style={s.lbl}>Retire at Age</label><div style={s.val}>{retireAt}</div><input type="number" value={retireAt} onChange={e=>setRetireAt(+e.target.value)} style={s.sldr}/></div>
         </div>
         <div style={s.box}>
           <h2 style={s.h2}>Retirement Projection</h2>
@@ -67,6 +71,7 @@ export default function RetirementAgeClient({ item: it, all }) {
         <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/retirement-calculator','Retirement Calculator'],['/401k-calculator','401k Calculator'],['/roth-ira-calculator','Roth IRA'],['/social-security-calculator','Social Security'],['/fire-calculator','FIRE Calculator']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
         <div style={s.box}><h2 style={s.h2}>Retirement Calculator by Age</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/retirement-calculator/age/'+x.slug} style={s.aA}>{x.name}</a>))}</div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 function fmt(n){return '$'+Math.round(n||0).toLocaleString('en-US')}
 const brackets=[
   {min:0,     max:11600,  rate:0.10},
@@ -29,7 +31,9 @@ export default function SATStateClient({item:it,all}){
   const net=salary-fed-state-fica
   const eff=((fed+state+fica)/salary*100).toFixed(1)
   return(
-    <div style={s.page}><Header/><div style={s.wrap}>
+    <div style={s.page}><Header/>
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" /><div style={s.wrap}>
       <nav style={s.bc}>
         <a href="/" style={s.bcA}>Home</a><span>›</span>
         <a href="/salary-after-tax-calculator" style={s.bcA}>Salary After Tax</a><span>›</span>
@@ -41,7 +45,7 @@ export default function SATStateClient({item:it,all}){
       <div style={s.card}>
         <label style={s.lbl}>Annual Salary</label>
         <div style={s.val}>{fmt(salary)}/yr</div>
-        <input type="range" min={20000} max={500000} step={1000} value={salary} onChange={e=>setSalary(+e.target.value)} style={s.sldr}/>
+        <input type="number" value={salary} onChange={e=>setSalary(+e.target.value)} style={s.sldr}/>
       </div>
 
       <div style={s.box}>
@@ -83,6 +87,7 @@ export default function SATStateClient({item:it,all}){
           <a key={x.slug} href={'/salary-after-tax/state/'+x.slug} style={s.tagA}>{x.name} ({x.abbr})</a>
         ))}
       </div>
-    </div><Footer/></div>
+    </div><AdUnit slot="3248634657" />
+      <Footer/></div>
   )
 }

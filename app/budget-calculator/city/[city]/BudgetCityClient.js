@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 
@@ -44,6 +46,8 @@ export default function BudgetCityClient({ item: c, all }) {
   return (
     <div style={s.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/budget-planner-calculator" style={s.bcA}>Budget Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{c.name}</span></nav>
         <h1 style={s.h1}>Cost of Living & Budget Calculator: {c.name} 2026</h1>
@@ -54,7 +58,7 @@ export default function BudgetCityClient({ item: c, all }) {
             <div key={lbl} style={s.row}>
               <div style={{flex:1}}>
                 <div style={{display:'flex',justifyContent:'space-between'}}><span style={s.lbl}>{lbl}</span><span style={s.val}>{fmt(v)}/mo</span></div>
-                <input type="range" min={0} max={max} step={50} value={v} onChange={e=>set(+e.target.value)} style={s.sldr}/>
+                <input type="number" value={v} onChange={e=>set(+e.target.value)} style={s.sldr}/>
               </div>
             </div>
           ))}
@@ -76,6 +80,7 @@ export default function BudgetCityClient({ item: c, all }) {
         <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/budget-planner-calculator','Budget Planner'],['/cost-of-living-calculator','Cost of Living'],['/salary-after-tax-calculator','Salary After Tax'],['/savings-calculator','Savings Calculator'],['/net-worth-calculator','Net Worth']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
         <div style={s.box}><h2 style={s.h2}>Budget Calculator by City</h2>{all.filter(x=>x.slug!==c.slug).map(x=>(<a key={x.slug} href={'/budget-calculator/city/'+x.slug} style={s.cA}>{x.name}</a>))}</div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

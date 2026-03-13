@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 function calc(amt, rate, term) {
@@ -37,6 +39,8 @@ export default function PersonalLoanClient({ purpose, allPurposes }) {
   return (
     <div style={s.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}>
           <a href="/" style={s.bcA}>Home</a><span>›</span>
@@ -49,17 +53,17 @@ export default function PersonalLoanClient({ purpose, allPurposes }) {
           <div style={s.card}>
             <label style={s.lbl}>Loan Amount</label>
             <div style={s.val}>{fmt(amt)}</div>
-            <input type="range" min={1000} max={purpose.avg * 4} step={500} value={amt} onChange={e => setAmt(+e.target.value)} style={s.sldr} />
+            <input type="number" value={amt} onChange={e => setAmt(+e.target.value)} style={s.sldr} />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Interest Rate</label>
             <div style={s.val}>{rate}%</div>
-            <input type="range" min={4} max={36} step={0.5} value={rate} onChange={e => setRate(+e.target.value)} style={s.sldr} />
+            <input type="number" value={rate} onChange={e => setRate(+e.target.value)} style={s.sldr} />
           </div>
           <div style={{...s.card, gridColumn:'span 2'}}>
             <label style={s.lbl}>Loan Term (months)</label>
             <div style={s.val}>{term} months</div>
-            <input type="range" min={12} max={84} step={12} value={term} onChange={e => setTerm(+e.target.value)} style={s.sldr} />
+            <input type="number" value={term} onChange={e => setTerm(+e.target.value)} style={s.sldr} />
           </div>
         </div>
         <div style={s.box}>
@@ -86,6 +90,7 @@ export default function PersonalLoanClient({ purpose, allPurposes }) {
           ))}
         </div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )

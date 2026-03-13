@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 function fmt(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 
@@ -34,6 +36,8 @@ export default function TaxStateClient({ item: s, all }) {
   return (
     <div style={st.page}>
       <Header />
+        <SchemaMarkup />
+        <AdUnit slot="7405024590" />
       <div style={st.wrap}>
         <nav style={st.bc}>
           <a href="/" style={st.bcA}>Home</a><span>›</span>
@@ -46,7 +50,7 @@ export default function TaxStateClient({ item: s, all }) {
         <div style={st.card}>
           <label style={st.lbl}>Annual Income</label>
           <div style={st.val}>{fmt(income)}/year</div>
-          <input type="range" min={20000} max={500000} step={1000} value={income} onChange={e => setIncome(+e.target.value)} style={st.sldr} />
+          <input type="number" value={income} onChange={e => setIncome(+e.target.value)} style={st.sldr} />
         </div>
 
         <div style={st.card}>
@@ -84,6 +88,7 @@ export default function TaxStateClient({ item: s, all }) {
           ))}
         </div>
       </div>
+      <AdUnit slot="3248634657" />
       <Footer />
     </div>
   )
