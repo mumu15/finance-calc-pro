@@ -4,8 +4,8 @@ import { useParams } from 'next/navigation'
 import Header from '../../../components/Header'
 import Footer from '../../../components/Footer'
 import cities from '../../../data/cities'
-import AdUnit from '../../components/AdUnit';
-import SchemaMarkup from '../../components/SchemaMarkup';
+import AdUnit from '../../../components/AdUnit';
+import SchemaMarkup from '../../../components/SchemaMarkup';
 
 // Unsplash source URLs — free to use commercially
 function cityImageUrl(unsplashId) {
