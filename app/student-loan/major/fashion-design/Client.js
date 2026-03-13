@@ -43,15 +43,15 @@ export default function Client() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-slate-800/50 border border-blue-500/30 rounded-2xl p-6 text-center">
             <p className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-2">Monthly Payment</p>
-            <p className="text-white text-3xl font-bold">{fmt(result.monthly){'}'}</p>
+            <p className="text-white text-3xl font-bold">{fmt(result.monthly)}</p>
           </div>
           <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 text-center">
             <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Total Repaid</p>
-            <p className="text-white text-3xl font-bold">{fmt(result.total){'}'}</p>
+            <p className="text-white text-3xl font-bold">{fmt(result.total)}</p>
           </div>
           <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 text-center">
             <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Total Interest</p>
-            <p className="text-white text-3xl font-bold">{fmt(result.interest){'}'}</p>
+            <p className="text-white text-3xl font-bold">{fmt(result.interest)}</p>
           </div>
         </div>
       )}
