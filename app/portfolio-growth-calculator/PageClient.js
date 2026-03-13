@@ -202,24 +202,6 @@ export default function Calculator() {
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How much do monthly contributions matter vs initial investment?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">For long time horizons, consistent monthly contributions often matter more than initial lump sum. $1,000/month for 30 years at 8% return grows to $1.5M regardless of starting balance. Starting with $50,000 extra only adds $503,000 at 8% over 30 years. For shorter horizons, the initial investment matters relatively more. Both matter — maximize both when possible.</p>
-      {/* Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "Portfolio Growth Calculator", "item": "https://freefincalc.net/portfolio-growth-calculator" }
-        ]
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Portfolio Growth Calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
-      })}} />
             </div>
 
             <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
@@ -231,6 +213,8 @@ export default function Calculator() {
       </main>
               <AdUnit slot="7405024590" />
       <TrustSection />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Portfolio Growth Calculator","item":"https://freefincalc.net/portfolio-growth-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Portfolio Growth Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </>
   )

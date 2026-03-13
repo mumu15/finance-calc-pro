@@ -210,24 +210,6 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:"rgba(240,200,66,0.1)"}}>
               <h3 className="text-white font-semibold mb-2">What interest rate does the stock market return?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The S&P 500 has historically returned about 10% annually before inflation, or approximately 7% after inflation. However returns vary enormously year to year. Individual stocks, real estate and other assets have different expected return rates and risk levels.</p>
-      {/* Structured Data for SEO */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "Interest Rate Calculator", "item": "https://freefincalc.net/interest-rate-calculator" }
-        ]
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Interest Rate Calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
-      })}} />
             </div>
           </div>
         </div>
@@ -235,6 +217,8 @@ export default function Calculator() {
       </main>
               <AdUnit slot="7405024590" />
       <TrustSection />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Interest Rate Calculator","item":"https://freefincalc.net/interest-rate-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Interest Rate Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </>
   )

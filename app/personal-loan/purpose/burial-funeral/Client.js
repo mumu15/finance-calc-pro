@@ -22,24 +22,6 @@ export default function Client() {
 
   return (
     <div>
-      {/* Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "Personal Loan Calculator", "item": "https://freefincalc.net/personal-loan" }
-        ]
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Personal Loan Calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
-      })}} />
       <div className="bg-slate-800/50 border border-amber-500/20 rounded-2xl p-6 mb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div>

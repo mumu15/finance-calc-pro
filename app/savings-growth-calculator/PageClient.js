@@ -195,24 +195,6 @@ export default function Calculator() {
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">How does compound interest grow savings?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Compound interest earns returns on both your principal and previously earned interest. At 4.5%, $10,000 grows to $10,450 after year 1. In year 2 you earn interest on $10,450, not just $10,000. Over 10 years this compounds to $15,530 — 55% growth on the original deposit. Over 30 years: $37,850 — nearly 4x. Adding regular deposits multiplies this effect dramatically.</p>
-      {/* Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "Savings Growth Calculator", "item": "https://freefincalc.net/savings-growth-calculator" }
-        ]
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Savings Growth Calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
-      })}} />
             </div>
 
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
@@ -229,6 +211,8 @@ export default function Calculator() {
       </main>
               <AdUnit slot="7405024590" />
       <TrustSection />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Savings Growth Calculator","item":"https://freefincalc.net/savings-growth-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Savings Growth Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </>
   )

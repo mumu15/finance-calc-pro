@@ -222,24 +222,6 @@ export default function Calculator() {
             <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Are gifts to a spouse taxable?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">Gifts between US citizen spouses are completely tax-free with no dollar limit (unlimited marital deduction). Gifts to a non-citizen spouse are limited to $185,000 per year (2024) before gift tax applies. Gifts to charities are also generally tax-free and may be deductible as charitable contributions on your income tax return.</p>
-      {/* Structured Data for SEO */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "Gift Tax Calculator", "item": "https://freefincalc.net/gift-tax-calculator" }
-        ]
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Gift Tax Calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
-      })}} />
             </div>
           </div>
         </div>
@@ -247,6 +229,8 @@ export default function Calculator() {
       </main>
               <AdUnit slot="7405024590" />
       <TrustSection />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Gift Tax Calculator","item":"https://freefincalc.net/gift-tax-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gift Tax Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </>
   )

@@ -223,24 +223,6 @@ export default function Calculator() {
             <div className="border-b pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
               <h3 className="text-white font-semibold mb-2">Should I make extra mortgage payments or invest?</h3>
               <p className="text-slate-400 text-sm leading-relaxed">The math favors investing if your expected investment return exceeds your mortgage rate. With a 6.875% mortgage and 8-10% expected stock market returns, investing wins long-term. However, paying down the mortgage offers guaranteed, risk-free return equal to your rate, plus psychological security. Many people split the difference: make extra payments and invest simultaneously.</p>
-      {/* Structured Data for SEO */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "Extra Payment Calculator", "item": "https://freefincalc.net/extra-payment-calculator" }
-        ]
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Extra Payment Calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
-      })}} />
             </div>
 
             <div className="pb-4" style={{borderColor:'rgba(240,200,66,0.1)'}}>
@@ -252,6 +234,8 @@ export default function Calculator() {
       </main>
               <AdUnit slot="7405024590" />
       <TrustSection />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Extra Payment Calculator","item":"https://freefincalc.net/extra-payment-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Extra Payment Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </>
   )

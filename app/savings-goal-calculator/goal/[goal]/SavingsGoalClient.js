@@ -87,25 +87,7 @@ export default function SavingsGoalClient({ item: g, all }) {
 
         <div style={st.box}>
           <h2 style={st.h2}>Related Calculators</h2>
-          {[['/savings-goal-calculator','Savings Goal'],['/savings-calculator','Savings Calculator'],['/compound-interest','Compound Interest'],['/emergency-fund-calculator','Emergency Fund'],['/investment-return-calculator','Investment Return']].map(([href,lbl]) =>
-      {/* Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "Savings Goal Calculator", "item": "https://freefincalc.net/savings-goal-calculator" }
-        ]
-      })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Savings Goal Calculator",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "2847", "bestRating": "5", "worstRating": "1" }
-      })}} /> (
+          {[['/savings-goal-calculator','Savings Goal'],['/savings-calculator','Savings Calculator'],['/compound-interest','Compound Interest'],['/emergency-fund-calculator','Emergency Fund'],['/investment-return-calculator','Investment Return']].map(([href,lbl]) => (
             <a key={href} href={href} style={st.calcA}>{lbl}</a>
           ))}
         </div>
@@ -117,6 +99,8 @@ export default function SavingsGoalClient({ item: g, all }) {
         </div>
       </div>
       <AdUnit slot="3248634657" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Savings Goal Calculator","item":"https://freefincalc.net/savings-goal-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Savings Goal Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </div>
   )
