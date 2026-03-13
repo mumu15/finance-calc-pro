@@ -1,14 +1,12 @@
-'use client'
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import PageClient from './PageClient'
 
 export const metadata = {
-  title: 'Burn Rate Calculator — Free Online Burn Rate Calculator | FreeFinCalc',
-  description: 'Free Burn Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  title: 'Burn Rate Calculator | FreeFinCalc',
+  description: 'Free Burn Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
   alternates: { canonical: 'https://freefincalc.net/burn-rate-calculator' },
   openGraph: {
-    title: 'Burn Rate Calculator — Free Online Burn Rate Calculator | FreeFinCalc',
-    description: 'Free Burn Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    title: 'Burn Rate Calculator | FreeFinCalc',
+    description: 'Free Burn Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
     url: 'https://freefincalc.net/burn-rate-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
@@ -16,7 +14,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  const router = useRouter()
-  useEffect(() => { router.replace('/runway-calculator') }, [])
-  return null
+  return <PageClient />;
 }

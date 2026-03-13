@@ -1,14 +1,12 @@
-'use client'
-import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import PageClient from './PageClient'
 
 export const metadata = {
-  title: 'Required Minimum Distribution Calculator — Free Online Required Minimum Distribution Calculator | FreeFinCalc',
-  description: 'Free Required Minimum Distribution Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+  title: 'Required Minimum Distribution Calculator | FreeFinCalc',
+  description: 'Free Required Minimum Distribution Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
   alternates: { canonical: 'https://freefincalc.net/required-minimum-distribution-calculator' },
   openGraph: {
-    title: 'Required Minimum Distribution Calculator — Free Online Required Minimum Distribution Calculator | FreeFinCalc',
-    description: 'Free Required Minimum Distribution Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required. Trusted by thousands.',
+    title: 'Required Minimum Distribution Calculator | FreeFinCalc',
+    description: 'Free Required Minimum Distribution Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
     url: 'https://freefincalc.net/required-minimum-distribution-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
@@ -16,7 +14,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  const router = useRouter()
-  useEffect(() => { router.replace('/retirement-calculator') }, [])
-  return null
+  return <PageClient />;
 }
