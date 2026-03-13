@@ -10,12 +10,14 @@ export async function generateStaticParams() { return salaries401k.map(x => ({ s
 
 
 
+
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/401k-calculator/salary/${params.salary}` },
   };
 }
-
 
 export default function Page({ params }) {
   const item = salaries401k.find(x => x.slug === params.salary)

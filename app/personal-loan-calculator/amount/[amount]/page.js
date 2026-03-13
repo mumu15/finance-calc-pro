@@ -7,6 +7,8 @@ export async function generateStaticParams() { return items.map(x => ({ amount: 
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/personal-loan-calculator/amount/${params.amount}` },

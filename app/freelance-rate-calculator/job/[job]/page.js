@@ -7,6 +7,8 @@ export async function generateStaticParams() { return freelanceJobs.map(x => ({ 
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/freelance-rate-calculator/job/${params.job}` },

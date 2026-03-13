@@ -7,6 +7,8 @@ export async function generateStaticParams() { return items.map(x => ({ age: x.s
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/net-worth-calculator/age/${params.age}` },

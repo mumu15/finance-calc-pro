@@ -7,6 +7,8 @@ export async function generateStaticParams() { return scenarios.map(s => ({ scen
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/compound-interest/scenario/${params.scenario}` },

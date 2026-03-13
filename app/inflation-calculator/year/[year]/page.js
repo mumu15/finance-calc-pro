@@ -7,6 +7,8 @@ export async function generateStaticParams() { return items.map(x => ({ year: x.
 
 
 
+
+
 export async function generateMetadata({ params }) {
   return {
     alternates: { canonical: `https://freefincalc.net/inflation-calculator/year/${params.year}` },
