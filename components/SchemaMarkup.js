@@ -1,4 +1,4 @@
-export default function SchemaMarkup({ breadcrumbs, includeReview = false }) {
+export default function SchemaMarkup({ breadcrumbs = [], includeReview = false }) {
   const breadcrumbData = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
