@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Markup Calculator',
   description: 'Calculate selling price from cost and markup percentage. Find profit margin, monthly revenue and gross profit per unit.',
-  alternates: {
-    canonical: 'https://freefincalc.net/markup-calculator',
-  },
   openGraph: {
     title: 'Markup Calculator',
     description: 'Calculate selling price from cost and markup percentage. Find profit margin, monthly revenue and gross profit per unit.',

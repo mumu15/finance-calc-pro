@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Balance Transfer Calculator',
   description: 'Calculate if a 0% balance transfer saves money vs keeping your current card. See net savings after transfer fee.',
-  alternates: {
-    canonical: 'https://freefincalc.net/balance-transfer-calculator',
-  },
   openGraph: {
     title: 'Balance Transfer Calculator',
     description: 'Calculate if a 0% balance transfer saves money vs keeping your current card. See net savings after transfer fee.',

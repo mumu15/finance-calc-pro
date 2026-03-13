@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Car Loan Calculator',
   description: 'Calculate monthly car loan payments, total interest and true cost of financing. Compare loan terms and down payments.',
-  alternates: {
-    canonical: 'https://freefincalc.net/car-loan-calculator',
-  },
   openGraph: {
     title: 'Car Loan Calculator',
     description: 'Calculate monthly car loan payments, total interest and true cost of financing. Compare loan terms and down payments.',

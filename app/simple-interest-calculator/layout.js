@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Simple Interest Calculator',
   description: 'Calculate simple interest on any loan or investment. Find principal, rate, time or interest amount instantly.',
-  alternates: {
-    canonical: 'https://freefincalc.net/simple-interest-calculator',
-  },
   openGraph: {
     title: 'Simple Interest Calculator',
     description: 'Calculate simple interest on any loan or investment. Find principal, rate, time or interest amount instantly.',

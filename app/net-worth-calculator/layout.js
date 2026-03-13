@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Net Worth Calculator',
   description: 'Calculate your total net worth by adding assets and subtracting liabilities. Track wealth over time with our free calculator.',
-  alternates: {
-    canonical: 'https://freefincalc.net/net-worth-calculator',
-  },
   openGraph: {
     title: 'Net Worth Calculator',
     description: 'Calculate your total net worth by adding assets and subtracting liabilities. Track wealth over time with our free calculator.',

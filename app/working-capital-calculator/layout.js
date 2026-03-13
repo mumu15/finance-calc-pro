@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Working Capital Calculator',
   description: 'Calculate net working capital, current ratio and quick ratio. Measure your business liquidity and short-term health.',
-  alternates: {
-    canonical: 'https://freefincalc.net/working-capital-calculator',
-  },
   openGraph: {
     title: 'Working Capital Calculator',
     description: 'Calculate net working capital, current ratio and quick ratio. Measure your business liquidity and short-term health.',

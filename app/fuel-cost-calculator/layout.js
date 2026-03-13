@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Fuel Cost Calculator',
   description: 'Calculate annual fuel costs for any vehicle based on MPG, miles driven and gas prices. Compare fuel economy savings.',
-  alternates: {
-    canonical: 'https://freefincalc.net/fuel-cost-calculator',
-  },
   openGraph: {
     title: 'Fuel Cost Calculator',
     description: 'Calculate annual fuel costs for any vehicle based on MPG, miles driven and gas prices. Compare fuel economy savings.',

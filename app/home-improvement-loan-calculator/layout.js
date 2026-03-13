@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Home Improvement Loan Calculator',
   description: 'Compare home equity loan, HELOC and personal loan for renovations. Calculate payments and ROI on home improvements.',
-  alternates: {
-    canonical: 'https://freefincalc.net/home-improvement-loan-calculator',
-  },
   openGraph: {
     title: 'Home Improvement Loan Calculator',
     description: 'Compare home equity loan, HELOC and personal loan for renovations. Calculate payments and ROI on home improvements.',

@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Dollar Cost Averaging Calculator',
   description: 'Calculate the benefits of dollar cost averaging vs lump sum investing. See average cost basis and total returns.',
-  alternates: {
-    canonical: 'https://freefincalc.net/dollar-cost-averaging-calculator',
-  },
   openGraph: {
     title: 'Dollar Cost Averaging Calculator',
     description: 'Calculate the benefits of dollar cost averaging vs lump sum investing. See average cost basis and total returns.',

@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Debt Avalanche Calculator',
   description: 'Pay debts in highest-interest order to minimize total interest. Calculate payoff timeline with the avalanche method.',
-  alternates: {
-    canonical: 'https://freefincalc.net/debt-avalanche-calculator',
-  },
   openGraph: {
     title: 'Debt Avalanche Calculator',
     description: 'Pay debts in highest-interest order to minimize total interest. Calculate payoff timeline with the avalanche method.',

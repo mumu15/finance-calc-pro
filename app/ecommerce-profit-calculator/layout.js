@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Ecommerce Profit Calculator',
   description: 'Calculate net profit per order, ROAS and monthly store profit. Optimize your online store margins and ad spend.',
-  alternates: {
-    canonical: 'https://freefincalc.net/ecommerce-profit-calculator',
-  },
   openGraph: {
     title: 'Ecommerce Profit Calculator',
     description: 'Calculate net profit per order, ROAS and monthly store profit. Optimize your online store margins and ad spend.',

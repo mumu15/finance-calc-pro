@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Car Depreciation Calculator',
   description: 'Calculate how much your car depreciates each year and its future value. See total depreciation cost of any vehicle.',
-  alternates: {
-    canonical: 'https://freefincalc.net/car-depreciation-calculator',
-  },
   openGraph: {
     title: 'Car Depreciation Calculator',
     description: 'Calculate how much your car depreciates each year and its future value. See total depreciation cost of any vehicle.',

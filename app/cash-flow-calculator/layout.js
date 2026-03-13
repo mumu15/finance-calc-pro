@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Cash Flow Calculator',
   description: 'Calculate operating cash flow, free cash flow and cash runway for your business. Know your burn rate and financial health.',
-  alternates: {
-    canonical: 'https://freefincalc.net/cash-flow-calculator',
-  },
   openGraph: {
     title: 'Cash Flow Calculator',
     description: 'Calculate operating cash flow, free cash flow and cash runway for your business. Know your burn rate and financial health.',

@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'CD Calculator',
   description: 'Calculate Certificate of Deposit maturity value, interest earned and APY. Compare CD terms and find the best CD rates.',
-  alternates: {
-    canonical: 'https://freefincalc.net/cd-calculator',
-  },
   openGraph: {
     title: 'CD Calculator',
     description: 'Calculate Certificate of Deposit maturity value, interest earned and APY. Compare CD terms and find the best CD rates.',

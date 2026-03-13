@@ -4,8 +4,7 @@ export async function generateMetadata({ params }) {
   if (!it) return { title: 'Inflation Calculator' }
   return {
     title: `Inflation Calculator: ${it.year} to 2026 — CPI & Purchasing Power`,
-    description: `How much is $1 from ${it.year} worth today? CPI multiplier: ${it.multiplier}x. $100 in ${it.year} = ~$${Math.round(100*it.multiplier)} in 2026. Free historical inflation calculator.`,
-    alternates: { canonical: `https://freefincalc.net/inflation-calculator/year/${it.slug}` },
+    description: `How much is $1 from ${it.year} worth today? CPI multiplier: ${it.multiplier}x. $100 in ${it.year} = ~$${Math.round(100*it.multiplier)} in 2026. Free historical inflation calculator.`,` },
   }
 }
 export default function Layout({ children }) { return children }

@@ -29,9 +29,6 @@ export const metadata = {
     title: 'Free Financial Calculators — FreeFinCalc.net',
     description: '124 free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
   },
-  alternates: {
-    canonical: 'https://freefincalc.net',
-  },
   robots: {
     index: true,
     follow: true,

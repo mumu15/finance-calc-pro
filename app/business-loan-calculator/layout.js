@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Business Loan Calculator',
   description: 'Calculate business loan payments, total interest and true borrowing cost. Compare loan options for your small business.',
-  alternates: {
-    canonical: 'https://freefincalc.net/business-loan-calculator',
-  },
   openGraph: {
     title: 'Business Loan Calculator',
     description: 'Calculate business loan payments, total interest and true borrowing cost. Compare loan options for your small business.',

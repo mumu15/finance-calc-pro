@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Investment Fee Calculator',
   description: 'Calculate the true cost of investment fees over time. See how expense ratios drain your retirement savings.',
-  alternates: {
-    canonical: 'https://freefincalc.net/net-investment-fee-calculator',
-  },
   openGraph: {
     title: 'Investment Fee Calculator',
     description: 'Calculate the true cost of investment fees over time. See how expense ratios drain your retirement savings.',

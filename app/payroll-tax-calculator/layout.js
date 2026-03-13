@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Payroll Tax Calculator',
   description: 'Calculate employer and employee payroll taxes including Social Security, Medicare, FUTA and SUTA for any wage.',
-  alternates: {
-    canonical: 'https://freefincalc.net/payroll-tax-calculator',
-  },
   openGraph: {
     title: 'Payroll Tax Calculator',
     description: 'Calculate employer and employee payroll taxes including Social Security, Medicare, FUTA and SUTA for any wage.',

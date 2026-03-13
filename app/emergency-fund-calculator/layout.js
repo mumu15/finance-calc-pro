@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Emergency Fund Calculator',
   description: 'Calculate exactly how much you need in your emergency fund based on expenses and job stability. Know your target savings number.',
-  alternates: {
-    canonical: 'https://freefincalc.net/emergency-fund-calculator',
-  },
   openGraph: {
     title: 'Emergency Fund Calculator',
     description: 'Calculate exactly how much you need in your emergency fund based on expenses and job stability. Know your target savings number.',

@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'RV Loan Calculator',
   description: 'Calculate RV loan monthly payments, total interest and true ownership cost. Finance a motorhome or travel trailer.',
-  alternates: {
-    canonical: 'https://freefincalc.net/rv-loan-calculator',
-  },
   openGraph: {
     title: 'RV Loan Calculator',
     description: 'Calculate RV loan monthly payments, total interest and true ownership cost. Finance a motorhome or travel trailer.',

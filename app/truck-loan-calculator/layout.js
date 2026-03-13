@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Truck Loan Calculator',
   description: 'Calculate truck loan payments, total interest and business tax deduction. Finance a pickup or commercial truck.',
-  alternates: {
-    canonical: 'https://freefincalc.net/truck-loan-calculator',
-  },
   openGraph: {
     title: 'Truck Loan Calculator',
     description: 'Calculate truck loan payments, total interest and business tax deduction. Finance a pickup or commercial truck.',

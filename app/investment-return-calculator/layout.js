@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Investment Return Calculator',
   description: 'Calculate investment returns with compound growth, contributions and time. Project portfolio value over any horizon.',
-  alternates: {
-    canonical: 'https://freefincalc.net/investment-return-calculator',
-  },
   openGraph: {
     title: 'Investment Return Calculator',
     description: 'Calculate investment returns with compound growth, contributions and time. Project portfolio value over any horizon.',

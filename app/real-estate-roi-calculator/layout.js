@@ -4,7 +4,6 @@ export const metadata = {
   metadataBase: new URL('https://freefincalc.net'),
   title: 'Real Estate ROI Calculator | FreeFinCalc',
   description: 'Calculate return on investment for real estate properties.',
-  alternates: { canonical: 'https://freefincalc.net/rental-property-calculator' },
 }
 export default function Layout({ children }) {
   return <div className={inter.className}>{children}</div>

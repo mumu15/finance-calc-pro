@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Pay Off Debt vs Invest Calculator',
   description: 'Should you pay off debt or invest? Compare the financial impact of each strategy to make the optimal money decision.',
-  alternates: {
-    canonical: 'https://freefincalc.net/payoff-vs-invest-calculator',
-  },
   openGraph: {
     title: 'Pay Off Debt vs Invest Calculator',
     description: 'Should you pay off debt or invest? Compare the financial impact of each strategy to make the optimal money decision.',

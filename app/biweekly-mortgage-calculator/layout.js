@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Biweekly Mortgage Calculator',
   description: 'See how biweekly mortgage payments save interest and pay off your mortgage years early. Calculate total savings.',
-  alternates: {
-    canonical: 'https://freefincalc.net/biweekly-mortgage-calculator',
-  },
   openGraph: {
     title: 'Biweekly Mortgage Calculator',
     description: 'See how biweekly mortgage payments save interest and pay off your mortgage years early. Calculate total savings.',

@@ -7,8 +7,7 @@ export async function generateMetadata({ params }) {
   const fv = sc.principal * Math.pow(1 + mo, n) + (sc.monthly > 0 ? sc.monthly * (Math.pow(1 + mo, n) - 1) / mo : 0)
   return {
     title: `Compound Interest: ${sc.name} — Calculator & Results`,
-    description: `See how compound interest grows ${sc.name.toLowerCase()}. Starting $${sc.principal.toLocaleString()}, ${sc.monthly > 0 ? '$' + sc.monthly + '/mo contributions, ' : ''}${sc.rate}% return — final value ~$${Math.round(fv).toLocaleString()} after ${sc.years} years.`,
-    alternates: { canonical: `https://freefincalc.net/compound-interest/scenario/${sc.slug}` },
+    description: `See how compound interest grows ${sc.name.toLowerCase()}. Starting $${sc.principal.toLocaleString()}, ${sc.monthly > 0 ? '$' + sc.monthly + '/mo contributions, ' : ''}${sc.rate}% return — final value ~$${Math.round(fv).toLocaleString()} after ${sc.years} years.`,` },
   }
 }
 export default function Layout({ children }) { return children }

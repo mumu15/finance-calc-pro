@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Raise Calculator',
   description: 'Calculate the dollar value of a salary raise, new annual pay and percentage increase. See how a raise affects take-home pay.',
-  alternates: {
-    canonical: 'https://freefincalc.net/raise-calculator',
-  },
   openGraph: {
     title: 'Raise Calculator',
     description: 'Calculate the dollar value of a salary raise, new annual pay and percentage increase. See how a raise affects take-home pay.',

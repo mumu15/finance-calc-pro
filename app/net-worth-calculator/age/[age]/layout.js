@@ -4,8 +4,7 @@ export async function generateMetadata({ params }) {
   if (!it) return { title: 'Net Worth Calculator by Age' }
   return {
     title: `Average Net Worth at ${it.name} — 2026 Benchmarks`,
-    description: `What is the average net worth at ${it.name}? Median: $${it.median.toLocaleString()}, 75th percentile: $${it.p75.toLocaleString()}, top 10%: $${it.p90.toLocaleString()}. Calculate yours free.`,
-    alternates: { canonical: `https://freefincalc.net/net-worth-calculator/age/${it.slug}` },
+    description: `What is the average net worth at ${it.name}? Median: $${it.median.toLocaleString()}, 75th percentile: $${it.p75.toLocaleString()}, top 10%: $${it.p90.toLocaleString()}. Calculate yours free.`,` },
   }
 }
 export default function Layout({ children }) { return children }

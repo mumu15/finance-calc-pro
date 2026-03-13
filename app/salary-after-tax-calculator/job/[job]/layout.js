@@ -9,8 +9,7 @@ export async function generateMetadata({ params }) {
   const net = Math.round(gross - fed - state - fica)
   return {
     title: `${j.name} Salary After Tax 2026 — Take-Home Pay Calculator`,
-    description: `How much does a ${j.name} take home? Average salary $${gross.toLocaleString()}/yr. After federal, state, and FICA taxes, estimated take-home is $${net.toLocaleString()}/yr.`,
-    alternates: { canonical: `https://freefincalc.net/salary-after-tax-calculator/job/${j.slug}` },
+    description: `How much does a ${j.name} take home? Average salary $${gross.toLocaleString()}/yr. After federal, state, and FICA taxes, estimated take-home is $${net.toLocaleString()}/yr.`,` },
   }
 }
 export default function Layout({ children }) { return children }

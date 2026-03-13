@@ -7,8 +7,7 @@ export async function generateMetadata({ params }) {
   const pmt = Math.round(loan * mo / (1 - Math.pow(1 + mo, -b.term)))
   return {
     title: `${b.name} Car Loan Calculator 2026 — Monthly Payment & Financing`,
-    description: `Calculate your ${b.name} car loan payment. Avg price $${b.avg.toLocaleString()}, rate ${b.rate}%, est. $${pmt}/month. Compare ${b.term}-month financing options.`,
-    alternates: { canonical: `https://freefincalc.net/car-loan-calculator/brand/${b.slug}` },
+    description: `Calculate your ${b.name} car loan payment. Avg price $${b.avg.toLocaleString()}, rate ${b.rate}%, est. $${pmt}/month. Compare ${b.term}-month financing options.`,` },
   }
 }
 export default function Layout({ children }) { return children }

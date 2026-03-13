@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Debt Consolidation Calculator',
   description: 'Calculate savings from consolidating multiple debts into one loan. See monthly savings and total interest reduction.',
-  alternates: {
-    canonical: 'https://freefincalc.net/debt-consolidation-calculator',
-  },
   openGraph: {
     title: 'Debt Consolidation Calculator',
     description: 'Calculate savings from consolidating multiple debts into one loan. See monthly savings and total interest reduction.',

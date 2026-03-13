@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Passive Income Calculator',
   description: 'Calculate how much you need invested to generate target passive income. Plan dividends, rental and investment income.',
-  alternates: {
-    canonical: 'https://freefincalc.net/passive-income-calculator',
-  },
   openGraph: {
     title: 'Passive Income Calculator',
     description: 'Calculate how much you need invested to generate target passive income. Plan dividends, rental and investment income.',

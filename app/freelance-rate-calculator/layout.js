@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Freelance Rate Calculator',
   description: 'Calculate your minimum freelance hourly rate to meet income goals after taxes and expenses. Price your services correctly.',
-  alternates: {
-    canonical: 'https://freefincalc.net/freelance-rate-calculator',
-  },
   openGraph: {
     title: 'Freelance Rate Calculator',
     description: 'Calculate your minimum freelance hourly rate to meet income goals after taxes and expenses. Price your services correctly.',

@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Down Payment Calculator',
   description: 'Calculate how much to save for a down payment and how long it will take. See impact of different down payment amounts.',
-  alternates: {
-    canonical: 'https://freefincalc.net/down-payment-calculator',
-  },
   openGraph: {
     title: 'Down Payment Calculator',
     description: 'Calculate how much to save for a down payment and how long it will take. See impact of different down payment amounts.',

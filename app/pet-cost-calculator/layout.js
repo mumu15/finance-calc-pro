@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Pet Cost Calculator',
   description: 'Calculate annual and lifetime costs of owning a dog or cat. Estimate food, vet, grooming and insurance expenses.',
-  alternates: {
-    canonical: 'https://freefincalc.net/pet-cost-calculator',
-  },
   openGraph: {
     title: 'Pet Cost Calculator',
     description: 'Calculate annual and lifetime costs of owning a dog or cat. Estimate food, vet, grooming and insurance expenses.',

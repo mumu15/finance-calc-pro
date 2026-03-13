@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Wedding Budget Calculator',
   description: 'Plan your wedding budget by category. Calculate cost per guest and allocate spending across venue, catering and more.',
-  alternates: {
-    canonical: 'https://freefincalc.net/wedding-budget-calculator',
-  },
   openGraph: {
     title: 'Wedding Budget Calculator',
     description: 'Plan your wedding budget by category. Calculate cost per guest and allocate spending across venue, catering and more.',

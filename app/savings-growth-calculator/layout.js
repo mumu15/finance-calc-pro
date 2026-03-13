@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Savings Growth Calculator',
   description: 'See how savings grow over time with regular deposits and compound interest. Project account balance for any goal.',
-  alternates: {
-    canonical: 'https://freefincalc.net/savings-growth-calculator',
-  },
   openGraph: {
     title: 'Savings Growth Calculator',
     description: 'See how savings grow over time with regular deposits and compound interest. Project account balance for any goal.',

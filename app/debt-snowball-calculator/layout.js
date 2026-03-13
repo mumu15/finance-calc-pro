@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Debt Snowball Calculator',
   description: 'Pay smallest debts first to build momentum. Calculate debt snowball payoff timeline and total interest paid.',
-  alternates: {
-    canonical: 'https://freefincalc.net/debt-snowball-calculator',
-  },
   openGraph: {
     title: 'Debt Snowball Calculator',
     description: 'Pay smallest debts first to build momentum. Calculate debt snowball payoff timeline and total interest paid.',

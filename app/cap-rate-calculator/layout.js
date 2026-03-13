@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Cap Rate Calculator',
   description: 'Calculate capitalization rate for any rental property. Use cap rate to compare and value investment properties.',
-  alternates: {
-    canonical: 'https://freefincalc.net/cap-rate-calculator',
-  },
   openGraph: {
     title: 'Cap Rate Calculator',
     description: 'Calculate capitalization rate for any rental property. Use cap rate to compare and value investment properties.',

@@ -2,9 +2,6 @@ export const metadata = {
   metadataBase: new URL('https://freefincalc.net'),
   title: 'Mortgage Calculator – Monthly Payment & Amortization Schedule',
   description: 'Free mortgage calculator. Calculate your monthly mortgage payment, total interest, and get a full amortization schedule.',
-  alternates: {
-    canonical: 'https://freefincalc.net/mortgage-calculator',
-  },
   openGraph: {
     title: 'Mortgage Calculator – Monthly Payment & Amortization Schedule',
     description: 'Free mortgage calculator. Calculate your monthly mortgage payment, total interest, and get a full amortization schedule.',

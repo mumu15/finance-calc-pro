@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Interest Rate Calculator',
   description: 'Find the interest rate on any loan given payment amount, principal and term. Reverse-calculate loan rates easily.',
-  alternates: {
-    canonical: 'https://freefincalc.net/interest-rate-calculator',
-  },
   openGraph: {
     title: 'Interest Rate Calculator',
     description: 'Find the interest rate on any loan given payment amount, principal and term. Reverse-calculate loan rates easily.',

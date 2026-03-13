@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Life Insurance Calculator',
   description: 'Calculate how much life insurance coverage you need to protect your family. Use the DIME method for accurate coverage.',
-  alternates: {
-    canonical: 'https://freefincalc.net/life-insurance-calculator',
-  },
   openGraph: {
     title: 'Life Insurance Calculator',
     description: 'Calculate how much life insurance coverage you need to protect your family. Use the DIME method for accurate coverage.',

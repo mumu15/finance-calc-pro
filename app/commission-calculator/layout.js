@@ -4,9 +4,6 @@
 export const metadata = {
   title: 'Commission Calculator',
   description: 'Calculate commission earnings, gross monthly income and annual pay for any commission structure or sales quota.',
-  alternates: {
-    canonical: 'https://freefincalc.net/commission-calculator',
-  },
   openGraph: {
     title: 'Commission Calculator',
     description: 'Calculate commission earnings, gross monthly income and annual pay for any commission structure or sales quota.',
