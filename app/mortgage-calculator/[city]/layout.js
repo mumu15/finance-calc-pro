@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   return {
     metadataBase: new URL('https://freefincalc.net'),
     title: `Mortgage Calculator ${city.name}, ${city.state} — ${city.name} Home Loan Calculator 2026`,
-    description: `Calculate your mortgage payment in ${city.name}, ${city.stateF}. Median home price $${city.medianPrice.toLocaleString()}, typical monthly payment $${monthly.toLocaleString()}/mo. Free ${city.name} mortgage calculator with local tax rates.`,`,
+    description: `Calculate your mortgage payment in ${city.name}, ${city.stateF}. Median home price $${city.medianPrice.toLocaleString()}, typical monthly payment $${monthly.toLocaleString()}/mo. Free ${city.name} mortgage calculator with local tax rates.`,
     },
     openGraph: {
       title: `Mortgage Calculator ${city.name} ${city.state} 2026`,
