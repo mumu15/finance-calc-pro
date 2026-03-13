@@ -11,6 +11,7 @@ const inter = Inter({
 })
 
 export const metadata = {
+  alternates: { canonical: 'https://freefincalc.net' },
   metadataBase: new URL('https://freefincalc.net'),
   title: 'Free Financial Calculators — FreeFinCalc.net',
   description: 'Free online financial calculators for mortgage, loans, retirement, investments, taxes and more. 124 calculators, instant results, no sign-up required.',
