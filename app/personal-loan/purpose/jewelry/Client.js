@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import AdUnit from '../../../../components/AdUnit';
+import AdUnit from '../../../../../components/AdUnit';
 
 export default function Client() {
   const [amount, setAmount] = useState(5000);

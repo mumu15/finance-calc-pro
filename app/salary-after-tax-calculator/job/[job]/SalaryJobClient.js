@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
-import AdUnit from '../../../components/AdUnit';
-import SchemaMarkup from '../../../components/SchemaMarkup';
+import AdUnit from '../../../../components/AdUnit';
+import SchemaMarkup from '../../../../components/SchemaMarkup';
 
 function fmtD(n) { return '$' + Math.round(n || 0).toLocaleString('en-US') }
 function calcTax(gross, fedRate, stateRate, fica) {

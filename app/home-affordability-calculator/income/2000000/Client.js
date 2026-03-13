@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Header from '../../../../components/Header';
 import Footer from '../../../../components/Footer';
-import AdUnit from '../../../components/AdUnit';
+import AdUnit from '../../../../components/AdUnit';
 
 const BASE_INCOME = 2000000;
 

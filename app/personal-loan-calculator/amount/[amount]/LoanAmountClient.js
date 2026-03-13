@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import Header from '../../../../components/Header'
 import Footer from '../../../../components/Footer'
-import AdUnit from '../../../components/AdUnit';
-import SchemaMarkup from '../../../components/SchemaMarkup';
+import AdUnit from '../../../../components/AdUnit';
+import SchemaMarkup from '../../../../components/SchemaMarkup';
 function fmt(n){return '$'+Math.round(n||0).toLocaleString('en-US')}
 function pmt(p,r,n){const mo=r/100/12;return mo>0?p*mo/(1-Math.pow(1+mo,-n)):p/n}
 export default function LoanAmountClient({item:it,all}){
