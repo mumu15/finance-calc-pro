@@ -44,7 +44,10 @@ export default function CIScenarioClient({ item: sc, all }) {
   return (
     <div style={st.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Compound Interest Calculator', url: 'https://freefincalc.net/compound-interest' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={st.wrap}>
         <nav style={st.bc}>

@@ -46,7 +46,10 @@ export default function BudgetCityClient({ item: c, all }) {
   return (
     <div style={s.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Budget Calculator', url: 'https://freefincalc.net/budget-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/budget-planner-calculator" style={s.bcA}>Budget Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{c.name}</span></nav>

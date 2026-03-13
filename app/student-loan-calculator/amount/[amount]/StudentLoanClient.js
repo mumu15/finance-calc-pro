@@ -15,7 +15,10 @@ export default function StudentLoanClient({item:it,all}){
   const total=monthly*term*12
   const interest=total-amount
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Student Loan Calculator', url: 'https://freefincalc.net/student-loan-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/student-loan-calculator" style={s.bcA}>Student Loan Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{fmt(amount)}</span></nav>
     <h1 style={s.h1}>Student Loan Calculator: {fmt(amount)}</h1>

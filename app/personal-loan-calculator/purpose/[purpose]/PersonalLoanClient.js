@@ -39,7 +39,10 @@ export default function PersonalLoanClient({ purpose, allPurposes }) {
   return (
     <div style={s.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Personal Loan Calculator', url: 'https://freefincalc.net/personal-loan-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}>

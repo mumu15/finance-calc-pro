@@ -18,7 +18,10 @@ export default function CCPayoffClient({item:it,all}){
   const interest=total-balance
   const minP=Math.max(25,Math.round(balance*0.02))
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Credit Card Payoff Calculator', url: 'https://freefincalc.net/credit-card-payoff-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/credit-card-payoff-calculator" style={s.bcA}>Credit Card Payoff</a><span>›</span><span style={{color:'#94a3b8'}}>{fmt(balance)} Balance</span></nav>
     <h1 style={s.h1}>Credit Card Payoff: {fmt(balance)} Balance</h1>

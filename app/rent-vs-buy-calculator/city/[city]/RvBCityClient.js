@@ -22,7 +22,10 @@ export default function RvBCityClient({item:it,all}){
   const equity=Math.round(home*Math.pow(1+it.appreciation/100,years)-loan*(Math.pow(1+(rate/100/12),years*12)-1)/(Math.pow(1+(rate/100/12),360)-1)*360/12*(years/30))
   const buyWins=buyTotal-equity<rentTotal
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Rent vs Buy Calculator', url: 'https://freefincalc.net/rent-vs-buy-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/rent-vs-buy-calculator" style={s.bcA}>Rent vs Buy</a><span>›</span><span style={{color:'#94a3b8'}}>{it.name}</span></nav>
     <h1 style={s.h1}>Rent vs Buy in {it.name} 2026</h1>

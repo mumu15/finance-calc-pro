@@ -36,7 +36,10 @@ export default function TaxStateClient({ item: s, all }) {
   return (
     <div style={st.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Tax Calculator', url: 'https://freefincalc.net/tax-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={st.wrap}>
         <nav style={st.bc}>

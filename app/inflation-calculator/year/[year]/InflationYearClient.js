@@ -19,7 +19,10 @@ export default function InflationYearClient({item:it,all}){
     {item:'Minimum wage',then:1.60,now:7.25},
   ].map(e=>({...e,inflated:Math.round(e.then*it.multiplier)}))
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Inflation Calculator', url: 'https://freefincalc.net/inflation-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/inflation-calculator" style={s.bcA}>Inflation Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.year}</span></nav>
     <h1 style={s.h1}>Inflation Calculator: {it.year} to 2026</h1>

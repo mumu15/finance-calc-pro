@@ -39,7 +39,10 @@ export default function SavingsGoalClient({ item: g, all }) {
   return (
     <div style={st.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Savings Goal Calculator', url: 'https://freefincalc.net/savings-goal-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={st.wrap}>
         <nav style={st.bc}>

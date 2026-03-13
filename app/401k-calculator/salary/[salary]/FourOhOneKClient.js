@@ -20,7 +20,10 @@ export default function FourOhOneKClient({item:it,all}){
   const matchValue=total-yourOnly
   const income=total*0.04/12
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: '401(k) Calculator', url: 'https://freefincalc.net/401k-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/401k-calculator" style={s.bcA}>401k Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{fmt(salary)}/yr</span></nav>
     <h1 style={s.h1}>401k Calculator: {fmt(salary)}/Year Salary</h1>

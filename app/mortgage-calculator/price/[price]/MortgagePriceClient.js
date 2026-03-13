@@ -18,7 +18,10 @@ export default function MortgagePriceClient({item:it,all}){
   const interest=total-loan
   const income=Math.round(monthly/0.28*12)
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Mortgage Calculator', url: 'https://freefincalc.net/mortgage-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/mortgage-calculator" style={s.bcA}>Mortgage Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{fmt(price)} Home</span></nav>
     <h1 style={s.h1}>Mortgage Calculator: {fmt(price)} Home</h1>

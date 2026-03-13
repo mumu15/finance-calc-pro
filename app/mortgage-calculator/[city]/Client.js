@@ -106,7 +106,10 @@ export default function CityMortgagePage() {
   return (
     <div style={styles.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Mortgage Calculator', url: 'https://freefincalc.net/mortgage-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
 
       {/* Hero image */}

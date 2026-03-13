@@ -15,7 +15,10 @@ export default function FreelanceRateClient({item:it,all}){
   const targetRate=Math.round(income*1.3/billableHours)
   const fullTimeEquiv=Math.round(income*1.3)
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Freelance Rate Calculator', url: 'https://freefincalc.net/freelance-rate-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/freelance-rate-calculator" style={s.bcA}>Freelance Rate Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.name}</span></nav>
     <h1 style={s.h1}>Freelance {it.name} Rate Calculator 2026</h1>

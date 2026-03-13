@@ -41,7 +41,10 @@ export default function StudentLoanClient({ major, allMajors }) {
   return (
     <div style={s.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Student Loan Calculator', url: 'https://freefincalc.net/student-loan-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}>

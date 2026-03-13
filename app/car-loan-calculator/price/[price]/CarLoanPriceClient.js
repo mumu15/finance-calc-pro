@@ -17,7 +17,10 @@ export default function CarLoanPriceClient({item:it,all}){
   const total=monthly*term
   const interest=total-loan
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Car Loan Calculator', url: 'https://freefincalc.net/car-loan-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/car-loan-calculator" style={s.bcA}>Car Loan Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{fmt(price)} Vehicle</span></nav>
     <h1 style={s.h1}>Car Loan Calculator: {fmt(price)} Vehicle</h1>

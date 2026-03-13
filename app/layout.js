@@ -14,13 +14,13 @@ export const metadata = {
   alternates: { canonical: 'https://freefincalc.net' },
   metadataBase: new URL('https://freefincalc.net'),
   title: 'Free Financial Calculators — FreeFinCalc.net',
-  description: 'Free online financial calculators for mortgage, loans, retirement, investments, taxes and more. 124 calculators, instant results, no sign-up required.',
+  description: 'Free online financial calculators for mortgage, loans, retirement, investments, taxes and more. 470+ calculators, instant results, no sign-up required.',
   keywords: 'financial calculator, mortgage calculator, loan calculator, retirement calculator, investment calculator',
   authors: [{ name: 'FreeFinCalc' }],
   creator: 'FreeFinCalc',
   openGraph: {
     title: 'Free Financial Calculators — FreeFinCalc.net',
-    description: '124 free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
+    description: '470+ free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
     url: 'https://freefincalc.net',
     siteName: 'FreeFinCalc',
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata = {
   twitter: {
     card: 'summary',
     title: 'Free Financial Calculators — FreeFinCalc.net',
-    description: '124 free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
+    description: '470+ free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
   },
   robots: {
     index: true,

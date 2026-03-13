@@ -16,7 +16,10 @@ export default function BreakEvenClient({item:it,all}){
   const beRevenue=beUnits*price
   const profit1x=beRevenue*2-fixed-beRevenue*varPct/100
   return(<div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Break Even Calculator', url: 'https://freefincalc.net/break-even-calculator' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/break-even-calculator" style={s.bcA}>Break-Even Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.name}</span></nav>
     <h1 style={s.h1}>Break-Even Calculator: {it.name}</h1>

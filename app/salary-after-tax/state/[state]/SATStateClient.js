@@ -32,7 +32,10 @@ export default function SATStateClient({item:it,all}){
   const eff=((fed+state+fica)/salary*100).toFixed(1)
   return(
     <div style={s.page}><Header/>
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Salary After Tax Calculator', url: 'https://freefincalc.net/salary-after-tax' }
+  ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
       <nav style={s.bc}>
         <a href="/" style={s.bcA}>Home</a><span>›</span>

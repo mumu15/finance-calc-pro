@@ -44,7 +44,10 @@ export default function RetirementAgeClient({ item: it, all }) {
   return (
     <div style={s.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Retirement Calculator', url: 'https://freefincalc.net/retirement-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/retirement-calculator" style={s.bcA}>Retirement Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.name}</span></nav>

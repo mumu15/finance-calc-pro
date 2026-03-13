@@ -39,7 +39,10 @@ export default function SalaryJobClient({ job, allJobs }) {
   return (
     <div style={s.page}>
       <Header />
-        <SchemaMarkup />
+        <SchemaMarkup breadcrumbs={[
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Salary After Tax Calculator', url: 'https://freefincalc.net/salary-after-tax-calculator' }
+  ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
         <nav style={s.bc}>
