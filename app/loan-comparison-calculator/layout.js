@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Loan Comparison Calculator',
     description: 'Compare two loans side by side on monthly payment, total interest and overall cost. Find the best loan offer instantly.',
-    url: 'https://www.freefincalc.net/loan-comparison-calculator',
+    url: 'https://freefincalc.net/loan-comparison-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

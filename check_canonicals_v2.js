@@ -39,7 +39,7 @@ function fetchWithRedirects(url, hops = 0) {
 }
 
 async function checkUrl(urlPath) {
-  const startUrl = 'https://www.freefincalc.net' + urlPath;
+  const startUrl = 'https://freefincalc.net' + urlPath;
   const { html, finalUrl, code, err } = await fetchWithRedirects(startUrl);
 
   if (err || !html) return { urlPath, status: 'ERROR', msg: err || 'no html', finalUrl, code };

@@ -45,8 +45,8 @@ export default function RetirementAgeClient({ item: it, all }) {
     <div style={s.page}>
       <Header />
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: 'Retirement Calculator', url: 'https://www.freefincalc.net/retirement-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Retirement Calculator', url: 'https://freefincalc.net/retirement-calculator' }
   ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
@@ -75,7 +75,7 @@ export default function RetirementAgeClient({ item: it, all }) {
         <div style={s.box}><h2 style={s.h2}>Retirement Calculator by Age</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/retirement-calculator/age/'+x.slug} style={s.aA}>{x.name}</a>))}</div>
       </div>
       <AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Retirement Calculator","item":"https://www.freefincalc.net/retirement-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Retirement Calculator","item":"https://freefincalc.net/retirement-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Retirement Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </div>

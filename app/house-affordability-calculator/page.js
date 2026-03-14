@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'House Affordability Calculator | FreeFinCalc',
   description: 'Free House Affordability Calculator — estimate housing costs and make smarter real estate decisions. No sign-up.',
-  alternates: { canonical: 'https://www.freefincalc.net/house-affordability-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/house-affordability-calculator' },
   openGraph: {
     title: 'House Affordability Calculator | FreeFinCalc',
     description: 'Free House Affordability Calculator — estimate housing costs and make smarter real estate decisions. No sign-up.',
-    url: 'https://www.freefincalc.net/house-affordability-calculator',
+    url: 'https://freefincalc.net/house-affordability-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

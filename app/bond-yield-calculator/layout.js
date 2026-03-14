@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Bond Yield Calculator',
     description: 'Calculate bond yield to maturity, current yield and yield to call. Price bonds accurately with our free bond calculator.',
-    url: 'https://www.freefincalc.net/bond-yield-calculator',
+    url: 'https://freefincalc.net/bond-yield-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Equipment Loan Calculator',
     description: 'Calculate equipment loan payments, total cost and Section 179 tax deduction. Finance business equipment accurately.',
-    url: 'https://www.freefincalc.net/equipment-loan-calculator',
+    url: 'https://freefincalc.net/equipment-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

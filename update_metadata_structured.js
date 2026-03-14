@@ -25,8 +25,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "FreeFinCalc",
-    "url": "https://www.freefincalc.net",
-    "logo": "https://www.freefincalc.net/icon.png",
+    "url": "https://freefincalc.net",
+    "logo": "https://freefincalc.net/icon.png",
     "description": "Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies.",
     "sameAs": []
   }
@@ -43,13 +43,13 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "FreeFinCalc",
-    "url": "https://www.freefincalc.net",
+    "url": "https://freefincalc.net",
     "description": "100+ free financial calculators. No sign-up required.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://www.freefincalc.net/?q={search_term_string}"
+        "urlTemplate": "https://freefincalc.net/?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -86,7 +86,7 @@ console.log('✅ app/layout.js read successfully')
 // ─────────────────────────────────────────────────────────────────────────────
 
 const newMetadata = `export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),
+  metadataBase: new URL('https://freefincalc.net'),
   title: {
     default: 'FreeFinCalc — 100+ Free Financial Calculators',
     template: '%s | FreeFinCalc',
@@ -117,13 +117,13 @@ const newMetadata = `export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.freefincalc.net',
+    url: 'https://freefincalc.net',
     siteName: 'FreeFinCalc',
     title: 'FreeFinCalc — 100+ Free Financial Calculators',
     description: 'Free financial calculators for mortgage, tax, retirement, investing and budgeting. No sign-up required.',
     images: [
       {
-        url: 'https://www.freefincalc.net/og-image.png',
+        url: 'https://freefincalc.net/og-image.png',
         width: 1200,
         height: 630,
         alt: 'FreeFinCalc — Free Financial Calculators',
@@ -134,10 +134,10 @@ const newMetadata = `export const metadata = {
     card: 'summary_large_image',
     title: 'FreeFinCalc — 100+ Free Financial Calculators',
     description: 'Free financial calculators. 40+ currencies. No sign-up.',
-    images: ['https://www.freefincalc.net/og-image.png'],
+    images: ['https://freefincalc.net/og-image.png'],
   },
   alternates: {
-    canonical: 'https://www.freefincalc.net',
+    canonical: 'https://freefincalc.net',
   },
 }`
 

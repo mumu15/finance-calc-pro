@@ -57,7 +57,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${it.name} Salary After Tax Calculator 2026 — Take-Home Pay\`,
     description: \`Calculate your exact take-home pay in \${it.name} (\${stateRate}). See federal, state, and FICA deductions. Free 2026 \${it.name} salary calculator.\`,
-    alternates: { canonical: \`https://www.freefincalc.net/salary-after-tax/state/\${it.slug}\` },
+    alternates: { canonical: \`https://freefincalc.net/salary-after-tax/state/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -174,7 +174,7 @@ console.log('✅ salary-after-tax/state/[state] — ' + satStates.length + ' pag
 let sitemap = ''
 try { sitemap = fs.readFileSync('public/sitemap.xml', 'utf8') } catch(e) {}
 if (sitemap && !sitemap.includes('/salary-after-tax/state/')) {
-  sitemap = addToSitemap(satStates, x => `https://www.freefincalc.net/salary-after-tax/state/${x.slug}`, sitemap)
+  sitemap = addToSitemap(satStates, x => `https://freefincalc.net/salary-after-tax/state/${x.slug}`, sitemap)
   fs.writeFileSync('public/sitemap.xml', sitemap, 'utf8')
   console.log('✅ sitemap.xml updated (+50 salary-after-tax/state)')
 }

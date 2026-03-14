@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE = 'https://www.freefincalc.net';
+const BASE = 'https://freefincalc.net';
 const today = new Date().toISOString().split('T')[0];
 
 // ─── ALL URL ARRAYS ───────────────────────────────────────────────────────────
@@ -109,5 +109,5 @@ console.log('  git rm public/sitemap.xml   (if it existed)');
 console.log('  git commit -m "Fix sitemap: switch to Next.js app/sitemap.js with all pages"');
 console.log('  git push origin master');
 console.log('\nThen verify live at:');
-console.log('  https://www.freefincalc.net/sitemap.xml');
+console.log('  https://freefincalc.net/sitemap.xml');
 console.log('\nThen resubmit in Google Search Console → Sitemaps → Resubmit');

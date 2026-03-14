@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Estate Tax Calculator',
     description: 'Calculate federal estate tax on inherited assets. Understand exemptions, rates and strategies to minimize estate taxes.',
-    url: 'https://www.freefincalc.net/estate-tax-calculator',
+    url: 'https://freefincalc.net/estate-tax-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

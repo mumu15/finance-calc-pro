@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Annuity Calculator',
     description: 'Calculate annuity payments, future value and present value for fixed annuities. Plan retirement income from annuities.',
-    url: 'https://www.freefincalc.net/annuity-calculator',
+    url: 'https://freefincalc.net/annuity-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

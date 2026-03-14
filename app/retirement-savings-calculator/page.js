@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Retirement Savings Calculator | FreeFinCalc',
   description: 'Free Retirement Savings Calculator — plan your retirement savings and estimate future balances. No sign-up required.',
-  alternates: { canonical: 'https://www.freefincalc.net/retirement-savings-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/retirement-savings-calculator' },
   openGraph: {
     title: 'Retirement Savings Calculator | FreeFinCalc',
     description: 'Free Retirement Savings Calculator — plan your retirement savings and estimate future balances. No sign-up required.',
-    url: 'https://www.freefincalc.net/retirement-savings-calculator',
+    url: 'https://freefincalc.net/retirement-savings-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

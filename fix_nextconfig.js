@@ -10,7 +10,7 @@ const nextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.freefincalc.net' }],
-        destination: 'https://www.freefincalc.net/:path*',
+        destination: 'https://freefincalc.net/:path*',
         permanent: true,
       },
     ]

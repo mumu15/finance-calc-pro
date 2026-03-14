@@ -52,4 +52,4 @@ if (!sitemap.includes('boat-loan-calculator')) {
 }
 
 console.log('')
-console.log('Verify: https://www.freefincalc.net/sitemap.xml after deploy')
+console.log('Verify: https://freefincalc.net/sitemap.xml after deploy')

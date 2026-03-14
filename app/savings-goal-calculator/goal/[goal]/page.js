@@ -9,7 +9,7 @@ export async function generateStaticParams() { return goals.map(g => ({ goal: g.
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://www.freefincalc.net/savings-goal-calculator/goal/${params.goal}` },
+    alternates: { canonical: `https://freefincalc.net/savings-goal-calculator/goal/${params.goal}` },
   };
 }
 

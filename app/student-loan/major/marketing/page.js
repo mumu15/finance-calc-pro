@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return {
     title: 'Student Loan Calculator for Marketing Majors | FreeFinCalc.net',
     description: 'Average student loan debt for Marketing majors is $30 000. Calculate your monthly payments and total repayment cost.',
-    alternates: { canonical: 'https://www.freefincalc.net/student-loan/major/marketing' },
+    alternates: { canonical: 'https://freefincalc.net/student-loan/major/marketing' },
   };
 }
 
@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Student Loan Calculator","url":"https://www.freefincalc.net/student-loan"},{"name":"Marketing","url":"https://www.freefincalc.net/student-loan/major/marketing"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Student Loan Calculator","url":"https://freefincalc.net/student-loan"},{"name":"Marketing","url":"https://freefincalc.net/student-loan/major/marketing"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

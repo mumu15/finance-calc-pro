@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/how-to-negotiate-salary' },
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-negotiate-salary' },
   title: 'How to Negotiate Your Salary: Scripts and Tips That Work (2026)',
   description: 'Learn how to negotiate your salary confidently in 2026. Includes word-for-word scripts, timing tips and how to handle counteroffers.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How To Negotiate Salary","url":"https://www.freefincalc.net/blog/how-to-negotiate-salary"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How To Negotiate Salary","url":"https://freefincalc.net/blog/how-to-negotiate-salary"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Property Tax Calculator',
     description: 'Estimate annual property taxes for any home value and location. Calculate monthly escrow amounts and total tax burden.',
-    url: 'https://www.freefincalc.net/property-tax-calculator',
+    url: 'https://freefincalc.net/property-tax-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

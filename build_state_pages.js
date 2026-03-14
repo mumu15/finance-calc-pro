@@ -93,11 +93,11 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${state.name} Mortgage Calculator 2026 — Monthly Payment & Rates\`,
     description: \`Calculate your mortgage payment in \${state.name}. Median home price \$\${state.medianPrice.toLocaleString()}, avg rate \${state.rate}%, property tax \${state.tax}%. Est. monthly payment \$\${monthly.toLocaleString()}.\`,
-    alternates: { canonical: \`https://www.freefincalc.net/mortgage-calculator/state/\${state.slug}\` },
+    alternates: { canonical: \`https://freefincalc.net/mortgage-calculator/state/\${state.slug}\` },
     openGraph: {
       title: \`\${state.name} Mortgage Calculator 2026\`,
       description: \`Free mortgage calculator for \${state.name}. Real 2026 rates, property taxes, and home prices.\`,
-      url: \`https://www.freefincalc.net/mortgage-calculator/state/\${state.slug}\`,
+      url: \`https://freefincalc.net/mortgage-calculator/state/\${state.slug}\`,
     },
   }
 }
@@ -373,7 +373,7 @@ try { sitemap = fs.readFileSync('public/sitemap.xml', 'utf8') } catch(e) {}
 
 const stateEntries = states.map(s =>
 `  <url>
-    <loc>https://www.freefincalc.net/mortgage-calculator/state/${s.slug}</loc>
+    <loc>https://freefincalc.net/mortgage-calculator/state/${s.slug}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`

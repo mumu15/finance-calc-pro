@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Emergency Fund Calculator',
     description: 'Calculate exactly how much you need in your emergency fund based on expenses and job stability. Know your target savings number.',
-    url: 'https://www.freefincalc.net/emergency-fund-calculator',
+    url: 'https://freefincalc.net/emergency-fund-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

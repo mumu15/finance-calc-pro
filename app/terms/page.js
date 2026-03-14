@@ -6,14 +6,14 @@ import SchemaMarkup from '../../components/SchemaMarkup';
 export const metadata = {
   title: 'Terms of Service | FreeFinCalc',
   description: 'Terms of Service for FreeFinCalc.net — free financial calculators. Read our terms before using our site.',
-  alternates: { canonical: 'https://www.freefincalc.net/terms' },
+  alternates: { canonical: 'https://freefincalc.net/terms' },
 }
 
 export default function TermsOfService() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Terms","url":"https://www.freefincalc.net/terms"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Terms","url":"https://freefincalc.net/terms"}]} includeReview={true} />
       <main className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-white mb-2">Terms of Service</h1>
         <p className="text-slate-500 text-sm mb-10">Last updated: March 2026</p>

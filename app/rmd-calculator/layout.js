@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Required Minimum Distribution Calculator',
     description: 'Calculate your RMD amount for any age and account balance. Avoid IRS penalties with accurate RMD planning.',
-    url: 'https://www.freefincalc.net/rmd-calculator',
+    url: 'https://freefincalc.net/rmd-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

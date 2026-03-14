@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/how-inflation-works' },
+  alternates: { canonical: 'https://freefincalc.net/blog/how-inflation-works' },
   title: 'How Inflation Works and How to Protect Your Money (2026)',
   description: 'Learn what inflation is, how it erodes purchasing power and the best ways to protect your savings and investments from inflation in 2026.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How Inflation Works","url":"https://www.freefincalc.net/blog/how-inflation-works"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How Inflation Works","url":"https://freefincalc.net/blog/how-inflation-works"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

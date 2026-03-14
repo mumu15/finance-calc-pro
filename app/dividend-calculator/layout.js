@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Dividend Calculator',
     description: 'Calculate dividend income, yield and annual earnings from your stock portfolio. Plan dividend reinvestment returns.',
-    url: 'https://www.freefincalc.net/dividend-calculator',
+    url: 'https://freefincalc.net/dividend-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

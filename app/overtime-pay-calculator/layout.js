@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Overtime Pay Calculator',
     description: 'Calculate overtime pay at time-and-a-half or double time. Find total weekly earnings and annual income with overtime.',
-    url: 'https://www.freefincalc.net/overtime-pay-calculator',
+    url: 'https://freefincalc.net/overtime-pay-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

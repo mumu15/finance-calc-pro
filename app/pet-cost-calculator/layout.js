@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Pet Cost Calculator',
     description: 'Calculate annual and lifetime costs of owning a dog or cat. Estimate food, vet, grooming and insurance expenses.',
-    url: 'https://www.freefincalc.net/pet-cost-calculator',
+    url: 'https://freefincalc.net/pet-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -3,7 +3,7 @@
  * node fix_canonicals.js
  *
  * "Duplicate without user-selected canonical" fix:
- * - Sets canonical to https://www.freefincalc.net/[route] (no trailing slash)
+ * - Sets canonical to https://freefincalc.net/[route] (no trailing slash)
  * - Sets metadataBase so relative OG urls resolve correctly
  * - Adds alternates.canonical to every layout
  */
@@ -11,7 +11,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const BASE = 'https://www.freefincalc.net'
+const BASE = 'https://freefincalc.net'
 
 // Get all routes that have a layout.js
 const appDir = 'app'
@@ -97,8 +97,8 @@ console.log(`
   ⏭️  Skipped: ${skipped} (no metadata or no match)
   
   Each page now has:
-  alternates.canonical: https://www.freefincalc.net/[route]
-  metadataBase: https://www.freefincalc.net
+  alternates.canonical: https://freefincalc.net/[route]
+  metadataBase: https://freefincalc.net
   
   This tells Google the ONE canonical URL for each page
   and stops "Duplicate without user-selected canonical"

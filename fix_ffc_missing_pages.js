@@ -146,7 +146,7 @@ export async function generateMetadata() {
   return {
     title: 'Personal Loan for ${p.label} | FreeFinCalc.net',
     description: '${p.desc} Use our free calculator to estimate monthly payments.',
-    alternates: { canonical: 'https://www.freefincalc.net/personal-loan/purpose/${p.slug}' },
+    alternates: { canonical: 'https://freefincalc.net/personal-loan/purpose/${p.slug}' },
   };
 }
 
@@ -318,7 +318,7 @@ export async function generateMetadata() {
   return {
     title: 'Student Loan Calculator for ${m.label} Majors | FreeFinCalc.net',
     description: 'Average student loan debt for ${m.label} majors is $${m.avgDebt.toLocaleString()}. Calculate your monthly payments and total repayment cost.',
-    alternates: { canonical: 'https://www.freefincalc.net/student-loan/major/${m.slug}' },
+    alternates: { canonical: 'https://freefincalc.net/student-loan/major/${m.slug}' },
   };
 }
 
@@ -511,7 +511,7 @@ export async function generateMetadata() {
   return {
     title: '${labelSafe} Return Calculator | FreeFinCalc.net',
     description: 'Calculate your ${labelSafe} investment return. Historical average return is ${a.avgReturn}% per year. See how your money grows over time.',
-    alternates: { canonical: 'https://www.freefincalc.net/investment-return-calculator/asset/${a.slug}' },
+    alternates: { canonical: 'https://freefincalc.net/investment-return-calculator/asset/${a.slug}' },
   };
 }
 
@@ -647,7 +647,7 @@ export async function generateMetadata() {
   return {
     title: 'How Long to Pay Off ${fmtAmt} in Debt? | FreeFinCalc.net',
     description: 'Find out how long it takes to pay off ${fmtAmt} in debt. Calculate monthly payments, total interest and payoff date with our free debt payoff calculator.',
-    alternates: { canonical: 'https://www.freefincalc.net/debt-payoff-calculator/amount/${amt}' },
+    alternates: { canonical: 'https://freefincalc.net/debt-payoff-calculator/amount/${amt}' },
   };
 }
 

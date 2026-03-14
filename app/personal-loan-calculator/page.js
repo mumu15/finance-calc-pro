@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Personal Loan Calculator | FreeFinCalc',
   description: 'Free Personal Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
-  alternates: { canonical: 'https://www.freefincalc.net/personal-loan-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/personal-loan-calculator' },
   openGraph: {
     title: 'Personal Loan Calculator | FreeFinCalc',
     description: 'Free Personal Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
-    url: 'https://www.freefincalc.net/personal-loan-calculator',
+    url: 'https://freefincalc.net/personal-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

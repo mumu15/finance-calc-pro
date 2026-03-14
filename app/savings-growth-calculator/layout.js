@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Savings Growth Calculator',
     description: 'See how savings grow over time with regular deposits and compound interest. Project account balance for any goal.',
-    url: 'https://www.freefincalc.net/savings-growth-calculator',
+    url: 'https://freefincalc.net/savings-growth-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

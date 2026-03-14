@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/how-much-house-can-i-afford' },
+  alternates: { canonical: 'https://freefincalc.net/blog/how-much-house-can-i-afford' },
   title: 'How Much House Can I Afford? (2026 Calculator Guide)',
   description: 'Find out exactly how much house you can afford in 2026. Includes the 28/36 rule, down payment requirements and real payment examples.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How Much House Can I Afford","url":"https://www.freefincalc.net/blog/how-much-house-can-i-afford"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How Much House Can I Afford","url":"https://freefincalc.net/blog/how-much-house-can-i-afford"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

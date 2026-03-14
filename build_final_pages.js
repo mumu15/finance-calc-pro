@@ -105,7 +105,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Retirement Calculator — \${it.name} (Retire at \${it.retireAt}) 2026\`,
     description: \`Retirement plan for \${it.desc}. Starting \$\${it.saved.toLocaleString()}, saving \$\${it.monthly}/month at \${it.rate}%, retire at \${it.retireAt} with ~\$\${Math.round(fv).toLocaleString()}.\`,
-    alternates: { canonical: \`https://www.freefincalc.net/retirement-calculator/age/\${it.slug}\` },
+    alternates: { canonical: \`https://freefincalc.net/retirement-calculator/age/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -264,7 +264,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${c.name} Cost of Living Budget Calculator 2026\`,
     description: \`Monthly budget breakdown for living in \${c.name}. Rent: \$\${c.rent}, Food: \$\${c.food}, Transport: \$\${c.transport}. Total est. \$\${total.toLocaleString()}/month.\`,
-    alternates: { canonical: \`https://www.freefincalc.net/budget-calculator/city/\${c.slug}\` },
+    alternates: { canonical: \`https://freefincalc.net/budget-calculator/city/\${c.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -370,9 +370,9 @@ try { sitemap = fs.readFileSync('public/sitemap.xml', 'utf8') } catch(e) {}
 
 if (sitemap) {
   if (!sitemap.includes('/retirement-calculator/age/'))
-    sitemap = addToSitemap(retirementAges, x => `https://www.freefincalc.net/retirement-calculator/age/${x.slug}`, sitemap)
+    sitemap = addToSitemap(retirementAges, x => `https://freefincalc.net/retirement-calculator/age/${x.slug}`, sitemap)
   if (!sitemap.includes('/budget-calculator/city/'))
-    sitemap = addToSitemap(budgetCities, x => `https://www.freefincalc.net/budget-calculator/city/${x.slug}`, sitemap)
+    sitemap = addToSitemap(budgetCities, x => `https://freefincalc.net/budget-calculator/city/${x.slug}`, sitemap)
   fs.writeFileSync('public/sitemap.xml', sitemap, 'utf8')
   console.log('✅ sitemap.xml updated')
 }

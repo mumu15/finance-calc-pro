@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Home Equity Calculator',
     description: 'Calculate your current home equity, loan-to-value ratio and available equity for a HELOC or cash-out refinance.',
-    url: 'https://www.freefincalc.net/home-equity-calculator',
+    url: 'https://freefincalc.net/home-equity-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

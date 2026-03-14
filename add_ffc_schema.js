@@ -158,7 +158,7 @@ function addSchemaToPage(filePath, breadcrumbs) {
 
 // ─── WALK APP DIRECTORY AND UPDATE PAGES ─────────────────────────────────────
 
-const BASE = 'https://www.freefincalc.net';
+const BASE = 'https://freefincalc.net';
 
 function getBreadcrumbs(filePath) {
   const parts = filePath.replace(/\\/g, '/').replace('app/', '').replace('/page.js', '').split('/');

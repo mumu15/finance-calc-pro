@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Pension Calculator',
     description: 'Calculate defined benefit pension monthly payout and compare lump sum vs annuity options at retirement.',
-    url: 'https://www.freefincalc.net/pension-calculator',
+    url: 'https://freefincalc.net/pension-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

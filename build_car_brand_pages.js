@@ -78,7 +78,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${b.name} Car Loan Calculator 2026 — Monthly Payment & Financing\`,
     description: \`Calculate your \${b.name} car loan payment. Avg price \$\${b.avg.toLocaleString()}, rate \${b.rate}%, est. \$\${pmt}/month. Compare \${b.term}-month financing options.\`,
-    alternates: { canonical: \`https://www.freefincalc.net/car-loan-calculator/brand/\${b.slug}\` },
+    alternates: { canonical: \`https://freefincalc.net/car-loan-calculator/brand/\${b.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }

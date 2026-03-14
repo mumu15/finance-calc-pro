@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Salary to Hourly Calculator',
     description: 'Convert annual salary to hourly rate based on hours worked. Calculate daily, weekly and monthly pay from salary.',
-    url: 'https://www.freefincalc.net/salary-to-hourly-calculator',
+    url: 'https://freefincalc.net/salary-to-hourly-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

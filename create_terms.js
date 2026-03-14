@@ -13,7 +13,7 @@ import Footer from '../../components/Footer'
 export const metadata = {
   title: 'Terms of Service | FreeFinCalc',
   description: 'Terms of Service for FreeFinCalc.net — free financial calculators. Read our terms before using our site.',
-  alternates: { canonical: 'https://www.freefincalc.net/terms' },
+  alternates: { canonical: 'https://freefincalc.net/terms' },
 }
 
 export default function TermsOfService() {
@@ -108,6 +108,6 @@ console.log(`
   Terms of Service page created
   ✅ app/terms/page.js
   ✅ /terms added to sitemap.js
-  Live at: https://www.freefincalc.net/terms
+  Live at: https://freefincalc.net/terms
 ════════════════════════════════════════
 `)

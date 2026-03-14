@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Solar Panel Payback Calculator',
     description: 'Calculate solar panel payback period, ROI and lifetime savings. See federal tax credit impact and break-even timeline.',
-    url: 'https://www.freefincalc.net/solar-payback-calculator',
+    url: 'https://freefincalc.net/solar-payback-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -47,8 +47,8 @@ export default function BudgetCityClient({ item: c, all }) {
     <div style={s.page}>
       <Header />
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: 'Budget Calculator', url: 'https://www.freefincalc.net/budget-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Budget Calculator', url: 'https://freefincalc.net/budget-calculator' }
   ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
@@ -84,7 +84,7 @@ export default function BudgetCityClient({ item: c, all }) {
         <div style={s.box}><h2 style={s.h2}>Budget Calculator by City</h2>{all.filter(x=>x.slug!==c.slug).map(x=>(<a key={x.slug} href={'/budget-calculator/city/'+x.slug} style={s.cA}>{x.name}</a>))}</div>
       </div>
       <AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Budget Calculator","item":"https://www.freefincalc.net/budget-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Budget Calculator","item":"https://freefincalc.net/budget-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Budget Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </div>

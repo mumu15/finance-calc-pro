@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Paycheck Calculator',
     description: 'Calculate your take-home paycheck after federal tax, state tax, Social Security and Medicare deductions.',
-    url: 'https://www.freefincalc.net/paycheck-calculator',
+    url: 'https://freefincalc.net/paycheck-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

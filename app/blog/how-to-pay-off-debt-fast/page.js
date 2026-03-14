@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/how-to-pay-off-debt-fast' },
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-pay-off-debt-fast' },
   title: 'How to Pay Off Debt Fast: Snowball vs Avalanche (2026)',
   description: 'Discover the fastest strategies to pay off debt in 2026. Compare the debt snowball and debt avalanche methods and find out which saves more money.',
 }
@@ -25,7 +25,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How To Pay Off Debt Fast","url":"https://www.freefincalc.net/blog/how-to-pay-off-debt-fast"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How To Pay Off Debt Fast","url":"https://freefincalc.net/blog/how-to-pay-off-debt-fast"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>

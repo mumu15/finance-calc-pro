@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Refinance Calculator',
     description: 'Calculate if refinancing your mortgage saves money. See break-even point, monthly savings and total interest saved over the loan life.',
-    url: 'https://www.freefincalc.net/refinance-calculator',
+    url: 'https://freefincalc.net/refinance-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

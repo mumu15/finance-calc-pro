@@ -173,12 +173,12 @@ export const metadata = {
   title: '${title}',
   description: '${description}',
   alternates: {
-    canonical: 'https://www.freefincalc.net/${route}',
+    canonical: 'https://freefincalc.net/${route}',
   },
   openGraph: {
     title: '${title}',
     description: '${description}',
-    url: 'https://www.freefincalc.net/${route}',
+    url: 'https://freefincalc.net/${route}',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

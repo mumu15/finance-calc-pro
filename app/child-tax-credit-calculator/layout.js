@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Child Tax Credit Calculator',
     description: 'Calculate your Child Tax Credit amount for 2026. See eligibility, phase-out limits and maximum credit per child.',
-    url: 'https://www.freefincalc.net/child-tax-credit-calculator',
+    url: 'https://freefincalc.net/child-tax-credit-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

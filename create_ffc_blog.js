@@ -1150,7 +1150,7 @@ export default function Header() {
 
 // ── UPDATE SITEMAP ────────────────────────────────────────────────────────────
 write('app/sitemap.js', `export default function sitemap() {
-  const baseUrl = 'https://www.freefincalc.net'
+  const baseUrl = 'https://freefincalc.net'
   const pages = [
     '','/mortgage-calculator','/loan-calculator','/compound-interest',
     '/savings-calculator','/retirement-calculator','/tax-calculator',

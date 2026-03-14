@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Overtime Calculator',
     description: 'Calculate overtime pay at 1.5x, 2x or custom rates. Find total weekly earnings and annual income with overtime hours.',
-    url: 'https://www.freefincalc.net/overtime-calculator',
+    url: 'https://freefincalc.net/overtime-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

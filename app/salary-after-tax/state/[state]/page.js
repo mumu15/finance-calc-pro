@@ -9,7 +9,7 @@ export async function generateStaticParams() { return items.map(x => ({ state: x
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://www.freefincalc.net/salary-after-tax/state/${params.state}` },
+    alternates: { canonical: `https://freefincalc.net/salary-after-tax/state/${params.state}` },
   };
 }
 

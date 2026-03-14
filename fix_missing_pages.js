@@ -29,10 +29,10 @@ export default function Page() {
   fs.writeFileSync(`app/${route}/layout.js`, `import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),
+  metadataBase: new URL('https://freefincalc.net'),
   title: '${title} | FreeFinCalc',
   description: '${desc}',
-  alternates: { canonical: 'https://www.freefincalc.net/${redirectTo}' },
+  alternates: { canonical: 'https://freefincalc.net/${redirectTo}' },
 }
 export default function Layout({ children }) {
   return <div className={inter.className}>{children}</div>

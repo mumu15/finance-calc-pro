@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Cost of Living Calculator',
     description: 'Compare cost of living between cities. See how much salary you need in a new city to maintain your current lifestyle.',
-    url: 'https://www.freefincalc.net/cost-of-living-calculator',
+    url: 'https://freefincalc.net/cost-of-living-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

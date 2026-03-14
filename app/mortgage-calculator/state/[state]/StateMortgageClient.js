@@ -69,8 +69,8 @@ export default function StateMortgageClient({ state, allStates }) {
     <div style={s.page}>
       <Header />
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: 'Mortgage Calculator', url: 'https://www.freefincalc.net/mortgage-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Mortgage Calculator', url: 'https://freefincalc.net/mortgage-calculator' }
   ]} />
         <AdUnit slot="7405024590" />
       <div style={s.wrap}>
@@ -216,7 +216,7 @@ export default function StateMortgageClient({ state, allStates }) {
 
       </div>
       <AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator","item":"https://www.freefincalc.net/mortgage-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Mortgage Calculator","item":"https://freefincalc.net/mortgage-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mortgage Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </div>

@@ -7,7 +7,7 @@ let c = fs.readFileSync(f, 'utf8');
 // Add canonical for base route only
 c = c.replace(
   /export const metadata\s*=\s*\{/,
-  "export const metadata = {\n  alternates: { canonical: 'https://www.freefincalc.net/mortgage-calculator' },"
+  "export const metadata = {\n  alternates: { canonical: 'https://freefincalc.net/mortgage-calculator' },"
 );
 
 fs.writeFileSync(f, c, 'utf8');

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Total Debt Calculator',
     description: 'Add up all your debts and calculate debt-to-income ratio. See total interest burden and create a debt payoff plan.',
-    url: 'https://www.freefincalc.net/total-debt-calculator',
+    url: 'https://freefincalc.net/total-debt-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

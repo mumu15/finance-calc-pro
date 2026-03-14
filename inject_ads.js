@@ -229,7 +229,7 @@ console.log(`
     git push origin master:main
 
   After deploy verify at:
-    https://www.freefincalc.net/mortgage-calculator
+    https://freefincalc.net/mortgage-calculator
     → scroll to bottom, ad should appear above trust section
 
   Note: Ads show as blank/grey until Google approves your

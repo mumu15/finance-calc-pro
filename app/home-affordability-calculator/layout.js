@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Home Affordability Calculator',
     description: 'Find out how much house you can afford based on income, debts and down payment. Free home affordability calculator.',
-    url: 'https://www.freefincalc.net/home-affordability-calculator',
+    url: 'https://freefincalc.net/home-affordability-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

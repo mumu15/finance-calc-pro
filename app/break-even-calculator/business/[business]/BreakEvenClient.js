@@ -17,8 +17,8 @@ export default function BreakEvenClient({item:it,all}){
   const profit1x=beRevenue*2-fixed-beRevenue*varPct/100
   return(<div style={s.page}><Header/>
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: 'Break Even Calculator', url: 'https://www.freefincalc.net/break-even-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Break Even Calculator', url: 'https://freefincalc.net/break-even-calculator' }
   ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/break-even-calculator" style={s.bcA}>Break-Even Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.name}</span></nav>
@@ -40,7 +40,7 @@ export default function BreakEvenClient({item:it,all}){
     <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/break-even-calculator','Break-Even'],['/profit-margin-calculator','Profit Margin'],['/business-loan-calculator','Business Loan'],['/roi-calculator','ROI Calculator'],['/startup-cost-calculator','Startup Cost']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>Break-Even by Business Type</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/break-even-calculator/business/'+x.slug} style={s.tagA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Break Even Calculator","item":"https://www.freefincalc.net/break-even-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Break Even Calculator","item":"https://freefincalc.net/break-even-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Break Even Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer/></div>)
 }

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Life Insurance Calculator',
     description: 'Calculate how much life insurance coverage you need to protect your family. Use the DIME method for accurate coverage.',
-    url: 'https://www.freefincalc.net/life-insurance-calculator',
+    url: 'https://freefincalc.net/life-insurance-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

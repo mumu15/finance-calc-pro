@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Savings Interest Calculator',
     description: 'Calculate savings account interest earnings over time. Compare rates and see how compound interest grows your money.',
-    url: 'https://www.freefincalc.net/savings-interest-calculator',
+    url: 'https://freefincalc.net/savings-interest-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/how-to-build-emergency-fund' },
+  alternates: { canonical: 'https://freefincalc.net/blog/how-to-build-emergency-fund' },
   title: 'How to Build an Emergency Fund From Scratch (2026)',
   description: 'Learn how to build a fully funded emergency fund step by step. Find out how much you need and the best place to keep it.',
 }
@@ -25,7 +25,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How To Build Emergency Fund","url":"https://www.freefincalc.net/blog/how-to-build-emergency-fund"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How To Build Emergency Fund","url":"https://freefincalc.net/blog/how-to-build-emergency-fund"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>

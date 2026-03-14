@@ -40,7 +40,7 @@ ROUTES.forEach(({ dir, param, base }) => {
     const genMeta =
       '\nexport async function generateMetadata({ params }) {\n' +
       '  return {\n' +
-      '    alternates: { canonical: `https://www.freefincalc.net/' + base + '/${params.' + param + '}` },\n' +
+      '    alternates: { canonical: `https://freefincalc.net/' + base + '/${params.' + param + '}` },\n' +
       '  };\n' +
       '}\n';
     pageContent = pageContent.replace(/(export default)/, genMeta + '\n$1');
@@ -78,7 +78,7 @@ ROUTES.forEach(({ dir, param, base }) => {
   newPage +=
     "export async function generateMetadata({ params }) {\n" +
     "  return {\n" +
-    "    alternates: { canonical: `https://www.freefincalc.net/" + base + "/${params." + param + "}` },\n" +
+    "    alternates: { canonical: `https://freefincalc.net/" + base + "/${params." + param + "}` },\n" +
     "  };\n" +
     "}\n\n" +
     "export default function Page({ params }) {\n" +

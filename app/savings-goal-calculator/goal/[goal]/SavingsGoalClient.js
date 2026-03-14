@@ -40,8 +40,8 @@ export default function SavingsGoalClient({ item: g, all }) {
     <div style={st.page}>
       <Header />
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: 'Savings Goal Calculator', url: 'https://www.freefincalc.net/savings-goal-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Savings Goal Calculator', url: 'https://freefincalc.net/savings-goal-calculator' }
   ]} />
         <AdUnit slot="7405024590" />
       <div style={st.wrap}>
@@ -99,7 +99,7 @@ export default function SavingsGoalClient({ item: g, all }) {
         </div>
       </div>
       <AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Savings Goal Calculator","item":"https://www.freefincalc.net/savings-goal-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Savings Goal Calculator","item":"https://freefincalc.net/savings-goal-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Savings Goal Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer />
     </div>

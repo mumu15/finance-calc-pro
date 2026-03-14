@@ -11,7 +11,7 @@ export async function generateStaticParams() { return carPrices.map(x => ({ pric
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://www.freefincalc.net/car-loan-calculator/price/${params.price}` },
+    alternates: { canonical: `https://freefincalc.net/car-loan-calculator/price/${params.price}` },
   };
 }
 

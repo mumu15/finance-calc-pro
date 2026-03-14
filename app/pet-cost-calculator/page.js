@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Pet Cost Calculator | FreeFinCalc',
   description: 'Free Pet Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://www.freefincalc.net/pet-cost-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/pet-cost-calculator' },
   openGraph: {
     title: 'Pet Cost Calculator | FreeFinCalc',
     description: 'Free Pet Cost Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://www.freefincalc.net/pet-cost-calculator',
+    url: 'https://freefincalc.net/pet-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

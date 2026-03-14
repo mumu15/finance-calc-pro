@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Child Support Calculator | FreeFinCalc',
   description: 'Free Child Support Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://www.freefincalc.net/child-support-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/child-support-calculator' },
   openGraph: {
     title: 'Child Support Calculator | FreeFinCalc',
     description: 'Free Child Support Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://www.freefincalc.net/child-support-calculator',
+    url: 'https://freefincalc.net/child-support-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

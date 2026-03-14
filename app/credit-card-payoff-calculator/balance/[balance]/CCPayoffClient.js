@@ -19,8 +19,8 @@ export default function CCPayoffClient({item:it,all}){
   const minP=Math.max(25,Math.round(balance*0.02))
   return(<div style={s.page}><Header/>
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: 'Credit Card Payoff Calculator', url: 'https://www.freefincalc.net/credit-card-payoff-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Credit Card Payoff Calculator', url: 'https://freefincalc.net/credit-card-payoff-calculator' }
   ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/credit-card-payoff-calculator" style={s.bcA}>Credit Card Payoff</a><span>›</span><span style={{color:'#94a3b8'}}>{fmt(balance)} Balance</span></nav>
@@ -44,7 +44,7 @@ export default function CCPayoffClient({item:it,all}){
     <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/credit-card-payoff-calculator','CC Payoff'],['/debt-payoff-calculator','Debt Payoff'],['/debt-avalanche-calculator','Debt Avalanche'],['/debt-consolidation-calculator','Debt Consolidation'],['/balance-transfer-calculator','Balance Transfer']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>Credit Card Payoff by Balance</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/credit-card-payoff-calculator/balance/'+x.slug} style={s.tagA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Credit Card Payoff Calculator","item":"https://www.freefincalc.net/credit-card-payoff-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Credit Card Payoff Calculator","item":"https://freefincalc.net/credit-card-payoff-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Credit Card Payoff Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer/></div>)
 }

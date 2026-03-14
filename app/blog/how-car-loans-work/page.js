@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/how-car-loans-work' },
+  alternates: { canonical: 'https://freefincalc.net/blog/how-car-loans-work' },
   title: 'How Car Loans Work: Interest Rates, Terms and True Cost (2026)',
   description: 'Everything you need to know about car loans in 2026. Average rates by credit score, how to get the best deal and how to calculate total cost.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How Car Loans Work","url":"https://www.freefincalc.net/blog/how-car-loans-work"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How Car Loans Work","url":"https://freefincalc.net/blog/how-car-loans-work"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

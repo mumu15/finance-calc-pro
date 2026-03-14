@@ -22,7 +22,7 @@ function write(filePath, content) {
 write('app/layout.js', `import './globals.css'
 
 export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),
+  metadataBase: new URL('https://freefincalc.net'),
   title: {
     default: 'FreeFinCalc.net — 100 Free Financial Calculators in 40+ Currencies',
     template: '%s | FreeFinCalc.net',
@@ -35,7 +35,7 @@ export const metadata = {
     'salary calculator', 'tax calculator', 'retirement calculator',
     'investment calculator', 'budget calculator',
   ],
-  authors: [{ name: 'FreeFinCalc.net', url: 'https://www.freefincalc.net' }],
+  authors: [{ name: 'FreeFinCalc.net', url: 'https://freefincalc.net' }],
   creator: 'FreeFinCalc.net',
   publisher: 'FreeFinCalc.net',
   robots: {
@@ -45,7 +45,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.freefincalc.net',
+    url: 'https://freefincalc.net',
     siteName: 'FreeFinCalc.net',
     title: 'FreeFinCalc.net — 100 Free Financial Calculators',
     description: '100 free professional financial calculators in 40+ currencies. Loans, debt, investing, salary, tax and more.',
@@ -57,7 +57,7 @@ export const metadata = {
     description: '100 free professional calculators. No sign up. Instant results. PDF download.',
     images: ['/og-image.png'],
   },
-  alternates: { canonical: 'https://www.freefincalc.net' },
+  alternates: { canonical: 'https://freefincalc.net' },
 }
 
 export default function RootLayout({ children }) {
@@ -1081,11 +1081,11 @@ export const metadata = {
   openGraph: {
     title: 'FreeFinCalc.net — 100 Free Financial Calculators',
     description: '100 free calculators in 40+ currencies. Loans, debt, investing, salary, tax and more. No sign up.',
-    url: 'https://www.freefincalc.net',
+    url: 'https://freefincalc.net',
     type: 'website',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
-  alternates: { canonical: 'https://www.freefincalc.net' },
+  alternates: { canonical: 'https://freefincalc.net' },
 }
 
 // ── All categories + tools ──────────────────────────────────────────────────
@@ -1097,22 +1097,22 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebSite',
-      '@id': 'https://www.freefincalc.net/#website',
-      url: 'https://www.freefincalc.net',
+      '@id': 'https://freefincalc.net/#website',
+      url: 'https://freefincalc.net',
       name: 'FreeFinCalc.net',
       description: '100 free financial calculators in 40+ currencies',
       potentialAction: {
         '@type': 'SearchAction',
-        target: { '@type': 'EntryPoint', urlTemplate: 'https://www.freefincalc.net/?q={search_term_string}' },
+        target: { '@type': 'EntryPoint', urlTemplate: 'https://freefincalc.net/?q={search_term_string}' },
         'query-input': 'required name=search_term_string',
       },
     },
     {
       '@type': 'Organization',
-      '@id': 'https://www.freefincalc.net/#organization',
+      '@id': 'https://freefincalc.net/#organization',
       name: 'FreeFinCalc.net',
-      url: 'https://www.freefincalc.net',
-      logo: { '@type': 'ImageObject', url: 'https://www.freefincalc.net/logo.png' },
+      url: 'https://freefincalc.net',
+      logo: { '@type': 'ImageObject', url: 'https://freefincalc.net/logo.png' },
     },
     {
       '@type': 'FAQPage',
@@ -1125,7 +1125,7 @@ const jsonLd = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.freefincalc.net' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://freefincalc.net' },
       ],
     },
   ],

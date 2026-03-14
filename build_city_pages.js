@@ -95,16 +95,16 @@ export async function generateMetadata({ params }) {
   const monthly = Math.round(loan * mo * Math.pow(1+mo,n) / (Math.pow(1+mo,n)-1))
 
   return {
-    metadataBase: new URL('https://www.freefincalc.net'),
+    metadataBase: new URL('https://freefincalc.net'),
     title: \`Mortgage Calculator \${city.name}, \${city.state} — \${city.name} Home Loan Calculator 2026\`,
     description: \`Calculate your mortgage payment in \${city.name}, \${city.stateF}. Median home price \$\${city.medianPrice.toLocaleString()}, typical monthly payment \$\${monthly.toLocaleString()}/mo. Free \${city.name} mortgage calculator with local tax rates.\`,
     alternates: {
-      canonical: \`https://www.freefincalc.net/mortgage-calculator/\${city.slug}\`,
+      canonical: \`https://freefincalc.net/mortgage-calculator/\${city.slug}\`,
     },
     openGraph: {
       title: \`Mortgage Calculator \${city.name} \${city.state} 2026\`,
       description: \`Free mortgage calculator for \${city.name}. See what you can afford with local home prices and tax rates.\`,
-      url: \`https://www.freefincalc.net/mortgage-calculator/\${city.slug}\`,
+      url: \`https://freefincalc.net/mortgage-calculator/\${city.slug}\`,
       siteName: 'FreeFinCalc',
       type: 'website',
     },
@@ -478,7 +478,7 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 
 cities.forEach(c => {
   sitemapXml += `  <url>
-    <loc>https://www.freefincalc.net/mortgage-calculator/${c.slug}</loc>
+    <loc>https://freefincalc.net/mortgage-calculator/${c.slug}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -495,7 +495,7 @@ try {
 
 if (existingSitemap && !existingSitemap.includes('mortgage-calculator/new-york')) {
   const cityEntries = cities.map(c => `  <url>
-    <loc>https://www.freefincalc.net/mortgage-calculator/${c.slug}</loc>
+    <loc>https://freefincalc.net/mortgage-calculator/${c.slug}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`).join('\n')

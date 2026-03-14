@@ -333,8 +333,8 @@ const total = cats.reduce((a,c) => a + c.tools.length, 0)
 const jsonLd = {
   '@context':'https://schema.org',
   '@graph':[
-    { '@type':'WebSite', '@id':'https://www.freefincalc.net/#website', url:'https://www.freefincalc.net', name:'FreeFinCalc.net', description:`${total} free financial calculators in 40+ currencies` },
-    { '@type':'Organization', '@id':'https://www.freefincalc.net/#organization', name:'FreeFinCalc.net', url:'https://www.freefincalc.net' },
+    { '@type':'WebSite', '@id':'https://freefincalc.net/#website', url:'https://freefincalc.net', name:'FreeFinCalc.net', description:`${total} free financial calculators in 40+ currencies` },
+    { '@type':'Organization', '@id':'https://freefincalc.net/#organization', name:'FreeFinCalc.net', url:'https://freefincalc.net' },
     { '@type':'FAQPage', mainEntity: faqs.map(f => ({ '@type':'Question', name:f.q, acceptedAnswer:{ '@type':'Answer', text:f.a } })) },
   ]
 }
@@ -349,8 +349,8 @@ export const metadata = {
   title: 'FreeFinCalc.net — ${total} Free Financial Calculators in 40+ Currencies',
   description: '${total} free professional financial calculators: loans, debt, investing, salary, tax and more. 40+ currencies. Instant results. PDF download. No sign up.',
   keywords: ['free financial calculator','mortgage calculator','loan calculator','compound interest calculator','debt payoff calculator','salary calculator','tax calculator'],
-  openGraph: { title:'FreeFinCalc.net — ${total} Free Financial Calculators', description:'${total} free calculators in 40+ currencies.', url:'https://www.freefincalc.net', type:'website' },
-  alternates: { canonical:'https://www.freefincalc.net' },
+  openGraph: { title:'FreeFinCalc.net — ${total} Free Financial Calculators', description:'${total} free calculators in 40+ currencies.', url:'https://freefincalc.net', type:'website' },
+  alternates: { canonical:'https://freefincalc.net' },
 }
 
 const categories = ${JSON.stringify(cats)}

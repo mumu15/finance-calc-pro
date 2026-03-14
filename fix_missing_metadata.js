@@ -7,7 +7,7 @@ const path = require('path');
 
 const BASE = __dirname;
 const APP = path.join(BASE, 'app');
-const DOMAIN = 'https://www.freefincalc.net';
+const DOMAIN = 'https://freefincalc.net';
 let fixed = 0;
 let skipped = 0;
 let errors = [];

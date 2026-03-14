@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Profit Margin Calculator',
     description: 'Calculate gross, operating and net profit margin for any business. Find markup percentage and break-even revenue.',
-    url: 'https://www.freefincalc.net/profit-margin-calculator',
+    url: 'https://freefincalc.net/profit-margin-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

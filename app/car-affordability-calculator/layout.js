@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Car Affordability Calculator',
     description: 'Calculate how much car you can afford using the 20/4/10 rule. Find maximum car price based on income and budget.',
-    url: 'https://www.freefincalc.net/car-affordability-calculator',
+    url: 'https://freefincalc.net/car-affordability-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

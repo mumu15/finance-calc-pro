@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Home Buying Cost Calculator | FreeFinCalc',
   description: 'Free Home Buying Cost Calculator — estimate housing costs and make smarter real estate decisions. No sign-up.',
-  alternates: { canonical: 'https://www.freefincalc.net/home-buying-cost-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/home-buying-cost-calculator' },
   openGraph: {
     title: 'Home Buying Cost Calculator | FreeFinCalc',
     description: 'Free Home Buying Cost Calculator — estimate housing costs and make smarter real estate decisions. No sign-up.',
-    url: 'https://www.freefincalc.net/home-buying-cost-calculator',
+    url: 'https://freefincalc.net/home-buying-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

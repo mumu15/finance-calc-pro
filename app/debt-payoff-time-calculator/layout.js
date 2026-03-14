@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Debt Payoff Time Calculator',
     description: 'Calculate exactly how long to pay off any debt at your current payment. Find minimum payment required to make progress.',
-    url: 'https://www.freefincalc.net/debt-payoff-time-calculator',
+    url: 'https://freefincalc.net/debt-payoff-time-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

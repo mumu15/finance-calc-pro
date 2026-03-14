@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Balance Transfer Calculator',
     description: 'Calculate if a 0% balance transfer saves money vs keeping your current card. See net savings after transfer fee.',
-    url: 'https://www.freefincalc.net/balance-transfer-calculator',
+    url: 'https://freefincalc.net/balance-transfer-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

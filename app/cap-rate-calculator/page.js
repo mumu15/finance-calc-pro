@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Cap Rate Calculator | FreeFinCalc',
   description: 'Free Cap Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://www.freefincalc.net/cap-rate-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/cap-rate-calculator' },
   openGraph: {
     title: 'Cap Rate Calculator | FreeFinCalc',
     description: 'Free Cap Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://www.freefincalc.net/cap-rate-calculator',
+    url: 'https://freefincalc.net/cap-rate-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

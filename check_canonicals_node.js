@@ -1,6 +1,6 @@
 const https = require('https');
 
-const BASE = 'https://www.freefincalc.net';
+const BASE = 'https://freefincalc.net';
 
 // Test a sample from each section to verify canonicals are working
 const TEST_URLS = [

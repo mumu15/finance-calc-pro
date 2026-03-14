@@ -1,7 +1,7 @@
 const https = require('https');
 
 // Site redirects freefincalc.net → www.freefincalc.net, so check www directly
-const BASE = 'https://www.freefincalc.net';
+const BASE = 'https://freefincalc.net';
 
 const TEST_URLS = [
   '/','/about','/blog','/privacy-policy',
@@ -64,7 +64,7 @@ async function runCheck() {
   console.log('✅ OK: ' + ok + '  ❌ Missing: ' + missing + '  ⚠️  Wrong: ' + wrong + '  🔴 Errors: ' + errors);
   if (missing === 0 && wrong === 0 && errors === 0) {
     console.log('\n🎉 All canonicals correct! But note: your site uses www — make sure');
-    console.log('   canonical metadata uses https://www.freefincalc.net not https://freefincalc.net');
+    console.log('   canonical metadata uses https://freefincalc.net not https://freefincalc.net');
   } else {
     console.log('\n⚠️  Paste this output to fix remaining issues.');
   }

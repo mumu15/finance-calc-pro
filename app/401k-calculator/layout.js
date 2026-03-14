@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: '401k Calculator',
     description: 'Calculate your 401k balance at retirement with employer match, contribution rates and compound growth over time.',
-    url: 'https://www.freefincalc.net/401k-calculator',
+    url: 'https://freefincalc.net/401k-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

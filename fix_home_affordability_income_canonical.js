@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE = 'https://www.freefincalc.net';
+const BASE = 'https://freefincalc.net';
 let fixed = 0;
 
 // These are static individual folders under home-affordability-calculator/income/

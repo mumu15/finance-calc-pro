@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return {
     title: 'Student Loan Calculator for Supply Chain Majors | FreeFinCalc.net',
     description: 'Average student loan debt for Supply Chain majors is $28 000. Calculate your monthly payments and total repayment cost.',
-    alternates: { canonical: 'https://www.freefincalc.net/student-loan/major/supply-chain' },
+    alternates: { canonical: 'https://freefincalc.net/student-loan/major/supply-chain' },
   };
 }
 
@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Student Loan Calculator","url":"https://www.freefincalc.net/student-loan"},{"name":"Supply Chain","url":"https://www.freefincalc.net/student-loan/major/supply-chain"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Student Loan Calculator","url":"https://freefincalc.net/student-loan"},{"name":"Supply Chain","url":"https://freefincalc.net/student-loan/major/supply-chain"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

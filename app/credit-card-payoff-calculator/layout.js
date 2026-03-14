@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Credit Card Payoff Calculator',
     description: 'Calculate how long to pay off your credit card and total interest paid. Compare minimum payments vs fixed payments.',
-    url: 'https://www.freefincalc.net/credit-card-payoff-calculator',
+    url: 'https://freefincalc.net/credit-card-payoff-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

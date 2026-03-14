@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Portfolio Rebalancing Calculator',
     description: 'Calculate how to rebalance your investment portfolio to target allocations. See exact buy and sell amounts needed.',
-    url: 'https://www.freefincalc.net/portfolio-rebalancing-calculator',
+    url: 'https://freefincalc.net/portfolio-rebalancing-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

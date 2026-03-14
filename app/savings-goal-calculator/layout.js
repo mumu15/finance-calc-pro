@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Savings Goal Calculator',
     description: 'Calculate how long to reach any savings goal or monthly amount needed. Plan savings for any financial target.',
-    url: 'https://www.freefincalc.net/savings-goal-calculator',
+    url: 'https://freefincalc.net/savings-goal-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

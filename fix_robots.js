@@ -24,8 +24,8 @@ const robotsContent = `export default function robots() {
         ],
       },
     ],
-    sitemap: 'https://www.freefincalc.net/sitemap.xml',
-    host: 'https://www.freefincalc.net',
+    sitemap: 'https://freefincalc.net/sitemap.xml',
+    host: 'https://freefincalc.net',
   }
 }
 `
@@ -43,4 +43,4 @@ console.log('  ✅ /_next/static/css/*.css    (your styles)')
 console.log('  ✅ /_next/static/media/*      (fonts, images)')
 console.log('  ❌ /_next/server/*            (still blocked - internal only)')
 console.log('')
-console.log('Verify after deploy at: https://www.freefincalc.net/robots.txt')
+console.log('Verify after deploy at: https://freefincalc.net/robots.txt')

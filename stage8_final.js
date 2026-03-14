@@ -478,7 +478,7 @@ const allRoutes = [
 ]
 
 const sitemapContent = `export default function sitemap() {
-  const base = 'https://www.freefincalc.net'
+  const base = 'https://freefincalc.net'
   const routes = ${JSON.stringify(allRoutes, null, 4)}
 
   return routes.map(route => ({
@@ -504,8 +504,8 @@ const robotsContent = `export default function robots() {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://www.freefincalc.net/sitemap.xml',
-    host: 'https://www.freefincalc.net',
+    sitemap: 'https://freefincalc.net/sitemap.xml',
+    host: 'https://freefincalc.net',
   }
 }
 `
@@ -523,8 +523,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "FreeFinCalc",
-    "url": "https://www.freefincalc.net",
-    "logo": "https://www.freefincalc.net/icon.png",
+    "url": "https://freefincalc.net",
+    "logo": "https://freefincalc.net/icon.png",
     "description": "Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies.",
     "sameAs": []
   }
@@ -541,13 +541,13 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "FreeFinCalc",
-    "url": "https://www.freefincalc.net",
+    "url": "https://freefincalc.net",
     "description": "100+ free financial calculators. No sign-up required.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://www.freefincalc.net/?q={search_term_string}"
+        "urlTemplate": "https://freefincalc.net/?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -570,7 +570,7 @@ console.log('✅ components/StructuredData.js')
 const layoutSEO = `// ── PASTE THIS metadata export into app/layout.js (replace existing metadata) ──
 
 export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),
+  metadataBase: new URL('https://freefincalc.net'),
   title: {
     default: 'FreeFinCalc — 100+ Free Financial Calculators',
     template: '%s | FreeFinCalc',
@@ -588,7 +588,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.freefincalc.net',
+    url: 'https://freefincalc.net',
     siteName: 'FreeFinCalc',
     title: 'FreeFinCalc — 100+ Free Financial Calculators',
     description: 'Free financial calculators for mortgage, tax, retirement, investing and budgeting. No sign-up required.',
@@ -599,7 +599,7 @@ export const metadata = {
     description: 'Free financial calculators. 40+ currencies. No sign-up.',
   },
   alternates: {
-    canonical: 'https://www.freefincalc.net',
+    canonical: 'https://freefincalc.net',
   },
 }
 `
@@ -629,7 +629,7 @@ console.log(`
   git push origin master:main
 
   THEN submit sitemap to Google Search Console:
-  https://www.freefincalc.net/sitemap.xml
+  https://freefincalc.net/sitemap.xml
 ════════════════════════════════════════════════════
   TOTAL CALCULATORS ACROSS ALL STAGES:
   Stage 1 (foundation)  :  0 calculators

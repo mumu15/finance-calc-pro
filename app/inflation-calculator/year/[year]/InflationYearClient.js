@@ -20,8 +20,8 @@ export default function InflationYearClient({item:it,all}){
   ].map(e=>({...e,inflated:Math.round(e.then*it.multiplier)}))
   return(<div style={s.page}><Header/>
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: 'Inflation Calculator', url: 'https://www.freefincalc.net/inflation-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Inflation Calculator', url: 'https://freefincalc.net/inflation-calculator' }
   ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/inflation-calculator" style={s.bcA}>Inflation Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.year}</span></nav>
@@ -44,7 +44,7 @@ export default function InflationYearClient({item:it,all}){
     <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/inflation-calculator','Inflation Calculator'],['/purchasing-power-calculator','Purchasing Power'],['/cpi-calculator','CPI Calculator'],['/real-return-calculator','Real Return'],['/cost-of-living-calculator','Cost of Living']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>Inflation by Year</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/inflation-calculator/year/'+x.slug} style={s.tagA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Inflation Calculator","item":"https://www.freefincalc.net/inflation-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Inflation Calculator","item":"https://freefincalc.net/inflation-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Inflation Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer/></div>)
 }

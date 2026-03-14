@@ -21,8 +21,8 @@ export default function FourOhOneKClient({item:it,all}){
   const income=total*0.04/12
   return(<div style={s.page}><Header/>
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://www.freefincalc.net' },
-    { name: '401(k) Calculator', url: 'https://www.freefincalc.net/401k-calculator' }
+    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: '401(k) Calculator', url: 'https://freefincalc.net/401k-calculator' }
   ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/401k-calculator" style={s.bcA}>401k Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{fmt(salary)}/yr</span></nav>
@@ -45,7 +45,7 @@ export default function FourOhOneKClient({item:it,all}){
     <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/401k-calculator','401k Calculator'],['/retirement-calculator','Retirement Calculator'],['/roth-ira-calculator','Roth IRA'],['/traditional-ira-calculator','Traditional IRA'],['/social-security-calculator','Social Security']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>401k Calculator by Salary</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/401k-calculator/salary/'+x.slug} style={s.tagA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"401(k) Calculator","item":"https://www.freefincalc.net/401k-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"401(k) Calculator","item":"https://freefincalc.net/401k-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"401(k) Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer/></div>)
 }

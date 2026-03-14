@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Overtime Calculator | FreeFinCalc',
   description: 'Free Overtime Calculator — calculate your take-home pay, hourly rate, and tax withholdings. No sign-up.',
-  alternates: { canonical: 'https://www.freefincalc.net/overtime-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/overtime-calculator' },
   openGraph: {
     title: 'Overtime Calculator | FreeFinCalc',
     description: 'Free Overtime Calculator — calculate your take-home pay, hourly rate, and tax withholdings. No sign-up.',
-    url: 'https://www.freefincalc.net/overtime-calculator',
+    url: 'https://freefincalc.net/overtime-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

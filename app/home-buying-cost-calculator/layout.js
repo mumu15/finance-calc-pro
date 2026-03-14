@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Home Buying Cost Calculator',
     description: 'Calculate all upfront and ongoing costs of buying a home beyond the down payment. Know the true total cost.',
-    url: 'https://www.freefincalc.net/home-buying-cost-calculator',
+    url: 'https://freefincalc.net/home-buying-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

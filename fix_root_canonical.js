@@ -28,7 +28,7 @@ const nextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.freefincalc.net' }],
-        destination: 'https://www.freefincalc.net/:path*',
+        destination: 'https://freefincalc.net/:path*',
         permanent: true,
       },
     ]
@@ -54,7 +54,7 @@ if (!rootLayout.includes('metadataBase')) {
   rootLayout = rootLayout.replace(
     'export const metadata = {',
     `export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),`
+  metadataBase: new URL('https://freefincalc.net'),`
   )
   fs.writeFileSync(rootLayoutPath, rootLayout, 'utf8')
   console.log('✅ Root layout.js: metadataBase added')

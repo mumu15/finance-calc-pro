@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://www.freefincalc.net/car-loan-calculator/brand/${params.brand}` },
+    alternates: { canonical: `https://freefincalc.net/car-loan-calculator/brand/${params.brand}` },
   };
 }
 

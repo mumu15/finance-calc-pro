@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Rent vs Buy Calculator',
     description: 'Compare the true cost of renting vs buying a home over time. See which option builds more wealth in your situation.',
-    url: 'https://www.freefincalc.net/rent-vs-buy-calculator',
+    url: 'https://freefincalc.net/rent-vs-buy-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

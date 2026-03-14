@@ -11,7 +11,7 @@ export async function generateStaticParams() { return studentAmounts.map(x => ({
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://www.freefincalc.net/student-loan-calculator/amount/${params.amount}` },
+    alternates: { canonical: `https://freefincalc.net/student-loan-calculator/amount/${params.amount}` },
   };
 }
 

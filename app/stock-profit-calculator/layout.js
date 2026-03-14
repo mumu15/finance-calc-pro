@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Stock Profit Calculator',
     description: 'Calculate profit or loss on stock trades including commissions. See return on investment and annualized gain or loss.',
-    url: 'https://www.freefincalc.net/stock-profit-calculator',
+    url: 'https://freefincalc.net/stock-profit-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

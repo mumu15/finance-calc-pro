@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'VAT Calculator',
     description: 'Calculate VAT (Value Added Tax) for any amount and rate. Add or remove VAT from prices for UK, EU and global transactions.',
-    url: 'https://www.freefincalc.net/vat-calculator',
+    url: 'https://freefincalc.net/vat-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

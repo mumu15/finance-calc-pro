@@ -1,7 +1,7 @@
 // ── PASTE THIS metadata export into app/layout.js (replace existing metadata) ──
 
 export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),
+  metadataBase: new URL('https://freefincalc.net'),
   title: {
     default: 'FreeFinCalc — 100+ Free Financial Calculators',
     template: '%s | FreeFinCalc',
@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.freefincalc.net',
+    url: 'https://freefincalc.net',
     siteName: 'FreeFinCalc',
     title: 'FreeFinCalc — 100+ Free Financial Calculators',
     description: 'Free financial calculators for mortgage, tax, retirement, investing and budgeting. No sign-up required.',
@@ -30,6 +30,6 @@ export const metadata = {
     description: 'Free financial calculators. 40+ currencies. No sign-up.',
   },
   alternates: {
-    canonical: 'https://www.freefincalc.net',
+    canonical: 'https://freefincalc.net',
   },
 }

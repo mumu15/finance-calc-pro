@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'CD Calculator | FreeFinCalc',
   description: 'Free CD Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://www.freefincalc.net/cd-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/cd-calculator' },
   openGraph: {
     title: 'CD Calculator | FreeFinCalc',
     description: 'Free CD Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://www.freefincalc.net/cd-calculator',
+    url: 'https://freefincalc.net/cd-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

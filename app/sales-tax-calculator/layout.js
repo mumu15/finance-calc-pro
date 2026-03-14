@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Sales Tax Calculator',
     description: 'Calculate sales tax amount and total price for any purchase. Look up rates by state and find the pre-tax price from total.',
-    url: 'https://www.freefincalc.net/sales-tax-calculator',
+    url: 'https://freefincalc.net/sales-tax-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

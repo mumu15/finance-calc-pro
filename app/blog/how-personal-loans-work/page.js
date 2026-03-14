@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/how-personal-loans-work' },
+  alternates: { canonical: 'https://freefincalc.net/blog/how-personal-loans-work' },
   title: 'How Personal Loans Work: Everything You Need to Know (2026)',
   description: 'Learn how personal loans work in 2026. Includes interest rates, approval requirements, how to compare lenders and when a personal loan makes sense.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How Personal Loans Work","url":"https://www.freefincalc.net/blog/how-personal-loans-work"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How Personal Loans Work","url":"https://freefincalc.net/blog/how-personal-loans-work"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/what-is-passive-income' },
+  alternates: { canonical: 'https://freefincalc.net/blog/what-is-passive-income' },
   title: 'What Is Passive Income? 12 Real Ways to Earn It in 2026',
   description: 'Learn what passive income is and 12 legitimate ways to earn it in 2026. From dividends to rental income, this guide covers real options for every budget.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"What Is Passive Income","url":"https://www.freefincalc.net/blog/what-is-passive-income"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"What Is Passive Income","url":"https://freefincalc.net/blog/what-is-passive-income"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

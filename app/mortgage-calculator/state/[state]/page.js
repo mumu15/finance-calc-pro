@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://www.freefincalc.net/mortgage-calculator/state/${params.state}` },
+    alternates: { canonical: `https://freefincalc.net/mortgage-calculator/state/${params.state}` },
   };
 }
 

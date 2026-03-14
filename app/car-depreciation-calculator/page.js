@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Car Depreciation Calculator | FreeFinCalc',
   description: 'Free Car Depreciation Calculator — calculate auto costs, monthly payments, and total expenses. No sign-up.',
-  alternates: { canonical: 'https://www.freefincalc.net/car-depreciation-calculator' },
+  alternates: { canonical: 'https://freefincalc.net/car-depreciation-calculator' },
   openGraph: {
     title: 'Car Depreciation Calculator | FreeFinCalc',
     description: 'Free Car Depreciation Calculator — calculate auto costs, monthly payments, and total expenses. No sign-up.',
-    url: 'https://www.freefincalc.net/car-depreciation-calculator',
+    url: 'https://freefincalc.net/car-depreciation-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'ROI Calculator',
     description: 'Calculate return on investment (ROI) for any business or personal investment. Compare investments with annualized ROI.',
-    url: 'https://www.freefincalc.net/roi-calculator',
+    url: 'https://freefincalc.net/roi-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

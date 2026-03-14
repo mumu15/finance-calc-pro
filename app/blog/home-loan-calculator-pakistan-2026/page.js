@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://www.freefincalc.net/blog/home-loan-calculator-pakistan-2026' },
+  alternates: { canonical: 'https://freefincalc.net/blog/home-loan-calculator-pakistan-2026' },
  title: 'Home Loan EMI Calculator Pakistan 2026: Banks, Rates and Guide',
  description: 'Calculate your home loan EMI in Pakistani Rupees. Compare HBL, UBL, Meezan Bank and MCB rates. Includes Islamic vs conventional loan guide for 2026.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
  <>
  <FaqSchema faqs={faqs} />
  <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"Home Loan Calculator Pakistan 2026","url":"https://www.freefincalc.net/blog/home-loan-calculator-pakistan-2026"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"Home Loan Calculator Pakistan 2026","url":"https://freefincalc.net/blog/home-loan-calculator-pakistan-2026"}]} includeReview={true} />
  <main className="max-w-4xl mx-auto px-4 py-12">
  <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
  <article>

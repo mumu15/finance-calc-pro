@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Debt-to-Income Ratio Calculator',
     description: 'Calculate your debt-to-income (DTI) ratio to see if you qualify for a mortgage or loan. Know your DTI before applying.',
-    url: 'https://www.freefincalc.net/debt-to-income-calculator',
+    url: 'https://freefincalc.net/debt-to-income-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -24,7 +24,7 @@ const nextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.freefincalc.net' }],
-        destination: 'https://www.freefincalc.net/:path*',
+        destination: 'https://freefincalc.net/:path*',
         permanent: true,
       },
     ]
@@ -94,7 +94,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://www.freefincalc.net'),
+  metadataBase: new URL('https://freefincalc.net'),
   title: 'Free Financial Calculators — FreeFinCalc.net',
   description: 'Free online financial calculators for mortgage, loans, retirement, investments, taxes and more. 124 calculators, instant results, no sign-up required.',
   keywords: 'financial calculator, mortgage calculator, loan calculator, retirement calculator, investment calculator',
@@ -103,7 +103,7 @@ export const metadata = {
   openGraph: {
     title: 'Free Financial Calculators — FreeFinCalc.net',
     description: '124 free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
-    url: 'https://www.freefincalc.net',
+    url: 'https://freefincalc.net',
     siteName: 'FreeFinCalc',
     type: 'website',
   },
@@ -113,7 +113,7 @@ export const metadata = {
     description: '124 free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
   },
   alternates: {
-    canonical: 'https://www.freefincalc.net',
+    canonical: 'https://freefincalc.net',
   },
   robots: {
     index: true,

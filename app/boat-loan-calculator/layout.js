@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Boat Loan Calculator',
     description: 'Calculate monthly boat loan payments, total interest and annual ownership cost. Finance any boat with confidence.',
-    url: 'https://www.freefincalc.net/boat-loan-calculator',
+    url: 'https://freefincalc.net/boat-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Moving Cost Calculator',
     description: 'Estimate total moving costs including movers, truck rental, packing and travel. Budget your relocation accurately.',
-    url: 'https://www.freefincalc.net/moving-cost-calculator',
+    url: 'https://freefincalc.net/moving-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },
