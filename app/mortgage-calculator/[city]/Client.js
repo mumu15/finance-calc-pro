@@ -161,7 +161,7 @@ export default function CityMortgagePage() {
               <span>Home Price</span>
               <span style={styles.inputVal}>${fmt(homePrice)}</span>
             </div>
-            <input type="text" inputMode="decimal"
+            <input type="number" step="any"
               value={homePrice} onChange={e => setHomePrice(+e.target.value)}
               className="calc-input" />
           </div>
@@ -171,7 +171,7 @@ export default function CityMortgagePage() {
               <span>Down Payment</span>
               <span style={styles.inputVal}>{downPct}% (${fmt(homePrice * downPct / 100)})</span>
             </div>
-            <input type="text" inputMode="decimal"
+            <input type="number" step="any"
               value={downPct} onChange={e => setDownPct(+e.target.value)}
               className="calc-input" />
           </div>
@@ -181,7 +181,7 @@ export default function CityMortgagePage() {
               <span>Interest Rate</span>
               <span style={styles.inputVal}>{rate}%</span>
             </div>
-            <input type="text" inputMode="decimal"
+            <input type="number" step="any"
               value={rate} onChange={e => setRate(+e.target.value)}
               className="calc-input" />
           </div>
@@ -191,7 +191,7 @@ export default function CityMortgagePage() {
               <span>Loan Term</span>
               <span style={styles.inputVal}>{years} years</span>
             </div>
-            <input type="text" inputMode="decimal"
+            <input type="number" step="any"
               value={years} onChange={e => setYears(+e.target.value)}
               className="calc-input" />
           </div>

@@ -271,7 +271,7 @@ export default function HomePage() {
           <div className="relative max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-6"
               style={{background:'rgba(240,200,66,0.1)',border:'1px solid rgba(240,200,66,0.25)',color:'#f0c842'}}>
-              ✦ 124 Free Financial Calculators — No Sign-Up Required
+              ✦ 470+ Free Financial Calculators — No Sign-Up Required
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Free Financial<br />
@@ -305,7 +305,7 @@ export default function HomePage() {
 
             {/* Stats */}
             <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-              {[['124','Calculators'],['41','Blog Guides'],['40+','Currencies'],['0','Sign-ups needed']].map(([n,l]) => (
+              {[["470+",'Calculators'],['41','Blog Guides'],['40+','Currencies'],['0','Sign-ups needed']].map(([n,l]) => (
                 <div key={l} className="flex items-center gap-2">
                   <span className="font-bold text-white text-base">{n}</span>
                   <span>{l}</span>

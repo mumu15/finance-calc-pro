@@ -65,7 +65,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Wedding Budget</label>
                   <span className="text-white font-bold text-sm">{fmt(totalBudget)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1000} max={200000} step={500}
+                <input type="number" step="any" min={1000} max={200000} step={500}
                   value={totalBudget} onChange={e => setTotalBudget(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -75,7 +75,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Number of Guests</label>
                   <span className="text-white font-bold text-sm">{`${guestCount} guests`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={10} max={500} step={5}
+                <input type="number" step="any" min={10} max={500} step={5}
                   value={guestCount} onChange={e => setGuestCount(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -85,7 +85,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Venue Budget %</label>
                   <span className="text-white font-bold text-sm">{`${venuePct}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={10} max={50} step={1}
+                <input type="number" step="any" min={10} max={50} step={1}
                   value={venuePct} onChange={e => setVenuePct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -95,7 +95,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Catering Budget %</label>
                   <span className="text-white font-bold text-sm">{`${cateringPct}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={10} max={45} step={1}
+                <input type="number" step="any" min={10} max={45} step={1}
                   value={cateringPct} onChange={e => setCateringPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -105,7 +105,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Photography and Video %</label>
                   <span className="text-white font-bold text-sm">{`${photoPct}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={5} max={20} step={1}
+                <input type="number" step="any" min={5} max={20} step={1}
                   value={photoPct} onChange={e => setPhotoPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -115,7 +115,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Flowers and Decor %</label>
                   <span className="text-white font-bold text-sm">{`${flowersPct}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={2} max={20} step={1}
+                <input type="number" step="any" min={2} max={20} step={1}
                   value={flowersPct} onChange={e => setFlowersPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

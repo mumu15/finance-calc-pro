@@ -60,7 +60,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Starting Investment Value</label>
                   <span className="text-white font-bold text-sm">{fmt(startValue)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={100} max={1000000} step={100}
+                <input type="number" step="any" min={100} max={1000000} step={100}
                   value={startValue} onChange={e => setStartValue(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -70,7 +70,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Ending Investment Value</label>
                   <span className="text-white font-bold text-sm">{fmt(endValue)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={100} max={5000000} step={100}
+                <input type="number" step="any" min={100} max={5000000} step={100}
                   value={endValue} onChange={e => setEndValue(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -80,7 +80,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Investment Period</label>
                   <span className="text-white font-bold text-sm">{`${years} yrs`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={50} step={0.5}
+                <input type="number" step="any" min={1} max={50} step={0.5}
                   value={years} onChange={e => setYears(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -90,7 +90,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Dividends Received</label>
                   <span className="text-white font-bold text-sm">{fmt(dividends)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={500000} step={100}
+                <input type="number" step="any" min={0} max={500000} step={100}
                   value={dividends} onChange={e => setDividends(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -100,7 +100,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Inflation Rate (for real return)</label>
                   <span className="text-white font-bold text-sm">{`${inflationRate}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={10} step={0.25}
+                <input type="number" step="any" min={0} max={10} step={0.25}
                   value={inflationRate} onChange={e => setInflationRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

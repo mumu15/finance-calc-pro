@@ -59,7 +59,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Years of Service</label>
                   <span className="text-white font-bold text-sm">{`${yearsService} yrs`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={45} step={1}
+                <input type="number" step="any" min={1} max={45} step={1}
                   value={yearsService} onChange={e => setYearsService(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -69,7 +69,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Final Average Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(finalSalary)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={10000} max={500000} step={1000}
+                <input type="number" step="any" min={10000} max={500000} step={1000}
                   value={finalSalary} onChange={e => setFinalSalary(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -79,7 +79,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Benefit Multiplier Per Year</label>
                   <span className="text-white font-bold text-sm">{`${multiplier}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0.5} max={3} step={0.1}
+                <input type="number" step="any" min={0.5} max={3} step={0.1}
                   value={multiplier} onChange={e => setMultiplier(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -89,7 +89,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Retirement Age</label>
                   <span className="text-white font-bold text-sm">{`${retireAge} yrs`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={50} max={70} step={1}
+                <input type="number" step="any" min={50} max={70} step={1}
                   value={retireAge} onChange={e => setRetireAge(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

@@ -63,7 +63,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan Principal</label>
                   <span className="text-white font-bold text-sm">{fmt(principal)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={100} max={2000000} step={100}
+                <input type="number" step="any" min={100} max={2000000} step={100}
                   value={principal} onChange={e => setPrincipal(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -73,7 +73,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${rate}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={36} step={0.25}
+                <input type="number" step="any" min={0} max={36} step={0.25}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -83,7 +83,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan Term</label>
                   <span className="text-white font-bold text-sm">{`${termYears} yrs`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={30} step={1}
+                <input type="number" step="any" min={1} max={30} step={1}
                   value={termYears} onChange={e => setTermYears(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

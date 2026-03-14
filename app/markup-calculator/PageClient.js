@@ -55,7 +55,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Cost Price</label>
                   <span className="text-white font-bold text-sm">{fmt(cost)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0.01} max={100000} step={0.01}
+                <input type="number" step="any" min={0.01} max={100000} step={0.01}
                   value={cost} onChange={e => setCost(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -65,7 +65,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Markup Percentage</label>
                   <span className="text-white font-bold text-sm">{`${markupPct}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={500} step={1}
+                <input type="number" step="any" min={0} max={500} step={1}
                   value={markupPct} onChange={e => setMarkupPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -75,7 +75,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Units Sold Per Month</label>
                   <span className="text-white font-bold text-sm">{`${units} units`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={100000} step={1}
+                <input type="number" step="any" min={1} max={100000} step={1}
                   value={units} onChange={e => setUnits(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

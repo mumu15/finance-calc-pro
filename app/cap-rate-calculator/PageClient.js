@@ -86,7 +86,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Gross Rent</label>
                   <span className="text-white font-bold text-sm">{fmt(annualRent)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1000} max={1000000} step={500}
+                <input type="number" step="any" min={1000} max={1000000} step={500}
                   value={annualRent} onChange={e => setAnnualRent(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -96,7 +96,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Operating Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(opExpenses)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={500000} step={500}
+                <input type="number" step="any" min={0} max={500000} step={500}
                   value={opExpenses} onChange={e => setOpExpenses(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -106,7 +106,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Property Price</label>
                   <span className="text-white font-bold text-sm">{fmt(propertyPrice)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={50000} max={10000000} step={5000}
+                <input type="number" step="any" min={50000} max={10000000} step={5000}
                   value={propertyPrice} onChange={e => setPropertyPrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -116,7 +116,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Cap Rate (for valuation)</label>
                   <span className="text-white font-bold text-sm">{`${targetCapRate}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={15} step={0.25}
+                <input type="number" step="any" min={1} max={15} step={0.25}
                   value={targetCapRate} onChange={e => setTargetCapRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

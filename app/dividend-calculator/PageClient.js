@@ -77,7 +77,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Number of Shares</label>
                   <span className="text-white font-bold text-sm">{shares + " shares"}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={10000} step={10}
+                <input type="number" step="any" min={1} max={10000} step={10}
                   value={shares} onChange={e => setShares(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -87,7 +87,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Share Price</label>
                   <span className="text-white font-bold text-sm">{fmt(sharePrice)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={5000} step={1}
+                <input type="number" step="any" min={1} max={5000} step={1}
                   value={sharePrice} onChange={e => setSharePrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -97,7 +97,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Dividend Per Share</label>
                   <span className="text-white font-bold text-sm">{fmt(annualDividend)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0.01} max={50} step={0.01}
+                <input type="number" step="any" min={0.01} max={50} step={0.01}
                   value={annualDividend} onChange={e => setAnnualDividend(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -107,7 +107,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Dividend Growth Rate (annual)</label>
                   <span className="text-white font-bold text-sm">{growthRate + "%"}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={20} step={0.5}
+                <input type="number" step="any" min={0} max={20} step={0.5}
                   value={growthRate} onChange={e => setGrowthRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -117,7 +117,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Investment Horizon</label>
                   <span className="text-white font-bold text-sm">{years + " yrs"}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={40} step={1}
+                <input type="number" step="any" min={1} max={40} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

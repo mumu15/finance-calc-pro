@@ -65,7 +65,7 @@ export default function Calculator() {
                     <label className="text-slate-400 text-sm">{f.label}</label>
                     <span className="text-white font-bold text-sm">{f.val}</span>
                   </div>
-                  <input type="text" inputMode="decimal" min={f.min} max={f.max} step={f.step}
+                  <input type="number" step="any" min={f.min} max={f.max} step={f.step}
                     value={f.v} onChange={e => f.set(Number(e.target.value))}
                     className="slider-upgrade" />
                 </div>

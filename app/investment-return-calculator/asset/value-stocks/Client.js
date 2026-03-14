@@ -30,19 +30,19 @@ export default function Client() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Initial Investment ($)</label>
-            <input type="text" inputMode="decimal" value={principal} onChange={e => setPrincipal(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="0" step="1000" />
+            <input type="number" step="any" value={principal} onChange={e => setPrincipal(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="0" step="1000" />
           </div>
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Monthly Contribution ($)</label>
-            <input type="text" inputMode="decimal" value={monthly} onChange={e => setMonthly(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="0" step="100" />
+            <input type="number" step="any" value={monthly} onChange={e => setMonthly(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="0" step="100" />
           </div>
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Annual Return (%)</label>
-            <input type="text" inputMode="decimal" value={rate} onChange={e => setRate(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="0.1" max="50" step="0.5" />
+            <input type="number" step="any" value={rate} onChange={e => setRate(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="0.1" max="50" step="0.5" />
           </div>
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Time Period (years)</label>
-            <input type="text" inputMode="decimal" value={years} onChange={e => setYears(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="1" max="50" step="1" />
+            <input type="number" step="any" value={years} onChange={e => setYears(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-emerald-400 transition-colors" min="1" max="50" step="1" />
           </div>
         </div>
         <button onClick={calculate} className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-4 rounded-xl text-lg transition-colors">Calculate Investment Return</button>

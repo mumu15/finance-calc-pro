@@ -66,7 +66,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Recurring Revenue (MRR)</label>
                   <span className="text-white font-bold text-sm">{fmt(mrr)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={10000000} step={1000}
+                <input type="number" step="any" min={0} max={10000000} step={1000}
                   value={mrr} onChange={e => setMrr(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -76,7 +76,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Active Customers</label>
                   <span className="text-white font-bold text-sm">{`${customers} customers`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={100000} step={10}
+                <input type="number" step="any" min={1} max={100000} step={10}
                   value={customers} onChange={e => setCustomers(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -86,7 +86,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Churn Rate</label>
                   <span className="text-white font-bold text-sm">{`${churnRate}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0.1} max={20} step={0.1}
+                <input type="number" step="any" min={0.1} max={20} step={0.1}
                   value={churnRate} onChange={e => setChurnRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -96,7 +96,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Customer Acquisition Cost (CAC)</label>
                   <span className="text-white font-bold text-sm">{fmt(cac)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={50000} step={50}
+                <input type="number" step="any" min={0} max={50000} step={50}
                   value={cac} onChange={e => setCac(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -106,7 +106,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Gross Margin</label>
                   <span className="text-white font-bold text-sm">{`${grossMargin}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={10} max={95} step={5}
+                <input type="number" step="any" min={10} max={95} step={5}
                   value={grossMargin} onChange={e => setGrossMargin(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -116,7 +116,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly MRR Growth Rate</label>
                   <span className="text-white font-bold text-sm">{`${mrrGrowthRate}%`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={30} step={0.5}
+                <input type="number" step="any" min={0} max={30} step={0.5}
                   value={mrrGrowthRate} onChange={e => setMrrGrowthRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

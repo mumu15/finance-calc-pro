@@ -63,7 +63,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Number of Qualifying Children (under 17)</label>
                   <span className="text-white font-bold text-sm">{`${numChildren} kids`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={10} step={1}
+                <input type="number" step="any" min={1} max={10} step={1}
                   value={numChildren} onChange={e => setNumChildren(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -73,7 +73,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Adjusted Gross Income (AGI)</label>
                   <span className="text-white font-bold text-sm">{fmt(agi)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={500000} step={1000}
+                <input type="number" step="any" min={0} max={500000} step={1000}
                   value={agi} onChange={e => setAgi(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -100,7 +100,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Your Federal Tax Liability</label>
                   <span className="text-white font-bold text-sm">{fmt(taxLiability)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={100000} step={100}
+                <input type="number" step="any" min={0} max={100000} step={100}
                   value={taxLiability} onChange={e => setTaxLiability(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

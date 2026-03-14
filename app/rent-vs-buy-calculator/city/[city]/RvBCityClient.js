@@ -31,10 +31,10 @@ export default function RvBCityClient({item:it,all}){
     <h1 style={s.h1}>Rent vs Buy in {it.name} 2026</h1>
     <p style={s.sub}>Median home price: {fmt(it.medianHome)} | Median rent: {fmt(it.medianRent)}/mo | Appreciation: {it.appreciation}%/yr</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Home Price</label><div style={s.val}>{fmt(home)}</div><input type="text" inputMode="decimal" value={home} onChange={e=>setHome(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Monthly Rent</label><div style={s.val}>{fmt(rent)}/mo</div><input type="text" inputMode="decimal" value={rent} onChange={e=>setRent(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Mortgage Rate</label><div style={s.val}>{rate}%</div><input type="text" inputMode="decimal" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>How Long You Stay</label><div style={s.val}>{years} years</div><input type="text" inputMode="decimal" value={years} onChange={e=>setYears(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Home Price</label><div style={s.val}>{fmt(home)}</div><input type="number" step="any" value={home} onChange={e=>setHome(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Monthly Rent</label><div style={s.val}>{fmt(rent)}/mo</div><input type="number" step="any" value={rent} onChange={e=>setRent(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Mortgage Rate</label><div style={s.val}>{rate}%</div><input type="number" step="any" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>How Long You Stay</label><div style={s.val}>{years} years</div><input type="number" step="any" value={years} onChange={e=>setYears(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>{years}-Year Comparison in {it.name}</h2>

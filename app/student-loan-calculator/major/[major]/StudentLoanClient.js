@@ -58,17 +58,17 @@ export default function StudentLoanClient({ major, allMajors }) {
           <div style={s.card}>
             <label style={s.lbl}>Total Student Debt</label>
             <div style={s.val}>{fmt(debt)}</div>
-            <input type="text" inputMode="decimal" value={debt} onChange={e => setDebt(+e.target.value)} className="calc-input" />
+            <input type="number" step="any" value={debt} onChange={e => setDebt(+e.target.value)} className="calc-input" />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Interest Rate</label>
             <div style={s.val}>{rate}%</div>
-            <input type="text" inputMode="decimal" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
+            <input type="number" step="any" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
           </div>
           <div style={{...s.card, gridColumn:'span 2'}}>
             <label style={s.lbl}>Repayment Term (months)</label>
             <div style={s.val}>{term} months ({Math.round(term/12)} years)</div>
-            <input type="text" inputMode="decimal" value={term} onChange={e => setTerm(+e.target.value)} className="calc-input" />
+            <input type="number" step="any" value={term} onChange={e => setTerm(+e.target.value)} className="calc-input" />
           </div>
         </div>
         <div style={s.box}>

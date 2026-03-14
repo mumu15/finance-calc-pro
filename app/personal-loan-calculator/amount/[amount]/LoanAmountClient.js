@@ -24,9 +24,9 @@ export default function LoanAmountClient({item:it,all}){
     <h1 style={s.h1}>{fmt(amount)} Personal Loan Calculator</h1>
     <p style={s.sub}>Calculate exact monthly payments, total interest, and total cost for a {fmt(amount)} personal loan.</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Loan Amount</label><div style={s.val}>{fmt(amount)}</div><input type="text" inputMode="decimal" value={amount} onChange={e=>setAmount(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Interest Rate (APR)</label><div style={s.val}>{rate}%</div><input type="text" inputMode="decimal" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
-      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Loan Term</label><div style={s.val}>{term} months ({(term/12).toFixed(1)} years)</div><input type="text" inputMode="decimal" value={term} onChange={e=>setTerm(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Loan Amount</label><div style={s.val}>{fmt(amount)}</div><input type="number" step="any" value={amount} onChange={e=>setAmount(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Interest Rate (APR)</label><div style={s.val}>{rate}%</div><input type="number" step="any" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
+      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Loan Term</label><div style={s.val}>{term} months ({(term/12).toFixed(1)} years)</div><input type="number" step="any" value={term} onChange={e=>setTerm(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Loan Payment Summary</h2>

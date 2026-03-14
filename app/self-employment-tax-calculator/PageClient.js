@@ -71,7 +71,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Net Self-Employment Profit</label>
                   <span className="text-white font-bold text-sm">{fmt(netProfit)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={400} max={500000} step={500}
+                <input type="number" step="any" min={400} max={500000} step={500}
                   value={netProfit} onChange={e => setNetProfit(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -81,7 +81,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Other W-2 or Taxable Income</label>
                   <span className="text-white font-bold text-sm">{fmt(otherIncome)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={500000} step={500}
+                <input type="number" step="any" min={0} max={500000} step={500}
                   value={otherIncome} onChange={e => setOtherIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -108,7 +108,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Self-Employed Retirement Contrib</label>
                   <span className="text-white font-bold text-sm">{fmt(retirement)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={69000} step={500}
+                <input type="number" step="any" min={0} max={69000} step={500}
                   value={retirement} onChange={e => setRetirement(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

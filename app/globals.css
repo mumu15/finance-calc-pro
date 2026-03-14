@@ -285,17 +285,11 @@ input[type="number"].slider-upgrade:focus {
   background: #131620 !important;
 }
 
-/* Text input overrides for calculator fields */
-input[type="text"].calc-input,
-input[type="text"].slider-upgrade {
-  -moz-appearance: none !important;
-  -webkit-appearance: none !important;
-  appearance: none !important;
-}
 
-/* UNIVERSAL INPUT OVERRIDE */
-input[type="text"][inputmode="decimal"],
-input[type="text"][inputMode="decimal"] {
+/* DEFINITIVE CALCULATOR INPUT STYLES */
+input[type="number"],
+input.calc-input,
+input.slider-upgrade {
   width: 100% !important;
   background: #0f1117 !important;
   border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
@@ -306,19 +300,29 @@ input[type="text"][inputMode="decimal"] {
   font-weight: 700 !important;
   font-family: inherit !important;
   outline: none !important;
-  -moz-appearance: none !important;
-  -webkit-appearance: none !important;
-  appearance: none !important;
   transition: border-color 0.2s, box-shadow 0.2s !important;
+  -moz-appearance: textfield !important;
 }
-input[type="text"][inputmode="decimal"]:hover,
-input[type="text"][inputMode="decimal"]:hover {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+input[type="number"]:hover,
+input.calc-input:hover,
+input.slider-upgrade:hover {
   border-color: rgba(240, 200, 66, 0.4) !important;
   background: #131620 !important;
 }
-input[type="text"][inputmode="decimal"]:focus,
-input[type="text"][inputMode="decimal"]:focus {
+input[type="number"]:focus,
+input.calc-input:focus,
+input.slider-upgrade:focus {
   border-color: #f0c842 !important;
   box-shadow: 0 0 0 3px rgba(240, 200, 66, 0.15) !important;
   background: #131620 !important;
+}
+input[type="number"]::placeholder,
+input.calc-input::placeholder {
+  color: #475569 !important;
+  font-weight: 400 !important;
 }

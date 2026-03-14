@@ -75,7 +75,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Home Value</label>
                   <span className="text-white font-bold text-sm">{fmt(homeValue)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={50000} max={2000000} step={5000}
+                <input type="number" step="any" min={50000} max={2000000} step={5000}
                   value={homeValue} onChange={e => setHomeValue(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -85,7 +85,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Remaining Mortgage Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(mortgageBalance)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={1500000} step={5000}
+                <input type="number" step="any" min={0} max={1500000} step={5000}
                   value={mortgageBalance} onChange={e => setMortgageBalance(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -108,7 +108,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">HELOC Interest Rate</label>
                   <span className="text-white font-bold text-sm">{helocRate + "%"}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={4} max={15} step={0.25}
+                <input type="number" step="any" min={4} max={15} step={0.25}
                   value={helocRate} onChange={e => setHelocRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -118,7 +118,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Amount to Draw</label>
                   <span className="text-white font-bold text-sm">{fmt(drawAmount)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={500000} step={1000}
+                <input type="number" step="any" min={0} max={500000} step={1000}
                   value={drawAmount} onChange={e => setDrawAmount(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

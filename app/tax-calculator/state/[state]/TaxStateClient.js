@@ -53,7 +53,7 @@ export default function TaxStateClient({ item: s, all }) {
         <div style={st.card}>
           <label style={st.lbl}>Annual Income</label>
           <div style={st.val}>{fmt(income)}/year</div>
-          <input type="text" inputMode="decimal" value={income} onChange={e => setIncome(+e.target.value)} className="calc-input" />
+          <input type="number" step="any" value={income} onChange={e => setIncome(+e.target.value)} className="calc-input" />
         </div>
 
         <div style={st.card}>

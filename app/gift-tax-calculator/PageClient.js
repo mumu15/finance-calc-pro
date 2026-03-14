@@ -67,7 +67,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Gift Amount This Year</label>
                   <span className="text-white font-bold text-sm">{fmt(giftAmount)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={10000000} step={1000}
+                <input type="number" step="any" min={0} max={10000000} step={1000}
                   value={giftAmount} onChange={e => setGiftAmount(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -77,7 +77,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Number of Recipients</label>
                   <span className="text-white font-bold text-sm">{`${numRecipients} people`}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={1} max={20} step={1}
+                <input type="number" step="any" min={1} max={20} step={1}
                   value={numRecipients} onChange={e => setNumRecipients(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -87,7 +87,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Prior Lifetime Gifts Used</label>
                   <span className="text-white font-bold text-sm">{fmt(priorLifetime)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={13000000} step={10000}
+                <input type="number" step="any" min={0} max={13000000} step={10000}
                   value={priorLifetime} onChange={e => setPriorLifetime(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

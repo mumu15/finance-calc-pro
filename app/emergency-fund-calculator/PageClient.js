@@ -73,7 +73,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Essential Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyExpenses)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={500} max={20000} step={100}
+                <input type="number" step="any" min={500} max={20000} step={100}
                   value={monthlyExpenses} onChange={e => setMonthlyExpenses(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -96,7 +96,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Emergency Savings</label>
                   <span className="text-white font-bold text-sm">{fmt(currentSavings)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={0} max={100000} step={500}
+                <input type="number" step="any" min={0} max={100000} step={500}
                   value={currentSavings} onChange={e => setCurrentSavings(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -106,7 +106,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Savings Contribution</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlySave)}</span>
                 </div>
-                <input type="text" inputMode="decimal" min={50} max={5000} step={50}
+                <input type="number" step="any" min={50} max={5000} step={50}
                   value={monthlySave} onChange={e => setMonthlySave(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
