@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-// ── All 124 calculators organized into categories ─────────────────────────────
+// ── All 470+ calculators organized into categories ─────────────────────────────
 const CATEGORIES = [
   {
     id: 'mortgage',
@@ -265,32 +265,32 @@ export default function HomePage() {
       <main>
 
         {/* ── Hero ──────────────────────────────────────────────────────────── */}
-        <section className="relative py-20 px-4 text-center overflow-hidden">
+        <section className="relative py-8 px-4 text-center overflow-hidden">
           <div className="absolute inset-0 pointer-events-none"
             style={{background:'radial-gradient(ellipse 80% 60% at 50% 0%,rgba(240,200,66,0.08) 0%,transparent 70%)'}} />
           <div className="relative max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-6"
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold mb-3"
               style={{background:'rgba(240,200,66,0.1)',border:'1px solid rgba(240,200,66,0.25)',color:'#f0c842'}}>
               ✦ 470+ Free Financial Calculators — No Sign-Up Required
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               Free Financial<br />
               <span style={{color:'#f0c842'}}>Calculators</span>
             </h1>
-            <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-10">
+            <p className="text-slate-400 text-base max-w-2xl mx-auto mb-5">
               Mortgage, tax, retirement, investing, debt — every calculator you need.
               Instant results, 40+ currencies, completely free.
             </p>
 
             {/* Search */}
-            <div className="relative max-w-xl mx-auto mb-6">
+            <div className="relative max-w-xl mx-auto mb-4">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-lg">🔍</span>
               <input
                 type="text"
-                placeholder="Search 124 calculators..."
+                placeholder="Search 470+ calculators..."
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                className="w-full pl-12 pr-6 py-4 rounded-2xl text-white text-base outline-none"
+                className="w-full pl-12 pr-6 py-3 rounded-2xl text-white text-sm outline-none"
                 style={{
                   background:'rgba(255,255,255,0.06)',
                   border:'1px solid rgba(255,255,255,0.12)',
@@ -346,7 +346,7 @@ export default function HomePage() {
                     border: activeTab === 'all' ? '1px solid rgba(240,200,66,0.4)' : '1px solid rgba(255,255,255,0.08)',
                     color: activeTab === 'all' ? '#f0c842' : '#64748b',
                   }}>
-                  All (124)
+                  All (470+)
                 </button>
                 {CATEGORIES.map(cat => (
                   <button key={cat.id}
