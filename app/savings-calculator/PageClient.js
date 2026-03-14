@@ -195,6 +195,14 @@ export default function SavingsCalculator() {
           </div>
         </div>
 
+        {/* How to Use Guide */}
+        <div style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)',borderRadius:16,padding:28,marginTop:32,marginBottom:32,maxWidth:900,marginLeft:'auto',marginRight:'auto'}}>
+          <h2 style={{fontSize:20,fontWeight:700,color:'#f0c842',marginBottom:16,marginTop:0}}>How to Use the Savings Calculator</h2>
+          <p style={{fontSize:15,color:'#94a3b8',lineHeight:1.8,margin:'0 0 20px'}}>Start by entering your values using the sliders above. Each input updates the results instantly in real time. Adjust different scenarios to compare outcomes — for example, see how a higher contribution or a different rate changes your results. All calculations happen in your browser so your data stays completely private. You can download the results as a PDF for your records or to share with a financial advisor.</p>
+          <h2 style={{fontSize:20,fontWeight:700,color:'#f0c842',marginBottom:16,marginTop:0}}>Why This Calculator Matters</h2>
+          <p style={{fontSize:15,color:'#94a3b8',lineHeight:1.8,margin:0}}>Making informed savings decisions can save you thousands of dollars over time. Many people rely on rough estimates or rules of thumb that do not account for their specific situation. This calculator uses precise mathematical formulas to give you personalized results based on your actual numbers. Whether you are planning ahead, comparing options, or checking a professional recommendation, having accurate calculations helps you make confident financial decisions. Use this tool alongside our related calculators for a complete picture of your finances.</p>
+        </div>
+
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="result-box">
