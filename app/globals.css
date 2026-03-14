@@ -292,3 +292,33 @@ input[type="text"].slider-upgrade {
   -webkit-appearance: none !important;
   appearance: none !important;
 }
+
+/* UNIVERSAL INPUT OVERRIDE */
+input[type="text"][inputmode="decimal"],
+input[type="text"][inputMode="decimal"] {
+  width: 100% !important;
+  background: #0f1117 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  color: #f0c842 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  font-family: inherit !important;
+  outline: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+input[type="text"][inputmode="decimal"]:hover,
+input[type="text"][inputMode="decimal"]:hover {
+  border-color: rgba(240, 200, 66, 0.4) !important;
+  background: #131620 !important;
+}
+input[type="text"][inputmode="decimal"]:focus,
+input[type="text"][inputMode="decimal"]:focus {
+  border-color: #f0c842 !important;
+  box-shadow: 0 0 0 3px rgba(240, 200, 66, 0.15) !important;
+  background: #131620 !important;
+}
