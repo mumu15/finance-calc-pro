@@ -56,7 +56,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Income to Replace</label>
                   <span className="text-white font-bold text-sm">{fmt(annualIncome)}</span>
                 </div>
-                <input type="number" step="any" min={10000} max={500000} step={1000}
+                <input type="range" min={10000} max={500000} step={1000}
                   value={annualIncome} onChange={e => setAnnualIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -66,7 +66,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Years of Income to Replace</label>
                   <span className="text-white font-bold text-sm">{`${yearsToReplace} yrs`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={30} step={1}
+                <input type="range" min={1} max={30} step={1}
                   value={yearsToReplace} onChange={e => setYearsToReplace(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -76,7 +76,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Debts to Pay Off</label>
                   <span className="text-white font-bold text-sm">{fmt(existingDebt)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={2000000} step={5000}
+                <input type="range" min={0} max={2000000} step={5000}
                   value={existingDebt} onChange={e => setExistingDebt(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -86,7 +86,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Future Education Costs</label>
                   <span className="text-white font-bold text-sm">{fmt(childrenCosts)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={500000} step={5000}
+                <input type="range" min={0} max={500000} step={5000}
                   value={childrenCosts} onChange={e => setChildrenCosts(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -96,7 +96,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Existing Assets and Savings</label>
                   <span className="text-white font-bold text-sm">{fmt(existingAssets)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={2000000} step={5000}
+                <input type="range" min={0} max={2000000} step={5000}
                   value={existingAssets} onChange={e => setExistingAssets(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -106,7 +106,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Existing Life Insurance</label>
                   <span className="text-white font-bold text-sm">{fmt(existingCoverage)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={5000000} step={5000}
+                <input type="range" min={0} max={5000000} step={5000}
                   value={existingCoverage} onChange={e => setExistingCoverage(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

@@ -68,7 +68,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Purchase Price</label>
                   <span className="text-white font-bold text-sm">{fmt(purchasePrice)}</span>
                 </div>
-                <input type="number" step="any" min={50000} max={5000000} step={5000}
+                <input type="range" min={50000} max={5000000} step={5000}
                   value={purchasePrice} onChange={e => setPurchasePrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -78,7 +78,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Down Payment</label>
                   <span className="text-white font-bold text-sm">{`${downPct}%`}</span>
                 </div>
-                <input type="number" step="any" min={5} max={50} step={5}
+                <input type="range" min={5} max={50} step={5}
                   value={downPct} onChange={e => setDownPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -88,7 +88,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Mortgage Rate</label>
                   <span className="text-white font-bold text-sm">{`${mortgageRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={15} step={0.25}
+                <input type="range" min={1} max={15} step={0.25}
                   value={mortgageRate} onChange={e => setMortgageRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -98,7 +98,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Gross Rent</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyRent)}</span>
                 </div>
-                <input type="number" step="any" min={200} max={20000} step={50}
+                <input type="range" min={200} max={20000} step={50}
                   value={monthlyRent} onChange={e => setMonthlyRent(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -108,7 +108,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Vacancy Rate</label>
                   <span className="text-white font-bold text-sm">{`${vacancyRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={20} step={1}
+                <input type="range" min={0} max={20} step={1}
                   value={vacancyRate} onChange={e => setVacancyRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -118,7 +118,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Operating Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(expenses)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={5000} step={50}
+                <input type="range" min={0} max={5000} step={50}
                   value={expenses} onChange={e => setExpenses(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

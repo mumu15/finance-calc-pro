@@ -74,7 +74,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Loan Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance)}</span>
                 </div>
-                <input type="number" step="any" min={10000} max={2000000} step={5000}
+                <input type="range" min={10000} max={2000000} step={5000}
                   value={balance} onChange={e => setBalance(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -84,7 +84,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${rate}%`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={12} step={0.125}
+                <input type="range" min={1} max={12} step={0.125}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -94,7 +94,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Remaining Loan Term</label>
                   <span className="text-white font-bold text-sm">{`${remainMonths} mo`}</span>
                 </div>
-                <input type="number" step="any" min={12} max={360} step={6}
+                <input type="range" min={12} max={360} step={6}
                   value={remainMonths} onChange={e => setRemainMonths(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -121,7 +121,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Extra Payment Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(extraAmount)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={50000} step={50}
+                <input type="range" min={0} max={50000} step={50}
                   value={extraAmount} onChange={e => setExtraAmount(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

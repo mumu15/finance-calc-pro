@@ -61,22 +61,22 @@ export default function HomeAffordabilityIncomeClient({ params }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="text-slate-400 text-sm mb-2 block">Annual Income ($)</label>
-              <input type="number" step="any" value={income} onChange={e => setIncome(Number(e.target.value))}
+              <input type="range" value={income} onChange={e => setIncome(Number(e.target.value))}
                 className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" />
             </div>
             <div>
               <label className="text-slate-400 text-sm mb-2 block">Interest Rate (%)</label>
-              <input type="number" step="any" value={rate} step="0.1" onChange={e => setRate(Number(e.target.value))}
+              <input type="range" value={rate} step="0.1" onChange={e => setRate(Number(e.target.value))}
                 className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" />
             </div>
             <div>
               <label className="text-slate-400 text-sm mb-2 block">Loan Term (years)</label>
-              <input type="number" step="any" value={term} onChange={e => setTerm(Number(e.target.value))}
+              <input type="range" value={term} onChange={e => setTerm(Number(e.target.value))}
                 className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" />
             </div>
             <div>
               <label className="text-slate-400 text-sm mb-2 block">Down Payment (%)</label>
-              <input type="number" step="any" value={downPct} onChange={e => setDownPct(Number(e.target.value))}
+              <input type="range" value={downPct} onChange={e => setDownPct(Number(e.target.value))}
                 className="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-white focus:border-emerald-500 focus:outline-none" />
             </div>
           </div>

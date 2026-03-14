@@ -63,7 +63,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Estate Value</label>
                   <span className="text-white font-bold text-sm">{fmt(estateValue)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100000000} step={10000}
+                <input type="range" min={0} max={100000000} step={10000}
                   value={estateValue} onChange={e => setEstateValue(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -73,7 +73,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Debts and Liabilities</label>
                   <span className="text-white font-bold text-sm">{fmt(debts)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={50000000} step={10000}
+                <input type="range" min={0} max={50000000} step={10000}
                   value={debts} onChange={e => setDebts(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -83,7 +83,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Charitable Bequests</label>
                   <span className="text-white font-bold text-sm">{fmt(charitableGifts)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={20000000} step={10000}
+                <input type="range" min={0} max={20000000} step={10000}
                   value={charitableGifts} onChange={e => setCharitableGifts(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -93,7 +93,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Marital Deduction (to spouse)</label>
                   <span className="text-white font-bold text-sm">{fmt(maritalDeduct)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={50000000} step={10000}
+                <input type="range" min={0} max={50000000} step={10000}
                   value={maritalDeduct} onChange={e => setMaritalDeduct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -103,7 +103,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">State Estate Tax Rate</label>
                   <span className="text-white font-bold text-sm">{`${stateEstateTax}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={20} step={0.5}
+                <input type="range" min={0} max={20} step={0.5}
                   value={stateEstateTax} onChange={e => setStateEstateTax(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

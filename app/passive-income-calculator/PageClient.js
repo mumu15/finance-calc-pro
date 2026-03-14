@@ -55,7 +55,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Monthly Passive Income</label>
                   <span className="text-white font-bold text-sm">{fmt(targetMonthly)}</span>
                 </div>
-                <input type="number" step="any" min={100} max={50000} step={100}
+                <input type="range" min={100} max={50000} step={100}
                   value={targetMonthly} onChange={e => setTargetMonthly(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -65,7 +65,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Expected Annual Yield / Return</label>
                   <span className="text-white font-bold text-sm">{`${yieldRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={15} step={0.25}
+                <input type="range" min={1} max={15} step={0.25}
                   value={yieldRate} onChange={e => setYieldRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -92,7 +92,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Tax Rate on Passive Income</label>
                   <span className="text-white font-bold text-sm">{`${taxRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={40} step={1}
+                <input type="range" min={0} max={40} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

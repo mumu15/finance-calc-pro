@@ -63,7 +63,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Initial Deposit</label>
                   <span className="text-white font-bold text-sm">{fmt(principal)}</span>
                 </div>
-                <input type="number" step="any" min={100} max={1000000} step={100}
+                <input type="range" min={100} max={1000000} step={100}
                   value={principal} onChange={e => setPrincipal(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -73,7 +73,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Deposit</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyAdd)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={10000} step={50}
+                <input type="range" min={0} max={10000} step={50}
                   value={monthlyAdd} onChange={e => setMonthlyAdd(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -83,7 +83,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Percentage Yield (APY)</label>
                   <span className="text-white font-bold text-sm">{`${apy}%`}</span>
                 </div>
-                <input type="number" step="any" min={0.01} max={10} step={0.05}
+                <input type="range" min={0.01} max={10} step={0.05}
                   value={apy} onChange={e => setApy(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -93,7 +93,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Time Period</label>
                   <span className="text-white font-bold text-sm">{`${years} yrs`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={30} step={1}
+                <input type="range" min={1} max={30} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

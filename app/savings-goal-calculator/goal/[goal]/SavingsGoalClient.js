@@ -57,17 +57,17 @@ export default function SavingsGoalClient({ item: g, all }) {
           <div style={st.card}>
             <label style={st.lbl}>Savings Target</label>
             <div style={st.val}>{fmt(target)}</div>
-            <input type="number" step="any" value={target} onChange={e => setTarget(+e.target.value)} className="calc-input" />
+            <input type="range" value={target} onChange={e => setTarget(+e.target.value)} className="calc-input" />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Timeframe (months)</label>
             <div style={st.val}>{months} mo ({(months/12).toFixed(1)} yrs)</div>
-            <input type="number" step="any" value={months} onChange={e => setMonths(+e.target.value)} className="calc-input" />
+            <input type="range" value={months} onChange={e => setMonths(+e.target.value)} className="calc-input" />
           </div>
           <div style={{...st.card, gridColumn:'span 2'}}>
             <label style={st.lbl}>Annual Interest Rate (savings account / investment)</label>
             <div style={st.val}>{rate}%</div>
-            <input type="number" step="any" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
+            <input type="range" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
           </div>
         </div>
 

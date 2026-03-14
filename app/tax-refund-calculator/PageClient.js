@@ -70,7 +70,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Annual Gross Income</label>
                   <span className="text-white font-bold text-sm">{fmt(grossIncome)}</span>
                 </div>
-                <input type="number" step="any" min={5000} max={500000} step={1000}
+                <input type="range" min={5000} max={500000} step={1000}
                   value={grossIncome} onChange={e => setGrossIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -80,7 +80,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Federal Tax Withheld</label>
                   <span className="text-white font-bold text-sm">{fmt(withheld)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100000} step={100}
+                <input type="range" min={0} max={100000} step={100}
                   value={withheld} onChange={e => setWithheld(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -107,7 +107,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Deductions (standard or itemized)</label>
                   <span className="text-white font-bold text-sm">{fmt(deductions)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={80000} step={500}
+                <input type="range" min={0} max={80000} step={500}
                   value={deductions} onChange={e => setDeductions(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -117,7 +117,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Tax Credits (child, education etc)</label>
                   <span className="text-white font-bold text-sm">{fmt(taxCredits)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={20000} step={100}
+                <input type="range" min={0} max={20000} step={100}
                   value={taxCredits} onChange={e => setTaxCredits(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -127,7 +127,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Other Income (freelance, investments)</label>
                   <span className="text-white font-bold text-sm">{fmt(otherIncome)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={200000} step={500}
+                <input type="range" min={0} max={200000} step={500}
                   value={otherIncome} onChange={e => setOtherIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

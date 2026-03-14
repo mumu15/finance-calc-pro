@@ -77,7 +77,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(amount)}</span>
                 </div>
-                <input type="number" step="any" min={0.01} max={100000} step={1}
+                <input type="range" min={0.01} max={100000} step={1}
                   value={amount} onChange={e => setAmount(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

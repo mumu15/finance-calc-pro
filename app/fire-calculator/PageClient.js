@@ -72,7 +72,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Annual Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(annualExpenses)}</span>
                 </div>
-                <input type="number" step="any" min={10000} max={300000} step={1000}
+                <input type="range" min={10000} max={300000} step={1000}
                   value={annualExpenses} onChange={e => setAnnualExpenses(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -82,7 +82,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Investment Portfolio</label>
                   <span className="text-white font-bold text-sm">{fmt(currentSavings)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={5000000} step={5000}
+                <input type="range" min={0} max={5000000} step={5000}
                   value={currentSavings} onChange={e => setCurrentSavings(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -92,7 +92,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Savings (investing)</label>
                   <span className="text-white font-bold text-sm">{fmt(annualSavings)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={300000} step={1000}
+                <input type="range" min={0} max={300000} step={1000}
                   value={annualSavings} onChange={e => setAnnualSavings(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -119,7 +119,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Expected Annual Return</label>
                   <span className="text-white font-bold text-sm">{`${returnRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={15} step={0.25}
+                <input type="range" min={1} max={15} step={0.25}
                   value={returnRate} onChange={e => setReturnRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -129,7 +129,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Inflation Rate</label>
                   <span className="text-white font-bold text-sm">{`${inflationRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={8} step={0.25}
+                <input type="range" min={1} max={8} step={0.25}
                   value={inflationRate} onChange={e => setInflationRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

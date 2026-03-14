@@ -24,9 +24,9 @@ export default function StudentLoanClient({item:it,all}){
     <h1 style={s.h1}>Student Loan Calculator: {fmt(amount)}</h1>
     <p style={s.sub}>{fmt(amount)} in student loans is a {it.type}. Compare repayment plans and find your best payoff strategy.</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Loan Balance</label><div style={s.val}>{fmt(amount)}</div><input type="number" step="any" value={amount} onChange={e=>setAmount(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Interest Rate</label><div style={s.val}>{rate}%</div><input type="number" step="any" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
-      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Repayment Term</label><div style={s.val}>{term} years</div><input type="number" step="any" value={term} onChange={e=>setTerm(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Loan Balance</label><div style={s.val}>{fmt(amount)}</div><input type="range" value={amount} onChange={e=>setAmount(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Interest Rate</label><div style={s.val}>{rate}%</div><input type="range" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
+      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Repayment Term</label><div style={s.val}>{term} years</div><input type="range" value={term} onChange={e=>setTerm(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Repayment Summary</h2>

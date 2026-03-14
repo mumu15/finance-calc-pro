@@ -63,7 +63,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(loanAmount)}</span>
                 </div>
-                <input type="number" step="any" min={10000} max={5000000} step={10000}
+                <input type="range" min={10000} max={5000000} step={10000}
                   value={loanAmount} onChange={e => setLoanAmount(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -107,7 +107,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Base Prime Rate</label>
                   <span className="text-white font-bold text-sm">{`${baseRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={3} max={12} step={0.25}
+                <input type="range" min={3} max={12} step={0.25}
                   value={baseRate} onChange={e => setBaseRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

@@ -27,10 +27,10 @@ export default function MortgagePriceClient({item:it,all}){
     <h1 style={s.h1}>Mortgage Calculator: {fmt(price)} Home</h1>
     <p style={s.sub}>Calculate your exact monthly payment, total interest, and income needed for a {fmt(price)} home purchase.</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Home Price</label><div style={s.val}>{fmt(price)}</div><input type="number" step="any" value={price} onChange={e=>setPrice(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Down Payment</label><div style={s.val}>{down}% — {fmt(price*down/100)}</div><input type="number" step="any" value={down} onChange={e=>setDown(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Interest Rate</label><div style={s.val}>{rate}%</div><input type="number" step="any" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Loan Term</label><div style={s.val}>{term} years</div><input type="number" step="any" value={term} onChange={e=>setTerm(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Home Price</label><div style={s.val}>{fmt(price)}</div><input type="range" value={price} onChange={e=>setPrice(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Down Payment</label><div style={s.val}>{down}% — {fmt(price*down/100)}</div><input type="range" value={down} onChange={e=>setDown(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Interest Rate</label><div style={s.val}>{rate}%</div><input type="range" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Loan Term</label><div style={s.val}>{term} years</div><input type="range" value={term} onChange={e=>setTerm(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Payment Summary — {fmt(price)} Home</h2>

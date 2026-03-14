@@ -89,25 +89,25 @@ export default function StateMortgageClient({ state, allStates }) {
           <div style={s.card}>
             <label style={s.label}>Home Price</label>
             <div style={s.val}>{fmt(price)}</div>
-            <input type="number" step="any"
+            <input type="range"
               value={price} onChange={e => setPrice(+e.target.value)} style={s.slider} />
           </div>
           <div style={s.card}>
             <label style={s.label}>Down Payment ({downPct}%)</label>
             <div style={s.val}>{fmt(price * downPct / 100)}</div>
-            <input type="number" step="any"
+            <input type="range"
               value={downPct} onChange={e => setDownPct(+e.target.value)} style={s.slider} />
           </div>
           <div style={s.card}>
             <label style={s.label}>Interest Rate</label>
             <div style={s.val}>{rate}%</div>
-            <input type="number" step="any"
+            <input type="range"
               value={rate} onChange={e => setRate(+e.target.value)} style={s.slider} />
           </div>
           <div style={s.card}>
             <label style={s.label}>Loan Term</label>
             <div style={s.val}>{term} years</div>
-            <input type="number" step="any"
+            <input type="range"
               value={term} onChange={e => setTerm(+e.target.value)} style={s.slider} />
           </div>
         </div>

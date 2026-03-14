@@ -75,7 +75,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt 1 Balance (smallest)</label>
                   <span className="text-white font-bold text-sm">{fmt(debt1Bal)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100000} step={100}
+                <input type="range" min={0} max={100000} step={100}
                   value={debt1Bal} onChange={e => setDebt1Bal(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -85,7 +85,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt 1 APR</label>
                   <span className="text-white font-bold text-sm">{`${debt1Rate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={40} step={0.25}
+                <input type="range" min={0} max={40} step={0.25}
                   value={debt1Rate} onChange={e => setDebt1Rate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -95,7 +95,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt 2 Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(debt2Bal)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100000} step={100}
+                <input type="range" min={0} max={100000} step={100}
                   value={debt2Bal} onChange={e => setDebt2Bal(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -105,7 +105,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt 2 APR</label>
                   <span className="text-white font-bold text-sm">{`${debt2Rate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={40} step={0.25}
+                <input type="range" min={0} max={40} step={0.25}
                   value={debt2Rate} onChange={e => setDebt2Rate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -115,7 +115,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt 3 Balance (largest)</label>
                   <span className="text-white font-bold text-sm">{fmt(debt3Bal)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100000} step={100}
+                <input type="range" min={0} max={100000} step={100}
                   value={debt3Bal} onChange={e => setDebt3Bal(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -125,7 +125,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt 3 APR</label>
                   <span className="text-white font-bold text-sm">{`${debt3Rate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={40} step={0.25}
+                <input type="range" min={0} max={40} step={0.25}
                   value={debt3Rate} onChange={e => setDebt3Rate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -135,7 +135,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Extra Monthly Payment</label>
                   <span className="text-white font-bold text-sm">{fmt(extraPmt)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={5000} step={25}
+                <input type="range" min={0} max={5000} step={25}
                   value={extraPmt} onChange={e => setExtraPmt(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

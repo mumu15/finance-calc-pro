@@ -61,7 +61,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Regular Hourly Rate</label>
                   <span className="text-white font-bold text-sm">{fmt(regularRate)}</span>
                 </div>
-                <input type="number" step="any" min={7.25} max={500} step={0.25}
+                <input type="range" min={7.25} max={500} step={0.25}
                   value={regularRate} onChange={e => setRegularRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -71,7 +71,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Regular Hours Per Week</label>
                   <span className="text-white font-bold text-sm">{`${regularHours} hrs`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={40} step={0.5}
+                <input type="range" min={1} max={40} step={0.5}
                   value={regularHours} onChange={e => setRegularHours(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -81,7 +81,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Overtime Hours Per Week</label>
                   <span className="text-white font-bold text-sm">{`${overtimeHours} hrs`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={40} step={0.5}
+                <input type="range" min={0} max={40} step={0.5}
                   value={overtimeHours} onChange={e => setOvertimeHours(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -108,7 +108,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Weeks Per Year</label>
                   <span className="text-white font-bold text-sm">{`${weeksPerYear} wks`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={52} step={1}
+                <input type="range" min={1} max={52} step={1}
                   value={weeksPerYear} onChange={e => setWeeksPerYear(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

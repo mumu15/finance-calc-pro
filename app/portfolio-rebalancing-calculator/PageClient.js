@@ -70,7 +70,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Stocks Value</label>
                   <span className="text-white font-bold text-sm">{fmt(stocks)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={1000000} step={500}
+                <input type="range" min={0} max={1000000} step={500}
                   value={stocks} onChange={e => setStocks(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -80,7 +80,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Bonds Value</label>
                   <span className="text-white font-bold text-sm">{fmt(bonds)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={500000} step={500}
+                <input type="range" min={0} max={500000} step={500}
                   value={bonds} onChange={e => setBonds(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -90,7 +90,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Cash / Other</label>
                   <span className="text-white font-bold text-sm">{fmt(cash)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={200000} step={500}
+                <input type="range" min={0} max={200000} step={500}
                   value={cash} onChange={e => setCash(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -100,7 +100,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Stocks Allocation</label>
                   <span className="text-white font-bold text-sm">{`${tgtStocks}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100} step={5}
+                <input type="range" min={0} max={100} step={5}
                   value={tgtStocks} onChange={e => setTgtStocks(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -110,7 +110,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Bonds Allocation</label>
                   <span className="text-white font-bold text-sm">{`${tgtBonds}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100} step={5}
+                <input type="range" min={0} max={100} step={5}
                   value={tgtBonds} onChange={e => setTgtBonds(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

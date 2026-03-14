@@ -47,8 +47,7 @@ export default function CalcInput({ value, onChange, className, style, ...props 
   return (
     <input
       ref={ref}
-      type="text"
-      inputMode="decimal"
+      type="range"
       autoComplete="off"
       className={'calc-input' + (className ? ' ' + className : '')}
       style={style}

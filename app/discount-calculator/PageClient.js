@@ -57,7 +57,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Original Price</label>
                   <span className="text-white font-bold text-sm">{fmt(originalPrice)}</span>
                 </div>
-                <input type="number" step="any" min={0.01} max={100000} step={0.01}
+                <input type="range" min={0.01} max={100000} step={0.01}
                   value={originalPrice} onChange={e => setOriginalPrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -67,7 +67,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Discount Percentage</label>
                   <span className="text-white font-bold text-sm">{`${discountPct}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={100} step={0.5}
+                <input type="range" min={0} max={100} step={0.5}
                   value={discountPct} onChange={e => setDiscountPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -77,7 +77,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Sales Tax Rate</label>
                   <span className="text-white font-bold text-sm">{`${taxRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={15} step={0.25}
+                <input type="range" min={0} max={15} step={0.25}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -87,7 +87,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Quantity</label>
                   <span className="text-white font-bold text-sm">{`${qty} units`}</span>
                 </div>
-                <input type="number" step="any" min={1} max={1000} step={1}
+                <input type="range" min={1} max={1000} step={1}
                   value={qty} onChange={e => setQty(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

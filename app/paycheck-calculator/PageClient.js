@@ -79,7 +79,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Gross Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(grossSalary)}</span>
                 </div>
-                <input type="number" step="any" min={10000} max={500000} step={1000}
+                <input type="range" min={10000} max={500000} step={1000}
                   value={grossSalary} onChange={e => setGrossSalary(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -102,7 +102,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Federal Tax Rate</label>
                   <span className="text-white font-bold text-sm">{federalRate + "%"}</span>
                 </div>
-                <input type="number" step="any" min={0} max={37} step={1}
+                <input type="range" min={0} max={37} step={1}
                   value={federalRate} onChange={e => setFederalRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -112,7 +112,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">State Tax Rate</label>
                   <span className="text-white font-bold text-sm">{stateRate + "%"}</span>
                 </div>
-                <input type="number" step="any" min={0} max={15} step={0.25}
+                <input type="range" min={0} max={15} step={0.25}
                   value={stateRate} onChange={e => setStateRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -122,7 +122,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Pre-Tax Deductions (401k, HSA etc.)</label>
                   <span className="text-white font-bold text-sm">{fmt(preTaxDeductions)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={30000} step={250}
+                <input type="range" min={0} max={30000} step={250}
                   value={preTaxDeductions} onChange={e => setPreTaxDeductions(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

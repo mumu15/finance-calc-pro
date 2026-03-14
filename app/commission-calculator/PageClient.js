@@ -67,7 +67,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Sales Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(salesAmount)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={10000000} step={1000}
+                <input type="range" min={0} max={10000000} step={1000}
                   value={salesAmount} onChange={e => setSalesAmount(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -77,7 +77,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Commission Rate</label>
                   <span className="text-white font-bold text-sm">{`${commRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={50} step={0.25}
+                <input type="range" min={0} max={50} step={0.25}
                   value={commRate} onChange={e => setCommRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -87,7 +87,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Base Salary (monthly)</label>
                   <span className="text-white font-bold text-sm">{fmt(baseSalary)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={20000} step={100}
+                <input type="range" min={0} max={20000} step={100}
                   value={baseSalary} onChange={e => setBaseSalary(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -114,7 +114,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Sales Quota</label>
                   <span className="text-white font-bold text-sm">{fmt(quota)}</span>
                 </div>
-                <input type="number" step="any" min={0} max={1000000} step={1000}
+                <input type="range" min={0} max={1000000} step={1000}
                   value={quota} onChange={e => setQuota(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -124,7 +124,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Tax Rate Estimate</label>
                   <span className="text-white font-bold text-sm">{`${taxRate}%`}</span>
                 </div>
-                <input type="number" step="any" min={0} max={45} step={1}
+                <input type="range" min={0} max={45} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
