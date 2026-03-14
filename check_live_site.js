@@ -7,7 +7,7 @@ const path = require('path');
 // LIVE SITE CHECKER — Tests all pages for 404s & issues
 // ============================================================
 
-const DOMAIN = 'https://freefincalc.net';
+const DOMAIN = 'https://www.freefincalc.net';
 const MAX_CONCURRENT = 5;
 const TIMEOUT = 15000;
 
