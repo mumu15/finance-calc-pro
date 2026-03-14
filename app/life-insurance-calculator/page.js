@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Life Insurance Calculator | FreeFinCalc',
   description: 'Free Life Insurance Calculator — estimate coverage needs and costs. Instant results, no sign-up.',
-  alternates: { canonical: 'https://freefincalc.net/life-insurance-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/life-insurance-calculator' },
   openGraph: {
     title: 'Life Insurance Calculator | FreeFinCalc',
     description: 'Free Life Insurance Calculator — estimate coverage needs and costs. Instant results, no sign-up.',
-    url: 'https://freefincalc.net/life-insurance-calculator',
+    url: 'https://www.freefincalc.net/life-insurance-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

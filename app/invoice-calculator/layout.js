@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Invoice Calculator',
     description: 'Calculate invoice totals with tax, discounts and late fees. Create accurate invoice amounts for any billing scenario.',
-    url: 'https://freefincalc.net/invoice-calculator',
+    url: 'https://www.freefincalc.net/invoice-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

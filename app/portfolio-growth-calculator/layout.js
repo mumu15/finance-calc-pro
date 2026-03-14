@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Portfolio Growth Calculator',
     description: 'Project investment portfolio growth with contributions and compound returns. See nominal and inflation-adjusted value.',
-    url: 'https://freefincalc.net/portfolio-growth-calculator',
+    url: 'https://www.freefincalc.net/portfolio-growth-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

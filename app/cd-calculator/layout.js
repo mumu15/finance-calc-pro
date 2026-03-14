@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'CD Calculator',
     description: 'Calculate Certificate of Deposit maturity value, interest earned and APY. Compare CD terms and find the best CD rates.',
-    url: 'https://freefincalc.net/cd-calculator',
+    url: 'https://www.freefincalc.net/cd-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

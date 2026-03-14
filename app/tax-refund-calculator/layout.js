@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Tax Refund Calculator',
     description: 'Estimate your federal tax refund or amount owed. Calculate withholding adjustments to optimize your tax situation.',
-    url: 'https://freefincalc.net/tax-refund-calculator',
+    url: 'https://www.freefincalc.net/tax-refund-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

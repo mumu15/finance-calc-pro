@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Lease vs Buy Car Calculator',
     description: 'Compare the total cost of leasing vs buying a car over time. See which option saves more money for your situation.',
-    url: 'https://freefincalc.net/lease-vs-buy-calculator',
+    url: 'https://www.freefincalc.net/lease-vs-buy-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

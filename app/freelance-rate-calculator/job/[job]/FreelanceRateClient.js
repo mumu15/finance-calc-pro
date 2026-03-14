@@ -16,8 +16,8 @@ export default function FreelanceRateClient({item:it,all}){
   const fullTimeEquiv=Math.round(income*1.3)
   return(<div style={s.page}><Header/>
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://freefincalc.net' },
-    { name: 'Freelance Rate Calculator', url: 'https://freefincalc.net/freelance-rate-calculator' }
+    { name: 'Home', url: 'https://www.freefincalc.net' },
+    { name: 'Freelance Rate Calculator', url: 'https://www.freefincalc.net/freelance-rate-calculator' }
   ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
     <nav style={s.bc}><a href="/" style={s.bcA}>Home</a><span>›</span><a href="/freelance-rate-calculator" style={s.bcA}>Freelance Rate Calculator</a><span>›</span><span style={{color:'#94a3b8'}}>{it.name}</span></nav>
@@ -46,7 +46,7 @@ export default function FreelanceRateClient({item:it,all}){
     <div style={s.box}><h2 style={s.h2}>Related Calculators</h2>{[['/freelance-rate-calculator','Freelance Rate'],['/salary-after-tax-calculator','Salary After Tax'],['/self-employment-tax-calculator','Self-Employment Tax'],['/invoice-calculator','Invoice Calculator'],['/hourly-to-salary-calculator','Hourly to Salary']].map(([href,lbl])=>(<a key={href} href={href} style={s.calcA}>{lbl}</a>))}</div>
     <div style={s.box}><h2 style={s.h2}>Freelance Rate by Profession</h2>{all.filter(x=>x.slug!==it.slug).map(x=>(<a key={x.slug} href={'/freelance-rate-calculator/job/'+x.slug} style={s.tagA}>{x.name}</a>))}</div>
   </div><AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Freelance Rate Calculator","item":"https://freefincalc.net/freelance-rate-calculator"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Freelance Rate Calculator","item":"https://www.freefincalc.net/freelance-rate-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Freelance Rate Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer/></div>)
 }

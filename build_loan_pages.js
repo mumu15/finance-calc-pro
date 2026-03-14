@@ -80,7 +80,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Personal Loan for \${p.name} 2026 — Calculator & Rates\`,
     description: \`Calculate your personal loan for \${p.name.toLowerCase()}. Avg amount \$\${p.avg.toLocaleString()}, rate ~\${p.rate}%, est. \$\${pmt}/month on \${p.term}-month term.\`,
-    alternates: { canonical: \`https://freefincalc.net/personal-loan-calculator/purpose/\${p.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/personal-loan-calculator/purpose/\${p.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -266,7 +266,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Student Loan Calculator for \${m.name} 2026\`,
     description: \`Avg \${m.name} student debt: \$\${m.debt.toLocaleString()}. Est. monthly payment \$\${pmt}. Starting salary \$\${m.salary.toLocaleString()}/yr. Debt-to-income ratio ~\${dti}%.\`,
-    alternates: { canonical: \`https://freefincalc.net/student-loan-calculator/major/\${m.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/student-loan-calculator/major/\${m.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -405,19 +405,19 @@ function addEntries(items, urlFn, sitemap) {
 }
 
 if (!sitemap.includes('/car-loan-calculator/brand/')) {
-  sitemap = addEntries(carBrands, b => `https://freefincalc.net/car-loan-calculator/brand/${b.slug}`, sitemap)
+  sitemap = addEntries(carBrands, b => `https://www.freefincalc.net/car-loan-calculator/brand/${b.slug}`, sitemap)
   console.log('✅ sitemap: +50 car brand pages')
 }
 if (!sitemap.includes('/salary-after-tax-calculator/job/')) {
-  sitemap = addEntries(jobs, j => `https://freefincalc.net/salary-after-tax-calculator/job/${j.slug}`, sitemap)
+  sitemap = addEntries(jobs, j => `https://www.freefincalc.net/salary-after-tax-calculator/job/${j.slug}`, sitemap)
   console.log('✅ sitemap: +50 salary job pages')
 }
 if (!sitemap.includes('/personal-loan-calculator/purpose/')) {
-  sitemap = addEntries(loanPurposes, p => `https://freefincalc.net/personal-loan-calculator/purpose/${p.slug}`, sitemap)
+  sitemap = addEntries(loanPurposes, p => `https://www.freefincalc.net/personal-loan-calculator/purpose/${p.slug}`, sitemap)
   console.log('✅ sitemap: +50 personal loan pages')
 }
 if (!sitemap.includes('/student-loan-calculator/major/')) {
-  sitemap = addEntries(majors, m => `https://freefincalc.net/student-loan-calculator/major/${m.slug}`, sitemap)
+  sitemap = addEntries(majors, m => `https://www.freefincalc.net/student-loan-calculator/major/${m.slug}`, sitemap)
   console.log('✅ sitemap: +50 student loan pages')
 }
 

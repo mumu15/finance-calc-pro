@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'APR Calculator',
     description: 'Calculate the true Annual Percentage Rate (APR) on any loan including fees. Compare loan offers accurately with APR.',
-    url: 'https://freefincalc.net/apr-calculator',
+    url: 'https://www.freefincalc.net/apr-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

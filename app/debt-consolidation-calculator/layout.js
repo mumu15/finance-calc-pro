@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Debt Consolidation Calculator',
     description: 'Calculate savings from consolidating multiple debts into one loan. See monthly savings and total interest reduction.',
-    url: 'https://freefincalc.net/debt-consolidation-calculator',
+    url: 'https://www.freefincalc.net/debt-consolidation-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

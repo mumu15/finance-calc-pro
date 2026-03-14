@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Amortization Calculator',
     description: 'Generate a full amortization schedule showing every payment, interest and principal breakdown over the life of your loan.',
-    url: 'https://freefincalc.net/amortization-calculator',
+    url: 'https://www.freefincalc.net/amortization-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

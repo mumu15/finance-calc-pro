@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${state.name} Mortgage Calculator 2026`,
       description: `Free mortgage calculator for ${state.name}. Real 2026 rates, property taxes, and home prices.`,
-      url: `https://freefincalc.net/mortgage-calculator/state/${state.slug}`,
+      url: `https://www.freefincalc.net/mortgage-calculator/state/${state.slug}`,
     },
   }
 }

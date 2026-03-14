@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Stock Calculator | FreeFinCalc',
   description: 'Calculate stock investment returns, gains and portfolio value.',
 }

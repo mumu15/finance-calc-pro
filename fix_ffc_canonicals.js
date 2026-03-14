@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE = 'https://freefincalc.net';
+const BASE = 'https://www.freefincalc.net';
 let updated = 0;
 let skipped = 0;
 

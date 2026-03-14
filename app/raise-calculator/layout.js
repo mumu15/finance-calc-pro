@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Raise Calculator',
     description: 'Calculate the dollar value of a salary raise, new annual pay and percentage increase. See how a raise affects take-home pay.',
-    url: 'https://freefincalc.net/raise-calculator',
+    url: 'https://www.freefincalc.net/raise-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

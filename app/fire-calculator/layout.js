@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'FIRE Calculator',
     description: 'Calculate your Financial Independence Retire Early number and timeline. Find your FIRE number and years to freedom.',
-    url: 'https://freefincalc.net/fire-calculator',
+    url: 'https://www.freefincalc.net/fire-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

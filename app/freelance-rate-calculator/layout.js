@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Freelance Rate Calculator',
     description: 'Calculate your minimum freelance hourly rate to meet income goals after taxes and expenses. Price your services correctly.',
-    url: 'https://freefincalc.net/freelance-rate-calculator',
+    url: 'https://www.freefincalc.net/freelance-rate-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

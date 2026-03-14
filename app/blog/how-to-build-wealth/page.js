@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/blog/how-to-build-wealth' },
+  alternates: { canonical: 'https://www.freefincalc.net/blog/how-to-build-wealth' },
   title: 'How to Build Wealth: The 7 Principles That Actually Work (2026)',
   description: 'Learn the 7 proven principles of building wealth in 2026. From increasing income to investing wisely, this guide covers the complete wealth-building roadmap.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How To Build Wealth","url":"https://freefincalc.net/blog/how-to-build-wealth"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How To Build Wealth","url":"https://www.freefincalc.net/blog/how-to-build-wealth"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>

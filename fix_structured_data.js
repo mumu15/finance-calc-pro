@@ -40,8 +40,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "FreeFinCalc",
-    "url": "https://freefincalc.net",
-    "logo": "https://freefincalc.net/icon.png",
+    "url": "https://www.freefincalc.net",
+    "logo": "https://www.freefincalc.net/icon.png",
     "description": "Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies."
   }
   return (
@@ -57,13 +57,13 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "FreeFinCalc",
-    "url": "https://freefincalc.net",
+    "url": "https://www.freefincalc.net",
     "description": "100+ free financial calculators. No sign-up required.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://freefincalc.net/?q={search_term_string}"
+        "urlTemplate": "https://www.freefincalc.net/?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
@@ -158,7 +158,7 @@ if (!patched) {
 // ─────────────────────────────────────────────────────────────────────────────
 
 const newMetadata = `export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: {
     default: 'FreeFinCalc — 100+ Free Financial Calculators',
     template: '%s | FreeFinCalc',
@@ -176,19 +176,19 @@ const newMetadata = `export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://freefincalc.net',
+    url: 'https://www.freefincalc.net',
     siteName: 'FreeFinCalc',
     title: 'FreeFinCalc — 100+ Free Financial Calculators',
     description: 'Free financial calculators for mortgage, tax, retirement, investing and budgeting. No sign-up required.',
-    images: [{ url: 'https://freefincalc.net/og-image.png', width: 1200, height: 630, alt: 'FreeFinCalc' }],
+    images: [{ url: 'https://www.freefincalc.net/og-image.png', width: 1200, height: 630, alt: 'FreeFinCalc' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FreeFinCalc — 100+ Free Financial Calculators',
     description: 'Free financial calculators. 40+ currencies. No sign-up.',
-    images: ['https://freefincalc.net/og-image.png'],
+    images: ['https://www.freefincalc.net/og-image.png'],
   },
-  alternates: { canonical: 'https://freefincalc.net' },
+  alternates: { canonical: 'https://www.freefincalc.net' },
 }`
 
 if (layout.includes('export const metadata')) {

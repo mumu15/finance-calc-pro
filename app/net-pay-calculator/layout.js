@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Net Pay Calculator',
     description: 'Calculate your net pay after all deductions. See exactly what lands in your bank account each pay period.',
-    url: 'https://freefincalc.net/net-pay-calculator',
+    url: 'https://www.freefincalc.net/net-pay-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

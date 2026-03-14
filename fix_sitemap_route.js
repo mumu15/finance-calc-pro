@@ -1,11 +1,11 @@
 /**
  * node fix_sitemap_route.js
  * Creates app/sitemap.js — a proper Next.js sitemap that auto-generates
- * Google can always access this at https://freefincalc.net/sitemap.xml
+ * Google can always access this at https://www.freefincalc.net/sitemap.xml
  */
 const fs = require('fs')
 
-const sitemapCode = `const BASE = 'https://freefincalc.net'
+const sitemapCode = `const BASE = 'https://www.freefincalc.net'
 
 const calculators = [
   'mortgage-calculator','car-loan-calculator','personal-loan-calculator',
@@ -132,5 +132,5 @@ try {
 fs.writeFileSync('app/sitemap.js', sitemapCode, 'utf8')
 console.log('✅ app/sitemap.js created')
 console.log('')
-console.log('This generates https://freefincalc.net/sitemap.xml automatically.')
+console.log('This generates https://www.freefincalc.net/sitemap.xml automatically.')
 console.log('Total URLs: ~200 calculators + 41 blogs + 50 cities = ~295 URLs')

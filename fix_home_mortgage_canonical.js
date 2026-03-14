@@ -10,7 +10,7 @@ if (fs.existsSync(appLayout)) {
   c = c.replace(/\s*alternates:\s*\{[^}]*\},?/g, '');
   // Inject into existing metadata object
   if (c.includes('export const metadata')) {
-    c = c.replace(/export const metadata\s*=\s*\{/, "export const metadata = {\n  alternates: { canonical: 'https://freefincalc.net' },");
+    c = c.replace(/export const metadata\s*=\s*\{/, "export const metadata = {\n  alternates: { canonical: 'https://www.freefincalc.net' },");
     fs.writeFileSync(appLayout, c, 'utf8');
     console.log('✅ Fixed app/layout.js — added homepage canonical');
   } else {
@@ -35,9 +35,9 @@ if (fs.existsSync(mcPage)) {
   } else {
     c = c.replace(/\s*alternates:\s*\{[^}]*\},?/g, '');
     if (c.includes('export const metadata')) {
-      c = c.replace(/export const metadata\s*=\s*\{/, "export const metadata = {\n  alternates: { canonical: 'https://freefincalc.net/mortgage-calculator' },");
+      c = c.replace(/export const metadata\s*=\s*\{/, "export const metadata = {\n  alternates: { canonical: 'https://www.freefincalc.net/mortgage-calculator' },");
     } else if (c.includes('export default')) {
-      c = "\nexport const metadata = {\n  alternates: { canonical: 'https://freefincalc.net/mortgage-calculator' },\n};\n" + c;
+      c = "\nexport const metadata = {\n  alternates: { canonical: 'https://www.freefincalc.net/mortgage-calculator' },\n};\n" + c;
     }
     fs.writeFileSync(mcPage, c, 'utf8');
     console.log('✅ Fixed mortgage-calculator/page.js');

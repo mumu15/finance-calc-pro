@@ -10,7 +10,7 @@ export default function robots() {
         ],
       },
     ],
-    sitemap: 'https://freefincalc.net/sitemap.xml',
-    host: 'https://freefincalc.net',
+    sitemap: 'https://www.freefincalc.net/sitemap.xml',
+    host: 'https://www.freefincalc.net',
   }
 }

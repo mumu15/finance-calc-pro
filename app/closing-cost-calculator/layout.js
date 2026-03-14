@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Closing Cost Calculator | FreeFinCalc',
   description: 'Estimate closing costs when buying a home. Typically 2-5% of the purchase price.',
 }

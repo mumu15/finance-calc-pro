@@ -6,7 +6,7 @@
 const fs = require('fs')
 
 const content = `export default function sitemap() {
-  const base = 'https://freefincalc.net'
+  const base = 'https://www.freefincalc.net'
 
   const routes = [
     // ── Core pages ──────────────────────────────────────────────

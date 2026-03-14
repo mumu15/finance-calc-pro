@@ -11,7 +11,7 @@ export async function generateStaticParams() { return homePrices.map(x => ({ pri
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://freefincalc.net/mortgage-calculator/price/${params.price}` },
+    alternates: { canonical: `https://www.freefincalc.net/mortgage-calculator/price/${params.price}` },
   };
 }
 

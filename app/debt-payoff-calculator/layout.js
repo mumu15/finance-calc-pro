@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Debt Payoff Calculator',
     description: 'Calculate how long to pay off any debt and compare avalanche vs snowball strategies. See interest saved with extra payments.',
-    url: 'https://freefincalc.net/debt-payoff-calculator',
+    url: 'https://www.freefincalc.net/debt-payoff-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return {
     title: 'Personal Loan for Engagement Ring | FreeFinCalc.net',
     description: 'Finance the perfect engagement ring for the one you love. Use our free calculator to estimate monthly payments.',
-    alternates: { canonical: 'https://freefincalc.net/personal-loan/purpose/engagement-ring' },
+    alternates: { canonical: 'https://www.freefincalc.net/personal-loan/purpose/engagement-ring' },
   };
 }
 
@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Personal Loan Calculator","url":"https://freefincalc.net/personal-loan"},{"name":"Engagement Ring","url":"https://freefincalc.net/personal-loan/purpose/engagement-ring"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Personal Loan Calculator","url":"https://www.freefincalc.net/personal-loan"},{"name":"Engagement Ring","url":"https://www.freefincalc.net/personal-loan/purpose/engagement-ring"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

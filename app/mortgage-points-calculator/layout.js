@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Mortgage Points Calculator',
     description: 'Calculate if buying mortgage discount points is worth it. Find break-even timeline and total interest savings.',
-    url: 'https://freefincalc.net/mortgage-points-calculator',
+    url: 'https://www.freefincalc.net/mortgage-points-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

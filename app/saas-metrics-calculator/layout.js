@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'SaaS Metrics Calculator',
     description: 'Calculate MRR, ARR, LTV, CAC ratio, churn impact and Rule of 40. Track the key metrics for SaaS business health.',
-    url: 'https://freefincalc.net/saas-metrics-calculator',
+    url: 'https://www.freefincalc.net/saas-metrics-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -1,11 +1,11 @@
 export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Compound Interest Calculator – Investment Growth',
   description: 'See how your investments grow with compound interest. Includes monthly contributions and year-by-year breakdown.',
   openGraph: {
     title: 'Compound Interest Calculator – Investment Growth',
     description: 'See how your investments grow with compound interest. Includes monthly contributions and year-by-year breakdown.',
-    url: 'https://freefincalc.net/compound-interest',
+    url: 'https://www.freefincalc.net/compound-interest',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

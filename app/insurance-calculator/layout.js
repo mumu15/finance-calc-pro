@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Insurance Needs Calculator',
     description: 'Calculate how much life, disability and health insurance coverage you need. Know your insurance gaps and priorities.',
-    url: 'https://freefincalc.net/insurance-calculator',
+    url: 'https://www.freefincalc.net/insurance-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Freelance Rate Calculator | FreeFinCalc',
   description: 'Free Freelance Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://freefincalc.net/freelance-rate-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/freelance-rate-calculator' },
   openGraph: {
     title: 'Freelance Rate Calculator | FreeFinCalc',
     description: 'Free Freelance Rate Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://freefincalc.net/freelance-rate-calculator',
+    url: 'https://www.freefincalc.net/freelance-rate-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

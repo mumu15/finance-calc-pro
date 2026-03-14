@@ -11,8 +11,8 @@ const inter = Inter({
 })
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net' },
-  metadataBase: new URL('https://freefincalc.net'),
+  alternates: { canonical: 'https://www.freefincalc.net' },
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Free Financial Calculators — FreeFinCalc.net',
   description: 'Free online financial calculators for mortgage, loans, retirement, investments, taxes and more. 470+ calculators, instant results, no sign-up required.',
   keywords: 'financial calculator, mortgage calculator, loan calculator, retirement calculator, investment calculator',
@@ -21,7 +21,7 @@ export const metadata = {
   openGraph: {
     title: 'Free Financial Calculators — FreeFinCalc.net',
     description: '470+ free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
-    url: 'https://freefincalc.net',
+    url: 'https://www.freefincalc.net',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

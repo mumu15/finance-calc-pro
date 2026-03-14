@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Dollar Cost Averaging Calculator | FreeFinCalc',
   description: 'Free Dollar Cost Averaging Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://freefincalc.net/dollar-cost-averaging-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/dollar-cost-averaging-calculator' },
   openGraph: {
     title: 'Dollar Cost Averaging Calculator | FreeFinCalc',
     description: 'Free Dollar Cost Averaging Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://freefincalc.net/dollar-cost-averaging-calculator',
+    url: 'https://www.freefincalc.net/dollar-cost-averaging-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

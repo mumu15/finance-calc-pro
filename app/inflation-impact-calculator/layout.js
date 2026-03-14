@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Inflation Calculator',
     description: 'Calculate the impact of inflation on purchasing power over time. See what money will be worth in the future.',
-    url: 'https://freefincalc.net/inflation-impact-calculator',
+    url: 'https://www.freefincalc.net/inflation-impact-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Student Loan Calculator | FreeFinCalc',
   description: 'Free Student Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
-  alternates: { canonical: 'https://freefincalc.net/student-loan-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/student-loan-calculator' },
   openGraph: {
     title: 'Student Loan Calculator | FreeFinCalc',
     description: 'Free Student Loan Calculator — calculate monthly payments, total interest, and payoff schedule. Instant results, no sign-up required.',
-    url: 'https://freefincalc.net/student-loan-calculator',
+    url: 'https://www.freefincalc.net/student-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

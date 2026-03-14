@@ -13,7 +13,7 @@ try { fs.unlinkSync('app/sitemap.js'); console.log('✅ Removed app/sitemap.js')
 // Create the route handler directory
 fs.mkdirSync('app/sitemap.xml', { recursive: true })
 
-const routeCode = `const BASE = 'https://freefincalc.net'
+const routeCode = `const BASE = 'https://www.freefincalc.net'
 
 const calculators = [
   'mortgage-calculator','car-loan-calculator','personal-loan-calculator',
@@ -129,5 +129,5 @@ export async function GET() {
 fs.writeFileSync('app/sitemap.xml/route.js', routeCode, 'utf8')
 console.log('✅ app/sitemap.xml/route.js created')
 console.log('')
-console.log('After deploy: https://freefincalc.net/sitemap.xml will serve clean XML')
+console.log('After deploy: https://www.freefincalc.net/sitemap.xml will serve clean XML')
 console.log('Total URLs: ~295')

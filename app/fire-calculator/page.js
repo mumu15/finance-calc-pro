@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'FIRE Calculator | FreeFinCalc',
   description: 'Free FIRE Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://freefincalc.net/fire-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/fire-calculator' },
   openGraph: {
     title: 'FIRE Calculator | FreeFinCalc',
     description: 'Free FIRE Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://freefincalc.net/fire-calculator',
+    url: 'https://www.freefincalc.net/fire-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

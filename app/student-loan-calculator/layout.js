@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Student Loan Calculator',
     description: 'Calculate student loan monthly payments, total interest and payoff timeline. Compare repayment plans and see how extra payments help.',
-    url: 'https://freefincalc.net/student-loan-calculator',
+    url: 'https://www.freefincalc.net/student-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

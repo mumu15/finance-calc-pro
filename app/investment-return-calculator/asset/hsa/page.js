@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return {
     title: 'HSA Return Calculator | FreeFinCalc.net',
     description: 'Calculate your HSA investment return. Historical average return is 7.5% per year. See how your money grows over time.',
-    alternates: { canonical: 'https://freefincalc.net/investment-return-calculator/asset/hsa' },
+    alternates: { canonical: 'https://www.freefincalc.net/investment-return-calculator/asset/hsa' },
   };
 }
 
@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Investment Return Calculator","url":"https://freefincalc.net/investment-return-calculator"},{"name":"Hsa","url":"https://freefincalc.net/investment-return-calculator/asset/hsa"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Investment Return Calculator","url":"https://www.freefincalc.net/investment-return-calculator"},{"name":"Hsa","url":"https://www.freefincalc.net/investment-return-calculator/asset/hsa"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

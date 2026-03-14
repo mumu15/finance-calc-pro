@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Roth IRA Calculator',
     description: 'Calculate tax-free Roth IRA growth and retirement income. See contribution limits and compare to traditional IRA.',
-    url: 'https://freefincalc.net/roth-ira-calculator',
+    url: 'https://www.freefincalc.net/roth-ira-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

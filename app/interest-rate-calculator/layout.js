@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Interest Rate Calculator',
     description: 'Find the interest rate on any loan given payment amount, principal and term. Reverse-calculate loan rates easily.',
-    url: 'https://freefincalc.net/interest-rate-calculator',
+    url: 'https://www.freefincalc.net/interest-rate-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

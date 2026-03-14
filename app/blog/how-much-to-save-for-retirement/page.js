@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/blog/how-much-to-save-for-retirement' },
+  alternates: { canonical: 'https://www.freefincalc.net/blog/how-much-to-save-for-retirement' },
   title: 'How Much Should I Save for Retirement? (2026 Guide)',
   description: 'Find out exactly how much you need to save for retirement. Includes the 4% rule, benchmarks by age and 401k contribution tips.',
 }
@@ -25,7 +25,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How Much To Save For Retirement","url":"https://freefincalc.net/blog/how-much-to-save-for-retirement"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How Much To Save For Retirement","url":"https://www.freefincalc.net/blog/how-much-to-save-for-retirement"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>

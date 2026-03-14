@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return {
     title: 'How Long to Pay Off $2,500,000 in Debt? | FreeFinCalc.net',
     description: 'Find out how long it takes to pay off $2,500,000 in debt. Calculate monthly payments, total interest and payoff date with our free debt payoff calculator.',
-    alternates: { canonical: 'https://freefincalc.net/debt-payoff-calculator/amount/2500000' },
+    alternates: { canonical: 'https://www.freefincalc.net/debt-payoff-calculator/amount/2500000' },
   };
 }
 
@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Debt Payoff Calculator","url":"https://freefincalc.net/debt-payoff-calculator"},{"name":"2500000","url":"https://freefincalc.net/debt-payoff-calculator/amount/2500000"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Debt Payoff Calculator","url":"https://www.freefincalc.net/debt-payoff-calculator"},{"name":"2500000","url":"https://www.freefincalc.net/debt-payoff-calculator/amount/2500000"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

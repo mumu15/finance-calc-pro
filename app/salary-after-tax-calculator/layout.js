@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Salary After Tax Calculator',
     description: 'Calculate your exact take-home salary after all taxes. See federal tax, state tax, Social Security and Medicare breakdown.',
-    url: 'https://freefincalc.net/salary-after-tax-calculator',
+    url: 'https://www.freefincalc.net/salary-after-tax-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

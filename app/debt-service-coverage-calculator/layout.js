@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'DSCR Calculator',
     description: 'Calculate Debt Service Coverage Ratio (DSCR) for business loans. See if your income covers loan payments for lender approval.',
-    url: 'https://freefincalc.net/debt-service-coverage-calculator',
+    url: 'https://www.freefincalc.net/debt-service-coverage-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

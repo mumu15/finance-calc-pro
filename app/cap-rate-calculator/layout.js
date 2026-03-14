@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Cap Rate Calculator',
     description: 'Calculate capitalization rate for any rental property. Use cap rate to compare and value investment properties.',
-    url: 'https://freefincalc.net/cap-rate-calculator',
+    url: 'https://www.freefincalc.net/cap-rate-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

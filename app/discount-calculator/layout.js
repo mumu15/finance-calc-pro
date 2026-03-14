@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Discount Calculator',
     description: 'Calculate sale price, savings amount and percentage off. Find final price after discount and sales tax for any purchase.',
-    url: 'https://freefincalc.net/discount-calculator',
+    url: 'https://www.freefincalc.net/discount-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

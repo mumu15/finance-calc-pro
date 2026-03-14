@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Car Loan Calculator',
     description: 'Calculate monthly car loan payments, total interest and true cost of financing. Compare loan terms and down payments.',
-    url: 'https://freefincalc.net/car-loan-calculator',
+    url: 'https://www.freefincalc.net/car-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

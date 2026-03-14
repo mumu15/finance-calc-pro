@@ -86,7 +86,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Average Net Worth at \${it.name} — 2026 Benchmarks\`,
     description: \`What is the average net worth at \${it.name}? Median: \$\${it.median.toLocaleString()}, 75th percentile: \$\${it.p75.toLocaleString()}, top 10%: \$\${it.p90.toLocaleString()}. Calculate yours free.\`,
-    alternates: { canonical: \`https://freefincalc.net/net-worth-calculator/age/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/net-worth-calculator/age/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -179,7 +179,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${it.name} Calculator — Monthly Payments & Total Cost 2026\`,
     description: \`Calculate monthly payments for a \${it.name}. 36-month payment: ~\$\${it.term36.toLocaleString()}/mo. 60-month: ~\$\${it.term60.toLocaleString()}/mo. Compare rates and terms free.\`,
-    alternates: { canonical: \`https://freefincalc.net/personal-loan-calculator/amount/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/personal-loan-calculator/amount/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -247,9 +247,9 @@ try { sitemap = fs.readFileSync('public/sitemap.xml', 'utf8') } catch(e) {}
 
 if (sitemap) {
   if (!sitemap.includes('/net-worth-calculator/age/'))
-    sitemap = addToSitemap(netWorthAges, x => `https://freefincalc.net/net-worth-calculator/age/${x.slug}`, sitemap)
+    sitemap = addToSitemap(netWorthAges, x => `https://www.freefincalc.net/net-worth-calculator/age/${x.slug}`, sitemap)
   if (!sitemap.includes('/personal-loan-calculator/amount/'))
-    sitemap = addToSitemap(loanAmounts, x => `https://freefincalc.net/personal-loan-calculator/amount/${x.slug}`, sitemap)
+    sitemap = addToSitemap(loanAmounts, x => `https://www.freefincalc.net/personal-loan-calculator/amount/${x.slug}`, sitemap)
   fs.writeFileSync('public/sitemap.xml', sitemap, 'utf8')
   console.log('✅ sitemap.xml updated')
 }

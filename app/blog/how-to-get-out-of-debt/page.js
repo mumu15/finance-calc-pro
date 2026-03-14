@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/blog/how-to-get-out-of-debt' },
+  alternates: { canonical: 'https://www.freefincalc.net/blog/how-to-get-out-of-debt' },
   title: 'How to Get Out of Debt Fast: The Step-by-Step Plan (2026)',
   description: 'A proven step-by-step plan to get out of debt fast in 2026. Includes debt snowball vs avalanche comparison, payoff calculators and motivation tips.',
 }
@@ -40,7 +40,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How To Get Out Of Debt","url":"https://freefincalc.net/blog/how-to-get-out-of-debt"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How To Get Out Of Debt","url":"https://www.freefincalc.net/blog/how-to-get-out-of-debt"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>← Back to Blog</Link></div>
         <article>
