@@ -451,7 +451,7 @@ import Script from 'next/script'
 import Providers from '../components/Providers'
 
 export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: {
     default: 'FreeFinCalc.net — Free Financial Calculators (40+ Currencies)',
     template: '%s | FreeFinCalc.net'
@@ -463,7 +463,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://freefincalc.net',
+    url: 'https://www.freefincalc.net',
     siteName: 'FreeFinCalc.net',
     images: [{ url: '/og-image.svg', width: 1200, height: 630, alt: 'FreeFinCalc.net - Free Financial Calculators in 40+ Currencies' }],
     title: 'FreeFinCalc.net — Free Financial Calculators (40+ Currencies)',

@@ -33,8 +33,8 @@ export default function SATStateClient({item:it,all}){
   return(
     <div style={s.page}><Header/>
         <SchemaMarkup breadcrumbs={[
-    { name: 'Home', url: 'https://freefincalc.net' },
-    { name: 'Salary After Tax Calculator', url: 'https://freefincalc.net/salary-after-tax' }
+    { name: 'Home', url: 'https://www.freefincalc.net' },
+    { name: 'Salary After Tax Calculator', url: 'https://www.freefincalc.net/salary-after-tax' }
   ]} />
         <AdUnit slot="7405024590" /><div style={s.wrap}>
       <nav style={s.bc}>
@@ -91,7 +91,7 @@ export default function SATStateClient({item:it,all}){
         ))}
       </div>
     </div><AdUnit slot="3248634657" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"Salary After Tax","item":"https://freefincalc.net/salary-after-tax"}]})}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Salary After Tax","item":"https://www.freefincalc.net/salary-after-tax"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Salary After Tax","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       <Footer/></div>
   )

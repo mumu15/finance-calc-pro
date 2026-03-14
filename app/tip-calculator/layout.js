@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Tip Calculator',
     description: 'Calculate tip amount, total bill and split between multiple people for any restaurant or service. Free tip calculator.',
-    url: 'https://freefincalc.net/tip-calculator',
+    url: 'https://www.freefincalc.net/tip-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -109,7 +109,7 @@ for (const cf of allClients) {
   // Build breadcrumb trail: Home → Parent Calculator → Dynamic
   const parentSlug = parts[0]; // e.g. "rent-vs-buy-calculator"
   const parentLabel = slugToLabel(parentSlug);
-  const parentUrl = `https://freefincalc.net/${parentSlug}`;
+  const parentUrl = `https://www.freefincalc.net/${parentSlug}`;
 
   // Determine the sub-category if any
   let subLabel = '';
@@ -125,7 +125,7 @@ for (const cf of allClients) {
   // For now, we add static Home + Parent, the component can extend later
 
   const breadcrumbsArray = `[
-    { name: 'Home', url: 'https://freefincalc.net' },
+    { name: 'Home', url: 'https://www.freefincalc.net' },
     { name: '${parentLabel.replace(/'/g, "\\'")}', url: '${parentUrl}' }
   ]`;
 

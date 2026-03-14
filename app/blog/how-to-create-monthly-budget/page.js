@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/blog/how-to-create-monthly-budget' },
+  alternates: { canonical: 'https://www.freefincalc.net/blog/how-to-create-monthly-budget' },
   title: 'How to Create a Monthly Budget That Actually Works (2026)',
   description: 'Learn how to create a realistic monthly budget using the 50/30/20 rule. Step by step guide for beginners with free budget calculator.',
 }
@@ -25,7 +25,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How To Create Monthly Budget","url":"https://freefincalc.net/blog/how-to-create-monthly-budget"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How To Create Monthly Budget","url":"https://www.freefincalc.net/blog/how-to-create-monthly-budget"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>

@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Biweekly Mortgage Calculator | FreeFinCalc',
   description: 'Free Biweekly Mortgage Calculator — estimate monthly payments, amortization, and total cost. Compare rates and scenarios instantly.',
-  alternates: { canonical: 'https://freefincalc.net/biweekly-mortgage-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/biweekly-mortgage-calculator' },
   openGraph: {
     title: 'Biweekly Mortgage Calculator | FreeFinCalc',
     description: 'Free Biweekly Mortgage Calculator — estimate monthly payments, amortization, and total cost. Compare rates and scenarios instantly.',
-    url: 'https://freefincalc.net/biweekly-mortgage-calculator',
+    url: 'https://www.freefincalc.net/biweekly-mortgage-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

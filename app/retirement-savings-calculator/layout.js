@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Retirement Savings Calculator',
     description: 'Calculate if you are on track for retirement. Project savings at retirement and see how much more you need to save.',
-    url: 'https://freefincalc.net/retirement-savings-calculator',
+    url: 'https://www.freefincalc.net/retirement-savings-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

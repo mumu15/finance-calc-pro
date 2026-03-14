@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Extra Mortgage Payment Calculator',
     description: 'Calculate interest savings and time saved from extra mortgage payments. See payoff date with any additional amount.',
-    url: 'https://freefincalc.net/extra-payment-calculator',
+    url: 'https://www.freefincalc.net/extra-payment-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

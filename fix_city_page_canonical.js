@@ -56,7 +56,7 @@ if (isClient) {
       "}\n\n" +
       "export async function generateMetadata({ params }) {\n" +
       "  return {\n" +
-      "    alternates: { canonical: `https://freefincalc.net/mortgage-calculator/${params.city}` },\n" +
+      "    alternates: { canonical: `https://www.freefincalc.net/mortgage-calculator/${params.city}` },\n" +
       "  };\n" +
       "}\n\n" +
       "export default function Page({ params }) {\n" +
@@ -72,7 +72,7 @@ if (isClient) {
   if (!content.includes('generateMetadata')) {
     const genMeta = '\nexport async function generateMetadata({ params }) {\n' +
       '  return {\n' +
-      '    alternates: { canonical: `https://freefincalc.net/mortgage-calculator/${params.city}` },\n' +
+      '    alternates: { canonical: `https://www.freefincalc.net/mortgage-calculator/${params.city}` },\n' +
       '  };\n' +
       '}\n';
     content = content.replace(/(export default)/, genMeta + '\n$1');

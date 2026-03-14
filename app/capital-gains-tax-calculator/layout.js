@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Capital Gains Tax Calculator',
     description: 'Calculate short-term and long-term capital gains tax on stocks, real estate and other assets. Know your tax before selling.',
-    url: 'https://freefincalc.net/capital-gains-tax-calculator',
+    url: 'https://www.freefincalc.net/capital-gains-tax-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

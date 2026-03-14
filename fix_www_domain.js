@@ -46,16 +46,16 @@ for (const f of allFiles) {
   let content = fs.readFileSync(f, 'utf8');
   const before = content;
 
-  // Replace https://freefincalc.net with https://freefincalc.net
+  // Replace https://www.freefincalc.net with https://www.freefincalc.net
   // But NOT if it already has www
-  // Use a regex that matches https://freefincalc.net but NOT https://freefincalc.net
+  // Use a regex that matches https://www.freefincalc.net but NOT https://www.freefincalc.net
   const count = (content.match(/https:\/\/freefincalc\.net/g) || []).length;
   const wwwCount = (content.match(/https:\/\/www\.freefincalc\.net/g) || []).length;
   const nonWwwCount = count - wwwCount;
 
   if (nonWwwCount > 0) {
     // Replace only non-www instances
-    content = content.replace(/https:\/\/freefincalc\.net(?![\w.])/g, 'https://freefincalc.net');
+    content = content.replace(/https:\/\/freefincalc\.net(?![\w.])/g, 'https://www.freefincalc.net');
     
     if (content !== before) {
       fs.writeFileSync(f, content, 'utf8');
@@ -93,5 +93,5 @@ console.log('  git commit -m "Fix www domain mismatch — all URLs now use www.f
 console.log('  git push origin master');
 console.log('');
 console.log('After deploy, re-run: node check_live_site.js');
-console.log('(But first update DOMAIN in check_live_site.js to https://freefincalc.net)');
+console.log('(But first update DOMAIN in check_live_site.js to https://www.freefincalc.net)');
 console.log('');

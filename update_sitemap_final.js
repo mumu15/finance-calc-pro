@@ -6,7 +6,7 @@
 const fs = require('fs')
 
 const content = `export default function sitemap() {
-  const base = 'https://freefincalc.net'
+  const base = 'https://www.freefincalc.net'
 
   // ── Static pages ─────────────────────────────────────────────
   const staticPages = [
@@ -224,5 +224,5 @@ console.log('  git add app/sitemap.js')
 console.log('  git commit -m "SEO: complete sitemap — 150 URLs"')
 console.log('  git push origin master:main')
 console.log('')
-console.log('Then verify: https://freefincalc.net/sitemap.xml')
+console.log('Then verify: https://www.freefincalc.net/sitemap.xml')
 console.log('Then resubmit in Google Search Console → Sitemaps')

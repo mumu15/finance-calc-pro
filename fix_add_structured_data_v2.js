@@ -87,8 +87,8 @@ for (const cf of allClients) {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://freefincalc.net" },
-          { "@type": "ListItem", "position": 2, "name": "${parentLabel.replace(/"/g, '\\"')}", "item": "https://freefincalc.net/${parentSlug}" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.freefincalc.net" },
+          { "@type": "ListItem", "position": 2, "name": "${parentLabel.replace(/"/g, '\\"')}", "item": "https://www.freefincalc.net/${parentSlug}" }
         ]
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Accounts Receivable Calculator',
     description: 'Calculate Days Sales Outstanding (DSO), AR turnover and carrying cost. Measure and improve your cash collection.',
-    url: 'https://freefincalc.net/accounts-receivable-calculator',
+    url: 'https://www.freefincalc.net/accounts-receivable-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

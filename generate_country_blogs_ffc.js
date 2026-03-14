@@ -749,7 +749,7 @@ console.log(`\n✅ Blog index updated with ${blogs.length} country-specific arti
 // Update sitemap
 // ═══════════════════════════════════════════════════════════════════
 const newSitemapUrls = blogs.map(b =>
-  `  <url><loc>https://freefincalc.net/blog/${b.slug}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`
+  `  <url><loc>https://www.freefincalc.net/blog/${b.slug}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`
 ).join('\n');
 
 let sitemap = fs.readFileSync('public/sitemap.xml', 'utf8');

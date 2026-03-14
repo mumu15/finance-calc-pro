@@ -11,7 +11,7 @@ const FILES = [
   'app/home-affordability-calculator/income/[income]/page.js',
 ];
 
-const BASE = 'https://freefincalc.net';
+const BASE = 'https://www.freefincalc.net';
 
 FILES.forEach(filePath => {
   const winPath = filePath.replace(/\//g, require('path').sep);

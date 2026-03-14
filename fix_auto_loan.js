@@ -23,11 +23,11 @@ fs.writeFileSync('app/auto-loan-calculator/layout.js', `import { Inter } from 'n
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Auto Loan Calculator — Free Car Loan Payment Calculator | FreeFinCalc',
   description: 'Calculate your auto loan monthly payment, total interest and true cost of financing any vehicle. Free auto loan calculator with instant results.',
   alternates: {
-    canonical: 'https://freefincalc.net/car-loan-calculator',
+    canonical: 'https://www.freefincalc.net/car-loan-calculator',
   },
 }
 

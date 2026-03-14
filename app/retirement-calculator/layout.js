@@ -1,11 +1,11 @@
 export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Retirement Calculator – Are You On Track?',
   description: 'Calculate your retirement nest egg, safe withdrawal rate, and find out if you are on track to retire comfortably.',
   openGraph: {
     title: 'Retirement Calculator – Are You On Track?',
     description: 'Calculate your retirement nest egg, safe withdrawal rate, and find out if you are on track to retire comfortably.',
-    url: 'https://freefincalc.net/retirement-calculator',
+    url: 'https://www.freefincalc.net/retirement-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

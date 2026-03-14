@@ -9,7 +9,7 @@ export async function generateStaticParams() { return rvbCities.map(x => ({ city
 
 export async function generateMetadata({ params }) {
   return {
-    alternates: { canonical: `https://freefincalc.net/rent-vs-buy-calculator/city/${params.city}` },
+    alternates: { canonical: `https://www.freefincalc.net/rent-vs-buy-calculator/city/${params.city}` },
   };
 }
 

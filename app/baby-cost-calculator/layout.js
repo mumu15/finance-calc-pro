@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Baby Cost Calculator',
     description: 'Estimate the first-year cost of having a baby including delivery, childcare and essentials. Plan your family finances.',
-    url: 'https://freefincalc.net/baby-cost-calculator',
+    url: 'https://www.freefincalc.net/baby-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -122,7 +122,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${s.name} Income Tax Calculator 2026 — State Tax Rates\`,
     description: \`Calculate your \${s.name} income tax. State rate: \${s.noTax ? 'No state income tax' : s.rate + '%'}. \${s.desc}. Free 2026 take-home pay estimate.\`,
-    alternates: { canonical: \`https://freefincalc.net/tax-calculator/state/\${s.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/tax-calculator/state/\${s.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -307,7 +307,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Savings Goal Calculator: \${g.name} 2026\`,
     description: \`How much do you need to save for \${g.name.toLowerCase()}? Target \$\${g.target.toLocaleString()} in \${g.months} months. Save \$\${pmt}/month. Free savings planner.\`,
-    alternates: { canonical: \`https://freefincalc.net/savings-goal-calculator/goal/\${g.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/savings-goal-calculator/goal/\${g.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -500,7 +500,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Compound Interest: \${sc.name} — Calculator & Results\`,
     description: \`See how compound interest grows \${sc.name.toLowerCase()}. Starting \$\${sc.principal.toLocaleString()}, \${sc.monthly > 0 ? '$' + sc.monthly + '/mo contributions, ' : ''}\${sc.rate}% return — final value ~\$\${Math.round(fv).toLocaleString()} after \${sc.years} years.\`,
-    alternates: { canonical: \`https://freefincalc.net/compound-interest/scenario/\${sc.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/compound-interest/scenario/\${sc.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -649,15 +649,15 @@ function addToSitemap(items, urlFn, sm) {
 
 if (sitemap) {
   if (!sitemap.includes('/tax-calculator/state/')) {
-    sitemap = addToSitemap(taxStates, s => `https://freefincalc.net/tax-calculator/state/${s.slug}`, sitemap)
+    sitemap = addToSitemap(taxStates, s => `https://www.freefincalc.net/tax-calculator/state/${s.slug}`, sitemap)
     console.log('✅ sitemap: +50 tax by state')
   }
   if (!sitemap.includes('/savings-goal-calculator/goal/')) {
-    sitemap = addToSitemap(savingsGoals, g => `https://freefincalc.net/savings-goal-calculator/goal/${g.slug}`, sitemap)
+    sitemap = addToSitemap(savingsGoals, g => `https://www.freefincalc.net/savings-goal-calculator/goal/${g.slug}`, sitemap)
     console.log('✅ sitemap: +50 savings goals')
   }
   if (!sitemap.includes('/compound-interest/scenario/')) {
-    sitemap = addToSitemap(ciScenarios, s => `https://freefincalc.net/compound-interest/scenario/${s.slug}`, sitemap)
+    sitemap = addToSitemap(ciScenarios, s => `https://www.freefincalc.net/compound-interest/scenario/${s.slug}`, sitemap)
     console.log('✅ sitemap: +50 compound interest scenarios')
   }
   fs.writeFileSync('public/sitemap.xml', sitemap, 'utf8')

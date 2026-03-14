@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Business Loan Calculator',
     description: 'Calculate business loan payments, total interest and true borrowing cost. Compare loan options for your small business.',
-    url: 'https://freefincalc.net/business-loan-calculator',
+    url: 'https://www.freefincalc.net/business-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

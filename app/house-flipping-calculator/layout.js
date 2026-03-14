@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'House Flipping Calculator',
     description: 'Calculate profit, ROI and costs for house flipping projects. Use the 70% rule to evaluate fix-and-flip deals.',
-    url: 'https://freefincalc.net/house-flipping-calculator',
+    url: 'https://www.freefincalc.net/house-flipping-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

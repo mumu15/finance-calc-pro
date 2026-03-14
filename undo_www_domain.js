@@ -47,7 +47,7 @@ for (const f of allFiles) {
   const count = (content.match(/https:\/\/www\.freefincalc\.net/g) || []).length;
 
   if (count > 0) {
-    content = content.replace(/https:\/\/www\.freefincalc\.net/g, 'https://freefincalc.net');
+    content = content.replace(/https:\/\/www\.freefincalc\.net/g, 'https://www.freefincalc.net');
     fs.writeFileSync(f, content, 'utf8');
     const rel = path.relative(BASE, f).replace(/\\/g, '/');
     filesFixed++;

@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const base = 'https://freefincalc.net';
+  const base = 'https://www.freefincalc.net';
   const today = new Date().toISOString().split('T')[0];
 
   return [

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Credit Card Minimum Payment Calculator',
     description: 'See how long minimum credit card payments take to pay off debt and total interest paid over time.',
-    url: 'https://freefincalc.net/credit-card-minimum-payment-calculator',
+    url: 'https://www.freefincalc.net/credit-card-minimum-payment-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

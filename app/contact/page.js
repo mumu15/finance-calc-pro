@@ -4,7 +4,7 @@ import SchemaMarkup from '../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/contact' },
+  alternates: { canonical: 'https://www.freefincalc.net/contact' },
   title: 'Contact Us – FreeFinCalc.net',
   description: 'Contact FreeFinCalc.net — get in touch for feedback or suggestions.',
 }
@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Contact","url":"https://freefincalc.net/contact"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Contact","url":"https://www.freefincalc.net/contact"}]} includeReview={true} />
       <main className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
         <div className="space-y-6 text-slate-400 leading-relaxed">

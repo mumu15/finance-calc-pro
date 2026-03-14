@@ -7,7 +7,7 @@ import SchemaMarkup from '../../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/blog/how-does-inflation-affect-savings' },
+  alternates: { canonical: 'https://www.freefincalc.net/blog/how-does-inflation-affect-savings' },
   title: 'How Does Inflation Affect Your Savings? (2026 Guide)',
   description: 'Learn how inflation silently erodes your savings and what you can do to protect your money from rising prices in 2026.',
 }
@@ -25,7 +25,7 @@ export default function Post() {
     <>
       <FaqSchema faqs={faqs} />
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"},{"name":"How Does Inflation Affect Savings","url":"https://freefincalc.net/blog/how-does-inflation-affect-savings"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"},{"name":"How Does Inflation Affect Savings","url":"https://www.freefincalc.net/blog/how-does-inflation-affect-savings"}]} includeReview={true} />
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-8"><Link href="/blog" className="text-sm hover:underline" style={{color:"#f0c842"}}>Back to Blog</Link></div>
         <article>

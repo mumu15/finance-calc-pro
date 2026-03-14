@@ -2,14 +2,14 @@ const https = require('https');
 const http = require('http');
 
 const TEST_URLS = [
-  'https://freefincalc.net/',
-  'https://freefincalc.net/about',
-  'https://freefincalc.net/mortgage-calculator',
-  'https://freefincalc.net/mortgage-calculator/new-york',
-  'https://freefincalc.net/retirement-calculator/age/30',
-  'https://freefincalc.net/401k-calculator/salary/80000',
-  'https://freefincalc.net/personal-loan/purpose/wedding',
-  'https://freefincalc.net/blog/how-to-calculate-mortgage-payment',
+  'https://www.freefincalc.net/',
+  'https://www.freefincalc.net/about',
+  'https://www.freefincalc.net/mortgage-calculator',
+  'https://www.freefincalc.net/mortgage-calculator/new-york',
+  'https://www.freefincalc.net/retirement-calculator/age/30',
+  'https://www.freefincalc.net/401k-calculator/salary/80000',
+  'https://www.freefincalc.net/personal-loan/purpose/wedding',
+  'https://www.freefincalc.net/blog/how-to-calculate-mortgage-payment',
 ];
 
 function getPage(url) {
@@ -19,7 +19,7 @@ function getPage(url) {
     const req = lib.get(url, { headers: { 'User-Agent': 'curl/7.0' } }, (res) => {
       if ([301,302,307,308].includes(res.statusCode) && res.headers.location) {
         let loc = res.headers.location;
-        if (loc.startsWith('/')) loc = 'https://freefincalc.net' + loc;
+        if (loc.startsWith('/')) loc = 'https://www.freefincalc.net' + loc;
         res.resume();
         return getPage(loc).then(resolve);
       }
@@ -40,10 +40,10 @@ function getPage(url) {
       const m = html.match(/rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)
              || html.match(/href=["']([^"']+)["'][^>]*rel=["']canonical["']/i);
       if (m) {
-        console.log('OK:      ' + url.replace('https://freefincalc.net',''));
+        console.log('OK:      ' + url.replace('https://www.freefincalc.net',''));
         console.log('         canonical -> ' + m[1]);
       } else {
-        console.log('MISSING: ' + url.replace('https://freefincalc.net','') + ' (HTTP ' + code + ')');
+        console.log('MISSING: ' + url.replace('https://www.freefincalc.net','') + ' (HTTP ' + code + ')');
         // Show first 500 chars of head to debug
         const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/i);
         if (head) console.log('         HEAD preview: ' + head[1].replace(/\s+/g,' ').slice(0,300));

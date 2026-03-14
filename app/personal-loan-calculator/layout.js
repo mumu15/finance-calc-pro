@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Personal Loan Calculator',
     description: 'Calculate personal loan monthly payments, total interest and compare loan options. Find the best personal loan for you.',
-    url: 'https://freefincalc.net/personal-loan-calculator',
+    url: 'https://www.freefincalc.net/personal-loan-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

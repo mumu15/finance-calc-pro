@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Employee Cost Calculator',
     description: 'Calculate the true total cost of an employee including taxes, benefits and overhead. Know the real cost before hiring.',
-    url: 'https://freefincalc.net/employee-cost-calculator',
+    url: 'https://www.freefincalc.net/employee-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

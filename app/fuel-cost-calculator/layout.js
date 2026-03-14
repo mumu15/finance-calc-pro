@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Fuel Cost Calculator',
     description: 'Calculate annual fuel costs for any vehicle based on MPG, miles driven and gas prices. Compare fuel economy savings.',
-    url: 'https://freefincalc.net/fuel-cost-calculator',
+    url: 'https://www.freefincalc.net/fuel-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

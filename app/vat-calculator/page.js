@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'VAT Calculator | FreeFinCalc',
   description: 'Free VAT Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://freefincalc.net/vat-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/vat-calculator' },
   openGraph: {
     title: 'VAT Calculator | FreeFinCalc',
     description: 'Free VAT Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://freefincalc.net/vat-calculator',
+    url: 'https://www.freefincalc.net/vat-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

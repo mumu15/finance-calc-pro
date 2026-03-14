@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Investment Fee Calculator',
     description: 'Calculate the true cost of investment fees over time. See how expense ratios drain your retirement savings.',
-    url: 'https://freefincalc.net/net-investment-fee-calculator',
+    url: 'https://www.freefincalc.net/net-investment-fee-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

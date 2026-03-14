@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Vacation Budget Calculator',
     description: 'Plan your trip budget including flights, hotel, food and activities. Calculate total vacation cost per person and per day.',
-    url: 'https://freefincalc.net/vacation-budget-calculator',
+    url: 'https://www.freefincalc.net/vacation-budget-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

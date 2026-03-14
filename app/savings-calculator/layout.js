@@ -1,11 +1,11 @@
 export const metadata = {
-  metadataBase: new URL('https://freefincalc.net'),
+  metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Savings Calculator – Plan Your Savings Goals',
   description: 'Free savings calculator. Find out how much to save monthly to reach your financial goals.',
   openGraph: {
     title: 'Savings Calculator – Plan Your Savings Goals',
     description: 'Free savings calculator. Find out how much to save monthly to reach your financial goals.',
-    url: 'https://freefincalc.net/savings-calculator',
+    url: 'https://www.freefincalc.net/savings-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

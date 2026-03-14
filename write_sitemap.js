@@ -9,7 +9,7 @@ const fs = require('fs')
 try { fs.rmSync('app/sitemap.xml', { recursive: true }); console.log('✅ Removed app/sitemap.xml dir') } catch(e) {}
 try { fs.unlinkSync('app/sitemap.js'); console.log('✅ Removed app/sitemap.js') } catch(e) {}
 
-const BASE = 'https://freefincalc.net'
+const BASE = 'https://www.freefincalc.net'
 const now = new Date().toISOString()
 
 const urls = [
@@ -112,6 +112,6 @@ console.log(`✅ public/sitemap.xml written — ${urls.length} URLs`)
 const robots = `User-agent: *
 Allow: /
 
-Sitemap: https://freefincalc.net/sitemap.xml`
+Sitemap: https://www.freefincalc.net/sitemap.xml`
 fs.writeFileSync('public/robots.txt', robots, 'utf8')
 console.log('✅ public/robots.txt updated')

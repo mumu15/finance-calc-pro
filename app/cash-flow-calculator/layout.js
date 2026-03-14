@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Cash Flow Calculator',
     description: 'Calculate operating cash flow, free cash flow and cash runway for your business. Know your burn rate and financial health.',
-    url: 'https://freefincalc.net/cash-flow-calculator',
+    url: 'https://www.freefincalc.net/cash-flow-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

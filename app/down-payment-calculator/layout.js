@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Down Payment Calculator',
     description: 'Calculate how much to save for a down payment and how long it will take. See impact of different down payment amounts.',
-    url: 'https://freefincalc.net/down-payment-calculator',
+    url: 'https://www.freefincalc.net/down-payment-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return {
     title: 'Personal Loan for Swimming Pool | FreeFinCalc.net',
     description: 'Install an in-ground or above-ground pool for your backyard. Use our free calculator to estimate monthly payments.',
-    alternates: { canonical: 'https://freefincalc.net/personal-loan/purpose/pool' },
+    alternates: { canonical: 'https://www.freefincalc.net/personal-loan/purpose/pool' },
   };
 }
 
@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Personal Loan Calculator","url":"https://freefincalc.net/personal-loan"},{"name":"Pool","url":"https://freefincalc.net/personal-loan/purpose/pool"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Personal Loan Calculator","url":"https://www.freefincalc.net/personal-loan"},{"name":"Pool","url":"https://www.freefincalc.net/personal-loan/purpose/pool"}]} includeReview={true} />
       <main className="min-h-screen bg-slate-950 text-white">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <nav className="text-sm text-slate-500 mb-6">

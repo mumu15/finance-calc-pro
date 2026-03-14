@@ -110,7 +110,7 @@ for (const cf of allClients) {
 
   const parentLabel = slugToLabel(parentSlug);
 
-  const schemaBlock = `<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freefincalc.net"},{"@type":"ListItem","position":2,"name":"${parentLabel.replace(/"/g, '\\"')}","item":"https://freefincalc.net/${parentSlug}"}]})}} />
+  const schemaBlock = `<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"${parentLabel.replace(/"/g, '\\"')}","item":"https://www.freefincalc.net/${parentSlug}"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"${parentLabel.replace(/"/g, '\\"')}","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       `;
 

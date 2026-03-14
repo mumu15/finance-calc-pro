@@ -17,8 +17,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "FreeFinCalc",
-    "url": "https://freefincalc.net",
-    "logo": "https://freefincalc.net/icon.png",
+    "url": "https://www.freefincalc.net",
+    "logo": "https://www.freefincalc.net/icon.png",
     "description": "Free financial calculators for mortgage, tax, retirement, investing and more. 100+ calculators, 40+ currencies."
   }
   return (
@@ -34,13 +34,13 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "FreeFinCalc",
-    "url": "https://freefincalc.net",
+    "url": "https://www.freefincalc.net",
     "description": "100+ free financial calculators. No sign-up required.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://freefincalc.net/?q={search_term_string}"
+        "urlTemplate": "https://www.freefincalc.net/?q={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }

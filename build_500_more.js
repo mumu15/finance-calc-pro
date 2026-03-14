@@ -94,7 +94,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Mortgage Calculator for \$\${it.price.toLocaleString()} Home — Monthly Payment 2026\`,
     description: \`What is the monthly mortgage payment on a \$\${it.price.toLocaleString()} home? 20% down, 30-year at 7%: ~\$\${it.pmt20_30.toLocaleString()}/mo. 10% down: ~\$\${it.pmt10_30.toLocaleString()}/mo. Free calculator.\`,
-    alternates: { canonical: \`https://freefincalc.net/mortgage-calculator/price/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/mortgage-calculator/price/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -177,7 +177,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Car Loan Calculator for \$\${it.price.toLocaleString()} Vehicle — Monthly Payment 2026\`,
     description: \`Monthly car loan payment on a \$\${it.price.toLocaleString()} vehicle. 48-mo: ~\$\${it.pmt48}/mo. 60-mo: ~\$\${it.pmt60}/mo. 72-mo: ~\$\${it.pmt72}/mo. Compare rates free.\`,
-    alternates: { canonical: \`https://freefincalc.net/car-loan-calculator/price/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/car-loan-calculator/price/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -257,7 +257,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`401k Calculator for \$\${it.salary.toLocaleString()} Salary — 2026 Retirement Projections\`,
     description: \`How much will your 401k grow on a \$\${it.salary.toLocaleString()} salary? At 10% contribution + 3% match over 30 years: ~\$\${it.fv30.toLocaleString()}. Free 401k planner.\`,
-    alternates: { canonical: \`https://freefincalc.net/401k-calculator/salary/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/401k-calculator/salary/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -338,7 +338,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Credit Card Payoff Calculator: \$\${it.balance.toLocaleString()} Balance at \${it.apr}% APR\`,
     description: \`How to pay off \$\${it.balance.toLocaleString()} in credit card debt. 24-month plan: \$\${it.pmt24}/mo. 36-month: \$\${it.pmt36}/mo. See total interest and fastest payoff strategy.\`,
-    alternates: { canonical: \`https://freefincalc.net/credit-card-payoff-calculator/balance/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/credit-card-payoff-calculator/balance/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -417,7 +417,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Student Loan Calculator: \$\${it.amount.toLocaleString()} — Monthly Payment & Payoff 2026\`,
     description: \`Monthly payment on \$\${it.amount.toLocaleString()} in student loans. 10-year standard: \$\${it.pmt10}/mo. 20-year: \$\${it.pmt20}/mo. Compare repayment plans. Income-driven options.\`,
-    alternates: { canonical: \`https://freefincalc.net/student-loan-calculator/amount/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/student-loan-calculator/amount/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -529,7 +529,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Rent vs Buy in \${it.name} 2026 — Is It Worth Buying?\`,
     description: \`Should you rent or buy in \${it.name}? Median home: \$\${it.medianHome.toLocaleString()}, median rent: \$\${it.medianRent.toLocaleString()}/mo. Personalized rent vs buy analysis for 2026.\`,
-    alternates: { canonical: \`https://freefincalc.net/rent-vs-buy-calculator/city/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/rent-vs-buy-calculator/city/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -648,7 +648,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Freelance \${it.name} Rate Calculator 2026 — How Much to Charge?\`,
     description: \`What should a freelance \${it.name.toLowerCase()} charge? Avg rate \$\${it.avgRate}/hr, median \$\${it.medRate}/hr. Calculate your target rate based on income goal. Free 2026 guide.\`,
-    alternates: { canonical: \`https://freefincalc.net/freelance-rate-calculator/job/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/freelance-rate-calculator/job/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -766,7 +766,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Break-Even Calculator: \${it.name} 2026 — Units & Revenue\`,
     description: \`Calculate the break-even point for a \${it.name.toLowerCase()}. With \$\${it.fixed.toLocaleString()} fixed costs and \${Math.round(it.varCost*100)}% variable costs, break-even is ~\${be} \${it.unit}s/month.\`,
-    alternates: { canonical: \`https://freefincalc.net/break-even-calculator/business/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/break-even-calculator/business/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }`,
@@ -845,7 +845,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`Inflation Calculator: \${it.year} to 2026 — CPI & Purchasing Power\`,
     description: \`How much is \$1 from \${it.year} worth today? CPI multiplier: \${it.multiplier}x. \$100 in \${it.year} = ~\$\${Math.round(100*it.multiplier)} in 2026. Free historical inflation calculator.\`,
-    alternates: { canonical: \`https://freefincalc.net/inflation-calculator/year/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/inflation-calculator/year/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -953,7 +953,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${it.name} Salary After Tax Calculator 2026 — Take-Home Pay\`,
     description: \`Calculate your exact take-home pay after federal, \${it.name} state (${it ? (it.noTax ? 'none' : it.rate + '%') : ''}), and FICA taxes. Free 2026 \${it.name} salary calculator.\`,
-    alternates: { canonical: \`https://freefincalc.net/salary-after-tax/state/\${it.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/salary-after-tax/state/\${it.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }
@@ -1024,16 +1024,16 @@ try { sitemap = fs.readFileSync('public/sitemap.xml', 'utf8') } catch(e) { conso
 
 if (sitemap) {
   const toAdd = [
-    [homePrices,    x=>`https://freefincalc.net/mortgage-calculator/price/${x.slug}`,                '/mortgage-calculator/price/'],
-    [carPrices,     x=>`https://freefincalc.net/car-loan-calculator/price/${x.slug}`,                '/car-loan-calculator/price/'],
-    [salaries401k,  x=>`https://freefincalc.net/401k-calculator/salary/${x.slug}`,                  '/401k-calculator/salary/'],
-    [ccBalances,    x=>`https://freefincalc.net/credit-card-payoff-calculator/balance/${x.slug}`,    '/credit-card-payoff-calculator/balance/'],
-    [studentAmounts,x=>`https://freefincalc.net/student-loan-calculator/amount/${x.slug}`,          '/student-loan-calculator/amount/'],
-    [rvbCities,     x=>`https://freefincalc.net/rent-vs-buy-calculator/city/${x.slug}`,             '/rent-vs-buy-calculator/city/'],
-    [freelanceJobs, x=>`https://freefincalc.net/freelance-rate-calculator/job/${x.slug}`,           '/freelance-rate-calculator/job/'],
-    [businesses,    x=>`https://freefincalc.net/break-even-calculator/business/${x.slug}`,          '/break-even-calculator/business/'],
-    [inflationYears,x=>`https://freefincalc.net/inflation-calculator/year/${x.slug}`,               '/inflation-calculator/year/'],
-    [satStates,     x=>`https://freefincalc.net/salary-after-tax/state/${x.slug}`,                  '/salary-after-tax/state/'],
+    [homePrices,    x=>`https://www.freefincalc.net/mortgage-calculator/price/${x.slug}`,                '/mortgage-calculator/price/'],
+    [carPrices,     x=>`https://www.freefincalc.net/car-loan-calculator/price/${x.slug}`,                '/car-loan-calculator/price/'],
+    [salaries401k,  x=>`https://www.freefincalc.net/401k-calculator/salary/${x.slug}`,                  '/401k-calculator/salary/'],
+    [ccBalances,    x=>`https://www.freefincalc.net/credit-card-payoff-calculator/balance/${x.slug}`,    '/credit-card-payoff-calculator/balance/'],
+    [studentAmounts,x=>`https://www.freefincalc.net/student-loan-calculator/amount/${x.slug}`,          '/student-loan-calculator/amount/'],
+    [rvbCities,     x=>`https://www.freefincalc.net/rent-vs-buy-calculator/city/${x.slug}`,             '/rent-vs-buy-calculator/city/'],
+    [freelanceJobs, x=>`https://www.freefincalc.net/freelance-rate-calculator/job/${x.slug}`,           '/freelance-rate-calculator/job/'],
+    [businesses,    x=>`https://www.freefincalc.net/break-even-calculator/business/${x.slug}`,          '/break-even-calculator/business/'],
+    [inflationYears,x=>`https://www.freefincalc.net/inflation-calculator/year/${x.slug}`,               '/inflation-calculator/year/'],
+    [satStates,     x=>`https://www.freefincalc.net/salary-after-tax/state/${x.slug}`,                  '/salary-after-tax/state/'],
   ]
   for (const [items, urlFn, check] of toAdd) {
     if (!sitemap.includes(check)) {

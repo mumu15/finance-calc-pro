@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Loan Payment Calculator',
     description: 'Calculate monthly loan payments for any amount, rate and term. See total interest and savings from extra payments.',
-    url: 'https://freefincalc.net/loan-payment-calculator',
+    url: 'https://www.freefincalc.net/loan-payment-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

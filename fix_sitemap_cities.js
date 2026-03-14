@@ -21,7 +21,7 @@ try { sitemap = fs.readFileSync('public/sitemap.xml', 'utf8') } catch(e) {}
 
 if (sitemap && !sitemap.includes('mortgage-calculator/new-york')) {
   const entries = slugs.map(s => `  <url>
-    <loc>https://freefincalc.net/mortgage-calculator/${s}</loc>
+    <loc>https://www.freefincalc.net/mortgage-calculator/${s}</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`).join('\n')

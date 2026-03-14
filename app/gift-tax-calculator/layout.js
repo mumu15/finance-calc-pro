@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Gift Tax Calculator',
     description: 'Calculate gift tax on transfers over the annual exclusion. Understand lifetime exemptions and gift tax filing requirements.',
-    url: 'https://freefincalc.net/gift-tax-calculator',
+    url: 'https://www.freefincalc.net/gift-tax-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

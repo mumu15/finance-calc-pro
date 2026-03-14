@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Loan Interest Calculator',
     description: 'Calculate total interest paid on any loan. Compare simple vs compound interest and see true cost of borrowing.',
-    url: 'https://freefincalc.net/loan-interest-calculator',
+    url: 'https://www.freefincalc.net/loan-interest-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

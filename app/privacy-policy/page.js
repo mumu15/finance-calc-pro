@@ -4,7 +4,7 @@ import SchemaMarkup from '../../components/SchemaMarkup';
 
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/privacy-policy' },
+  alternates: { canonical: 'https://www.freefincalc.net/privacy-policy' },
   title: 'Privacy Policy – FreeFinCalc.net',
   description: 'Privacy Policy for FreeFinCalc.net — free online financial calculators.',
 }
@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Privacy Policy","url":"https://freefincalc.net/privacy-policy"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Privacy Policy","url":"https://www.freefincalc.net/privacy-policy"}]} includeReview={true} />
       <main className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
         <div className="space-y-6 text-slate-400 leading-relaxed">

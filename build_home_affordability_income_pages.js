@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_DIR = path.join('app', 'home-affordability-calculator', 'income');
-const BASE_URL = 'https://freefincalc.net';
+const BASE_URL = 'https://www.freefincalc.net';
 
 const incomes = [
   '30000','35000','40000','45000','50000','55000','60000','65000','70000','75000',

@@ -52,7 +52,7 @@ const posts = [
 ]
 
 export const metadata = {
-  alternates: { canonical: 'https://freefincalc.net/blog' },
+  alternates: { canonical: 'https://www.freefincalc.net/blog' },
   title: 'Blog — Personal Finance Guides | FreeFinCalc.net',
   description: 'Free personal finance guides on budgeting, investing, mortgages, debt payoff and retirement. Expert advice updated for 2026.',
 }
@@ -61,7 +61,7 @@ export default function Blog() {
   return (
     <>
       <Header />
-      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://freefincalc.net/"},{"name":"Blog","url":"https://freefincalc.net/blog"}]} includeReview={true} />
+      <SchemaMarkup breadcrumbs={[{"name":"Home","url":"https://www.freefincalc.net/"},{"name":"Blog","url":"https://www.freefincalc.net/blog"}]} includeReview={true} />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Personal Finance Blog</h1>

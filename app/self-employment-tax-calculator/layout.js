@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Self-Employment Tax Calculator',
     description: 'Calculate self-employment tax, quarterly estimated payments and deductions for freelancers and independent contractors.',
-    url: 'https://freefincalc.net/self-employment-tax-calculator',
+    url: 'https://www.freefincalc.net/self-employment-tax-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

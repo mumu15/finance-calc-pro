@@ -81,7 +81,7 @@ export async function generateMetadata({ params }) {
   return {
     title: \`\${j.name} Salary After Tax 2026 — Take-Home Pay Calculator\`,
     description: \`How much does a \${j.name} take home? Average salary \$\${gross.toLocaleString()}/yr. After federal, state, and FICA taxes, estimated take-home is \$\${net.toLocaleString()}/yr.\`,
-    alternates: { canonical: \`https://freefincalc.net/salary-after-tax-calculator/job/\${j.slug}\` },
+    alternates: { canonical: \`https://www.freefincalc.net/salary-after-tax-calculator/job/\${j.slug}\` },
   }
 }
 export default function Layout({ children }) { return children }

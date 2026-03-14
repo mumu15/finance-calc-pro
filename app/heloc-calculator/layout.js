@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'HELOC Calculator',
     description: 'Calculate your home equity line of credit limit, monthly payments and total borrowing capacity based on your home value.',
-    url: 'https://freefincalc.net/heloc-calculator',
+    url: 'https://www.freefincalc.net/heloc-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

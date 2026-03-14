@@ -48,7 +48,7 @@ if (!publisherId || !publisherId.startsWith('ca-pub-')) {
   console.log('  HOW TO APPLY:')
   console.log('  1. Go to https://adsense.google.com/start')
   console.log('  2. Sign in with your Google account')
-  console.log('  3. Enter https://freefincalc.net as your site URL')
+  console.log('  3. Enter https://www.freefincalc.net as your site URL')
   console.log('  4. Choose your country')
   console.log('  5. Accept terms and click Start using AdSense')
   console.log('  6. You will get a publisher ID immediately')

@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Simple Interest Calculator',
     description: 'Calculate simple interest on any loan or investment. Find principal, rate, time or interest amount instantly.',
-    url: 'https://freefincalc.net/simple-interest-calculator',
+    url: 'https://www.freefincalc.net/simple-interest-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

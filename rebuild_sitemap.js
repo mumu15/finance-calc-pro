@@ -8,7 +8,7 @@ const path = require('path');
 
 const BASE = __dirname;
 const APP = path.join(BASE, 'app');
-const DOMAIN = 'https://freefincalc.net';
+const DOMAIN = 'https://www.freefincalc.net';
 
 // Find all actual page.js files and derive their URL paths
 function findPages(dir, results = []) {

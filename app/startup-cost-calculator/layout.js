@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'Startup Cost Calculator',
     description: 'Estimate total startup costs, funding needed and months to break even. Plan your new business finances accurately.',
-    url: 'https://freefincalc.net/startup-cost-calculator',
+    url: 'https://www.freefincalc.net/startup-cost-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },

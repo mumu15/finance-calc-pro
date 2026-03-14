@@ -3,11 +3,11 @@ import PageClient from './PageClient'
 export const metadata = {
   title: 'Discount Calculator | FreeFinCalc',
   description: 'Free Discount Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-  alternates: { canonical: 'https://freefincalc.net/discount-calculator' },
+  alternates: { canonical: 'https://www.freefincalc.net/discount-calculator' },
   openGraph: {
     title: 'Discount Calculator | FreeFinCalc',
     description: 'Free Discount Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
-    url: 'https://freefincalc.net/discount-calculator',
+    url: 'https://www.freefincalc.net/discount-calculator',
     siteName: 'FreeFinCalc',
     type: 'website',
   },
