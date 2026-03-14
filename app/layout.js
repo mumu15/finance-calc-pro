@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { CurrencyProvider } from '../components/CurrencyContext'
+import InputFixer from '../components/InputFixer'
 
 // font-display: swap prevents FOIT (flash of invisible text)
 const inter = Inter({
@@ -47,7 +48,7 @@ export default function RootLayout({ children }) {
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
       </head>
       <body style={{margin:0,background:'#0f1117'}}>
-        <CurrencyProvider>{children}</CurrencyProvider>
+        <CurrencyProvider><InputFixer />{children}</CurrencyProvider>
 
         {/* AdSense — afterInteractive so it never blocks First Contentful Paint */}
         <Script
