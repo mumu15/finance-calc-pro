@@ -25,9 +25,9 @@ export default function BreakEvenClient({item:it,all}){
     <h1 style={s.h1}>Break-Even Calculator: {it.name}</h1>
     <p style={s.sub}>A {it.name.toLowerCase()} is {it.desc}. Find your break-even point in units and revenue.</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Monthly Fixed Costs</label><div style={s.val}>{fmt(fixed)}/mo</div><input type="number" value={fixed} onChange={e=>setFixed(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Price per {it.unit}</label><div style={s.val}>{fmt(price)}</div><input type="number" value={price} onChange={e=>setPrice(+e.target.value)} className="calc-input"/></div>
-      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Variable Cost %</label><div style={s.val}>{varPct}% per {it.unit}</div><input type="number" value={varPct} onChange={e=>setVarPct(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Monthly Fixed Costs</label><div style={s.val}>{fmt(fixed)}/mo</div><input type="text" inputMode="decimal" value={fixed} onChange={e=>setFixed(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Price per {it.unit}</label><div style={s.val}>{fmt(price)}</div><input type="text" inputMode="decimal" value={price} onChange={e=>setPrice(+e.target.value)} className="calc-input"/></div>
+      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Variable Cost %</label><div style={s.val}>{varPct}% per {it.unit}</div><input type="text" inputMode="decimal" value={varPct} onChange={e=>setVarPct(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Break-Even Analysis</h2>

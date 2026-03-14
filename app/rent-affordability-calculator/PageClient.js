@@ -64,7 +64,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Gross Income</label>
                   <span className="text-white font-bold text-sm">{fmt(grossIncome)}</span>
                 </div>
-                <input type="number" min={10000} max={500000} step={1000}
+                <input type="text" inputMode="decimal" min={10000} max={500000} step={1000}
                   value={grossIncome} onChange={e => setGrossIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -74,7 +74,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Debt Payments</label>
                   <span className="text-white font-bold text-sm">{fmt(otherDebts)}</span>
                 </div>
-                <input type="number" min={0} max={5000} step={50}
+                <input type="text" inputMode="decimal" min={0} max={5000} step={50}
                   value={otherDebts} onChange={e => setOtherDebts(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -84,7 +84,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Effective Tax Rate</label>
                   <span className="text-white font-bold text-sm">{`${taxRate}%`}</span>
                 </div>
-                <input type="number" min={10} max={45} step={1}
+                <input type="text" inputMode="decimal" min={10} max={45} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

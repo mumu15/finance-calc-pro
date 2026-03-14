@@ -80,7 +80,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Credit Card Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance)}</span>
                 </div>
-                <input type="number" min={100} max={100000} step={100}
+                <input type="text" inputMode="decimal" min={100} max={100000} step={100}
                   value={balance} onChange={e => setBalance(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -90,7 +90,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Credit Card APR</label>
                   <span className="text-white font-bold text-sm">{`${apr}%`}</span>
                 </div>
-                <input type="number" min={1} max={36} step={0.25}
+                <input type="text" inputMode="decimal" min={1} max={36} step={0.25}
                   value={apr} onChange={e => setApr(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -117,7 +117,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Minimum Payment % or Amount</label>
                   <span className="text-white font-bold text-sm">{`${minPct}%`}</span>
                 </div>
-                <input type="number" min={1} max={5} step={0.25}
+                <input type="text" inputMode="decimal" min={1} max={5} step={0.25}
                   value={minPct} onChange={e => setMinPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

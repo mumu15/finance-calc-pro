@@ -31,10 +31,10 @@ export default function FreelanceRateClient({item:it,all}){
       <div style={{...s.row,borderBottom:'none'}}><span style={{color:'#94a3b8'}}>High (senior/specialist)</span><span style={{fontWeight:700,color:'#10b981'}}>{fmt(it.highRate)}/hr</span></div>
     </div>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Target Annual Income</label><div style={s.val}>{fmt(income)}/yr</div><input type="number" value={income} onChange={e=>setIncome(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Billable Utilization</label><div style={s.val}>{util}% of hours</div><input type="number" value={util} onChange={e=>setUtil(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Hours per Week</label><div style={s.val}>{hours} hrs/wk</div><input type="number" value={hours} onChange={e=>setHours(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Weeks Working per Year</label><div style={s.val}>{weeks} weeks</div><input type="number" value={weeks} onChange={e=>setWeeks(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Target Annual Income</label><div style={s.val}>{fmt(income)}/yr</div><input type="text" inputMode="decimal" value={income} onChange={e=>setIncome(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Billable Utilization</label><div style={s.val}>{util}% of hours</div><input type="text" inputMode="decimal" value={util} onChange={e=>setUtil(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Hours per Week</label><div style={s.val}>{hours} hrs/wk</div><input type="text" inputMode="decimal" value={hours} onChange={e=>setHours(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Weeks Working per Year</label><div style={s.val}>{weeks} weeks</div><input type="text" inputMode="decimal" value={weeks} onChange={e=>setWeeks(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Your Target Rate</h2>

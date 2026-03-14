@@ -62,22 +62,22 @@ export default function CIScenarioClient({ item: sc, all }) {
           <div style={st.card}>
             <label style={st.lbl}>Starting Amount</label>
             <div style={st.val}>{fmt(principal)}</div>
-            <input type="number" value={principal} onChange={e => setPrincipal(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={principal} onChange={e => setPrincipal(+e.target.value)} className="calc-input" />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Monthly Contribution</label>
             <div style={st.val}>{fmt(monthly)}/mo</div>
-            <input type="number" value={monthly} onChange={e => setMonthly(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={monthly} onChange={e => setMonthly(+e.target.value)} className="calc-input" />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Annual Return Rate</label>
             <div style={st.val}>{rate}%</div>
-            <input type="number" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
           </div>
           <div style={st.card}>
             <label style={st.lbl}>Time Period</label>
             <div style={st.val}>{years} years</div>
-            <input type="number" value={years} onChange={e => setYears(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={years} onChange={e => setYears(+e.target.value)} className="calc-input" />
           </div>
         </div>
 

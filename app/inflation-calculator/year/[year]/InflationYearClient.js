@@ -30,7 +30,7 @@ export default function InflationYearClient({item:it,all}){
     <div style={s.card}>
       <label style={s.lbl}>Amount in {it.year} Dollars</label>
       <div style={s.val}>{fmt(amount)} in {it.year}</div>
-      <input type="number" value={amount} onChange={e=>setAmount(+e.target.value)} className="calc-input"/>
+      <input type="text" inputMode="decimal" value={amount} onChange={e=>setAmount(+e.target.value)} className="calc-input"/>
     </div>
     <div style={{...s.box,marginTop:20}}>
       <h2 style={s.h2}>Purchasing Power</h2>

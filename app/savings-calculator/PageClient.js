@@ -75,7 +75,7 @@ export default function SavingsCalculator() {
                     <label className="text-slate-400 text-sm">{field.label}</label>
                     <span className="text-white font-bold text-sm">{field.prefix || ""}{field.value.toLocaleString()}{field.suffix || ''}</span>
                   </div>
-                  <input type="number" min={field.min} max={field.max} step={field.step} value={field.value}
+                  <input type="text" inputMode="decimal" min={field.min} max={field.max} step={field.step} value={field.value}
                     onChange={e => field.set(Number(e.target.value))}
                     className="slider-upgrade" />
                 </div>

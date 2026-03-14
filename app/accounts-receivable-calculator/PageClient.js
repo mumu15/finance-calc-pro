@@ -64,7 +64,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Revenue</label>
                   <span className="text-white font-bold text-sm">{fmt(annualRevenue)}</span>
                 </div>
-                <input type="number" min={10000} max={100000000} step={10000}
+                <input type="text" inputMode="decimal" min={10000} max={100000000} step={10000}
                   value={annualRevenue} onChange={e => setAnnualRevenue(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -74,7 +74,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current AR Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(arBalance)}</span>
                 </div>
-                <input type="number" min={0} max={10000000} step={1000}
+                <input type="text" inputMode="decimal" min={0} max={10000000} step={1000}
                   value={arBalance} onChange={e => setArBalance(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -84,7 +84,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Bad Debt Rate</label>
                   <span className="text-white font-bold text-sm">{`${badDebtRate}%`}</span>
                 </div>
-                <input type="number" min={0} max={10} step={0.1}
+                <input type="text" inputMode="decimal" min={0} max={10} step={0.1}
                   value={badDebtRate} onChange={e => setBadDebtRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -94,7 +94,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Business Borrowing Rate</label>
                   <span className="text-white font-bold text-sm">{`${borrowingRate}%`}</span>
                 </div>
-                <input type="number" min={1} max={25} step={0.25}
+                <input type="text" inputMode="decimal" min={1} max={25} step={0.25}
                   value={borrowingRate} onChange={e => setBorrowingRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -104,7 +104,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target DSO (days)</label>
                   <span className="text-white font-bold text-sm">{`${targetDso} days`}</span>
                 </div>
-                <input type="number" min={15} max={90} step={5}
+                <input type="text" inputMode="decimal" min={15} max={90} step={5}
                   value={targetDso} onChange={e => setTargetDso(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

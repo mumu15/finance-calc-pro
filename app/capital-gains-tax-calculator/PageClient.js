@@ -67,7 +67,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Sale Price</label>
                   <span className="text-white font-bold text-sm">{fmt(salePrice)}</span>
                 </div>
-                <input type="number" min={0} max={5000000} step={500}
+                <input type="text" inputMode="decimal" min={0} max={5000000} step={500}
                   value={salePrice} onChange={e => setSalePrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -77,7 +77,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Cost Basis (original price)</label>
                   <span className="text-white font-bold text-sm">{fmt(costBasis)}</span>
                 </div>
-                <input type="number" min={0} max={5000000} step={500}
+                <input type="text" inputMode="decimal" min={0} max={5000000} step={500}
                   value={costBasis} onChange={e => setCostBasis(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -104,7 +104,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Taxable Income</label>
                   <span className="text-white font-bold text-sm">{fmt(annualIncome)}</span>
                 </div>
-                <input type="number" min={0} max={1000000} step={1000}
+                <input type="text" inputMode="decimal" min={0} max={1000000} step={1000}
                   value={annualIncome} onChange={e => setAnnualIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

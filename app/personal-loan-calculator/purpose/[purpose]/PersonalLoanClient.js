@@ -56,17 +56,17 @@ export default function PersonalLoanClient({ purpose, allPurposes }) {
           <div style={s.card}>
             <label style={s.lbl}>Loan Amount</label>
             <div style={s.val}>{fmt(amt)}</div>
-            <input type="number" value={amt} onChange={e => setAmt(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={amt} onChange={e => setAmt(+e.target.value)} className="calc-input" />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Interest Rate</label>
             <div style={s.val}>{rate}%</div>
-            <input type="number" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
           </div>
           <div style={{...s.card, gridColumn:'span 2'}}>
             <label style={s.lbl}>Loan Term (months)</label>
             <div style={s.val}>{term} months</div>
-            <input type="number" value={term} onChange={e => setTerm(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={term} onChange={e => setTerm(+e.target.value)} className="calc-input" />
           </div>
         </div>
         <div style={s.box}>

@@ -63,7 +63,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Gross Wages</label>
                   <span className="text-white font-bold text-sm">{fmt(grossWages)}</span>
                 </div>
-                <input type="number" min={10000} max={300000} step={1000}
+                <input type="text" inputMode="decimal" min={10000} max={300000} step={1000}
                   value={grossWages} onChange={e => setGrossWages(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -90,7 +90,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">State Unemployment Rate (SUTA)</label>
                   <span className="text-white font-bold text-sm">{`${sutaRate}%`}</span>
                 </div>
-                <input type="number" min={0} max={10} step={0.1}
+                <input type="text" inputMode="decimal" min={0} max={10} step={0.1}
                   value={sutaRate} onChange={e => setSutaRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -100,7 +100,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">State Unemployment Wage Base</label>
                   <span className="text-white font-bold text-sm">{fmt(sutaWageBase)}</span>
                 </div>
-                <input type="number" min={7000} max={60000} step={1000}
+                <input type="text" inputMode="decimal" min={7000} max={60000} step={1000}
                   value={sutaWageBase} onChange={e => setSutaWageBase(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

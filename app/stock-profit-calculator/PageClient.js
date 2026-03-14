@@ -79,7 +79,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Number of Shares</label>
                   <span className="text-white font-bold text-sm">{shares + " shares"}</span>
                 </div>
-                <input type="number" min={1} max={10000} step={1}
+                <input type="text" inputMode="decimal" min={1} max={10000} step={1}
                   value={shares} onChange={e => setShares(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -89,7 +89,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Buy Price Per Share</label>
                   <span className="text-white font-bold text-sm">{fmt(buyPrice)}</span>
                 </div>
-                <input type="number" min={0.01} max={5000} step={0.5}
+                <input type="text" inputMode="decimal" min={0.01} max={5000} step={0.5}
                   value={buyPrice} onChange={e => setBuyPrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -99,7 +99,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Sell Price Per Share</label>
                   <span className="text-white font-bold text-sm">{fmt(sellPrice)}</span>
                 </div>
-                <input type="number" min={0.01} max={10000} step={0.5}
+                <input type="text" inputMode="decimal" min={0.01} max={10000} step={0.5}
                   value={sellPrice} onChange={e => setSellPrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -109,7 +109,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Trading Fees</label>
                   <span className="text-white font-bold text-sm">{fmt(tradingFees)}</span>
                 </div>
-                <input type="number" min={0} max={500} step={5}
+                <input type="text" inputMode="decimal" min={0} max={500} step={5}
                   value={tradingFees} onChange={e => setTradingFees(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -119,7 +119,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Capital Gains Tax Rate</label>
                   <span className="text-white font-bold text-sm">{taxRate + "%"}</span>
                 </div>
-                <input type="number" min={0} max={40} step={1}
+                <input type="text" inputMode="decimal" min={0} max={40} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

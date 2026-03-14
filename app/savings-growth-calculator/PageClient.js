@@ -59,7 +59,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Initial Deposit</label>
                   <span className="text-white font-bold text-sm">{fmt(initialDeposit)}</span>
                 </div>
-                <input type="number" min={0} max={1000000} step={500}
+                <input type="text" inputMode="decimal" min={0} max={1000000} step={500}
                   value={initialDeposit} onChange={e => setInitialDeposit(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -69,7 +69,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Deposit</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyDeposit)}</span>
                 </div>
-                <input type="number" min={0} max={20000} step={50}
+                <input type="text" inputMode="decimal" min={0} max={20000} step={50}
                   value={monthlyDeposit} onChange={e => setMonthlyDeposit(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -79,7 +79,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${annualRate}%`}</span>
                 </div>
-                <input type="number" min={0.1} max={12} step={0.1}
+                <input type="text" inputMode="decimal" min={0.1} max={12} step={0.1}
                   value={annualRate} onChange={e => setAnnualRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -89,7 +89,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Savings Period</label>
                   <span className="text-white font-bold text-sm">{`${years} yrs`}</span>
                 </div>
-                <input type="number" min={1} max={50} step={1}
+                <input type="text" inputMode="decimal" min={1} max={50} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

@@ -29,10 +29,10 @@ export default function FourOhOneKClient({item:it,all}){
     <h1 style={s.h1}>401k Calculator: {fmt(salary)}/Year Salary</h1>
     <p style={s.sub}>See exactly how much your 401k will grow on a {fmt(salary)}/year salary, including employer match.</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Annual Salary</label><div style={s.val}>{fmt(salary)}/yr</div><input type="number" value={salary} onChange={e=>setSalary(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Your Contribution</label><div style={s.val}>{contrib}% — {fmt(salary*contrib/100/12)}/mo</div><input type="number" value={contrib} onChange={e=>setContrib(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Employer Match</label><div style={s.val}>{match}% — {fmt(salary*Math.min(match,contrib)/100/12)}/mo</div><input type="number" value={match} onChange={e=>setMatch(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Years to Retirement</label><div style={s.val}>{years} years</div><input type="number" value={years} onChange={e=>setYears(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Annual Salary</label><div style={s.val}>{fmt(salary)}/yr</div><input type="text" inputMode="decimal" value={salary} onChange={e=>setSalary(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Your Contribution</label><div style={s.val}>{contrib}% — {fmt(salary*contrib/100/12)}/mo</div><input type="text" inputMode="decimal" value={contrib} onChange={e=>setContrib(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Employer Match</label><div style={s.val}>{match}% — {fmt(salary*Math.min(match,contrib)/100/12)}/mo</div><input type="text" inputMode="decimal" value={match} onChange={e=>setMatch(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Years to Retirement</label><div style={s.val}>{years} years</div><input type="text" inputMode="decimal" value={years} onChange={e=>setYears(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>401k Projection — {fmt(salary)}/yr</h2>

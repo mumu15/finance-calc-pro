@@ -62,22 +62,22 @@ export default function CarBrandClient({ brand, allBrands }) {
           <div style={s.card}>
             <label style={s.lbl}>Vehicle Price</label>
             <div style={s.val}>{fmt(price)}</div>
-            <input type="number" value={price} onChange={e => setPrice(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={price} onChange={e => setPrice(+e.target.value)} className="calc-input" />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Down Payment ({down}%)</label>
             <div style={s.val}>{fmt(price * down / 100)}</div>
-            <input type="number" value={down} onChange={e => setDown(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={down} onChange={e => setDown(+e.target.value)} className="calc-input" />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Interest Rate</label>
             <div style={s.val}>{rate}%</div>
-            <input type="number" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={rate} onChange={e => setRate(+e.target.value)} className="calc-input" />
           </div>
           <div style={s.card}>
             <label style={s.lbl}>Loan Term (months)</label>
             <div style={s.val}>{term} mo</div>
-            <input type="number" value={term} onChange={e => setTerm(+e.target.value)} className="calc-input" />
+            <input type="text" inputMode="decimal" value={term} onChange={e => setTerm(+e.target.value)} className="calc-input" />
           </div>
         </div>
 

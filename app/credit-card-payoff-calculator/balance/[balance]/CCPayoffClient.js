@@ -27,9 +27,9 @@ export default function CCPayoffClient({item:it,all}){
     <h1 style={s.h1}>Credit Card Payoff: {fmt(balance)} Balance</h1>
     <p style={s.sub}>Find your fastest debt-free date and total interest cost for a {fmt(balance)} credit card balance.</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Balance</label><div style={s.val}>{fmt(balance)}</div><input type="number" value={balance} onChange={e=>{setBalance(+e.target.value);setMonthly(Math.round(pmt(+e.target.value,apr,36)))}} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>APR</label><div style={s.val}>{apr}%</div><input type="number" value={apr} onChange={e=>setApr(+e.target.value)} className="calc-input"/></div>
-      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Monthly Payment</label><div style={s.val}>{fmt(monthly)}/mo</div><input type="number" value={monthly} onChange={e=>setMonthly(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Balance</label><div style={s.val}>{fmt(balance)}</div><input type="text" inputMode="decimal" value={balance} onChange={e=>{setBalance(+e.target.value);setMonthly(Math.round(pmt(+e.target.value,apr,36)))}} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>APR</label><div style={s.val}>{apr}%</div><input type="text" inputMode="decimal" value={apr} onChange={e=>setApr(+e.target.value)} className="calc-input"/></div>
+      <div style={{...s.card,gridColumn:'span 2'}}><label style={s.lbl}>Monthly Payment</label><div style={s.val}>{fmt(monthly)}/mo</div><input type="text" inputMode="decimal" value={monthly} onChange={e=>setMonthly(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Payoff Summary</h2>

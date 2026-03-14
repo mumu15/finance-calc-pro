@@ -65,7 +65,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Purchase Price</label>
                   <span className="text-white font-bold text-sm">{fmt(purchasePrice)}</span>
                 </div>
-                <input type="number" min={1000} max={200000} step={500}
+                <input type="text" inputMode="decimal" min={1000} max={200000} step={500}
                   value={purchasePrice} onChange={e => setPurchasePrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -75,7 +75,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Year 1 Depreciation</label>
                   <span className="text-white font-bold text-sm">{`${year1Rate}%`}</span>
                 </div>
-                <input type="number" min={5} max={35} step={1}
+                <input type="text" inputMode="decimal" min={5} max={35} step={1}
                   value={year1Rate} onChange={e => setYear1Rate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -85,7 +85,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Rate (Year 2+)</label>
                   <span className="text-white font-bold text-sm">{`${annualRate}%`}</span>
                 </div>
-                <input type="number" min={5} max={25} step={1}
+                <input type="text" inputMode="decimal" min={5} max={25} step={1}
                   value={annualRate} onChange={e => setAnnualRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -95,7 +95,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Years to Calculate</label>
                   <span className="text-white font-bold text-sm">{`${years} yrs`}</span>
                 </div>
-                <input type="number" min={1} max={15} step={1}
+                <input type="text" inputMode="decimal" min={1} max={15} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -105,7 +105,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Miles Driven Per Year</label>
                   <span className="text-white font-bold text-sm">{`${mileageYr} mi`}</span>
                 </div>
-                <input type="number" min={5000} max={50000} step={1000}
+                <input type="text" inputMode="decimal" min={5000} max={50000} step={1000}
                   value={mileageYr} onChange={e => setMileageYr(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

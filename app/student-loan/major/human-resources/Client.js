@@ -26,15 +26,15 @@ export default function Client() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Loan Amount ($)</label>
-            <input type="number" value={amount} onChange={e => setAmount(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-blue-400 transition-colors" min="1000" max="300000" step="1000" />
+            <input type="text" inputMode="decimal" value={amount} onChange={e => setAmount(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-blue-400 transition-colors" min="1000" max="300000" step="1000" />
           </div>
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Interest Rate (%)</label>
-            <input type="number" value={rate} onChange={e => setRate(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-blue-400 transition-colors" min="1" max="20" step="0.1" />
+            <input type="text" inputMode="decimal" value={rate} onChange={e => setRate(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-blue-400 transition-colors" min="1" max="20" step="0.1" />
           </div>
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Repayment Term (months)</label>
-            <input type="number" value={term} onChange={e => setTerm(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-blue-400 transition-colors" min="12" max="300" step="12" />
+            <input type="text" inputMode="decimal" value={term} onChange={e => setTerm(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-blue-400 transition-colors" min="12" max="300" step="12" />
           </div>
         </div>
         <button onClick={calculate} className="w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-4 rounded-xl text-lg transition-colors">Calculate Monthly Payment</button>

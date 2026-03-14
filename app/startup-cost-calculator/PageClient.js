@@ -68,7 +68,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">One-Time Setup Costs (legal, equipment, etc)</label>
                   <span className="text-white font-bold text-sm">{fmt(setupCosts)}</span>
                 </div>
-                <input type="number" min={0} max={500000} step={500}
+                <input type="text" inputMode="decimal" min={0} max={500000} step={500}
                   value={setupCosts} onChange={e => setSetupCosts(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -78,7 +78,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Fixed Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyFixed)}</span>
                 </div>
-                <input type="number" min={0} max={200000} step={250}
+                <input type="text" inputMode="decimal" min={0} max={200000} step={250}
                   value={monthlyFixed} onChange={e => setMonthlyFixed(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -88,7 +88,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Variable Costs (at target revenue)</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyVariable)}</span>
                 </div>
-                <input type="number" min={0} max={200000} step={250}
+                <input type="text" inputMode="decimal" min={0} max={200000} step={250}
                   value={monthlyVariable} onChange={e => setMonthlyVariable(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -98,7 +98,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Monthly Revenue</label>
                   <span className="text-white font-bold text-sm">{fmt(targetRevenue)}</span>
                 </div>
-                <input type="number" min={0} max={500000} step={500}
+                <input type="text" inputMode="decimal" min={0} max={500000} step={500}
                   value={targetRevenue} onChange={e => setTargetRevenue(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -108,7 +108,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Months to Reach Full Revenue</label>
                   <span className="text-white font-bold text-sm">{`${rampMonths} mo`}</span>
                 </div>
-                <input type="number" min={1} max={24} step={1}
+                <input type="text" inputMode="decimal" min={1} max={24} step={1}
                   value={rampMonths} onChange={e => setRampMonths(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -118,7 +118,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Cash Buffer (months of expenses)</label>
                   <span className="text-white font-bold text-sm">{`${cashBuffer} mo`}</span>
                 </div>
-                <input type="number" min={1} max={12} step={1}
+                <input type="text" inputMode="decimal" min={1} max={12} step={1}
                   value={cashBuffer} onChange={e => setCashBuffer(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

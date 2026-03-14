@@ -72,7 +72,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Home / Property Value</label>
                   <span className="text-white font-bold text-sm">{fmt(homeValue)}</span>
                 </div>
-                <input type="number" min={50000} max={5000000} step={5000}
+                <input type="text" inputMode="decimal" min={50000} max={5000000} step={5000}
                   value={homeValue} onChange={e => setHomeValue(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -82,7 +82,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Assessment Ratio</label>
                   <span className="text-white font-bold text-sm">{assessedPct + "%"}</span>
                 </div>
-                <input type="number" min={50} max={100} step={5}
+                <input type="text" inputMode="decimal" min={50} max={100} step={5}
                   value={assessedPct} onChange={e => setAssessedPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -92,7 +92,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Property Tax Rate (mill rate)</label>
                   <span className="text-white font-bold text-sm">{taxRate + "%"}</span>
                 </div>
-                <input type="number" min={0.1} max={4} step={0.05}
+                <input type="text" inputMode="decimal" min={0.1} max={4} step={0.05}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

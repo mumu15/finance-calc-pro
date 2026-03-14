@@ -56,7 +56,7 @@ export default function SalaryJobClient({ job, allJobs }) {
         <div style={s.card}>
           <label style={s.lbl}>Annual Salary</label>
           <div style={s.val}>{fmtD(salary)}/year</div>
-          <input type="number" value={salary} onChange={e => setSalary(+e.target.value)} className="calc-input" />
+          <input type="text" inputMode="decimal" value={salary} onChange={e => setSalary(+e.target.value)} className="calc-input" />
         </div>
 
         <div style={s.card}>

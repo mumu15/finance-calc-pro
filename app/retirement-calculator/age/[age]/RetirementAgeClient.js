@@ -54,10 +54,10 @@ export default function RetirementAgeClient({ item: it, all }) {
         <h1 style={s.h1}>Retirement Calculator — {it.name}</h1>
         <p style={s.sub}>Retirement plan for someone {it.desc}.</p>
         <div style={s.grid}>
-          <div style={s.card}><label style={s.lbl}>Current Savings</label><div style={s.val}>{fmt(saved)}</div><input type="number" value={saved} onChange={e=>setSaved(+e.target.value)} className="calc-input"/></div>
-          <div style={s.card}><label style={s.lbl}>Monthly Contribution</label><div style={s.val}>{fmt(monthly)}/mo</div><input type="number" value={monthly} onChange={e=>setMonthly(+e.target.value)} className="calc-input"/></div>
-          <div style={s.card}><label style={s.lbl}>Annual Return Rate</label><div style={s.val}>{rate}%</div><input type="number" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
-          <div style={s.card}><label style={s.lbl}>Retire at Age</label><div style={s.val}>{retireAt}</div><input type="number" value={retireAt} onChange={e=>setRetireAt(+e.target.value)} className="calc-input"/></div>
+          <div style={s.card}><label style={s.lbl}>Current Savings</label><div style={s.val}>{fmt(saved)}</div><input type="text" inputMode="decimal" value={saved} onChange={e=>setSaved(+e.target.value)} className="calc-input"/></div>
+          <div style={s.card}><label style={s.lbl}>Monthly Contribution</label><div style={s.val}>{fmt(monthly)}/mo</div><input type="text" inputMode="decimal" value={monthly} onChange={e=>setMonthly(+e.target.value)} className="calc-input"/></div>
+          <div style={s.card}><label style={s.lbl}>Annual Return Rate</label><div style={s.val}>{rate}%</div><input type="text" inputMode="decimal" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
+          <div style={s.card}><label style={s.lbl}>Retire at Age</label><div style={s.val}>{retireAt}</div><input type="text" inputMode="decimal" value={retireAt} onChange={e=>setRetireAt(+e.target.value)} className="calc-input"/></div>
         </div>
         <div style={s.box}>
           <h2 style={s.h2}>Retirement Projection</h2>

@@ -59,7 +59,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Income</label>
                   <span className="text-white font-bold text-sm">{fmt(annualIncome)}</span>
                 </div>
-                <input type="number" min={10000} max={500000} step={1000}
+                <input type="text" inputMode="decimal" min={10000} max={500000} step={1000}
                   value={annualIncome} onChange={e => setAnnualIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -69,7 +69,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Living Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyExpenses)}</span>
                 </div>
-                <input type="number" min={500} max={20000} step={100}
+                <input type="text" inputMode="decimal" min={500} max={20000} step={100}
                   value={monthlyExpenses} onChange={e => setMonthlyExpenses(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -79,7 +79,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Number of Dependents</label>
                   <span className="text-white font-bold text-sm">{`${dependents} people`}</span>
                 </div>
-                <input type="number" min={0} max={8} step={1}
+                <input type="text" inputMode="decimal" min={0} max={8} step={1}
                   value={dependents} onChange={e => setDependents(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -89,7 +89,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Outstanding Debts</label>
                   <span className="text-white font-bold text-sm">{fmt(totalDebt)}</span>
                 </div>
-                <input type="number" min={0} max={2000000} step={5000}
+                <input type="text" inputMode="decimal" min={0} max={2000000} step={5000}
                   value={totalDebt} onChange={e => setTotalDebt(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -99,7 +99,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Existing Life Insurance</label>
                   <span className="text-white font-bold text-sm">{fmt(existingCoverage)}</span>
                 </div>
-                <input type="number" min={0} max={5000000} step={5000}
+                <input type="text" inputMode="decimal" min={0} max={5000000} step={5000}
                   value={existingCoverage} onChange={e => setExistingCoverage(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

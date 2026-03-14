@@ -70,7 +70,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Gross Income</label>
                   <span className="text-white font-bold text-sm">{fmt(income)}</span>
                 </div>
-                <input type="number" min={0} max={1000000} step={1000}
+                <input type="text" inputMode="decimal" min={0} max={1000000} step={1000}
                   value={income} onChange={e => setIncome(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -114,7 +114,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Itemized Deductions Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(itemized)}</span>
                 </div>
-                <input type="number" min={0} max={200000} step={500}
+                <input type="text" inputMode="decimal" min={0} max={200000} step={500}
                   value={itemized} onChange={e => setItemized(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -124,7 +124,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Tax Credits</label>
                   <span className="text-white font-bold text-sm">{fmt(credits)}</span>
                 </div>
-                <input type="number" min={0} max={20000} step={100}
+                <input type="text" inputMode="decimal" min={0} max={20000} step={100}
                   value={credits} onChange={e => setCredits(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

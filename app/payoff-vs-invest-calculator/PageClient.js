@@ -83,7 +83,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(debtBalance)}</span>
                 </div>
-                <input type="number" min={1000} max={500000} step={500}
+                <input type="text" inputMode="decimal" min={1000} max={500000} step={500}
                   value={debtBalance} onChange={e => setDebtBalance(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -93,7 +93,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Debt Interest Rate</label>
                   <span className="text-white font-bold text-sm">{debtRate + "%"}</span>
                 </div>
-                <input type="number" min={1} max={30} step={0.25}
+                <input type="text" inputMode="decimal" min={1} max={30} step={0.25}
                   value={debtRate} onChange={e => setDebtRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -103,7 +103,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Expected Investment Return</label>
                   <span className="text-white font-bold text-sm">{investReturn + "%"}</span>
                 </div>
-                <input type="number" min={1} max={20} step={0.25}
+                <input type="text" inputMode="decimal" min={1} max={20} step={0.25}
                   value={investReturn} onChange={e => setInvestReturn(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -113,7 +113,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Extra Money Available / Month</label>
                   <span className="text-white font-bold text-sm">{fmt(extraMonthly)}</span>
                 </div>
-                <input type="number" min={50} max={5000} step={50}
+                <input type="text" inputMode="decimal" min={50} max={5000} step={50}
                   value={extraMonthly} onChange={e => setExtraMonthly(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -123,7 +123,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Time Horizon</label>
                   <span className="text-white font-bold text-sm">{years + " yrs"}</span>
                 </div>
-                <input type="number" min={1} max={30} step={1}
+                <input type="text" inputMode="decimal" min={1} max={30} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

@@ -29,8 +29,8 @@ export default function NWAgeClient({item:it,all}){
       <div style={{...s.row,borderBottom:'none'}}><span style={{color:'#94a3b8'}}>Average (mean, skewed by ultra-wealthy)</span><span style={{fontWeight:700}}>{fmt(it.avg)}</span></div>
     </div>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Total Assets</label><div style={s.val}>{fmt(assets)}</div><input type="number" value={assets} onChange={e=>setAssets(+e.target.value)} className="calc-input"/></div>
-      <div style={s.card}><label style={s.lbl}>Total Liabilities</label><div style={s.val}>{fmt(liabilities)}</div><input type="number" value={liabilities} onChange={e=>setLiab(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Total Assets</label><div style={s.val}>{fmt(assets)}</div><input type="text" inputMode="decimal" value={assets} onChange={e=>setAssets(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Total Liabilities</label><div style={s.val}>{fmt(liabilities)}</div><input type="text" inputMode="decimal" value={liabilities} onChange={e=>setLiab(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Your Net Worth Percentile</h2>

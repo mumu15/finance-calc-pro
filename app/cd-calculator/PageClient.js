@@ -59,7 +59,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Initial Deposit</label>
                   <span className="text-white font-bold text-sm">{fmt(principal)}</span>
                 </div>
-                <input type="number" min={500} max={1000000} step={100}
+                <input type="text" inputMode="decimal" min={500} max={1000000} step={100}
                   value={principal} onChange={e => setPrincipal(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -69,7 +69,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Percentage Yield (APY)</label>
                   <span className="text-white font-bold text-sm">{`${apy}%`}</span>
                 </div>
-                <input type="number" min={0.01} max={10} step={0.05}
+                <input type="text" inputMode="decimal" min={0.01} max={10} step={0.05}
                   value={apy} onChange={e => setApy(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -113,7 +113,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Marginal Tax Rate</label>
                   <span className="text-white font-bold text-sm">{`${taxRate}%`}</span>
                 </div>
-                <input type="number" min={0} max={45} step={1}
+                <input type="text" inputMode="decimal" min={0} max={45} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

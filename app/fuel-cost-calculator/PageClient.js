@@ -61,7 +61,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Miles Driven Per Year</label>
                   <span className="text-white font-bold text-sm">{`${milesPerYear} mi`}</span>
                 </div>
-                <input type="number" min={1000} max={100000} step={500}
+                <input type="text" inputMode="decimal" min={1000} max={100000} step={500}
                   value={milesPerYear} onChange={e => setMilesPerYear(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -71,7 +71,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Vehicle 1 Fuel Economy</label>
                   <span className="text-white font-bold text-sm">{`${mpg1} mpg`}</span>
                 </div>
-                <input type="number" min={5} max={150} step={1}
+                <input type="text" inputMode="decimal" min={5} max={150} step={1}
                   value={mpg1} onChange={e => setMpg1(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -81,7 +81,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Fuel Price Per Gallon</label>
                   <span className="text-white font-bold text-sm">{fmt(fuelPrice)}</span>
                 </div>
-                <input type="number" min={1} max={10} step={0.05}
+                <input type="text" inputMode="decimal" min={1} max={10} step={0.05}
                   value={fuelPrice} onChange={e => setFuelPrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -91,7 +91,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Vehicle 2 Fuel Economy (comparison)</label>
                   <span className="text-white font-bold text-sm">{`${mpg2} mpg`}</span>
                 </div>
-                <input type="number" min={5} max={150} step={1}
+                <input type="text" inputMode="decimal" min={5} max={150} step={1}
                   value={mpg2} onChange={e => setMpg2(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

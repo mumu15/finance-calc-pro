@@ -65,7 +65,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Purchase Price</label>
                   <span className="text-white font-bold text-sm">{fmt(purchasePrice)}</span>
                 </div>
-                <input type="number" min={20000} max={2000000} step={5000}
+                <input type="text" inputMode="decimal" min={20000} max={2000000} step={5000}
                   value={purchasePrice} onChange={e => setPurchasePrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -75,7 +75,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Renovation Budget</label>
                   <span className="text-white font-bold text-sm">{fmt(rehabCost)}</span>
                 </div>
-                <input type="number" min={0} max={500000} step={1000}
+                <input type="text" inputMode="decimal" min={0} max={500000} step={1000}
                   value={rehabCost} onChange={e => setRehabCost(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -85,7 +85,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Holding Period</label>
                   <span className="text-white font-bold text-sm">{`${holdingMonths} mo`}</span>
                 </div>
-                <input type="number" min={1} max={24} step={1}
+                <input type="text" inputMode="decimal" min={1} max={24} step={1}
                   value={holdingMonths} onChange={e => setHoldingMonths(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -95,7 +95,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Carrying Costs</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyCarry)}</span>
                 </div>
-                <input type="number" min={0} max={10000} step={100}
+                <input type="text" inputMode="decimal" min={0} max={10000} step={100}
                   value={monthlyCarry} onChange={e => setMonthlyCarry(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -105,7 +105,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">After Repair Value (ARV)</label>
                   <span className="text-white font-bold text-sm">{fmt(arvPrice)}</span>
                 </div>
-                <input type="number" min={50000} max={3000000} step={5000}
+                <input type="text" inputMode="decimal" min={50000} max={3000000} step={5000}
                   value={arvPrice} onChange={e => setArvPrice(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -115,7 +115,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Closing Costs (buy+sell)</label>
                   <span className="text-white font-bold text-sm">{`${closingCostPct}%`}</span>
                 </div>
-                <input type="number" min={2} max={12} step={0.5}
+                <input type="text" inputMode="decimal" min={2} max={12} step={0.5}
                   value={closingCostPct} onChange={e => setClosingCostPct(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

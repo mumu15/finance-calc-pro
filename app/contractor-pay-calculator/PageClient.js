@@ -64,7 +64,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Contractor Hourly Rate</label>
                   <span className="text-white font-bold text-sm">{fmt(hourlyRate)}</span>
                 </div>
-                <input type="number" min={10} max={500} step={5}
+                <input type="text" inputMode="decimal" min={10} max={500} step={5}
                   value={hourlyRate} onChange={e => setHourlyRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -74,7 +74,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Hours Per Week</label>
                   <span className="text-white font-bold text-sm">{`${hoursPerWeek} hrs`}</span>
                 </div>
-                <input type="number" min={1} max={60} step={1}
+                <input type="text" inputMode="decimal" min={1} max={60} step={1}
                   value={hoursPerWeek} onChange={e => setHoursPerWeek(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -84,7 +84,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Billable Weeks Per Year</label>
                   <span className="text-white font-bold text-sm">{`${weeksPerYear} wks`}</span>
                 </div>
-                <input type="number" min={20} max={52} step={1}
+                <input type="text" inputMode="decimal" min={20} max={52} step={1}
                   value={weeksPerYear} onChange={e => setWeeksPerYear(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -94,7 +94,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Business Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(expenses)}</span>
                 </div>
-                <input type="number" min={0} max={50000} step={250}
+                <input type="text" inputMode="decimal" min={0} max={50000} step={250}
                   value={expenses} onChange={e => setExpenses(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -104,7 +104,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Income Tax Rate</label>
                   <span className="text-white font-bold text-sm">{`${taxRate}%`}</span>
                 </div>
-                <input type="number" min={0} max={45} step={1}
+                <input type="text" inputMode="decimal" min={0} max={45} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

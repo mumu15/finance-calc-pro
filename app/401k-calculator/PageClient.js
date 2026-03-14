@@ -80,7 +80,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current 401k Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(currentBalance)}</span>
                 </div>
-                <input type="number" min={0} max={500000} step={1000}
+                <input type="text" inputMode="decimal" min={0} max={500000} step={1000}
                   value={currentBalance} onChange={e => setCurrentBalance(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -90,7 +90,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(annualSalary)}</span>
                 </div>
-                <input type="number" min={20000} max={500000} step={1000}
+                <input type="text" inputMode="decimal" min={20000} max={500000} step={1000}
                   value={annualSalary} onChange={e => setAnnualSalary(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -100,7 +100,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Your Contribution %</label>
                   <span className="text-white font-bold text-sm">{contribution + "%"}</span>
                 </div>
-                <input type="number" min={1} max={30} step={1}
+                <input type="text" inputMode="decimal" min={1} max={30} step={1}
                   value={contribution} onChange={e => setContribution(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -110,7 +110,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Employer Match %</label>
                   <span className="text-white font-bold text-sm">{employerMatch + "%"}</span>
                 </div>
-                <input type="number" min={0} max={10} step={0.5}
+                <input type="text" inputMode="decimal" min={0} max={10} step={0.5}
                   value={employerMatch} onChange={e => setEmployerMatch(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -120,7 +120,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Expected Annual Return</label>
                   <span className="text-white font-bold text-sm">{growthRate + "%"}</span>
                 </div>
-                <input type="number" min={1} max={15} step={0.5}
+                <input type="text" inputMode="decimal" min={1} max={15} step={0.5}
                   value={growthRate} onChange={e => setGrowthRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -130,7 +130,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Years Until Retirement</label>
                   <span className="text-white font-bold text-sm">{yearsToRetire + " yrs"}</span>
                 </div>
-                <input type="number" min={1} max={45} step={1}
+                <input type="text" inputMode="decimal" min={1} max={45} step={1}
                   value={yearsToRetire} onChange={e => setYearsToRetire(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

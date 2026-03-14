@@ -73,7 +73,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Gross Pay Per Period</label>
                   <span className="text-white font-bold text-sm">{fmt(grossPay)}</span>
                 </div>
-                <input type="number" min={100} max={50000} step={50}
+                <input type="text" inputMode="decimal" min={100} max={50000} step={50}
                   value={grossPay} onChange={e => setGrossPay(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -100,7 +100,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Federal Withholding (W-4 extra)</label>
                   <span className="text-white font-bold text-sm">{fmt(fedAllowances)}</span>
                 </div>
-                <input type="number" min={0} max={2000} step={50}
+                <input type="text" inputMode="decimal" min={0} max={2000} step={50}
                   value={fedAllowances} onChange={e => setFedAllowances(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -110,7 +110,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">State Income Tax Rate</label>
                   <span className="text-white font-bold text-sm">{`${stateRate}%`}</span>
                 </div>
-                <input type="number" min={0} max={13} step={0.25}
+                <input type="text" inputMode="decimal" min={0} max={13} step={0.25}
                   value={stateRate} onChange={e => setStateRate(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -120,7 +120,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">401k Contribution %</label>
                   <span className="text-white font-bold text-sm">{`${retirement401k}%`}</span>
                 </div>
-                <input type="number" min={0} max={30} step={0.5}
+                <input type="text" inputMode="decimal" min={0} max={30} step={0.5}
                   value={retirement401k} onChange={e => setRetirement401k(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -130,7 +130,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Health Insurance Premium</label>
                   <span className="text-white font-bold text-sm">{fmt(healthInsur)}</span>
                 </div>
-                <input type="number" min={0} max={1000} step={10}
+                <input type="text" inputMode="decimal" min={0} max={1000} step={10}
                   value={healthInsur} onChange={e => setHealthInsur(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>

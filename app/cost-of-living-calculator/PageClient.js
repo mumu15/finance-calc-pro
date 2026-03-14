@@ -58,7 +58,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(currentSalary)}</span>
                 </div>
-                <input type="number" min={20000} max={500000} step={1000}
+                <input type="text" inputMode="decimal" min={20000} max={500000} step={1000}
                   value={currentSalary} onChange={e => setCurrentSalary(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -68,7 +68,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">New City Housing Cost Index (current=100)</label>
                   <span className="text-white font-bold text-sm">{housingIndex}</span>
                 </div>
-                <input type="number" min={30} max={400} step={5}
+                <input type="text" inputMode="decimal" min={30} max={400} step={5}
                   value={housingIndex} onChange={e => setHousingIndex(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -78,7 +78,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">New City Food Cost Index</label>
                   <span className="text-white font-bold text-sm">{foodIndex}</span>
                 </div>
-                <input type="number" min={50} max={200} step={5}
+                <input type="text" inputMode="decimal" min={50} max={200} step={5}
                   value={foodIndex} onChange={e => setFoodIndex(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -88,7 +88,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">New City Transport Index</label>
                   <span className="text-white font-bold text-sm">{transportIndex}</span>
                 </div>
-                <input type="number" min={50} max={200} step={5}
+                <input type="text" inputMode="decimal" min={50} max={200} step={5}
                   value={transportIndex} onChange={e => setTransportIndex(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
@@ -98,7 +98,7 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Tax Difference (+ higher, - lower)</label>
                   <span className="text-white font-bold text-sm">{`${taxDiff}%`}</span>
                 </div>
-                <input type="number" min={-15} max={15} step={0.5}
+                <input type="text" inputMode="decimal" min={-15} max={15} step={0.5}
                   value={taxDiff} onChange={e => setTaxDiff(Number(e.target.value))}
                   className="slider-upgrade" />
               </div>
