@@ -1,4 +1,20 @@
-'use client'
+const fs = require('fs');
+const path = require('path');
+
+// ============================================================
+// DEFINITIVE INPUT FIX v2
+// Overrides value setter to block React during editing
+// ============================================================
+
+const BASE = __dirname;
+
+console.log('');
+console.log('=====================================================');
+console.log('  DEFINITIVE INPUT FIX v2');
+console.log('=====================================================');
+console.log('');
+
+const inputFixerCode = `'use client'
 import { useEffect } from 'react'
 
 export default function InputFixer() {
@@ -111,7 +127,7 @@ export default function InputFixer() {
       // Let paste happen, then clean up
       setTimeout(function() {
         var val = realGet.call(e.target)
-        var clean = val.replace(/[^0-9.\-]/g, '')
+        var clean = val.replace(/[^0-9.\\-]/g, '')
         // Remove extra dots
         var parts = clean.split('.')
         if (parts.length > 2) clean = parts[0] + '.' + parts.slice(1).join('')
@@ -136,3 +152,22 @@ export default function InputFixer() {
 
   return null
 }
+`;
+
+const compFile = path.join(BASE, 'components', 'InputFixer.js');
+fs.writeFileSync(compFile, inputFixerCode, 'utf8');
+console.log('  ✅ Rewrote components/InputFixer.js');
+console.log('');
+console.log('  How it works now:');
+console.log('    1. Overrides HTMLInputElement.value setter globally');
+console.log('    2. When editing, React CANNOT overwrite your typing');
+console.log('    3. Period (.) works because React cant remove it');
+console.log('    4. No leading zeros because we clean on focus');
+console.log('    5. On blur, calls React onChange directly via fiber');
+console.log('    6. Restores number type so calculations work');
+console.log('');
+console.log('Now run:');
+console.log('  git add .');
+console.log('  git commit -m "InputFixer v2 — blocks React during editing, decimals work"');
+console.log('  git push origin master');
+console.log('');
