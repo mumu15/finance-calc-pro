@@ -56,9 +56,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Initial Investment</label>
                   <span className="text-white font-bold text-sm">{fmt(initialInvestment)}</span>
                 </div>
-                <input type="range" min={1} max={10000000} step={100}
+                <input type="number" min={1} max={10000000} step={100}
                   value={initialInvestment} onChange={e => setInitialInvestment(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -66,9 +66,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Final Value / Return</label>
                   <span className="text-white font-bold text-sm">{fmt(finalValue)}</span>
                 </div>
-                <input type="range" min={1} max={20000000} step={100}
+                <input type="number" min={1} max={20000000} step={100}
                   value={finalValue} onChange={e => setFinalValue(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -76,9 +76,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Holding Period</label>
                   <span className="text-white font-bold text-sm">{`${holdingYears} yrs`}</span>
                 </div>
-                <input type="range" min={0.25} max={30} step={0.25}
+                <input type="number" min={0.25} max={30} step={0.25}
                   value={holdingYears} onChange={e => setHoldingYears(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -86,9 +86,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Fees & Additional Costs</label>
                   <span className="text-white font-bold text-sm">{fmt(additionalCosts)}</span>
                 </div>
-                <input type="range" min={0} max={500000} step={50}
+                <input type="number" min={0} max={500000} step={50}
                   value={additionalCosts} onChange={e => setAdditionalCosts(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

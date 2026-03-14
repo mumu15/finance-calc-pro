@@ -56,9 +56,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Retirement Account Balance (Jan 1)</label>
                   <span className="text-white font-bold text-sm">{fmt(accountBalance)}</span>
                 </div>
-                <input type="range" min={10000} max={5000000} step={5000}
+                <input type="number" min={10000} max={5000000} step={5000}
                   value={accountBalance} onChange={e => setAccountBalance(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -66,9 +66,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Your Age (as of Dec 31 this year)</label>
                   <span className="text-white font-bold text-sm">{`${currentAge} yrs`}</span>
                 </div>
-                <input type="range" min={73} max={100} step={1}
+                <input type="number" min={73} max={100} step={1}
                   value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

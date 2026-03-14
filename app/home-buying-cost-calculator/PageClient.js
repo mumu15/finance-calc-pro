@@ -70,9 +70,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Home Purchase Price</label>
                   <span className="text-white font-bold text-sm">{fmt(homePrice)}</span>
                 </div>
-                <input type="range" min={50000} max={3000000} step={5000}
+                <input type="number" min={50000} max={3000000} step={5000}
                   value={homePrice} onChange={e => setHomePrice(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -97,9 +97,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Mortgage Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${mortgageRate}%`}</span>
                 </div>
-                <input type="range" min={3} max={12} step={0.125}
+                <input type="number" min={3} max={12} step={0.125}
                   value={mortgageRate} onChange={e => setMortgageRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -107,9 +107,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Property Tax Rate</label>
                   <span className="text-white font-bold text-sm">{`${propertyTaxRate}%`}</span>
                 </div>
-                <input type="range" min={0.3} max={3.5} step={0.1}
+                <input type="number" min={0.3} max={3.5} step={0.1}
                   value={propertyTaxRate} onChange={e => setPropertyTaxRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -117,9 +117,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Closing Costs %</label>
                   <span className="text-white font-bold text-sm">{`${closingCostPct}%`}</span>
                 </div>
-                <input type="range" min={1} max={6} step={0.25}
+                <input type="number" min={1} max={6} step={0.25}
                   value={closingCostPct} onChange={e => setClosingCostPct(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

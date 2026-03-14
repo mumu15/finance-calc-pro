@@ -48,7 +48,7 @@ export default function SATStateClient({item:it,all}){
       <div style={s.card}>
         <label style={s.lbl}>Annual Salary</label>
         <div style={s.val}>{fmt(salary)}/yr</div>
-        <input type="number" value={salary} onChange={e=>setSalary(+e.target.value)} style={s.sldr}/>
+        <input type="number" value={salary} onChange={e=>setSalary(+e.target.value)} className="calc-input"/>
       </div>
 
       <div style={s.box}>

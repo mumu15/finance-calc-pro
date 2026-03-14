@@ -79,9 +79,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Starting Amount (PV)</label>
                   <span className="text-white font-bold text-sm">{fmt(presentValue)}</span>
                 </div>
-                <input type="range" min={100} max={500000} step={500}
+                <input type="number" min={100} max={500000} step={500}
                   value={presentValue} onChange={e => setPresentValue(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -89,9 +89,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Amount (FV)</label>
                   <span className="text-white font-bold text-sm">{fmt(futureValue)}</span>
                 </div>
-                <input type="range" min={100} max={2000000} step={500}
+                <input type="number" min={100} max={2000000} step={500}
                   value={futureValue} onChange={e => setFutureValue(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -99,9 +99,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Time Period</label>
                   <span className="text-white font-bold text-sm">{years + " yrs"}</span>
                 </div>
-                <input type="range" min={1} max={40} step={1}
+                <input type="number" min={1} max={40} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

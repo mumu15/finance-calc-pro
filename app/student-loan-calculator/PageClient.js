@@ -74,9 +74,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance)}</span>
                 </div>
-                <input type="range" min={1000} max={200000} step={500}
+                <input type="number" min={1000} max={200000} step={500}
                   value={balance} onChange={e => setBalance(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -84,9 +84,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Interest Rate</label>
                   <span className="text-white font-bold text-sm">{rate + "%"}</span>
                 </div>
-                <input type="range" min={1} max={15} step={0.125}
+                <input type="number" min={1} max={15} step={0.125}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

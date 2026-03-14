@@ -79,9 +79,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Age</label>
                   <span className="text-white font-bold text-sm">{`${currentAge} yrs`}</span>
                 </div>
-                <input type="range" min={30} max={61} step={1}
+                <input type="number" min={30} max={61} step={1}
                   value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -89,9 +89,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Birth Year</label>
                   <span className="text-white font-bold text-sm">{birthYear}</span>
                 </div>
-                <input type="range" min={1950} max={1994} step={1}
+                <input type="number" min={1950} max={1994} step={1}
                   value={birthYear} onChange={e => setBirthYear(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -99,9 +99,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Average Annual Earnings</label>
                   <span className="text-white font-bold text-sm">{fmt(avgEarnings)}</span>
                 </div>
-                <input type="range" min={10000} max={300000} step={1000}
+                <input type="number" min={10000} max={300000} step={1000}
                   value={avgEarnings} onChange={e => setAvgEarnings(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -126,9 +126,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Years of Work History</label>
                   <span className="text-white font-bold text-sm">{`${yearsWorked} yrs`}</span>
                 </div>
-                <input type="range" min={10} max={40} step={1}
+                <input type="number" min={10} max={40} step={1}
                   value={yearsWorked} onChange={e => setYearsWorked(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

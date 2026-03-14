@@ -60,9 +60,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Home Purchase Price</label>
                   <span className="text-white font-bold text-sm">{fmt(homePrice)}</span>
                 </div>
-                <input type="range" min={50000} max={3000000} step={5000}
+                <input type="number" min={50000} max={3000000} step={5000}
                   value={homePrice} onChange={e => setHomePrice(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -87,9 +87,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Savings</label>
                   <span className="text-white font-bold text-sm">{fmt(currentSavings)}</span>
                 </div>
-                <input type="range" min={0} max={500000} step={1000}
+                <input type="number" min={0} max={500000} step={1000}
                   value={currentSavings} onChange={e => setCurrentSavings(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -97,9 +97,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Savings Rate</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlySave)}</span>
                 </div>
-                <input type="range" min={100} max={10000} step={100}
+                <input type="number" min={100} max={10000} step={100}
                   value={monthlySave} onChange={e => setMonthlySave(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -107,9 +107,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Savings Return Rate</label>
                   <span className="text-white font-bold text-sm">{`${returnRate}%`}</span>
                 </div>
-                <input type="range" min={0} max={8} step={0.25}
+                <input type="number" min={0} max={8} step={0.25}
                   value={returnRate} onChange={e => setReturnRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

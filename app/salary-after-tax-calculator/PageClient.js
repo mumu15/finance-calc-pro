@@ -75,9 +75,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Gross Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(grossSalary)}</span>
                 </div>
-                <input type="range" min={10000} max={1000000} step={1000}
+                <input type="number" min={10000} max={1000000} step={1000}
                   value={grossSalary} onChange={e => setGrossSalary(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
               <div>
                 <label className="text-slate-400 text-sm block mb-2">Filing Status</label>
@@ -100,27 +100,27 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">State Income Tax Rate</label>
                   <span className="text-white font-bold text-sm">{stateTaxRate}%</span>
                 </div>
-                <input type="range" min={0} max={15} step={0.25}
+                <input type="number" min={0} max={15} step={0.25}
                   value={stateTaxRate} onChange={e => setStateTaxRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">401k Contribution</label>
                   <span className="text-white font-bold text-sm">{retirement401k}%</span>
                 </div>
-                <input type="range" min={0} max={23} step={1}
+                <input type="number" min={0} max={23} step={1}
                   value={retirement401k} onChange={e => setRetirement401k(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
               <div>
                 <div className="flex justify-between mb-1.5">
                   <label className="text-slate-400 text-sm">Health Insurance Premium (monthly)</label>
                   <span className="text-white font-bold text-sm">{fmt(healthInsurance)}</span>
                 </div>
-                <input type="range" min={0} max={1000} step={10}
+                <input type="number" min={0} max={1000} step={10}
                   value={healthInsurance} onChange={e => setHealthInsurance(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

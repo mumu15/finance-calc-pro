@@ -116,9 +116,9 @@ export default function MortgageCalculator() {
                       {field.note && <span className="text-emerald-400 ml-2 text-xs">({field.note})</span>}
                     </span>
                   </div>
-                  <input type="range" min={field.min} max={field.max} step={field.step} value={field.value}
+                  <input type="number" min={field.min} max={field.max} step={field.step} value={field.value}
                     onChange={e => field.set(Number(e.target.value))}
-                    className="w-full accent-yellow-400" />
+                    className="slider-upgrade" />
                 </div>
               ))}
               <div>

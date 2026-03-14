@@ -30,15 +30,15 @@ export default function Client() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Debt Balance ($)</label>
-            <input type="number" value={balance} onChange={e => setBalance(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-red-400 transition-colors" min="100" step="100" />
+            <input type="number" value={balance} onChange={e => setBalance(e.target.value)} className="calc-input" min="100" step="100" />
           </div>
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Annual Interest Rate (%)</label>
-            <input type="number" value={rate} onChange={e => setRate(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-red-400 transition-colors" min="0.1" max="40" step="0.1" />
+            <input type="number" value={rate} onChange={e => setRate(e.target.value)} className="calc-input" min="0.1" max="40" step="0.1" />
           </div>
           <div>
             <label className="block text-slate-400 text-sm font-medium mb-2">Monthly Payment ($)</label>
-            <input type="number" value={payment} onChange={e => setPayment(e.target.value)} className="w-full bg-slate-900 border border-slate-600 rounded-xl px-4 py-3 text-white text-lg font-semibold focus:outline-none focus:border-red-400 transition-colors" min="1" step="50" />
+            <input type="number" value={payment} onChange={e => setPayment(e.target.value)} className="calc-input" min="1" step="50" />
           </div>
         </div>
         <button onClick={calculate} className="w-full bg-red-500 hover:bg-red-400 text-white font-bold py-4 rounded-xl text-lg transition-colors">Calculate Payoff Time</button>

@@ -73,9 +73,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance)}</span>
                 </div>
-                <input type="range" min={100} max={100000} step={100}
+                <input type="number" min={100} max={100000} step={100}
                   value={balance} onChange={e => setBalance(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -83,9 +83,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Credit Card APR</label>
                   <span className="text-white font-bold text-sm">{`${apr}%`}</span>
                 </div>
-                <input type="range" min={1} max={36} step={0.25}
+                <input type="number" min={1} max={36} step={0.25}
                   value={apr} onChange={e => setApr(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -110,9 +110,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Payment Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyPmt)}</span>
                 </div>
-                <input type="range" min={10} max={10000} step={10}
+                <input type="number" min={10} max={10000} step={10}
                   value={monthlyPmt} onChange={e => setMonthlyPmt(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -120,9 +120,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Months to Pay Off</label>
                   <span className="text-white font-bold text-sm">{`${targetMonths} mo`}</span>
                 </div>
-                <input type="range" min={1} max={120} step={1}
+                <input type="number" min={1} max={120} step={1}
                   value={targetMonths} onChange={e => setTargetMonths(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

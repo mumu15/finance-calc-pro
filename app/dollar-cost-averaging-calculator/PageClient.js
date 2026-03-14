@@ -60,9 +60,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Investment Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyInvest)}</span>
                 </div>
-                <input type="range" min={25} max={10000} step={25}
+                <input type="number" min={25} max={10000} step={25}
                   value={monthlyInvest} onChange={e => setMonthlyInvest(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -70,9 +70,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Investment Period</label>
                   <span className="text-white font-bold text-sm">{`${years} yrs`}</span>
                 </div>
-                <input type="range" min={1} max={40} step={1}
+                <input type="number" min={1} max={40} step={1}
                   value={years} onChange={e => setYears(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -80,9 +80,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Expected Annual Return</label>
                   <span className="text-white font-bold text-sm">{`${annualReturn}%`}</span>
                 </div>
-                <input type="range" min={1} max={20} step={0.25}
+                <input type="number" min={1} max={20} step={0.25}
                   value={annualReturn} onChange={e => setAnnualReturn(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -90,9 +90,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Lump Sum Comparison Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(lumpSum)}</span>
                 </div>
-                <input type="range" min={0} max={1000000} step={1000}
+                <input type="number" min={0} max={1000000} step={1000}
                   value={lumpSum} onChange={e => setLumpSum(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

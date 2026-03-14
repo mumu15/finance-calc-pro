@@ -65,9 +65,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(loanAmount)}</span>
                 </div>
-                <input type="range" min={50000} max={2000000} step={5000}
+                <input type="number" min={50000} max={2000000} step={5000}
                   value={loanAmount} onChange={e => setLoanAmount(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -75,9 +75,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Base Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${baseRate}%`}</span>
                 </div>
-                <input type="range" min={2} max={12} step={0.125}
+                <input type="number" min={2} max={12} step={0.125}
                   value={baseRate} onChange={e => setBaseRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -85,9 +85,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Discount Points to Buy</label>
                   <span className="text-white font-bold text-sm">{`${pointsToBuy} pts`}</span>
                 </div>
-                <input type="range" min={0} max={4} step={0.25}
+                <input type="number" min={0} max={4} step={0.25}
                   value={pointsToBuy} onChange={e => setPointsToBuy(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -95,9 +95,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Rate Reduction Per Point</label>
                   <span className="text-white font-bold text-sm">{`${rateReduction}%`}</span>
                 </div>
-                <input type="range" min={0.1} max={0.5} step={0.05}
+                <input type="number" min={0.1} max={0.5} step={0.05}
                   value={rateReduction} onChange={e => setRateReduction(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

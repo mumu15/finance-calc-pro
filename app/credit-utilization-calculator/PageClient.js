@@ -64,9 +64,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Card 1 Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance1)}</span>
                 </div>
-                <input type="range" min={0} max={50000} step={50}
+                <input type="number" min={0} max={50000} step={50}
                   value={balance1} onChange={e => setBalance1(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -74,9 +74,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Card 1 Credit Limit</label>
                   <span className="text-white font-bold text-sm">{fmt(limit1)}</span>
                 </div>
-                <input type="range" min={100} max={100000} step={100}
+                <input type="number" min={100} max={100000} step={100}
                   value={limit1} onChange={e => setLimit1(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -84,9 +84,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Card 2 Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance2)}</span>
                 </div>
-                <input type="range" min={0} max={50000} step={50}
+                <input type="number" min={0} max={50000} step={50}
                   value={balance2} onChange={e => setBalance2(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -94,9 +94,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Card 2 Credit Limit</label>
                   <span className="text-white font-bold text-sm">{fmt(limit2)}</span>
                 </div>
-                <input type="range" min={0} max={100000} step={100}
+                <input type="number" min={0} max={100000} step={100}
                   value={limit2} onChange={e => setLimit2(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -104,9 +104,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Card 3 Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance3)}</span>
                 </div>
-                <input type="range" min={0} max={50000} step={50}
+                <input type="number" min={0} max={50000} step={50}
                   value={balance3} onChange={e => setBalance3(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -114,9 +114,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Card 3 Credit Limit</label>
                   <span className="text-white font-bold text-sm">{fmt(limit3)}</span>
                 </div>
-                <input type="range" min={0} max={100000} step={100}
+                <input type="number" min={0} max={100000} step={100}
                   value={limit3} onChange={e => setLimit3(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

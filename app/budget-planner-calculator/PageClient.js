@@ -66,9 +66,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Take-Home Income</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyIncome)}</span>
                 </div>
-                <input type="range" min={500} max={50000} step={100}
+                <input type="number" min={500} max={50000} step={100}
                   value={monthlyIncome} onChange={e => setMonthlyIncome(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -76,9 +76,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Housing (rent or mortgage)</label>
                   <span className="text-white font-bold text-sm">{fmt(housing)}</span>
                 </div>
-                <input type="range" min={0} max={10000} step={50}
+                <input type="number" min={0} max={10000} step={50}
                   value={housing} onChange={e => setHousing(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -86,9 +86,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Transportation</label>
                   <span className="text-white font-bold text-sm">{fmt(transport)}</span>
                 </div>
-                <input type="range" min={0} max={3000} step={25}
+                <input type="number" min={0} max={3000} step={25}
                   value={transport} onChange={e => setTransport(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -96,9 +96,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Food and Groceries</label>
                   <span className="text-white font-bold text-sm">{fmt(food)}</span>
                 </div>
-                <input type="range" min={0} max={3000} step={25}
+                <input type="number" min={0} max={3000} step={25}
                   value={food} onChange={e => setFood(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -106,9 +106,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Utilities and Bills</label>
                   <span className="text-white font-bold text-sm">{fmt(utilities)}</span>
                 </div>
-                <input type="range" min={0} max={2000} step={25}
+                <input type="number" min={0} max={2000} step={25}
                   value={utilities} onChange={e => setUtilities(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -116,9 +116,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Entertainment and Dining</label>
                   <span className="text-white font-bold text-sm">{fmt(entertainment)}</span>
                 </div>
-                <input type="range" min={0} max={2000} step={25}
+                <input type="number" min={0} max={2000} step={25}
                   value={entertainment} onChange={e => setEntertainment(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -126,9 +126,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Savings and Investments</label>
                   <span className="text-white font-bold text-sm">{fmt(savings)}</span>
                 </div>
-                <input type="range" min={0} max={10000} step={50}
+                <input type="number" min={0} max={10000} step={50}
                   value={savings} onChange={e => setSavings(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

@@ -59,9 +59,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Fixed Costs (monthly)</label>
                   <span className="text-white font-bold text-sm">{fmt(fixedCosts)}</span>
                 </div>
-                <input type="range" min={100} max={1000000} step={100}
+                <input type="number" min={100} max={1000000} step={100}
                   value={fixedCosts} onChange={e => setFixedCosts(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -69,9 +69,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Selling Price Per Unit</label>
                   <span className="text-white font-bold text-sm">{fmt(pricePerUnit)}</span>
                 </div>
-                <input type="range" min={0.01} max={10000} step={1}
+                <input type="number" min={0.01} max={10000} step={1}
                   value={pricePerUnit} onChange={e => setPricePerUnit(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -79,9 +79,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Variable Cost Per Unit</label>
                   <span className="text-white font-bold text-sm">{fmt(varCostUnit)}</span>
                 </div>
-                <input type="range" min={0} max={9999} step={1}
+                <input type="number" min={0} max={9999} step={1}
                   value={varCostUnit} onChange={e => setVarCostUnit(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -89,9 +89,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Monthly Profit</label>
                   <span className="text-white font-bold text-sm">{fmt(targetProfit)}</span>
                 </div>
-                <input type="range" min={0} max={500000} step={500}
+                <input type="number" min={0} max={500000} step={500}
                   value={targetProfit} onChange={e => setTargetProfit(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

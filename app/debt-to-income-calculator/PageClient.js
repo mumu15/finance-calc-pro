@@ -83,9 +83,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Gross Monthly Income</label>
                   <span className="text-white font-bold text-sm">{fmt(grossMonthlyIncome)}</span>
                 </div>
-                <input type="range" min={1000} max={50000} step={250}
+                <input type="number" min={1000} max={50000} step={250}
                   value={grossMonthlyIncome} onChange={e => setGrossMonthlyIncome(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -93,9 +93,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Mortgage / Rent Payment</label>
                   <span className="text-white font-bold text-sm">{fmt(mortgageRent)}</span>
                 </div>
-                <input type="range" min={0} max={10000} step={50}
+                <input type="number" min={0} max={10000} step={50}
                   value={mortgageRent} onChange={e => setMortgageRent(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -103,9 +103,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Car Loan Payments</label>
                   <span className="text-white font-bold text-sm">{fmt(carPayments)}</span>
                 </div>
-                <input type="range" min={0} max={3000} step={25}
+                <input type="number" min={0} max={3000} step={25}
                   value={carPayments} onChange={e => setCarPayments(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -113,9 +113,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Min Credit Card Payments</label>
                   <span className="text-white font-bold text-sm">{fmt(creditCards)}</span>
                 </div>
-                <input type="range" min={0} max={2000} step={25}
+                <input type="number" min={0} max={2000} step={25}
                   value={creditCards} onChange={e => setCreditCards(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -123,9 +123,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Other Monthly Debts</label>
                   <span className="text-white font-bold text-sm">{fmt(otherDebts)}</span>
                 </div>
-                <input type="range" min={0} max={5000} step={25}
+                <input type="number" min={0} max={5000} step={25}
                   value={otherDebts} onChange={e => setOtherDebts(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

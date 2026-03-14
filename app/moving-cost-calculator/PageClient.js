@@ -117,9 +117,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Extra Services Budget</label>
                   <span className="text-white font-bold text-sm">{fmt(extraServices)}</span>
                 </div>
-                <input type="range" min={0} max={5000} step={100}
+                <input type="number" min={0} max={5000} step={100}
                   value={extraServices} onChange={e => setExtraServices(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

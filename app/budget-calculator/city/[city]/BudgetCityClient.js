@@ -61,7 +61,7 @@ export default function BudgetCityClient({ item: c, all }) {
             <div key={lbl} style={s.row}>
               <div style={{flex:1}}>
                 <div style={{display:'flex',justifyContent:'space-between'}}><span style={s.lbl}>{lbl}</span><span style={s.val}>{fmt(v)}/mo</span></div>
-                <input type="number" value={v} onChange={e=>set(+e.target.value)} style={s.sldr}/>
+                <input type="number" value={v} onChange={e=>set(+e.target.value)} className="calc-input"/>
               </div>
             </div>
           ))}

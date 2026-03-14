@@ -72,9 +72,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Bill Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(billAmount)}</span>
                 </div>
-                <input type="range" min={1} max={2000} step={1}
+                <input type="number" min={1} max={2000} step={1}
                   value={billAmount} onChange={e => setBillAmount(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -95,9 +95,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Split Between</label>
                   <span className="text-white font-bold text-sm">{people + " people"}</span>
                 </div>
-                <input type="range" min={1} max={20} step={1}
+                <input type="number" min={1} max={20} step={1}
                   value={people} onChange={e => setPeople(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

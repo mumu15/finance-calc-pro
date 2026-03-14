@@ -119,9 +119,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Pet Age (years)</label>
                   <span className="text-white font-bold text-sm">{`${petAge} yrs`}</span>
                 </div>
-                <input type="range" min={0} max={18} step={1}
+                <input type="number" min={0} max={18} step={1}
                   value={petAge} onChange={e => setPetAge(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

@@ -59,9 +59,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Revenue</label>
                   <span className="text-white font-bold text-sm">{fmt(revenue)}</span>
                 </div>
-                <input type="range" min={100} max={10000000} step={100}
+                <input type="number" min={100} max={10000000} step={100}
                   value={revenue} onChange={e => setRevenue(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -69,9 +69,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Cost of Goods Sold (COGS)</label>
                   <span className="text-white font-bold text-sm">{fmt(cogs)}</span>
                 </div>
-                <input type="range" min={0} max={5000000} step={100}
+                <input type="number" min={0} max={5000000} step={100}
                   value={cogs} onChange={e => setCogs(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -79,9 +79,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Operating Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(opExpenses)}</span>
                 </div>
-                <input type="range" min={0} max={3000000} step={100}
+                <input type="number" min={0} max={3000000} step={100}
                   value={opExpenses} onChange={e => setOpExpenses(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -89,9 +89,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Taxes & Interest</label>
                   <span className="text-white font-bold text-sm">{fmt(taxes)}</span>
                 </div>
-                <input type="range" min={0} max={1000000} step={100}
+                <input type="number" min={0} max={1000000} step={100}
                   value={taxes} onChange={e => setTaxes(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

@@ -59,9 +59,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(annualSalary)}</span>
                 </div>
-                <input type="range" min={10000} max={1000000} step={1000}
+                <input type="number" min={10000} max={1000000} step={1000}
                   value={annualSalary} onChange={e => setAnnualSalary(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -69,9 +69,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Hours Worked Per Week</label>
                   <span className="text-white font-bold text-sm">{`${hoursPerWeek} hrs`}</span>
                 </div>
-                <input type="range" min={1} max={80} step={1}
+                <input type="number" min={1} max={80} step={1}
                   value={hoursPerWeek} onChange={e => setHoursPerWeek(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -79,9 +79,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Weeks Worked Per Year</label>
                   <span className="text-white font-bold text-sm">{`${weeksPerYear} wks`}</span>
                 </div>
-                <input type="range" min={40} max={52} step={1}
+                <input type="number" min={40} max={52} step={1}
                   value={weeksPerYear} onChange={e => setWeeksPerYear(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -89,9 +89,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Unpaid Break Minutes Per Day</label>
                   <span className="text-white font-bold text-sm">{`${unpaidBreaks} min`}</span>
                 </div>
-                <input type="range" min={0} max={60} step={5}
+                <input type="number" min={0} max={60} step={5}
                   value={unpaidBreaks} onChange={e => setUnpaidBreaks(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

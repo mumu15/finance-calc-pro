@@ -71,9 +71,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan 1 Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(amount1)}</span>
                 </div>
-                <input type="range" min={1000} max={1000000} step={500}
+                <input type="number" min={1000} max={1000000} step={500}
                   value={amount1} onChange={e => setAmount1(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -81,9 +81,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan 1 Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${rate1}%`}</span>
                 </div>
-                <input type="range" min={0} max={36} step={0.25}
+                <input type="number" min={0} max={36} step={0.25}
                   value={rate1} onChange={e => setRate1(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -108,9 +108,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan 2 Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(amount2)}</span>
                 </div>
-                <input type="range" min={1000} max={1000000} step={500}
+                <input type="number" min={1000} max={1000000} step={500}
                   value={amount2} onChange={e => setAmount2(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -118,9 +118,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan 2 Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${rate2}%`}</span>
                 </div>
-                <input type="range" min={0} max={36} step={0.25}
+                <input type="number" min={0} max={36} step={0.25}
                   value={rate2} onChange={e => setRate2(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

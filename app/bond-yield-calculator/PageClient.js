@@ -70,9 +70,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Face Value (Par Value)</label>
                   <span className="text-white font-bold text-sm">{fmt(faceValue)}</span>
                 </div>
-                <input type="range" min={100} max={1000000} step={100}
+                <input type="number" min={100} max={1000000} step={100}
                   value={faceValue} onChange={e => setFaceValue(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -80,9 +80,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Coupon Rate</label>
                   <span className="text-white font-bold text-sm">{`${couponRate}%`}</span>
                 </div>
-                <input type="range" min={0} max={20} step={0.25}
+                <input type="number" min={0} max={20} step={0.25}
                   value={couponRate} onChange={e => setCouponRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -90,9 +90,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Market Price</label>
                   <span className="text-white font-bold text-sm">{fmt(marketPrice)}</span>
                 </div>
-                <input type="range" min={50} max={200000} step={10}
+                <input type="number" min={50} max={200000} step={10}
                   value={marketPrice} onChange={e => setMarketPrice(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -100,9 +100,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Years to Maturity</label>
                   <span className="text-white font-bold text-sm">{`${yearsToMaturity} yrs`}</span>
                 </div>
-                <input type="range" min={1} max={30} step={1}
+                <input type="number" min={1} max={30} step={1}
                   value={yearsToMaturity} onChange={e => setYearsToMaturity(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

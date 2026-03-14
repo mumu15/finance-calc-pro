@@ -65,9 +65,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Product Sale Price</label>
                   <span className="text-white font-bold text-sm">{fmt(salePrice)}</span>
                 </div>
-                <input type="range" min={1} max={10000} step={1}
+                <input type="number" min={1} max={10000} step={1}
                   value={salePrice} onChange={e => setSalePrice(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -75,9 +75,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Product Cost (COGS)</label>
                   <span className="text-white font-bold text-sm">{fmt(productCost)}</span>
                 </div>
-                <input type="range" min={0} max={5000} step={1}
+                <input type="number" min={0} max={5000} step={1}
                   value={productCost} onChange={e => setProductCost(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -85,9 +85,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Fulfillment and Shipping Cost</label>
                   <span className="text-white font-bold text-sm">{fmt(shippingCost)}</span>
                 </div>
-                <input type="range" min={0} max={100} step={0.5}
+                <input type="number" min={0} max={100} step={0.5}
                   value={shippingCost} onChange={e => setShippingCost(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -95,9 +95,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Platform Fee %</label>
                   <span className="text-white font-bold text-sm">{`${platformFee}%`}</span>
                 </div>
-                <input type="range" min={0} max={20} step={0.25}
+                <input type="number" min={0} max={20} step={0.25}
                   value={platformFee} onChange={e => setPlatformFee(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -105,9 +105,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Ad Spend Per Order (CAC)</label>
                   <span className="text-white font-bold text-sm">{fmt(adSpend)}</span>
                 </div>
-                <input type="range" min={0} max={500} step={0.5}
+                <input type="number" min={0} max={500} step={0.5}
                   value={adSpend} onChange={e => setAdSpend(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -115,9 +115,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Orders</label>
                   <span className="text-white font-bold text-sm">{`${monthlyOrders} orders`}</span>
                 </div>
-                <input type="range" min={1} max={100000} step={10}
+                <input type="number" min={1} max={100000} step={10}
                   value={monthlyOrders} onChange={e => setMonthlyOrders(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -125,9 +125,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Return Rate</label>
                   <span className="text-white font-bold text-sm">{`${returnRate}%`}</span>
                 </div>
-                <input type="range" min={0} max={30} step={1}
+                <input type="number" min={0} max={30} step={1}
                   value={returnRate} onChange={e => setReturnRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

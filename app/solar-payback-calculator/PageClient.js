@@ -65,9 +65,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total System Cost (before incentives)</label>
                   <span className="text-white font-bold text-sm">{fmt(systemCost)}</span>
                 </div>
-                <input type="range" min={5000} max={100000} step={500}
+                <input type="number" min={5000} max={100000} step={500}
                   value={systemCost} onChange={e => setSystemCost(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -75,9 +75,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Federal Tax Credit %</label>
                   <span className="text-white font-bold text-sm">{`${federalCredit}%`}</span>
                 </div>
-                <input type="range" min={0} max={40} step={1}
+                <input type="number" min={0} max={40} step={1}
                   value={federalCredit} onChange={e => setFederalCredit(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -85,9 +85,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Monthly Electric Bill</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyBill)}</span>
                 </div>
-                <input type="range" min={20} max={1000} step={5}
+                <input type="number" min={20} max={1000} step={5}
                   value={monthlyBill} onChange={e => setMonthlyBill(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -95,9 +95,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Solar Offset % of Bill</label>
                   <span className="text-white font-bold text-sm">{`${offsetPct}%`}</span>
                 </div>
-                <input type="range" min={50} max={100} step={5}
+                <input type="number" min={50} max={100} step={5}
                   value={offsetPct} onChange={e => setOffsetPct(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -105,9 +105,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Electricity Rate Increase</label>
                   <span className="text-white font-bold text-sm">{`${elecInflation}%`}</span>
                 </div>
-                <input type="range" min={1} max={8} step={0.5}
+                <input type="number" min={1} max={8} step={0.5}
                   value={elecInflation} onChange={e => setElecInflation(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -115,9 +115,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">System Life</label>
                   <span className="text-white font-bold text-sm">{`${systemLife} yrs`}</span>
                 </div>
-                <input type="range" min={20} max={30} step={1}
+                <input type="number" min={20} max={30} step={1}
                   value={systemLife} onChange={e => setSystemLife(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

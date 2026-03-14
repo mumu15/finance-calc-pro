@@ -79,9 +79,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Price / Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(price)}</span>
                 </div>
-                <input type="range" min={0.01} max={100000} step={1}
+                <input type="number" min={0.01} max={100000} step={1}
                   value={price} onChange={e => setPrice(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -89,9 +89,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Sales Tax Rate</label>
                   <span className="text-white font-bold text-sm">{taxRate + "%"}</span>
                 </div>
-                <input type="range" min={0} max={15} step={0.25}
+                <input type="number" min={0} max={15} step={0.25}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

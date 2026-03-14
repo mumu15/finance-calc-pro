@@ -60,9 +60,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Debt Balance</label>
                   <span className="text-white font-bold text-sm">{fmt(balance)}</span>
                 </div>
-                <input type="range" min={100} max={500000} step={100}
+                <input type="number" min={100} max={500000} step={100}
                   value={balance} onChange={e => setBalance(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -70,9 +70,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Average Interest Rate (APR)</label>
                   <span className="text-white font-bold text-sm">{`${rate}%`}</span>
                 </div>
-                <input type="range" min={0} max={36} step={0.25}
+                <input type="number" min={0} max={36} step={0.25}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -80,9 +80,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Payment</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyPmt)}</span>
                 </div>
-                <input type="range" min={10} max={20000} step={10}
+                <input type="number" min={10} max={20000} step={10}
                   value={monthlyPmt} onChange={e => setMonthlyPmt(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -90,9 +90,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Extra Monthly Payment</label>
                   <span className="text-white font-bold text-sm">{fmt(extraPmt)}</span>
                 </div>
-                <input type="range" min={0} max={5000} step={25}
+                <input type="number" min={0} max={5000} step={25}
                   value={extraPmt} onChange={e => setExtraPmt(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

@@ -63,9 +63,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Base Annual Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(baseSalary)}</span>
                 </div>
-                <input type="range" min={20000} max={500000} step={1000}
+                <input type="number" min={20000} max={500000} step={1000}
                   value={baseSalary} onChange={e => setBaseSalary(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -73,9 +73,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Health Insurance Cost</label>
                   <span className="text-white font-bold text-sm">{fmt(healthBenefit)}</span>
                 </div>
-                <input type="range" min={0} max={30000} step={250}
+                <input type="number" min={0} max={30000} step={250}
                   value={healthBenefit} onChange={e => setHealthBenefit(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -83,9 +83,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">401k Employer Match %</label>
                   <span className="text-white font-bold text-sm">{`${retirement401k}%`}</span>
                 </div>
-                <input type="range" min={0} max={10} step={0.5}
+                <input type="number" min={0} max={10} step={0.5}
                   value={retirement401k} onChange={e => setRetirement401k(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -93,9 +93,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Other Benefits (PTO cash value, etc)</label>
                   <span className="text-white font-bold text-sm">{fmt(otherBenefits)}</span>
                 </div>
-                <input type="range" min={0} max={20000} step={250}
+                <input type="number" min={0} max={20000} step={250}
                   value={otherBenefits} onChange={e => setOtherBenefits(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -103,9 +103,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Overhead Allocation %</label>
                   <span className="text-white font-bold text-sm">{`${overheadPct}%`}</span>
                 </div>
-                <input type="range" min={0} max={50} step={5}
+                <input type="number" min={0} max={50} step={5}
                   value={overheadPct} onChange={e => setOverheadPct(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

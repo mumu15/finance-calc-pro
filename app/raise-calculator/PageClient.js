@@ -77,9 +77,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Annual Salary</label>
                   <span className="text-white font-bold text-sm">{fmt(currentSalary)}</span>
                 </div>
-                <input type="range" min={10000} max={500000} step={1000}
+                <input type="number" min={10000} max={500000} step={1000}
                   value={currentSalary} onChange={e => setCurrentSalary(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -100,9 +100,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Raise Percentage</label>
                   <span className="text-white font-bold text-sm">{raisePct + "%"}</span>
                 </div>
-                <input type="range" min={0.5} max={50} step={0.5}
+                <input type="number" min={0.5} max={50} step={0.5}
                   value={raisePct} onChange={e => setRaisePct(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -110,9 +110,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Raise Dollar Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(raiseFlat)}</span>
                 </div>
-                <input type="range" min={500} max={100000} step={500}
+                <input type="number" min={500} max={100000} step={500}
                   value={raiseFlat} onChange={e => setRaiseFlat(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -120,9 +120,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Estimated Tax Rate</label>
                   <span className="text-white font-bold text-sm">{taxRate + "%"}</span>
                 </div>
-                <input type="range" min={10} max={45} step={1}
+                <input type="number" min={10} max={45} step={1}
                   value={taxRate} onChange={e => setTaxRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

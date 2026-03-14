@@ -66,9 +66,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Balance to Transfer</label>
                   <span className="text-white font-bold text-sm">{fmt(balance)}</span>
                 </div>
-                <input type="range" min={100} max={100000} step={100}
+                <input type="number" min={100} max={100000} step={100}
                   value={balance} onChange={e => setBalance(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -76,9 +76,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Card APR</label>
                   <span className="text-white font-bold text-sm">{`${currentAPR}%`}</span>
                 </div>
-                <input type="range" min={1} max={36} step={0.25}
+                <input type="number" min={1} max={36} step={0.25}
                   value={currentAPR} onChange={e => setCurrentAPR(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -86,9 +86,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Balance Transfer Fee</label>
                   <span className="text-white font-bold text-sm">{`${transferFee}%`}</span>
                 </div>
-                <input type="range" min={0} max={5} step={0.25}
+                <input type="number" min={0} max={5} step={0.25}
                   value={transferFee} onChange={e => setTransferFee(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -113,9 +113,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Payment</label>
                   <span className="text-white font-bold text-sm">{fmt(monthlyPmt)}</span>
                 </div>
-                <input type="range" min={50} max={10000} step={25}
+                <input type="number" min={50} max={10000} step={25}
                   value={monthlyPmt} onChange={e => setMonthlyPmt(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -123,9 +123,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">APR After Promo Expires</label>
                   <span className="text-white font-bold text-sm">{`${postPromoAPR}%`}</span>
                 </div>
-                <input type="range" min={1} max={30} step={0.25}
+                <input type="number" min={1} max={30} step={0.25}
                   value={postPromoAPR} onChange={e => setPostPromoAPR(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

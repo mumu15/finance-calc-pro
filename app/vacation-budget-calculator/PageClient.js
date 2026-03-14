@@ -66,9 +66,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Number of Travelers</label>
                   <span className="text-white font-bold text-sm">{`${travelers} people`}</span>
                 </div>
-                <input type="range" min={1} max={20} step={1}
+                <input type="number" min={1} max={20} step={1}
                   value={travelers} onChange={e => setTravelers(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -76,9 +76,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Trip Duration</label>
                   <span className="text-white font-bold text-sm">{`${tripDays} days`}</span>
                 </div>
-                <input type="range" min={1} max={60} step={1}
+                <input type="number" min={1} max={60} step={1}
                   value={tripDays} onChange={e => setTripDays(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -86,9 +86,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Flights Per Person</label>
                   <span className="text-white font-bold text-sm">{fmt(flightCost)}</span>
                 </div>
-                <input type="range" min={0} max={10000} step={25}
+                <input type="number" min={0} max={10000} step={25}
                   value={flightCost} onChange={e => setFlightCost(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -96,9 +96,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Hotel Per Night (total)</label>
                   <span className="text-white font-bold text-sm">{fmt(hotelPerNight)}</span>
                 </div>
-                <input type="range" min={0} max={2000} step={10}
+                <input type="number" min={0} max={2000} step={10}
                   value={hotelPerNight} onChange={e => setHotelPerNight(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -106,9 +106,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Food and Dining Per Day (total)</label>
                   <span className="text-white font-bold text-sm">{fmt(foodPerDay)}</span>
                 </div>
-                <input type="range" min={0} max={500} step={5}
+                <input type="number" min={0} max={500} step={5}
                   value={foodPerDay} onChange={e => setFoodPerDay(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -116,9 +116,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Activities Per Day (total)</label>
                   <span className="text-white font-bold text-sm">{fmt(activitiesDay)}</span>
                 </div>
-                <input type="range" min={0} max={500} step={5}
+                <input type="number" min={0} max={500} step={5}
                   value={activitiesDay} onChange={e => setActivitiesDay(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -126,9 +126,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Miscellaneous and Buffer %</label>
                   <span className="text-white font-bold text-sm">{`${miscPct}%`}</span>
                 </div>
-                <input type="range" min={5} max={30} step={5}
+                <input type="number" min={5} max={30} step={5}
                   value={miscPct} onChange={e => setMiscPct(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

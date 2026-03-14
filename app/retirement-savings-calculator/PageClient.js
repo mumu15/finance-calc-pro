@@ -64,9 +64,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Age</label>
                   <span className="text-white font-bold text-sm">{`${currentAge} yrs`}</span>
                 </div>
-                <input type="range" min={18} max={65} step={1}
+                <input type="number" min={18} max={65} step={1}
                   value={currentAge} onChange={e => setCurrentAge(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -74,9 +74,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Target Retirement Age</label>
                   <span className="text-white font-bold text-sm">{`${retireAge} yrs`}</span>
                 </div>
-                <input type="range" min={45} max={75} step={1}
+                <input type="number" min={45} max={75} step={1}
                   value={retireAge} onChange={e => setRetireAge(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -84,9 +84,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Retirement Savings</label>
                   <span className="text-white font-bold text-sm">{fmt(currentSavings)}</span>
                 </div>
-                <input type="range" min={0} max={5000000} step={5000}
+                <input type="number" min={0} max={5000000} step={5000}
                   value={currentSavings} onChange={e => setCurrentSavings(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -94,9 +94,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Annual Income</label>
                   <span className="text-white font-bold text-sm">{fmt(annualIncome)}</span>
                 </div>
-                <input type="range" min={10000} max={500000} step={1000}
+                <input type="number" min={10000} max={500000} step={1000}
                   value={annualIncome} onChange={e => setAnnualIncome(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -104,9 +104,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Savings Rate</label>
                   <span className="text-white font-bold text-sm">{`${savingsRate}%`}</span>
                 </div>
-                <input type="range" min={1} max={50} step={1}
+                <input type="number" min={1} max={50} step={1}
                   value={savingsRate} onChange={e => setSavingsRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -114,9 +114,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Expected Investment Return</label>
                   <span className="text-white font-bold text-sm">{`${returnRate}%`}</span>
                 </div>
-                <input type="range" min={1} max={12} step={0.25}
+                <input type="number" min={1} max={12} step={0.25}
                   value={returnRate} onChange={e => setReturnRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

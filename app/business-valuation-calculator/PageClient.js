@@ -66,9 +66,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Revenue</label>
                   <span className="text-white font-bold text-sm">{fmt(annualRevenue)}</span>
                 </div>
-                <input type="range" min={10000} max={50000000} step={10000}
+                <input type="number" min={10000} max={50000000} step={10000}
                   value={annualRevenue} onChange={e => setAnnualRevenue(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -76,9 +76,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">EBITDA (annual earnings)</label>
                   <span className="text-white font-bold text-sm">{fmt(ebitda)}</span>
                 </div>
-                <input type="range" min={0} max={20000000} step={5000}
+                <input type="number" min={0} max={20000000} step={5000}
                   value={ebitda} onChange={e => setEbitda(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -86,9 +86,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Net Profit (annual)</label>
                   <span className="text-white font-bold text-sm">{fmt(netProfit)}</span>
                 </div>
-                <input type="range" min={0} max={10000000} step={5000}
+                <input type="number" min={0} max={10000000} step={5000}
                   value={netProfit} onChange={e => setNetProfit(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -96,9 +96,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Business Assets</label>
                   <span className="text-white font-bold text-sm">{fmt(totalAssets)}</span>
                 </div>
-                <input type="range" min={0} max={20000000} step={10000}
+                <input type="number" min={0} max={20000000} step={10000}
                   value={totalAssets} onChange={e => setTotalAssets(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -106,9 +106,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Total Liabilities</label>
                   <span className="text-white font-bold text-sm">{fmt(totalLiabilities)}</span>
                 </div>
-                <input type="range" min={0} max={10000000} step={10000}
+                <input type="number" min={0} max={10000000} step={10000}
                   value={totalLiabilities} onChange={e => setTotalLiabilities(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>

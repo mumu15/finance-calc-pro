@@ -64,9 +64,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Revenue</label>
                   <span className="text-white font-bold text-sm">{fmt(revenue)}</span>
                 </div>
-                <input type="range" min={0} max={10000000} step={1000}
+                <input type="number" min={0} max={10000000} step={1000}
                   value={revenue} onChange={e => setRevenue(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -74,9 +74,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Cost of Goods Sold (COGS)</label>
                   <span className="text-white font-bold text-sm">{fmt(cogs)}</span>
                 </div>
-                <input type="range" min={0} max={5000000} step={500}
+                <input type="number" min={0} max={5000000} step={500}
                   value={cogs} onChange={e => setCogs(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -84,9 +84,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Operating Expenses</label>
                   <span className="text-white font-bold text-sm">{fmt(opExpenses)}</span>
                 </div>
-                <input type="range" min={0} max={2000000} step={500}
+                <input type="number" min={0} max={2000000} step={500}
                   value={opExpenses} onChange={e => setOpExpenses(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -94,9 +94,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Debt Payments</label>
                   <span className="text-white font-bold text-sm">{fmt(debtPayments)}</span>
                 </div>
-                <input type="range" min={0} max={500000} step={250}
+                <input type="number" min={0} max={500000} step={250}
                   value={debtPayments} onChange={e => setDebtPayments(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -104,9 +104,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Monthly Capital Expenditures</label>
                   <span className="text-white font-bold text-sm">{fmt(capex)}</span>
                 </div>
-                <input type="range" min={0} max={500000} step={250}
+                <input type="number" min={0} max={500000} step={250}
                   value={capex} onChange={e => setCapex(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -114,9 +114,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Current Cash Reserves</label>
                   <span className="text-white font-bold text-sm">{fmt(cashReserves)}</span>
                 </div>
-                <input type="range" min={0} max={10000000} step={1000}
+                <input type="number" min={0} max={10000000} step={1000}
                   value={cashReserves} onChange={e => setCashReserves(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

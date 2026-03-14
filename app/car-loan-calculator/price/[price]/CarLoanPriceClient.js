@@ -26,10 +26,10 @@ export default function CarLoanPriceClient({item:it,all}){
     <h1 style={s.h1}>Car Loan Calculator: {fmt(price)} Vehicle</h1>
     <p style={s.sub}>A {fmt(price)} vehicle is a {it.type}. Calculate your exact monthly payment and total loan cost.</p>
     <div style={s.grid}>
-      <div style={s.card}><label style={s.lbl}>Vehicle Price</label><div style={s.val}>{fmt(price)}</div><input type="number" value={price} onChange={e=>setPrice(+e.target.value)} style={s.sldr}/></div>
-      <div style={s.card}><label style={s.lbl}>Down Payment</label><div style={s.val}>{down}% — {fmt(price*down/100)}</div><input type="number" value={down} onChange={e=>setDown(+e.target.value)} style={s.sldr}/></div>
-      <div style={s.card}><label style={s.lbl}>APR Rate</label><div style={s.val}>{rate}%</div><input type="number" value={rate} onChange={e=>setRate(+e.target.value)} style={s.sldr}/></div>
-      <div style={s.card}><label style={s.lbl}>Loan Term (months)</label><div style={s.val}>{term} months</div><input type="number" value={term} onChange={e=>setTerm(+e.target.value)} style={s.sldr}/></div>
+      <div style={s.card}><label style={s.lbl}>Vehicle Price</label><div style={s.val}>{fmt(price)}</div><input type="number" value={price} onChange={e=>setPrice(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Down Payment</label><div style={s.val}>{down}% — {fmt(price*down/100)}</div><input type="number" value={down} onChange={e=>setDown(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>APR Rate</label><div style={s.val}>{rate}%</div><input type="number" value={rate} onChange={e=>setRate(+e.target.value)} className="calc-input"/></div>
+      <div style={s.card}><label style={s.lbl}>Loan Term (months)</label><div style={s.val}>{term} months</div><input type="number" value={term} onChange={e=>setTerm(+e.target.value)} className="calc-input"/></div>
     </div>
     <div style={s.box}>
       <h2 style={s.h2}>Loan Summary</h2>

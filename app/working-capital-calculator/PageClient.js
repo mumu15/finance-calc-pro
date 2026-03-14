@@ -62,9 +62,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Cash and Cash Equivalents</label>
                   <span className="text-white font-bold text-sm">{fmt(cash)}</span>
                 </div>
-                <input type="range" min={0} max={10000000} step={1000}
+                <input type="number" min={0} max={10000000} step={1000}
                   value={cash} onChange={e => setCash(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -72,9 +72,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Accounts Receivable</label>
                   <span className="text-white font-bold text-sm">{fmt(receivables)}</span>
                 </div>
-                <input type="range" min={0} max={10000000} step={1000}
+                <input type="number" min={0} max={10000000} step={1000}
                   value={receivables} onChange={e => setReceivables(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -82,9 +82,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Inventory</label>
                   <span className="text-white font-bold text-sm">{fmt(inventory)}</span>
                 </div>
-                <input type="range" min={0} max={10000000} step={1000}
+                <input type="number" min={0} max={10000000} step={1000}
                   value={inventory} onChange={e => setInventory(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -92,9 +92,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Other Current Assets</label>
                   <span className="text-white font-bold text-sm">{fmt(otherCurrentA)}</span>
                 </div>
-                <input type="range" min={0} max={5000000} step={1000}
+                <input type="number" min={0} max={5000000} step={1000}
                   value={otherCurrentA} onChange={e => setOtherCurrentA(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -102,9 +102,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Accounts Payable</label>
                   <span className="text-white font-bold text-sm">{fmt(payables)}</span>
                 </div>
-                <input type="range" min={0} max={5000000} step={1000}
+                <input type="number" min={0} max={5000000} step={1000}
                   value={payables} onChange={e => setPayables(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -112,9 +112,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Short-Term Debt and Accruals</label>
                   <span className="text-white font-bold text-sm">{fmt(shortTermDebt)}</span>
                 </div>
-                <input type="range" min={0} max={5000000} step={1000}
+                <input type="number" min={0} max={5000000} step={1000}
                   value={shortTermDebt} onChange={e => setShortTermDebt(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

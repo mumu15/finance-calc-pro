@@ -66,9 +66,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Loan Amount</label>
                   <span className="text-white font-bold text-sm">{fmt(loanAmount)}</span>
                 </div>
-                <input type="range" min={500} max={200000} step={500}
+                <input type="number" min={500} max={200000} step={500}
                   value={loanAmount} onChange={e => setLoanAmount(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -76,9 +76,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Annual Interest Rate</label>
                   <span className="text-white font-bold text-sm">{`${rate}%`}</span>
                 </div>
-                <input type="range" min={1} max={36} step={0.25}
+                <input type="number" min={1} max={36} step={0.25}
                   value={rate} onChange={e => setRate(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
 
               <div>
@@ -103,9 +103,9 @@ export default function Calculator() {
                   <label className="text-slate-400 text-sm">Origination Fee</label>
                   <span className="text-white font-bold text-sm">{fmt(originFee)}</span>
                 </div>
-                <input type="range" min={0} max={5000} step={50}
+                <input type="number" min={0} max={5000} step={50}
                   value={originFee} onChange={e => setOriginFee(Number(e.target.value))}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
             </div>
           </div>

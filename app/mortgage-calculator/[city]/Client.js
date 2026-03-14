@@ -163,7 +163,7 @@ export default function CityMortgagePage() {
             </div>
             <input type="number"
               value={homePrice} onChange={e => setHomePrice(+e.target.value)}
-              style={styles.slider} />
+              className="calc-input" />
           </div>
 
           <div style={styles.inputRow}>
@@ -173,7 +173,7 @@ export default function CityMortgagePage() {
             </div>
             <input type="number"
               value={downPct} onChange={e => setDownPct(+e.target.value)}
-              style={styles.slider} />
+              className="calc-input" />
           </div>
 
           <div style={styles.inputRow}>
@@ -183,7 +183,7 @@ export default function CityMortgagePage() {
             </div>
             <input type="number"
               value={rate} onChange={e => setRate(+e.target.value)}
-              style={styles.slider} />
+              className="calc-input" />
           </div>
 
           <div style={styles.inputRow}>
@@ -193,7 +193,7 @@ export default function CityMortgagePage() {
             </div>
             <input type="number"
               value={years} onChange={e => setYears(+e.target.value)}
-              style={styles.slider} />
+              className="calc-input" />
           </div>
         </div>
 

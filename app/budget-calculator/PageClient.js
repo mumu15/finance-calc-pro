@@ -68,7 +68,7 @@ export default function BudgetCalculator() {
               <label className="text-slate-400 text-sm">{incomeType === "annual" ? 'Annual' : 'Monthly'} Income</label>
               <span className="text-white font-bold text-sm">{fmt(income)}</span>
             </div>
-            <input type="range" min={1000} max={incomeType === "annual" ? 500000 : 50000} step={incomeType === 'annual' ? 1000 : 100} value={income}
+            <input type="number" min={1000} max={incomeType === "annual" ? 500000 : 50000} step={incomeType === 'annual' ? 1000 : 100} value={income}
               onChange={e => setIncome(Number(e.target.value))}
               className="w-full accent-yellow-400 mb-6" />
 
@@ -79,7 +79,7 @@ export default function BudgetCalculator() {
                   <label className="text-blue-400 text-sm font-medium">Needs</label>
                   <span className="text-white font-bold text-sm">{needs}%</span>
                 </div>
-                <input type="range" min={20} max={80} step={1} value={needs}
+                <input type="number" min={20} max={80} step={1} value={needs}
                   onChange={e => { const v = Number(e.target.value); if(v + wants <= 95) setNeeds(v) }}
                   className="w-full accent-blue-400" />
               </div>
@@ -88,9 +88,9 @@ export default function BudgetCalculator() {
                   <label className="text-yellow-400 text-sm font-medium">Wants</label>
                   <span className="text-white font-bold text-sm">{wants}%</span>
                 </div>
-                <input type="range" min={5} max={60} step={1} value={wants}
+                <input type="number" min={5} max={60} step={1} value={wants}
                   onChange={e => { const v = Number(e.target.value); if(needs + v <= 95) setWants(v) }}
-                  className="w-full accent-yellow-400" />
+                  className="slider-upgrade" />
               </div>
               <div className="p-3 rounded-xl" style={{background:"rgba(52,211,153,0.05)",border:'1px solid rgba(52,211,153,0.15)'}}>
                 <div className="flex justify-between">
