@@ -1440,6 +1440,12 @@ export default function sitemap() {
   { url: "/home-affordability-calculator/state/wyoming", priority: 0.8, freq: "monthly" },
   { url: "/mortgage-calculator/[price]", priority: 0.8, freq: "monthly" },
   { url: "/mortgage-calculator/[city]", priority: 0.8, freq: "monthly" },
+,
+  { url: "/401k-vs-roth-ira", priority: 0.9, freq: "weekly" },
+  { url: "/15-vs-30-year-mortgage", priority: 0.9, freq: "weekly" },
+  { url: "/fixed-vs-adjustable-mortgage", priority: 0.9, freq: "weekly" },
+  { url: "/cd-vs-high-yield-savings", priority: 0.9, freq: "weekly" },
+  { url: "/hsa-vs-fsa", priority: 0.9, freq: "weekly" },
 ].map(entry => ({
     url: base + entry.url,
     lastModified: today,
