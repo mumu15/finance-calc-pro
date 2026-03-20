@@ -216,6 +216,17 @@ export default function Calculator() {
       <TrustSection />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freefincalc.net"},{"@type":"ListItem","position":2,"name":"Profit Margin Calculator","item":"https://www.freefincalc.net/profit-margin-calculator"}]})}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Profit Margin Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
+      
+        <div style={{marginTop:24,marginBottom:24,padding:20,borderRadius:16,background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.07)'}}>
+          <h2 style={{fontSize:18,fontWeight:700,color:'#f1f5f9',marginBottom:12,marginTop:0}}>Explore More Tools</h2>
+          <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+            <a href="/break-even-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:8,color:'#94a3b8',textDecoration:'none',fontSize:13,fontWeight:600}}>Break-Even</a>
+            <a href="/roi-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:8,color:'#94a3b8',textDecoration:'none',fontSize:13,fontWeight:600}}>ROI Calculator</a>
+            <a href="/markup-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:8,color:'#94a3b8',textDecoration:'none',fontSize:13,fontWeight:600}}>Markup</a>
+            <a href="/cash-flow-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:8,color:'#94a3b8',textDecoration:'none',fontSize:13,fontWeight:600}}>Cash Flow</a>
+            <a href="/business-valuation-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:8,color:'#94a3b8',textDecoration:'none',fontSize:13,fontWeight:600}}>Business Valuation</a>
+          </div>
+        </div>
       <Footer />
     </>
   )

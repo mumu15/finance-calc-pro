@@ -99,6 +99,19 @@ export default function TaxStateClient({ item: s, all }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Tax Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"2847","bestRating":"5","worstRating":"1"}})}} />
       
         {/* FAQ Section */}
+        <div style={st.box}>
+          <h2 style={st.h2}>{'Explore More for ' + s.name}</h2>
+          <p style={st.p}>{'See all ' + s.name + ' financial calculators:'}</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+            <a href={'/property-tax-calculator/state/' + s.slug} style={st.calcA}>Property Tax in {s.name}</a>
+            <a href={'/home-affordability-calculator/state/' + s.slug} style={st.calcA}>Home Affordability in {s.name}</a>
+            <a href={'/cost-of-living-calculator/state/' + s.slug} style={st.calcA}>Cost of Living in {s.name}</a>
+            <a href={'/salary-after-tax-calculator/state/' + s.slug} style={st.calcA}>Salary After Tax in {s.name}</a>
+            <a href={'/mortgage-calculator'} style={st.calcA}>Mortgage Calculator</a>
+            <a href={'/budget-planner-calculator'} style={st.calcA}>Budget Planner</a>
+          </div>
+        </div>
+
         <div style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:16,padding:24,marginTop:32,marginBottom:32,maxWidth:900,marginLeft:'auto',marginRight:'auto'}}>
           <h2 style={{fontSize:20,fontWeight:700,color:'#f1f5f9',marginBottom:16,marginTop:0}}>Frequently Asked Questions</h2>
           <div style={{borderBottom:'1px solid rgba(255,255,255,0.06)',paddingBottom:16,marginBottom:16}}>

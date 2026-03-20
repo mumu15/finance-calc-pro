@@ -100,6 +100,19 @@ export default function PTStateClient({ item: s, all }) {
         <div style={st.box}><h2 style={st.h2}>Property Tax by State</h2>{all.filter(x => x.slug !== s.slug).map(x => (<a key={x.slug} href={'/property-tax-calculator/state/' + x.slug} style={st.tagA}>{x.name}</a>))}</div>
 
         <div style={st.box}>
+          <h2 style={st.h2}>{'Explore More for ' + s.name}</h2>
+          <p style={st.p}>{'See all ' + s.name + ' financial calculators:'}</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+            <a href={'/home-affordability-calculator/state/' + s.slug} style={st.calcA}>Home Affordability in {s.name}</a>
+            <a href={'/cost-of-living-calculator/state/' + s.slug} style={st.calcA}>Cost of Living in {s.name}</a>
+            <a href={'/tax-calculator/state/' + s.slug} style={st.calcA}>Income Tax in {s.name}</a>
+            <a href={'/salary-after-tax-calculator/state/' + s.slug} style={st.calcA}>Salary After Tax in {s.name}</a>
+            <a href={'/mortgage-calculator'} style={st.calcA}>Mortgage Calculator</a>
+            <a href={'/budget-planner-calculator'} style={st.calcA}>Budget Planner</a>
+          </div>
+        </div>
+
+        <div style={st.box}>
           <h2 style={st.h2}>Frequently Asked Questions</h2>
           {faqs.map((faq, i) => (
             <div key={i} style={i < faqs.length - 1 ? {borderBottom:'1px solid rgba(255,255,255,0.06)',paddingBottom:16,marginBottom:16} : {paddingBottom:8}}>

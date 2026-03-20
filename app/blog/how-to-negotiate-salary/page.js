@@ -102,6 +102,17 @@ export default function Post() {
           </div>
         </article>
       </main>
+      
+        <div style={{marginTop:32,marginBottom:32,padding:24,borderRadius:16,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.15)'}}>
+          <h2 style={{fontSize:18,fontWeight:700,color:'#f0c842',marginBottom:12,marginTop:0}}>Try These Calculators</h2>
+          <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+            <a href="/salary-after-tax-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Salary After Tax</a>
+            <a href="/paycheck-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Paycheck Calculator</a>
+            <a href="/hourly-to-salary-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Hourly to Salary</a>
+            <a href="/raise-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Raise Calculator</a>
+            <a href="/freelance-rate-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Freelance Rate</a>
+          </div>
+        </div>
       <Footer />
     </>
   )

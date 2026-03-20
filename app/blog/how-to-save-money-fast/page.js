@@ -125,6 +125,17 @@ export default function Post() {
           </div>
         </article>
       </main>
+      
+        <div style={{marginTop:32,marginBottom:32,padding:24,borderRadius:16,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.15)'}}>
+          <h2 style={{fontSize:18,fontWeight:700,color:'#f0c842',marginBottom:12,marginTop:0}}>Try These Calculators</h2>
+          <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+            <a href="/savings-goal-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Savings Goal</a>
+            <a href="/savings-interest-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Savings Calculator</a>
+            <a href="/cd-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>CD Calculator</a>
+            <a href="/emergency-fund-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Emergency Fund</a>
+            <a href="/budget-planner-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Budget Planner</a>
+          </div>
+        </div>
       <Footer />
     </>
   )

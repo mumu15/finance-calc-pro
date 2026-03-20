@@ -105,6 +105,16 @@ export default function Post() {
           </div>
         </article>
       </main>
+      
+        <div style={{marginTop:32,marginBottom:32,padding:24,borderRadius:16,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.15)'}}>
+          <h2 style={{fontSize:18,fontWeight:700,color:'#f0c842',marginBottom:12,marginTop:0}}>Try These Calculators</h2>
+          <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+            <a href="/student-loan-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Student Loan</a>
+            <a href="/loan-payment-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Loan Payment</a>
+            <a href="/debt-payoff-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Debt Payoff Calculator</a>
+            <a href="/refinance-calculator" style={{display:'inline-block',padding:'8px 14px',background:'rgba(240,200,66,0.08)',border:'1px solid rgba(240,200,66,0.2)',borderRadius:8,color:'#f0c842',textDecoration:'none',fontSize:13,fontWeight:600}}>Refinance Calculator</a>
+          </div>
+        </div>
       <Footer />
     </>
   )

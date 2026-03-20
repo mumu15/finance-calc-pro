@@ -288,6 +288,19 @@ export default function COLStateClient({ item: s, all }) {
 
         {/* FAQ Section */}
         <div style={st.box}>
+          <h2 style={st.h2}>{'Explore More for ' + s.name}</h2>
+          <p style={st.p}>{'See all ' + s.name + ' financial calculators:'}</p>
+          <div style={{display:'flex',flexWrap:'wrap',gap:8}}>
+            <a href={'/property-tax-calculator/state/' + s.slug} style={st.calcA}>Property Tax in {s.name}</a>
+            <a href={'/home-affordability-calculator/state/' + s.slug} style={st.calcA}>Home Affordability in {s.name}</a>
+            <a href={'/tax-calculator/state/' + s.slug} style={st.calcA}>Income Tax in {s.name}</a>
+            <a href={'/salary-after-tax-calculator/state/' + s.slug} style={st.calcA}>Salary After Tax in {s.name}</a>
+            <a href={'/mortgage-calculator'} style={st.calcA}>Mortgage Calculator</a>
+            <a href={'/budget-planner-calculator'} style={st.calcA}>Budget Planner</a>
+          </div>
+        </div>
+
+        <div style={st.box}>
           <h2 style={st.h2}>Frequently Asked Questions — {s.name} Cost of Living</h2>
           {faqs.map((faq, i) => (
             <div key={i} style={i < faqs.length - 1 ? {borderBottom:'1px solid rgba(255,255,255,0.05)',paddingBottom:18,marginBottom:18} : {paddingBottom:8}}>
