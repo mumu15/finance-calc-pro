@@ -192,8 +192,8 @@ export default function HomePage() {
           <p style={st.sectionSub}>Our most-used tools by visitors</p>
           <div style={st.popGrid}>
             {POPULAR.map(t => (
-              <a key={t.href} href={t.href} style={st.popCard}>
-                <div style={st.popName}>{t.name}</div>
+              <a key={t.href} href={t.href} style={st.popCard} className="pop-link">
+                <div style={st.popName} className="pop-name">{t.name}</div>
                 <div style={st.popDesc}>{t.desc}</div>
               </a>
             ))}
@@ -209,8 +209,8 @@ export default function HomePage() {
             <p style={st.sectionSub}>{sec.desc}</p>
             <div style={st.toolGrid}>
               {sec.tools.map(t => (
-                <a key={t.href} href={t.href} style={st.toolCard}>
-                  <div style={st.toolName}>{t.name}</div>
+                <a key={t.href} href={t.href} style={st.toolCard} className="tool-link">
+                  <div style={st.toolName} className="tool-name">{t.name}</div>
                 </a>
               ))}
             </div>
@@ -223,7 +223,7 @@ export default function HomePage() {
           <p style={st.sectionSub}>Side-by-side financial comparisons to help you decide</p>
           <div style={st.compGrid}>
             {COMPARISONS.map(c => (
-              <a key={c.href} href={c.href} style={st.compCard}>{c.name}</a>
+              <a key={c.href} href={c.href} style={st.compCard} className="comp-link">{c.name}</a>
             ))}
           </div>
         </div>
@@ -234,7 +234,7 @@ export default function HomePage() {
           <p style={st.sectionSub}>Explore living costs across all 50 states</p>
           <div style={st.colGrid}>
             {COL_STATES.map(s => (
-              <a key={s.slug} href={'/cost-of-living-calculator/state/' + s.slug} style={st.colTag}>{s.name}</a>
+              <a key={s.slug} href={'/cost-of-living-calculator/state/' + s.slug} style={st.colTag} className="col-link">{s.name}</a>
             ))}
             <a href="/cost-of-living-calculator" style={{...st.colTag, color:'#f0c842', borderColor:'rgba(240,200,66,0.3)'}}>View All 50 States</a>
           </div>
@@ -274,7 +274,7 @@ export default function HomePage() {
         </div>
 
       </div>
-      <Footer />
+      <style>{`a[href]:hover .tool-name{color:#f0c842!important}a[href]:hover .pop-name{color:#f0c842!important}.tool-link:hover{border-color:rgba(240,200,66,0.3)!important;background:rgba(240,200,66,0.06)!important}.pop-link:hover{border-color:rgba(240,200,66,0.3)!important;transform:translateY(-2px)}.comp-link:hover{background:rgba(99,102,241,0.12)!important;color:#c4b5fd!important}.col-link:hover{color:#f0c842!important;border-color:rgba(240,200,66,0.3)!important}`}</style>\n      <Footer />
     </div>
   )
 }
