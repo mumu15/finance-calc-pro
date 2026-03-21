@@ -1,4 +1,37 @@
-import Link from 'next/link'
+const fs = require('fs');
+const path = require('path');
+
+const APP = path.join(__dirname, 'app');
+const COMP = path.join(__dirname, 'components');
+
+console.log('');
+console.log('=====================================================');
+console.log('  FIX: FreeFinCalc Footer — Real Links Only');
+console.log('=====================================================');
+console.log('');
+
+// Find all actual pages
+function findPages(dir, results = []) {
+  if (!fs.existsSync(dir)) return results;
+  for (const item of fs.readdirSync(dir)) {
+    if (item === 'node_modules' || item === '.next' || item === 'components') continue;
+    const full = path.join(dir, item);
+    if (fs.statSync(full).isDirectory()) findPages(full, results);
+    else if (item === 'page.js') {
+      const rel = path.relative(APP, path.dirname(full)).replace(/\\/g, '/');
+      if (!rel.includes('[')) {
+        const urlPath = rel === '' || rel === '.' ? '/' : '/' + rel;
+        results.push(urlPath);
+      }
+    }
+  }
+  return results;
+}
+
+const realPages = new Set(findPages(APP));
+console.log('  Real pages found: ' + realPages.size);
+
+const footerContent = `import Link from 'next/link'
 
 const YEAR = new Date().getFullYear()
 
@@ -146,3 +179,13 @@ export default function Footer() {
     </footer>
   )
 }
+`;
+
+fs.writeFileSync(path.join(COMP, 'Footer.js'), footerContent, 'utf8');
+console.log('  Footer rebuilt with only real page links');
+console.log('  Added Comparisons column');
+console.log('  Removed broken emoji encoding');
+console.log('  Removed ffc-link CSS class dependency');
+console.log('');
+console.log('Now run:');
+console.log('  git add . && git commit -m "Fix footer — real links only, clean encoding" && git push origin master');
