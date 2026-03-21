@@ -1,18 +1,14 @@
 import PageClient from './PageClient'
-
 export const metadata = {
-  title: 'Calculator | FreeFinCalc',
-  description: 'Free Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
+  title: 'Free Financial Calculators 2026 - Mortgage, Tax, Retirement, Debt | FreeFinCalc',
+  description: '470+ free financial calculators: mortgage, tax, retirement, debt payoff, investing, budget planner, cost of living, and more. Instant results, 40+ currencies, no sign-up.',
   alternates: { canonical: 'https://www.freefincalc.net' },
   openGraph: {
-    title: 'Calculator | FreeFinCalc',
-    description: 'Free Calculator — get instant results with our easy-to-use calculator. 100% free, no sign-up required.',
+    title: 'Free Financial Calculators 2026 | FreeFinCalc',
+    description: '470+ free calculators for mortgage, tax, retirement, investing, debt, and budgeting. Instant results in 40+ currencies.',
     url: 'https://www.freefincalc.net/',
     siteName: 'FreeFinCalc',
     type: 'website',
   },
-};
-
-export default function Page() {
-  return <PageClient />;
 }
+export default function Page() { return <PageClient /> }
