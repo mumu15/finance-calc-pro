@@ -5,6 +5,123 @@ import Footer from '../components/Footer'
 import AdUnit from '../components/AdUnit'
 import FaqSchema from '../components/FaqSchema'
 
+
+const ALL_CALCS = [
+  { name: 'Mortgage Calculator', href: '/mortgage-calculator', cat: 'Mortgage' },
+  { name: 'Amortization Calculator', href: '/amortization-calculator', cat: 'Mortgage' },
+  { name: 'Refinance Calculator', href: '/refinance-calculator', cat: 'Mortgage' },
+  { name: 'Home Affordability', href: '/home-affordability-calculator', cat: 'Mortgage' },
+  { name: 'HELOC Calculator', href: '/heloc-calculator', cat: 'Mortgage' },
+  { name: 'Property Tax', href: '/property-tax-calculator', cat: 'Mortgage' },
+  { name: 'Rent vs Buy', href: '/rent-vs-buy-calculator', cat: 'Mortgage' },
+  { name: 'Down Payment', href: '/down-payment-calculator', cat: 'Mortgage' },
+  { name: 'Biweekly Mortgage', href: '/biweekly-mortgage-calculator', cat: 'Mortgage' },
+  { name: 'Extra Payment', href: '/extra-payment-calculator', cat: 'Mortgage' },
+  { name: 'Home Equity', href: '/home-equity-calculator', cat: 'Mortgage' },
+  { name: 'Solar Payback', href: '/solar-payback-calculator', cat: 'Mortgage' },
+  { name: 'Mortgage Points', href: '/mortgage-points-calculator', cat: 'Mortgage' },
+  { name: 'Home Buying Cost', href: '/home-buying-cost-calculator', cat: 'Mortgage' },
+  { name: 'Home Improvement Loan', href: '/home-improvement-loan-calculator', cat: 'Mortgage' },
+  { name: 'Credit Card Payoff', href: '/credit-card-payoff-calculator', cat: 'Debt' },
+  { name: 'Debt Payoff', href: '/debt-payoff-calculator', cat: 'Debt' },
+  { name: 'Debt Snowball', href: '/debt-snowball-calculator', cat: 'Debt' },
+  { name: 'Debt Avalanche', href: '/debt-avalanche-calculator', cat: 'Debt' },
+  { name: 'Balance Transfer', href: '/balance-transfer-calculator', cat: 'Debt' },
+  { name: 'Debt Consolidation', href: '/debt-consolidation-calculator', cat: 'Debt' },
+  { name: 'Debt-to-Income', href: '/debt-to-income-calculator', cat: 'Debt' },
+  { name: 'Credit Utilization', href: '/credit-utilization-calculator', cat: 'Debt' },
+  { name: 'Minimum Payment', href: '/credit-card-minimum-payment-calculator', cat: 'Debt' },
+  { name: 'Total Debt', href: '/total-debt-calculator', cat: 'Debt' },
+  { name: 'Pay Off Debt vs Invest', href: '/payoff-vs-invest-calculator', cat: 'Debt' },
+  { name: 'Personal Loan', href: '/personal-loan-calculator', cat: 'Loans' },
+  { name: 'Student Loan', href: '/student-loan-calculator', cat: 'Loans' },
+  { name: 'Loan Comparison', href: '/loan-comparison-calculator', cat: 'Loans' },
+  { name: 'Loan Interest', href: '/loan-interest-calculator', cat: 'Loans' },
+  { name: 'Loan Payment', href: '/loan-payment-calculator', cat: 'Loans' },
+  { name: 'Business Loan', href: '/business-loan-calculator', cat: 'Loans' },
+  { name: 'SBA Loan', href: '/sba-loan-calculator', cat: 'Loans' },
+  { name: 'Equipment Loan', href: '/equipment-loan-calculator', cat: 'Loans' },
+  { name: 'APR Calculator', href: '/apr-calculator', cat: 'Loans' },
+  { name: 'Simple Interest', href: '/simple-interest-calculator', cat: 'Loans' },
+  { name: 'Interest Rate', href: '/interest-rate-calculator', cat: 'Loans' },
+  { name: 'Car Loan', href: '/car-loan-calculator', cat: 'Auto' },
+  { name: 'Car Affordability', href: '/car-affordability-calculator', cat: 'Auto' },
+  { name: 'Car Depreciation', href: '/car-depreciation-calculator', cat: 'Auto' },
+  { name: 'Lease vs Buy', href: '/lease-vs-buy-calculator', cat: 'Auto' },
+  { name: 'Fuel Cost', href: '/fuel-cost-calculator', cat: 'Auto' },
+  { name: 'Boat Loan', href: '/boat-loan-calculator', cat: 'Auto' },
+  { name: 'RV Loan', href: '/rv-loan-calculator', cat: 'Auto' },
+  { name: 'Truck Loan', href: '/truck-loan-calculator', cat: 'Auto' },
+  { name: 'Retirement Calculator', href: '/retirement-calculator', cat: 'Retirement' },
+  { name: '401k Calculator', href: '/401k-calculator', cat: 'Retirement' },
+  { name: 'Roth IRA', href: '/roth-ira-calculator', cat: 'Retirement' },
+  { name: 'FIRE Calculator', href: '/fire-calculator', cat: 'Retirement' },
+  { name: 'Social Security', href: '/social-security-calculator', cat: 'Retirement' },
+  { name: 'RMD Calculator', href: '/rmd-calculator', cat: 'Retirement' },
+  { name: 'Pension', href: '/pension-calculator', cat: 'Retirement' },
+  { name: 'Annuity', href: '/annuity-calculator', cat: 'Retirement' },
+  { name: 'FIRE Retirement', href: '/fire-retirement-calculator', cat: 'Retirement' },
+  { name: 'Retirement Savings', href: '/retirement-savings-calculator', cat: 'Retirement' },
+  { name: 'Investment Return', href: '/investment-return-calculator', cat: 'Investing' },
+  { name: 'Portfolio Growth', href: '/portfolio-growth-calculator', cat: 'Investing' },
+  { name: 'Portfolio Rebalancing', href: '/portfolio-rebalancing-calculator', cat: 'Investing' },
+  { name: 'Dollar Cost Averaging', href: '/dollar-cost-averaging-calculator', cat: 'Investing' },
+  { name: 'Passive Income', href: '/passive-income-calculator', cat: 'Investing' },
+  { name: 'Dividend Calculator', href: '/dividend-calculator', cat: 'Investing' },
+  { name: 'Stock Profit', href: '/stock-profit-calculator', cat: 'Investing' },
+  { name: 'Bond Yield', href: '/bond-yield-calculator', cat: 'Investing' },
+  { name: 'CD Calculator', href: '/cd-calculator', cat: 'Savings' },
+  { name: 'Savings Goal', href: '/savings-goal-calculator', cat: 'Savings' },
+  { name: 'Savings Interest', href: '/savings-interest-calculator', cat: 'Savings' },
+  { name: 'Savings Growth', href: '/savings-growth-calculator', cat: 'Savings' },
+  { name: 'Emergency Fund', href: '/emergency-fund-calculator', cat: 'Savings' },
+  { name: 'College Savings', href: '/college-savings-calculator', cat: 'Savings' },
+  { name: 'Income Tax', href: '/tax-calculator', cat: 'Tax' },
+  { name: 'Capital Gains Tax', href: '/capital-gains-tax-calculator', cat: 'Tax' },
+  { name: 'Self-Employment Tax', href: '/self-employment-tax-calculator', cat: 'Tax' },
+  { name: 'Payroll Tax', href: '/payroll-tax-calculator', cat: 'Tax' },
+  { name: 'Tax Refund', href: '/tax-refund-calculator', cat: 'Tax' },
+  { name: 'Sales Tax', href: '/sales-tax-calculator', cat: 'Tax' },
+  { name: 'VAT Calculator', href: '/vat-calculator', cat: 'Tax' },
+  { name: 'Estate Tax', href: '/estate-tax-calculator', cat: 'Tax' },
+  { name: 'Gift Tax', href: '/gift-tax-calculator', cat: 'Tax' },
+  { name: 'Child Tax Credit', href: '/child-tax-credit-calculator', cat: 'Tax' },
+  { name: 'Salary After Tax', href: '/salary-after-tax-calculator', cat: 'Salary' },
+  { name: 'Paycheck Calculator', href: '/paycheck-calculator', cat: 'Salary' },
+  { name: 'Hourly to Salary', href: '/hourly-to-salary-calculator', cat: 'Salary' },
+  { name: 'Salary to Hourly', href: '/salary-to-hourly-calculator', cat: 'Salary' },
+  { name: 'Overtime Pay', href: '/overtime-pay-calculator', cat: 'Salary' },
+  { name: 'Commission', href: '/commission-calculator', cat: 'Salary' },
+  { name: 'Freelance Rate', href: '/freelance-rate-calculator', cat: 'Salary' },
+  { name: 'Net Pay', href: '/net-pay-calculator', cat: 'Salary' },
+  { name: 'Raise Calculator', href: '/raise-calculator', cat: 'Salary' },
+  { name: 'Profit Margin', href: '/profit-margin-calculator', cat: 'Business' },
+  { name: 'Break-Even', href: '/break-even-calculator', cat: 'Business' },
+  { name: 'ROI Calculator', href: '/roi-calculator', cat: 'Business' },
+  { name: 'Business Valuation', href: '/business-valuation-calculator', cat: 'Business' },
+  { name: 'Cash Flow', href: '/cash-flow-calculator', cat: 'Business' },
+  { name: 'Startup Cost', href: '/startup-cost-calculator', cat: 'Business' },
+  { name: 'Ecommerce Profit', href: '/ecommerce-profit-calculator', cat: 'Business' },
+  { name: 'Markup Calculator', href: '/markup-calculator', cat: 'Business' },
+  { name: 'Invoice Calculator', href: '/invoice-calculator', cat: 'Business' },
+  { name: 'Budget Planner', href: '/budget-planner-calculator', cat: 'Budget' },
+  { name: 'Net Worth', href: '/net-worth-calculator', cat: 'Budget' },
+  { name: 'Cost of Living', href: '/cost-of-living-calculator', cat: 'Budget' },
+  { name: 'Moving Cost', href: '/moving-cost-calculator', cat: 'Budget' },
+  { name: 'Wedding Budget', href: '/wedding-budget-calculator', cat: 'Budget' },
+  { name: 'Currency Converter', href: '/currency-converter', cat: 'Budget' },
+  { name: 'Rental Property', href: '/rental-property-calculator', cat: 'Real Estate' },
+  { name: 'Cap Rate', href: '/cap-rate-calculator', cat: 'Real Estate' },
+  { name: 'House Flipping', href: '/house-flipping-calculator', cat: 'Real Estate' },
+  { name: 'Rent Affordability', href: '/rent-affordability-calculator', cat: 'Real Estate' },
+  { name: '401k vs Roth IRA', href: '/401k-vs-roth-ira', cat: 'Comparison' },
+  { name: '15 vs 30 Year Mortgage', href: '/15-vs-30-year-mortgage', cat: 'Comparison' },
+  { name: 'Fixed vs Adjustable', href: '/fixed-vs-adjustable-mortgage', cat: 'Comparison' },
+  { name: 'Debt Snowball vs Avalanche', href: '/debt-snowball-vs-avalanche', cat: 'Comparison' },
+  { name: 'CD vs High-Yield Savings', href: '/cd-vs-high-yield-savings', cat: 'Comparison' },
+  { name: 'HSA vs FSA', href: '/hsa-vs-fsa', cat: 'Comparison' },
+]
+
 const POPULAR = [
   { name: 'Mortgage Calculator', href: '/mortgage-calculator', desc: 'Monthly payments & amortization' },
   { name: 'Tax Calculator', href: '/tax-calculator', desc: '2026 federal tax brackets' },
@@ -184,7 +301,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div style={st.wrap}>
+        {/* Search Results */}
+        {search && (() => {
+          const q = search.toLowerCase()
+          const results = ALL_CALCS.filter(c => c.name.toLowerCase().includes(q) || c.cat.toLowerCase().includes(q) || c.href.toLowerCase().includes(q))
+          return (
+            <div style={{...st.wrap, marginTop: 32, marginBottom: 32}}>
+              <p style={{fontSize:14,color:'#64748b',marginBottom:16}}>{results.length} results for "{search}"</p>
+              <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill, minmax(200px, 1fr))',gap:10}}>
+                {results.map(r => (
+                  <a key={r.href} href={r.href} style={{padding:'14px 18px',borderRadius:12,background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.08)',textDecoration:'none',transition:'all 0.15s'}} className="tool-link">
+                    <div style={{fontSize:13,fontWeight:600,color:'#e2e8f0'}} className="tool-name">{r.name}</div>
+                    <div style={{fontSize:11,color:'#64748b',marginTop:4}}>{r.cat}</div>
+                  </a>
+                ))}
+              </div>
+              {results.length === 0 && <p style={{color:'#64748b',fontSize:14}}>No calculators found. Try a different search term.</p>}
+            </div>
+          )
+        })()}
+
+      {!search && <div style={st.wrap}>
 
         {/* Popular Calculators */}
         <div style={st.section}>

@@ -1,4 +1,5 @@
 'use client'
+import InternalLinks from './InternalLinks'
 import Link from 'next/link'
 
 const YEAR = new Date().getFullYear()
@@ -88,7 +89,9 @@ const COLS = [
 
 export default function Footer() {
   return (
-    <footer role="contentinfo" style={{ borderTop: '1px solid rgba(240,200,66,0.1)', background: 'rgba(0,0,0,0.3)', paddingTop: 56, paddingBottom: 32 }}>
+    <>
+      <InternalLinks />
+      <footer role="contentinfo" style={{ borderTop: '1px solid rgba(240,200,66,0.1)', background: 'rgba(0,0,0,0.3)', paddingTop: 56, paddingBottom: 32 }}>
       <div className="max-w-7xl mx-auto px-4">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '32px 24px', marginBottom: 48 }}>
 
@@ -145,5 +148,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   )
 }
