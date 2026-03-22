@@ -19,6 +19,7 @@ export const metadata = {
   authors: [{ name: 'FreeFinCalc' }],
   creator: 'FreeFinCalc',
   openGraph: {
+    images: [{ url: 'https://www.freefincalc.net/og-image.svg', width: 1200, height: 630, alt: 'FreeFinCalc - 470+ Free Financial Calculators' }],
     title: 'Free Financial Calculators — FreeFinCalc.net',
     description: '470+ free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
     url: 'https://www.freefincalc.net',
@@ -26,7 +27,8 @@ export const metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
+    images: ['https://www.freefincalc.net/og-image.svg'],
     title: 'Free Financial Calculators — FreeFinCalc.net',
     description: '470+ free financial calculators. Mortgage, loans, retirement, investments, taxes and more.',
   },
