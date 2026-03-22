@@ -411,7 +411,8 @@ export default function HomePage() {
         </div>
 
       </div>
-      <style>{`a[href]:hover .tool-name{color:#f0c842!important}a[href]:hover .pop-name{color:#f0c842!important}.tool-link:hover{border-color:rgba(240,200,66,0.3)!important;background:rgba(240,200,66,0.06)!important}.pop-link:hover{border-color:rgba(240,200,66,0.3)!important;transform:translateY(-2px)}.comp-link:hover{background:rgba(99,102,241,0.12)!important;color:#c4b5fd!important}.col-link:hover{color:#f0c842!important;border-color:rgba(240,200,66,0.3)!important}`}</style>\n      <Footer />
+      <style>{`a[href]:hover .tool-name{color:#f0c842!important}a[href]:hover .pop-name{color:#f0c842!important}.tool-link:hover{border-color:rgba(240,200,66,0.3)!important;background:rgba(240,200,66,0.06)!important}.pop-link:hover{border-color:rgba(240,200,66,0.3)!important;transform:translateY(-2px)}.comp-link:hover{background:rgba(99,102,241,0.12)!important;color:#c4b5fd!important}.col-link:hover{color:#f0c842!important;border-color:rgba(240,200,66,0.3)!important}`}</style>
+      <Footer />
     </div>
   )
 }
