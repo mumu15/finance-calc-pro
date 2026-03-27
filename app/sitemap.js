@@ -1524,8 +1524,8 @@ export default function sitemap() {
     { url: "https://www.freefincalc.net/financial-data/how-much-should-you-have-saved-by-60", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/financial-data/average-car-payment-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/financial-data/millionaire-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
-    { url: "https://www.freefincalc.net/financial-data/average-monthly-expenses-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 }
-      { url: "https://www.freefincalc.net/minimum-wage-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
+    { url: "https://www.freefincalc.net/financial-data/average-monthly-expenses-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/minimum-wage-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.freefincalc.net/federal-tax-brackets", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.freefincalc.net/state-income-tax-rates", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.freefincalc.net/property-tax-rates-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
