@@ -33,7 +33,7 @@ export default function DataPageClient({ topic, states, allTopics }) {
   const [sortAsc, setSortAsc] = useState(topic.sortDir === 'asc')
   const [search, setSearch] = useState('')
 
-  const computeFn = useMemo(() => new Function('s', 'return ' + topic.metricFn), [topic.metricFn])
+  const computeFn = useMemo(() => new Function('return ' + topic.metricFn)(), [topic.metricFn])
 
   const rows = useMemo(() => {
     return states.map(s => ({ ...s, value: computeFn(s) }))
