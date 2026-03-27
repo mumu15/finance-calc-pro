@@ -1,9 +1,9 @@
 'use client'
 import { useState, useMemo } from 'react'
-import Header from '../../../../components/Header'
-import Footer from '../../../../components/Footer'
-import AdUnit from '../../../../components/AdUnit'
-import FaqSchema from '../../../../components/FaqSchema'
+import Header from '../../../components/Header'
+import Footer from '../../../components/Footer'
+import AdUnit from '../../../components/AdUnit'
+import FaqSchema from '../../../components/FaqSchema'
 
 function fmtUnit(val, unit) {
   if (unit === '$/mo' || unit === '$/yr' || unit === '$' || unit === '$/gal') return '$' + Math.round(val).toLocaleString('en-US') + (unit === '$/mo' ? '/mo' : unit === '$/yr' ? '/yr' : unit === '$/gal' ? '/gal' : '')

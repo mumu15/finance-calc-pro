@@ -1443,7 +1443,7 @@ export default function sitemap() {
     { url: "/15-vs-30-year-mortgage", priority: 0.9, freq: "weekly" },
     { url: "/fixed-vs-adjustable-mortgage", priority: 0.9, freq: "weekly" },
     { url: "/cd-vs-high-yield-savings", priority: 0.9, freq: "weekly" },
-    { url: "/hsa-vs-fsa", priority: 0.9, freq: "weekly" }
+    { url: "/hsa-vs-fsa", priority: 0.9, freq: "weekly" },
     { url: base + "/data", lastModified: today, changeFrequency: "weekly", priority: 0.9 },
   { url: base + "/data/average-mortgage-payment-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
   { url: base + "/data/salary-needed-to-buy-home-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
