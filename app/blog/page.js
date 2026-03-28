@@ -70,6 +70,54 @@ export default function Blog() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {posts.map((post) => (
+
+        {/* Featured High-CPC Guides */}
+        <div style={{marginBottom:48}}>
+          <h2 style={{fontSize:24,fontWeight:800,color:'#f0c842',margin:'0 0 6px',paddingLeft:12,borderLeft:'4px solid #f0c842'}}>Featured Financial Guides</h2>
+          <p style={{fontSize:13,color:'#64748b',margin:'0 0 16px',paddingLeft:16}}>In-depth guides on mortgages, investing, taxes, and debt</p>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill, minmax(300px, 1fr))',gap:12}}>
+            <a href="/blog/best-mortgage-rates-2026" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>Best Mortgage Rates in 2026: How to Get the Lowest Rate</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $12-18</div>
+            </a>
+            <a href="/blog/how-to-refinance-mortgage-2026" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>How to Refinance Your Mortgage in 2026: Complete Guide</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $10-15</div>
+            </a>
+            <a href="/blog/debt-consolidation-guide-2026" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>Debt Consolidation: Is It Right for You? (2026 Guide)</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $10-15</div>
+            </a>
+            <a href="/blog/how-to-pay-off-credit-card-debt-fast" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>How to Pay Off Credit Card Debt Fast: 7 Proven Strategies</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $8-14</div>
+            </a>
+            <a href="/blog/best-high-yield-savings-accounts-2026" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>Best High-Yield Savings Accounts 2026</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $8-12</div>
+            </a>
+            <a href="/blog/how-much-house-can-i-afford-2026" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>How Much House Can I Afford in 2026?</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $8-12</div>
+            </a>
+            <a href="/blog/how-to-build-credit-score-fast" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>How to Build Your Credit Score Fast: 0 to 750+</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $7-12</div>
+            </a>
+            <a href="/blog/how-to-save-for-retirement-at-every-age" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>How to Save for Retirement at Every Age</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $6-10</div>
+            </a>
+            <a href="/blog/how-to-save-money-on-taxes-2026" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>How to Save Money on Taxes in 2026: 15 Strategies</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $6-10</div>
+            </a>
+            <a href="/blog/how-to-invest-for-beginners-2026" style={{display:'block',padding:'18px 22px',borderRadius:14,background:'rgba(240,200,66,0.04)',border:'1px solid rgba(240,200,66,0.12)',textDecoration:'none'}}>
+              <div style={{fontSize:14,fontWeight:700,color:'#e2e8f0',lineHeight:1.4,marginBottom:6}}>How to Start Investing in 2026: Beginner Guide</div>
+              <div style={{display:'inline-block',padding:'2px 8px',borderRadius:5,background:'rgba(16,185,129,0.1)',color:'#10b981',fontSize:10,fontWeight:700}}>CPC: $5-10</div>
+            </a>
+          </div>
+        </div>
             <Link key={post.slug} href={`/blog/${post.slug}`}
               className="result-box transition-all duration-300 hover:-translate-y-1 group"
               style={{borderColor:'rgba(240,200,66,0.15)'}}>
