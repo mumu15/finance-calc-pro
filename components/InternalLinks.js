@@ -192,91 +192,95 @@ const LINK_MAP = {
     states: [],
     keywords: ['personal-loan','student-loan','loan-comp','loan-interest','loan-payment','business-loan','sba-loan','equipment-loan','apr-calc','simple-interest','interest-rate'],
   },
-}
-
-function getCategory(pathname) {
-  const p = pathname.toLowerCase()
-  for (const [key, cat] of Object.entries(LINK_MAP)) {
-    for (const kw of cat.keywords) {
-      if (p.includes(kw)) return key
-    }
-  }
-  // Blog posts
-  if (p.includes('/blog/')) {
-    for (const [key, cat] of Object.entries(LINK_MAP)) {
-      for (const kw of cat.keywords) {
-        if (p.includes(kw)) return key
-      }
-    }
-  }
-  // COL pages
-  if (p.includes('cost-of-living')) return 'budget'
-  return null
-}
-
-const st = {
-  wrap: { maxWidth: 900, margin: '0 auto', padding: '0 16px 32px' },
-  box: { background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 16, padding: 24, marginBottom: 20 },
-  h3: { fontSize: 15, fontWeight: 700, color: '#f0c842', margin: '0 0 12px' },
-  grid: { display: 'flex', flexWrap: 'wrap', gap: 8 },
-  link: { display: 'inline-block', padding: '6px 14px', borderRadius: 8, fontSize: 12, fontWeight: 600, textDecoration: 'none', transition: 'all 0.15s' },
-  calcLink: { background: 'rgba(240,200,66,0.06)', border: '1px solid rgba(240,200,66,0.15)', color: '#f0c842' },
-  blogLink: { background: 'rgba(59,130,246,0.06)', border: '1px solid rgba(59,130,246,0.15)', color: '#60a5fa' },
-  compLink: { background: 'rgba(168,85,247,0.06)', border: '1px solid rgba(168,85,247,0.15)', color: '#c084fc' },
-  stateLink: { background: 'rgba(16,185,129,0.06)', border: '1px solid rgba(16,185,129,0.15)', color: '#34d399' },
-}
-
-export default function InternalLinks() {
-  const pathname = usePathname()
-  if (!pathname || pathname === '/') return null
-
-  const catKey = getCategory(pathname)
-  if (!catKey) return null
-  const cat = LINK_MAP[catKey]
-  if (!cat) return null
-
-  const currentPath = pathname
-  const calcs = cat.calcs.filter(c => c.href !== currentPath).slice(0, 8)
-  const blogs = cat.blogs.filter(b => b.href !== currentPath).slice(0, 6)
-  const comps = cat.comparisons.filter(c => c.href !== currentPath)
-  const states = cat.states.filter(s => s.href !== currentPath)
-
-  if (calcs.length === 0 && blogs.length === 0 && comps.length === 0 && states.length === 0) return null
-
-  return (
-    <div style={st.wrap}>
-      {calcs.length > 0 && (
-        <div style={st.box}>
-          <h3 style={st.h3}>Related {cat.label} Calculators</h3>
-          <div style={st.grid}>
-            {calcs.map(c => <a key={c.href} href={c.href} style={{...st.link, ...st.calcLink}}>{c.name}</a>)}
-          </div>
-        </div>
-      )}
-      {blogs.length > 0 && (
-        <div style={st.box}>
-          <h3 style={{...st.h3, color: '#60a5fa'}}>Related Guides</h3>
-          <div style={st.grid}>
-            {blogs.map(b => <a key={b.href} href={b.href} style={{...st.link, ...st.blogLink}}>{b.name}</a>)}
-          </div>
-        </div>
-      )}
-      {comps.length > 0 && (
-        <div style={st.box}>
-          <h3 style={{...st.h3, color: '#c084fc'}}>Comparisons</h3>
-          <div style={st.grid}>
-            {comps.map(c => <a key={c.href} href={c.href} style={{...st.link, ...st.compLink}}>{c.name}</a>)}
-          </div>
-        </div>
-      )}
-      {states.length > 0 && (
-        <div style={st.box}>
-          <h3 style={{...st.h3, color: '#34d399'}}>Cost of Living by State</h3>
-          <div style={st.grid}>
-            {states.map(s => <a key={s.href} href={s.href} style={{...st.link, ...st.stateLink}}>{s.name}</a>)}
-          </div>
-        </div>
-      )}
-    </div>
-  )
+  mortgageData: {
+    label: 'Mortgage Data',
+    calcs: [
+      { name: 'Mortgage Rates History', href: '/mortgage-data/average-mortgage-rates-by-year' },
+      { name: 'Down Payment Stats', href: '/mortgage-data/down-payment-statistics' },
+      { name: 'Foreclosure Rates', href: '/mortgage-data/foreclosure-rates-by-state' },
+      { name: 'Housing Market Stats', href: '/mortgage-data/housing-market-statistics' },
+      { name: 'Closing Costs by State', href: '/mortgage-data/average-closing-costs-by-state' },
+      { name: 'Home Price History', href: '/mortgage-data/average-home-price-by-year' },
+    ],
+    blogs: [
+      { name: 'Best Mortgage Rates 2026', href: '/blog/best-mortgage-rates-2026' },
+      { name: 'How to Refinance', href: '/blog/how-to-refinance-mortgage-2026' },
+      { name: 'How Much House Can I Afford', href: '/blog/how-much-house-can-i-afford-2026' },
+    ],
+    color: '#f0c842',
+  },
+  insuranceData: {
+    label: 'Insurance Data',
+    calcs: [
+      { name: 'Car Insurance by State', href: '/insurance-data/average-car-insurance-by-state' },
+      { name: 'Health Insurance Cost', href: '/insurance-data/average-health-insurance-cost' },
+      { name: 'Life Insurance by Age', href: '/insurance-data/average-life-insurance-cost-by-age' },
+      { name: 'Renters Insurance', href: '/insurance-data/average-renters-insurance-by-state' },
+      { name: 'Insurance by Age', href: '/insurance-data/insurance-cost-by-age' },
+      { name: 'Uninsured Rates', href: '/insurance-data/uninsured-rates-by-state' },
+    ],
+    blogs: [],
+    color: '#10b981',
+  },
+  creditCardData: {
+    label: 'Credit Card Data',
+    calcs: [
+      { name: 'Credit Card Debt by State', href: '/credit-card-data/average-credit-card-debt-by-state' },
+      { name: 'Credit Card APR', href: '/credit-card-data/average-credit-card-interest-rate' },
+      { name: 'Debt Statistics', href: '/credit-card-data/credit-card-debt-statistics' },
+      { name: 'Approval Rates', href: '/credit-card-data/credit-card-approval-rates' },
+      { name: 'Balance Transfer Stats', href: '/credit-card-data/balance-transfer-statistics' },
+      { name: 'Rewards Statistics', href: '/credit-card-data/credit-card-rewards-statistics' },
+    ],
+    blogs: [
+      { name: 'Pay Off Credit Card Debt', href: '/blog/how-to-pay-off-credit-card-debt-fast' },
+      { name: 'Build Credit Score Fast', href: '/blog/how-to-build-credit-score-fast' },
+      { name: 'Debt Consolidation Guide', href: '/blog/debt-consolidation-guide-2026' },
+    ],
+    color: '#ef4444',
+  },
+  salaryData: {
+    label: 'Salary Data',
+    calcs: [
+      { name: 'Teacher Salary by State', href: '/salary-data/teacher-salary-by-state' },
+      { name: 'Nurse Salary by State', href: '/salary-data/nurse-salary-by-state' },
+      { name: 'Software Engineer Salary', href: '/salary-data/software-engineer-salary-by-state' },
+      { name: 'Police Officer Salary', href: '/salary-data/police-officer-salary-by-state' },
+      { name: 'Electrician Salary', href: '/salary-data/electrician-salary-by-state' },
+      { name: 'Pharmacist Salary', href: '/salary-data/pharmacist-salary-by-state' },
+    ],
+    blogs: [],
+    color: '#3b82f6',
+  },
+  financialData: {
+    label: 'Financial Benchmarks',
+    calcs: [
+      { name: 'Net Worth by Age', href: '/financial-data/average-net-worth-by-age' },
+      { name: '401k Balance by Age', href: '/financial-data/average-401k-balance-by-age' },
+      { name: 'Savings by Age', href: '/financial-data/average-savings-by-age' },
+      { name: 'Debt by Age', href: '/financial-data/average-debt-by-age' },
+      { name: 'Saved by 30', href: '/financial-data/how-much-should-you-have-saved-by-30' },
+      { name: 'Retirement Savings', href: '/financial-data/average-retirement-savings-by-age' },
+    ],
+    blogs: [
+      { name: 'Save for Retirement', href: '/blog/how-to-save-for-retirement-at-every-age' },
+      { name: 'Start Investing', href: '/blog/how-to-invest-for-beginners-2026' },
+      { name: 'Save on Taxes', href: '/blog/how-to-save-money-on-taxes-2026' },
+    ],
+    color: '#8b5cf6',
+  },
+  referenceData: {
+    label: 'Reference Data',
+    calcs: [
+      { name: 'Tax Brackets 2026', href: '/federal-tax-brackets' },
+      { name: 'Minimum Wage by State', href: '/minimum-wage-by-state' },
+      { name: 'State Income Tax Rates', href: '/state-income-tax-rates' },
+      { name: 'Property Tax by State', href: '/property-tax-rates-by-state' },
+      { name: 'Inflation Rate History', href: '/inflation-rate-by-year' },
+      { name: 'Social Security by Age', href: '/social-security-benefits-by-age' },
+      { name: '401k/IRA Limits', href: '/401k-ira-contribution-limits' },
+    ],
+    blogs: [],
+    color: '#06b6d4',
+  },
 }

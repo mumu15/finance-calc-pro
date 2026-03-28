@@ -451,7 +451,27 @@ export default function HomePage() {
             <div style={{fontSize:14,fontWeight:700,color:'#8b5cf6'}}>Minimum Wage 2026</div>
             <div style={{fontSize:12,color:'#64748b',marginTop:4}}>All 50 states + federal rate</div>
           </a>
-        </div>
+        
+          <a href="/state-income-tax-rates" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(139,92,246,0.06)',border:'1px solid rgba(139,92,246,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#8b5cf6'}}>State Tax Rates 2026</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>All 50 states ranked by rate</div>
+          </a>
+          <a href="/property-tax-rates-by-state" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(6,182,212,0.06)',border:'1px solid rgba(6,182,212,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#06b6d4'}}>Property Tax Rates</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Effective rates all 50 states</div>
+          </a>
+          <a href="/inflation-rate-by-year" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(249,115,22,0.06)',border:'1px solid rgba(249,115,22,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#f97316'}}>Inflation by Year</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>CPI data 1960-2026</div>
+          </a>
+          <a href="/social-security-benefits-by-age" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(236,72,153,0.06)',border:'1px solid rgba(236,72,153,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#ec4899'}}>Social Security 2026</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Benefits by claiming age</div>
+          </a>
+          <a href="/401k-ira-contribution-limits" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(6,182,212,0.06)',border:'1px solid rgba(6,182,212,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#06b6d4'}}>401k/IRA Limits 2026</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>All account contribution limits</div>
+          </a></div>
       </div>
       <Footer />
     </div>

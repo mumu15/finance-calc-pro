@@ -93,6 +93,7 @@ const MEGA = [
       { name: 'Credit Card Data', href: '/credit-card-data' },
       { name: 'Tax Brackets 2026', href: '/federal-tax-brackets' },
       { name: 'Min Wage by State', href: '/minimum-wage-by-state' },
+      { name: 'State Income Tax', href: '/state-income-tax-rates' },
     ],
   },
 ]

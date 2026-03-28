@@ -90,6 +90,21 @@ const COLS = [
 export default function Footer() {
   return (
     <>
+      
+      {/* Data & Research */}
+      <div>
+        <h4 style={{color:'#f1f5f9',fontWeight:700,fontSize:13,marginBottom:12,textTransform:'uppercase',letterSpacing:'0.05em'}}>Data & Research</h4>
+        <div style={{display:'flex',flexDirection:'column',gap:8}}>
+          <a href="/data" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>State Rankings</a>
+          <a href="/salary-data" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>Salary Data</a>
+          <a href="/financial-data" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>Financial by Age</a>
+          <a href="/mortgage-data" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>Mortgage Data</a>
+          <a href="/insurance-data" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>Insurance Data</a>
+          <a href="/credit-card-data" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>Credit Card Data</a>
+          <a href="/federal-tax-brackets" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>Tax Brackets 2026</a>
+          <a href="/minimum-wage-by-state" style={{color:'#64748b',textDecoration:'none',fontSize:13}}>Minimum Wage</a>
+        </div>
+      </div>
       <InternalLinks />
       <footer role="contentinfo" style={{ borderTop: '1px solid rgba(240,200,66,0.1)', background: 'rgba(0,0,0,0.3)', paddingTop: 56, paddingBottom: 32 }}>
       <div className="max-w-7xl mx-auto px-4">
