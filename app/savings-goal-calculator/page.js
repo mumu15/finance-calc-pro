@@ -1,11 +1,11 @@
 import PageClient from './PageClient'
 
 export const metadata = {
-  title: 'Savings Goal Calculator | FreeFinCalc',
-  description: 'Free Savings Goal Calculator — see how your savings grow over time with interest and deposits. No sign-up.',
+  title: 'Savings Goal Calculator — How Long to Reach Your Goal?',
+  description: 'Find out exactly when you will reach your savings goal. Enter your target, monthly savings, and interest rate. Free calculator.',
   alternates: { canonical: 'https://www.freefincalc.net/savings-goal-calculator' },
   openGraph: {
-    title: 'Savings Goal Calculator | FreeFinCalc',
+    title: 'Savings Goal Calculator — How Long to Reach Your Goal?',
     description: 'Free Savings Goal Calculator — see how your savings grow over time with interest and deposits. No sign-up.',
     url: 'https://www.freefincalc.net/savings-goal-calculator',
     siteName: 'FreeFinCalc',
