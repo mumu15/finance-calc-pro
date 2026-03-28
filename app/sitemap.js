@@ -1543,5 +1543,17 @@ export default function sitemap() {
     { url: "https://www.freefincalc.net/blog/debt-consolidation-guide-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/blog/how-to-build-credit-score-fast", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/blog/how-to-save-money-on-taxes-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+
+    { url: "https://www.freefincalc.net/mortgage-data", lastModified: today, changeFrequency: "weekly", priority: 0.9 },
+    { url: "https://www.freefincalc.net/mortgage-data/average-mortgage-rates-by-year", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/down-payment-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/foreclosure-rates-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/housing-market-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/average-closing-costs-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/mortgage-debt-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/average-home-price-by-year", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/rent-vs-buy-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/mortgage-approval-rates-by-credit-score", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/mortgage-data/average-home-insurance-cost-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
 ];
 }
