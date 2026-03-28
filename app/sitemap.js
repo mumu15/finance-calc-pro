@@ -1532,5 +1532,16 @@ export default function sitemap() {
     { url: "https://www.freefincalc.net/inflation-rate-by-year", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.freefincalc.net/social-security-benefits-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.freefincalc.net/401k-ira-contribution-limits", lastModified: today, changeFrequency: "monthly", priority: 0.9 },
+
+    { url: "https://www.freefincalc.net/blog/best-mortgage-rates-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/how-to-refinance-mortgage-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/how-to-pay-off-credit-card-debt-fast", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/how-much-house-can-i-afford-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/how-to-save-for-retirement-at-every-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/best-high-yield-savings-accounts-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/how-to-invest-for-beginners-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/debt-consolidation-guide-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/how-to-build-credit-score-fast", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/blog/how-to-save-money-on-taxes-2026", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
 ];
 }
