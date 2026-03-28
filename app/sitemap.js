@@ -1567,5 +1567,17 @@ export default function sitemap() {
     { url: "https://www.freefincalc.net/insurance-data/insurance-industry-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/insurance-data/pet-insurance-cost", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/insurance-data/uninsured-rates-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+
+    { url: "https://www.freefincalc.net/credit-card-data", lastModified: today, changeFrequency: "weekly", priority: 0.9 },
+    { url: "https://www.freefincalc.net/credit-card-data/average-credit-card-debt-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/average-credit-card-interest-rate", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/credit-card-debt-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/credit-card-spending-by-category", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/credit-card-approval-rates", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/balance-transfer-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/credit-card-rewards-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/number-of-credit-cards-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/credit-card-delinquency-rates", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/credit-card-data/credit-card-industry-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
 ];
 }
