@@ -1555,5 +1555,17 @@ export default function sitemap() {
     { url: "https://www.freefincalc.net/mortgage-data/rent-vs-buy-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/mortgage-data/mortgage-approval-rates-by-credit-score", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/mortgage-data/average-home-insurance-cost-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+
+    { url: "https://www.freefincalc.net/insurance-data", lastModified: today, changeFrequency: "weekly", priority: 0.9 },
+    { url: "https://www.freefincalc.net/insurance-data/average-car-insurance-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/average-health-insurance-cost", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/average-life-insurance-cost-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/average-renters-insurance-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/car-insurance-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/health-insurance-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/insurance-cost-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/insurance-industry-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/pet-insurance-cost", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/insurance-data/uninsured-rates-by-state", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
 ];
 }
