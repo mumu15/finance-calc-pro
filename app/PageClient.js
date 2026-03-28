@@ -272,47 +272,7 @@ export default function HomePage() {
   }
 
   return (
-      {/* Data & Research Section */}
-      <div style={{maxWidth:1200,margin:'0 auto',padding:'48px 16px'}}>
-        <h2 style={{fontSize:'clamp(22px,3vw,32px)',fontWeight:900,color:'#fff',textAlign:'center',margin:'0 0 8px'}}>Data & Research</h2>
-        <p style={{color:'#94a3b8',textAlign:'center',margin:'0 0 32px',fontSize:15}}>Original financial data and state rankings — cite us in your research</p>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill, minmax(220px, 1fr))',gap:10}}>
-          <a href="/data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(240,200,66,0.06)',border:'1px solid rgba(240,200,66,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#f0c842'}}>50 State Rankings</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Mortgage, rent, taxes, salary & more</div>
-          </a>
-          <a href="/salary-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(59,130,246,0.06)',border:'1px solid rgba(59,130,246,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#3b82f6'}}>Salary by Profession</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>15 professions across 50 states</div>
-          </a>
-          <a href="/financial-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(16,185,129,0.06)',border:'1px solid rgba(16,185,129,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#10b981'}}>Financial by Age</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Net worth, 401k, savings, debt by age</div>
-          </a>
-          <a href="/mortgage-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(240,200,66,0.06)',border:'1px solid rgba(240,200,66,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#f0c842'}}>Mortgage Data</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Rates, prices, foreclosures, costs</div>
-          </a>
-          <a href="/insurance-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(16,185,129,0.06)',border:'1px solid rgba(16,185,129,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#10b981'}}>Insurance Data</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Car, health, life, home rates</div>
-          </a>
-          <a href="/credit-card-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(239,68,68,0.06)',border:'1px solid rgba(239,68,68,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#ef4444'}}>Credit Card Data</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Debt, APR, rewards, approval rates</div>
-          </a>
-          <a href="/federal-tax-brackets" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(139,92,246,0.06)',border:'1px solid rgba(139,92,246,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#8b5cf6'}}>Tax Brackets 2026</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Federal rates, deductions, limits</div>
-          </a>
-          <a href="/minimum-wage-by-state" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(139,92,246,0.06)',border:'1px solid rgba(139,92,246,0.15)',textDecoration:'none'}}>
-            <div style={{fontSize:14,fontWeight:700,color:'#8b5cf6'}}>Minimum Wage 2026</div>
-            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>All 50 states + federal rate</div>
-          </a>
-        </div>
-      </div>
-
-    <div style={st.page}>
+      <div style={st.page}>
       <FaqSchema faqs={faqs} />
       <Header />
       <AdUnit slot="7405024590" />
@@ -454,6 +414,45 @@ export default function HomePage() {
       
       
       
+      {/* Data & Research Section */}
+      <div style={{maxWidth:1200,margin:'0 auto',padding:'48px 16px'}}>
+        <h2 style={{fontSize:'clamp(22px,3vw,32px)',fontWeight:900,color:'#fff',textAlign:'center',margin:'0 0 8px'}}>Data & Research</h2>
+        <p style={{color:'#94a3b8',textAlign:'center',margin:'0 0 32px',fontSize:15}}>Original financial data and state rankings — cite us in your research</p>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill, minmax(220px, 1fr))',gap:10}}>
+          <a href="/data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(240,200,66,0.06)',border:'1px solid rgba(240,200,66,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#f0c842'}}>50 State Rankings</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Mortgage, rent, taxes, salary & more</div>
+          </a>
+          <a href="/salary-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(59,130,246,0.06)',border:'1px solid rgba(59,130,246,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#3b82f6'}}>Salary by Profession</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>15 professions across 50 states</div>
+          </a>
+          <a href="/financial-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(16,185,129,0.06)',border:'1px solid rgba(16,185,129,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#10b981'}}>Financial by Age</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Net worth, 401k, savings, debt by age</div>
+          </a>
+          <a href="/mortgage-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(240,200,66,0.06)',border:'1px solid rgba(240,200,66,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#f0c842'}}>Mortgage Data</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Rates, prices, foreclosures, costs</div>
+          </a>
+          <a href="/insurance-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(16,185,129,0.06)',border:'1px solid rgba(16,185,129,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#10b981'}}>Insurance Data</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Car, health, life, home rates</div>
+          </a>
+          <a href="/credit-card-data" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(239,68,68,0.06)',border:'1px solid rgba(239,68,68,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#ef4444'}}>Credit Card Data</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Debt, APR, rewards, approval rates</div>
+          </a>
+          <a href="/federal-tax-brackets" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(139,92,246,0.06)',border:'1px solid rgba(139,92,246,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#8b5cf6'}}>Tax Brackets 2026</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>Federal rates, deductions, limits</div>
+          </a>
+          <a href="/minimum-wage-by-state" style={{display:'block',padding:'16px 20px',borderRadius:14,background:'rgba(139,92,246,0.06)',border:'1px solid rgba(139,92,246,0.15)',textDecoration:'none'}}>
+            <div style={{fontSize:14,fontWeight:700,color:'#8b5cf6'}}>Minimum Wage 2026</div>
+            <div style={{fontSize:12,color:'#64748b',marginTop:4}}>All 50 states + federal rate</div>
+          </a>
+        </div>
+      </div>
       <Footer />
     </div>
   )
