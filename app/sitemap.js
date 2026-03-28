@@ -1579,5 +1579,13 @@ export default function sitemap() {
     { url: "https://www.freefincalc.net/credit-card-data/number-of-credit-cards-by-age", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/credit-card-data/credit-card-delinquency-rates", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
     { url: "https://www.freefincalc.net/credit-card-data/credit-card-industry-statistics", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+
+    { url: "https://www.freefincalc.net/embed", lastModified: today, changeFrequency: "monthly", priority: 0.8 },
+    { url: "https://www.freefincalc.net/embed/mortgage", lastModified: today, changeFrequency: "monthly", priority: 0.7 },
+    { url: "https://www.freefincalc.net/embed/compound-interest", lastModified: today, changeFrequency: "monthly", priority: 0.7 },
+    { url: "https://www.freefincalc.net/embed/loan-payoff", lastModified: today, changeFrequency: "monthly", priority: 0.7 },
+    { url: "https://www.freefincalc.net/embed/retirement", lastModified: today, changeFrequency: "monthly", priority: 0.7 },
+    { url: "https://www.freefincalc.net/embed/bmi", lastModified: today, changeFrequency: "monthly", priority: 0.7 },
+    { url: "https://www.freefincalc.net/embed/tip", lastModified: today, changeFrequency: "monthly", priority: 0.7 },
 ];
 }
