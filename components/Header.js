@@ -81,11 +81,26 @@ const MEGA = [
       { name: 'Cash Flow', href: '/cash-flow-calculator' },
     ],
   },
+,
+  {
+    label: 'Data & Research',
+    tools: [
+      { name: 'State Rankings (50)', href: '/data' },
+      { name: 'Salary by Profession', href: '/salary-data' },
+      { name: 'Financial by Age', href: '/financial-data' },
+      { name: 'Mortgage Data', href: '/mortgage-data' },
+      { name: 'Insurance Data', href: '/insurance-data' },
+      { name: 'Credit Card Data', href: '/credit-card-data' },
+      { name: 'Tax Brackets 2026', href: '/federal-tax-brackets' },
+      { name: 'Min Wage by State', href: '/minimum-wage-by-state' },
+    ],
+  },
 ]
 
 const DIRECT = [
   { label: 'Comparisons', href: '/401k-vs-roth-ira' },
   { label: 'Cost of Living', href: '/cost-of-living-calculator' },
+  { label: 'Data', href: '/data' },
   { label: 'Blog', href: '/blog' },
 ]
 
@@ -201,6 +216,24 @@ const MOBILE_NAV = [
       { name: 'Moving Cost', href: '/moving-cost-calculator' },
     ],
   },
+  {
+    label: 'Data & Research',
+    tools: [
+      { name: 'All State Rankings', href: '/data' },
+      { name: 'Salary by Profession', href: '/salary-data' },
+      { name: 'Financial by Age', href: '/financial-data' },
+      { name: 'Mortgage Data', href: '/mortgage-data' },
+      { name: 'Insurance Data', href: '/insurance-data' },
+      { name: 'Credit Card Data', href: '/credit-card-data' },
+      { name: 'Tax Brackets 2026', href: '/federal-tax-brackets' },
+      { name: 'Min Wage by State', href: '/minimum-wage-by-state' },
+      { name: 'Property Tax Rates', href: '/property-tax-rates-by-state' },
+      { name: 'Inflation by Year', href: '/inflation-rate-by-year' },
+      { name: 'Social Security', href: '/social-security-benefits-by-age' },
+      { name: '401k/IRA Limits', href: '/401k-ira-contribution-limits' },
+    ],
+  },
+
 ]
 
 export default function Header() {

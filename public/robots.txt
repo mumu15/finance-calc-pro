@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://freefincalc.net/sitemap.xml
+Sitemap: https://www.freefincalc.net/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
