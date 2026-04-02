@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What closing costs should I expect when buying a home?', a: 'Closing costs typically run 2-5% of the purchase price. On a $400,000 home that is $8,000-$20,000. Main components: loan origination fee (0.5-1%), appraisal ($500-$800), title insurance ($1,000-$2,000), attorney fees ($500-$1,500), prepaid property taxes and insurance (2-3 months), and recording fees. Buyers can negotiate for sellers to pay closing costs, especially in slower markets.' },
+  { q: 'What is the true monthly cost of homeownership?', a: 'Beyond the mortgage P+I payment, add: property taxes (0.5-2.5% of value annually), homeowners insurance ($100-$200/month), PMI if down payment below 20% ($100-$300/month), HOA fees if applicable ($100-$800/month), maintenance (budget 1% of home value annually = $333/month on a $400,000 home), and utilities which are typically higher than renting.' },
+  { q: 'How much cash do I need beyond the down payment?', a: 'Total cash needed at closing: down payment + closing costs (2-5%) + moving costs ($1,000-$5,000) + immediate repairs and improvements + 3-6 month emergency fund (do not deplete savings on the down payment). Many first-time buyers deplete their savings on the down payment and then struggle with unexpected home expenses. Maintain liquid reserves after closing.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

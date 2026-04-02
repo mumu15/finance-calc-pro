@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'When should I claim Social Security?', a: 'Claiming at 62 gives you more total years of payments but a permanently reduced benefit (up to 30% less than FRA). Waiting until 70 gives the maximum monthly benefit (32% more than FRA for those born after 1943). The break-even age is typically 78-82. If you are healthy and have other income sources, delaying usually pays off significantly.' },
+  { q: 'How is Social Security calculated?', a: 'Social Security benefits are based on your highest 35 years of earnings, indexed for inflation, then converted to your Average Indexed Monthly Earnings (AIME). The Primary Insurance Amount (PIA) is calculated using a progressive bend-point formula that replaces a higher percentage of lower earners. Working more than 35 years replaces lower-earning years, boosting your benefit.' },
+  { q: 'Can I work while receiving Social Security?', a: 'Before FRA: if under FRA for the full year, benefits are reduced $1 for every $2 earned above $22,320 (2024). In the year you reach FRA: reduced $1 for every $3 above $59,520. After FRA: no earnings limit — you can earn any amount with no benefit reduction. Withheld benefits are added back to your payment after you reach FRA.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -60,6 +68,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is Section 179 equipment deduction?', a: 'Section 179 allows businesses to deduct the full purchase price of qualifying equipment in the year of purchase rather than depreciating it over years. In 2024 the limit is $1,160,000 of equipment with a phase-out starting at $2,890,000. This can create significant first-year tax savings — a $50,000 equipment purchase at 25% tax rate saves $12,500 in taxes in year one.' },
+  { q: 'Equipment loan vs equipment lease: which is better?', a: 'Buy (loan) when: you will use the equipment for its full useful life, it holds value, and you want the Section 179 deduction upfront. Lease when: you need to upgrade frequently (technology equipment), you want lower monthly payments, or you want off-balance-sheet financing. Operating leases also allow full deduction of lease payments as business expenses.' },
+  { q: 'What types of equipment qualify for financing?', a: 'Virtually any business equipment qualifies: heavy machinery, construction equipment, medical equipment, restaurant equipment, IT and technology, vehicles, manufacturing equipment, agricultural equipment, and office furniture. Most lenders require the equipment to have a useful life matching or exceeding the loan term. Used equipment typically qualifies for shorter terms.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

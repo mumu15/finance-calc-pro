@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Are CDs worth it in 2026?', a: 'CDs are worth considering when: you have cash you will not need for the CD term, you want guaranteed returns without market risk, and CD rates exceed high-yield savings account rates. In 2026, competitive CD rates range from 4-5.5% APY. The trade-off is liquidity — early withdrawal penalties (typically 3-6 months of interest) apply if you need the funds before maturity.' },
+  { q: 'What is a CD ladder strategy?', a: 'A CD ladder splits your investment across multiple CDs with staggered maturities. For example: 25% in a 1-year CD, 25% in 2-year, 25% in 3-year, 25% in 4-year CD. As each matures, reinvest in a new 4-year CD. This provides liquidity every year while capturing longer-term rates. It eliminates the risk of locking up all your money when rates later increase.' },
+  { q: 'How is CD interest taxed?', a: 'CD interest is taxed as ordinary income in the year it is earned, even if you do not withdraw it (for multi-year CDs, you owe tax on accrued interest annually). This differs from stocks where you control when gains are realized. Consider holding CDs in tax-advantaged accounts (IRA, HSA) if you are in a high tax bracket to defer or eliminate the tax on interest.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

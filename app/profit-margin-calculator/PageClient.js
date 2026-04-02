@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good profit margin?', a: 'Benchmarks vary by industry. Gross margin: software 70-80%, retail 25-50%, restaurants 60-70% (food only). Net margin: tech companies 20-30%, retail 2-5%, restaurants 3-6%, healthcare 5-10%. A net margin above 10% is generally considered strong across most industries.' },
+  { q: 'What is the difference between gross, operating and net margin?', a: 'Gross margin = (Revenue − COGS) ÷ Revenue. It measures production efficiency. Operating margin deducts operating expenses (salaries, rent, marketing) — it shows core business profitability. Net margin is the bottom line after everything including taxes and interest. Track all three to diagnose where profits are being lost.' },
+  { q: 'How do I improve my profit margin?', a: 'Increase gross margin: raise prices, reduce COGS through better supplier negotiations or product mix. Improve operating margin: cut overhead, automate processes, reduce headcount costs. Increase net margin: minimise debt interest, optimise tax strategy. Often a combination of small wins across all three lines is more sustainable than one large cut.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -40,6 +48,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

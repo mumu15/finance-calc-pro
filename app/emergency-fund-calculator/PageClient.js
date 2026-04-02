@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How large should my emergency fund be?', a: 'Financial experts recommend 3-6 months of essential living expenses. Use 3 months if you have a stable job, low debt, dual income and low fixed expenses. Use 6-12 months if you are self-employed, have variable income, are a single-income household, or work in a volatile industry.' },
+  { q: 'Where should I keep my emergency fund?', a: 'Keep your emergency fund in a high-yield savings account (HYSA) or money market account. These are FDIC insured, earn 4-5% interest (as of 2026) and are accessible within 1-3 days. Do not invest emergency funds in stocks — they can lose value exactly when you need them.' },
+  { q: 'Should I build an emergency fund or pay off debt first?', a: 'Build a small starter emergency fund ($1,000-$2,000) first to avoid using credit cards for unexpected expenses, then focus aggressively on high-interest debt. Once high-interest debt is paid off, build your full emergency fund. Low-interest debt (under 5%) can be repaid more slowly while building your fund.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -50,6 +58,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

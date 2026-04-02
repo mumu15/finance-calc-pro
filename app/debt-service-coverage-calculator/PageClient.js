@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is Debt Service Coverage Ratio (DSCR)?', a: 'DSCR = Net Operating Income / Total Debt Service. It measures how many times your income can cover your debt payments. A DSCR of 1.25 means income is 25% higher than debt payments. Most lenders require a minimum DSCR of 1.20-1.25 for business loans and 1.15-1.25 for commercial real estate. SBA loans typically require 1.15+.' },
+  { q: 'What DSCR do lenders require?', a: 'Minimum requirements by loan type: SBA 7(a) 1.15x, conventional business loans 1.25x, commercial real estate 1.20-1.30x, construction loans 1.25-1.40x. The higher the DSCR, the better your loan terms. A DSCR of 1.5x or above gives you negotiating power for lower rates and better terms.' },
+  { q: 'How do I improve my DSCR?', a: 'Increase the numerator (NOI): grow revenue, cut operating expenses, improve margins. Decrease the denominator (debt service): refinance at lower rates, extend loan terms, pay down principal, or consolidate higher-rate debt. Some lenders also allow adding back depreciation and amortization to NOI. Timing a loan application after a strong revenue quarter also helps.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -44,6 +52,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

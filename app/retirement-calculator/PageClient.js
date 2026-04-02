@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much do I need to retire?', a: 'The most common benchmark is 25x your desired annual expenses (the 4% rule). To spend $60,000/year in retirement you need $1,500,000 saved. For a longer retirement (40+ years) many advisors suggest 28-33x expenses (3-3.5% withdrawal rate). Social Security and pension income reduce how much you personally need to save.' },
+  { q: 'What is the 4% rule for retirement?', a: 'The 4% rule states that withdrawing 4% of your portfolio in year one, then adjusting for inflation, has historically sustained a portfolio for 30 years in most market scenarios (based on the 1994 Trinity Study). For retirements longer than 30 years, a 3-3.5% rate is safer. The rule assumes a diversified stock/bond portfolio.' },
+  { q: 'How much should I save for retirement each month?', a: 'Most financial advisors recommend saving 15% of gross income for retirement (including any employer match). If starting late, aim for 20-25%. At minimum, always contribute enough to get the full employer 401k match — that is an instant 50-100% return. Use this calculator to find your specific number based on your timeline and goals.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -228,6 +239,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="OPiyRfWoX3g" title="How Much Do You Need to Retire?" />
+        </div>
+        <KeyStatistics stats={[{ value: '$1.46M', label: 'Avg retirement target' }, { value: '67', label: 'Full SS retirement age' }, { value: '4%', label: 'Safe withdrawal rate' }, { value: '$23,400', label: '401k max contribution' }]} title="Retirement Planning (2026)" source="Fidelity, SSA" sourceYear="2026" />
 
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>

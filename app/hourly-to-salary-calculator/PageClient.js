@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do you convert hourly to annual salary?', a: 'Multiply hourly rate by hours per week by weeks per year. The standard formula uses 2,080 hours (40 hrs x 52 weeks). A $25/hour rate equals $52,000 annually. For part-time or variable hours, use your actual expected hours for an accurate estimate.' },
+  { q: 'What is $20 an hour annually?', a: '$20/hour x 40 hours x 52 weeks = $41,600 per year gross. After federal and state taxes (roughly 20-25% effective rate), take-home pay is approximately $31,000-$33,000 annually or $2,580-$2,750/month. Use our salary after tax calculator for a precise after-tax estimate.' },
+  { q: 'How does hourly pay compare to salaried positions?', a: 'Hourly workers get paid for actual hours worked including overtime at 1.5x. Salaried workers often receive benefits packages worth 20-30% of base salary but may be expected to work unpaid overtime. When comparing offers, calculate the effective hourly rate of the salaried role including all hours worked, and add the value of benefits to the hourly role.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

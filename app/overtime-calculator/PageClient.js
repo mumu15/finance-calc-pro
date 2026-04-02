@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is overtime calculated in the US?', a: 'Under the Fair Labor Standards Act (FLSA), non-exempt employees must receive 1.5x their regular rate for all hours over 40 in a workweek. There is no federal requirement for daily overtime, but some states (California) require 1.5x after 8 hours/day and 2x after 12 hours/day or on the 7th consecutive day.' },
+  { q: 'Who is exempt from overtime pay?', a: 'Exempt employees (not entitled to overtime) typically include: executive, administrative and professional employees earning at least $684/week ($35,568/year in 2024), outside salespeople, and certain computer employees. Misclassification of employees as exempt is a common wage violation — if in doubt, check with the Department of Labor.' },
+  { q: 'Is overtime taxed at a higher rate?', a: 'No — overtime is taxed at the same marginal rates as regular income. However because overtime increases your total income for the pay period, withholding may be higher that period (pushing you into a higher bracket temporarily). Your actual tax rate depends on your total annual income, not the individual paycheck amount.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

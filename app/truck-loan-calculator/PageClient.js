@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Are truck loans different from car loans?', a: 'Truck loans use the same structure as car loans — same lenders, same credit requirements, same amortization. However trucks (especially heavy-duty and commercial trucks) may have longer max terms (up to 84 months for personal, up to 84-120 months for commercial). Commercial truck loans for business use may qualify for SBA financing or equipment loans with potentially better rates.' },
+  { q: 'Can I deduct a truck purchase for business?', a: 'Yes — if the truck is used for business, Section 179 allows deducting up to $28,900 for SUVs/trucks over 6,000 lbs GVWR in 2024, or the full purchase price for trucks over 14,000 lbs GVWR. Bonus depreciation allows additional deductions. For mixed personal/business use, only the business use percentage is deductible. Keep detailed mileage logs to support business use claims.' },
+  { q: 'What is a good truck loan rate in 2026?', a: 'Competitive rates for pickup trucks in 2026: excellent credit (720+) 5-7%, good credit (680-720) 7-10%, fair credit (620-680) 10-16%, poor credit below 620 may not qualify for direct lending. Credit unions typically offer 0.5-1% lower rates than dealerships. Getting pre-approved before going to the dealership gives you negotiating power and prevents dealer markup on financing.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much life insurance do I need?', a: 'A common rule of thumb is 10-12x your annual income. For more precision use the DIME method: Debt + Income (years needed x annual income) + Mortgage + Education. A $80,000 earner with $300,000 mortgage, $80,000 education costs and 20-year need = approximately $1,980,000 in coverage. Subtract existing savings and any current coverage to find the gap.' },
+  { q: 'Term vs whole life insurance: which is better?', a: 'Term life insurance is almost always the better financial choice for most people. A 20-year $1M term policy for a healthy 35-year-old costs $40-$60/month. The same coverage in whole life costs $600-$900/month. The standard advice: buy term and invest the difference. Whole life can make sense in very specific estate planning scenarios for high-net-worth individuals.' },
+  { q: 'When should I buy life insurance?', a: 'Buy as early as possible — premiums are lowest when you are young and healthy. Key life triggers: marriage, having children, buying a home, starting a business, or becoming someone primary breadwinner. Do not wait for health issues to develop. A 30-year-old in good health pays 50-70% less than a 45-year-old for the same coverage. Lock in low rates while you can.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -39,6 +47,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

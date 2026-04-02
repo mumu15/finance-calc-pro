@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good dividend yield?', a: 'A good dividend yield is typically 2-5%. Yields above 6-7% can signal risk — the stock price may have fallen sharply or the dividend may be unsustainable. Blue-chip dividend stocks (Dividend Aristocrats with 25+ years of increases) typically yield 2-4% with reliable growth.' },
+  { q: 'What is dividend reinvestment (DRIP)?', a: 'DRIP (Dividend Reinvestment Plan) automatically reinvests your dividends to buy more shares instead of paying cash. Over time this creates compounding — more shares generate more dividends which buy even more shares. DRIP can dramatically increase total returns over 20-30 years.' },
+  { q: 'Are dividends taxed?', a: 'Qualified dividends (from US stocks held over 60 days) are taxed at 0%, 15% or 20% depending on your income — much lower than ordinary income tax rates. Ordinary dividends (REITs, some foreign stocks) are taxed as ordinary income. Dividends in Roth IRA or 401k accounts grow tax-free.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -54,6 +62,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Should I pay off debt or invest?', a: 'The mathematical answer: if your debt rate exceeds expected investment returns, pay off debt. If investment returns exceed debt rate, invest. In practice, the break-even is around 6-7%. Credit card debt at 20%? Pay it off. Mortgage at 6.5% and stock market returning 9%? The math slightly favors investing, but emotional factors matter too.' },
+  { q: 'Does paying off debt count as an investment?', a: 'Paying off a 10% interest rate loan is equivalent to a guaranteed 10% return — better than most investments after tax and risk adjustment. High-interest debt payoff is often the highest "return on investment" available, especially when accounting for the guaranteed, risk-free nature of the return.' },
+  { q: 'What debts should I always pay off before investing?', a: 'Always pay off: credit cards (15-25% APR), payday loans (300%+ APR), personal loans above 8-10%, and private student loans above 7%. The minimum threshold varies: some say pay all debt over 5-6% before investing; others say capture employer 401k match first (it\'s a 50-100% instant return) regardless.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -60,6 +68,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

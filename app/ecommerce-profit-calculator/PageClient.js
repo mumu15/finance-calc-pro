@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good profit margin for ecommerce?', a: 'Ecommerce net profit margins: budget/commodity products 5-10%, mid-range products 15-25%, premium or niche products 25-45%, digital products and software 40-80%. Amazon sellers average 15-20% net margin. Shopify direct-to-consumer brands average 10-20%. Margins below 10% make scaling difficult as fixed costs and customer acquisition costs eat into profits.' },
+  { q: 'What is CAC and why does it matter for ecommerce?', a: 'Customer Acquisition Cost (CAC) is the total marketing cost divided by new customers acquired. For ecommerce with thin margins, CAC is critical. If your profit per order is $12 but CAC is $15, you lose money on the first sale. The goal is to acquire customers cheaply enough that lifetime value (LTV) exceeds CAC by 3x or more. Repeat customers are always more profitable than new ones.' },
+  { q: 'How do I calculate ROAS and what is a good target?', a: 'Return on Ad Spend (ROAS) = Revenue generated from ads / Ad spend. A ROAS of 3x means you earned $3 for every $1 spent on ads. Minimum profitable ROAS = Sale Price / Profit Per Order (before ad spend). If your product costs $15 and sells for $49 with $10 in other costs: minimum ROAS = $49 / $24 = 2.04x. Aim for 3-5x ROAS for healthy margins.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

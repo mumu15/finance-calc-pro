@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a realistic portfolio return to expect?', a: 'Historical averages: US stock market (S&P 500) 10% nominal, 7% inflation-adjusted over long periods. Diversified global stock portfolio 8-9% nominal. 60/40 stock-bond portfolio 7-8% nominal. Conservative bond portfolio 4-5%. These are long-term averages with significant year-to-year volatility. Never count on consistent returns — actual results vary considerably from any average.' },
+  { q: 'How much do monthly contributions matter vs initial investment?', a: 'For long time horizons, consistent monthly contributions often matter more than initial lump sum. $1,000/month for 30 years at 8% return grows to $1.5M regardless of starting balance. Starting with $50,000 extra only adds $503,000 at 8% over 30 years. For shorter horizons, the initial investment matters relatively more. Both matter — maximize both when possible.' },
+  { q: 'How does inflation affect long-term portfolio value?', a: 'Inflation at 3% cuts the purchasing power of your portfolio roughly in half every 24 years. A $1M portfolio in 24 years only buys what $500,000 buys today at 3% inflation. This is why equity investments that historically outpace inflation are essential for long-term goals. Bonds and CDs often barely keep pace with inflation after taxes.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

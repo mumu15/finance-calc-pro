@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the standard deduction for 2026?', a: 'The 2026 standard deduction is $14,600 for single filers, $29,200 for married filing jointly, and $21,900 for head of household. These amounts are indexed for inflation annually. You should itemize only if your itemized deductions (mortgage interest, state taxes up to $10,000, charitable gifts, medical expenses) exceed the standard deduction.' },
+  { q: 'What is the difference between effective and marginal tax rate?', a: 'The marginal tax rate is the rate on your last dollar of income. The effective rate is your total tax divided by total income. Someone earning $85,000 single has a 22% marginal rate but roughly 15% effective rate because lower income portions are taxed at 10% and 12%. The marginal rate matters most for decisions about earning additional income.' },
+  { q: 'How can I reduce my federal income tax?', a: 'Key strategies: maximize pre-tax retirement contributions (401k up to $23,000, IRA up to $7,000 in 2024), contribute to an HSA ($4,150 single, $8,300 family), harvest tax losses in investment accounts, defer income to lower-earning years, bunch charitable donations to exceed standard deduction in alternating years, and use qualified opportunity zone investments.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -53,6 +63,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
@@ -230,6 +241,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="kh6WfpYKXFg" title="How US Federal Income Tax Brackets Work" />
+        </div>
+        <KeyStatistics stats={[{ value: '37%', label: 'Top marginal rate' }, { value: '$14,600', label: 'Standard deduction (single)' }, { value: '$29,200', label: 'Standard deduction (married)' }, { value: '22%', label: 'Most common bracket' }]} title="2026 Federal Tax Highlights" source="IRS" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

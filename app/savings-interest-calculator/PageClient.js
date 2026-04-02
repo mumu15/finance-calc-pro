@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good savings account interest rate in 2026?', a: 'In 2026 competitive high-yield savings accounts offer 4-5% APY. Traditional big-bank savings accounts average 0.01-0.5%. Online banks (Ally, Marcus, Discover, SoFi) and credit unions consistently offer 10-50x higher rates than brick-and-mortar banks. Always check current rates as they adjust with Fed policy changes.' },
+  { q: 'What is the difference between APY and APR for savings?', a: 'APY (Annual Percentage Yield) includes the effect of compounding — it shows what you actually earn in a year. APR (Annual Percentage Rate) is the base rate without compounding. For savings, APY is always higher than APR (unless compounded annually). Always compare savings accounts using APY for an accurate apples-to-apples comparison.' },
+  { q: 'Is compound interest better daily or monthly?', a: 'Daily compounding is slightly better than monthly, which is better than quarterly. However the difference is small at typical savings rates. At 5% APY: daily compounding earns $5,127 on $100,000 per year, monthly earns $5,116, quarterly earns $5,095, annually earns $5,000. The rate matters far more than the compounding frequency.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -44,6 +52,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

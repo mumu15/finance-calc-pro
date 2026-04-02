@@ -6,6 +6,8 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import FaqSchema from '../../components/FaqSchema'
 import { useCurrency } from '../../components/CurrencyContext'
+import VideoEmbed from '../components/VideoEmbed'
+import KeyStatistics from '../components/KeyStatistics'
 
 const faqs = [
   { q: 'How is a mortgage payment calculated?', a: 'A monthly mortgage payment is calculated using the loan amount, interest rate and loan term. The formula is M = P[r(1+r)^n]/[(1+r)^n-1] where P is principal, r is monthly rate and n is number of payments.' },
@@ -261,6 +263,13 @@ export default function MortgageCalculator() {
           <h2 style={{fontSize:20,fontWeight:700,color:'#f0c842',marginBottom:16,marginTop:0}}>Why This Calculator Matters</h2>
           <p style={{fontSize:15,color:'#94a3b8',lineHeight:1.8,margin:0}}>Making informed mortgage decisions can save you thousands of dollars over time. Many people rely on rough estimates or rules of thumb that do not account for their specific situation. This calculator uses precise mathematical formulas to give you personalized results based on your actual numbers. Whether you are planning ahead, comparing options, or checking a professional recommendation, having accurate calculations helps you make confident financial decisions. Use this tool alongside our related calculators for a complete picture of your finances.</p>
         </div>
+
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="bM9bfTleMpA" title="How Mortgage Payments Work" />
+        </div>
+        <KeyStatistics stats={[{ value: '6.6%', label: 'Avg 30-yr rate (2026)' }, { value: '$420K', label: 'US median home price' }, { value: '28%', label: 'Max DTI recommended' }, { value: '$1,800', label: 'Avg monthly payment' }]} title="2026 US Mortgage Statistics" source="Federal Reserve, Freddie Mac" sourceYear="2026" />
 
         <div className="mt-12">
           <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>

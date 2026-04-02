@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do I calculate percent off?', a: 'Percent off = (Discount Amount / Original Price) x 100. For a $30 discount on a $120 item: $30 / $120 x 100 = 25% off. To find the sale price: Sale Price = Original Price x (1 - Discount%). For 25% off $120: $120 x 0.75 = $90. Always calculate the final price including sales tax to know true cost before purchasing.' },
+  { q: 'Are stacked discounts the same as adding percentages?', a: 'No — stacked discounts multiply, not add. A 20% off coupon applied to a 30% off sale is not 50% off. You first pay 70% of original price, then 80% of that: 0.70 x 0.80 = 0.56, so 44% off total. This matters when comparing bundle deals. Always calculate step by step when combining multiple discounts.' },
+  { q: 'What is the best day to shop for discounts?', a: 'Historically best discount periods: Black Friday / Cyber Monday (electronics, appliances — 20-40% off), Amazon Prime Day (July — similar savings), end of season clearance (clothing — 50-70% off), holiday weekends (Memorial Day, Labor Day — furniture, mattresses, appliances), and end of model year for cars (August-October when dealers clear inventory).' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -40,6 +48,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is home equity calculated?', a: 'Home equity = Current Market Value − Remaining Mortgage Balance. If your home is worth $450,000 and you owe $280,000, your equity is $170,000. Equity increases as you pay down the mortgage and as the home appreciates in value. It decreases if the home value drops or you take out additional loans against it.' },
+  { q: 'How can I access my home equity?', a: 'Three main ways: (1) Cash-out refinance — refinance for more than you owe and pocket the difference; (2) Home Equity Loan — fixed lump sum at a fixed rate, repaid separately from your mortgage; (3) HELOC — revolving credit line at a variable rate. Each has different costs, risks and best-use cases.' },
+  { q: 'What is the minimum equity required to avoid PMI?', a: 'Conventional lenders require 20% equity (80% LTV) to eliminate Private Mortgage Insurance (PMI), which costs $50-$200/month. You can request PMI removal once you reach 20% equity based on original value. Lenders must automatically cancel it at 22% equity. Refinancing or getting a new appraisal can accelerate PMI removal.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -40,6 +48,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Who pays federal estate tax in 2026?', a: 'Only estates exceeding the federal exemption of $13.61 million per person ($27.22 million for married couples with portability election) pay federal estate tax. This means fewer than 0.1% of estates owe any federal estate tax. The top rate is 40% on amounts above the exemption. Note: the exemption is scheduled to drop to roughly $7 million in 2026 if the TCJA is not extended.' },
+  { q: 'What is the marital deduction?', a: 'The unlimited marital deduction allows you to transfer any amount to a US citizen spouse at death completely free of estate tax. This defers the tax until the surviving spouse dies. The estate then uses the deceased spouses unused exemption (portability) plus their own, potentially shielding $27+ million from tax with proper planning.' },
+  { q: 'How can I reduce estate taxes?', a: 'Key strategies: annual gifting ($18,000 per recipient per year in 2024, tax-free), irrevocable trusts (removes assets from estate), charitable giving (deductible from taxable estate), life insurance in an ILIT (proceeds outside estate), 529 plans (5-year gift tax election), and family limited partnerships. Work with an estate planning attorney for strategies above $10 million.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -44,6 +52,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

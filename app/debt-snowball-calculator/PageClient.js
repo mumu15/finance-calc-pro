@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How does the debt snowball work?', a: 'List all debts smallest to largest balance. Pay minimums on everything, then throw every extra dollar at the smallest balance. When that debt is paid off, take the entire payment (minimum + extra) and add it to the next smallest debt. Each payoff accelerates the next one like a growing snowball. You eliminate accounts quickly which builds psychological momentum.' },
+  { q: 'Is the snowball or avalanche method better?', a: 'Mathematically the avalanche saves more money. Behaviorally the snowball may work better for many people. Dave Ramsey popularized the snowball because real people need motivation to stick with a debt payoff plan for years. Research from Harvard Business Review found snowball users were more likely to pay off all their debt than avalanche users, despite paying more in interest.' },
+  { q: 'How long does the debt snowball take?', a: 'Payoff time depends on total debt, interest rates, and how much extra you can pay monthly. The single biggest factor is your extra monthly payment. Even $100-$200 extra per month dramatically accelerates payoff. With $200/month extra on $18,500 of debt at average 18% APR, the snowball pays off in roughly 4 years vs 9+ years paying minimums only.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -58,6 +66,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

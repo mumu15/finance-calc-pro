@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What credit score do I need for an RV loan?', a: 'Most RV lenders require 660+ for standard approval, 700+ for the best rates. RV loans under $10,000 may be treated as personal loans with higher rates. Lenders like Good Sam Finance, Bank of the West, and local credit unions specialize in RV lending. Rates range from 6-15% depending on credit, down payment, RV age, and loan term.' },
+  { q: 'New vs used RV financing: what is different?', a: 'New RVs: easier to finance, longer terms available (up to 20 years), better rates. Used RVs: higher rates, shorter max terms (typically 10-15 years for units under 10 years old, 5-10 years for older units), and some lenders will not finance RVs over 10-15 years old. Private party purchases may require personal loans instead of RV-specific financing.' },
+  { q: 'What are true annual costs of RV ownership?', a: 'Beyond the loan: insurance $800-$2,500/year, storage $1,200-$4,800/year (if not stored at home), fuel $0.12-0.25/mile depending on RV size and MPG, maintenance and repairs $1,500-$5,000/year (budget 1-2% of purchase price), campsite fees $20-$150/night, and depreciation (Class A motorhomes lose 30% in first year, towable RVs 15-20%). Total annual cost typically $5,000-$15,000+ beyond the loan.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -39,6 +47,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

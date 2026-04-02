@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What factors make up cost of living?', a: 'The main components: housing (typically 30-40% of budget), food (10-15%), transportation (10-15%), healthcare (5-10%), taxes (varies widely), childcare if applicable, utilities and entertainment. Housing has the biggest impact — San Francisco housing costs 3-4x the national average, while Midwest cities can be 30-50% below average.' },
+  { q: 'How much more salary do I need to move from a low to high cost city?', a: 'Moving from a median-cost city to San Francisco or New York typically requires 40-70% higher salary just to maintain the same lifestyle. A $80,000 salary in Austin may need to be $130,000+ in San Francisco after accounting for higher rent, taxes and expenses. Use this calculator with real local data for accuracy.' },
+  { q: 'How do I research cost of living before relocating?', a: 'Use resources like Numbeo, NerdWallet Cost of Living calculator, CNN Money cost of living tool, and BestPlaces.net. Check Zillow/Apartments.com for actual current rents. Use SmartAsset for tax comparison between states. Talk to people already living in the target city for real-world spending data.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -39,6 +47,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

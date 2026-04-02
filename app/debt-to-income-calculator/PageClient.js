@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good debt-to-income ratio?', a: 'Below 36% is considered good. Most conventional mortgage lenders require a DTI of 43% or less. The best mortgage rates go to borrowers with DTI below 28%. FHA loans allow DTI up to 50% with compensating factors like excellent credit or large down payment.' },
+  { q: 'How do I lower my debt-to-income ratio?', a: 'To lower DTI: (1) pay down existing debts, especially high minimum payment balances, (2) increase income through a raise, second job or freelance work, (3) avoid taking on new debt before applying for a loan. Even paying off a small $200/month debt can meaningfully shift your DTI.' },
+  { q: 'What is front-end vs back-end DTI?', a: 'Front-end DTI includes only housing costs (mortgage/rent, taxes, insurance) divided by income. Back-end DTI includes all monthly debt payments. Conventional lenders prefer front-end DTI below 28% and back-end below 36%. FHA uses 31%/43% guidelines.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -60,6 +68,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

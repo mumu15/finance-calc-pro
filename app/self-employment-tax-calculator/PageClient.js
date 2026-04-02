@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is self-employment tax?', a: 'Self-employment tax (SE tax) covers Social Security (12.4%) and Medicare (2.9%) on 92.35% of your net self-employment income — a total of 15.3%. Employees split this 50/50 with employers, but self-employed individuals pay both halves. You can deduct half of SE tax from your gross income, and your net SE income qualifies for retirement contribution deductions.' },
+  { q: 'When must I pay quarterly estimated taxes?', a: 'You must pay quarterly estimated taxes if you expect to owe $1,000+ in federal tax for the year. Due dates: April 15 (Q1), June 15 (Q2), September 15 (Q3), January 15 of next year (Q4). Missing or underpaying triggers an underpayment penalty. Safe harbor: pay 100% of prior year tax (110% if prior year AGI exceeded $150,000) to avoid penalties.' },
+  { q: 'What retirement accounts are available to self-employed people?', a: 'Best options: SEP-IRA (contribute up to 25% of net SE income, max $69,000 in 2024 — easiest to set up). Solo 401k (up to $23,000 employee + 25% employer contribution, max $69,000 — best for higher earners, allows Roth contributions). SIMPLE IRA (up to $16,000 employee contributions). A SEP-IRA or Solo 401k dramatically reduces SE tax burden.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -54,6 +62,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

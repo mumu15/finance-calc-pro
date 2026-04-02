@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is an SBA 7(a) loan?', a: 'The SBA 7(a) is the most common small business loan, guaranteed up to 85% by the Small Business Administration. Maximum loan amount is $5 million. Rates are prime plus a spread (capped by SBA). Terms up to 10 years for working capital, 25 years for real estate. Requires strong personal credit (640+), 2+ years in business, and ability to repay from cash flow.' },
+  { q: 'SBA 7(a) vs SBA 504 loan: what is the difference?', a: 'SBA 7(a) is general purpose — working capital, equipment, real estate, acquisitions. SBA 504 is specifically for major fixed assets (real estate, large equipment). 504 loans typically offer lower rates and longer terms (up to 25 years) for real estate. 504 requires a Certified Development Company (CDC) partner and at least 10% borrower equity contribution.' },
+  { q: 'How long does SBA loan approval take?', a: 'SBA Express loans (up to $500,000): 36-hour approval, 2-4 weeks to fund. Standard SBA 7(a): 30-90 days. SBA 504: 60-90 days. Working with an SBA Preferred Lender (PLP) speeds up approval significantly as they can approve in-house. Prepare 2 years of business and personal tax returns, financial statements, and a business plan to expedite the process.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -44,6 +52,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

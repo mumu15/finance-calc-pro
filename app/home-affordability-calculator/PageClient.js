@@ -6,6 +6,9 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 const faqs = [
   {
@@ -23,6 +26,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much house can I afford on my salary?', a: 'A common rule is the 28/36 rule: spend no more than 28% of gross monthly income on housing and 36% on total debt. On a $90,000 salary that is $2,100/month for housing. With a 6.75% rate on a 30-year loan this supports a mortgage of about $325,000.' },
+  { q: 'What is the 28/36 rule for buying a home?', a: 'The 28/36 rule states your mortgage payment should not exceed 28% of gross monthly income (front-end DTI) and all debt payments should not exceed 36% (back-end DTI). This is a conservative guideline; FHA loans allow higher ratios, up to 31% front-end and 43% back-end.' },
+  { q: 'What costs beyond the mortgage should I budget for?', a: 'Beyond your mortgage budget for: property taxes (0.5-2.5% of home value annually), homeowners insurance (~$1,200-$2,500/year), HOA fees if applicable, PMI if down payment is under 20% ($50-$200/month), maintenance (1-2% of home value/year) and utilities.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -57,6 +67,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -204,6 +215,13 @@ export default function Calculator() {
         </div>
 
         {/* FAQ */}
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="bM9bfTleMpA" title="How Much House Can You Afford?" />
+        </div>
+        <KeyStatistics stats={[{ value: '28%', label: 'Max housing DTI' }, { value: '36%', label: 'Max total DTI' }, { value: '20%', label: 'Ideal down payment' }, { value: '3-5%', label: 'Min conventional down' }]} title="Home Affordability Guidelines" source="CFPB, Fannie Mae" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

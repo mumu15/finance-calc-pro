@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How long does it take to pay off credit card debt paying minimum?', a: 'Paying only the minimum (typically 2% of balance) on an $8,000 balance at 24% APR takes approximately 28 years and costs over $15,000 in interest — nearly double the original balance. Doubling your minimum payment can cut payoff time by 60-70% and save thousands in interest.' },
+  { q: 'What is the best strategy to pay off multiple credit cards?', a: 'Two proven methods: Avalanche — pay minimums on all cards, put extra money toward the highest APR card first. Saves the most interest. Snowball — pay minimums on all, put extra toward the smallest balance first. Provides psychological wins and motivation. Both work; the best is the one you will stick with.' },
+  { q: 'Does paying off credit cards improve credit score?', a: 'Yes, significantly. Credit utilization (balances divided by credit limits) accounts for 30% of your FICO score. Getting utilization below 30% improves scores noticeably; below 10% is ideal. Paying off a $8,000 balance on a $10,000 card takes utilization from 80% to 0% and can boost your score by 50-100+ points.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -54,6 +64,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -212,6 +223,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="G1VJ1p0X_cY" title="Credit Card Debt Payoff Strategies" />
+        </div>
+        <KeyStatistics stats={[{ value: '$6,501', label: 'Avg credit card debt' }, { value: '22.8%', label: 'Average APR' }, { value: '48%', label: 'Americans with CC debt' }, { value: '770', label: 'Avg credit score' }]} title="Credit Card Debt (2026)" source="Federal Reserve, Experian" sourceYear="2026" />
 
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>

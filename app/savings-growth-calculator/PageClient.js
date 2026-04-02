@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How does compound interest grow savings?', a: 'Compound interest earns returns on both your principal and previously earned interest. At 4.5%, $10,000 grows to $10,450 after year 1. In year 2 you earn interest on $10,450, not just $10,000. Over 10 years this compounds to $15,530 — 55% growth on the original deposit. Over 30 years: $37,850 — nearly 4x. Adding regular deposits multiplies this effect dramatically.' },
+  { q: 'Where should I keep short-term savings?', a: 'Best options for different goals: Emergency fund (under 1 year): high-yield savings account (currently 4-5% APY, FDIC insured, fully liquid). Short-term goals (1-3 years): CDs, Treasury bills, money market accounts. Medium-term (3-5 years): CD ladders, I-bonds, short-term bond funds. Never put money you need within 2 years in stock market investments.' },
+  { q: 'What is the Rule of 72?', a: 'The Rule of 72 estimates how long it takes to double your money: divide 72 by the annual interest rate. At 4%: 72/4 = 18 years to double. At 6%: 12 years. At 9%: 8 years. At 12%: 6 years. This quick mental math tool helps evaluate investment options. It also works in reverse for inflation: at 3% inflation, purchasing power halves in 72/3 = 24 years.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

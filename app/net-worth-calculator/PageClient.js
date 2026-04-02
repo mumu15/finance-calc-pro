@@ -6,6 +6,9 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 const faqs = [
   {
@@ -23,6 +26,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the average net worth by age?', a: 'Median US net worth by age (2024 Fed data): Under 35: $39,000. 35-44: $135,000. 45-54: $247,000. 55-64: $365,000. 65-74: $410,000. 75+: $335,000. The mean (average) is much higher due to wealthy outliers. Focus on improving your own trajectory rather than comparing to averages.' },
+  { q: 'How do I build net worth quickly?', a: 'The fastest net worth builders: (1) increase income aggressively — raises, promotion, side income, (2) keep fixed expenses low — housing and car are the biggest levers, (3) invest early and consistently — compound growth takes time, (4) eliminate high-interest debt — it is anti-wealth, (5) avoid lifestyle inflation as income rises.' },
+  { q: 'Should I include home equity in net worth?', a: 'Yes, home equity (home value minus mortgage) is a legitimate asset that counts toward net worth. However, since you cannot easily spend home equity without selling or borrowing against it, many financial planners track both total net worth and "liquid net worth" (excluding home equity and retirement accounts with penalties).' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -55,6 +65,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -239,6 +250,13 @@ export default function Calculator() {
         </div>
 
         {/* FAQ */}
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="kZpQGFXqSWA" title="How to Calculate Your Net Worth" />
+        </div>
+        <KeyStatistics stats={[{ value: '$192K', label: 'Median US net worth' }, { value: '$1.06M', label: 'Average US net worth' }, { value: '$76K', label: 'Median age 35' }, { value: '$266K', label: 'Median age 55' }]} title="Net Worth by Age (2026)" source="Federal Reserve SCF" sourceYear="2022" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

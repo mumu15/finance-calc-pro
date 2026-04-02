@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much does an extra $200/month save on a mortgage?', a: 'On a $320,000 mortgage at 6.875% with 25 years remaining, an extra $200/month saves approximately $55,000-$70,000 in interest and cuts payoff time by 5-7 years. The savings are largest early in the loan when the balance is highest. Even $100/month extra makes a meaningful difference over a 30-year loan.' },
+  { q: 'Should I make extra mortgage payments or invest?', a: 'The math favors investing if your expected investment return exceeds your mortgage rate. With a 6.875% mortgage and 8-10% expected stock market returns, investing wins long-term. However, paying down the mortgage offers guaranteed, risk-free return equal to your rate, plus psychological security. Many people split the difference: make extra payments and invest simultaneously.' },
+  { q: 'Should I pay a lump sum or monthly extra?', a: 'A large lump sum applied immediately saves more than the same amount spread over time because it starts reducing interest right away. However, consistent monthly extra payments are more practical for most budgets and still save significantly. The key is applying extra payments to principal directly — confirm with your lender that extra amounts reduce principal, not future payments.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -57,6 +65,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

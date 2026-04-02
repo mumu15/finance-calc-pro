@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do I calculate the interest rate needed to reach a goal?', a: 'Use the compound interest formula rearranged for rate: r = (FV/PV)^(1/n) - 1, where FV is future value, PV is present value and n is years. For example, to grow $10,000 to $20,000 in 10 years requires a 7.18% annual rate.' },
+  { q: 'What is the Rule of 72?', a: 'The Rule of 72 estimates how long it takes to double money: divide 72 by the annual interest rate. At 6%, money doubles in 12 years. At 8%, in 9 years. At 12%, in 6 years. It also works in reverse: to double money in 8 years, you need a 9% rate.' },
+  { q: 'What interest rate does the stock market return?', a: 'The S&P 500 has historically returned about 10% annually before inflation, or approximately 7% after inflation. However returns vary enormously year to year. Individual stocks, real estate and other assets have different expected return rates and risk levels.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -56,6 +64,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

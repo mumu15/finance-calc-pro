@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much should I tip at a restaurant?', a: 'Standard US tipping etiquette: restaurant server 15-20%, bar 15-20%, food delivery 15-20%, coffee barista 10-15%, rideshare 10-15%, hotel housekeeping $2-5/night. Fine dining typically warrants 20%+. Tip is always based on the pre-tax amount technically, though most people tip on the total.' },
+  { q: 'How do I split a bill with different items?', a: 'For exact splitting: each person pays for their items plus their share of tax and tip. For equal splitting: divide the total bill (including tax and tip) by number of diners. Apps like Splitwise, Venmo and Tab make exact splitting easy. For simplicity many groups just split equally.' },
+  { q: 'Is it rude not to tip?', a: 'In the US, tipping is culturally expected and servers often earn below minimum wage relying on tips to reach a living wage. In many other countries (Japan, Australia, much of Europe) tipping is not expected or even considered rude. When travelling, research local customs.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

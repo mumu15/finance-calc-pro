@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much do I need to retire comfortably?', a: 'The most common benchmark is 25x your annual expenses (the 4% rule). If you plan to spend $60,000/year in retirement, you need $1.5M. Fidelity suggests saving 10x your final salary by age 67. Vanguard recommends 12x. The right number depends on your lifestyle, Social Security income, pension income, healthcare costs, and how long you expect to live.' },
+  { q: 'Am I saving enough for retirement?', a: 'Benchmarks by age: by 30 save 1x salary, by 40 save 3x, by 50 save 6x, by 60 save 8x, by 67 save 10x. If you are behind, increase your savings rate by 1% per year until you reach 15-20%. Catch-up contributions are allowed from age 50: extra $7,500/year in 401k, extra $1,000 in IRA. Even starting late is far better than not starting.' },
+  { q: 'What order should I save for retirement?', a: 'Optimal order: (1) 401k up to employer match (free money — always capture 100%). (2) HSA if available (triple tax advantage). (3) Max Roth IRA ($7,000 limit, income restricted). (4) Max 401k ($23,000 limit). (5) Taxable brokerage for additional savings. This order minimizes lifetime taxes and maximizes every dollar saved for retirement.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do I choose between two loan offers?', a: 'Compare total cost (not just monthly payment). A lower monthly payment with a longer term often costs more overall. Check: total interest paid, all fees (origination, prepayment penalties), APR (includes fees — more accurate than rate alone), flexibility (can I pay extra without penalty?), and lender reputation. The lowest APR with no prepayment penalties is usually the best deal.' },
+  { q: 'When is a higher monthly payment worth it?', a: 'A higher monthly payment (shorter term loan) is worth it when: total interest savings are significant, you have stable income to handle the payment, and you want to pay off debt faster. Paying $200 more per month on a $25,000 loan at 7% by choosing 36 months over 60 months saves over $2,000 in interest and gets you debt-free 2 years sooner.' },
+  { q: 'What fees should I look for when comparing loans?', a: 'Key fees to compare: origination fee (0-5% of loan amount), prepayment penalty (charged if you pay off early — avoid), late payment fees, returned payment fees, and annual fees on lines of credit. Always ask for the APR which includes all fees for an apples-to-apples rate comparison between lenders.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -54,6 +62,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

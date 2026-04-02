@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How are exchange rates determined?', a: 'Exchange rates are determined by supply and demand in the foreign exchange (forex) market — the largest financial market in the world with $7.5 trillion/day in volume. Rates are influenced by interest rate differentials, inflation, economic performance, trade balances and market sentiment.' },
+  { q: 'What is the difference between mid-market and retail exchange rates?', a: 'The mid-market rate (interbank rate) is the midpoint between buy and sell prices used for large bank-to-bank transactions. Retail rates (what you get at a bank, exchange bureau or PayPal) include a markup of 1-5%. For best rates use services like Wise, Revolut or your bank\'s international transfer service.' },
+  { q: 'When is the best time to exchange currency?', a: 'Exchange rates fluctuate constantly. Avoid airports and hotel exchange desks (worst rates). Use ATMs in the local currency for better rates. For large amounts, watch rates over 2-4 weeks and exchange when the rate is favorable. Forward contracts let businesses lock in rates for future transactions.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -58,6 +66,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

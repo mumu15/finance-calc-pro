@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is an RMD and who must take one?', a: 'A Required Minimum Distribution (RMD) is the minimum amount the IRS requires you to withdraw from tax-deferred retirement accounts each year starting at age 73 (per SECURE 2.0 Act, effective 2023). Accounts requiring RMDs: Traditional IRAs, SEP IRAs, SIMPLE IRAs, 401k, 403b, and 457b plans. Roth IRAs do NOT require RMDs during the owner lifetime.' },
+  { q: 'What happens if I miss my RMD?', a: 'Missing an RMD triggers a 25% excise tax on the amount not withdrawn (reduced to 10% if corrected within 2 years under SECURE 2.0). For a $20,000 missed RMD, the penalty is up to $5,000. The IRS does offer a penalty waiver process if the shortfall was due to reasonable error and you take corrective action promptly.' },
+  { q: 'Can I take more than the RMD?', a: 'Yes — the RMD is a minimum, not a maximum. You can always withdraw more, though all withdrawals from traditional accounts are taxed as ordinary income. Consider a Roth conversion strategy: convert some traditional IRA funds to a Roth IRA before RMDs begin (ages 59.5-72) to reduce future RMDs and create tax-free income.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -37,6 +45,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good cap rate for rental property?', a: 'A cap rate of 5-10% is generally considered good for residential rental property. Urban/coastal markets (NYC, SF, LA) often have cap rates of 3-5% due to appreciation potential. Midwest and Sun Belt markets may offer 7-10%+ cap rates. Cap rate = NOI / Purchase Price. Higher cap rates mean more income relative to price but may reflect higher risk.' },
+  { q: 'What is cash-on-cash return?', a: 'Cash-on-cash return measures annual cash flow as a percentage of your actual cash invested (down payment plus closing costs). It is the most practical measure of rental property performance for leveraged investors. A cash-on-cash return of 6-12% is considered solid. Unlike cap rate, it accounts for your financing structure.' },
+  { q: 'What expenses should I budget for a rental property?', a: 'Budget for: property taxes (1-2% of value/year), insurance ($100-200/month), maintenance (1% of value/year), property management (8-12% of rent if using a manager), vacancy (5-10%), CapEx reserves for big repairs like roof, HVAC, appliances (5-10% of rent). New landlords frequently underestimate expenses by 30-50%.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

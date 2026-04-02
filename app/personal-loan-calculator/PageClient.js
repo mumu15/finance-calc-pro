@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good personal loan rate in 2026?', a: 'Personal loan rates in 2026 range from about 7-8% for excellent credit (760+) to 30-36% for poor credit. The average across all borrowers is around 12-15%. Credit unions typically offer 2-3% lower rates than banks. To get the best rate: improve your credit score above 720, reduce existing debt, and compare at least 3-5 lenders before accepting an offer.' },
+  { q: 'Personal loan vs credit card for debt consolidation?', a: 'Personal loans typically have lower rates (8-20%) than credit cards (18-29%) and a fixed payoff date, making them better for consolidation. Credit cards with 0% balance transfer offers (12-21 months) can be cheaper for smaller balances you can pay off within the promo period. Personal loans win for larger balances or when you need more time.' },
+  { q: 'How does a personal loan affect my credit score?', a: 'Short-term impact: the hard inquiry drops your score 5-10 points. Opening a new account reduces average account age, also slightly negative. Long-term impact: making on-time payments builds positive history and can improve your score significantly over 12-24 months. Paying off credit card debt with a personal loan also improves your credit utilization ratio.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

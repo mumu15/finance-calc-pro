@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is an amortization schedule?', a: 'An amortization schedule is a table showing each loan payment broken down into principal and interest. Early payments are mostly interest; later payments are mostly principal. Seeing this schedule helps you understand how your debt decreases over time.' },
+  { q: 'How does extra payment affect amortization?', a: 'Making extra payments toward principal reduces the loan balance faster, saving significant interest. On a $250,000 30-year mortgage at 6.5%, paying $100 extra per month saves over $30,000 in interest and cuts the loan by 4 years.' },
+  { q: 'What is a fully amortizing loan?', a: 'A fully amortizing loan is one where equal regular payments pay off the entire balance (principal + interest) by the end of the term. Most mortgages, car loans and personal loans are fully amortizing. The opposite is a bullet or balloon loan.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

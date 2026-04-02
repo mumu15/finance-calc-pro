@@ -6,6 +6,9 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 const faqs = [
   {
@@ -23,6 +26,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a Roth IRA and who is it best for?', a: 'A Roth IRA is a retirement account funded with after-tax dollars. Investments grow tax-free and qualified withdrawals in retirement are completely tax-free. It is best for young people in low tax brackets who expect to be in a higher bracket at retirement, and for those who want tax diversification.' },
+  { q: 'What is the 2026 Roth IRA contribution limit?', a: 'The 2026 Roth IRA contribution limit is $7,000 ($8,000 if age 50+). Income limits apply: single filers with MAGI above $150,000 face reduced limits; above $165,000 you cannot contribute directly. High earners can use the backdoor Roth IRA strategy.' },
+  { q: 'Roth IRA vs Traditional IRA — which is better?', a: 'Roth IRA = pay tax now, withdraw tax-free. Traditional IRA = deduct now, pay tax at withdrawal. Roth is better if your tax rate will be higher in retirement. Traditional is better if your tax rate will be lower. Young earners typically benefit more from Roth; high earners near retirement often prefer Traditional.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -55,6 +65,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -205,6 +216,13 @@ export default function Calculator() {
         </div>
 
         {/* FAQ */}
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="AV9RBfbgdP8" title="Roth IRA Explained: Tax-Free Growth" />
+        </div>
+        <KeyStatistics stats={[{ value: '$7,000', label: '2026 contribution limit' }, { value: '$8,000', label: 'Catch-up (50+)' }, { value: '$161K', label: 'Income phase-out (single)' }, { value: '0%', label: 'Tax on withdrawals' }]} title="Roth IRA Key Numbers (2026)" source="IRS" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

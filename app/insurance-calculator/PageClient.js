@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What types of insurance are most important?', a: 'Priority order for most people: (1) Health insurance — a single hospitalization can cost $30,000-$100,000+. (2) Life insurance — if anyone depends on your income. (3) Disability insurance — you are 3-4x more likely to become disabled than to die during your working years. (4) Auto insurance — legally required in most states. (5) Homeowners or renters insurance — protects your largest asset or personal belongings.' },
+  { q: 'What is disability insurance and do I need it?', a: 'Disability insurance replaces 60-70% of your income if you cannot work due to illness or injury. Short-term disability covers 3-6 months; long-term covers years or until retirement. Many employers offer group policies, but they are often insufficient. If your employer does not offer it or coverage is under 60% of income, individual supplemental disability coverage is worth considering, especially for high earners.' },
+  { q: 'How much does insurance typically cost?', a: 'Average monthly costs (2026): health insurance $450-$700 individual, $1,200-$1,800 family (employer plans average $600/month employer + $300/month employee). Life insurance $25-$75 for $500,000 term policy for healthy 35-year-old. Disability insurance 1-3% of annual income. Auto insurance $100-$250/month. Homeowners $100-$250/month. Renters insurance $15-$30/month (great value).' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

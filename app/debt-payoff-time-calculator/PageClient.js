@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What happens if my payment is too low to pay off the debt?', a: 'If your monthly payment is less than or equal to the monthly interest charge, your balance never decreases — it actually grows. At 18% APR on $15,000, monthly interest is $225. If you pay only $200/month, you fall $25 further behind every month. You must pay more than the interest charge to make progress. Contact your lender about hardship programs if this is your situation.' },
+  { q: 'How can I calculate the minimum payment needed?', a: 'Minimum payment to avoid growing balance = Balance x (APR / 12). On $15,000 at 18% APR: $15,000 x 0.015 = $225/month minimum just to break even. To actually pay it off in a reasonable time, you need to pay significantly above this. Use this calculator to find exactly when different payment amounts will free you from the debt.' },
+  { q: 'What is the psychological impact of a payoff date?', a: 'Having a specific payoff date dramatically increases debt repayment success. Research shows people with concrete goals and timelines are 2-3x more likely to complete debt payoff than those with vague intentions. Set a calendar reminder for your payoff date, automate your payments so the decision is removed from your monthly routine, and track the countdown to stay motivated.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

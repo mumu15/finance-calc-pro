@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do I set a realistic savings goal?', a: 'Use the SMART framework: Specific (exact dollar amount), Measurable (track monthly progress), Achievable (verify the monthly contribution fits your budget), Relevant (aligned with your priorities), Time-bound (set a deadline). Break large goals into milestones. Automate transfers on payday so savings happen before spending. Even small consistent amounts compound significantly over time.' },
+  { q: 'Where should I keep my savings for a goal?', a: 'Match the account to your timeline. Under 1 year: high-yield savings account (liquid, currently 4-5% APY). 1-3 years: CDs or money market accounts (slightly higher yield, some restrictions). Over 3 years: consider I-bonds (inflation protection), bond funds, or a conservative stock/bond mix. Never put money you need within 1-2 years in the stock market.' },
+  { q: 'How much of my income should I save?', a: 'The 50/30/20 rule suggests 20% for savings and debt. For aggressive goal achievement, 30-40% savings rate is effective. The most important factor is automating savings before it hits your spending account. Even starting with 5% and increasing by 1% every 6 months builds excellent habits. The best savings rate is the highest one you can sustain without sacrificing essential needs.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -60,6 +68,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

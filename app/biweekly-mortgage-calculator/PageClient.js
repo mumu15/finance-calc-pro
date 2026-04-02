@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do biweekly mortgage payments work?', a: 'Instead of 12 monthly payments, you make 26 half-payments per year. Since 26 half-payments equal 13 full monthly payments (not 12), you make one extra payment per year. On a 30-year $350,000 mortgage at 6.875%, this saves approximately $80,000-$100,000 in interest and pays off the loan 5-6 years early. The savings compound because you reduce principal faster.' },
+  { q: 'How do I set up biweekly mortgage payments?', a: 'Three options: (1) Ask your lender or servicer directly — many offer official biweekly programs, sometimes for a fee. (2) Set up automatic biweekly transfers from your bank to a separate account, then manually pay monthly. (3) Simply divide your monthly payment by 12 and add that amount to each monthly payment as extra principal — same math, no biweekly logistics needed.' },
+  { q: 'Are biweekly payment programs worth the fees?', a: 'Third-party biweekly programs that charge setup fees ($300-$400) and transaction fees ($5-$10 per payment) are generally not worth it. You get the same benefit for free by adding 1/12 of your monthly payment as extra principal each month. If your lender charges no fees for biweekly enrollment, it can be a convenient way to automate the extra payment discipline.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

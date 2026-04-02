@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the 20/4/10 rule for buying a car?', a: 'The 20/4/10 rule: put at least 20% down, finance for no more than 4 years, and keep total vehicle expenses (payment + insurance + gas) under 10% of gross monthly income. On a $6,000/month income that is $600 max. With insurance and gas taking $250-$350, your loan payment should stay under $250-$350/month, pointing to a car in the $15,000-$20,000 range with 20% down.' },
+  { q: 'How much car can I afford on my salary?', a: 'General guidance: spend no more than 20-35% of your annual take-home pay on a car. On a $60,000 take-home ($5,000/month) that is $12,000-$21,000. The lower end is financially safer. Remember the purchase price is only part of the cost — insurance, fuel, maintenance and registration add $200-$800/month on top of the loan payment.' },
+  { q: 'Should I buy new or used?', a: 'Used cars typically offer 30-50% lower purchase price, lower insurance premiums, slower depreciation (new cars lose 20% in year one), and similar reliability for models 2-4 years old (still under warranty). Buy new when: 0% financing promotions make it cost-competitive, you plan to keep the car 10+ years, or the specific model has poor used car reliability history.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -45,6 +53,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

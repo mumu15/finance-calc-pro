@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is property tax calculated?', a: 'Property tax = Assessed Value × Tax Rate. The assessed value is often a percentage of market value (the assessment ratio). A $350,000 home assessed at 100% with a 1.2% rate pays $4,200/year or $350/month in property tax escrow.' },
+  { q: 'What is the average property tax rate in the US?', a: 'The average effective property tax rate in the US is about 1.1% of home value. Rates vary widely by state: New Jersey averages 2.4%, Illinois 2.2%, Texas 1.7%, California 0.7%, and Hawaii 0.3%. Local rates within a state also vary by county and municipality.' },
+  { q: 'Can I appeal my property tax assessment?', a: 'Yes. If you believe your home is over-assessed you can appeal. Start by comparing your assessed value to recent sales of similar nearby homes. File an appeal with your local assessor\'s office — deadlines are typically 30-90 days after assessment notices. About 30-40% of appeals result in reductions.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

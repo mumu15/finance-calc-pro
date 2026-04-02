@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is cap rate and how is it calculated?', a: 'Capitalization rate = Net Operating Income (NOI) / Property Value. NOI = Gross rent minus all operating expenses (taxes, insurance, maintenance, management) but excluding mortgage payments. Cap rate measures the unlevered yield of a property — useful for comparing properties regardless of financing. A $350,000 property with $21,000 NOI has a 6% cap rate.' },
+  { q: 'What is a good cap rate in 2026?', a: 'Cap rates in 2026 vary by property type and market: multifamily 4-6% in gateway cities, 6-8% in secondary markets. Industrial 4-6%. Retail 5-7%. Office 6-9% (higher due to uncertainty). Single-family rentals 4-7%. Higher cap rates generally mean higher risk or lower growth markets. Rising interest rates push cap rates up (prices down).' },
+  { q: 'Cap rate vs cash-on-cash return: what is the difference?', a: 'Cap rate ignores financing — it measures the property yield as if bought all-cash. Cash-on-cash return includes your mortgage payment and measures actual cash flow relative to cash invested. If you buy at a 6% cap rate with a 7% mortgage rate, you may have negative cash flow despite a good cap rate. Use cap rate for valuation, cash-on-cash for investment decisions.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -50,6 +58,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

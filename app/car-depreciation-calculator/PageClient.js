@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How fast do cars depreciate?', a: 'New cars lose 15-25% in the first year and roughly 10-15% per year after. After 5 years the typical car retains about 40% of its original value. Luxury cars, sports cars and some EVs depreciate faster. Trucks and SUVs from Toyota and Honda tend to hold value best.' },
+  { q: 'Which cars depreciate the least?', a: 'Lowest depreciation (best resale value): Toyota Tacoma, Honda Civic/Accord, Toyota 4Runner, Subaru Outback, and Jeep Wrangler. Highest depreciation: Maserati, Jaguar, Lincoln, Cadillac, and most luxury sedans. Fuel efficiency, reliability reputation and brand desirability drive resale value.' },
+  { q: 'How does depreciation affect car buying decisions?', a: 'Depreciation is often the biggest cost of car ownership — far exceeding fuel and insurance on newer vehicles. Buying a 2-3 year old used car lets someone else absorb the steep first-year drop. CPO (certified pre-owned) vehicles offer warranty protection alongside reduced depreciation cost.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

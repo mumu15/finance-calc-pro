@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the long-term capital gains tax rate?', a: 'Long-term capital gains rates for 2026: 0% for taxable income up to $47,025 (single) or $94,050 (married). 15% for income up to $518,900 (single) or $583,750 (married). 20% above those thresholds. Assets must be held more than 12 months to qualify. High earners also pay a 3.8% Net Investment Income Tax on top.' },
+  { q: 'How do I avoid or reduce capital gains tax?', a: 'Strategies: hold assets over 12 months to qualify for long-term rates, harvest tax losses to offset gains, donate appreciated assets to charity (avoid tax entirely), use 1031 exchanges for real estate, contribute gains to Opportunity Zone funds (deferral), use Roth accounts for high-growth investments, and time sales in low-income years when you may qualify for the 0% rate.' },
+  { q: 'Does selling my home trigger capital gains tax?', a: 'Primary residence exclusion: single filers can exclude up to $250,000 of gain, married filers up to $500,000, if you owned and lived in the home for at least 2 of the last 5 years. Gain above the exclusion is taxed at long-term capital gains rates. Investment properties do not get the exclusion but may qualify for 1031 exchange tax deferral.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -50,6 +58,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

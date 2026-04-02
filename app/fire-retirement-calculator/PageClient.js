@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What age can I retire early with the FIRE method?', a: 'FIRE retirement age depends entirely on your savings rate. Saving 10% of income typically reaches FIRE at traditional retirement age. Saving 25% reaches FIRE around age 55-60. Saving 50% can reach FIRE in your 40s. Saving 70%+ can reach FIRE in your 30s. The formula: FIRE Number (25x annual expenses) divided by annual savings rate determines the timeline.' },
+  { q: 'What is the 4% safe withdrawal rate?', a: 'The 4% rule comes from the Trinity Study (1998) which found a 4% annual withdrawal from a diversified stock/bond portfolio historically lasted 30+ years in 95% of historical scenarios. For early retirees with 40-50 year horizons, many FIRE advocates use 3-3.5% to add margin of safety. Your FIRE number = Annual expenses / withdrawal rate.' },
+  { q: 'What happens to healthcare before Medicare at age 65?', a: 'This is a major FIRE planning consideration. Options: ACA marketplace plans (subsidized based on income — low withdrawal income can qualify for heavy subsidies), COBRA from last employer (expensive, 18 months only), spouse employer coverage, health sharing ministries, or part-time work with benefits (Barista FIRE). Budget $500-$1,500/month for healthcare premiums pre-Medicare.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How long does it take solar panels to pay for themselves?', a: 'Average solar payback period in the US is 6-10 years. With the 30% federal tax credit and average electricity savings, a $25,000 system net cost of $17,500 at $1,800/year in savings pays back in about 9-10 years. Sunny states (California, Arizona, Texas, Florida) have shorter payback periods due to more sunlight hours and higher electricity rates.' },
+  { q: 'What is the federal solar tax credit in 2026?', a: 'The federal Investment Tax Credit (ITC) for residential solar is 30% of total system cost through 2032, then steps down to 26% in 2033 and 22% in 2034. This is a dollar-for-dollar reduction in federal income tax owed. On a $25,000 system, the credit is $7,500. You must have sufficient tax liability to use the full credit — unused credit carries forward to future years.' },
+  { q: 'Does solar increase home value?', a: 'Studies show solar panels increase home value by 3-4% on average. A Zillow study found homes with solar sold for 4.1% more. On a $400,000 home that is a $16,400 increase in value. Combined with electricity savings and the federal tax credit, solar is one of the highest-ROI home improvements available. Most states also exempt solar from property tax reassessment.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -48,6 +56,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

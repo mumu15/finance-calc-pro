@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much down payment do I need to buy a house?', a: 'Minimum down payments: Conventional loan 3-5%, FHA loan 3.5% (with 580+ credit score), VA loan 0% (veterans), USDA loan 0% (rural areas). Putting down 20% eliminates PMI, which can save $100-$300/month. A larger down payment also gives better mortgage rates and lower monthly payments.' },
+  { q: 'What is PMI and how do I avoid it?', a: 'PMI (Private Mortgage Insurance) protects the lender if you default. It costs 0.3-1.5% of the loan annually (typically $100-$300/month). Avoid it by putting down 20%+, using a piggyback loan (80/10/10), or choosing a lender-paid PMI option (slightly higher rate). PMI can be cancelled once you reach 20% equity.' },
+  { q: 'Where should I save my down payment?', a: 'Keep your down payment in safe, liquid accounts — not stocks. Best options: high-yield savings account (4-5% APY in 2026), money market account, short-term CDs, or I-bonds for portions you will not need for 1+ year. Never invest a down payment you will need within 2-3 years in the stock market.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -41,6 +49,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

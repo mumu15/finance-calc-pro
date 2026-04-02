@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is a small business valued?', a: 'Small businesses are typically valued using: (1) EBITDA multiple (most common) — 3-8x earnings before interest, tax, depreciation, amortisation; (2) Revenue multiple — more common for high-growth or SaaS businesses; (3) Asset-based — useful for asset-heavy businesses; (4) Discounted Cash Flow (DCF) — complex but most theoretically rigorous.' },
+  { q: 'What multiple is typical for selling a business?', a: 'Typical EBITDA multiples: service businesses 3-5x, SaaS 8-15x, retail 3-5x, manufacturing 4-7x, e-commerce 4-8x. Multiples rise with: strong recurring revenue, low customer concentration, proven management team, clean financials, growth trajectory and proprietary IP or brand. Multiples have compressed since 2022 as rates rose.' },
+  { q: 'What makes a business worth more?', a: 'Value drivers: recurring/predictable revenue (subscriptions beat project work), diversified customer base (no single client over 15%), documented processes that work without the owner, strong margins, IP or brand moat, growth trajectory, clean books audited for 3 years, and a strong management team. Address these before any planned sale.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

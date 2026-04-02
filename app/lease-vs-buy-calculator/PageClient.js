@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Is it better to lease or buy a car?', a: 'Buying is better long-term — you build equity, have no mileage limits, and eventually own the car free and clear. Leasing is better if you want lower monthly payments, a new car every 2-3 years, or always want to be under warranty. Leasing costs more over the long run but provides flexibility and predictable costs.' },
+  { q: 'What are the hidden costs of leasing?', a: 'Watch for: acquisition fee ($500-$1,000), disposition fee at end ($300-$500), excess mileage charges ($0.15-$0.30/mile over limit), wear-and-tear charges, gap insurance requirement, early termination penalties (very expensive), and the fact that you have nothing to show for payments at the end.' },
+  { q: 'What is a money factor in a lease?', a: 'The money factor is the lease equivalent of an interest rate. To convert to APR multiply by 2,400. A money factor of 0.00125 = 3% APR. A good money factor is below 0.0020 (4.8% APR). Always ask the dealer for the money factor — they are not required to disclose it upfront.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much does it cost to move in 2026?', a: 'Average moving costs: local move $800-$2,500, in-state $1,500-$5,000, long-distance $3,000-$10,000+. Full-service movers cost 2-3x more than DIY truck rental. A 2-bedroom local move with movers averages $1,200-$1,800. Long-distance full-service for a 3-bedroom house averages $5,000-$10,000.' },
+  { q: 'Should I hire movers or do it myself?', a: 'DIY with a rented truck saves 50-60% but requires significant physical effort and time. Consider hiring movers if you have: many heavy items (furniture, appliances), a third floor or no elevator, a long distance move, limited time or help, or items of high value. The time and physical cost of DIY often outweighs the savings.' },
+  { q: 'What moving costs are tax deductible?', a: 'Moving expenses are no longer deductible for most Americans after the 2017 Tax Cuts and Jobs Act. The exception is active-duty military members who move due to orders. Some states still allow moving expense deductions. Employer moving reimbursements are generally taxable income to the employee.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

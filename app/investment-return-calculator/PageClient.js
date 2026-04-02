@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is CAGR and why does it matter?', a: 'CAGR (Compound Annual Growth Rate) is the steady annual rate that would produce the same result as the actual investment over a multi-year period. It smooths out year-to-year volatility to show the true annual return. A $10,000 investment growing to $18,000 over 5 years has a CAGR of about 12.5%, regardless of how returns varied each year.' },
+  { q: 'What is a good investment return?', a: 'The S and P 500 has averaged about 10% annually (7% real after inflation) over long periods. For context: savings accounts earn 4-5%, bonds 3-6%, real estate 8-12% total return, individual stocks vary widely. A real return (above inflation) of 5-7% is considered solid for a diversified long-term portfolio.' },
+  { q: 'What is the difference between nominal and real return?', a: 'Nominal return is the raw percentage gain before adjusting for inflation. Real return = ((1 + nominal) / (1 + inflation) - 1). At 8% nominal with 3% inflation, real return is about 4.85%. Real return shows actual purchasing power gained. Long-term investors should focus on real returns to understand true wealth growth.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -41,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -200,6 +211,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="4HKsn6JFbQI" title="How Compound Interest Builds Wealth" />
+        </div>
+        <KeyStatistics stats={[{ value: '10.3%', label: 'S&P 500 avg return' }, { value: '7%', label: 'After-inflation return' }, { value: '72', label: 'Rule of 72 doubling' }, { value: '30+ yrs', label: 'To $1M from $500/mo' }]} title="Investment Return Benchmarks" source="S&P Global" sourceYear="1926-2025" />
 
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do I increase my net pay?', a: 'Increase net pay by: increasing pre-tax deductions (401k, HSA, FSA) which lower taxable income, adjusting W-4 withholding if you consistently get large refunds, checking that your filing status is correct, and ensuring all eligible deductions are claimed. Paradoxically, contributing more to a 401k often has a smaller net pay impact than expected due to tax savings.' },
+  { q: 'What is the difference between gross and net pay?', a: 'Gross pay is your salary or hourly rate before any deductions. Net pay is what you actually receive after federal income tax withholding, FICA (Social Security and Medicare), state and local taxes, and voluntary pre-tax deductions like 401k and health insurance. Net pay is typically 65-80% of gross depending on your tax situation.' },
+  { q: 'Why does my paycheck vary each period?', a: 'Paychecks vary due to: overtime worked, bonuses paid, changes in health insurance premiums, 401k contribution adjustments, commissions, reaching Social Security wage base ($168,600 in 2024 — FICA stops after this), or state/local tax changes. Year-end paychecks may also differ due to annual benefit adjustments.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -54,6 +62,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

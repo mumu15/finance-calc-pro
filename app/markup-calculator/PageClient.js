@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the difference between markup and margin?', a: 'Markup is calculated on cost: a 40% markup on a $50 product = $20 profit, selling at $70. Margin is calculated on selling price: $20 / $70 = 28.6% margin. The same profit looks like a bigger number as markup vs margin. To convert: Margin = Markup / (1 + Markup). A 40% markup equals a 28.6% margin. Retailers typically discuss margin; manufacturers discuss markup.' },
+  { q: 'What is a good markup percentage?', a: 'Markup varies widely by industry: grocery retail 15-25%, restaurants 300% on food (food cost target is 25-35%), clothing retail 50-100%, electronics 10-20%, jewelry 50-100%, software 80-90%+. The right markup must cover all operating costs beyond COGS and still generate profit. Work backwards from desired net profit margin and total fixed costs to find your minimum viable markup.' },
+  { q: 'How do I price my products profitably?', a: 'Cost-plus pricing (cost + markup) is simple but ignores competition and perceived value. Value-based pricing charges what customers are willing to pay, often yielding higher margins. Competitive pricing matches or undercuts rivals. For new products: research competitor prices, calculate break-even markup, then test price points. Premium pricing with strong branding often outperforms cost-plus significantly.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -38,6 +46,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

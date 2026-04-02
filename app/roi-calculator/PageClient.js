@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is ROI calculated?', a: 'ROI = (Net Return ÷ Cost of Investment) × 100. Net Return = Final Value − Initial Investment − Additional Costs. A $10,000 investment that grows to $15,000 with $200 in fees: ROI = ($4,800 ÷ $10,000) × 100 = 48%. Annualised ROI accounts for how long the money was invested.' },
+  { q: 'What is a good ROI?', a: 'Context determines good ROI. Stock market: 7-10% annualised is excellent. Real estate: 8-12% annualised is good. Business investment: 15-30%+ is typical target. Marketing campaigns: 300-500% ROI is benchmark for paid ads. Always compare ROI to the opportunity cost — what you could have earned elsewhere with the same money.' },
+  { q: 'What is the difference between ROI and IRR?', a: 'ROI is a simple percentage return on an investment. IRR (Internal Rate of Return) is the annualised compound rate that makes the net present value of all cash flows equal zero. IRR is more sophisticated and handles multiple cash flows over time. For simple one-time investments they are similar; for complex multi-year projects use IRR.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -37,6 +45,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

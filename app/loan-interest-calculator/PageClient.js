@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the difference between APR and interest rate?', a: 'The interest rate is the cost of borrowing the principal only. APR (Annual Percentage Rate) includes the interest rate plus fees (origination fees, closing costs, etc.) expressed as a yearly rate. APR is always equal to or higher than the interest rate. When comparing loan offers always compare APRs, not just interest rates, for a true apples-to-apples comparison.' },
+  { q: 'How does compound interest work on a loan?', a: 'On an amortizing loan (mortgage, car loan, personal loan), interest compounds monthly. Each payment covers that month interest first, then the remainder reduces the principal. Early in the loan, most of each payment is interest. As the balance decreases, more goes to principal. This is why extra early payments are so powerful — they reduce the principal that future interest is calculated on.' },
+  { q: 'What factors most affect total interest paid?', a: 'The three biggest factors in order of impact: (1) Interest rate — a 1% rate difference on a $200,000 mortgage over 30 years changes total interest by $40,000+. (2) Loan term — a 30-year vs 15-year mortgage at the same rate roughly doubles total interest paid. (3) Loan amount — every dollar borrowed costs more than a dollar to repay. A larger down payment saves disproportionately in total interest.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

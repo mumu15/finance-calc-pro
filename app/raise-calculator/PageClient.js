@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good salary raise percentage?', a: 'A typical cost-of-living raise is 2-4% annually. A merit raise is usually 4-8%. A promotion raise is typically 10-20%. In a high-inflation environment, raises under 5% may not maintain purchasing power. Negotiating a higher raise at a new job is often more effective than annual increments.' },
+  { q: 'How do I negotiate a salary raise?', a: 'Research market salaries on Glassdoor, LinkedIn Salary, and Levels.fyi. Document your accomplishments with specific metrics ($X revenue generated, Y% cost reduction). Ask for a meeting, present your case and request a specific number. Target 10-20% above your minimum acceptable figure to leave negotiation room.' },
+  { q: 'When is the best time to ask for a raise?', a: 'Ask during annual reviews, after completing a major project, when you have taken on new responsibilities, when you have a competing offer, or when the company is performing well. Avoid asking during budget cuts, layoffs or immediately after a poor performance period.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -54,6 +62,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

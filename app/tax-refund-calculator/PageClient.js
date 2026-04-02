@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'When will I get my tax refund?', a: 'The IRS issues most refunds within 21 days of accepting an e-filed return. Paper returns take 4-8 weeks. Refunds claiming the Earned Income Tax Credit or Additional Child Tax Credit are held until mid-February by law. You can track your refund at IRS.gov using the Where is My Refund tool. Direct deposit is 2-3 days faster than a check.' },
+  { q: 'Is a large tax refund a good thing?', a: 'A large refund means you overpaid taxes throughout the year — essentially giving the government an interest-free loan. Ideally you aim to break even (small refund or small amount owed). Adjust your W-4 withholding to keep more money in each paycheck throughout the year, then invest the difference rather than waiting for an annual refund.' },
+  { q: 'What tax credits give the biggest refunds?', a: 'High-value refundable tax credits: Earned Income Tax Credit ($632-$7,830 for 2024 depending on income and children), Child Tax Credit ($2,000 per child, up to $1,700 refundable), Child and Dependent Care Credit (up to $1,050 for one child), American Opportunity Tax Credit ($2,500 for college, 40% refundable), and Premium Tax Credit for ACA marketplace insurance.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What payroll taxes does an employer pay?', a: 'Employers pay the employer share of FICA (6.2% Social Security + 1.45% Medicare = 7.65%), FUTA (0.6% on first $7,000 after state credit), and SUTA (varies by state, typically 1-5% on the first $7,000-$50,000 of wages). The true cost of an employee is about 7-10% above their gross wages.' },
+  { q: 'What is the difference between FICA and income tax withholding?', a: 'FICA (Social Security + Medicare) is split equally between employer and employee — each pays 7.65%. Income tax withholding is the employee\'s estimated federal and state income tax held by the employer and remitted to the IRS. Employers do not pay income tax on behalf of employees — they only withhold and forward it.' },
+  { q: 'When must payroll taxes be deposited?', a: 'Deposit schedule depends on your lookback period tax liability. Monthly depositors must deposit by the 15th of the following month. Semi-weekly depositors deposit within 2-3 business days after payday. Very small employers (under $2,500/quarter) can pay with their quarterly Form 941. Penalties for late deposits are 2-15%.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -44,6 +52,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

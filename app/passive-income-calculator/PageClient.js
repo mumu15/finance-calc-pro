@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What are the best sources of passive income?', a: 'Top passive income sources ranked by typical yield: dividend stocks 2-6%, REITs 4-8%, rental property 5-10% cash-on-cash, high-yield savings and CDs 4-5.5%, peer-to-peer lending 5-9% (higher risk), bonds 4-6%, covered calls on stocks 8-15% (requires active management), and digital products (highest potential but requires upfront work to create).' },
+  { q: 'How much do I need invested to live off passive income?', a: 'At a 4% withdrawal rate (the FIRE standard) you need 25x your annual expenses. For $3,000/month ($36,000/year) net you need approximately $900,000-$1,200,000 invested depending on tax rate and yield. With dividend stocks at 4% yield you need $900,000. With bonds at 5% yield you need $720,000 gross. Tax-advantaged accounts (Roth IRA) reduce the gross amount needed.' },
+  { q: 'Is rental property good passive income?', a: 'Rental property generates 5-10% cash-on-cash returns but is not truly passive — it requires tenant management, maintenance, and occasional large capital expenditures. Professional management costs 8-12% of rent. REITs provide similar real estate exposure with true passive income: no tenants, no maintenance, fully liquid, and dividends paid quarterly. For most investors REITs are more practical than direct ownership.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -38,6 +46,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

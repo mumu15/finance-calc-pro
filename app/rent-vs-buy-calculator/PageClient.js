@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Is it better to rent or buy a home?', a: 'It depends on timeline, finances and market. Buying is better if you plan to stay 5+ years, can afford a 10-20% down payment, and home prices are reasonable relative to rents. Renting is better for flexibility, expensive markets (NYC, SF) and when you lack a down payment or have high debt.' },
+  { q: 'What is the price-to-rent ratio?', a: 'The price-to-rent ratio compares home prices to annual rents. Divide home price by annual rent. A ratio below 15 favors buying; 15-20 is neutral; above 20 favors renting. In San Francisco the ratio exceeds 40, strongly favoring renting. In many Midwest cities it is below 15, favoring buying.' },
+  { q: 'How long do you need to stay to make buying worth it?', a: 'The break-even point for buying vs renting is typically 3-7 years depending on transaction costs, mortgage rate and market appreciation. The 5-year rule suggests staying at least 5 years to recoup transaction costs (real estate agent fees, closing costs, moving). Shorter stays usually favor renting.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -58,6 +66,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

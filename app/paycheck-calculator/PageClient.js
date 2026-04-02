@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is my paycheck calculated?', a: 'Your gross paycheck = Annual Salary ÷ Pay Periods. From that, subtract: federal income tax (based on your W-4 and bracket), state income tax, FICA (Social Security 6.2% + Medicare 1.45%), and any pre-tax deductions (401k, health insurance, FSA). What remains is your net take-home pay.' },
+  { q: 'What is FICA tax on my paycheck?', a: 'FICA (Federal Insurance Contributions Act) consists of Social Security tax (6.2% on income up to $168,600 in 2026) and Medicare tax (1.45% on all income, plus 0.9% on income over $200,000). Your employer matches these contributions. Total FICA is 7.65% of your paycheck.' },
+  { q: 'How do I reduce taxes on my paycheck?', a: 'Maximize pre-tax deductions: 401k contributions, HSA contributions ($4,150 single, $8,300 family in 2026), FSA contributions, and health insurance premiums. These reduce your taxable income dollar-for-dollar. Claiming the right allowances on your W-4 also adjusts withholding to avoid over-paying.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -56,6 +64,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

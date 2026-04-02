@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the 70% rule in house flipping?', a: 'The 70% rule: maximum purchase price = ARV x 70% minus rehab costs. On a property with $320,000 ARV and $45,000 rehab: max offer = $224,000 - $45,000 = $179,000. This leaves 30% for costs, holding expenses and profit. It is a quick filter — use detailed calculations before making actual offers.' },
+  { q: 'How much profit should a house flip make?', a: 'Most experienced flippers target at least $25,000-$30,000 minimum profit per flip to justify the risk. In terms of ROI, aim for 15-20%+ return on total invested capital. Annualised returns of 20-40% are achievable on successful flips. Margins are compressed in competitive markets — always account for overruns (add 15-20% to rehab budget).' },
+  { q: 'What are the biggest risks in house flipping?', a: 'Top risks: unexpected structural issues (foundation, roof, plumbing) blowing the rehab budget, holding too long due to slow sales market or financing delays, overpaying for the property, underestimating renovation time and cost, and short-term capital gains tax (taxed as ordinary income if held under 1 year). Always get a professional inspection before buying.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

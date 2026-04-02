@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good credit utilization ratio?', a: 'Under 30% is the widely cited guideline, but under 10% is ideal for maximum credit score benefit. Credit utilization accounts for about 30% of your FICO score — the second most important factor after payment history. At 0% utilization (no balances reported) some scoring models may actually score slightly lower than at 1-5% utilization.' },
+  { q: 'How quickly does paying down balances improve credit score?', a: 'Credit card balances are typically reported to credit bureaus once per month on your statement closing date. Once your lower balance is reported, your score can improve within 30-45 days. Paying down high utilization cards is one of the fastest ways to improve your score — some people see 20-50 point improvements within one to two billing cycles.' },
+  { q: 'Does requesting a credit limit increase help utilization?', a: 'Yes — a higher limit with the same balance lowers utilization immediately. Example: $2,000 balance on $5,000 limit = 40% utilization. After a $10,000 limit increase: $2,000 / $15,000 = 13% utilization. However requesting a limit increase may trigger a hard inquiry (-5 points temporarily). The net effect is usually positive if you do not increase spending.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

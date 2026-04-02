@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is yield to maturity (YTM)?', a: 'YTM is the total annualised return you earn if you buy a bond at its current price and hold it until maturity, assuming all coupon payments are reinvested at the same rate. It is the most comprehensive measure of a bond\'s return and accounts for both the coupon income and any capital gain or loss.' },
+  { q: 'Why do bond prices fall when interest rates rise?', a: 'Bond prices and interest rates move inversely. When new bonds offer higher coupons, existing lower-coupon bonds become less attractive and must fall in price until their yield matches the market. A 1% rise in rates causes a roughly 1% drop per year of duration — a 10-year bond falls about 8-10%.' },
+  { q: 'What is the difference between current yield and YTM?', a: 'Current yield = annual coupon ÷ market price. It ignores the capital gain or loss at maturity. YTM includes that gain/loss spread over the remaining years. If you buy a $1,000 par bond for $950 with a 5% coupon, current yield is 5.26% but YTM is higher because you also gain $50 at maturity.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

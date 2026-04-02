@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is APR and why does it matter?', a: 'APR (Annual Percentage Rate) includes both the interest rate and fees expressed as a yearly rate. It shows the true cost of borrowing. A 7% interest rate loan with $1,500 in fees on $20,000 over 5 years has an APR of about 8.6% — significantly higher than the stated rate.' },
+  { q: 'What is the difference between APR and interest rate?', a: 'The interest rate is only the cost of borrowing the money. APR includes the interest rate plus fees, points, mortgage insurance and other charges. By law, lenders must disclose APR. Always compare APR (not just interest rate) when shopping for loans.' },
+  { q: 'What is a good APR for a loan?', a: 'Good APR varies by loan type: mortgage 6-7% (2026), auto loan 5-8%, personal loan 8-14% for excellent credit. Credit cards average 20-25% APR. Any APR below your alternatives is good. For mortgages, a difference of even 0.25% in APR saves thousands over the loan life.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -59,6 +67,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

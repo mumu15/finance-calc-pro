@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much does it cost to start a business?', a: 'Average startup costs by type: online business or service $500-$5,000. Brick and mortar retail $50,000-$250,000. Restaurant $175,000-$500,000. Franchise $100,000-$1,000,000+. SaaS or tech startup $20,000-$150,000. Home-based service $1,000-$20,000. The biggest variables are inventory, equipment, leasehold improvements, and payroll before revenue ramps up.' },
+  { q: 'What are the most common startup mistakes with money?', a: 'Top financial mistakes: underestimating time to profitability (plan for 2x your estimate), skipping the cash buffer (minimum 3-6 months of expenses), mixing personal and business finances, not tracking cash flow weekly in early stages, over-investing in fixed assets before validating the business model, and taking on equity investors before exploring loans or bootstrapping.' },
+  { q: 'Should I get a business loan or investor funding for my startup?', a: 'Loans are better when: you have predictable revenue, the business model is proven, and you want to keep full ownership. Investor funding (equity) is better when: you need large capital for rapid growth, the business is pre-revenue, or you need strategic partnerships beyond just money. Equity is expensive long-term — you give up ownership and control permanently.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

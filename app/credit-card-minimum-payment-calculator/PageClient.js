@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Why does paying only the minimum take so long?', a: 'Minimum payments are typically 1-2% of your balance, barely covering interest. At 22% APR on a $5,000 balance, the first minimum payment is about $100 — but $92 of that is interest, leaving only $8 reducing the principal. As the balance slowly drops, so does the minimum payment, extending payoff to 20-30 years and costing 2-3x the original balance in interest.' },
+  { q: 'What is the fastest way to pay off credit card debt?', a: 'Pay as much above the minimum as possible every month. Even doubling your minimum payment dramatically cuts payoff time and interest. Use the debt avalanche (highest APR first) or debt snowball (smallest balance first) method if you have multiple cards. Stop using the card for new purchases while paying it off. Consider a 0% balance transfer to stop interest accumulation.' },
+  { q: 'Does paying minimum hurt my credit score?', a: 'Paying the minimum keeps your account in good standing and avoids late fees — it does not directly hurt your score. However it keeps your credit utilization high (ideally under 30%), which does negatively impact your score. Carrying high balances relative to your limit is the second most important credit score factor after payment history.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -63,6 +71,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What home improvements add the most value?', a: 'Highest ROI renovations (national averages): garage door replacement 194% ROI, manufactured stone veneer 153%, minor kitchen remodel 96%, siding replacement 89%, window replacement 69%. Lower ROI but high enjoyment: major kitchen remodel 38%, bathroom addition 35%, primary suite addition 36%. Location matters enormously — the same project can have very different ROI depending on the local market.' },
+  { q: 'Home equity loan vs HELOC vs personal loan?', a: 'Home equity loan: fixed rate, lump sum, best for large one-time projects, secured by your home. HELOC: variable rate, revolving credit line, best for ongoing projects or unknown costs. Personal loan: no collateral, higher rate, faster approval, best for smaller projects or renters. Cash-out refinance: replaces your mortgage, best if rates are lower than your current mortgage.' },
+  { q: 'Do I need a permit for home renovations?', a: 'Permits are generally required for: structural changes, electrical work beyond simple fixture replacement, plumbing changes, HVAC work, additions, decks over certain heights, and window/door structural changes. Unpermitted work can: cause problems when selling (lenders and buyers require disclosure), void homeowners insurance for those areas, and create safety hazards. Always check local requirements before starting.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

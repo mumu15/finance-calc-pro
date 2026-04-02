@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much does it cost to have a baby in the US?', a: 'Average first-year costs for a baby in the US range from $15,000 to $50,000+ depending on insurance, childcare, and location. Hospital delivery alone averages $10,000-$30,000 before insurance. Childcare is the largest ongoing expense: daycare averages $10,000-$25,000 per year, a full-time nanny $35,000-$50,000+. Most families underestimate costs by 30-50%.' },
+  { q: 'How should I prepare financially before having a baby?', a: 'Key financial steps: review your health insurance and understand your deductible and out-of-pocket maximum, build 3-6 months emergency fund, enroll in a Dependent Care FSA (saves $500-$1,000+ in taxes on up to $5,000 of childcare), research parental leave policies and whether you need short-term disability insurance, and create a revised post-baby budget at least 6 months ahead.' },
+  { q: 'What is a Dependent Care FSA and how much can it save?', a: 'A Dependent Care FSA lets you pay for childcare with pre-tax dollars, up to $5,000 per year ($2,500 if married filing separately). At a 25% tax rate, that saves $1,250 in federal income tax plus FICA savings. The Child and Dependent Care Credit provides additional tax relief of 20-35% on up to $3,000 of childcare expenses for one child.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

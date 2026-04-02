@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How does the gift tax annual exclusion work?', a: 'You can give up to $18,000 per recipient per year (2024) without any gift tax or reporting requirements. Married couples can combine exclusions to give $36,000 per recipient. These are per-recipient limits — you can give $18,000 to as many people as you want. The exclusion adjusts for inflation periodically.' },
+  { q: 'What is the lifetime gift tax exemption?', a: 'The lifetime gift and estate tax exemption is $13.61 million per person in 2024. Gifts above the annual exclusion reduce this lifetime exemption. No tax is actually due until you exhaust the entire lifetime exemption. Once exceeded, gifts are taxed at 40%. The exemption is unified with the estate tax exemption.' },
+  { q: 'Are gifts to a spouse taxable?', a: 'Gifts between US citizen spouses are completely tax-free with no dollar limit (unlimited marital deduction). Gifts to a non-citizen spouse are limited to $185,000 per year (2024) before gift tax applies. Gifts to charities are also generally tax-free and may be deductible as charitable contributions on your income tax return.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -48,6 +56,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

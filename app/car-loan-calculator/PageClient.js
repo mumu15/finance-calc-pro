@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good interest rate for a car loan in 2026?', a: 'Average car loan rates in 2026: new car excellent credit 5-6%, good credit 7-9%, fair credit 10-15%, poor credit 15-20%+. Used car rates run 1-3% higher. Credit unions typically offer rates 1-2% lower than banks. Always get pre-approved before visiting a dealer to negotiate from a position of strength.' },
+  { q: 'Should I put more money down on a car loan?', a: 'A larger down payment reduces your loan amount, monthly payment and total interest. Aim for at least 20% down on a new car to avoid being underwater (owing more than the car is worth). With 0% or low promotional rates, a smaller down payment can make sense — invest the difference instead.' },
+  { q: 'What is the best car loan term length?', a: 'Shorter terms (36-48 months) cost less in total interest but have higher monthly payments. Longer terms (72-84 months) have lower payments but much higher total cost and risk being underwater on the loan. Most financial advisors recommend no more than 60 months for new cars and 48 months for used.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -41,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -199,6 +210,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="u5EJMHrT4Jc" title="How to Get the Best Car Loan Rate" />
+        </div>
+        <KeyStatistics stats={[{ value: '$40,990', label: 'Avg new car price' }, { value: '6.8%', label: 'Avg loan rate' }, { value: '68 mo', label: 'Avg loan term' }, { value: '$734', label: 'Avg monthly payment' }]} title="Auto Loan Statistics (2026)" source="Edmunds, Experian" sourceYear="2026" />
 
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>

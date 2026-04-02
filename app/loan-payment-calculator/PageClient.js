@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is a monthly loan payment calculated?', a: 'Monthly payment = Principal x [r(1+r)^n] / [(1+r)^n - 1], where r = monthly rate (APR/12) and n = number of months. For a $25,000 loan at 7.5% for 60 months: r = 0.00625, n = 60, payment = $500.47. This formula ensures equal payments throughout the loan while fully paying off interest and principal by the final payment.' },
+  { q: 'What loan term gives the best value?', a: 'Shorter terms mean higher monthly payments but dramatically less total interest. On a $25,000 loan at 7.5%: 36 months costs $775/month and $2,900 total interest. 60 months costs $501/month and $5,028 total interest. 84 months costs $386/month and $7,408 total interest. Choose the shortest term your budget can comfortably handle.' },
+  { q: 'Can I pay off a loan early without penalty?', a: 'Most personal loans and mortgages originated after 2014 have no prepayment penalty. However some lenders still charge prepayment penalties — typically 1-2% of the remaining balance if paid off within 3-5 years. Always check your loan agreement for a prepayment penalty clause before making extra payments or paying off early. Ask your lender directly if unsure.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

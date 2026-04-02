@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is free cash flow and why does it matter?', a: 'Free cash flow (FCF) = Operating cash flow minus capital expenditures. It represents cash the business generates after maintaining and growing its asset base. FCF is what can be used to pay investors, reduce debt, or fund growth. Profitable companies can still fail with negative FCF if profits are tied up in inventory or receivables.' },
+  { q: 'What is a good cash runway for a startup?', a: 'Most financial advisors recommend at least 12-18 months of cash runway at all times. Startups raising funding should begin the process with 9-12 months of runway — fundraising takes 3-6 months. A runway below 6 months is a critical situation requiring immediate action: expense cuts, revenue acceleration, or emergency bridge funding.' },
+  { q: 'How is cash flow different from profit?', a: 'Profit is an accounting concept (revenue minus expenses on an accrual basis). Cash flow is actual money moving in and out of the bank. They differ due to: timing of payments (invoiced but not yet paid), depreciation (expense with no cash outflow), capital expenditures (cash out with no immediate expense), and inventory changes. A business can be profitable but cash flow negative.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -45,6 +53,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

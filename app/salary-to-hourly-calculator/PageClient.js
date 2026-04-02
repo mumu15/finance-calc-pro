@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do you convert salary to hourly rate?', a: 'Hourly rate = Annual salary / (Hours per week x Weeks per year). For a $65,000 salary at 40 hours/week for 50 weeks: $65,000 / 2,000 = $32.50/hour. The standard formula uses 2,080 hours (40 hours x 52 weeks) for a full-year comparison. Actual effective hourly rate is higher if you get paid time off included in your salary.' },
+  { q: 'What is a good hourly rate equivalent for a salary?', a: 'By income level: $50,000 salary = $24/hr, $75,000 = $36/hr, $100,000 = $48/hr, $150,000 = $72/hr, $200,000 = $96/hr. For comparison, US federal minimum wage is $7.25/hr. The median US hourly wage is approximately $22/hr. When comparing a salary job to hourly contract work, add 20-30% to the salary equivalent rate for the contractor to break even after self-employment taxes and no benefits.' },
+  { q: 'Does salary always equal more money than hourly?', a: 'Not necessarily. Hourly workers may earn more if they get paid for actual overtime worked. A salaried worker required to work 50 hours/week effectively earns less per hour than their nominal rate. Some salaried roles are exempt from overtime and regularly work 50-60 hours, dramatically reducing their effective hourly rate. Always calculate effective hourly rate before accepting a salaried offer.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

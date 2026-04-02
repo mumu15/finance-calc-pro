@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the debt avalanche method?', a: 'Pay minimums on all debts, then put every extra dollar toward the highest interest rate debt first. Once that is paid off, roll that payment to the next highest rate. This method saves the most money in interest over time and is mathematically optimal. Best for people who are motivated by numbers and long-term savings.' },
+  { q: 'What is the debt snowball method?', a: 'Pay minimums on all debts, then attack the smallest balance first regardless of interest rate. Each payoff gives a psychological win and frees up cash flow. Research shows snowball users pay off debt faster in practice because the motivation keeps them going. Best for people who need early wins to stay on track.' },
+  { q: 'How much extra should I pay toward debt each month?', a: 'Even an extra $50-$100/month makes a dramatic difference. On a $25,000 debt at 18% APR with $600 minimum payments, an extra $200/month cuts payoff time from 5.5 years to 3.2 years and saves over $4,000 in interest. Use any windfalls (tax refunds, bonuses) as lump-sum extra payments for maximum impact.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +53,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
@@ -180,6 +191,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="G1VJ1p0X_cY" title="Fastest Ways to Pay Off Debt" />
+        </div>
+        <KeyStatistics stats={[{ value: '$104K', label: 'Avg household debt' }, { value: '8.5%', label: 'Avg personal loan rate' }, { value: '36%', label: 'Max healthy DTI' }, { value: '$1,588', label: 'Avg monthly debt payment' }]} title="US Debt Statistics (2026)" source="Federal Reserve" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

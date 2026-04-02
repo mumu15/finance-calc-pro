@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much of my salary do I actually take home?', a: 'Most Americans take home 65-78% of gross salary after all taxes. On $75,000 gross: federal tax roughly $8,500, Social Security $4,650, Medicare $1,088, state tax $3,750 (at 5%) = $17,988 in taxes. Take-home before retirement and health deductions is approximately $57,000 or $4,750/month.' },
+  { q: 'Does a 401k contribution reduce my taxes?', a: 'Yes — traditional 401k contributions are pre-tax, reducing your federal and state taxable income. A $4,500 contribution (6% of $75,000) at a 22% marginal rate saves $990 in federal taxes. Your take-home pay decreases by only $3,510, not the full $4,500. This is why capturing the full employer match is essentially free money.' },
+  { q: 'What is the difference between gross and net salary?', a: 'Gross salary is your total compensation before any deductions. Net salary (take-home pay) is what lands in your bank account after federal taxes, state taxes, Social Security, Medicare, health insurance premiums, retirement contributions, and any other pre-tax deductions. Always negotiate salary on gross figures and budget based on net figures.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -59,6 +69,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
@@ -170,6 +181,13 @@ export default function Calculator() {
             ))}
           </div>
         </div>
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="WI8N6FPry3Q" title="Understanding Paycheck Deductions" />
+        </div>
+        <KeyStatistics stats={[{ value: '$63,795', label: 'Median household income' }, { value: '22.4%', label: 'Effective federal rate' }, { value: '7.65%', label: 'FICA (SS + Medicare)' }, { value: '~70%', label: 'Avg take-home pct' }]} title="US Income Stats (2026)" source="Census Bureau, IRS" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the 30% rent rule?', a: 'The 30% rule says spend no more than 30% of gross monthly income on rent. On a $65,000 salary ($5,417/month gross) that is $1,625/month maximum. This guideline originated in 1969 US housing policy. In high-cost cities many people spend 40-50% — if you must exceed 30%, offset it by cutting other expenses aggressively.' },
+  { q: 'What else should I budget for besides rent?', a: 'Total housing costs include: rent, renters insurance ($15-30/month), utilities ($100-200/month), parking if not included, and any pet fees. Many landlords require proof of income at 2.5-3x monthly rent. Factor all these into your housing budget, not just the headline rent number.' },
+  { q: 'Should I rent or buy?', a: 'Renting is better when: you plan to move within 3-5 years, the price-to-rent ratio is above 20 (buy price / annual rent), you lack funds for a down payment, or your local market is overvalued. Buying builds equity and provides stability but requires significant upfront costs (3-20% down plus closing costs of 2-5%). Use the rent vs buy calculator for a full comparison.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -45,6 +53,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

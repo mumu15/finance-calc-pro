@@ -6,6 +6,9 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 const faqs = [
   {
@@ -23,6 +26,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much should I contribute to my 401k?', a: 'At minimum, contribute enough to get your full employer match — that is a 50-100% instant return. Beyond that, aim for 15% of income including employer contributions. The 2026 401k contribution limit is $23,500 ($31,000 if age 50+). Starting early has an enormous impact due to compound growth.' },
+  { q: 'What is the employer 401k match?', a: 'A common employer match is 50% of contributions up to 6% of salary — meaning if you contribute 6%, your employer adds 3%. Some employers match 100% up to 3-4%. Always contribute at least enough to capture the full employer match; not doing so is leaving free money on the table.' },
+  { q: 'What is the 4% rule for retirement?', a: 'The 4% rule states you can safely withdraw 4% of your retirement portfolio in year one, then adjust for inflation each year, with a high probability your money lasts 30+ years. A $1,000,000 portfolio supports $40,000/year or $3,333/month. It is a guideline, not a guarantee.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -57,6 +67,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -211,6 +222,13 @@ export default function Calculator() {
         </div>
 
         {/* FAQ */}
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="xUYlBnEiGQo" title="How 401(k) Employer Match Works" />
+        </div>
+        <KeyStatistics stats={[{ value: '$23,400', label: '2026 contribution limit' }, { value: '$7,500', label: 'Catch-up (50+)' }, { value: '4.7%', label: 'Avg employer match' }, { value: '$134K', label: 'Avg 401k balance' }]} title="401(k) Key Numbers (2026)" source="IRS, Vanguard" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

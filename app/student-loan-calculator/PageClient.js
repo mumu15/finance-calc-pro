@@ -6,6 +6,9 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 const faqs = [
   {
@@ -23,6 +26,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the average student loan debt?', a: 'The average US student loan borrower owes approximately $37,000. Federal student loans for undergraduates are capped at $31,000 for dependent students and $57,500 for independent students. Graduate students can borrow significantly more.' },
+  { q: 'Should I pay off student loans or invest?', a: 'If your student loan rate is below 6%, investing in an index fund earning 7-10% historically makes more financial sense. If your rate is above 6-7%, paying off debt first is usually better. High-interest private loans should always be prioritized.' },
+  { q: 'What is income-driven repayment?', a: 'Income-driven repayment (IDR) plans cap federal student loan payments at 5-20% of your discretionary income. Plans include SAVE, PAYE, IBR and ICR. After 10-25 years of qualifying payments, any remaining balance may be forgiven. IDR is best for low income relative to debt.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +61,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -178,6 +189,13 @@ export default function Calculator() {
         </div>
 
         {/* FAQ */}
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="NJolSvYMb3I" title="Student Loan Repayment Plans Compared" />
+        </div>
+        <KeyStatistics stats={[{ value: '$37,850', label: 'Avg student loan debt' }, { value: '6.5%', label: 'Federal loan rate' }, { value: '$393', label: 'Avg monthly payment' }, { value: '20 yrs', label: 'Avg payoff timeline' }]} title="Student Loan Statistics (2026)" source="Federal Student Aid" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

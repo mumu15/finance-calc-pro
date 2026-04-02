@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the FIRE number?', a: 'Your FIRE number is the amount you need invested to retire permanently: Annual Expenses / Withdrawal Rate. At the 4% rule it is 25x annual expenses. To spend $50,000/year in retirement you need $1,250,000 invested. This is based on the Trinity Study showing a 4% withdrawal rate historically sustained a 30-year retirement in 95%+ of scenarios with a diversified stock/bond portfolio.' },
+  { q: 'What are the different types of FIRE?', a: 'Lean FIRE: live on $25,000-$40,000/year in retirement, very frugal lifestyle, FIRE number $625,000-$1M. Standard FIRE: $40,000-$80,000/year, FIRE number $1M-$2M. Fat FIRE: $80,000-$200,000+/year in retirement, FIRE number $2M-$5M+. Barista FIRE: partially retire, work part-time to cover expenses and let investments grow. Coast FIRE: save enough early that investments will reach FIRE number by traditional retirement age.' },
+  { q: 'What savings rate do I need to retire early?', a: 'The higher your savings rate, the faster you reach FIRE. Saving 10% takes about 43 years. Saving 25% takes about 32 years. Saving 50% takes about 17 years. Saving 70% takes about 8.5 years. The math works because a high savings rate both accelerates portfolio growth and signals lower lifestyle expenses — reducing your FIRE number at the same time as increasing your contributions.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -55,6 +65,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">
@@ -227,6 +238,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="GjVIQSfOjN8" title="FIRE: Financial Independence Explained" />
+        </div>
+        <KeyStatistics stats={[{ value: '25x', label: 'Annual expenses saved' }, { value: '4%', label: 'Safe withdrawal rate' }, { value: '50-70%', label: 'Typical savings rate' }, { value: '10-15 yr', label: 'Aggressive timeline' }]} title="FIRE Movement Key Numbers" source="Trinity Study" sourceYear="2026" />
+
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">

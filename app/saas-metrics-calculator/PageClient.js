@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a good LTV to CAC ratio for SaaS?', a: 'The benchmark LTV:CAC ratio for a healthy SaaS business is 3:1 or higher. A ratio of 1:1 means you spend as much to acquire a customer as they are worth — unsustainable. A ratio of 5:1 or higher suggests you may be underinvesting in growth. Most VCs look for 3x+ LTV:CAC before Series A. Improve the ratio by increasing LTV (reduce churn, expand revenue) or decreasing CAC (improve conversion rates, referral programs).' },
+  { q: 'What is the Rule of 40 for SaaS?', a: 'The Rule of 40 states that a healthy SaaS company growth rate plus profit margin should equal or exceed 40%. Example: 30% YoY growth + 15% profit margin = 45% (passes). A high-growth startup at 80% growth + negative 40% margin = 40% (passes). Below 40 signals the company is neither growing fast enough nor profitable enough. It is a key metric for investors evaluating SaaS businesses.' },
+  { q: 'What monthly churn rate is acceptable for SaaS?', a: 'Monthly churn benchmarks: excellent under 0.5%, good 0.5-1%, acceptable 1-2%, concerning 2-5%, problematic above 5%. Annual equivalents: 1% monthly = 11.4% annual, 2% monthly = 21.5% annual. Even small improvements in churn compound significantly over time. A SaaS business losing 5% of customers monthly loses over half its base annually.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

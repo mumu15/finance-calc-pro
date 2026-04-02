@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is inflation and how does it affect savings?', a: 'Inflation is the general rise in prices over time, reducing what each dollar can buy. At 3% inflation, $10,000 today has the purchasing power of only $5,537 in 20 years. Cash savings in a low-interest account lose real value every year. This is why investing — earning returns above inflation — is essential for long-term wealth.' },
+  { q: 'What is the historical average inflation rate?', a: 'US inflation has averaged about 3.3% annually since 1913. The 2021-2023 inflation surge peaked at 9.1% (June 2022) before cooling. The Fed targets 2% annual inflation. High inflation periods (1970s, 2021-23) dramatically erode fixed incomes and bond returns but can benefit owners of hard assets like real estate.' },
+  { q: 'How do I protect my money from inflation?', a: 'Best inflation hedges: equities (stocks historically return 7% real), real estate (rents and values rise with inflation), TIPS (Treasury Inflation-Protected Securities), I-bonds (rate adjusts with CPI), commodities, and REITs. The worst places to hold money during high inflation: cash, fixed-rate bonds, and traditional savings accounts.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -39,6 +47,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

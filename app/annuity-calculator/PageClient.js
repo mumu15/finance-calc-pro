@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is an annuity?', a: 'An annuity is a financial product where you make a lump-sum payment (or series of payments) in exchange for regular disbursements beginning immediately or at some future date. They are commonly used for retirement income. Types: immediate annuity (payments start now), deferred annuity (grows first, pays later), fixed (guaranteed rate), variable (market-linked), and indexed (tied to a market index with downside protection).' },
+  { q: 'Are annuities a good investment?', a: 'Annuities provide guaranteed income and longevity protection, but often come with high fees (1-3% annually), surrender charges (5-10 years), low returns vs market investments, and complexity. They make sense for retirees who: have maxed all tax-advantaged accounts, want guaranteed lifetime income beyond Social Security, or are extremely risk-averse. For most investors under 60, low-cost index funds outperform annuities.' },
+  { q: 'How are annuity payments taxed?', a: 'For non-qualified annuities (funded with after-tax money), each payment is split between a taxable earnings portion and a tax-free return of principal using the exclusion ratio. For qualified annuities (funded with pre-tax money like in an IRA), the entire payment is taxable as ordinary income. Withdrawals before age 59.5 trigger a 10% early withdrawal penalty on the earnings portion.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

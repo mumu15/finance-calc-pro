@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the average sales tax rate in the US?', a: 'The US has no federal sales tax. Combined state and local sales tax averages about 7.12% nationwide. States range from 0% (Oregon, Montana, New Hampshire, Delaware, Alaska) to 9.5%+ (Louisiana, Tennessee). Some cities add additional local taxes on top of the state rate.' },
+  { q: 'How do I calculate sales tax?', a: 'Sales tax = Price × Tax Rate. Total = Price + (Price × Tax Rate) = Price × (1 + Tax Rate). To find pre-tax price from a total: Pre-Tax = Total ÷ (1 + Tax Rate). For example, $108.50 total at 8.5% tax: pre-tax = $108.50 ÷ 1.085 = $100.' },
+  { q: 'Are all purchases subject to sales tax?', a: 'No. Most states exempt groceries, prescription medications and medical devices. Some states also exempt clothing below a certain price. Online purchases are now subject to sales tax in most states following the 2018 South Dakota v. Wayfair Supreme Court ruling.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -56,6 +64,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

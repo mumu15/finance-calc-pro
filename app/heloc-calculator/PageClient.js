@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a HELOC and how does it work?', a: 'A HELOC (Home Equity Line of Credit) lets you borrow against your home equity up to a set limit. During the draw period (typically 10 years) you can borrow and repay as needed, paying interest only. During the repayment period (10-20 years) you repay principal and interest.' },
+  { q: 'What is the maximum HELOC amount?', a: 'Most lenders allow you to borrow up to 80-90% of your home\'s value minus your mortgage balance. On a $450,000 home with $280,000 mortgage at 85% LTV: ($450,000 × 0.85) - $280,000 = $102,500 maximum HELOC.' },
+  { q: 'HELOC vs home equity loan — what is the difference?', a: 'A HELOC is a revolving line of credit with a variable rate — you borrow as needed. A home equity loan is a lump sum with a fixed rate and fixed payments. HELOCs are better for ongoing expenses; home equity loans are better for one-time large expenses where you want payment certainty.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -52,6 +60,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

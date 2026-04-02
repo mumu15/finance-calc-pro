@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do I set my freelance hourly rate?', a: 'Start with your target income, add business expenses and taxes, then divide by realistic billable hours. Research market rates on Upwork, Glassdoor, and industry surveys to validate. New freelancers often underprice themselves — your rate should reflect skill level, not insecurity.' },
+  { q: 'How many billable hours can I realistically work per year?', a: 'Most experienced freelancers bill 1,000-1,500 hours annually. Of 2,080 available working hours, subtract vacation, sick days, holidays, and non-billable time (marketing, admin, networking). New freelancers may only bill 600-800 hours in year one while building a client base. Plan conservatively and adjust as your pipeline grows.' },
+  { q: 'Should I charge hourly or by project?', a: 'Project-based pricing is generally better for experienced freelancers. It rewards efficiency — if you work faster, you earn more per hour. Clients prefer knowing total cost upfront. Start with hourly until you can accurately estimate project time, then transition to fixed-price projects. Always include scope change clauses to protect against scope creep.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -48,6 +56,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

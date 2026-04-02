@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a standard late fee for invoices?', a: 'Standard late fees for B2B invoices: 1-2% per month (12-24% annually) is common in the US. Many states cap late fees at 1.5% per month (18% annually). Always state the late fee terms clearly on the invoice before work begins and in the contract. Net 30 with 1.5%/month late fee is a widely accepted standard. Always check your state regulations.' },
+  { q: 'How do I get clients to pay invoices faster?', a: 'Most effective methods: require a 25-50% upfront deposit before starting work, offer 2% early payment discount (2/10 Net 30), send invoices immediately upon project completion (not at month end), use automated follow-up reminders at 7, 14, and 30 days, accept credit cards and ACH to remove payment friction, and for repeat late payers require prepayment going forward.' },
+  { q: 'What should every invoice include?', a: 'Required elements: your business name, address and contact info, client name and address, unique invoice number, invoice date, payment due date, itemized services or products with quantities and unit prices, subtotal, any discounts, sales tax (if applicable), total amount due, payment methods accepted, and your late fee policy. A professional invoice reduces disputes and speeds payment.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

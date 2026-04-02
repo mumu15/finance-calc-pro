@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the average cost of a wedding in the US in 2026?', a: 'The average US wedding in 2026 costs $30,000-$35,000 according to industry surveys, up from $28,000 in 2023. Costs vary enormously by location: weddings in NYC, San Francisco and Hawaii average $50,000-$80,000+, while Midwest and rural weddings average $15,000-$25,000. Guest count is the single biggest driver of total cost.' },
+  { q: 'How do I stick to a wedding budget?', a: 'Set your budget before any planning decisions. Prioritize the 2-3 elements most important to you and cut everything else. Get 3 quotes for every vendor. Consider: Friday or Sunday weddings (20-30% cheaper), off-peak months (Jan-March, Nov), buffet vs plated service, limiting the bar to beer and wine, using seasonal flowers, and having a smaller wedding party.' },
+  { q: 'What wedding costs are most often underestimated?', a: 'Commonly underestimated costs: gratuities for vendors (typically 15-20% on top of contracted price), alterations and accessories ($500-$2,000), rehearsal dinner, day-of coordinator ($1,500-$3,500), marriage license and officiant fees, favors and welcome bags, hair and makeup for wedding party, and unexpected overtime fees if the event runs long.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

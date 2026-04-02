@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is dollar-cost averaging?', a: 'Dollar-cost averaging (DCA) means investing a fixed dollar amount at regular intervals regardless of market price. When prices are low you buy more shares; when prices are high you buy fewer. This removes the stress of trying to time the market and results in a lower average cost per share over time compared to a single purchase at a random price.' },
+  { q: 'Is DCA better than lump sum investing?', a: 'Academic research (including Vanguard studies) shows lump-sum investing outperforms DCA about two-thirds of the time in rising markets, because more money is invested earlier. However DCA wins in falling markets and dramatically reduces the risk of investing everything at a peak. For regular income investors, DCA via payroll deductions is the natural and practical approach.' },
+  { q: 'How do I start dollar-cost averaging?', a: 'The easiest way is to automate contributions to your 401k (every paycheck is DCA), set up automatic monthly transfers to a brokerage index fund, or use apps like Fidelity, Vanguard, Schwab or Robinhood with automatic investing features. Target low-cost index funds (expense ratio under 0.10%) for best long-term results.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -41,6 +49,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

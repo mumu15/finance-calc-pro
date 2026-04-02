@@ -6,8 +6,18 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
+import VideoEmbed from '../../components/VideoEmbed'
+import KeyStatistics from '../../components/KeyStatistics'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the 50/30/20 budget rule?', a: 'The 50/30/20 rule splits take-home pay into: 50% for needs (housing, food, transport, utilities), 30% for wants (dining out, entertainment, subscriptions), and 20% for savings and debt repayment. It is a simple starting framework — adjust the percentages based on your cost of living, income level and financial goals.' },
+  { q: 'How do I reduce my budget to save more?', a: 'Start with the biggest line items. Housing is usually the largest expense — consider a roommate, refinancing, or moving. Food waste costs the average American $1,500/year — meal planning saves significantly. Audit all subscriptions and cancel unused ones. The 24-hour rule (wait before non-essential purchases) reduces impulse spending by 30-50%.' },
+  { q: 'What budgeting method works best?', a: 'Zero-based budgeting (assign every dollar a job) works best for people who want full control and are paying off debt. The 50/30/20 rule is best for simplicity. Envelope budgeting (cash in categories) is proven for overspenders. Pay-yourself-first (automate savings before spending) is best for savers. The best method is the one you actually follow consistently.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
@@ -242,6 +253,13 @@ export default function Calculator() {
             </a>
           </div>
         </div>
+
+        {/* Video Guide + Key Statistics */}
+        <div style={{background:"linear-gradient(135deg, rgba(13,33,64,0.9), rgba(7,20,38,0.95))",border:"1px solid rgba(255,255,255,0.08)",borderRadius:16,padding:"24px 20px",marginBottom:24}}>
+          <h2 style={{color:"#fff",fontSize:16,fontWeight:700,marginBottom:14}}>Video Guide</h2>
+          <VideoEmbed videoId="HQzoZfc3GwQ" title="The 50/30/20 Budget Rule Explained" />
+        </div>
+        <KeyStatistics stats={[{ value: '50%', label: 'Needs (housing, food)' }, { value: '30%', label: 'Wants (leisure, dining)' }, { value: '20%', label: 'Savings and debt' }, { value: '3-6 mo', label: 'Emergency fund target' }]} title="50/30/20 Budget Framework" source="CFPB" sourceYear="2026" />
 
         <div className="result-box mb-12">
           <h2 className="text-xl font-bold text-white mb-6">Frequently Asked Questions</h2>

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What credit score do I need for a boat loan?', a: 'Most lenders require 680+ for competitive boat loan rates. Below 680 you may still qualify but at higher rates (10-15%+). Marine lenders like Essex Credit, Southeast Financial, and credit unions often have more flexible requirements than banks. A larger down payment (20-30%) can compensate for a lower credit score.' },
+  { q: 'How much should I put down on a boat?', a: 'Most lenders require 10-20% down on boat loans. Putting down 20%+ gets you the best rates, avoids being underwater on a depreciating asset, and lowers monthly payments significantly. Boats depreciate 10-20% in year one and 5-10% annually after that — similar to cars. Never finance 100% of a boat purchase.' },
+  { q: 'What are hidden costs of boat ownership?', a: 'Annual ownership costs beyond the loan: marina slip or storage ($1,500-$10,000/year), insurance ($500-$2,000/year), fuel ($500-$5,000/year depending on use), maintenance ($500-$3,000/year), winterization, registration fees, and repairs. Budget 1.5-2% of boat value annually for maintenance and operating costs on top of loan payments.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -39,6 +47,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

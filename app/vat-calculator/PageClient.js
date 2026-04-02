@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is VAT and who pays it?', a: 'VAT (Value Added Tax) is a consumption tax applied at each stage of production. Businesses collect VAT on sales and reclaim VAT on purchases. Consumers ultimately pay VAT as it is included in the final price. Most countries use VAT or a similar goods and services tax (GST).' },
+  { q: 'What are common VAT rates in Europe?', a: 'Standard EU VAT rates: UK 20%, Germany 19%, France 20%, Italy 22%, Spain 21%, Netherlands 21%, Ireland 23%, Sweden 25%. Reduced rates apply to food, books and children\'s items. Zero rates apply to exports. The EU requires a minimum standard VAT rate of 15%.' },
+  { q: 'Can I reclaim VAT as a business?', a: 'VAT-registered businesses can reclaim VAT paid on business purchases (input tax) against VAT collected on sales (output tax). If input tax exceeds output tax, HMRC/tax authority refunds the difference. Small businesses below the registration threshold (£90,000 in UK) may not need to register.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -54,6 +62,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

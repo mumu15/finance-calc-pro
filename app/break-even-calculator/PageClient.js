@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a break-even analysis?', a: 'Break-even analysis identifies the sales volume at which total revenue equals total costs — the point of zero profit or loss. Break-even units = Fixed Costs ÷ (Price − Variable Cost Per Unit). Understanding your break-even point is essential for pricing decisions, budgeting and assessing business viability.' },
+  { q: 'What is contribution margin?', a: 'Contribution margin = Selling Price − Variable Cost Per Unit. It represents how much each unit sold contributes toward covering fixed costs and generating profit. A $50 product with $30 variable cost has a $20 contribution margin. You need to sell enough units to cover all fixed costs before making any profit.' },
+  { q: 'How do I lower my break-even point?', a: 'Three levers: (1) Raise prices — increases contribution margin per unit, but risks lower sales volume. (2) Reduce variable costs — better supplier terms, process efficiency. (3) Reduce fixed costs — renegotiate rent, reduce headcount, eliminate non-essential expenses. Usually a combination delivers the best result.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -40,6 +48,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

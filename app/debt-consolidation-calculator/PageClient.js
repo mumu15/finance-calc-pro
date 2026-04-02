@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Is debt consolidation a good idea?', a: 'Consolidation is good when: you qualify for a meaningfully lower interest rate, you will not accumulate new debt on paid-off cards, the new monthly payment fits your budget, and the total cost is lower. Warning signs: extending the payoff period so much that you pay more total interest, consolidating into a secured loan (risking your home) for unsecured debt, and not addressing the spending habits that caused the debt.' },
+  { q: 'Debt consolidation vs debt settlement: what is the difference?', a: 'Consolidation combines debts into one new loan at (ideally) a lower rate — you pay 100% of what you owe. Debt settlement negotiates with creditors to accept less than the full balance — damages your credit severely (stays 7 years), you may owe income tax on forgiven amounts, and it only makes sense if you are already severely delinquent. Consolidation is almost always the better choice for people still current on payments.' },
+  { q: 'What credit score do I need for a debt consolidation loan?', a: 'Good rates (under 12%) typically require 700+ credit score. Fair rates (12-18%) require 640-700. Below 640, consolidation rates may not be lower than your current debt rates, eliminating the benefit. Options for lower credit: balance transfer to a 0% card (requires 670+), credit union personal loans (more flexible than banks), or a debt management plan through a nonprofit credit counselor.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

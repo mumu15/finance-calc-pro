@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Who qualifies for overtime pay?', a: 'Under the federal FLSA, non-exempt employees earn 1.5x their regular rate for hours over 40 per week. Employees earning under $684/week ($35,568/year) are automatically non-exempt. Many states have stricter rules: California requires daily overtime (over 8 hours/day), double time over 12 hours/day, and overtime on the 7th consecutive day. Salaried workers may still qualify depending on their actual duties.' },
+  { q: 'How is overtime calculated for hourly workers?', a: 'Federal overtime = regular hourly rate x 1.5 x hours over 40 in a workweek. A workweek is a fixed 168-hour period (7 consecutive 24-hour days). Employers cannot average hours across multiple weeks to avoid overtime. Bonuses and certain other compensation may need to be included in the regular rate for overtime calculation purposes.' },
+  { q: 'Can employers force you to work overtime?', a: 'In most US states (at-will employment), employers can require overtime as a condition of employment and can terminate employees who refuse, unless there is a union contract, employment contract, or state law that limits mandatory overtime. Healthcare workers have additional protections in many states. Employers cannot punish employees for overtime work that was authorized or required.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

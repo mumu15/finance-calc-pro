@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much does a dog cost per year?', a: 'Annual dog ownership costs in 2026: food $600-$1,500, veterinary care $700-$2,000, grooming $0-$900, supplies $200-$400, pet insurance $400-$1,000, boarding or dog walking $500-$3,000. Total annual cost ranges from $1,500 for a basic small dog to $5,000+ for a large dog with premium care. Lifetime cost over 10-14 years: $15,000-$50,000+.' },
+  { q: 'Is pet insurance worth it?', a: 'Pet insurance is worth it if: you want peace of mind for unexpected emergencies ($3,000-$10,000 surgeries), you have a breed prone to health issues (French Bulldogs, German Shepherds, Cavalier King Charles Spaniels), or you cannot afford a large unexpected vet bill. Alternative: self-insure by keeping $3,000-$5,000 in a dedicated pet emergency fund.' },
+  { q: 'What are hidden costs of pet ownership?', a: 'Commonly overlooked costs: boarding or pet sitters when you travel ($30-$85/day), damage to furniture or belongings, pet deposits on rental apartments ($200-$500), flea, tick and heartworm prevention ($150-$300/year), dental cleanings under anesthesia ($500-$1,000 every 1-3 years), and end-of-life care including euthanasia and cremation ($200-$600).' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

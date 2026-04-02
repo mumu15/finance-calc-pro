@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How often should I rebalance my portfolio?', a: 'Most financial advisors recommend rebalancing annually or when any asset class drifts more than 5% from target. Calendar rebalancing (once a year, same date) is simple and effective. Threshold rebalancing (triggered by drift) is more precise. Tax-advantaged accounts (IRA, 401k) are ideal for rebalancing since there are no tax consequences for selling.' },
+  { q: 'What is the right asset allocation?', a: 'Classic rules of thumb: subtract your age from 110-120 to get your stock percentage (age 35 = 75-85% stocks). Vanguard Target Date funds use roughly 90% stocks at age 25, declining to 50% by retirement. Your allocation depends on risk tolerance, time horizon and other income sources. More stocks = higher expected return with more volatility.' },
+  { q: 'Does rebalancing improve returns?', a: 'Rebalancing does not reliably improve raw returns, but it enforces buy low, sell high discipline and controls risk. It prevents your portfolio from becoming dangerously concentrated in one asset class after a long bull run. Studies show rebalanced portfolios have meaningfully lower volatility than drifting portfolios, which matters most near retirement.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -51,6 +59,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

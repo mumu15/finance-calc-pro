@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the simple interest formula?', a: 'Simple Interest = Principal × Rate × Time (in years). For example: $10,000 × 8% × 5 years = $4,000 in interest. Total amount = $14,000. Simple interest is used in short-term loans, car loans and some savings accounts.' },
+  { q: 'Simple interest vs compound interest — what is the difference?', a: 'Simple interest is calculated only on the principal. Compound interest is calculated on the principal plus accumulated interest. $10,000 at 8% for 10 years: simple interest = $8,000 total interest; compound interest = $11,589. The gap grows enormously over time.' },
+  { q: 'When is simple interest used?', a: 'Simple interest is used for most auto loans, some personal loans, US Treasury bills and short-term loans. Mortgages, savings accounts, credit cards and most long-term investments use compound interest. Knowing which applies affects how you calculate true cost or return.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -50,6 +58,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

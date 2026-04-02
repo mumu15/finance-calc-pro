@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How is stock profit calculated?', a: 'Stock profit = (Sell Price - Buy Price) × Shares - Fees. For example: (75 - 50) × 100 shares - $10 fees = $2,490 gross profit. Subtract capital gains tax for net profit. Use this to evaluate trades and understand true returns.' },
+  { q: 'What are capital gains tax rates on stocks?', a: 'Long-term capital gains (held over 1 year) are taxed at 0%, 15% or 20% based on income. Short-term gains (under 1 year) are taxed as ordinary income (10-37%). For most investors, holding stocks over 1 year significantly reduces the tax burden.' },
+  { q: 'What is the wash sale rule?', a: 'The wash sale rule prevents claiming a tax loss if you buy the same or substantially identical security within 30 days before or after the sale. If triggered, the loss is disallowed and added to the cost basis of the new shares. This only applies to taxable accounts, not Roth IRAs or 401ks.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -56,6 +64,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

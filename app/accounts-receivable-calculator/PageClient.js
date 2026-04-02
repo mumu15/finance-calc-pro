@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is Days Sales Outstanding (DSO)?', a: 'DSO measures the average number of days it takes to collect payment after a sale. DSO = (AR Balance / Annual Revenue) x 365. A DSO of 45 means you wait 45 days on average to get paid. Lower DSO means faster cash collection. Compare your DSO to your payment terms: if terms are Net 30 but DSO is 55, customers are paying late.' },
+  { q: 'What is a good DSO for a business?', a: 'A good DSO is close to your stated payment terms. If you offer Net 30, aim for DSO of 30-40 days. Industry benchmarks vary: professional services 40-60 days, manufacturing 45-55 days, retail near zero (cash sales). DSO above 60 days for Net 30 terms signals a collections problem that is draining cash flow.' },
+  { q: 'How do I reduce DSO and improve cash flow?', a: 'Effective strategies: invoice immediately upon delivery (not at month end), offer early payment discounts (2/10 Net 30 = 2% discount if paid within 10 days), automate payment reminders at 7, 14, and 30 days past due, require deposits upfront for large projects, accept credit cards, and enforce late payment fees consistently.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -45,6 +53,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

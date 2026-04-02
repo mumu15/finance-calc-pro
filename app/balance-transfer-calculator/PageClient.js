@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How does a 0% balance transfer work?', a: 'A balance transfer moves debt from one or more high-interest cards to a new card with a 0% introductory APR for 12-21 months. You typically pay a transfer fee of 3-5% upfront. During the promo period, all payments reduce principal (no interest). At the end of the promo, any remaining balance accrues interest at the card normal APR (usually 19-29%). The strategy only works if you pay off the balance before the promo expires.' },
+  { q: 'What credit score do I need for a balance transfer card?', a: 'Most balance transfer cards with 0% promo periods require good to excellent credit: 670+ for approval, 720+ for the best offers (longest promo periods, lowest fees). Check for pre-qualification with soft pulls before applying to avoid hard inquiry score impacts. Cards like Chase Slate Edge, Citi Simplicity, and Wells Fargo Reflect consistently offer competitive balance transfer terms.' },
+  { q: 'What mistakes should I avoid with balance transfers?', a: 'Key mistakes: continuing to use the old card and accumulating new debt, missing a payment (often voids the 0% promo immediately), not paying off the full balance before promo ends (remaining balance suddenly accrues high APR), not accounting for the transfer fee in your savings calculation, and applying for multiple cards simultaneously (hurts credit score). Create a payoff plan before transferring.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -49,6 +57,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

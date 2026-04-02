@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much do investment fees really cost?', a: 'Fees compound just like returns — in reverse. A 1% annual fee on a $50,000 portfolio growing at 8% over 30 years costs over $200,000 in lost wealth. That is money that would have compounded for you but instead went to the fund manager. This is why index funds with expense ratios of 0.03-0.10% are recommended over actively managed funds at 0.5-1.5%.' },
+  { q: 'What is an expense ratio and what is considered low?', a: 'An expense ratio is the annual percentage of your invested assets charged by a mutual fund or ETF for management. Low: under 0.10% (Vanguard, Fidelity, Schwab index funds). Moderate: 0.10-0.50%. High: 0.50-1.5% (actively managed funds). Very high: over 1.5% (some annuities, actively managed niche funds). Always check the expense ratio before investing.' },
+  { q: 'Are higher fee funds worth it for better returns?', a: 'Research consistently shows that higher fees do NOT reliably produce better returns. SPIVA data shows over 90% of actively managed funds underperform their benchmark index over 15 years, after fees. A few exceptional active managers exist but are nearly impossible to identify in advance. Most investors are best served by low-cost index funds.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -41,6 +49,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

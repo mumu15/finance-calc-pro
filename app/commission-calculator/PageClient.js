@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do tiered commission structures work?', a: 'Tiered commissions pay higher rates as you hit higher sales levels. Example: 3% on first $50,000 in sales, 5% on $50,000-$100,000, and 8% above $100,000. This incentivizes exceeding quotas. Accelerator structures pay a multiplier (1.5x or 2x the base rate) on sales above quota — common in SaaS and enterprise sales roles.' },
+  { q: 'What is a good commission rate?', a: 'Commission rates vary widely by industry: real estate 2.5-3% (of sale price), SaaS software 8-12% (of annual contract value), insurance 5-20% (first year premium), retail 1-5%, car sales $200-$500 flat per car, financial services 0.5-1% AUM, B2B sales 5-10%. The right rate depends on average deal size, sales cycle length, and how much base salary is included.' },
+  { q: 'Is it better to have high base or high commission?', a: 'High base with low commission is better for: long sales cycles, complex enterprise deals, or if you value stability. High commission with low base is better for: transactional sales with short cycles, high-volume roles, or experienced sellers confident in their ability. Most top performers prefer uncapped commission plans where exceptional performance is directly rewarded.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -50,6 +58,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

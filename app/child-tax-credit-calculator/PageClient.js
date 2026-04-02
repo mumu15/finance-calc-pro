@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much is the Child Tax Credit in 2026?', a: 'The Child Tax Credit for 2026 is $2,000 per qualifying child under age 17. Up to $1,700 per child is refundable as the Additional Child Tax Credit (ACTC). The credit phases out by $50 for every $1,000 of AGI above $200,000 (single) or $400,000 (married filing jointly). These amounts may change if Congress acts on expiring provisions.' },
+  { q: 'Who qualifies for the Child Tax Credit?', a: 'Qualifying child requirements: under age 17 at year end, related to you (child, stepchild, foster child, sibling, etc.), lived with you more than half the year, did not provide more than half their own support, is a US citizen or resident, and has a valid Social Security Number. The child cannot file a joint return (unless only to claim a refund).' },
+  { q: 'What is the Additional Child Tax Credit?', a: 'The Additional Child Tax Credit (ACTC) is the refundable portion of the Child Tax Credit. If your non-refundable CTC exceeds your tax liability, you may claim ACTC for the lesser of the remaining credit or 15% of earned income above $2,500. Maximum ACTC is $1,700 per child in 2026. This means you can receive money back even if you owe no tax.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -44,6 +52,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,6 +6,7 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 const faqs = [
   {
@@ -23,6 +24,13 @@ const faqs = [
 ]
 
 
+
+
+const _schemaFaqs = [
+  { q: 'When should I refinance my mortgage?', a: 'Refinancing is worth it when: (1) you can lower your rate by at least 0.5-1%, (2) you plan to stay in the home long enough to recoup closing costs (break-even), and (3) your credit score has improved since origination. The break-even point is typically 2-4 years.' },
+  { q: 'What are typical refinance closing costs?', a: 'Refinance closing costs typically run 2-5% of the loan amount — about $6,000-$15,000 on a $300,000 loan. Costs include origination fees, appraisal, title insurance, escrow and attorney fees. Some lenders offer no-closing-cost refinances at a slightly higher rate.' },
+  { q: 'Does refinancing hurt your credit?', a: 'Refinancing causes a temporary credit score dip of 5-15 points due to the hard credit inquiry and new account opening. The effect is minor and usually recovers within 6-12 months of on-time payments. Multiple mortgage inquiries within 45 days are typically treated as one.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -56,6 +64,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

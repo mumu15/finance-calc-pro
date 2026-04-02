@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much more should a contractor charge vs an employee salary?', a: 'Contractors should charge 1.4-1.6x the equivalent employee hourly rate to break even. As a contractor you pay both halves of FICA (15.3%), receive no benefits (health insurance $500-$700/month), no paid time off, no 401k match, and must cover your own equipment and software. Divide your target take-home by 0.65 to account for taxes, then add benefit costs.' },
+  { q: 'How do I set my contractor hourly rate?', a: 'Formula: (Target annual salary + benefits value + business expenses + taxes) / billable hours. On a $100,000 target salary: add $15,000 benefits, $5,000 expenses, $30,000 taxes = $150,000 needed. Divide by 1,920 billable hours = $78/hour minimum. Research market rates on Glassdoor, LinkedIn Salary, and industry surveys to validate competitiveness.' },
+  { q: 'Should I form an LLC as a contractor?', a: 'An LLC provides personal liability protection and potential tax benefits. With a single-member LLC taxed as sole proprietor, tax treatment is identical to freelancing. An S-Corp election (typically worth it above $60,000-$80,000 net profit) lets you split income between salary and distributions, potentially saving $5,000-$15,000 in SE tax annually. Consult a CPA before electing S-Corp status.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

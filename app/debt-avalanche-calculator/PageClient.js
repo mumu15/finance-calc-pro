@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is the debt avalanche method?', a: 'The debt avalanche method prioritizes paying off the debt with the highest interest rate first while paying minimums on all others. Once the highest-rate debt is eliminated, roll that payment to the next highest rate. This is mathematically optimal — it minimizes total interest paid and total time to debt freedom compared to any other payoff order.' },
+  { q: 'Avalanche vs snowball: which saves more money?', a: 'The avalanche method almost always saves more money in interest. On $25,000 of mixed debt, the avalanche can save $1,000-$5,000 in interest compared to the snowball depending on the rate differences and balances. The snowball provides faster psychological wins (eliminating accounts sooner) which some research suggests leads to higher completion rates despite the higher total cost.' },
+  { q: 'How do I stay motivated with the avalanche method?', a: 'Track your progress visually — graph your debt balances weekly. Celebrate when each debt hits zero even if it takes longer. Calculate your net worth monthly so you can see the overall improvement. Set a reward for completing the payoff. Consider hybrid approaches: use avalanche order but start with one small quick win to build momentum.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -58,6 +66,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

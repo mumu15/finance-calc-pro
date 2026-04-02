@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a 529 plan and how does it work?', a: 'A 529 plan is a tax-advantaged savings account for education expenses. Contributions grow tax-free and withdrawals for qualified education expenses (tuition, room and board, books, computers) are tax-free federally. Many states offer a tax deduction for contributions. The SECURE 2.0 Act allows rolling unused 529 funds into a Roth IRA (up to $35,000 lifetime, subject to rules).' },
+  { q: 'How much should I save in a 529 plan?', a: 'A 4-year public university currently costs $110,000-$130,000 total (in-state). A private university costs $250,000-$350,000. Starting at birth, saving $300-$500/month in a 529 with a 7% return covers most 4-year public university costs. Starting later requires significantly more monthly contributions. Even partial funding reduces student loan burden dramatically.' },
+  { q: 'What if my child does not go to college?', a: 'If a 529 beneficiary does not attend college: change the beneficiary to another family member (sibling, cousin, parent — for grad school), use for trade school or vocational programs (qualified expenses), roll up to $35,000 into a Roth IRA (SECURE 2.0, requires 529 to be open 15+ years), or withdraw non-qualified funds (earnings taxed + 10% penalty, but principal returned tax-free).' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

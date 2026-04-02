@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What credit score do I need for a business loan?', a: 'Requirements vary by lender and loan type: SBA loans typically require 640-680+ personal credit score. Traditional bank loans 680-720+. Online lenders 550-600+. Some revenue-based lenders focus more on cash flow than credit score. A strong business revenue history (2+ years) and healthy cash flow often matter as much as the score itself.' },
+  { q: 'What types of business loans are available?', a: 'Main business loan types: Term loans (lump sum, fixed payments), SBA loans (government-backed, best rates), Business lines of credit (revolving, flexible), Equipment financing (collateral is the equipment), Invoice factoring (advance on receivables), Merchant cash advance (high cost, avoid if possible), and Commercial real estate loans.' },
+  { q: 'How does a business loan affect my personal credit?', a: 'Most small business loans require a personal guarantee, meaning your personal credit is on the line. Hard inquiries appear on your personal report. Missed payments are reported personally. Building business credit (Dun and Bradstreet, PAYDEX score) over time allows you to qualify for business-only credit without personal guarantees.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

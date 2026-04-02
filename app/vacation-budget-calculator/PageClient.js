@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much should I budget for a vacation?', a: 'Rule of thumb: budget 1-2 weeks of take-home pay per week of vacation. A 1-week domestic trip averages $1,500-$3,000 per person. International trips average $3,000-$6,000 per person. European tours $4,000-$8,000. Southeast Asia and Central America are budget-friendly at $50-$100/day total. Always add a 15-20% buffer for unexpected costs.' },
+  { q: 'How do I save money on flights?', a: 'Best strategies: book 6-8 weeks ahead for domestic, 3-6 months for international. Fly Tuesday or Wednesday (cheapest days). Use Google Flights price tracking. Consider nearby airports. Use credit card points and miles for free or discounted flights. Be flexible with dates using flexible date search tools. Avoid peak holiday travel windows by shifting departure a day or two.' },
+  { q: 'What travel costs are most often forgotten?', a: 'Commonly forgotten costs: travel insurance ($50-$200/trip), airport transportation (taxis/Uber to and from), baggage fees ($30-$60 per bag each way), foreign transaction fees on cards (2-3%), tips and gratuities abroad, visa fees ($20-$150), travel vaccinations, data roaming charges, and souvenirs and shopping.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -47,6 +55,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is working capital?', a: 'Working capital = Current Assets minus Current Liabilities. It measures a business ability to cover short-term obligations with short-term assets. Positive working capital means you can pay bills and still have assets left. Negative working capital means current liabilities exceed current assets — a warning sign unless the business model (like retail) naturally runs negative.' },
+  { q: 'What is a good current ratio?', a: 'A current ratio between 1.5 and 2.0 is generally considered healthy. Below 1.0 means current liabilities exceed current assets (potential liquidity crisis). Above 3.0 may indicate inefficient use of assets (too much cash sitting idle). The quick ratio (excludes inventory) is more stringent — above 1.0 is considered safe for most businesses.' },
+  { q: 'How do I improve working capital?', a: 'Strategies: accelerate collections (reduce DSO), negotiate longer payment terms with suppliers (extend DPO), reduce inventory levels with just-in-time ordering, convert short-term debt to long-term financing, increase sales with faster inventory turnover, or raise equity capital. Improving working capital reduces the need for short-term borrowing and improves creditworthiness.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

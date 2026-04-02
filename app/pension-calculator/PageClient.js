@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'Should I take a pension or lump sum?', a: 'Take the pension if: you are in good health and expect to live past the break-even age (usually 78-82), you have no other guaranteed income, or you are risk-averse. Take the lump sum if: you have health issues reducing life expectancy, you have investment expertise, you want to leave money to heirs, or the pension plan is underfunded (check the funded status). Many financial advisors suggest taking the pension for its longevity insurance value.' },
+  { q: 'What is a survivor benefit on a pension?', a: 'A survivor benefit provides income to your spouse or beneficiary after your death. Choosing 100% survivor benefit typically reduces your monthly payment by 10-15%, but your spouse receives your full pension for life. The 50% option reduces your payment by 5-8% and your spouse gets half. Single life (no survivor benefit) maximizes your payout but leaves your spouse with nothing if you die first.' },
+  { q: 'Are pension benefits taxable?', a: 'Yes — pension income is generally taxable as ordinary income at the federal level. Most states tax pension income, though some states exempt government and military pensions. If you contributed after-tax dollars to the pension, a portion of each payment may be tax-free (your cost basis recovered pro-rata over your expected lifetime). Contact your pension administrator for your specific tax exclusion ratio.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How do I calculate fuel cost per mile?', a: 'Fuel cost per mile = Fuel price per gallon divided by MPG. At $3.50/gallon and 28 MPG: $3.50 / 28 = $0.125 per mile. For 15,000 miles/year that is $1,875 annually. The IRS standard mileage rate of $0.67/mile (2024) covers fuel plus depreciation, insurance and maintenance.' },
+  { q: 'How much do I save by switching to a more fuel efficient car?', a: 'Upgrading from 25 MPG to 40 MPG at $3.50/gallon driving 15,000 miles/year saves about $788/year in fuel. Over 5 years that is $3,940 in fuel savings. Compare this to the premium price of a more efficient vehicle to calculate your payback period.' },
+  { q: 'How do electric vehicles compare on fuel cost?', a: 'EVs cost roughly $0.03-$0.05 per mile in electricity vs $0.10-$0.15 per mile for gasoline cars. At 15,000 miles/year an EV saves $750-$1,500/year in fuel. However higher purchase price (though falling), charging infrastructure and range considerations affect total ownership cost comparison.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -42,6 +50,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

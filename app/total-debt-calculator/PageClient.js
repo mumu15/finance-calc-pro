@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What is a healthy debt-to-income ratio?', a: 'Total DTI under 36% is considered healthy by most lenders. Non-housing DTI under 20% is ideal. Mortgage lenders prefer total DTI under 43% for approval (some allow up to 50% with strong credit). Consumer financial health benchmarks: under 15% non-mortgage DTI is excellent, 15-35% is manageable, 35-50% is high, above 50% is concerning and needs immediate attention.' },
+  { q: 'What debts should I pay off first?', a: 'Priority order: (1) Any debt in collections or severely past due (stop credit damage). (2) High-interest credit cards and payday loans (highest cost debt). (3) Other unsecured debt over 10% interest. (4) Student loans over 7% interest. (5) Car loans. (6) Student loans under 7%. (7) Mortgage (lowest rate, tax deductible interest, builds equity). Never neglect minimum payments on any debt.' },
+  { q: 'How long does it take to become debt-free?', a: 'With focused effort: credit cards (using avalanche or snowball) 2-5 years, car loans 3-5 years, student loans 5-10 years, mortgages 15-30 years (or earlier with extra payments). The most powerful accelerator is increasing income and directing 100% of new income to debt. Side income of $500-$1,000/month applied to debt can cut payoff time in half.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -43,6 +51,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-10">

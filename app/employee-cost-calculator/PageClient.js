@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'How much does an employee really cost beyond salary?', a: 'Total employee cost is typically 1.25-1.40x base salary for hourly workers and 1.30-1.50x for salaried employees with full benefits. On a $65,000 salary: employer FICA $4,972, FUTA/SUTA ~$500, health insurance $7,000+, 401k match $2,600, overhead $13,000. Total can easily reach $90,000-$100,000 per year.' },
+  { q: 'What is included in employer payroll taxes?', a: 'Employer payroll taxes include: Social Security employer share (6.2% on wages up to $168,600), Medicare employer share (1.45% on all wages), FUTA (0.6% on first $7,000 after state credit), and SUTA (varies by state, typically 1-5% on first $7,000-$50,000). These add approximately 7.5-10% to base wages.' },
+  { q: 'How does hiring a contractor compare to an employee?', a: 'Contractors cost no employer taxes, no benefits, no unemployment insurance, and no overhead. However contractors typically charge 20-40% more per hour than an equivalent employee to cover their own taxes and benefits. For short-term or specialized work contractors are cheaper. For ongoing full-time roles, employees are usually more cost-effective after factoring productivity and loyalty.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -44,6 +52,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 

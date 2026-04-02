@@ -6,8 +6,16 @@ import TrustSection from '../../components/TrustSection'
 import PdfDownload from '../../components/PdfDownload'
 import { useCurrency } from '../../components/CurrencyContext'
 import AdUnit from '../../components/AdUnit'
+import FaqSchema from '../../components/FaqSchema'
 
 
+
+
+const _schemaFaqs = [
+  { q: 'What are mortgage discount points?', a: 'Mortgage points are upfront fees paid to the lender in exchange for a lower interest rate. One point = 1% of the loan amount. On a $350,000 loan, one point costs $3,500 and typically reduces the rate by 0.20-0.25%. Points make sense if you plan to keep the loan long enough to recoup the upfront cost via monthly savings.' },
+  { q: 'When is it worth buying mortgage points?', a: 'Buying points is worth it when: your break-even period (cost divided by monthly savings) is less than how long you plan to keep the loan. If you will refinance or sell within 5 years, points rarely make sense. If you are in your forever home with a 30-year loan and have cash available, points can save tens of thousands.' },
+  { q: 'Are mortgage points tax deductible?', a: 'Yes — for your primary residence, mortgage discount points are generally deductible as mortgage interest in the year of purchase (if buying a home) or amortised over the loan life (if refinancing). Consult a tax professional as rules vary based on loan purpose, amount and use. Points on rental properties are typically deductible over the loan life.' }
+]
 
 export default function Calculator() {
   const { fmt } = useCurrency()
@@ -46,6 +54,7 @@ export default function Calculator() {
 
   return (
     <>
+      <FaqSchema faqs={_schemaFaqs} />
       <Header />
       <main className="max-w-5xl mx-auto px-4 py-12">
 
