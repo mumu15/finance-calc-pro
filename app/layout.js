@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: 'https://www.freefincalc.net' },
   metadataBase: new URL('https://www.freefincalc.net'),
   title: 'Free Financial Calculators — FreeFinCalc.net',
-  description: 'Free online financial calculators for mortgage, loans, retirement, investments, taxes and more. 470+ calculators, instant results, no sign-up required.',
+  description: '470+ free financial calculators: mortgage, tax, retirement, investing, debt payoff, budgeting & more. Instant results in 40+ currencies. No sign-up required.',
   keywords: 'financial calculator, mortgage calculator, loan calculator, retirement calculator, investment calculator',
   authors: [{ name: 'FreeFinCalc' }],
   creator: 'FreeFinCalc',
